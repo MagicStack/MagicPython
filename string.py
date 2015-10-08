@@ -10,23 +10,24 @@ br'simple string'
 
 # single quote with line continuation
 #
-'simple string \
+'simple \\ string \
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005'
 
-'bad string
+'bad \\ string
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005'
 
-b'simple string \
+b'simple \\ string \
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005'
 
-b'bad string
+b'bad \\ string
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005'
 
-r'simple string \
-foo \'
+r'simple \\ string \
+foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005'
 
-r'bad string
-foo \'
+r'bad \\ string
+foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005'
+
 
 # multiline strings
 #
@@ -79,23 +80,24 @@ br"simple string"
 
 # single quote with line continuation
 #
-"simple string \
+"simple \\ string \
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
-"bad string
+"bad \\ string
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
-b"simple string \
+b"simple \\ string \
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
-b"bad string
+b"bad \\ string
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
-r"simple string \
-foo \"
+r"simple \\ string \
+foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
 r"bad string
-foo \"
+foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
+
 
 # multiline strings
 #
@@ -137,3 +139,18 @@ r"%(language)s has %(number)03d quote types." % {'language': "Python",
 "{(([ ]:Xd>+10d}".format(**{'((': {' ': 42}}) # bad formatting
 "{(([ ]:Xd}".format(**{'((': {' ': 42}})
 "normal {{ normal }} normal {fo.__add__!s}".format(fo='qqq')
+
+
+
+#
+# odds and ends
+#
+replace = {'"' : r'\"',
+           "'" : r'\'',
+           '\\': r'\\',
+           '\n': r'\n',
+           '\r': r'\r',
+           '\t': r'\t',
+           '\f': r'\f',
+           '\b': r'\b',
+           }

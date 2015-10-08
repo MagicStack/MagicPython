@@ -342,7 +342,7 @@ repository:
     endCaptures:
       '1': {name: invalid.illegal.newline.python}
     patterns:
-      - match: \\$
+      - match: \\.
       - include: '#string-formatting'
 
   string-raw-double-quoted-single-line:
@@ -354,7 +354,7 @@ repository:
     endCaptures:
       '1': {name: invalid.illegal.newline.python}
     patterns:
-      - match: \\$
+      - match: \\.
       - include: '#string-formatting'
 
   string-raw-single-quoted-multi-line:
@@ -364,6 +364,7 @@ repository:
     beginCaptures:
       '1': {name: storage.type.string.python}
     patterns:
+      - match: \\.
       - include: '#string-formatting'
 
   string-raw-double-quoted-multi-line:
@@ -373,6 +374,7 @@ repository:
     beginCaptures:
       '1': {name: storage.type.string.python}
     patterns:
+      - match: \\.
       - include: '#string-formatting'
 
   string-entity:
@@ -398,7 +400,7 @@ repository:
         \\ (
               x[0-9A-Fa-f]{2}
               | [0-7]{1,3}
-              | [\\'abfnrtv]
+              | [\\"'abfnrtv]
            )
 
   string-line-continuation:
