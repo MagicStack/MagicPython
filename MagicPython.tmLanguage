@@ -494,6 +494,48 @@
 				</dict>
 			</array>
 		</dict>
+		<key>dict-index</key>
+		<dict>
+			<key>begin</key>
+			<string>(\[)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.arguments.begin.python</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>meta.item-access.arguments.python</string>
+			<key>end</key>
+			<string>(?=\])</string>
+			<key>name</key>
+			<string>meta.function-call.arguments.python</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#expression</string>
+				</dict>
+			</array>
+		</dict>
+		<key>dict-name</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#special-names</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?x)
+  \b ([[:alpha:]_]\w*) \b
+</string>
+				</dict>
+			</array>
+		</dict>
 		<key>error</key>
 		<dict>
 			<key>patterns</key>
@@ -839,19 +881,10 @@
 				<dict>
 					<key>begin</key>
 					<string>(?x)
-  \b
-  ([[:alpha:]_]\w*) \s* (\[)
+  \b(?=
+    [[:alpha:]_]\w* \s* \[
+  )
 </string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.arguments.begin.python</string>
-						</dict>
-					</dict>
-					<key>contentName</key>
-					<string>meta.item-access.arguments.python</string>
 					<key>end</key>
 					<string>(\])</string>
 					<key>endCaptures</key>
@@ -866,6 +899,14 @@
 					<string>meta.item-access.python</string>
 					<key>patterns</key>
 					<array>
+						<dict>
+							<key>include</key>
+							<string>#dict-name</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#dict-index</string>
+						</dict>
 						<dict>
 							<key>include</key>
 							<string>#expression</string>
@@ -1157,6 +1198,10 @@ indirectly through syntactic constructs
 				<dict>
 					<key>include</key>
 					<string>#illegal-names</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#special-names</string>
 				</dict>
 			</array>
 		</dict>
@@ -1507,7 +1552,7 @@ indirectly through syntactic constructs
 		<key>special-names</key>
 		<dict>
 			<key>match</key>
-			<string>\b[[:upper:]]+(_[[:alnum:]]*)?\b</string>
+			<string>\b[[:upper:]]+(_\w*)?\b</string>
 			<key>name</key>
 			<string>constant.other.caps.python</string>
 		</dict>

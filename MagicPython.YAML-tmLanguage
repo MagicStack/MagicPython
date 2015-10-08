@@ -76,7 +76,7 @@ repository:
 
   special-names:
     name: constant.other.caps.python
-    match: '\b[[:upper:]]+(_[[:alnum:]]*)?\b'
+    match: '\b[[:upper:]]+(_\w*)?\b'
 
   curly-braces:
     begin: \{
@@ -435,8 +435,6 @@ repository:
               (:\w? [<>=^]? [-+ ]? \#? \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]?)?
             })
         )
-
-
     captures:
       '2': {name: storage.type.format.python}
 
@@ -624,19 +622,33 @@ repository:
       - name: meta.item-access.python
         begin: |
           (?x)
-            \b
-            ([[:alpha:]_]\w*) \s* (\[)
-
+            \b(?=
+              [[:alpha:]_]\w* \s* \[
+            )
         end: (\])
-        beginCaptures:
-          '2': {name: punctuation.definition.arguments.begin.python}
-
         endCaptures:
           '1': {name: punctuation.definition.arguments.end.python}
-
-        contentName: meta.item-access.arguments.python
         patterns:
+          - include: '#dict-name'
+          - include: '#dict-index'
           - include: '#expression'
+
+  dict-name:
+    patterns:
+      - include: '#special-names'
+      - match: |
+          (?x)
+            \b ([[:alpha:]_]\w*) \b
+
+  dict-index:
+    name: meta.function-call.arguments.python
+    begin: (\[)
+    end: (?=\])
+    beginCaptures:
+      '1': {name: punctuation.definition.arguments.begin.python}
+    contentName: meta.item-access.arguments.python
+    patterns:
+      - include: '#expression'
 
   decorator:
     patterns:
@@ -874,6 +886,7 @@ repository:
     end: \s
     patterns:
       - include: '#illegal-names'
+      - include: '#special-names'
 
   error:
     patterns:
