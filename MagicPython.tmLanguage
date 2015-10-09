@@ -569,16 +569,25 @@
 		</dict>
 		<key>escape-sequence-unicode</key>
 		<dict>
-			<key>match</key>
-			<string>(?x)
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?x)
   \\ (
         u[0-9A-Fa-f]{4}
         | U[0-9A-Fa-f]{8}
         | N\{[\w\s]+\}
      )
 </string>
-			<key>name</key>
-			<string>constant.character.python</string>
+					<key>name</key>
+					<string>constant.character.python</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-brace-formatting</string>
+				</dict>
+			</array>
 		</dict>
 		<key>expression</key>
 		<dict>
@@ -1906,27 +1915,6 @@ indirectly through syntactic constructs
 		</dict>
 		<key>string-formatting</key>
 		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#string-percent-formatting</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-brace-formatting</string>
-				</dict>
-			</array>
-		</dict>
-		<key>string-line-continuation</key>
-		<dict>
-			<key>match</key>
-			<string>\\$</string>
-			<key>name</key>
-			<string>constant.language.python</string>
-		</dict>
-		<key>string-percent-formatting</key>
-		<dict>
 			<key>match</key>
 			<string>(?x)
   % (\([\w\s]*\))?
@@ -1937,6 +1925,13 @@ indirectly through syntactic constructs
 </string>
 			<key>name</key>
 			<string>constant.character.format.python</string>
+		</dict>
+		<key>string-line-continuation</key>
+		<dict>
+			<key>match</key>
+			<string>\\$</string>
+			<key>name</key>
+			<string>constant.language.python</string>
 		</dict>
 		<key>string-raw-double-quoted-multi-line</key>
 		<dict>

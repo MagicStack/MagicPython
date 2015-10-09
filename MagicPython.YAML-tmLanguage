@@ -384,14 +384,16 @@ repository:
       - include: '#string-formatting'
 
   escape-sequence-unicode:
-    name: constant.character.python
-    match: |
-      (?x)
-        \\ (
-              u[0-9A-Fa-f]{4}
-              | U[0-9A-Fa-f]{8}
-              | N\{[\w\s]+\}
-           )
+    patterns:
+      - name: constant.character.python
+        match: |
+          (?x)
+            \\ (
+                  u[0-9A-Fa-f]{4}
+                  | U[0-9A-Fa-f]{8}
+                  | N\{[\w\s]+\}
+               )
+      - include: '#string-brace-formatting'
 
   escape-sequence:
     name: constant.character.python
@@ -408,11 +410,6 @@ repository:
     match: \\$
 
   string-formatting:
-    patterns:
-      - include: '#string-percent-formatting'
-      - include: '#string-brace-formatting'
-
-  string-percent-formatting:
     name: constant.character.format.python
     match: |
       (?x)
