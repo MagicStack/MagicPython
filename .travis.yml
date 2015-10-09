@@ -3,8 +3,17 @@ language: node_js
 node_js:
   - 0.12
 
+notifications:
+  email:
+    recipients:
+      - yury@magic.io
+      - victor@magic.io
+
+    on_success: never
+    on_failure: always
+
 install:
-    - make
+  - make
 
 script:
-    - make test
+  - make test
