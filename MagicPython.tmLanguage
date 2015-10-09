@@ -1564,7 +1564,7 @@ indirectly through syntactic constructs
 		<key>special-names</key>
 		<dict>
 			<key>match</key>
-			<string>\b[[:upper:]]+(_\w*)?\b</string>
+			<string>\b[[:upper:]][[:upper:]\d]*(_\w*)?\b</string>
 			<key>name</key>
 			<string>constant.other.caps.python</string>
 		</dict>

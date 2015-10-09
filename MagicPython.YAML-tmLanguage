@@ -76,7 +76,7 @@ repository:
 
   special-names:
     name: constant.other.caps.python
-    match: '\b[[:upper:]]+(_\w*)?\b'
+    match: '\b[[:upper:]][[:upper:]\d]*(_\w*)?\b'
 
   curly-braces:
     begin: \{
