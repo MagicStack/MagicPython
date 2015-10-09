@@ -701,6 +701,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#lambda-incomplete</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#illegal-names</string>
 				</dict>
 				<dict>
@@ -856,7 +860,7 @@
   \b(
     and | as | assert | async | await | break | class | continue | def
     | del | elif | else | except | exec | finally | for | from | global
-    | if | import | in | is | (?&lt;=\.)lambda | lambda(?=\s*=)
+    | if | import | in | is | (?&lt;=\.)lambda | lambda(?=\s*[\.=])
     | nonlocal | not | or | pass | raise | return | try | while | with
     | yield
   )\b
@@ -868,6 +872,10 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#lambda-incomplete</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#builtin-callables</string>
@@ -943,7 +951,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>((?&lt;=\.)lambda|lambda(?=\s*=))</string>
+					<string>((?&lt;=\.)lambda|lambda(?=\s*[\.=]))</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -990,6 +998,10 @@
 						</dict>
 						<dict>
 							<key>include</key>
+							<string>#lambda-incomplete</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#illegal-names</string>
 						</dict>
 						<dict>
@@ -1028,6 +1040,13 @@
 					</array>
 				</dict>
 			</array>
+		</dict>
+		<key>lambda-incomplete</key>
+		<dict>
+			<key>match</key>
+			<string>\blambda(?=\s*[:,)])</string>
+			<key>name</key>
+			<string>storage.type.function.lambda.python</string>
 		</dict>
 		<key>lambda-parameter-with-default</key>
 		<dict>
@@ -1490,6 +1509,10 @@ indirectly through syntactic constructs
 				<dict>
 					<key>match</key>
 					<string>\*</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#lambda-incomplete</string>
 				</dict>
 				<dict>
 					<key>include</key>

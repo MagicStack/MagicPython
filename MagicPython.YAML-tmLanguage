@@ -482,7 +482,7 @@ repository:
 
   lambda:
     patterns:
-      - match: ((?<=\.)lambda|lambda(?=\s*=))
+      - match: ((?<=\.)lambda|lambda(?=\s*[\.=]))
         captures:
           '1': {name: keyword.control.flow.python}
       - match: \b(lambda)\s*?([,\n]|$)
@@ -501,6 +501,7 @@ repository:
         name: meta.function.lambda.parameters.python
         patterns:
           - match: \*
+          - include: '#lambda-incomplete'
           - include: '#illegal-names'
           - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=:|$))
             captures:
@@ -511,6 +512,10 @@ repository:
           - include: '#error'
           - include: '#lambda-parameter-with-default'
           - include: '#line-continuation'
+
+  lambda-incomplete:
+    name: storage.type.function.lambda.python
+    match: \blambda(?=\s*[:,)])
 
   lambda-parameter-with-default:
     begin: |
@@ -568,6 +573,7 @@ repository:
 
     patterns:
       - match: \*
+      - include: '#lambda-incomplete'
       - include: '#illegal-names'
       - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=\)))
         captures:
@@ -707,6 +713,7 @@ repository:
 
   inheritance-name:
     patterns:
+      - include: '#lambda-incomplete'
       - include: '#builtin-callables'
       - match: |
           (?x)
@@ -744,6 +751,7 @@ repository:
     patterns:
       - name: punctuation.separator.arguments.python
         match: ','
+      - include: '#lambda-incomplete'
       - include: '#illegal-names'
       - match: '\b([[:alpha:]_]\w*)\s*(=)'
         captures:
@@ -871,7 +879,7 @@ repository:
         \b(
           and | as | assert | async | await | break | class | continue | def
           | del | elif | else | except | exec | finally | for | from | global
-          | if | import | in | is | (?<=\.)lambda | lambda(?=\s*=)
+          | if | import | in | is | (?<=\.)lambda | lambda(?=\s*[\.=])
           | nonlocal | not | or | pass | raise | return | try | while | with
           | yield
         )\b

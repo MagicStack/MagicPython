@@ -15,7 +15,7 @@ def myfunc(self,            # gotta have self
 def some_call(a, b, *args, **kwargs):
     pass
 
-def result_annot() -> qqq[None]:
+def result_annot(lambda, lambda=) -> qqq[None]:
     pass
 
 def annot(a:'simple'=123, b:('abc' 'def')=123, c:{'key': 555}=None, #foo
@@ -29,9 +29,11 @@ def annot(a:'simple'=123, b:1 \
 
 def def(): pass
 
-lambda
 
-anon = lambda: 42
+lll(lambda)
+lll(lambda=1)
+
+anon = lambda lambda: 42
 
 anon = lambda a : 1
 
@@ -117,7 +119,7 @@ r''
 # name clashing is legal, but questionable, so at least it should be visible
 class Exception: pass
 
-class Spam(Foo, Bar={'very': 'odd'}, Exception, wefwf=23, metaclass=QQQ):
+class Spam(Foo, Bar={'very': 'odd'}, Exception, lambda, we_fwf=23, metaclass=QQQ):
 
     def __init__(self, a:('abc' 'def')=123, boo: 'abc'
 
@@ -142,7 +144,7 @@ class Spam(Foo, Bar={'very': 'odd'}, Exception, wefwf=23, metaclass=QQQ):
 
         ssl.PROTOCOL_v2.hgyhgh
 
-        HTTPProtocol
+        HTTPProtocol(foo=1, lambda, q.lambda() x:2, )
 
 class Woot(Foo, Bizarre(42), Bar=foo(aaa=1, bbb=4), wefwf=23, metaclass=QQQ):
     pass
