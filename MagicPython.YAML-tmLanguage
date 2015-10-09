@@ -482,10 +482,12 @@ repository:
 
   lambda:
     patterns:
-      - match: \b(lambda)\s*$
+      - match: ((?<=\.)lambda|lambda(?=\s*=))
+        captures:
+          '1': {name: keyword.control.flow.python}
+      - match: \b(lambda)\s*?([,\n]|$)
         captures:
           '1': {name: storage.type.function.lambda.python}
-
       - name: meta.lambda-function.python
         begin: |
           (?x)
@@ -869,8 +871,9 @@ repository:
         \b(
           and | as | assert | async | await | break | class | continue | def
           | del | elif | else | except | exec | finally | for | from | global
-          | if | import | in | is | lambda | nonlocal | not | or
-          | pass | raise | return | try | while | with | yield
+          | if | import | in | is | (?<=\.)lambda | lambda(?=\s*=)
+          | nonlocal | not | or | pass | raise | return | try | while | with
+          | yield
         )\b
 
   member-access:

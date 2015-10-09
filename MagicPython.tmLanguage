@@ -856,8 +856,9 @@
   \b(
     and | as | assert | async | await | break | class | continue | def
     | del | elif | else | except | exec | finally | for | from | global
-    | if | import | in | is | lambda | nonlocal | not | or
-    | pass | raise | return | try | while | with | yield
+    | if | import | in | is | (?&lt;=\.)lambda | lambda(?=\s*=)
+    | nonlocal | not | or | pass | raise | return | try | while | with
+    | yield
   )\b
 </string>
 			<key>name</key>
@@ -938,11 +939,23 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
+							<string>keyword.control.flow.python</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>((?&lt;=\.)lambda|lambda(?=\s*=))</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
 							<string>storage.type.function.lambda.python</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\b(lambda)\s*$</string>
+					<string>\b(lambda)\s*?([,\n]|$)</string>
 				</dict>
 				<dict>
 					<key>begin</key>
