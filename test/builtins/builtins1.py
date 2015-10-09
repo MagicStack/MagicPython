@@ -1,0 +1,25 @@
+AttributeError ConnectionAbortedError
+PendingDeprecationWarning
+SystemExit
+NotImplemented
+sum oct abs type object print
+
+
+
+AttributeError : source.python, support.type.exception.python
+              : source.python
+ConnectionAbortedError : source.python, support.type.exception.python
+PendingDeprecationWarning : source.python, support.type.exception.python
+SystemExit    : source.python, support.type.exception.python
+NotImplemented : source.python, support.type.exception.python
+sum           : source.python, support.function.builtin.python
+              : source.python
+oct           : source.python, support.type.python
+              : source.python
+abs           : source.python, support.function.builtin.python
+              : source.python
+type          : source.python, support.type.python
+              : source.python
+object        : source.python, support.type.python
+              : source.python
+print         : source.python, support.function.builtin.python
