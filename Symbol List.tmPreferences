@@ -22,8 +22,8 @@
                     (.*?) \)(\s*: | \s*->.*) $
             /$1\(($2\)/g;
 
-        # remove extra whitespace in arg list
-        s/,\s{2,}/, /g;
+        # remove extra whitespace in arg list (except leading)
+        s/(\S)\s{2,}/$1 /g;
 		</string>
 	</dict>
 	<key>uuid</key>
