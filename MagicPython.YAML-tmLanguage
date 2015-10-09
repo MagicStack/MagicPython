@@ -903,4 +903,6 @@ repository:
       - name: invalid.deprecated.backtick.python
         begin: \`
         end: (?:\`|(?<!\\)(\n))
+        patterns:
+          - include: '#expression'
 ...

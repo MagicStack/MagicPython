@@ -565,6 +565,13 @@
 					<string>(?:\`|(?&lt;!\\)(\n))</string>
 					<key>name</key>
 					<string>invalid.deprecated.backtick.python</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expression</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
