@@ -805,11 +805,6 @@ repository:
           | quit | range | raw_input | reduce | reload | repr | round
           | setattr | sorted | sum | unichr | vars | zip
         )\b
-
-        |
-
-        \b(format)\b
-
   builtin-types:
     name: support.type.python
     match: |
