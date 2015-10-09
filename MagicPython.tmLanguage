@@ -322,8 +322,12 @@
 					<string>#expression</string>
 				</dict>
 				<dict>
+					<key>include</key>
+					<string>#illegal-names</string>
+				</dict>
+				<dict>
 					<key>match</key>
-					<string>[[:alnum:]]</string>
+					<string>[[:alnum:]_]</string>
 					<key>name</key>
 					<string>entity.other.inherited-class.pyhton</string>
 				</dict>

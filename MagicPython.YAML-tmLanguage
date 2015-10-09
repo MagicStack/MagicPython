@@ -476,8 +476,9 @@ repository:
         match: \=
       - include: '#call-wrapper-inheritance'
       - include: '#expression'
+      - include: '#illegal-names'
       - name: entity.other.inherited-class.pyhton
-        match: '[[:alnum:]]'
+        match: '[[:alnum:]_]'
 
   lambda:
     patterns:
