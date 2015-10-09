@@ -36,7 +36,7 @@
 			<key>begin</key>
 			<string>(?x)
   \b
-  ([[:alpha:]]\w*) \s* (:)
+  ([[:alpha:]_]\w*) \s* (:)
 </string>
 			<key>beginCaptures</key>
 			<dict>
@@ -841,14 +841,14 @@
 			<key>match</key>
 			<string>(?x)
   \b(
-    and | as | assert | break | class | continue | def | del
+    and | as | assert | async | break | class | continue | def | del
     | elif | else | except | exec | finally | for | from | global
     | if | import | in | is | lambda | nonlocal | not | or
     | pass | raise | return | try | while | with | yield
   )\b
 </string>
 			<key>name</key>
-			<string>invalid.illegal.name.python</string>
+			<string>keyword.control.flow.python</string>
 		</dict>
 		<key>inheritance-name</key>
 		<dict>
@@ -982,7 +982,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>([[:alpha:]]\w*)\s*(?:(,)|(?=:|$))</string>
+							<string>([[:alpha:]_]\w*)\s*(?:(,)|(?=:|$))</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -1009,7 +1009,7 @@
 			<key>begin</key>
 			<string>(?x)
   \b
-  ([[:alpha:]]\w*) \s* (=)
+  ([[:alpha:]_]\w*) \s* (=)
 </string>
 			<key>beginCaptures</key>
 			<dict>
@@ -1403,7 +1403,7 @@ indirectly through syntactic constructs
 			<key>begin</key>
 			<string>(?x)
   \b
-  ([[:alpha:]]\w*) \s* (=)
+  ([[:alpha:]_]\w*) \s* (=)
 </string>
 			<key>beginCaptures</key>
 			<dict>
@@ -1481,7 +1481,7 @@ indirectly through syntactic constructs
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>([[:alpha:]]\w*)\s*(?:(,)|(?=\)))</string>
+					<string>([[:alpha:]_]\w*)\s*(?:(,)|(?=\)))</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1588,11 +1588,17 @@ indirectly through syntactic constructs
 			<array>
 				<dict>
 					<key>match</key>
+					<string>\b((async)?\s+def)\b</string>
+					<key>name</key>
+					<string>storage.type.function.python</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>(?x)
   \b(?&lt;!\.)(
-    as | continue | del | assert | break | finally | (async\s+)? for
+    as | async | continue | del | assert | break | finally | for
     | from | elif | else | if | import | except | pass | raise
-    | return | try | while | (async\s+)? with
+    | return | try | while | with
   )\b
 </string>
 					<key>name</key>
@@ -1607,12 +1613,6 @@ indirectly through syntactic constructs
 </string>
 					<key>name</key>
 					<string>storage.modifier.declaration.python</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b((async)?\s+def)\b</string>
-					<key>name</key>
-					<string>storage.type.function.python</string>
 				</dict>
 				<dict>
 					<key>match</key>
