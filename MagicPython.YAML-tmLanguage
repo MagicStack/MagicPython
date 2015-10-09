@@ -391,7 +391,7 @@ repository:
             \\ (
                   u[0-9A-Fa-f]{4}
                   | U[0-9A-Fa-f]{8}
-                  | N\{[\w\s]+\}
+                  | N\{[\w\s]+?\}
                )
       - include: '#string-brace-formatting'
 
@@ -427,7 +427,7 @@ repository:
           {{ | }}
           | (?:
             {
-              [^!:\.\[\]]* (\.[[:alpha:]_]\w* | \[[^\]]+\])*
+              [^!:\.\[\]]*? (\.[[:alpha:]_]\w*? | \[[^\]]+\])*?
               (![rsa])?
               (:\w? [<>=^]? [-+ ]? \#? \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]?)?
             })

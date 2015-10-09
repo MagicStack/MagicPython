@@ -577,7 +577,7 @@
   \\ (
         u[0-9A-Fa-f]{4}
         | U[0-9A-Fa-f]{8}
-        | N\{[\w\s]+\}
+        | N\{[\w\s]+?\}
      )
 </string>
 					<key>name</key>
@@ -1822,7 +1822,7 @@ indirectly through syntactic constructs
     {{ | }}
     | (?:
       {
-        [^!:\.\[\]]* (\.[[:alpha:]_]\w* | \[[^\]]+\])*
+        [^!:\.\[\]]*? (\.[[:alpha:]_]\w*? | \[[^\]]+\])*?
         (![rsa])?
         (:\w? [&lt;&gt;=^]? [-+ ]? \#? \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]?)?
       })
