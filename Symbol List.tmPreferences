@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Symbol List</string>
+	<key>scope</key>
+	<string>source.python meta.function.python, source.python meta.class.python</string>
+	<key>settings</key>
+	<dict>
+		<key>showInSymbolList</key>
+		<integer>1</integer>
+		<key>symbolTransformation</key>
+		<string>
+        # transform into 'class Classname' form
+        s/(class)\s+([[:alpha:]_]\w*)\s*.*/$1 $2/g;
+
+        # transform into '[async] funciton_name(args,...)' form
+        s/(?x)
+            def \s+
+                ([[:alpha:]_]\w*) \s* \(
+                    (.*?) \)(\s*: | \s*->.*) $
+            /$1\(($2\)/g;
+
+        # remove extra whitespace in arg list
+        s/,\s{2,}/, /g;
+		</string>
+	</dict>
+	<key>uuid</key>
+	<string>092a7050-6e20-11e5-bf4c-7c6d62900c7c</string>
+</dict>
+</plist>
