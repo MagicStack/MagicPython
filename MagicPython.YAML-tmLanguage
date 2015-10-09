@@ -13,7 +13,7 @@ patterns:
 repository:
   comments:
     name: comment.line.number-sign.python
-    match: (\#)\s*(BUG|FIXME|TODO|XXX)?.*
+    match: (\#)\s*(BUG|FIXME|TODO|XXX|NB)?.*
     captures:
       '1': {name: punctuation.definition.comment.python}
       '2': {name: comment.line.note.notation.python}
@@ -126,7 +126,7 @@ repository:
           (?x)
                <<= | >>= | //= | \*\*=
               | \+= | -= | /=
-              | \*= | %= | ~= | ^= | &= | \|=
+              | \*= | %= | ~= | \^= | &= | \|=
               | =
 
   operator:
@@ -140,7 +140,7 @@ repository:
 
               | != | == | >= | <= | << | >> | @=
               | && | \|\| | \*\* | //
-              | > | < | \+ | - | \* | % | \| | & | ^
+              | > | < | \+ | - | \* | % | \| | & | \^
               | ~ | \? | ! | / | @
 
   literal:
@@ -477,8 +477,10 @@ repository:
       - include: '#call-wrapper-inheritance'
       - include: '#expression'
       - include: '#illegal-names'
+      - name: support.type.metaclass.python
+        match: \bmetaclass\b
       - name: entity.other.inherited-class.pyhton
-        match: '[[:alnum:]_]'
+        match: '[[:alnum:]_]+'
 
   lambda:
     patterns:
@@ -498,7 +500,7 @@ repository:
         endCaptures:
           '1': {name: punctuation.section.function.lambda.begin.python}
 
-        name: meta.function.lambda.parameters.python
+        contentName: meta.function.lambda.parameters.python
         patterns:
           - match: \*
           - include: '#lambda-incomplete'
@@ -791,7 +793,7 @@ repository:
           | Reference | Runtime | Recursion | Standard | Syntax | System
           | Tab | Type | UnboundLocal | Unicode(Encode|Decode|Translate)?
           | Value | VMS | Windows | ZeroDivision
-        )? Error
+        ) Error
       |
         ((Pending)?Deprecation | Runtime | Syntax | User | Future | Import
           | Unicode | Bytes | Resource

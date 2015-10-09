@@ -84,7 +84,7 @@
 					<string>(?x)
      &lt;&lt;= | &gt;&gt;= | //= | \*\*=
     | \+= | -= | /=
-    | \*= | %= | ~= | ^= | &amp;= | \|=
+    | \*= | %= | ~= | \^= | &amp;= | \|=
     | =
 </string>
 					<key>name</key>
@@ -130,7 +130,7 @@
     | Reference | Runtime | Recursion | Standard | Syntax | System
     | Tab | Type | UnboundLocal | Unicode(Encode|Decode|Translate)?
     | Value | VMS | Windows | ZeroDivision
-  )? Error
+  ) Error
 |
   ((Pending)?Deprecation | Runtime | Syntax | User | Future | Import
     | Unicode | Bytes | Resource
@@ -327,7 +327,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>[[:alnum:]_]</string>
+					<string>\bmetaclass\b</string>
+					<key>name</key>
+					<string>support.type.metaclass.python</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[[:alnum:]_]+</string>
 					<key>name</key>
 					<string>entity.other.inherited-class.pyhton</string>
 				</dict>
@@ -367,7 +373,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\#)\s*(BUG|FIXME|TODO|XXX)?.*</string>
+			<string>(\#)\s*(BUG|FIXME|TODO|XXX|NB)?.*</string>
 			<key>name</key>
 			<string>comment.line.number-sign.python</string>
 		</dict>
@@ -978,6 +984,8 @@
 							<string>storage.type.function.lambda.python</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>meta.function.lambda.parameters.python</string>
 					<key>end</key>
 					<string>(:)|(\n)</string>
 					<key>endCaptures</key>
@@ -989,7 +997,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.function.lambda.parameters.python</string>
+					<string>meta.lambda-function.python</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1434,7 +1442,7 @@ indirectly through syntactic constructs
 
     | != | == | &gt;= | &lt;= | &lt;&lt; | &gt;&gt; | @=
     | &amp;&amp; | \|\| | \*\* | //
-    | &gt; | &lt; | \+ | - | \* | % | \| | &amp; | ^
+    | &gt; | &lt; | \+ | - | \* | % | \| | &amp; | \^
     | ~ | \? | ! | / | @
 </string>
 					<key>name</key>
