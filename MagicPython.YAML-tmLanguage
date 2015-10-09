@@ -897,8 +897,10 @@ repository:
   error:
     patterns:
       - name: invalid.illegal.character.python
-        match: '[`?$]'
+        match: '[?$]'
       - name: invalid.illegal.annotation.python
         match: '->'
-
+      - name: invalid.deprecated.backtick.python
+        begin: \`
+        end: (?:\`|(?<!\\)(\n))
 ...
