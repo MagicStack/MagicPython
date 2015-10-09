@@ -691,6 +691,10 @@
 					<string>punctuation.separator.arguments.python</string>
 				</dict>
 				<dict>
+					<key>include</key>
+					<string>#illegal-names</string>
+				</dict>
+				<dict>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -953,11 +957,6 @@
 							<key>name</key>
 							<string>punctuation.section.function.lambda.begin.python</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>invalid.illegal.newline.python</string>
-						</dict>
 					</dict>
 					<key>name</key>
 					<string>meta.function.lambda.parameters.python</string>
@@ -966,6 +965,10 @@
 						<dict>
 							<key>match</key>
 							<string>\*</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#illegal-names</string>
 						</dict>
 						<dict>
 							<key>captures</key>
@@ -1467,6 +1470,10 @@ indirectly through syntactic constructs
 					<string>\*</string>
 				</dict>
 				<dict>
+					<key>include</key>
+					<string>#illegal-names</string>
+				</dict>
+				<dict>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -1588,7 +1595,7 @@ indirectly through syntactic constructs
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b((async)?\s+def)\b</string>
+					<string>\b((async\s+)?\s*def)\b</string>
 					<key>name</key>
 					<string>storage.type.function.python</string>
 				</dict>

@@ -29,7 +29,7 @@ repository:
   statement-keyword:
     patterns:
       - name: storage.type.function.python
-        match: \b((async)?\s+def)\b
+        match: \b((async\s+)?\s*def)\b
 
       - name: keyword.control.flow.python
         match: |
@@ -495,14 +495,13 @@ repository:
         end: (:)|(\n)
         beginCaptures:
           '1': {name: storage.type.function.lambda.python}
-
         endCaptures:
           '1': {name: punctuation.section.function.lambda.begin.python}
-          '2': {name: invalid.illegal.newline.python}
 
         name: meta.function.lambda.parameters.python
         patterns:
           - match: \*
+          - include: '#illegal-names'
           - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=:|$))
             captures:
               '1': {name: variable.parameter.function.language.pyhton}
@@ -569,7 +568,7 @@ repository:
 
     patterns:
       - match: \*
-
+      - include: '#illegal-names'
       - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=\)))
         captures:
           '1': {name: variable.parameter.function.language.pyhton}
@@ -745,6 +744,7 @@ repository:
     patterns:
       - name: punctuation.separator.arguments.python
         match: ','
+      - include: '#illegal-names'
       - match: '\b([[:alpha:]_]\w*)\s*(=)'
         captures:
           '1': {name: variable.parameter.function-call.pyhton}
