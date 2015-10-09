@@ -248,6 +248,10 @@ repository:
       - include: '#string-raw-double-quoted-multi-line'
       - include: '#string-raw-single-quoted-single-line'
       - include: '#string-raw-double-quoted-single-line'
+      - include: '#string-raw-bin-single-quoted-multi-line'
+      - include: '#string-raw-bin-double-quoted-multi-line'
+      - include: '#string-raw-bin-single-quoted-single-line'
+      - include: '#string-raw-bin-double-quoted-single-line'
 
   string-single-quoted-single-line:
     name: string.quoted.single.python
@@ -258,8 +262,7 @@ repository:
     endCaptures:
       '1': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#escape-sequence-unicode'
-      - include: '#string-entity'
+      - include: '#string-unicode-guts'
 
   string-double-quoted-single-line:
     name: string.quoted.double.python
@@ -270,8 +273,7 @@ repository:
     endCaptures:
       '1': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#escape-sequence-unicode'
-      - include: '#string-entity'
+      - include: '#string-unicode-guts'
 
   string-single-quoted-multi-line:
     name: string.quoted.triple.python
@@ -280,8 +282,7 @@ repository:
     beginCaptures:
       '1': {name: storage.type.string.python}
     patterns:
-      - include: '#escape-sequence-unicode'
-      - include: '#string-entity'
+      - include: '#string-unicode-guts'
 
   string-double-quoted-multi-line:
     name: string.quoted.triple.python
@@ -290,12 +291,16 @@ repository:
     beginCaptures:
       '1': {name: storage.type.string.python}
     patterns:
+      - include: '#string-unicode-guts'
+
+  string-unicode-guts:
+    patterns:
       - include: '#escape-sequence-unicode'
       - include: '#string-entity'
 
   string-bin-single-quoted-single-line:
     name: string.quoted.single.python
-    begin: (\b[bB])?\'
+    begin: (\b[bB])\'
     end: (?:\'|(?<!\\)(\n))
     beginCaptures:
       '1': {name: storage.type.string.python}
@@ -306,7 +311,7 @@ repository:
 
   string-bin-double-quoted-single-line:
     name: string.quoted.double.python
-    begin: (\b[bB])?\"
+    begin: (\b[bB])\"
     end: (?:\"|(?<!\\)(\n))
     beginCaptures:
       '1': {name: storage.type.string.python}
@@ -317,7 +322,7 @@ repository:
 
   string-bin-single-quoted-multi-line:
     name: string.quoted.triple.python
-    begin: (\b[bB])?\'\'\'
+    begin: (\b[bB])\'\'\'
     end: \'\'\'
     beginCaptures:
       '1': {name: storage.type.string.python}
@@ -326,7 +331,7 @@ repository:
 
   string-bin-double-quoted-multi-line:
     name: string.quoted.triple.python
-    begin: (\b[bB])?\"\"\"
+    begin: (\b[bB])\"\"\"
     end: \"\"\"
     beginCaptures:
       '1': {name: storage.type.string.python}
@@ -335,44 +340,91 @@ repository:
 
   string-raw-single-quoted-single-line:
     name: string.quoted.single.raw.python
-    begin: (\b(?:r|R|rb|rB|Rb|RB|br|bR|Br|BR))?\'
+    begin: (\b[rR])\'
     end: (?:\'|(?<!\\)(\n))
     beginCaptures:
       '1': {name: storage.type.string.python}
     endCaptures:
       '1': {name: invalid.illegal.newline.python}
     patterns:
-      - match: \\.
-      - include: '#string-formatting'
+      - include: '#string-raw-guts'
 
   string-raw-double-quoted-single-line:
     name: string.quoted.double.raw.python
-    begin: (\b(?:r|R|rb|rB|Rb|RB|br|bR|Br|BR))?\"
+    begin: (\b[rR])\"
     end: (?:\"|(?<!\\)(\n))
     beginCaptures:
       '1': {name: storage.type.string.python}
     endCaptures:
       '1': {name: invalid.illegal.newline.python}
     patterns:
-      - match: \\.
-      - include: '#string-formatting'
+      - include: '#string-raw-guts'
 
   string-raw-single-quoted-multi-line:
     name: string.quoted.triple.raw.python
-    begin: (\b(?:r|R|rb|rB|Rb|RB|br|bR|Br|BR))?\'\'\'
+    begin: (\b[rR])\'\'\'
     end: \'\'\'
     beginCaptures:
       '1': {name: storage.type.string.python}
     patterns:
-      - match: \\.
-      - include: '#string-formatting'
+      - include: '#string-raw-guts'
 
   string-raw-double-quoted-multi-line:
     name: string.quoted.triple.raw.python
-    begin: (\b(?:r|R|rb|rB|Rb|RB|br|bR|Br|BR))?\"\"\"
+    begin: (\b[rR])\"\"\"
     end: \"\"\"
     beginCaptures:
       '1': {name: storage.type.string.python}
+    patterns:
+      - include: '#string-raw-guts'
+
+  string-raw-guts:
+    patterns:
+      - match: \\.
+      - include: '#string-formatting'
+      - include: '#string-brace-formatting'
+
+  string-raw-bin-single-quoted-single-line:
+    name: string.quoted.single.raw.python
+    begin: (\b(?:[rR][bB]|[bB][rR]))\'
+    end: (?:\'|(?<!\\)(\n))
+    beginCaptures:
+      '1': {name: storage.type.string.python}
+    endCaptures:
+      '1': {name: invalid.illegal.newline.python}
+    patterns:
+      - include: '#string-raw-bin-guts'
+
+  string-raw-bin-double-quoted-single-line:
+    name: string.quoted.double.raw.python
+    begin: (\b(?:[rR][bB]|[bB][rR]))\"
+    end: (?:\"|(?<!\\)(\n))
+    beginCaptures:
+      '1': {name: storage.type.string.python}
+    endCaptures:
+      '1': {name: invalid.illegal.newline.python}
+    patterns:
+      - include: '#string-raw-bin-guts'
+
+  string-raw-bin-single-quoted-multi-line:
+    name: string.quoted.triple.raw.python
+    begin: (\b(?:[rR][bB]|[bB][rR]))\'\'\'
+    end: \'\'\'
+    beginCaptures:
+      '1': {name: storage.type.string.python}
+    patterns:
+      - include: '#string-raw-bin-guts'
+
+  string-raw-bin-double-quoted-multi-line:
+    name: string.quoted.triple.raw.python
+    begin: (\b(?:[rR][bB]|[bB][rR]))\"\"\"
+    end: \"\"\"
+    beginCaptures:
+      '1': {name: storage.type.string.python}
+    patterns:
+      - include: '#string-raw-bin-guts'
+
+  string-raw-bin-guts:
     patterns:
       - match: \\.
       - include: '#string-formatting'

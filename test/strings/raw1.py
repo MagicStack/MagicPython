@@ -22,5 +22,5 @@ f1            : source.python, string.quoted.triple.raw.python
               : source.python, string.quoted.triple.raw.python
               : source.python, string.quoted.triple.raw.python
 \N            : source.python, string.quoted.triple.raw.python
-{BLACK SPADE SUIT} : source.python, string.quoted.triple.raw.python
+{BLACK SPADE SUIT} : constant.character.format.python, source.python, string.quoted.triple.raw.python
 """           : source.python, string.quoted.triple.raw.python

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>author</key>
-	<string>Victor Petrovykh vpetrovykh@sprymix.com</string>
+	<string>Victor Petrovykh victor@magic.io</string>
 	<key>fileTypes</key>
 	<array>
 		<string>py</string>
@@ -1751,12 +1751,28 @@ indirectly through syntactic constructs
 					<key>include</key>
 					<string>#string-raw-double-quoted-single-line</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-raw-bin-single-quoted-multi-line</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-raw-bin-double-quoted-multi-line</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-raw-bin-single-quoted-single-line</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-raw-bin-double-quoted-single-line</string>
+				</dict>
 			</array>
 		</dict>
 		<key>string-bin-double-quoted-multi-line</key>
 		<dict>
 			<key>begin</key>
-			<string>(\b[bB])?\"\"\"</string>
+			<string>(\b[bB])\"\"\"</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -1780,7 +1796,7 @@ indirectly through syntactic constructs
 		<key>string-bin-double-quoted-single-line</key>
 		<dict>
 			<key>begin</key>
-			<string>(\b[bB])?\"</string>
+			<string>(\b[bB])\"</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -1812,7 +1828,7 @@ indirectly through syntactic constructs
 		<key>string-bin-single-quoted-multi-line</key>
 		<dict>
 			<key>begin</key>
-			<string>(\b[bB])?\'\'\'</string>
+			<string>(\b[bB])\'\'\'</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -1836,7 +1852,7 @@ indirectly through syntactic constructs
 		<key>string-bin-single-quoted-single-line</key>
 		<dict>
 			<key>begin</key>
-			<string>(\b[bB])?\'</string>
+			<string>(\b[bB])\'</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -1910,11 +1926,7 @@ indirectly through syntactic constructs
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#escape-sequence-unicode</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-entity</string>
+					<string>#string-unicode-guts</string>
 				</dict>
 			</array>
 		</dict>
@@ -1946,11 +1958,7 @@ indirectly through syntactic constructs
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#escape-sequence-unicode</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-entity</string>
+					<string>#string-unicode-guts</string>
 				</dict>
 			</array>
 		</dict>
@@ -1992,10 +2000,10 @@ indirectly through syntactic constructs
 			<key>name</key>
 			<string>constant.language.python</string>
 		</dict>
-		<key>string-raw-double-quoted-multi-line</key>
+		<key>string-raw-bin-double-quoted-multi-line</key>
 		<dict>
 			<key>begin</key>
-			<string>(\b(?:r|R|rb|rB|Rb|RB|br|bR|Br|BR))?\"\"\"</string>
+			<string>(\b(?:[rR][bB]|[bB][rR]))\"\"\"</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -2011,19 +2019,15 @@ indirectly through syntactic constructs
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\\.</string>
-				</dict>
-				<dict>
 					<key>include</key>
-					<string>#string-formatting</string>
+					<string>#string-raw-bin-guts</string>
 				</dict>
 			</array>
 		</dict>
-		<key>string-raw-double-quoted-single-line</key>
+		<key>string-raw-bin-double-quoted-single-line</key>
 		<dict>
 			<key>begin</key>
-			<string>(\b(?:r|R|rb|rB|Rb|RB|br|bR|Br|BR))?\"</string>
+			<string>(\b(?:[rR][bB]|[bB][rR]))\"</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -2047,6 +2051,16 @@ indirectly through syntactic constructs
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>include</key>
+					<string>#string-raw-bin-guts</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string-raw-bin-guts</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
 					<key>match</key>
 					<string>\\.</string>
 				</dict>
@@ -2056,10 +2070,10 @@ indirectly through syntactic constructs
 				</dict>
 			</array>
 		</dict>
-		<key>string-raw-single-quoted-multi-line</key>
+		<key>string-raw-bin-single-quoted-multi-line</key>
 		<dict>
 			<key>begin</key>
-			<string>(\b(?:r|R|rb|rB|Rb|RB|br|bR|Br|BR))?\'\'\'</string>
+			<string>(\b(?:[rR][bB]|[bB][rR]))\'\'\'</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -2075,19 +2089,15 @@ indirectly through syntactic constructs
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\\.</string>
-				</dict>
-				<dict>
 					<key>include</key>
-					<string>#string-formatting</string>
+					<string>#string-raw-bin-guts</string>
 				</dict>
 			</array>
 		</dict>
-		<key>string-raw-single-quoted-single-line</key>
+		<key>string-raw-bin-single-quoted-single-line</key>
 		<dict>
 			<key>begin</key>
-			<string>(\b(?:r|R|rb|rB|Rb|RB|br|bR|Br|BR))?\'</string>
+			<string>(\b(?:[rR][bB]|[bB][rR]))\'</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -2111,12 +2121,138 @@ indirectly through syntactic constructs
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>include</key>
+					<string>#string-raw-bin-guts</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string-raw-double-quoted-multi-line</key>
+		<dict>
+			<key>begin</key>
+			<string>(\b[rR])\"\"\"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.string.python</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\"\"\"</string>
+			<key>name</key>
+			<string>string.quoted.triple.raw.python</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string-raw-guts</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string-raw-double-quoted-single-line</key>
+		<dict>
+			<key>begin</key>
+			<string>(\b[rR])\"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.string.python</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?:\"|(?&lt;!\\)(\n))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.newline.python</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.double.raw.python</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string-raw-guts</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string-raw-guts</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
 					<key>match</key>
 					<string>\\.</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>#string-formatting</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-brace-formatting</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string-raw-single-quoted-multi-line</key>
+		<dict>
+			<key>begin</key>
+			<string>(\b[rR])\'\'\'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.string.python</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\'\'\'</string>
+			<key>name</key>
+			<string>string.quoted.triple.raw.python</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string-raw-guts</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string-raw-single-quoted-single-line</key>
+		<dict>
+			<key>begin</key>
+			<string>(\b[rR])\'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.string.python</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?:\'|(?&lt;!\\)(\n))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.newline.python</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.raw.python</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string-raw-guts</string>
 				</dict>
 			</array>
 		</dict>
@@ -2140,11 +2276,7 @@ indirectly through syntactic constructs
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#escape-sequence-unicode</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-entity</string>
+					<string>#string-unicode-guts</string>
 				</dict>
 			</array>
 		</dict>
@@ -2172,6 +2304,16 @@ indirectly through syntactic constructs
 			</dict>
 			<key>name</key>
 			<string>string.quoted.single.python</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#string-unicode-guts</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string-unicode-guts</key>
+		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
