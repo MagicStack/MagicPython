@@ -1400,10 +1400,10 @@ indirectly through syntactic constructs
         and | or | not | in | is | for | if | else | yield | await
     )(?!\s*:)\b
 
-    | != | == | &gt;= | &lt;= | &lt;&lt; | &gt;&gt;
+    | != | == | &gt;= | &lt;= | &lt;&lt; | &gt;&gt; | @=
     | &amp;&amp; | \|\| | \*\* | //
     | &gt; | &lt; | \+ | - | \* | % | \| | &amp; | ^
-    | ~ | \? | ! | /
+    | ~ | \? | ! | / | @
 </string>
 					<key>name</key>
 					<string>keyword.operator.python</string>
