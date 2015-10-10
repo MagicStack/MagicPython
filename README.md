@@ -22,7 +22,7 @@ led to the creation of this package.
 
 This is meant to be a drop-in replacement for the default Python package.
 
-- copy the MagicPython package into the SUblime user packages directory
+- copy the MagicPython package into the Sublime user packages directory
 - disable Pyhton package
 - enjoy
 
@@ -50,13 +50,46 @@ continuation or even having comments mixed in with implicit string
 concatenation. All of these will be highlighted as you'd expect in any other
 place in the code.
 
+```python
+def some_func(a,                        # nothing fancy here, yet
+
+              b: 'Annotation: '         # implicitly
+                 '"foo" for Foo, '      # concatenated
+                 '"bar" for Bar, '      # annotation
+                 '"other" otherwise'='otherwise'):
+```
+
 A more advanced use case for annotations is to actually have complex expressions
 in them, such as lambda functions, tuples, lists, dicts, sets, comprehensions.
 Admittedly, all of these might be less frequently used, but when they are, you
 can rely on them being highlighted normally in all their glorious details.
 
+```python
+# no reason why this should cause the highlighter to break
+#
+def some_func(a:
+                 # annotation starts here
+                 lambda x=None:
+                    {key: val
+                        for key, val in
+                            (x if x is not None else [])
+                    }
+                    # annotation ends here and below is the default for 'a'
+                    =42):
+```
+
 Result annotations are handled as any other expression would be. No reason to
 worry that the body of the function would look messed up.
+
+```python
+# no reason why this should cause the highlighter to break
+#
+def some_func() -> {
+                     'Some',        # comments
+                     'valid',       # are
+                     'expression'   # good
+                   }:
+```
 
 
 ### Strings
