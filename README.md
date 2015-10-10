@@ -5,7 +5,7 @@
 This is a package with preferences and syntax highlighter for cutting edge
 Python 3. The syntax is compatible with
 [Sublime Text](http://www.sublimetext.com). It is meant to be a drop-in
-replacement for the default Pyhton package.
+replacement for the default Python package.
 
 The main motivation behind this package was the difficulty of using modern
 Python with other common syntax highlighters. They do a good job of the 90% of
@@ -23,7 +23,7 @@ led to the creation of this package.
 This is meant to be a drop-in replacement for the default Python package.
 
 - copy the MagicPython package into the Sublime user packages directory
-- disable Pyhton package
+- disable Python package
 - enjoy
 
 You may want to experiment with the color schemes to see which suits your taste
@@ -32,7 +32,7 @@ best. We will release our own color scheme to take advantage of our syntax soon.
 
 ## Changes and Improvements
 
-Overall, the central idea that it should be easy to notice something odd or
+Overall, the central idea is that it should be easy to notice something odd or
 special about the code. Odd or special doesn't necessarily mean incorrect, but
 certainly worth the explicit attention.
 
@@ -43,7 +43,7 @@ Annotations should not break the highlighting. They should be no more difficult
 to read at a glance than other code or comments.
 
 A typical case is having a string annotation that spans several lines by using
-implicit string concatenation. Multiline strings are suboptimal for use in
+implicit string concatenation. Multi-line strings are suboptimal for use in
 annotations as it may be highly undesirable to have odd indentation and extra
 whitespace in the annotation string. Of course, there is no problem using line
 continuation or even having comments mixed in with implicit string
@@ -99,18 +99,18 @@ Making the highlighter more friendly towards these uses can help you concentrate
 your efforts on what matters rather than visual parsing.
 
 Raw strings are often interpreted as regular expressions. This is a bit of a
-problem, because depending on the application this may actaully not be the most
+problem, because depending on the application this may actually not be the most
 common case. Raw strings can simply be the input to some other processor, in
 which case regexp-specific highlighting is really hindering the overall
 readability.
 
 String formatting is often only supported for '%-style formatting', however, the
 recommended and more readable syntax used by `.format` is ignored. The benefits
-of using simple and readable `{key}` replacement fiends are hindered by the fact
+of using simple and readable `{key}` replacement fields are hindered by the fact
 that in a complex or long string expression it may not be easily apparent what
 parameters will actually be needed by `.format`. This is why MagicPyhton
 highlights both kinds of string formatting syntax within the appropriate string
-types (bytes don't have a `.format` method in Python3, so they don't get the
+types (bytes don't have a `.format` method in Python 3, so they don't get the
 special highlighting for it, raw and unicode strings do). Additionally, the
 highlighter also validates that the formatting is following the correct syntax.
 It can help noticing an error in complex formatting expressions early.
@@ -123,7 +123,7 @@ binary, hexadecimal or complex numbers are used it's worth noting that they are
 of a special type. Highlighting of Python 2 'L' integers is also supported.
 
 
-### Pyhton3.5 features
+### Python 3.5 features
 
 New keywords `async` and `await` are properly highlighted. Currently, these
 keywords are new and are not yet reserved, so the Python interpreter will allow
@@ -153,7 +153,7 @@ where standard classes are extended. It is also easier to notice some typos
 
 MagicPython highlights keywords when they are used as parameter/argument names.
 This was mentioned for the case of `async` and `await`, but it holds true for
-all other keywords. Although the Pyhton interpreter will produce an appropriate
+all other keywords. Although the Python interpreter will produce an appropriate
 error message when reserved keywords are used as identifier names, it's still
 worth showing them early, to spare even this small debugging effort.
 
@@ -174,12 +174,12 @@ the code to be scoped and the spec that the result must match.
 If you intend to submit a pull request, please follow the following guidelines:
 
 - keep code lines under 80 characters in length, it improves readability
-- please _do_ use multiline regular expressions for any non-trivial cases like:
+- please _do_ use multi-line regular expressions for any non-trivial cases like:
 
     + the regexp contains a mix of escaped and unescaped braces/parentheses
     + the regexp has several `|` in it
     + the regexp has several pairs of parentheses, especially nested ones
-    + or the regexp if simply longer than 35 characters
+    + or the regexp is simply longer than 35 characters
 
 - always run `make test` to ensure that your changes didn't have unexpected side
   effects
