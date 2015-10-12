@@ -1,6 +1,7 @@
 ->
 def f(): pass
 $
+?
 a=$('.class').fuuuu(baz=1)
 # we recover just fine
 b = !some_ruby?
@@ -17,6 +18,7 @@ f             : meta.function-call.python, source.python
 :             : source.python
 pass          : keyword.control.flow.python, source.python
 $             : invalid.illegal.character.python, source.python
+?             : invalid.illegal.character.python, source.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
 $             : invalid.illegal.character.python, source.python
@@ -37,7 +39,7 @@ baz           : meta.function-call.arguments.python, meta.function-call.python, 
 b             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-!             : keyword.operator.python, source.python
+!             : invalid.illegal.character.python, source.python
 some_ruby     : source.python
 ?             : invalid.illegal.character.python, source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python

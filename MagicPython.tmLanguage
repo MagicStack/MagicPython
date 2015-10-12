@@ -92,6 +92,22 @@
 				</dict>
 			</array>
 		</dict>
+		<key>backticks</key>
+		<dict>
+			<key>begin</key>
+			<string>\`</string>
+			<key>end</key>
+			<string>(?:\`|(?&lt;!\\)(\n))</string>
+			<key>name</key>
+			<string>invalid.deprecated.backtick.python</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#expression</string>
+				</dict>
+			</array>
+		</dict>
 		<key>builtin-callables</key>
 		<dict>
 			<key>patterns</key>
@@ -546,39 +562,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>error</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>[?$]</string>
-					<key>name</key>
-					<string>invalid.illegal.character.python</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>-&gt;</string>
-					<key>name</key>
-					<string>invalid.illegal.annotation.python</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>\`</string>
-					<key>end</key>
-					<string>(?:\`|(?&lt;!\\)(\n))</string>
-					<key>name</key>
-					<string>invalid.deprecated.backtick.python</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#expression</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
 		<key>escape-sequence</key>
 		<dict>
 			<key>match</key>
@@ -624,7 +607,11 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#error</string>
+					<string>#backticks</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#illegal-anno</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -697,6 +684,10 @@
 				<dict>
 					<key>include</key>
 					<string>#special-names</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#invalid-chars</string>
 				</dict>
 			</array>
 		</dict>
@@ -878,6 +869,13 @@
 				</dict>
 			</array>
 		</dict>
+		<key>illegal-anno</key>
+		<dict>
+			<key>match</key>
+			<string>-&gt;</string>
+			<key>name</key>
+			<string>invalid.illegal.annotation.python</string>
+		</dict>
 		<key>illegal-names</key>
 		<dict>
 			<key>match</key>
@@ -918,6 +916,26 @@
 					<string>(?x)
   \b ([[:alpha:]_]\w*) \b
 </string>
+				</dict>
+			</array>
+		</dict>
+		<key>invalid-chars</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[?$]</string>
+					<key>name</key>
+					<string>invalid.illegal.character.python</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>this rule exists to highlight errors</string>
+					<key>match</key>
+					<string>!\b</string>
+					<key>name</key>
+					<string>invalid.illegal.character.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -1054,7 +1072,11 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#error</string>
+							<string>#backticks</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#illegal-anno</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -1063,6 +1085,10 @@
 						<dict>
 							<key>include</key>
 							<string>#line-continuation</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#invalid-chars</string>
 						</dict>
 					</array>
 				</dict>
@@ -1466,7 +1492,7 @@ indirectly through syntactic constructs
     | != | == | &gt;= | &lt;= | &lt;&lt; | &gt;&gt; | @=
     | &amp;&amp; | \|\| | \*\* | //
     | &gt; | &lt; | \+ | - | \* | % | \| | &amp; | \^
-    | ~ | \? | ! | / | @
+    | ~ | / | @
 </string>
 					<key>name</key>
 					<string>keyword.operator.python</string>

@@ -1,7 +1,7 @@
-!a + b @ c ^ d // e % f & e and not g or h
+~a + b @ c ^ d // e % f & e and not g or h
 
 
-!             : keyword.operator.python, source.python
+~             : keyword.operator.python, source.python
 a             : source.python
 +             : keyword.operator.python, source.python
  b            : source.python
