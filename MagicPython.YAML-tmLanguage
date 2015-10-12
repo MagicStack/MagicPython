@@ -87,6 +87,7 @@ repository:
       '1': {name: punctuation.definition.dict.end.python}
     patterns:
       - include: '#expression'
+      - include: '#illegal-names'
 
   list:
     begin: \[
@@ -97,6 +98,7 @@ repository:
       '1': {name: punctuation.definition.list.end.python}
     patterns:
       - include: '#expression'
+      - include: '#illegal-names'
 
   round-braces:
     begin: \(
@@ -107,6 +109,7 @@ repository:
       '1': {name: punctuation.parenthesis.end.python}
     patterns:
       - include: '#expression'
+      - include: '#illegal-names'
 
   line-continuation:
     patterns:

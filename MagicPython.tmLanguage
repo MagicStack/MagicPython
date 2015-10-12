@@ -405,6 +405,10 @@
 					<key>include</key>
 					<string>#expression</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#illegal-names</string>
+				</dict>
 			</array>
 		</dict>
 		<key>decorator</key>
@@ -1172,6 +1176,10 @@
 					<key>include</key>
 					<string>#expression</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#illegal-names</string>
+				</dict>
 			</array>
 		</dict>
 		<key>literal</key>
@@ -1621,6 +1629,10 @@ indirectly through syntactic constructs
 				<dict>
 					<key>include</key>
 					<string>#expression</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#illegal-names</string>
 				</dict>
 			</array>
 		</dict>
