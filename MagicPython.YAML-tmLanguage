@@ -74,7 +74,7 @@ repository:
       - include: '#magic-variable-names'
       - include: '#member-access'
       - include: '#special-names'
-      - include: '#invalid-chars'
+      - include: '#illegal-operator'
 
   special-names:
     name: constant.other.caps.python
@@ -572,7 +572,7 @@ repository:
           - include: '#illegal-anno'
           - include: '#lambda-parameter-with-default'
           - include: '#line-continuation'
-          - include: '#invalid-chars'
+          - include: '#illegal-operator'
 
   lambda-incomplete:
     name: storage.type.function.lambda.python
@@ -960,7 +960,7 @@ repository:
     patterns:
       - include: '#expression'
 
-  invalid-chars:
+  illegal-operator:
     patterns:
       - name: invalid.illegal.character.python
         match: '[?$]'
