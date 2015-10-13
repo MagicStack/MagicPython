@@ -5,7 +5,7 @@ arr2 = [i for i in range(7) if i != 3]
 arr2          : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-[             : source.python
+[             : punctuation.definition.list.begin.python, source.python
 i             : source.python
 for           : keyword.operator.python, source.python
  i            : source.python
@@ -21,4 +21,4 @@ if            : keyword.operator.python, source.python
 !=            : keyword.operator.python, source.python
               : source.python
 3             : constant.numeric.dec.python, source.python
-]             : source.python
+]             : punctuation.definition.list.end.python, source.python

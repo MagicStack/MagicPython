@@ -2,11 +2,11 @@
 
 
 
-(             : source.python
+(             : punctuation.parenthesis.begin.python, source.python
 a,            : source.python
 *             : keyword.operator.python, source.python
 rest, b       : source.python
-)             : source.python
+)             : punctuation.parenthesis.end.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python

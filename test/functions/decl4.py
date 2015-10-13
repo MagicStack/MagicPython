@@ -25,14 +25,14 @@ x             : meta.function.lambda.parameters.python, meta.function.parameters
 None          : constant.language.python, meta.function.lambda.parameters.python, meta.function.parameters.python, meta.function.python, meta.lambda-function.python, source.python
 :             : meta.function.parameters.python, meta.function.python, meta.lambda-function.python, punctuation.section.function.lambda.begin.python, source.python
                      : meta.function.parameters.python, meta.function.python, source.python
-{             : meta.function.parameters.python, meta.function.python, source.python
+{             : meta.function.parameters.python, meta.function.python, punctuation.definition.dict.begin.python, source.python
 key: val      : meta.function.parameters.python, meta.function.python, source.python
                          : meta.function.parameters.python, meta.function.python, source.python
 for           : keyword.operator.python, meta.function.parameters.python, meta.function.python, source.python
  key, val     : meta.function.parameters.python, meta.function.python, source.python
 in            : keyword.operator.python, meta.function.parameters.python, meta.function.python, source.python
                              : meta.function.parameters.python, meta.function.python, source.python
-(             : meta.function.parameters.python, meta.function.python, source.python
+(             : meta.function.parameters.python, meta.function.python, punctuation.parenthesis.begin.python, source.python
 x             : meta.function.parameters.python, meta.function.python, source.python
 if            : keyword.operator.python, meta.function.parameters.python, meta.function.python, source.python
  x            : meta.function.parameters.python, meta.function.python, source.python
@@ -44,11 +44,11 @@ None          : constant.language.python, meta.function.parameters.python, meta.
               : meta.function.parameters.python, meta.function.python, source.python
 else          : keyword.operator.python, meta.function.parameters.python, meta.function.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-[             : meta.function.parameters.python, meta.function.python, source.python
-]             : meta.function.parameters.python, meta.function.python, source.python
-)             : meta.function.parameters.python, meta.function.python, source.python
+[             : meta.function.parameters.python, meta.function.python, punctuation.definition.list.begin.python, source.python
+]             : meta.function.parameters.python, meta.function.python, punctuation.definition.list.end.python, source.python
+)             : meta.function.parameters.python, meta.function.python, punctuation.parenthesis.end.python, source.python
                      : meta.function.parameters.python, meta.function.python, source.python
-}             : meta.function.parameters.python, meta.function.python, source.python
+}             : meta.function.parameters.python, meta.function.python, punctuation.definition.dict.end.python, source.python
 =             : keyword.operator.assignment.python, meta.function.parameters.python, meta.function.python, source.python
 42            : constant.numeric.dec.python, meta.function.parameters.python, meta.function.python, source.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python

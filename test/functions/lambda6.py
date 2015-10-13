@@ -15,12 +15,12 @@ a             : meta.function.lambda.parameters.python, meta.lambda-function.pyt
               : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 c             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.pyhton
 =             : keyword.operator.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
-{             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
-'             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, string.quoted.single.python
-'             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, string.quoted.single.python
+{             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.dict.begin.python, source.python
+'             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+'             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
 :             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 555           : constant.numeric.dec.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
-}             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
+}             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.dict.end.python, source.python
 ,             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.separator.parameters.python, source.python
               : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 \             : meta.function.lambda.parameters.python, meta.lambda-function.python, separator.continuation.line.python, source.python

@@ -6,7 +6,7 @@ def foo(a=1): pass # doesn't break!
 
 
 r             : source.python, storage.type.string.python, string.quoted.double.raw.python
-"             : source.python, string.quoted.double.raw.python
+"             : punctuation.definition.string.begin.python, source.python, string.quoted.double.raw.python
 bad string    : source.python, string.quoted.double.raw.python
               : invalid.illegal.newline.python, source.python, string.quoted.double.raw.python
 foo           : source.python

@@ -23,11 +23,11 @@ $             : invalid.illegal.character.python, source.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
 $             : invalid.illegal.character.python, source.python
-(             : source.python
-'             : source.python, string.quoted.single.python
+(             : punctuation.parenthesis.begin.python, source.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 .class        : source.python, string.quoted.single.python
-'             : source.python, string.quoted.single.python
-)             : source.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
+)             : punctuation.parenthesis.end.python, source.python
 .             : source.python
 fuuuu         : meta.function-call.python, source.python
 (             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python

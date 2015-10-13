@@ -8,7 +8,7 @@ multiline "unicode" string \
 
 
 
-"""           : source.python, string.quoted.triple.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.triple.python
 multiline "unicode" string  : source.python, string.quoted.triple.python
 \             : constant.language.python, source.python, string.quoted.triple.python
               : source.python, string.quoted.triple.python
@@ -21,4 +21,4 @@ aaaa          : source.python, string.quoted.triple.python
               : source.python, string.quoted.triple.python
               : source.python, string.quoted.triple.python
 \N{BLACK SPADE SUIT} : constant.character.python, source.python, string.quoted.triple.python
-"""           : source.python, string.quoted.triple.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.triple.python

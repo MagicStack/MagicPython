@@ -4,7 +4,7 @@ def foo(a=1): pass
 
 
 
-"             : source.python, string.quoted.double.python
+"             : punctuation.definition.string.begin.python, source.python, string.quoted.double.python
 bad           : source.python, string.quoted.double.python
 \\            : constant.character.python, source.python, string.quoted.double.python
  string       : source.python, string.quoted.double.python

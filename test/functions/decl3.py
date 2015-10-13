@@ -17,15 +17,15 @@ self          : meta.function.parameters.python, meta.function.python, source.py
               : meta.function.parameters.python, meta.function.python, source.python
 a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
 :             : meta.function.parameters.python, meta.function.python, punctuation.separator.annotation.python, source.python
-(             : meta.function.parameters.python, meta.function.python, source.python
-'             : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
+(             : meta.function.parameters.python, meta.function.python, punctuation.parenthesis.begin.python, source.python
+'             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 abc           : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
-'             : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
+'             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
               : meta.function.parameters.python, meta.function.python, source.python
-'             : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
+'             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 def           : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
-'             : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
-)             : meta.function.parameters.python, meta.function.python, source.python
+'             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
+)             : meta.function.parameters.python, meta.function.python, punctuation.parenthesis.end.python, source.python
 =             : keyword.operator.assignment.python, meta.function.parameters.python, meta.function.python, source.python
 123           : constant.numeric.dec.python, meta.function.parameters.python, meta.function.python, source.python
 ,             : meta.function.parameters.python, meta.function.python, punctuation.separator.parameters.python, source.python
@@ -33,14 +33,14 @@ def           : meta.function.parameters.python, meta.function.python, source.py
 boo           : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
 :             : meta.function.parameters.python, meta.function.python, punctuation.separator.annotation.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-'             : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
+'             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 abc           : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
-'             : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
+'             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
               : meta.function.parameters.python, meta.function.python, source.python
                           : meta.function.parameters.python, meta.function.python, source.python
-'             : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
+'             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 def           : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
-'             : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.python
+'             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
               : meta.function.parameters.python, meta.function.python, source.python
 =             : keyword.operator.assignment.python, meta.function.parameters.python, meta.function.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python

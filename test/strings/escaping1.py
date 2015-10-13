@@ -3,7 +3,7 @@ foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
 
 
-"             : source.python, string.quoted.double.python
+"             : punctuation.definition.string.begin.python, source.python, string.quoted.double.python
 simple        : source.python, string.quoted.double.python
 \\            : constant.character.python, source.python, string.quoted.double.python
  string       : source.python, string.quoted.double.python
@@ -36,4 +36,4 @@ foo           : source.python, string.quoted.double.python
 \05           : constant.character.python, source.python, string.quoted.double.python
               : source.python, string.quoted.double.python
 \005          : constant.character.python, source.python, string.quoted.double.python
-"             : source.python, string.quoted.double.python
+"             : punctuation.definition.string.end.python, source.python, string.quoted.double.python

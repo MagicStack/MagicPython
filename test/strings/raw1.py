@@ -9,7 +9,7 @@ multiline "raw" string \
 
 
 r             : source.python, storage.type.string.python, string.quoted.triple.raw.python
-"""           : source.python, string.quoted.triple.raw.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.triple.raw.python
 multiline "raw" string \ : source.python, string.quoted.triple.raw.python
               : source.python, string.quoted.triple.raw.python
               : source.python, string.quoted.triple.raw.python
@@ -23,4 +23,4 @@ f1            : source.python, string.quoted.triple.raw.python
               : source.python, string.quoted.triple.raw.python
 \N            : source.python, string.quoted.triple.raw.python
 {BLACK SPADE SUIT} : constant.character.format.python, source.python, string.quoted.triple.raw.python
-"""           : source.python, string.quoted.triple.raw.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.triple.raw.python
