@@ -846,9 +846,9 @@ repository:
           | IsADirectory | NotADirectory | Permission | ProcessLookup
           | Timeout
           | Key | Lookup | Memory | Name | NotImplemented | OS | Overflow
-          | Reference | Runtime | Recursion | Standard | Syntax | System
+          | Reference | Runtime | Recursion | Syntax | System
           | Tab | Type | UnboundLocal | Unicode(Encode|Decode|Translate)?
-          | Value | VMS | Windows | ZeroDivision
+          | Value | Windows | ZeroDivision
         ) Error
       |
         ((Pending)?Deprecation | Runtime | Syntax | User | Future | Import
