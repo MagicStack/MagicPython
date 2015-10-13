@@ -687,7 +687,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#invalid-chars</string>
+					<string>#illegal-operator</string>
 				</dict>
 			</array>
 		</dict>
@@ -891,6 +891,26 @@
 			<key>name</key>
 			<string>keyword.control.flow.python</string>
 		</dict>
+		<key>illegal-operator</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[?$]</string>
+					<key>name</key>
+					<string>invalid.illegal.character.python</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>We don't want `!` to flash when we're typing `!=`</string>
+					<key>match</key>
+					<string>!\b</string>
+					<key>name</key>
+					<string>invalid.illegal.character.python</string>
+				</dict>
+			</array>
+		</dict>
 		<key>inheritance-name</key>
 		<dict>
 			<key>patterns</key>
@@ -916,26 +936,6 @@
 					<string>(?x)
   \b ([[:alpha:]_]\w*) \b
 </string>
-				</dict>
-			</array>
-		</dict>
-		<key>invalid-chars</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>[?$]</string>
-					<key>name</key>
-					<string>invalid.illegal.character.python</string>
-				</dict>
-				<dict>
-					<key>comment</key>
-					<string>this rule exists to highlight errors</string>
-					<key>match</key>
-					<string>!\b</string>
-					<key>name</key>
-					<string>invalid.illegal.character.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -1088,7 +1088,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>#invalid-chars</string>
+							<string>#illegal-operator</string>
 						</dict>
 					</array>
 				</dict>
