@@ -152,7 +152,7 @@
     | Unicode | Bytes | Resource
   )? Warning
 |
-  SystemExit | Stop(Async)?Iteration | NotImplemented
+  SystemExit | Stop(Async)?Iteration
   | KeyboardInterrupt
   | GeneratorExit | (Base)?Exception
 )\b
@@ -1205,7 +1205,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(True|False|None)\b</string>
+					<string>\b(True|False|None|NotImplemented|Ellipsis)\b</string>
 					<key>name</key>
 					<string>constant.language.python</string>
 				</dict>

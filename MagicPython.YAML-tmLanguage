@@ -149,7 +149,7 @@ repository:
   literal:
     patterns:
       - name: constant.language.python
-        match: \b(True|False|None)\b
+        match: \b(True|False|None|NotImplemented|Ellipsis)\b
 
       - include: '#number'
 
@@ -855,7 +855,7 @@ repository:
           | Unicode | Bytes | Resource
         )? Warning
       |
-        SystemExit | Stop(Async)?Iteration | NotImplemented
+        SystemExit | Stop(Async)?Iteration
         | KeyboardInterrupt
         | GeneratorExit | (Base)?Exception
       )\b

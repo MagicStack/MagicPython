@@ -1,7 +1,7 @@
 AttributeError ConnectionAbortedError
 PendingDeprecationWarning
 SystemExit
-NotImplemented
+NotImplemented True None False Ellipsis
 Warning
 Exception BaseException
 sum oct abs type object print
@@ -13,7 +13,15 @@ AttributeError : source.python, support.type.exception.python
 ConnectionAbortedError : source.python, support.type.exception.python
 PendingDeprecationWarning : source.python, support.type.exception.python
 SystemExit    : source.python, support.type.exception.python
-NotImplemented : source.python, support.type.exception.python
+NotImplemented : constant.language.python, source.python
+              : source.python
+True          : constant.language.python, source.python
+              : source.python
+None          : constant.language.python, source.python
+              : source.python
+False         : constant.language.python, source.python
+              : source.python
+Ellipsis      : constant.language.python, source.python
 Warning       : source.python, support.type.exception.python
 Exception     : source.python, support.type.exception.python
               : source.python
