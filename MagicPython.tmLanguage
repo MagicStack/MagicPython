@@ -83,7 +83,7 @@
 					<key>match</key>
 					<string>(?x)
      &lt;&lt;= | &gt;&gt;= | //= | \*\*=
-    | \+= | -= | /=
+    | \+= | -= | /= | @=
     | \*= | %= | ~= | \^= | &amp;= | \|=
     | =
 </string>
@@ -1489,7 +1489,7 @@ indirectly through syntactic constructs
         and | or | not | in | is | for | if | else | yield | await
     )(?!\s*:)\b
 
-    | != | == | &gt;= | &lt;= | &lt;&lt; | &gt;&gt; | @=
+    | != | == | &gt;= | &lt;= | &lt;&lt; | &gt;&gt;
     | &amp;&amp; | \|\| | \*\* | //
     | &gt; | &lt; | \+ | - | \* | % | \| | &amp; | \^
     | ~ | / | @

@@ -5,7 +5,7 @@ a ^= d
 
 
 a             : source.python
-@=            : keyword.operator.python, source.python
+@=            : keyword.operator.assignment.python, source.python
  b            : source.python
 a             : source.python
 -=            : keyword.operator.assignment.python, source.python
