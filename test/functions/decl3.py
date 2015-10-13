@@ -61,7 +61,7 @@ baz           : meta.function-call.arguments.python, meta.function-call.python, 
 )             : meta.function-call.python, meta.function.parameters.python, meta.function.python, punctuation.definition.arguments.end.python, source.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
               : meta.function.python, source.python
-->            : meta.function.python, source.python
+->            : meta.function.python, punctuation.separator.annotation.result.python, source.python
               : meta.function.python, source.python
 123           : constant.numeric.dec.python, meta.function.python, source.python
               : meta.function.python, source.python

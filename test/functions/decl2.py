@@ -12,7 +12,7 @@ lambda        : keyword.control.flow.python, meta.function.parameters.python, me
 =             : meta.function.parameters.python, meta.function.python, source.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
               : meta.function.python, source.python
-->            : meta.function.python, source.python
+->            : meta.function.python, punctuation.separator.annotation.result.python, source.python
               : meta.function.python, source.python
 qqq           : meta.function.python, meta.item-access.python, source.python
 [             : meta.function-call.arguments.python, meta.function.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python

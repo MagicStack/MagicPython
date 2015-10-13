@@ -1609,7 +1609,7 @@ indirectly through syntactic constructs
 		<key>return-annotation</key>
 		<dict>
 			<key>begin</key>
-			<string>-&gt;</string>
+			<string>(-&gt;)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
