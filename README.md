@@ -26,9 +26,6 @@ This is meant to be a drop-in replacement for the default Python package.
 - disable Python package
 - enjoy
 
-You may want to experiment with the color schemes to see which suits your taste
-best. We will release our own color scheme to take advantage of our syntax soon.
-
 
 ## Changes and Improvements
 
