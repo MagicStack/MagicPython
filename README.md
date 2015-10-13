@@ -3,8 +3,8 @@
 # MagicPython
 
 This is a package with preferences and syntax highlighter for cutting edge
-Python 3. The syntax is compatible with
-[Sublime Text](http://www.sublimetext.com). It is meant to be a drop-in
+Python 3 (although Python 2 is well supported too). The syntax is compatible
+with [Sublime Text](http://www.sublimetext.com). It is meant to be a drop-in
 replacement for the default Python package.
 
 The main motivation behind this package was the difficulty of using modern
@@ -146,7 +146,7 @@ becomes a deliberate rather than accidental act.
 
 Highlighting built-ins in class inheritance list makes it slightly more obvious
 where standard classes are extended. It is also easier to notice some typos
-(have you ever typed `Excepiton`?) a little earlier.
+(have you ever typed `Exception`?) a little earlier.
 
 
 ### Parameters and Arguments
