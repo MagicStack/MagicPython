@@ -13,12 +13,13 @@ lambda        : meta.lambda-function.python, source.python, storage.type.functio
 :             : meta.lambda-function.python, punctuation.section.function.lambda.begin.python, source.python
               : source.python
 None          : constant.language.python, source.python
-def           : source.python, storage.type.function.python
+def           : meta.function.python, source.python, storage.type.function.python
+              : meta.function.python, source.python
+f             : entity.name.function.python, meta.function.python, source.python
+(             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
+)             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
+:             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
-f             : meta.function-call.python, source.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
-)             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
-:             : source.python
 return        : keyword.control.flow.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python

@@ -599,7 +599,7 @@ repository:
         \s*
         (?:(async) \s+)? (def)\s+
           (?=
-            [[:alpha:]_][[:word:]]+ \s* \(
+            [[:alpha:]_][[:word:]]* \s* \(
           )
 
     end: (:)
