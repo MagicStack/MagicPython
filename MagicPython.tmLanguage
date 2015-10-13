@@ -356,6 +356,10 @@
 			<array>
 				<dict>
 					<key>include</key>
+					<string>#illegal-object-name</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#builtin-possible-callables</string>
 				</dict>
 				<dict>
@@ -836,6 +840,10 @@
 			<array>
 				<dict>
 					<key>include</key>
+					<string>#illegal-object-name</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#builtin-possible-callables</string>
 				</dict>
 				<dict>
@@ -885,6 +893,15 @@
 </string>
 			<key>name</key>
 			<string>keyword.control.flow.python</string>
+		</dict>
+		<key>illegal-object-name</key>
+		<dict>
+			<key>comment</key>
+			<string>It's illegal to name class or function "True"</string>
+			<key>match</key>
+			<string>\b(True|False|None)\b</string>
+			<key>name</key>
+			<string>invalid.illegal.name.python</string>
 		</dict>
 		<key>illegal-operator</key>
 		<dict>

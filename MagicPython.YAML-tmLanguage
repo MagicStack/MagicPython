@@ -510,6 +510,7 @@ repository:
 
   class-name:
     patterns:
+      - include: '#illegal-object-name'
       - include: '#builtin-possible-callables'
       - name: entity.name.type.class.python
         match: |
@@ -614,6 +615,7 @@ repository:
 
   function-def-name:
     patterns:
+      - include: '#illegal-object-name'
       - include: '#builtin-possible-callables'
       - name: entity.name.function.python
         match: |
@@ -963,6 +965,11 @@ repository:
       - name: invalid.illegal.character.python
         comment: We don't want `!` to flash when we're typing `!=`
         match: '!\b'
+
+  illegal-object-name:
+    comment: It's illegal to name class or function "True"
+    name: invalid.illegal.name.python
+    match: \b(True|False|None)\b
 
   illegal-anno:
     name: invalid.illegal.annotation.python
