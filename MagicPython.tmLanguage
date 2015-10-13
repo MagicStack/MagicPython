@@ -165,14 +165,14 @@
 			<key>match</key>
 			<string>(?x)
   (?&lt;!\.)\b(
-    __import__ | abs | all | any | apply | callable | chr | cmp | coerce
-    | compile | copyright | credits | delattr | dir | divmod | enumerate
-    | eval | exec | execfile | exit | filter | format | getattr
-    | globals | hasattr | hash | help | id | input | intern
+    __import__ | abs | all | any | apply | callable | chr
+    | compile | copyright | credits | delattr | dir | divmod
+    | enumerate | eval | exec | exit | filter | format | getattr
+    | globals | hasattr | hash | help | id | input
     | isinstance | issubclass | iter | len | license | locals | map
     | max | memoryview | min | next | open | ord | pow | print
-    | quit | range | raw_input | reduce | reload | repr | round
-    | setattr | sorted | sum | unichr | vars | zip
+    | quit | range | reload | repr | round
+    | setattr | sorted | sum | vars | zip
   )\b
 </string>
 			<key>name</key>
@@ -201,11 +201,10 @@
 			<key>match</key>
 			<string>(?x)
   (?&lt;!\.)\b(
-    ascii | basestring | bin | bool | buffer | bytearray | bytes
-    | classmethod | complex | dict | file | float | frozenset
-    | hex | int | list | long | object | oct | property | reversed
+    ascii | bin | bool | bytearray | bytes
+    | classmethod | complex | dict | float | frozenset
+    | hex | int | list | object | oct | property | reversed
     | set | slice | staticmethod | str | super | tuple | type
-    | unicode | xrange
   )\b
 </string>
 			<key>name</key>
