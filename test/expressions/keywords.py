@@ -1,4 +1,4 @@
-as async continue del assert break finally for
+as async await continue del assert break finally for
 from elif else if import except pass raise
 return try while with
 
@@ -9,6 +9,8 @@ nonlocal global class def
 as            : keyword.control.flow.python, source.python
               : source.python
 async         : keyword.control.flow.python, source.python
+              : source.python
+await         : keyword.operator.python, source.python
               : source.python
 continue      : keyword.control.flow.python, source.python
               : source.python
