@@ -154,7 +154,7 @@
 |
   SystemExit | Stop(Async)?Iteration | NotImplemented
   | KeyboardInterrupt
-  | GeneratorExit | Exception
+  | GeneratorExit | (Base)?Exception
 )\b
 </string>
 			<key>name</key>

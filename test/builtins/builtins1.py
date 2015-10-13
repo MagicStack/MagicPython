@@ -2,6 +2,8 @@ AttributeError ConnectionAbortedError
 PendingDeprecationWarning
 SystemExit
 NotImplemented
+Warning
+Exception BaseException
 sum oct abs type object print
 
 
@@ -12,6 +14,10 @@ ConnectionAbortedError : source.python, support.type.exception.python
 PendingDeprecationWarning : source.python, support.type.exception.python
 SystemExit    : source.python, support.type.exception.python
 NotImplemented : source.python, support.type.exception.python
+Warning       : source.python, support.type.exception.python
+Exception     : source.python, support.type.exception.python
+              : source.python
+BaseException : source.python, support.type.exception.python
 sum           : source.python, support.function.builtin.python
               : source.python
 oct           : source.python, support.type.python
