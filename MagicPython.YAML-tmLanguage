@@ -75,6 +75,7 @@ repository:
       - include: '#member-access'
       - include: '#special-names'
       - include: '#illegal-operator'
+      - include: '#illegal-names'
 
   special-names:
     name: constant.other.caps.python
@@ -89,7 +90,6 @@ repository:
       '1': {name: punctuation.definition.dict.end.python}
     patterns:
       - include: '#expression'
-      - include: '#illegal-names'
 
   list:
     begin: \[
@@ -100,7 +100,6 @@ repository:
       '1': {name: punctuation.definition.list.end.python}
     patterns:
       - include: '#expression'
-      - include: '#illegal-names'
 
   round-braces:
     begin: \(
@@ -111,7 +110,6 @@ repository:
       '1': {name: punctuation.parenthesis.end.python}
     patterns:
       - include: '#expression'
-      - include: '#illegal-names'
 
   line-continuation:
     patterns:
@@ -533,7 +531,6 @@ repository:
         match: \=
       - include: '#call-wrapper-inheritance'
       - include: '#expression'
-      - include: '#illegal-names'
       - name: support.type.metaclass.python
         match: \bmetaclass\b
       - name: entity.other.inherited-class.pyhton
