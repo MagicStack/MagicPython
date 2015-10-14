@@ -2,5 +2,5 @@
 
 
 
-(?aiLmsux)    : entity.name.function.flag.regexp, source.regexp
+(?aiLmsux)    : source.regexp, storage.modifier.flag.regexp
 foo           : source.regexp

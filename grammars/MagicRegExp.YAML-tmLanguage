@@ -12,11 +12,11 @@ patterns:
 repository:
   expression:
     patterns:
-      - name: support.type.match.any.regexp
+      - name: support.other.match.any.regexp
         match: \.
-      - name: support.type.match.begin.regexp
+      - name: support.other.match.begin.regexp
         match: \^
-      - name: support.type.match.end.regexp
+      - name: support.other.match.end.regexp
         match: \$
       - name: keyword.operator.quantifier.regexp
         match: '[+*?]\??'
@@ -52,7 +52,7 @@ repository:
 
   charecter-set-escapes:
     patterns:
-      - name: support.type.escape.character.regexp
+      - name: constant.character.escape.regexp
         match: \\[abfnrtv\\]
       - include: '#escape-special'
       - name: constant.character.escape.regexp
@@ -62,7 +62,7 @@ repository:
       - include: '#escape-catchall'
 
   escape-special:
-    name: support.type.escape.special.regexp
+    name: support.other.escape.special.regexp
     match: \\([AbBdDsSwWZ])
 
   escape-character:
@@ -88,7 +88,7 @@ repository:
     name: meta.backreference.regexp
     match: (\\[1-9]\d?)
     captures:
-      '1': {name: entity.name.function.backreference.regexp}
+      '1': {name: entity.name.tag.backreference.regexp}
 
   escape-catchall:
     name: constant.character.escape.regexp
@@ -99,12 +99,12 @@ repository:
     begin: (\[)(\^)?(\])?
     end: (\])
     beginCaptures:
-      '1': {name: constant.character.set.regexp
+      '1': {name: constant.other.set.regexp
                   punctuation.character.set.begin.regexp}
       '2': {name: keyword.operator.negation.regexp}
       '3': {name: constant.character.set.regexp}
     endCaptures:
-      '1': {name: constant.character.set.regexp
+      '1': {name: constant.other.set.regexp
                   punctuation.character.set.end.regexp}
     patterns:
       - include: '#charecter-set-escapes'
@@ -112,7 +112,7 @@ repository:
         match: '[^\n]'
 
   flags:
-    name: entity.name.function.flag.regexp
+    name: storage.modifier.flag.regexp
     match: \(\?[aiLmsux]+\)
 
   named-group:
@@ -123,11 +123,11 @@ repository:
     end: \)
     beginCaptures:
       '1': {name: punctuation.parenthesis.named.begin.regexp
-                  support.type.parenthesis.regexp}
-      '2': {name: entity.name.function.named.group.regexp}
+                  support.other.parenthesis.regexp}
+      '2': {name: entity.name.tag.named.group.regexp}
     endCaptures:
       '0': {name: punctuation.parenthesis.named.end.regexp
-                  support.type.parenthesis.regexp}
+                  support.other.parenthesis.regexp}
     patterns:
       - include: '#expression'
 
@@ -138,10 +138,10 @@ repository:
         (\()  (\?P= \w+(?:\s+[[:alnum:]]+)?)  (\))
     captures:
       '1': {name: punctuation.parenthesis.backreference.named.begin.regexp
-                  support.type.parenthesis.regexp}
-      '2': {name: entity.name.function.named.backreference.regexp}
+                  support.other.parenthesis.regexp}
+      '2': {name: entity.name.tag.named.backreference.regexp}
       '3': {name: punctuation.parenthesis.backreference.named.end.regexp
-                  support.type.parenthesis.regexp}
+                  support.other.parenthesis.regexp}
 
   comments:
     name: comment.regexp
@@ -217,10 +217,10 @@ repository:
     end: \)
     beginCaptures:
       '0': {name: punctuation.parenthesis.non-capturing.begin.regexp
-                  support.type.parenthesis.regexp}
+                  support.other.parenthesis.regexp}
     endCaptures:
       '0': {name: punctuation.parenthesis.non-capturing.end.regexp
-                  support.type.parenthesis.regexp}
+                  support.other.parenthesis.regexp}
     patterns:
       - include: '#expression'
 
@@ -229,10 +229,10 @@ repository:
     end: \)
     beginCaptures:
       '0': {name: punctuation.parenthesis.begin.regexp
-                  support.type.parenthesis.regexp}
+                  support.other.parenthesis.regexp}
     endCaptures:
       '0': {name: punctuation.parenthesis.end.regexp
-                  support.type.parenthesis.regexp}
+                  support.other.parenthesis.regexp}
     patterns:
       - include: '#expression'
 ...

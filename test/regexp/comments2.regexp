@@ -6,7 +6,7 @@ comment 1
 
 
 
-(?x)          : entity.name.function.flag.regexp, source.regexp
+(?x)          : source.regexp, storage.modifier.flag.regexp
     foo       : source.regexp
 (?#           : comment.regexp, punctuation.comments.begin.regexp, source.regexp
 comment 1     : comment.regexp, source.regexp

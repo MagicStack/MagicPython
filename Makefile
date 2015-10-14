@@ -6,7 +6,7 @@ all:
 test: release
 #	Run tests
 	./node_modules/.bin/syntaxdev test --tests test/**/*.py --syntax grammars/MagicPython.YAML-tmLanguage
-	./node_modules/.bin/syntaxtest --tests test/**/*.regexp --syntax MagicRegExp.YAML-tmLanguage
+	./node_modules/.bin/syntaxdev test --tests test/**/*.regexp --syntax grammars/MagicRegExp.YAML-tmLanguage
 
 # 	Check if the version specified in "package.json" matches the latest git tag
 	@if [ \
@@ -18,4 +18,7 @@ test: release
 
 release:
 	./node_modules/.bin/syntaxdev build-plist --in grammars/MagicPython.YAML-tmLanguage --out grammars/MagicPython.tmLanguage
+	./node_modules/.bin/syntaxdev build-plist --in grammars/MagicRegExp.YAML-tmLanguage --out grammars/MagicRegExp.tmLanguage
+
 	./node_modules/.bin/syntaxdev build-cson --in grammars/MagicPython.YAML-tmLanguage --out grammars/MagicPython.cson
+	./node_modules/.bin/syntaxdev build-cson --in grammars/MagicRegExp.YAML-tmLanguage --out grammars/MagicRegExp.cson

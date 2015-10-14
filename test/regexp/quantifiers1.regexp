@@ -2,7 +2,7 @@
 
 
 
-^             : source.regexp, support.type.match.begin.regexp
+^             : source.regexp, support.other.match.begin.regexp
 a             : source.regexp
 +             : keyword.operator.quantifier.regexp, source.regexp
 b             : source.regexp
@@ -15,4 +15,4 @@ e             : source.regexp
 +?            : keyword.operator.quantifier.regexp, source.regexp
 f             : source.regexp
 ??            : keyword.operator.quantifier.regexp, source.regexp
-$             : source.regexp, support.type.match.end.regexp
+$             : source.regexp, support.other.match.end.regexp
