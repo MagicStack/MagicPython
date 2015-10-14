@@ -143,7 +143,7 @@ becomes a deliberate rather than accidental act.
 
 Highlighting built-ins in class inheritance list makes it slightly more obvious
 where standard classes are extended. It is also easier to notice some typos
-(have you ever typed `Exception`?) a little earlier.
+(have you ever typed `Excepiton`?) a little earlier.
 
 
 ### Parameters and Arguments
