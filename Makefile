@@ -1,11 +1,11 @@
 .PHONY: all test release
 
 all:
-	npm install syntaxdev@0.0.5
+	npm install syntaxdev@0.0.6
 
 test: release
 #	Run tests
-	./node_modules/.bin/syntaxdev test --tests test/**/*.py --syntax grammars/MagicPython.YAML-tmLanguage
+	./node_modules/.bin/syntaxdev test --tests test/**/*.py --syntax grammars/MagicPython.YAML-tmLanguage --add-syntax grammars/MagicRegExp.YAML-tmLanguage
 	./node_modules/.bin/syntaxdev test --tests test/**/*.regexp --syntax grammars/MagicRegExp.YAML-tmLanguage
 
 # 	Check if the version specified in "package.json" matches the latest git tag
