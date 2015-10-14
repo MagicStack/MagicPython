@@ -1,0 +1,18 @@
+(?x)
+    foo     (?#
+comment 1
+            )
+    bar     (?#comment 2)
+
+
+
+(?x)          : entity.name.function.flag.regexp, source.regexp
+    foo       : source.regexp
+(?#           : comment.regexp, punctuation.comments.begin.regexp, source.regexp
+comment 1     : comment.regexp, source.regexp
+              : comment.regexp, source.regexp
+)             : comment.regexp, punctuation.comments.end.regexp, source.regexp
+    bar       : source.regexp
+(?#           : comment.regexp, punctuation.comments.begin.regexp, source.regexp
+comment 2     : comment.regexp, source.regexp
+)             : comment.regexp, punctuation.comments.end.regexp, source.regexp

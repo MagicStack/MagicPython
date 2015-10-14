@@ -152,6 +152,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#regexp</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#lambda</string>
           </dict>
           <dict>
@@ -354,30 +358,22 @@
       </dict>
       <key>assignment-operator</key>
       <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>name</key>
-            <string>keyword.operator.assignment.python</string>
-            <key>match</key>
-            <string>(?x)
+        <key>name</key>
+        <string>keyword.operator.assignment.python</string>
+        <key>match</key>
+        <string>(?x)
      &lt;&lt;= | &gt;&gt;= | //= | \*\*=
     | \+= | -= | /= | @=
     | \*= | %= | ~= | \^= | &amp;= | \|=
     | =
 </string>
-          </dict>
-        </array>
       </dict>
       <key>operator</key>
       <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>name</key>
-            <string>keyword.operator.python</string>
-            <key>match</key>
-            <string>(?x)
+        <key>name</key>
+        <string>keyword.operator.python</string>
+        <key>match</key>
+        <string>(?x)
     \b(?&lt;!\.)(
         and | or | not | in | is | for | if | else | yield | await
     )(?!\s*:)\b
@@ -387,8 +383,6 @@
     | &gt; | &lt; | \+ | - | \* | % | \| | &amp; | \^
     | ~ | / | @
 </string>
-          </dict>
-        </array>
       </dict>
       <key>literal</key>
       <dict>
@@ -577,6 +571,188 @@
             <string>storage.type.number.python</string>
           </dict>
         </dict>
+      </dict>
+      <key>regexp</key>
+      <dict>
+        <key>name</key>
+        <string>string.regexp.python</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#regexp-single-quoted-multi-line</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#regexp-double-quoted-multi-line</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#regexp-single-quoted-single-line</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#regexp-double-quoted-single-line</string>
+          </dict>
+        </array>
+      </dict>
+      <key>regexp-single-quoted-single-line</key>
+      <dict>
+        <key>name</key>
+        <string>string.quoted.single.raw.python</string>
+        <key>begin</key>
+        <string>(\bR)(\&apos;)</string>
+        <key>end</key>
+        <string>(\&apos;)|(?&lt;!\\)(\n)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.begin.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>source.regexp</string>
+          </dict>
+        </array>
+      </dict>
+      <key>regexp-double-quoted-single-line</key>
+      <dict>
+        <key>name</key>
+        <string>string.quoted.double.raw.python</string>
+        <key>begin</key>
+        <string>(\bR)(\&quot;)</string>
+        <key>end</key>
+        <string>(\&quot;)|(?&lt;!\\)(\n)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.begin.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>source.regexp</string>
+          </dict>
+        </array>
+      </dict>
+      <key>regexp-single-quoted-multi-line</key>
+      <dict>
+        <key>name</key>
+        <string>string.quoted.triple.raw.python</string>
+        <key>begin</key>
+        <string>(\bR)(\&apos;\&apos;\&apos;)</string>
+        <key>end</key>
+        <string>\&apos;\&apos;\&apos;</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.begin.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.end.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>source.regexp</string>
+          </dict>
+        </array>
+      </dict>
+      <key>regexp-double-quoted-multi-line</key>
+      <dict>
+        <key>name</key>
+        <string>string.quoted.triple.raw.python</string>
+        <key>begin</key>
+        <string>(\bR)(\&quot;\&quot;\&quot;)</string>
+        <key>end</key>
+        <string>\&quot;\&quot;\&quot;</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.begin.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.string.end.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>source.regexp</string>
+          </dict>
+        </array>
       </dict>
       <key>string</key>
       <dict>
@@ -985,7 +1161,7 @@
         <key>name</key>
         <string>string.quoted.single.raw.python</string>
         <key>begin</key>
-        <string>(\b[rR])(\&apos;)</string>
+        <string>(\br)(\&apos;)</string>
         <key>end</key>
         <string>(\&apos;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
@@ -1027,7 +1203,7 @@
         <key>name</key>
         <string>string.quoted.double.raw.python</string>
         <key>begin</key>
-        <string>(\b[rR])(\&quot;)</string>
+        <string>(\br)(\&quot;)</string>
         <key>end</key>
         <string>(\&quot;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
@@ -1069,7 +1245,7 @@
         <key>name</key>
         <string>string.quoted.triple.raw.python</string>
         <key>begin</key>
-        <string>(\b[rR])(\&apos;\&apos;\&apos;)</string>
+        <string>(\br)(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
         <string>\&apos;\&apos;\&apos;</string>
         <key>beginCaptures</key>
@@ -1106,7 +1282,7 @@
         <key>name</key>
         <string>string.quoted.triple.raw.python</string>
         <key>begin</key>
-        <string>(\b[rR])(\&quot;\&quot;\&quot;)</string>
+        <string>(\br)(\&quot;\&quot;\&quot;)</string>
         <key>end</key>
         <string>\&quot;\&quot;\&quot;</string>
         <key>beginCaptures</key>

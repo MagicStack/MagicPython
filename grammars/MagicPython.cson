@@ -102,6 +102,9 @@ repository:
         include: "#string"
       }
       {
+        include: "#regexp"
+      }
+      {
         include: "#lambda"
       }
       {
@@ -216,37 +219,29 @@ repository:
       }
     ]
   "assignment-operator":
-    patterns: [
-      {
-        name: "keyword.operator.assignment.python"
-        match: '''
-          (?x)
-               <<= | >>= | //= | \\*\\*=
-              | \\+= | -= | /= | @=
-              | \\*= | %= | ~= | \\^= | &= | \\|=
-              | =
-          
-        '''
-      }
-    ]
+    name: "keyword.operator.assignment.python"
+    match: '''
+      (?x)
+           <<= | >>= | //= | \\*\\*=
+          | \\+= | -= | /= | @=
+          | \\*= | %= | ~= | \\^= | &= | \\|=
+          | =
+      
+    '''
   operator:
-    patterns: [
-      {
-        name: "keyword.operator.python"
-        match: '''
-          (?x)
-              \\b(?<!\\.)(
-                  and | or | not | in | is | for | if | else | yield | await
-              )(?!\\s*:)\\b
-          
-              | != | == | >= | <= | << | >>
-              | && | \\|\\| | \\*\\* | //
-              | > | < | \\+ | - | \\* | % | \\| | & | \\^
-              | ~ | / | @
-          
-        '''
-      }
-    ]
+    name: "keyword.operator.python"
+    match: '''
+      (?x)
+          \\b(?<!\\.)(
+              and | or | not | in | is | for | if | else | yield | await
+          )(?!\\s*:)\\b
+      
+          | != | == | >= | <= | << | >>
+          | && | \\|\\| | \\*\\* | //
+          | > | < | \\+ | - | \\* | % | \\| | & | \\^
+          | ~ | / | @
+      
+    '''
   literal:
     patterns: [
       {
@@ -368,6 +363,94 @@ repository:
     captures:
       "2":
         name: "storage.type.number.python"
+  regexp:
+    name: "string.regexp.python"
+    patterns: [
+      {
+        include: "#regexp-single-quoted-multi-line"
+      }
+      {
+        include: "#regexp-double-quoted-multi-line"
+      }
+      {
+        include: "#regexp-single-quoted-single-line"
+      }
+      {
+        include: "#regexp-double-quoted-single-line"
+      }
+    ]
+  "regexp-single-quoted-single-line":
+    name: "string.quoted.single.raw.python"
+    begin: "(\\bR)(\\')"
+    end: "(\\')|(?<!\\\\)(\\n)"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+      "2":
+        name: "punctuation.definition.string.begin.python"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "source.regexp"
+      }
+    ]
+  "regexp-double-quoted-single-line":
+    name: "string.quoted.double.raw.python"
+    begin: "(\\bR)(\\\")"
+    end: "(\\\")|(?<!\\\\)(\\n)"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+      "2":
+        name: "punctuation.definition.string.begin.python"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "source.regexp"
+      }
+    ]
+  "regexp-single-quoted-multi-line":
+    name: "string.quoted.triple.raw.python"
+    begin: "(\\bR)(\\'\\'\\')"
+    end: "\\'\\'\\'"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+      "2":
+        name: "punctuation.definition.string.begin.python"
+    endCaptures:
+      "0":
+        name: "punctuation.definition.string.end.python"
+    patterns: [
+      {
+        include: "source.regexp"
+      }
+    ]
+  "regexp-double-quoted-multi-line":
+    name: "string.quoted.triple.raw.python"
+    begin: "(\\bR)(\\\"\\\"\\\")"
+    end: "\\\"\\\"\\\""
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+      "2":
+        name: "punctuation.definition.string.begin.python"
+    endCaptures:
+      "0":
+        name: "punctuation.definition.string.end.python"
+    patterns: [
+      {
+        include: "source.regexp"
+      }
+    ]
   string:
     name: "string.python"
     patterns: [
@@ -575,7 +658,7 @@ repository:
     ]
   "string-raw-single-quoted-single-line":
     name: "string.quoted.single.raw.python"
-    begin: "(\\b[rR])(\\')"
+    begin: "(\\br)(\\')"
     end: "(\\')|(?<!\\\\)(\\n)"
     beginCaptures:
       "1":
@@ -594,7 +677,7 @@ repository:
     ]
   "string-raw-double-quoted-single-line":
     name: "string.quoted.double.raw.python"
-    begin: "(\\b[rR])(\\\")"
+    begin: "(\\br)(\\\")"
     end: "(\\\")|(?<!\\\\)(\\n)"
     beginCaptures:
       "1":
@@ -613,7 +696,7 @@ repository:
     ]
   "string-raw-single-quoted-multi-line":
     name: "string.quoted.triple.raw.python"
-    begin: "(\\b[rR])(\\'\\'\\')"
+    begin: "(\\br)(\\'\\'\\')"
     end: "\\'\\'\\'"
     beginCaptures:
       "1":
@@ -630,7 +713,7 @@ repository:
     ]
   "string-raw-double-quoted-multi-line":
     name: "string.quoted.triple.raw.python"
-    begin: "(\\b[rR])(\\\"\\\"\\\")"
+    begin: "(\\br)(\\\"\\\"\\\")"
     end: "\\\"\\\"\\\""
     beginCaptures:
       "1":

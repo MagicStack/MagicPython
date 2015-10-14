@@ -1,0 +1,6 @@
+(?aiLmsux)foo
+
+
+
+(?aiLmsux)    : entity.name.function.flag.regexp, source.regexp
+foo           : source.regexp
