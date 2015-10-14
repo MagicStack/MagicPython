@@ -9,7 +9,7 @@
     <string>source.regexp</string>
     <key>fileTypes</key>
     <array>
-      <string>regexp</string>
+      <string>re</string>
     </array>
     <key>uuid</key>
     <string>39e15186-71e6-11e5-b82c-7c6d62900c7c</string>

@@ -2,7 +2,7 @@
 name: "MagicRegExp"
 scopeName: "source.regexp"
 fileTypes: [
-  "regexp"
+  "re"
 ]
 uuid: "39e15186-71e6-11e5-b82c-7c6d62900c7c"
 author: "Victor Petrovykh victor@magic.io"
