@@ -2,7 +2,15 @@
   "name": "MagicPython",
   "version": "0.4.2",
   "engines": {
-    "atom": "*"
+    "atom": "*",
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MagicStack/MagicPython.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MagicStack/MagicPython/issues"
   },
   "description": "Syntax highlighter for cutting edge Python.",
   "license": "MIT"
