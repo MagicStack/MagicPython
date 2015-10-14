@@ -2,8 +2,7 @@
   "name": "MagicPython",
   "version": "0.4.2",
   "engines": {
-    "atom": "*",
-    "node": "*"
+    "atom": "*"
   },
   "description": "Syntax highlighter for cutting edge Python.",
   "license": "MIT"
