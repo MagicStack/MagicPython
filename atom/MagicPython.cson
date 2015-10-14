@@ -1,0 +1,1468 @@
+name: "MagicPython"
+scopeName: "source.python"
+fileTypes: [
+  "py"
+  "py3"
+  "rpy"
+  "pyw"
+  "cpy"
+  "SConstruct"
+  "Sconstruct"
+  "sconstruct"
+  "SConscript"
+]
+uuid: "742deb57-6e38-4192-bed6-410746efd85d"
+author: "Victor Petrovykh victor@magic.io"
+patterns: [
+  {
+    include: "#statement"
+  }
+  {
+    include: "#expression"
+  }
+]
+repository:
+  comments:
+    name: "comment.line.number-sign.python"
+    match: "(\\#)\\s*(BUG|FIXME|TODO|XXX|NB)?.*"
+    captures:
+      "1":
+        name: "punctuation.definition.comment.python"
+      "2":
+        name: "comment.line.note.notation.python"
+  statement:
+    patterns: [
+      {
+        include: "#class-declaration"
+      }
+      {
+        include: "#function-declaration"
+      }
+      {
+        include: "#statement-keyword"
+      }
+      {
+        include: "#assignment-operator"
+      }
+      {
+        include: "#decorator"
+      }
+    ]
+  "statement-keyword":
+    patterns: [
+      {
+        name: "storage.type.function.python"
+        match: "\\b((async\\s+)?\\s*def)\\b"
+      }
+      {
+        name: "keyword.control.flow.python"
+        match: '''
+          (?x)
+            \\b(?<!\\.)(
+              as | async | continue | del | assert | break | finally | for
+              | from | elif | else | if | import | except | pass | raise
+              | return | try | while | with
+            )\\b
+          
+        '''
+      }
+      {
+        name: "storage.modifier.declaration.python"
+        match: '''
+          (?x)
+            \\b(?<!\\.)(
+              global | nonlocal
+            )\\b
+          
+        '''
+      }
+      {
+        name: "storage.type.class.python"
+        match: "\\b(?<!\\.)(class)\\b"
+      }
+    ]
+  expression:
+    name: "meta.expression.python"
+    comment: "All valid Python expressions"
+    patterns: [
+      {
+        include: "#backticks"
+      }
+      {
+        include: "#illegal-anno"
+      }
+      {
+        include: "#comments"
+      }
+      {
+        include: "#literal"
+      }
+      {
+        include: "#string"
+      }
+      {
+        include: "#lambda"
+      }
+      {
+        include: "#operator"
+      }
+      {
+        include: "#curly-braces"
+      }
+      {
+        include: "#item-access"
+      }
+      {
+        include: "#list"
+      }
+      {
+        include: "#round-braces"
+      }
+      {
+        include: "#line-continuation"
+      }
+      {
+        include: "#function-call"
+      }
+      {
+        include: "#builtin-functions"
+      }
+      {
+        include: "#builtin-types"
+      }
+      {
+        include: "#builtin-exceptions"
+      }
+      {
+        include: "#magic-function-names"
+      }
+      {
+        include: "#magic-variable-names"
+      }
+      {
+        include: "#member-access"
+      }
+      {
+        include: "#special-names"
+      }
+      {
+        include: "#illegal-operator"
+      }
+      {
+        include: "#illegal-names"
+      }
+    ]
+  "special-names":
+    name: "constant.other.caps.python"
+    match: "\\b[[:upper:]][[:upper:]\\d]*(_\\w*)?\\b"
+  "curly-braces":
+    begin: "\\{"
+    end: "\\}"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.dict.begin.python"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.dict.end.python"
+    patterns: [
+      {
+        include: "#expression"
+      }
+    ]
+  list:
+    begin: "\\["
+    end: "\\]"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.list.begin.python"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.list.end.python"
+    patterns: [
+      {
+        include: "#expression"
+      }
+    ]
+  "round-braces":
+    begin: "\\("
+    end: "\\)"
+    beginCaptures:
+      "1":
+        name: "punctuation.parenthesis.begin.python"
+    endCaptures:
+      "1":
+        name: "punctuation.parenthesis.end.python"
+    patterns: [
+      {
+        include: "#expression"
+      }
+    ]
+  "line-continuation":
+    patterns: [
+      {
+        match: "(\\\\)\\s*$"
+        captures:
+          "1":
+            name: "separator.continuation.line.python"
+      }
+      {
+        match: "(\\\\)\\s*(\\S.*$\\n?)"
+        captures:
+          "1":
+            name: "separator.continuation.line.python"
+          "2":
+            name: "invalid.illegal.line.continuation.python"
+      }
+    ]
+  "assignment-operator":
+    patterns: [
+      {
+        name: "keyword.operator.assignment.python"
+        match: '''
+          (?x)
+               <<= | >>= | //= | \\*\\*=
+              | \\+= | -= | /= | @=
+              | \\*= | %= | ~= | \\^= | &= | \\|=
+              | =
+          
+        '''
+      }
+    ]
+  operator:
+    patterns: [
+      {
+        name: "keyword.operator.python"
+        match: '''
+          (?x)
+              \\b(?<!\\.)(
+                  and | or | not | in | is | for | if | else | yield | await
+              )(?!\\s*:)\\b
+          
+              | != | == | >= | <= | << | >>
+              | && | \\|\\| | \\*\\* | //
+              | > | < | \\+ | - | \\* | % | \\| | & | \\^
+              | ~ | / | @
+          
+        '''
+      }
+    ]
+  literal:
+    patterns: [
+      {
+        name: "constant.language.python"
+        match: "\\b(True|False|None|NotImplemented|Ellipsis)\\b"
+      }
+      {
+        include: "#number"
+      }
+    ]
+  number:
+    name: "constant.numeric.python"
+    patterns: [
+      {
+        include: "#number-float"
+      }
+      {
+        include: "#number-dec"
+      }
+      {
+        include: "#number-hex"
+      }
+      {
+        include: "#number-oct"
+      }
+      {
+        include: "#number-bin"
+      }
+      {
+        include: "#number-long"
+      }
+      {
+        name: "invalid.illegal.name.python"
+        match: "\\b[0-9]+\\w+"
+      }
+    ]
+  "number-float":
+    name: "constant.numeric.float.python"
+    match: '''
+      (?x)
+        (?<! \\w)(?:
+          [0-9]*\\.[0-9]+ ([eE][+-]?[0-9]+)?
+          | [0-9]+\\. ([eE][+-]?[0-9]+)?
+          | [0-9]+ ([eE][+-]?[0-9]+)
+        )([jJ])?\\b
+      
+    '''
+    captures:
+      "4":
+        name: "storage.type.imaginary.number.python"
+  "number-dec":
+    name: "constant.numeric.dec.python"
+    match: '''
+      (?x)
+        (?<![\\w\\.])(?:
+            [1-9][0-9]*
+            |
+            0+
+            |
+            [0-9]+ ([jJ])
+            |
+            0 ([0-9]+)(?![eE\\.])
+        )\\b
+      
+    '''
+    captures:
+      "1":
+        name: "storage.type.imaginary.number.python"
+      "2":
+        name: "invalid.illegal.dec.python"
+      "3":
+        name: "invalid.illegal.dec.python"
+  "number-hex":
+    name: "constant.numeric.hex.python"
+    match: '''
+      (?x)
+        (?<![\\w\\.])
+          (0[xX]) [0-9a-fA-F]+
+        \\b
+      
+    '''
+    captures:
+      "1":
+        name: "storage.type.number.python"
+  "number-oct":
+    name: "constant.numeric.oct.python"
+    match: '''
+      (?x)
+        (?<![\\w\\.])
+          (0[oO]) [0-7]+
+        \\b
+      
+    '''
+    captures:
+      "1":
+        name: "storage.type.number.python"
+  "number-bin":
+    name: "constant.numeric.bin.python"
+    match: '''
+      (?x)
+        (?<![\\w\\.])
+          (0[bB]) [01]+
+        \\b
+      
+    '''
+    captures:
+      "1":
+        name: "storage.type.number.python"
+  "number-long":
+    name: "constant.numeric.bin.python"
+    comment: "this is to support python2 syntax for long ints"
+    match: '''
+      (?x)
+        (?<![\\w\\.])
+          ([1-9][0-9]* | 0) ([lL])
+        \\b
+      
+    '''
+    captures:
+      "2":
+        name: "storage.type.number.python"
+  string:
+    name: "string.python"
+    patterns: [
+      {
+        include: "#string-single-quoted-multi-line"
+      }
+      {
+        include: "#string-double-quoted-multi-line"
+      }
+      {
+        include: "#string-single-quoted-single-line"
+      }
+      {
+        include: "#string-double-quoted-single-line"
+      }
+      {
+        include: "#string-bin-single-quoted-multi-line"
+      }
+      {
+        include: "#string-bin-double-quoted-multi-line"
+      }
+      {
+        include: "#string-bin-single-quoted-single-line"
+      }
+      {
+        include: "#string-bin-double-quoted-single-line"
+      }
+      {
+        include: "#string-raw-single-quoted-multi-line"
+      }
+      {
+        include: "#string-raw-double-quoted-multi-line"
+      }
+      {
+        include: "#string-raw-single-quoted-single-line"
+      }
+      {
+        include: "#string-raw-double-quoted-single-line"
+      }
+      {
+        include: "#string-raw-bin-single-quoted-multi-line"
+      }
+      {
+        include: "#string-raw-bin-double-quoted-multi-line"
+      }
+      {
+        include: "#string-raw-bin-single-quoted-single-line"
+      }
+      {
+        include: "#string-raw-bin-double-quoted-single-line"
+      }
+    ]
+  "string-single-quoted-single-line":
+    name: "string.quoted.single.python"
+    begin: "(\\b[uU])?\\'"
+    end: "(?:\\'|(?<!\\\\)(\\n))"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    endCaptures:
+      "1":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#string-unicode-guts"
+      }
+    ]
+  "string-double-quoted-single-line":
+    name: "string.quoted.double.python"
+    begin: "(\\b[uU])?\\\""
+    end: "(?:\\\"|(?<!\\\\)(\\n))"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    endCaptures:
+      "1":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#string-unicode-guts"
+      }
+    ]
+  "string-single-quoted-multi-line":
+    name: "string.quoted.triple.python"
+    begin: "(\\b[uU])?\\'\\'\\'"
+    end: "\\'\\'\\'"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    patterns: [
+      {
+        include: "#string-unicode-guts"
+      }
+    ]
+  "string-double-quoted-multi-line":
+    name: "string.quoted.triple.python"
+    begin: "(\\b[uU])?\\\"\\\"\\\""
+    end: "\\\"\\\"\\\""
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    patterns: [
+      {
+        include: "#string-unicode-guts"
+      }
+    ]
+  "string-unicode-guts":
+    patterns: [
+      {
+        include: "#escape-sequence-unicode"
+      }
+      {
+        include: "#string-entity"
+      }
+    ]
+  "string-bin-single-quoted-single-line":
+    name: "string.quoted.single.python"
+    begin: "(\\b[bB])\\'"
+    end: "(?:\\'|(?<!\\\\)(\\n))"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    endCaptures:
+      "1":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#string-entity"
+      }
+    ]
+  "string-bin-double-quoted-single-line":
+    name: "string.quoted.double.python"
+    begin: "(\\b[bB])\\\""
+    end: "(?:\\\"|(?<!\\\\)(\\n))"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    endCaptures:
+      "1":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#string-entity"
+      }
+    ]
+  "string-bin-single-quoted-multi-line":
+    name: "string.quoted.triple.python"
+    begin: "(\\b[bB])\\'\\'\\'"
+    end: "\\'\\'\\'"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    patterns: [
+      {
+        include: "#string-entity"
+      }
+    ]
+  "string-bin-double-quoted-multi-line":
+    name: "string.quoted.triple.python"
+    begin: "(\\b[bB])\\\"\\\"\\\""
+    end: "\\\"\\\"\\\""
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    patterns: [
+      {
+        include: "#string-entity"
+      }
+    ]
+  "string-raw-single-quoted-single-line":
+    name: "string.quoted.single.raw.python"
+    begin: "(\\b[rR])\\'"
+    end: "(?:\\'|(?<!\\\\)(\\n))"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    endCaptures:
+      "1":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#string-raw-guts"
+      }
+    ]
+  "string-raw-double-quoted-single-line":
+    name: "string.quoted.double.raw.python"
+    begin: "(\\b[rR])\\\""
+    end: "(?:\\\"|(?<!\\\\)(\\n))"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    endCaptures:
+      "1":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#string-raw-guts"
+      }
+    ]
+  "string-raw-single-quoted-multi-line":
+    name: "string.quoted.triple.raw.python"
+    begin: "(\\b[rR])\\'\\'\\'"
+    end: "\\'\\'\\'"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    patterns: [
+      {
+        include: "#string-raw-guts"
+      }
+    ]
+  "string-raw-double-quoted-multi-line":
+    name: "string.quoted.triple.raw.python"
+    begin: "(\\b[rR])\\\"\\\"\\\""
+    end: "\\\"\\\"\\\""
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    patterns: [
+      {
+        include: "#string-raw-guts"
+      }
+    ]
+  "string-raw-guts":
+    patterns: [
+      {
+        match: "\\\\."
+      }
+      {
+        include: "#string-formatting"
+      }
+      {
+        include: "#string-brace-formatting"
+      }
+    ]
+  "string-raw-bin-single-quoted-single-line":
+    name: "string.quoted.single.raw.python"
+    begin: "(\\b(?:[rR][bB]|[bB][rR]))\\'"
+    end: "(?:\\'|(?<!\\\\)(\\n))"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    endCaptures:
+      "1":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#string-raw-bin-guts"
+      }
+    ]
+  "string-raw-bin-double-quoted-single-line":
+    name: "string.quoted.double.raw.python"
+    begin: "(\\b(?:[rR][bB]|[bB][rR]))\\\""
+    end: "(?:\\\"|(?<!\\\\)(\\n))"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    endCaptures:
+      "1":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#string-raw-bin-guts"
+      }
+    ]
+  "string-raw-bin-single-quoted-multi-line":
+    name: "string.quoted.triple.raw.python"
+    begin: "(\\b(?:[rR][bB]|[bB][rR]))\\'\\'\\'"
+    end: "\\'\\'\\'"
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    patterns: [
+      {
+        include: "#string-raw-bin-guts"
+      }
+    ]
+  "string-raw-bin-double-quoted-multi-line":
+    name: "string.quoted.triple.raw.python"
+    begin: "(\\b(?:[rR][bB]|[bB][rR]))\\\"\\\"\\\""
+    end: "\\\"\\\"\\\""
+    beginCaptures:
+      "1":
+        name: "storage.type.string.python"
+    patterns: [
+      {
+        include: "#string-raw-bin-guts"
+      }
+    ]
+  "string-raw-bin-guts":
+    patterns: [
+      {
+        match: "\\\\."
+      }
+      {
+        include: "#string-formatting"
+      }
+    ]
+  "string-entity":
+    patterns: [
+      {
+        include: "#escape-sequence"
+      }
+      {
+        include: "#string-line-continuation"
+      }
+      {
+        include: "#string-formatting"
+      }
+    ]
+  "escape-sequence-unicode":
+    patterns: [
+      {
+        name: "constant.character.python"
+        match: '''
+          (?x)
+            \\\\ (
+                  u[0-9A-Fa-f]{4}
+                  | U[0-9A-Fa-f]{8}
+                  | N\\{[\\w\\s]+?\\}
+               )
+          
+        '''
+      }
+      {
+        include: "#string-brace-formatting"
+      }
+    ]
+  "escape-sequence":
+    name: "constant.character.python"
+    match: '''
+      (?x)
+        \\\\ (
+              x[0-9A-Fa-f]{2}
+              | [0-7]{1,3}
+              | [\\\\"'abfnrtv]
+           )
+      
+    '''
+  "string-line-continuation":
+    name: "constant.language.python"
+    match: "\\\\$"
+  "string-formatting":
+    name: "constant.character.format.python"
+    match: '''
+      (?x)
+        % (\\([\\w\\s]*\\))?
+          [-+#0 ]*
+          (\\d+|\\*)? (\\.(\\d+|\\*))?
+          ([hlL])?
+          [diouxXeEfFgGcrsa%]
+      
+    '''
+  "string-brace-formatting":
+    name: "constant.character.format.python"
+    match: '''
+      (?x)
+        (?:
+          {{ | }}
+          | (?:
+            {
+              [^!:\\.\\[\\]]*? (\\.[[:alpha:]_]\\w*? | \\[[^\\]]+\\])*?
+              (![rsa])?
+              (:\\w? [<>=^]? [-+ ]? \\#? \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]?)?
+            })
+        )
+      
+    '''
+    captures:
+      "2":
+        name: "storage.type.format.python"
+  "class-declaration":
+    patterns: [
+      {
+        name: "meta.class.python"
+        begin: '''
+          (?x)
+            \\s*(class)\\s+
+              (?=
+                [[:alpha:]_]\\w* \\s* (:|\\()
+              )
+          
+        '''
+        end: "(:)"
+        beginCaptures:
+          "1":
+            name: "storage.type.class.python"
+        endCaptures:
+          "1":
+            name: "punctuation.section.class.begin.python"
+        patterns: [
+          {
+            include: "#class-name"
+          }
+          {
+            include: "#class-inheritance"
+          }
+        ]
+      }
+    ]
+  "class-name":
+    patterns: [
+      {
+        include: "#illegal-object-name"
+      }
+      {
+        include: "#builtin-possible-callables"
+      }
+      {
+        name: "entity.name.type.class.python"
+        match: '''
+          (?x)
+            \\b ([[:alpha:]_]\\w*) \\b
+          
+        '''
+      }
+    ]
+  "class-inheritance":
+    name: "meta.class.inheritance.python"
+    begin: "(\\()"
+    end: "(\\))"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.inheritance.begin.python"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.inheritance.end.python"
+    patterns: [
+      {
+        name: "punctuation.separator.inheritance.python"
+        match: ","
+      }
+      {
+        name: "keyword.operator.assignment.python"
+        match: "\\="
+      }
+      {
+        include: "#call-wrapper-inheritance"
+      }
+      {
+        include: "#expression"
+      }
+      {
+        name: "support.type.metaclass.python"
+        match: "\\bmetaclass\\b"
+      }
+      {
+        name: "entity.other.inherited-class.pyhton"
+        match: "[[:alnum:]_]+"
+      }
+    ]
+  lambda:
+    patterns: [
+      {
+        match: "((?<=\\.)lambda|lambda(?=\\s*[\\.=]))"
+        captures:
+          "1":
+            name: "keyword.control.flow.python"
+      }
+      {
+        match: "\\b(lambda)\\s*?([,\\n]|$)"
+        captures:
+          "1":
+            name: "storage.type.function.lambda.python"
+      }
+      {
+        name: "meta.lambda-function.python"
+        begin: '''
+          (?x)
+            \\b (lambda) \\b
+          
+        '''
+        end: "(:)|(\\n)"
+        beginCaptures:
+          "1":
+            name: "storage.type.function.lambda.python"
+        endCaptures:
+          "1":
+            name: "punctuation.section.function.lambda.begin.python"
+        contentName: "meta.function.lambda.parameters.python"
+        patterns: [
+          {
+            match: "\\*"
+          }
+          {
+            include: "#lambda-incomplete"
+          }
+          {
+            include: "#illegal-names"
+          }
+          {
+            match: "([[:alpha:]_]\\w*)\\s*(?:(,)|(?=:|$))"
+            captures:
+              "1":
+                name: "variable.parameter.function.language.pyhton"
+              "2":
+                name: "punctuation.separator.parameters.python"
+          }
+          {
+            include: "#comments"
+          }
+          {
+            include: "#backticks"
+          }
+          {
+            include: "#illegal-anno"
+          }
+          {
+            include: "#lambda-parameter-with-default"
+          }
+          {
+            include: "#line-continuation"
+          }
+          {
+            include: "#illegal-operator"
+          }
+        ]
+      }
+    ]
+  "lambda-incomplete":
+    name: "storage.type.function.lambda.python"
+    match: "\\blambda(?=\\s*[:,)])"
+  "lambda-parameter-with-default":
+    begin: '''
+      (?x)
+        \\b
+        ([[:alpha:]_]\\w*) \\s* (=)
+      
+    '''
+    end: "(,)|(?=:|$)"
+    beginCaptures:
+      "1":
+        name: "variable.parameter.function.language.pyhton"
+      "2":
+        name: "keyword.operator.python"
+    endCaptures:
+      "1":
+        name: "punctuation.separator.parameters.python"
+    patterns: [
+      {
+        include: "#expression"
+      }
+    ]
+  "function-declaration":
+    name: "meta.function.python"
+    begin: '''
+      (?x)
+        \\s*
+        (?:(async) \\s+)? (def)\\s+
+          (?=
+            [[:alpha:]_][[:word:]]* \\s* \\(
+          )
+      
+    '''
+    end: "(:)"
+    beginCaptures:
+      "1":
+        name: "storage.type.function.async.python"
+      "2":
+        name: "storage.type.function.python"
+    endCaptures:
+      "1":
+        name: "punctuation.section.function.begin.python"
+    patterns: [
+      {
+        include: "#function-def-name"
+      }
+      {
+        include: "#parameters"
+      }
+      {
+        include: "#return-annotation"
+      }
+    ]
+  "function-def-name":
+    patterns: [
+      {
+        include: "#illegal-object-name"
+      }
+      {
+        include: "#builtin-possible-callables"
+      }
+      {
+        name: "entity.name.function.python"
+        match: '''
+          (?x)
+            \\b ([[:alpha:]_]\\w*) \\b
+          
+        '''
+      }
+    ]
+  parameters:
+    name: "meta.function.parameters.python"
+    begin: "(\\()"
+    end: "(\\))"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.parameters.begin.python"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.parameters.end.python"
+    patterns: [
+      {
+        match: "\\*"
+      }
+      {
+        include: "#lambda-incomplete"
+      }
+      {
+        include: "#illegal-names"
+      }
+      {
+        match: "([[:alpha:]_]\\w*)\\s*(?:(,)|(?=\\)))"
+        captures:
+          "1":
+            name: "variable.parameter.function.language.pyhton"
+          "2":
+            name: "punctuation.separator.parameters.python"
+      }
+      {
+        include: "#comments"
+      }
+      {
+        include: "#parameter-with-default"
+      }
+      {
+        include: "#annotated-parameter"
+      }
+    ]
+  "parameter-with-default":
+    begin: '''
+      (?x)
+        \\b
+        ([[:alpha:]_]\\w*) \\s* (=)
+      
+    '''
+    end: "(,)|(?=\\))"
+    beginCaptures:
+      "1":
+        name: "variable.parameter.function.language.pyhton"
+      "2":
+        name: "keyword.operator.python"
+    endCaptures:
+      "1":
+        name: "punctuation.separator.parameters.python"
+    patterns: [
+      {
+        include: "#expression"
+      }
+    ]
+  "annotated-parameter":
+    begin: '''
+      (?x)
+        \\b
+        ([[:alpha:]_]\\w*) \\s* (:)
+      
+    '''
+    end: "(,)|(?=\\))"
+    beginCaptures:
+      "1":
+        name: "variable.parameter.function.language.pyhton"
+      "2":
+        name: "punctuation.separator.annotation.python"
+    endCaptures:
+      "1":
+        name: "punctuation.separator.parameters.python"
+    patterns: [
+      {
+        include: "#expression"
+      }
+      {
+        name: "keyword.operator.assignment.python"
+        match: "\\="
+      }
+    ]
+  "return-annotation":
+    begin: "(->)"
+    end: "(?=:)"
+    beginCaptures:
+      "1":
+        name: "punctuation.separator.annotation.result.python"
+    patterns: [
+      {
+        include: "#expression"
+      }
+    ]
+  "item-access":
+    patterns: [
+      {
+        name: "meta.item-access.python"
+        begin: '''
+          (?x)
+            \\b(?=
+              [[:alpha:]_]\\w* \\s* \\[
+            )
+          
+        '''
+        end: "(\\])"
+        endCaptures:
+          "1":
+            name: "punctuation.definition.arguments.end.python"
+        patterns: [
+          {
+            include: "#dict-name"
+          }
+          {
+            include: "#dict-index"
+          }
+          {
+            include: "#expression"
+          }
+        ]
+      }
+    ]
+  "dict-name":
+    patterns: [
+      {
+        include: "#special-names"
+      }
+      {
+        match: '''
+          (?x)
+            \\b ([[:alpha:]_]\\w*) \\b
+          
+        '''
+      }
+    ]
+  "dict-index":
+    name: "meta.function-call.arguments.python"
+    begin: "(\\[)"
+    end: "(?=\\])"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.arguments.begin.python"
+    contentName: "meta.item-access.arguments.python"
+    patterns: [
+      {
+        include: "#expression"
+      }
+    ]
+  decorator:
+    patterns: [
+      {
+        name: "meta.function.decorator.python"
+        begin: '''
+          (?x)
+            ^\\s*
+            (@) \\s* (?=
+                      [[:alpha:]_]\\w* (?:\\.[[:alpha:]_]\\w*)* \\s*
+                        (?:$|\\#)
+                    )
+          
+        '''
+        end: "$|(?=\\#)"
+        beginCaptures:
+          "1":
+            name: "entity.name.function.decorator.python"
+        patterns: [
+          {
+            include: "#decorator-name"
+          }
+        ]
+      }
+      {
+        name: "meta.function.decorator.python"
+        begin: '''
+          (?x)
+            ^\\s*
+            (@) \\s* (?=
+                      [[:alpha:]_]\\w* (?:\\.[[:alpha:]_]\\w*)* \\s* \\(
+                    )
+          
+        '''
+        end: "(\\))"
+        beginCaptures:
+          "1":
+            name: "entity.name.function.decorator.python"
+        endCaptures:
+          "1":
+            name: "punctuation.definition.arguments.end.python"
+        patterns: [
+          {
+            include: "#decorator-name"
+          }
+          {
+            include: "#function-arguments"
+          }
+        ]
+      }
+    ]
+  "decorator-name":
+    patterns: [
+      {
+        include: "#builtin-callables"
+      }
+      {
+        name: "entity.name.function.decorator.python"
+        match: '''
+          (?x)
+            ([[:alpha:]_]\\w*) | \\.
+          
+        '''
+      }
+    ]
+  "call-wrapper-inheritance":
+    comment: "same as a funciton call, but in inheritance context"
+    name: "meta.function-call.python"
+    begin: '''
+      (?x)
+        \\b(?=
+          ([[:alpha:]_]\\w*) \\s* (\\()
+        )
+      
+    '''
+    end: "(\\))"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.arguments.end.python"
+    patterns: [
+      {
+        include: "#inheritance-name"
+      }
+      {
+        include: "#function-arguments"
+      }
+    ]
+  "inheritance-name":
+    patterns: [
+      {
+        include: "#lambda-incomplete"
+      }
+      {
+        include: "#builtin-callables"
+      }
+      {
+        match: '''
+          (?x)
+            \\b ([[:alpha:]_]\\w*) \\b
+          
+        '''
+        captures:
+          "1":
+            name: "entity.other.inherited-class.pyhton"
+      }
+    ]
+  "function-call":
+    name: "meta.function-call.python"
+    begin: '''
+      (?x)
+        \\b(?=
+          ([[:alpha:]_]\\w*) \\s* (\\()
+        )
+      
+    '''
+    end: "(\\))"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.arguments.end.python"
+    patterns: [
+      {
+        include: "#function-name"
+      }
+      {
+        include: "#function-arguments"
+      }
+    ]
+  "function-name":
+    patterns: [
+      {
+        include: "#builtin-possible-callables"
+      }
+      {
+        match: '''
+          (?x)
+            \\b ([[:alpha:]_]\\w*) \\b
+          
+        '''
+      }
+    ]
+  "function-arguments":
+    name: "meta.function-call.arguments.python"
+    begin: "(\\()"
+    end: "(?=\\))"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.arguments.begin.python"
+    patterns: [
+      {
+        name: "punctuation.separator.arguments.python"
+        match: ","
+      }
+      {
+        include: "#lambda-incomplete"
+      }
+      {
+        include: "#illegal-names"
+      }
+      {
+        match: "\\b([[:alpha:]_]\\w*)\\s*(=)"
+        captures:
+          "1":
+            name: "variable.parameter.function-call.pyhton"
+          "2":
+            name: "keyword.operator.assignment.python"
+      }
+      {
+        name: "keyword.operator.assignment.python"
+        match: "\\="
+      }
+      {
+        include: "#expression"
+      }
+    ]
+  "builtin-callables":
+    patterns: [
+      {
+        include: "#illegal-names"
+      }
+      {
+        include: "#builtin-exceptions"
+      }
+      {
+        include: "#builtin-functions"
+      }
+      {
+        include: "#builtin-types"
+      }
+    ]
+  "builtin-possible-callables":
+    patterns: [
+      {
+        include: "#builtin-callables"
+      }
+      {
+        include: "#magic-function-names"
+      }
+      {
+        include: "#magic-variable-names"
+      }
+    ]
+  "builtin-exceptions":
+    name: "support.type.exception.python"
+    match: '''
+      (?x) \\b(
+        (
+          Arithmetic | Assertion | Attribute | Buffer | BlockingIO
+          | BrokenPipe | ChildProcess
+          | (Connection (Aborted | Refused | Reset)?)
+          | EOF | Environment | FileExists | FileNotFound
+          | FloatingPoint | IO | Import | Indentation | Index | Interrupted
+          | IsADirectory | NotADirectory | Permission | ProcessLookup
+          | Timeout
+          | Key | Lookup | Memory | Name | NotImplemented | OS | Overflow
+          | Reference | Runtime | Recursion | Syntax | System
+          | Tab | Type | UnboundLocal | Unicode(Encode|Decode|Translate)?
+          | Value | Windows | ZeroDivision
+        ) Error
+      |
+        ((Pending)?Deprecation | Runtime | Syntax | User | Future | Import
+          | Unicode | Bytes | Resource
+        )? Warning
+      |
+        SystemExit | Stop(Async)?Iteration
+        | KeyboardInterrupt
+        | GeneratorExit | (Base)?Exception
+      )\\b
+      
+    '''
+  "builtin-functions":
+    name: "support.function.builtin.python"
+    match: '''
+      (?x)
+        (?<!\\.)\\b(
+          __import__ | abs | all | any | apply | callable | chr
+          | compile | copyright | credits | delattr | dir | divmod
+          | enumerate | eval | exec | exit | filter | format | getattr
+          | globals | hasattr | hash | help | id | input
+          | isinstance | issubclass | iter | len | license | locals | map
+          | max | memoryview | min | next | open | ord | pow | print
+          | quit | range | reload | repr | round
+          | setattr | sorted | sum | vars | zip
+        )\\b
+      
+    '''
+  "builtin-types":
+    name: "support.type.python"
+    match: '''
+      (?x)
+        (?<!\\.)\\b(
+          ascii | bin | bool | bytearray | bytes
+          | classmethod | complex | dict | float | frozenset
+          | hex | int | list | object | oct | property | reversed
+          | set | slice | staticmethod | str | super | tuple | type
+        )\\b
+      
+    '''
+  "magic-function-names":
+    comment: '''
+      these methods have magic interpretation by python and are generally called
+      indirectly through syntactic constructs
+      
+    '''
+    match: '''
+      (?x)
+        (\\.)?\\b(
+          __(?:
+            abs | add | aenter | aexit | aiter | and | anext | await
+            | bool | call | ceil | cmp | coerce | complex | contains
+            | copy | deepcopy | del | delattr | delete | delitem
+            | delslice | dir | div | divmod | enter | eq | exit | float
+            | floor | floordiv | format | ge | get | getattr
+            | getattribute | getinitargs | getitem | getnewargs
+            | getslice | getstate | gt | hash | hex | iadd | iand | idiv
+            | ifloordiv | ilshift | imod | imul | index | init
+            | instancecheck | int | invert | ior | ipow | irshift | isub
+            | iter | itruediv | ixor | le | len | long | lshift | lt
+            | missing | mod | mul | ne | neg | new | next | nonzero | oct | or
+            | pos | pow | radd | rand | rdiv | rdivmod | reduce
+            | reduce_ex | repr | reversed | rfloordiv | rlshift | rmod
+            | rmul | ror | round | rpow | rrshift | rshift | rsub
+            | rtruediv | rxor | set | setattr | setitem | setslice
+            | setstate | sizeof | str | sub | subclasscheck | truediv
+            | trunc | unicode | xor
+          )__
+        )\\b
+      
+    '''
+    captures:
+      "2":
+        name: "support.function.magic.python"
+  "magic-variable-names":
+    comment: "magic variables which a class/module may have."
+    match: '''
+      (?x)
+        (\\.)?\\b(
+          __(?:
+            all | bases | class | debug | dict | doc | file | members
+            | metaclass | methods | module | mro | name | slots
+            | subclasses | version | weakref
+          )__
+        )\\b
+      
+    '''
+    captures:
+      "2":
+        name: "support.variable.magic.python"
+  "illegal-names":
+    name: "keyword.control.flow.python"
+    match: '''
+      (?x)
+        \\b(
+          and | as | assert | async | await | break | class | continue | def
+          | del | elif | else | except | exec | finally | for | from | global
+          | if | import | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])
+          | nonlocal | not | or | pass | raise | return | try | while | with
+          | yield
+        )\\b
+      
+    '''
+  "member-access":
+    comment: "this rule exists to highlight errors"
+    begin: "\\.(?=\\s*\\w+\\s)"
+    end: "\\s"
+    patterns: [
+      {
+        include: "#illegal-names"
+      }
+      {
+        include: "#special-names"
+      }
+    ]
+  backticks:
+    name: "invalid.deprecated.backtick.python"
+    begin: "\\`"
+    end: "(?:\\`|(?<!\\\\)(\\n))"
+    patterns: [
+      {
+        include: "#expression"
+      }
+    ]
+  "illegal-operator":
+    patterns: [
+      {
+        name: "invalid.illegal.character.python"
+        match: "[?$]"
+      }
+      {
+        name: "invalid.illegal.character.python"
+        comment: "We don't want `!` to flash when we're typing `!=`"
+        match: "!\\b"
+      }
+    ]
+  "illegal-object-name":
+    comment: "It's illegal to name class or function \"True\""
+    name: "invalid.illegal.name.python"
+    match: "\\b(True|False|None)\\b"
+  "illegal-anno":
+    name: "invalid.illegal.annotation.python"
+    match: "->"
