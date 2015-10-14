@@ -6,13 +6,13 @@ comment 1
 
 
 
-(?x)          : source.regexp, storage.modifier.flag.regexp
-    foo       : source.regexp
-(?#           : comment.regexp, punctuation.comments.begin.regexp, source.regexp
-comment 1     : comment.regexp, source.regexp
-              : comment.regexp, source.regexp
-)             : comment.regexp, punctuation.comments.end.regexp, source.regexp
-    bar       : source.regexp
-(?#           : comment.regexp, punctuation.comments.begin.regexp, source.regexp
-comment 2     : comment.regexp, source.regexp
-)             : comment.regexp, punctuation.comments.end.regexp, source.regexp
+(?x)          : source.regexp.python, storage.modifier.flag.regexp
+    foo       : source.regexp.python
+(?#           : comment.regexp, punctuation.comments.begin.regexp, source.regexp.python
+comment 1     : comment.regexp, source.regexp.python
+              : comment.regexp, source.regexp.python
+)             : comment.regexp, punctuation.comments.end.regexp, source.regexp.python
+    bar       : source.regexp.python
+(?#           : comment.regexp, punctuation.comments.begin.regexp, source.regexp.python
+comment 2     : comment.regexp, source.regexp.python
+)             : comment.regexp, punctuation.comments.end.regexp, source.regexp.python

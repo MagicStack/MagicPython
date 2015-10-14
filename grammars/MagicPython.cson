@@ -395,7 +395,7 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
-        include: "source.regexp"
+        include: "source.regexp.python"
       }
     ]
   "regexp-double-quoted-single-line":
@@ -414,7 +414,7 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
-        include: "source.regexp"
+        include: "source.regexp.python"
       }
     ]
   "regexp-single-quoted-multi-line":
@@ -431,7 +431,7 @@ repository:
         name: "punctuation.definition.string.end.python"
     patterns: [
       {
-        include: "source.regexp"
+        include: "source.regexp.python"
       }
     ]
   "regexp-double-quoted-multi-line":
@@ -448,7 +448,7 @@ repository:
         name: "punctuation.definition.string.end.python"
     patterns: [
       {
-        include: "source.regexp"
+        include: "source.regexp.python"
       }
     ]
   string:

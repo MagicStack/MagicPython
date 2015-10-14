@@ -250,7 +250,7 @@ repository:
       '1': {name: punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: 'source.regexp'
+      - include: 'source.regexp.python'
 
   regexp-double-quoted-single-line:
     name: string.quoted.double.raw.python
@@ -263,7 +263,7 @@ repository:
       '1': {name: punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: 'source.regexp'
+      - include: 'source.regexp.python'
 
   regexp-single-quoted-multi-line:
     name: string.quoted.triple.raw.python
@@ -275,7 +275,7 @@ repository:
     endCaptures:
       '0': {name: punctuation.definition.string.end.python}
     patterns:
-      - include: 'source.regexp'
+      - include: 'source.regexp.python'
 
   regexp-double-quoted-multi-line:
     name: string.quoted.triple.raw.python
@@ -287,7 +287,7 @@ repository:
     endCaptures:
       '0': {name: punctuation.definition.string.end.python}
     patterns:
-      - include: 'source.regexp'
+      - include: 'source.regexp.python'
 
   string:
     name: string.python

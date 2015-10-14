@@ -2,8 +2,8 @@
 
 
 
-(             : keyword.operator.lookbehind.negative.regexp, punctuation.parenthesis.lookbehind.begin.regexp, source.regexp
-?<!           : keyword.operator.lookbehind.negative.regexp, source.regexp
-foo           : source.regexp
-)             : punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp, source.regexp
-bar           : source.regexp
+(             : keyword.operator.lookbehind.negative.regexp, punctuation.parenthesis.lookbehind.begin.regexp, source.regexp.python
+?<!           : keyword.operator.lookbehind.negative.regexp, source.regexp.python
+foo           : source.regexp.python
+)             : punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp, source.regexp.python
+bar           : source.regexp.python

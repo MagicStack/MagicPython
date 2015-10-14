@@ -2,13 +2,13 @@
 
 
 
-^             : source.regexp, support.other.match.begin.regexp
-a             : source.regexp
-{10}          : keyword.operator.quantifier.regexp, source.regexp
-b             : source.regexp
-{,10}         : keyword.operator.quantifier.regexp, source.regexp
-c             : source.regexp
-{10,}         : keyword.operator.quantifier.regexp, source.regexp
-d             : source.regexp
-{10,100}      : keyword.operator.quantifier.regexp, source.regexp
-$             : source.regexp, support.other.match.end.regexp
+^             : source.regexp.python, support.other.match.begin.regexp
+a             : source.regexp.python
+{10}          : keyword.operator.quantifier.regexp, source.regexp.python
+b             : source.regexp.python
+{,10}         : keyword.operator.quantifier.regexp, source.regexp.python
+c             : source.regexp.python
+{10,}         : keyword.operator.quantifier.regexp, source.regexp.python
+d             : source.regexp.python
+{10,100}      : keyword.operator.quantifier.regexp, source.regexp.python
+$             : source.regexp.python, support.other.match.end.regexp

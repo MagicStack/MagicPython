@@ -2,19 +2,19 @@
 
 
 
-[             : constant.other.set.regexp punctuation.character.set.begin.regexp, meta.character.set.regexp, source.regexp
-s             : constant.character.set.regexp, meta.character.set.regexp, source.regexp
-t             : constant.character.set.regexp, meta.character.set.regexp, source.regexp
-a             : constant.character.set.regexp, meta.character.set.regexp, source.regexp
-r             : constant.character.set.regexp, meta.character.set.regexp, source.regexp
-t             : constant.character.set.regexp, meta.character.set.regexp, source.regexp
-\a            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp
-\b            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp
-\c            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp
-\d            : meta.character.set.regexp, source.regexp, support.other.escape.special.regexp
-\f            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp
-\n            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp
-\r            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp
-\t            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp
-\v            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp
-]             : constant.other.set.regexp punctuation.character.set.end.regexp, meta.character.set.regexp, source.regexp
+[             : constant.other.set.regexp punctuation.character.set.begin.regexp, meta.character.set.regexp, source.regexp.python
+s             : constant.character.set.regexp, meta.character.set.regexp, source.regexp.python
+t             : constant.character.set.regexp, meta.character.set.regexp, source.regexp.python
+a             : constant.character.set.regexp, meta.character.set.regexp, source.regexp.python
+r             : constant.character.set.regexp, meta.character.set.regexp, source.regexp.python
+t             : constant.character.set.regexp, meta.character.set.regexp, source.regexp.python
+\a            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
+\b            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
+\c            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
+\d            : meta.character.set.regexp, source.regexp.python, support.other.escape.special.regexp
+\f            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
+\n            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
+\r            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
+\t            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
+\v            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
+]             : constant.other.set.regexp punctuation.character.set.end.regexp, meta.character.set.regexp, source.regexp.python

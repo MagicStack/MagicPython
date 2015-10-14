@@ -2,4 +2,4 @@ trivial
 
 
 
-trivial       : source.regexp
+trivial       : source.regexp.python

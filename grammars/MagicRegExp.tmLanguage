@@ -6,7 +6,7 @@
     <key>name</key>
     <string>MagicRegExp</string>
     <key>scopeName</key>
-    <string>source.regexp</string>
+    <string>source.regexp.python</string>
     <key>fileTypes</key>
     <array>
       <string>re</string>

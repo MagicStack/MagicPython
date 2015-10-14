@@ -2,5 +2,5 @@
 
 
 
-(?aiLmsux)    : source.regexp, storage.modifier.flag.regexp
-foo           : source.regexp
+(?aiLmsux)    : source.regexp.python, storage.modifier.flag.regexp
+foo           : source.regexp.python
