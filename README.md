@@ -4,8 +4,8 @@
 
 This is a package with preferences and syntax highlighter for cutting edge
 Python 3 (although Python 2 is well supported too). The syntax is compatible
-with [Sublime Text](http://www.sublimetext.com). It is meant to be a drop-in
-replacement for the default Python package.
+with [Sublime Text](http://www.sublimetext.com) and [Atom](http://atom.io).
+It is meant to be a drop-in replacement for the default Python package.
 
 The main motivation behind this package was the difficulty of using modern
 Python with other common syntax highlighters. They do a good job of the 90% of
