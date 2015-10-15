@@ -834,7 +834,7 @@ repository:
           (?x)
             ^\s*
             (@) \s* (?=
-                      [[:alpha:]_]\w* \s* (?:\.\s*[[:alpha:]_]\w*)* \s*
+                      [[:alpha:]_]\w* (?:\s*\.\s*[[:alpha:]_]\w*)* \s*
                         (?:$|\#)
                     )
         end: $|(?=\#)
@@ -848,7 +848,7 @@ repository:
           (?x)
             ^\s*
             (@) \s* (?=
-                      [[:alpha:]_]\w* \s* (?:\.\s*[[:alpha:]_]\w*)* \s* \(
+                      [[:alpha:]_]\w* (?:\s*\.\s*[[:alpha:]_]\w*)* \s* \(
                     )
         end: (\))
         beginCaptures:

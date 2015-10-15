@@ -2319,7 +2319,7 @@
             <string>(?x)
   ^\s*
   (@) \s* (?=
-            [[:alpha:]_]\w* \s* (?:\.\s*[[:alpha:]_]\w*)* \s*
+            [[:alpha:]_]\w* (?:\s*\.\s*[[:alpha:]_]\w*)* \s*
               (?:$|\#)
           )
 </string>
@@ -2348,7 +2348,7 @@
             <string>(?x)
   ^\s*
   (@) \s* (?=
-            [[:alpha:]_]\w* \s* (?:\.\s*[[:alpha:]_]\w*)* \s* \(
+            [[:alpha:]_]\w* (?:\s*\.\s*[[:alpha:]_]\w*)* \s* \(
           )
 </string>
             <key>end</key>
