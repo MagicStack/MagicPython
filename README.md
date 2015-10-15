@@ -22,6 +22,11 @@ led to the creation of this package.
 
 This is meant to be a drop-in replacement for the default Python package.
 
+In Atom, install the "MagicPython" package.
+
+In Sublime Text you can install "MagicPython" via "Package Control", or
+manually:
+
 - copy the MagicPython package into the Sublime user packages directory
 - disable Python package
 - enjoy
