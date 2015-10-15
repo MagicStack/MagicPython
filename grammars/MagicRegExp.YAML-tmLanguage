@@ -12,17 +12,15 @@ patterns:
 repository:
   $apply:
     - file: 'regexp.inc.yaml'
-      vars:
-        name: 'base'
 
   expression:
     patterns:
-      - include: '#base-expression'
+      - include: '#regexp-base-expression'
       - include: '#character-set'
       - include: '#comments'
-      - include: '#flags'
+      - include: '#regexp-flags'
       - include: '#named-group'
-      - include: '#backreference'
+      - include: '#regexp-backreference'
       - include: '#lookahead'
       - include: '#lookahead-negative'
       - include: '#lookbehind'
@@ -44,7 +42,7 @@ repository:
       '1': {name: constant.other.set.regexp
                   punctuation.character.set.end.regexp}
     patterns:
-      - include: '#charecter-set-escapes'
+      - include: '#regexp-charecter-set-escapes'
       - name: constant.character.set.regexp
         match: '[^\n]'
 
