@@ -2649,14 +2649,14 @@
         <key>match</key>
         <string>(?x)
   (?&lt;!\.)\b(
-    __import__ | abs | all | any | apply | callable | chr
+    __import__ | abs | all | any | apply | ascii | bin | callable | chr
     | compile | copyright | credits | delattr | dir | divmod
     | enumerate | eval | exec | exit | filter | format | getattr
-    | globals | hasattr | hash | help | id | input
+    | globals | hasattr | hash | help | hex | id | input
     | isinstance | issubclass | iter | len | license | locals | map
-    | max | memoryview | min | next | open | ord | pow | print
-    | quit | range | reload | repr | round
-    | setattr | sorted | sum | vars | zip
+    | max | memoryview | min | next | oct | open | ord | pow | print
+    | quit | range | reload | repr | reversed | round
+    | setattr | sorted | sum | super | vars | zip
   )\b
 </string>
       </dict>
@@ -2667,10 +2667,9 @@
         <key>match</key>
         <string>(?x)
   (?&lt;!\.)\b(
-    ascii | bin | bool | bytearray | bytes
-    | classmethod | complex | dict | float | frozenset
-    | hex | int | list | object | oct | property | reversed
-    | set | slice | staticmethod | str | super | tuple | type
+    bool | bytearray | bytes | classmethod | complex | dict
+    | float | frozenset | int | list | object | property
+    | set | slice | staticmethod | str | tuple | type
   )\b
 </string>
       </dict>

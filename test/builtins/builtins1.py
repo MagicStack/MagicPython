@@ -28,7 +28,7 @@ Exception     : source.python, support.type.exception.python
 BaseException : source.python, support.type.exception.python
 sum           : source.python, support.function.builtin.python
               : source.python
-oct           : source.python, support.type.python
+oct           : source.python, support.function.builtin.python
               : source.python
 abs           : source.python, support.function.builtin.python
               : source.python
