@@ -29,48 +29,8 @@
         <key>patterns</key>
         <array>
           <dict>
-            <key>name</key>
-            <string>support.other.match.any.regexp</string>
-            <key>match</key>
-            <string>\.</string>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>support.other.match.begin.regexp</string>
-            <key>match</key>
-            <string>\^</string>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>support.other.match.end.regexp</string>
-            <key>match</key>
-            <string>\$</string>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>keyword.operator.quantifier.regexp</string>
-            <key>match</key>
-            <string>[+*?]\??</string>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>keyword.operator.disjunction.regexp</string>
-            <key>match</key>
-            <string>\|</string>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>keyword.operator.quantifier.regexp</string>
-            <key>match</key>
-            <string>(?x)
-  \{(
-    \d+ | \d+,(\d+)? | ,\d+
-  )\}
-</string>
-          </dict>
-          <dict>
             <key>include</key>
-            <string>#escape-sequence</string>
+            <string>#base-expression</string>
           </dict>
           <dict>
             <key>include</key>
@@ -122,120 +82,6 @@
           </dict>
         </array>
       </dict>
-      <key>escape-sequence</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>include</key>
-            <string>#escape-special</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#escape-character</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#escape-unicode</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#backreference-number</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#escape-catchall</string>
-          </dict>
-        </array>
-      </dict>
-      <key>charecter-set-escapes</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>name</key>
-            <string>constant.character.escape.regexp</string>
-            <key>match</key>
-            <string>\\[abfnrtv\\]</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#escape-special</string>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>constant.character.escape.regexp</string>
-            <key>match</key>
-            <string>\\([0-7]{1,3})</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#escape-character</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#escape-unicode</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#escape-catchall</string>
-          </dict>
-        </array>
-      </dict>
-      <key>escape-special</key>
-      <dict>
-        <key>name</key>
-        <string>support.other.escape.special.regexp</string>
-        <key>match</key>
-        <string>\\([AbBdDsSwWZ])</string>
-      </dict>
-      <key>escape-character</key>
-      <dict>
-        <key>name</key>
-        <string>constant.character.escape.regexp</string>
-        <key>match</key>
-        <string>(?x)
-  \\ (
-        x[0-9A-Fa-f]{2}
-        | 0[0-7]{1,2}
-        | [0-7]{3}
-     )
-</string>
-      </dict>
-      <key>escape-unicode</key>
-      <dict>
-        <key>name</key>
-        <string>constant.character.unicode.regexp</string>
-        <key>match</key>
-        <string>(?x)
-  \\ (
-        u[0-9A-Fa-f]{4}
-        | U[0-9A-Fa-f]{8}
-     )
-</string>
-      </dict>
-      <key>backreference-number</key>
-      <dict>
-        <key>name</key>
-        <string>meta.backreference.regexp</string>
-        <key>match</key>
-        <string>(\\[1-9]\d?)</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>entity.name.tag.backreference.regexp</string>
-          </dict>
-        </dict>
-      </dict>
-      <key>escape-catchall</key>
-      <dict>
-        <key>name</key>
-        <string>constant.character.escape.regexp</string>
-        <key>match</key>
-        <string>\\(.|\n)</string>
-      </dict>
       <key>character-set</key>
       <dict>
         <key>name</key>
@@ -284,13 +130,6 @@
           </dict>
         </array>
       </dict>
-      <key>flags</key>
-      <dict>
-        <key>name</key>
-        <string>storage.modifier.flag.regexp</string>
-        <key>match</key>
-        <string>\(\?[aiLmsux]+\)</string>
-      </dict>
       <key>named-group</key>
       <dict>
         <key>name</key>
@@ -329,33 +168,6 @@
             <string>#expression</string>
           </dict>
         </array>
-      </dict>
-      <key>backreference</key>
-      <dict>
-        <key>name</key>
-        <string>meta.backreference.named.regexp</string>
-        <key>match</key>
-        <string>(?x)
-  (\()  (\?P= \w+(?:\s+[[:alnum:]]+)?)  (\))
-</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.parenthesis.backreference.named.begin.regexp support.other.parenthesis.regexp</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>entity.name.tag.named.backreference.regexp</string>
-          </dict>
-          <key>3</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.parenthesis.backreference.named.end.regexp support.other.parenthesis.regexp</string>
-          </dict>
-        </dict>
       </dict>
       <key>comments</key>
       <dict>
@@ -614,6 +426,204 @@
           <dict>
             <key>include</key>
             <string>#expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>base-expression</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>support.other.match.any.regexp</string>
+            <key>match</key>
+            <string>\.</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.match.begin.regexp</string>
+            <key>match</key>
+            <string>\^</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.match.end.regexp</string>
+            <key>match</key>
+            <string>\$</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.quantifier.regexp</string>
+            <key>match</key>
+            <string>[+*?]\??</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.disjunction.regexp</string>
+            <key>match</key>
+            <string>\|</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.quantifier.regexp</string>
+            <key>match</key>
+            <string>(?x)
+  \{(
+    \d+ | \d+,(\d+)? | ,\d+
+  )\}
+</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-sequence</string>
+          </dict>
+        </array>
+      </dict>
+      <key>backreference-number</key>
+      <dict>
+        <key>name</key>
+        <string>meta.backreference.regexp</string>
+        <key>match</key>
+        <string>(\\[1-9]\d?)</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>entity.name.tag.backreference.regexp</string>
+          </dict>
+        </dict>
+      </dict>
+      <key>backreference</key>
+      <dict>
+        <key>name</key>
+        <string>meta.backreference.named.regexp</string>
+        <key>match</key>
+        <string>(?x)
+  (\()  (\?P= \w+(?:\s+[[:alnum:]]+)?)  (\))
+</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.parenthesis.backreference.named.begin.regexp support.other.parenthesis.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>entity.name.tag.named.backreference.regexp</string>
+          </dict>
+          <key>3</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.parenthesis.backreference.named.end.regexp support.other.parenthesis.regexp</string>
+          </dict>
+        </dict>
+      </dict>
+      <key>flags</key>
+      <dict>
+        <key>name</key>
+        <string>storage.modifier.flag.regexp</string>
+        <key>match</key>
+        <string>\(\?[aiLmsux]+\)</string>
+      </dict>
+      <key>escape-special</key>
+      <dict>
+        <key>name</key>
+        <string>support.other.escape.special.regexp</string>
+        <key>match</key>
+        <string>\\([AbBdDsSwWZ])</string>
+      </dict>
+      <key>escape-character</key>
+      <dict>
+        <key>name</key>
+        <string>constant.character.escape.regexp</string>
+        <key>match</key>
+        <string>(?x)
+  \\ (
+        x[0-9A-Fa-f]{2}
+        | 0[0-7]{1,2}
+        | [0-7]{3}
+     )
+</string>
+      </dict>
+      <key>escape-unicode</key>
+      <dict>
+        <key>name</key>
+        <string>constant.character.unicode.regexp</string>
+        <key>match</key>
+        <string>(?x)
+  \\ (
+        u[0-9A-Fa-f]{4}
+        | U[0-9A-Fa-f]{8}
+     )
+</string>
+      </dict>
+      <key>escape-catchall</key>
+      <dict>
+        <key>name</key>
+        <string>constant.character.escape.regexp</string>
+        <key>match</key>
+        <string>\\(.|\n)</string>
+      </dict>
+      <key>escape-sequence</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#escape-special</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-character</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#backreference-number</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-catchall</string>
+          </dict>
+        </array>
+      </dict>
+      <key>charecter-set-escapes</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>constant.character.escape.regexp</string>
+            <key>match</key>
+            <string>\\[abfnrtv\\]</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-special</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>constant.character.escape.regexp</string>
+            <key>match</key>
+            <string>\\([0-7]{1,3})</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-character</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-catchall</string>
           </dict>
         </array>
       </dict>
