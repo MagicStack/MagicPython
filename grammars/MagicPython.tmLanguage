@@ -2392,6 +2392,10 @@
             <string>#builtin-callables</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#illegal-object-name</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>entity.name.function.decorator.python</string>
             <key>match</key>

@@ -863,6 +863,7 @@ repository:
   decorator-name:
     patterns:
       - include: '#builtin-callables'
+      - include: '#illegal-object-name'
       - name: entity.name.function.decorator.python
         match: |
           (?x)
