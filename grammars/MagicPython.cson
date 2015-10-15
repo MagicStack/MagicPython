@@ -1632,6 +1632,9 @@ repository:
         include: "#illegal-names"
       }
       {
+        include: "#illegal-object-name"
+      }
+      {
         include: "#special-names"
       }
     ]

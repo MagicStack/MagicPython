@@ -2770,6 +2770,10 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
+            <string>#illegal-object-name</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#special-names</string>
           </dict>
         </array>
