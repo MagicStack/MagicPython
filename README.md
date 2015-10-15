@@ -99,7 +99,11 @@ Raw strings are often interpreted as regular expressions. This is a bit of a
 problem, because depending on the application this may actually not be the most
 common case. Raw strings can simply be the input to some other processor, in
 which case regexp-specific highlighting is really hindering the overall
-readability.
+readability. MagicPython follows a convention that a lower-case `r` prefix means
+a regexp string, but an upper-case `R` prefix means just a raw string with no
+special regexp semantics. This convention holds true for all of the legal
+combinations of prefixes. As always the syntax is biased towards Python 3, thus
+it will mark Pyhton-2-only prefixes (i.e. variations of `ur`) as deprecated.
 
 String formatting is often only supported for '%-style formatting', however, the
 recommended and more readable syntax used by `.format` is ignored. The benefits
@@ -160,6 +164,8 @@ You need `npm` and `node.js` to work on MagicPython.
 
 - clone the repository
 - run `make` to build the local development environment
+- run `make release` to build the syntax packages for Sublime Text and Atom
+  (running `make test` also generates the "release" packages)
 
 Please note that we have some unit tests for the syntax scoping. We will be
 expanding and updating our test corpus. This allows us to trust that tiny
