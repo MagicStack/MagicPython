@@ -1,7 +1,7 @@
 .PHONY: all test release
 
 all:
-	npm install syntaxdev@0.0.7
+	npm install syntaxdev@0.0.8
 
 test: release
 #	Run tests

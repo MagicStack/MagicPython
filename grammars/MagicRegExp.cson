@@ -8,214 +8,10 @@ uuid: "39e15186-71e6-11e5-b82c-7c6d62900c7c"
 author: "Victor Petrovykh victor@magic.io"
 patterns: [
   {
-    include: "#expression"
+    include: "#regexp-expression"
   }
 ]
 repository:
-  expression:
-    patterns: [
-      {
-        include: "#regexp-base-expression"
-      }
-      {
-        include: "#character-set"
-      }
-      {
-        include: "#comments"
-      }
-      {
-        include: "#regexp-flags"
-      }
-      {
-        include: "#named-group"
-      }
-      {
-        include: "#regexp-backreference"
-      }
-      {
-        include: "#lookahead"
-      }
-      {
-        include: "#lookahead-negative"
-      }
-      {
-        include: "#lookbehind"
-      }
-      {
-        include: "#lookbehind-negative"
-      }
-      {
-        include: "#conditional"
-      }
-      {
-        include: "#parentheses-non-capturing"
-      }
-      {
-        include: "#parentheses"
-      }
-    ]
-  "character-set":
-    name: "meta.character.set.regexp"
-    begin: "(\\[)(\\^)?(\\])?"
-    end: "(\\])"
-    beginCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
-      "2":
-        name: "keyword.operator.negation.regexp"
-      "3":
-        name: "constant.character.set.regexp"
-    endCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.end.regexp"
-    patterns: [
-      {
-        include: "#regexp-charecter-set-escapes"
-      }
-      {
-        name: "constant.character.set.regexp"
-        match: "[^\\n]"
-      }
-    ]
-  "named-group":
-    name: "meta.named.regexp"
-    begin: '''
-      (?x)
-        (\\()  (\\?P <\\w+(?:\\s+[[:alnum:]]+)?>)
-      
-    '''
-    end: "\\)"
-    beginCaptures:
-      "1":
-        name: "punctuation.parenthesis.named.begin.regexp support.other.parenthesis.regexp"
-      "2":
-        name: "entity.name.tag.named.group.regexp"
-    endCaptures:
-      "0":
-        name: "punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp"
-    patterns: [
-      {
-        include: "#expression"
-      }
-    ]
-  comments:
-    name: "comment.regexp"
-    begin: "\\(\\?#"
-    end: "\\)"
-    beginCaptures:
-      "0":
-        name: "punctuation.comments.begin.regexp"
-    endCaptures:
-      "0":
-        name: "punctuation.comments.end.regexp"
-  lookahead:
-    begin: "(\\()\\?="
-    end: "\\)"
-    beginCaptures:
-      "0":
-        name: "keyword.operator.lookahead.regexp"
-      "1":
-        name: "punctuation.parenthesis.lookahead.begin.regexp"
-    endCaptures:
-      "0":
-        name: "punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp"
-    patterns: [
-      {
-        include: "#expression"
-      }
-    ]
-  "lookahead-negative":
-    begin: "(\\()\\?!"
-    end: "\\)"
-    beginCaptures:
-      "0":
-        name: "keyword.operator.lookahead.negative.regexp"
-      "1":
-        name: "punctuation.parenthesis.lookahead.begin.regexp"
-    endCaptures:
-      "0":
-        name: "punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp"
-    patterns: [
-      {
-        include: "#expression"
-      }
-    ]
-  lookbehind:
-    begin: "(\\()\\?<="
-    end: "\\)"
-    beginCaptures:
-      "0":
-        name: "keyword.operator.lookbehind.regexp"
-      "1":
-        name: "punctuation.parenthesis.lookbehind.begin.regexp"
-    endCaptures:
-      "0":
-        name: "punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp"
-    patterns: [
-      {
-        include: "#expression"
-      }
-    ]
-  "lookbehind-negative":
-    begin: "(\\()\\?<!"
-    end: "\\)"
-    beginCaptures:
-      "0":
-        name: "keyword.operator.lookbehind.negative.regexp"
-      "1":
-        name: "punctuation.parenthesis.lookbehind.begin.regexp"
-    endCaptures:
-      "0":
-        name: "punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp"
-    patterns: [
-      {
-        include: "#expression"
-      }
-    ]
-  conditional:
-    begin: "(\\()\\?\\((\\w+(?:\\s+[[:alnum:]]+)?|\\d+)\\)"
-    end: "\\)"
-    beginCaptures:
-      "0":
-        name: "keyword.operator.conditional.regexp"
-      "1":
-        name: "punctuation.parenthesis.conditional.begin.regexp"
-    endCaptures:
-      "0":
-        name: "punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp"
-    patterns: [
-      {
-        include: "#expression"
-      }
-    ]
-  "parentheses-non-capturing":
-    begin: "\\(\\?:"
-    end: "\\)"
-    beginCaptures:
-      "0":
-        name: "punctuation.parenthesis.non-capturing.begin.regexp support.other.parenthesis.regexp"
-    endCaptures:
-      "0":
-        name: "punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp"
-    patterns: [
-      {
-        include: "#expression"
-      }
-    ]
-  parentheses:
-    begin: "\\("
-    end: "\\)"
-    beginCaptures:
-      "0":
-        name: "punctuation.parenthesis.begin.regexp support.other.parenthesis.regexp"
-    endCaptures:
-      "0":
-        name: "punctuation.parenthesis.end.regexp support.other.parenthesis.regexp"
-    patterns: [
-      {
-        include: "#expression"
-      }
-    ]
   "regexp-base-expression":
     patterns: [
       {
@@ -341,5 +137,209 @@ repository:
       }
       {
         include: "#regexp-escape-catchall"
+      }
+    ]
+  "regexp-expression":
+    patterns: [
+      {
+        include: "#regexp-base-expression"
+      }
+      {
+        include: "#regexp-character-set"
+      }
+      {
+        include: "#regexp-comments"
+      }
+      {
+        include: "#regexp-flags"
+      }
+      {
+        include: "#regexp-named-group"
+      }
+      {
+        include: "#regexp-backreference"
+      }
+      {
+        include: "#regexp-lookahead"
+      }
+      {
+        include: "#regexp-lookahead-negative"
+      }
+      {
+        include: "#regexp-lookbehind"
+      }
+      {
+        include: "#regexp-lookbehind-negative"
+      }
+      {
+        include: "#regexp-conditional"
+      }
+      {
+        include: "#regexp-parentheses-non-capturing"
+      }
+      {
+        include: "#regexp-parentheses"
+      }
+    ]
+  "regexp-character-set":
+    name: "meta.character.set.regexp"
+    begin: "(\\[)(\\^)?(\\])?"
+    end: "(\\])"
+    beginCaptures:
+      "1":
+        name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
+      "2":
+        name: "keyword.operator.negation.regexp"
+      "3":
+        name: "constant.character.set.regexp"
+    endCaptures:
+      "1":
+        name: "constant.other.set.regexp punctuation.character.set.end.regexp"
+    patterns: [
+      {
+        include: "#regexp-charecter-set-escapes"
+      }
+      {
+        name: "constant.character.set.regexp"
+        match: "[^\\n]"
+      }
+    ]
+  "regexp-named-group":
+    name: "meta.named.regexp"
+    begin: '''
+      (?x)
+        (\\()  (\\?P <\\w+(?:\\s+[[:alnum:]]+)?>)
+      
+    '''
+    end: "\\)"
+    beginCaptures:
+      "1":
+        name: "punctuation.parenthesis.named.begin.regexp support.other.parenthesis.regexp"
+      "2":
+        name: "entity.name.tag.named.group.regexp"
+    endCaptures:
+      "0":
+        name: "punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp"
+    patterns: [
+      {
+        include: "#regexp-expression"
+      }
+    ]
+  "regexp-comments":
+    name: "comment.regexp"
+    begin: "\\(\\?#"
+    end: "\\)"
+    beginCaptures:
+      "0":
+        name: "punctuation.comments.begin.regexp"
+    endCaptures:
+      "0":
+        name: "punctuation.comments.end.regexp"
+  "regexp-lookahead":
+    begin: "(\\()\\?="
+    end: "\\)"
+    beginCaptures:
+      "0":
+        name: "keyword.operator.lookahead.regexp"
+      "1":
+        name: "punctuation.parenthesis.lookahead.begin.regexp"
+    endCaptures:
+      "0":
+        name: "punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp"
+    patterns: [
+      {
+        include: "#regexp-expression"
+      }
+    ]
+  "regexp-lookahead-negative":
+    begin: "(\\()\\?!"
+    end: "\\)"
+    beginCaptures:
+      "0":
+        name: "keyword.operator.lookahead.negative.regexp"
+      "1":
+        name: "punctuation.parenthesis.lookahead.begin.regexp"
+    endCaptures:
+      "0":
+        name: "punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp"
+    patterns: [
+      {
+        include: "#regexp-expression"
+      }
+    ]
+  "regexp-lookbehind":
+    begin: "(\\()\\?<="
+    end: "\\)"
+    beginCaptures:
+      "0":
+        name: "keyword.operator.lookbehind.regexp"
+      "1":
+        name: "punctuation.parenthesis.lookbehind.begin.regexp"
+    endCaptures:
+      "0":
+        name: "punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp"
+    patterns: [
+      {
+        include: "#regexp-expression"
+      }
+    ]
+  "regexp-lookbehind-negative":
+    begin: "(\\()\\?<!"
+    end: "\\)"
+    beginCaptures:
+      "0":
+        name: "keyword.operator.lookbehind.negative.regexp"
+      "1":
+        name: "punctuation.parenthesis.lookbehind.begin.regexp"
+    endCaptures:
+      "0":
+        name: "punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp"
+    patterns: [
+      {
+        include: "#regexp-expression"
+      }
+    ]
+  "regexp-conditional":
+    begin: "(\\()\\?\\((\\w+(?:\\s+[[:alnum:]]+)?|\\d+)\\)"
+    end: "\\)"
+    beginCaptures:
+      "0":
+        name: "keyword.operator.conditional.regexp"
+      "1":
+        name: "punctuation.parenthesis.conditional.begin.regexp"
+    endCaptures:
+      "0":
+        name: "punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp"
+    patterns: [
+      {
+        include: "#regexp-expression"
+      }
+    ]
+  "regexp-parentheses-non-capturing":
+    begin: "\\(\\?:"
+    end: "\\)"
+    beginCaptures:
+      "0":
+        name: "punctuation.parenthesis.non-capturing.begin.regexp support.other.parenthesis.regexp"
+    endCaptures:
+      "0":
+        name: "punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp"
+    patterns: [
+      {
+        include: "#regexp-expression"
+      }
+    ]
+  "regexp-parentheses":
+    begin: "\\("
+    end: "\\)"
+    beginCaptures:
+      "0":
+        name: "punctuation.parenthesis.begin.regexp support.other.parenthesis.regexp"
+    endCaptures:
+      "0":
+        name: "punctuation.parenthesis.end.regexp support.other.parenthesis.regexp"
+    patterns: [
+      {
+        include: "#regexp-expression"
       }
     ]
