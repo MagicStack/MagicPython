@@ -918,7 +918,7 @@ repository:
   function-arguments:
     name: meta.function-call.arguments.python
     begin: (\()
-    end: (?=\))
+    end: (?=\))(?!\)\s*\()
     beginCaptures:
       '1': {name: punctuation.definition.arguments.begin.python}
     patterns:
@@ -934,6 +934,10 @@ repository:
       - name: keyword.operator.assignment.python
         match: \=
       - include: '#expression'
+      - match: \s*(\))\s*(\()
+        captures:
+          '1': {name: punctuation.definition.arguments.end.python}
+          '2': {name: punctuation.definition.arguments.begin.python}
 
   builtin-callables:
     patterns:

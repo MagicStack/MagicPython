@@ -2522,7 +2522,7 @@
         <key>begin</key>
         <string>(\()</string>
         <key>end</key>
-        <string>(?=\))</string>
+        <string>(?=\))(?!\)\s*\()</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -2573,6 +2573,23 @@
           <dict>
             <key>include</key>
             <string>#expression</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\s*(\))\s*(\()</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.arguments.end.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.arguments.begin.python</string>
+              </dict>
+            </dict>
           </dict>
         </array>
       </dict>
