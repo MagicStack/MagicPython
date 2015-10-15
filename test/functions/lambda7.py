@@ -15,9 +15,9 @@ a             : meta.function.lambda.parameters.python, meta.lambda-function.pyt
 c             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.pyhton
 =             : keyword.operator.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 {             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.dict.begin.python, source.python
-'             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-key           : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, string.quoted.single.python
-'             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
+'             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
+key           : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, string.quoted.single.single.python
+'             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
 :             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
               : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
                                   : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python

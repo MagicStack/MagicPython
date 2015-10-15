@@ -24,9 +24,9 @@ FOO           : meta.function-call.arguments.python, meta.function-call.python, 
 lambda        : meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.function.lambda.python
 :             : meta.function-call.arguments.python, meta.function-call.python, source.python
 {             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.dict.begin.python, source.python
-'             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-q             : meta.function-call.arguments.python, meta.function-call.python, source.python, string.quoted.single.python
-'             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
+'             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
+q             : meta.function-call.arguments.python, meta.function-call.python, source.python, string.quoted.single.single.python
+'             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
 :             : meta.function-call.arguments.python, meta.function-call.python, source.python
 42            : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 }             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.dict.end.python, source.python

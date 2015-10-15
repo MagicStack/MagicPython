@@ -25,8 +25,8 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python, string.regexp.quoted.triple.python
  comment      : comment.line.number-sign.python, source.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
-R             : source.python, storage.type.string.python, string.quoted.triple.raw.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.triple.raw.python
-    (?x)        # not a : source.python, string.quoted.triple.raw.python
-        foo     # comment : source.python, string.quoted.triple.raw.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.triple.raw.python
+R             : source.python, storage.type.string.python, string.quoted.single.multi.raw.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.single.multi.raw.python
+    (?x)        # not a : source.python, string.quoted.single.multi.raw.python
+        foo     # comment : source.python, string.quoted.single.multi.raw.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.single.multi.raw.python

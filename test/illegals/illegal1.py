@@ -24,9 +24,9 @@ a             : source.python
 =             : keyword.operator.assignment.python, source.python
 $             : invalid.illegal.character.python, source.python
 (             : punctuation.parenthesis.begin.python, source.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-.class        : source.python, string.quoted.single.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
+.class        : source.python, string.quoted.single.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
 )             : punctuation.parenthesis.end.python, source.python
 .             : source.python
 fuuuu         : meta.function-call.python, source.python

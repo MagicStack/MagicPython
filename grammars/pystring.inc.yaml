@@ -1,0 +1,53 @@
+---
+repository:
+  string-raw-${quote}-quoted-${line}-line:
+    name: string.quoted.${quote}.${line}.raw.python
+    begin: \b(([uU]R)|(R))(${marker})
+    end: ${marker}
+    beginCaptures:
+      '2': {name: invalid.deprecated.prefix.python}
+      '3': {name: storage.type.string.python}
+      '4': {name: punctuation.definition.string.begin.python}
+    endCaptures:
+      '0': {name: punctuation.definition.string.end.python}
+    patterns:
+      - include: '#string-raw-guts'
+
+  string-bin-${quote}-quoted-${line}-line:
+    name: string.quoted.${quote}.${line}.binary.python
+    begin: (\b[bB])(${marker})
+    end: ${marker}
+    beginCaptures:
+      '1': {name: storage.type.string.python}
+      '2': {name: punctuation.definition.string.begin.python}
+    endCaptures:
+      '0': {name: punctuation.definition.string.end.python}
+    patterns:
+      - include: '#string-entity'
+
+  string-raw-bin-${quote}-quoted-${line}-line:
+    name: string.quoted.${quote}.${line}.raw.binary.python
+    begin: (\b(?:R[bB]|[bB]R))(${marker})
+    end: (${marker})|(?<!\\)(\n)
+    beginCaptures:
+      '1': {name: storage.type.string.python}
+      '2': {name: punctuation.definition.string.begin.python}
+    endCaptures:
+      '1': {name: punctuation.definition.string.end.python}
+      '2': {name: invalid.illegal.newline.python}
+    patterns:
+      - include: '#string-raw-bin-guts'
+
+  string-${quote}-quoted-${line}-line:
+    name: string.quoted.${quote}.${line}.python
+    begin: (\b[rR](?=[uU]))?([uU])?(${marker})
+    end: ${marker}
+    beginCaptures:
+      '1': {name: invalid.illegal.prefix.python}
+      '2': {name: storage.type.string.python}
+      '3': {name: punctuation.definition.string.begin.python}
+    endCaptures:
+      '0': {name: punctuation.definition.string.end.python}
+    patterns:
+      - include: '#string-unicode-guts'
+...

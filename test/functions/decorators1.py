@@ -46,9 +46,9 @@ a             : meta.function-call.arguments.python, meta.function.decorator.pyt
 b             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, variable.parameter.function-call.pyhton
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 {             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.dict.begin.python, source.python
-'             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-q             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, string.quoted.single.python
-'             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
+'             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
+q             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, string.quoted.single.single.python
+'             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
 :             : meta.function-call.arguments.python, meta.function.decorator.python, source.python
 42            : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 }             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.dict.end.python, source.python
