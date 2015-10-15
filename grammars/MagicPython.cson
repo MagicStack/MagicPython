@@ -1835,26 +1835,37 @@ repository:
       }
     ]
   "single-one-regexp-character-set":
-    name: "meta.character.set.regexp"
-    begin: "(\\[)(\\^)?(\\])?"
-    end: "(\\]|(?=\\'))"
-    beginCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
-      "2":
-        name: "keyword.operator.negation.regexp"
-      "3":
-        name: "constant.character.set.regexp"
-    endCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.end.regexp"
     patterns: [
       {
-        include: "#regexp-charecter-set-escapes"
+        match: '''
+          (?x)
+            \\[ \\^? \\] (?! .*?\\])
+          
+        '''
       }
       {
-        name: "constant.character.set.regexp"
-        match: "[^\\n]"
+        name: "meta.character.set.regexp"
+        begin: "(\\[)(\\^)?(\\])?"
+        end: "(\\]|(?=\\'))"
+        beginCaptures:
+          "1":
+            name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
+          "2":
+            name: "keyword.operator.negation.regexp"
+          "3":
+            name: "constant.character.set.regexp"
+        endCaptures:
+          "1":
+            name: "constant.other.set.regexp punctuation.character.set.end.regexp"
+        patterns: [
+          {
+            include: "#regexp-charecter-set-escapes"
+          }
+          {
+            name: "constant.character.set.regexp"
+            match: "[^\\n]"
+          }
+        ]
       }
     ]
   "single-one-regexp-named-group":
@@ -2039,29 +2050,37 @@ repository:
       }
     ]
   "single-three-regexp-character-set":
-    name: "meta.character.set.regexp"
-    begin: "(\\[)(\\^)?(\\])?"
-    end: "(\\]|(?=\\'\\'\\'))"
-    beginCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
-      "2":
-        name: "keyword.operator.negation.regexp"
-      "3":
-        name: "constant.character.set.regexp"
-    endCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.end.regexp"
     patterns: [
       {
-        include: "#regexp-charecter-set-escapes"
+        match: '''
+          (?x)
+            \\[ \\^? \\] (?! .*?\\])
+          
+        '''
       }
       {
-        name: "constant.character.set.regexp"
-        match: "[^\\n]"
-      }
-      {
-        include: "#comments"
+        name: "meta.character.set.regexp"
+        begin: "(\\[)(\\^)?(\\])?"
+        end: "(\\]|(?=\\'\\'\\'))"
+        beginCaptures:
+          "1":
+            name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
+          "2":
+            name: "keyword.operator.negation.regexp"
+          "3":
+            name: "constant.character.set.regexp"
+        endCaptures:
+          "1":
+            name: "constant.other.set.regexp punctuation.character.set.end.regexp"
+        patterns: [
+          {
+            include: "#regexp-charecter-set-escapes"
+          }
+          {
+            name: "constant.character.set.regexp"
+            match: "[^\\n]"
+          }
+        ]
       }
     ]
   "single-three-regexp-named-group":
@@ -2270,26 +2289,37 @@ repository:
       }
     ]
   "double-one-regexp-character-set":
-    name: "meta.character.set.regexp"
-    begin: "(\\[)(\\^)?(\\])?"
-    end: "(\\]|(?=\"))"
-    beginCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
-      "2":
-        name: "keyword.operator.negation.regexp"
-      "3":
-        name: "constant.character.set.regexp"
-    endCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.end.regexp"
     patterns: [
       {
-        include: "#regexp-charecter-set-escapes"
+        match: '''
+          (?x)
+            \\[ \\^? \\] (?! .*?\\])
+          
+        '''
       }
       {
-        name: "constant.character.set.regexp"
-        match: "[^\\n]"
+        name: "meta.character.set.regexp"
+        begin: "(\\[)(\\^)?(\\])?"
+        end: "(\\]|(?=\"))"
+        beginCaptures:
+          "1":
+            name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
+          "2":
+            name: "keyword.operator.negation.regexp"
+          "3":
+            name: "constant.character.set.regexp"
+        endCaptures:
+          "1":
+            name: "constant.other.set.regexp punctuation.character.set.end.regexp"
+        patterns: [
+          {
+            include: "#regexp-charecter-set-escapes"
+          }
+          {
+            name: "constant.character.set.regexp"
+            match: "[^\\n]"
+          }
+        ]
       }
     ]
   "double-one-regexp-named-group":
@@ -2474,29 +2504,37 @@ repository:
       }
     ]
   "double-three-regexp-character-set":
-    name: "meta.character.set.regexp"
-    begin: "(\\[)(\\^)?(\\])?"
-    end: "(\\]|(?=\"\"\"))"
-    beginCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
-      "2":
-        name: "keyword.operator.negation.regexp"
-      "3":
-        name: "constant.character.set.regexp"
-    endCaptures:
-      "1":
-        name: "constant.other.set.regexp punctuation.character.set.end.regexp"
     patterns: [
       {
-        include: "#regexp-charecter-set-escapes"
+        match: '''
+          (?x)
+            \\[ \\^? \\] (?! .*?\\])
+          
+        '''
       }
       {
-        name: "constant.character.set.regexp"
-        match: "[^\\n]"
-      }
-      {
-        include: "#comments"
+        name: "meta.character.set.regexp"
+        begin: "(\\[)(\\^)?(\\])?"
+        end: "(\\]|(?=\"\"\"))"
+        beginCaptures:
+          "1":
+            name: "constant.other.set.regexp punctuation.character.set.begin.regexp"
+          "2":
+            name: "keyword.operator.negation.regexp"
+          "3":
+            name: "constant.character.set.regexp"
+        endCaptures:
+          "1":
+            name: "constant.other.set.regexp punctuation.character.set.end.regexp"
+        patterns: [
+          {
+            include: "#regexp-charecter-set-escapes"
+          }
+          {
+            name: "constant.character.set.regexp"
+            match: "[^\\n]"
+          }
+        ]
       }
     ]
   "double-three-regexp-named-group":

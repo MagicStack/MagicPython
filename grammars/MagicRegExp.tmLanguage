@@ -282,49 +282,60 @@
       </dict>
       <key>regexp-character-set</key>
       <dict>
-        <key>name</key>
-        <string>meta.character.set.regexp</string>
-        <key>begin</key>
-        <string>(\[)(\^)?(\])?</string>
-        <key>end</key>
-        <string>(\])</string>
-        <key>beginCaptures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>constant.other.set.regexp punctuation.character.set.begin.regexp</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.operator.negation.regexp</string>
-          </dict>
-          <key>3</key>
-          <dict>
-            <key>name</key>
-            <string>constant.character.set.regexp</string>
-          </dict>
-        </dict>
-        <key>endCaptures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>constant.other.set.regexp punctuation.character.set.end.regexp</string>
-          </dict>
-        </dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>include</key>
-            <string>#regexp-charecter-set-escapes</string>
+            <key>match</key>
+            <string>(?x)
+  \[ \^? \] (?! .*?\])
+</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>constant.character.set.regexp</string>
-            <key>match</key>
-            <string>[^\n]</string>
+            <string>meta.character.set.regexp</string>
+            <key>begin</key>
+            <string>(\[)(\^)?(\])?</string>
+            <key>end</key>
+            <string>(\])</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>constant.other.set.regexp punctuation.character.set.begin.regexp</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.negation.regexp</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>constant.character.set.regexp</string>
+              </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>constant.other.set.regexp punctuation.character.set.end.regexp</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#regexp-charecter-set-escapes</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>constant.character.set.regexp</string>
+                <key>match</key>
+                <string>[^\n]</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>

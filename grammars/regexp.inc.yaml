@@ -17,22 +17,25 @@ repository:
       - include: '#${prefix}regexp-parentheses'
 
   ${prefix}regexp-character-set:
-    name: meta.character.set.regexp
-    begin: (\[)(\^)?(\])?
-    end: (\]${marker})
-    beginCaptures:
-      '1': {name: constant.other.set.regexp
-                  punctuation.character.set.begin.regexp}
-      '2': {name: keyword.operator.negation.regexp}
-      '3': {name: constant.character.set.regexp}
-    endCaptures:
-      '1': {name: constant.other.set.regexp
-                  punctuation.character.set.end.regexp}
     patterns:
-      - include: '#regexp-charecter-set-escapes'
-      - name: constant.character.set.regexp
-        match: '[^\n]'
-      ${nested}
+      - match: |
+          (?x)
+            \[ \^? \] (?! .*?\])
+      - name: meta.character.set.regexp
+        begin: (\[)(\^)?(\])?
+        end: (\]${marker})
+        beginCaptures:
+          '1': {name: constant.other.set.regexp
+                      punctuation.character.set.begin.regexp}
+          '2': {name: keyword.operator.negation.regexp}
+          '3': {name: constant.character.set.regexp}
+        endCaptures:
+          '1': {name: constant.other.set.regexp
+                      punctuation.character.set.end.regexp}
+        patterns:
+          - include: '#regexp-charecter-set-escapes'
+          - name: constant.character.set.regexp
+            match: '[^\n]'
 
   ${prefix}regexp-named-group:
     name: meta.named.regexp
