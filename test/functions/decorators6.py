@@ -1,10 +1,9 @@
 @a.   b  .  \
    c.None.z(foo=BAR). \
        baz[1:2]
-@foo.class.bar
-@foo.ok
+@foo.class.bar[]
+@foo.ok '''
 def foo(): pass
-
 
 
 @             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
@@ -42,10 +41,13 @@ foo           : entity.name.function.decorator.python, meta.function.decorator.p
 class         : keyword.control.flow.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 bar           : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+[]            : invalid.illegal.decorator.python, meta.function.decorator.python, source.python
 @             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 foo           : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 ok            : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+              : invalid.illegal.decorator.python, meta.function.decorator.python, source.python
+'''           : invalid.illegal.decorator.python, meta.function.decorator.python, source.python
 def           : meta.function.python, source.python, storage.type.function.python
               : meta.function.python, source.python
 foo           : entity.name.function.python, meta.function.python, source.python

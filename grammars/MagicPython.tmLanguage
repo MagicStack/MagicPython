@@ -2373,6 +2373,22 @@
             <key>include</key>
             <string>#line-continuation</string>
           </dict>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.decorator.python</string>
+            <key>match</key>
+            <string>(?x)
+  \s* ([^([:alpha:]\s_\.#\\] .*?) (?=\#|$)
+</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.decorator.python</string>
+              </dict>
+            </dict>
+          </dict>
         </array>
       </dict>
       <key>call-wrapper-inheritance</key>

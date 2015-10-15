@@ -880,6 +880,12 @@ repository:
           (?x)
             ([[:alpha:]_]\w*) | \.
       - include: '#line-continuation'
+      - name: invalid.illegal.decorator.python
+        match: |
+          (?x)
+            \s* ([^([:alpha:]\s_\.#\\] .*?) (?=\#|$)
+        captures:
+          '1': {name: invalid.illegal.decorator.python}
 
   call-wrapper-inheritance:
     comment: same as a funciton call, but in inheritance context
