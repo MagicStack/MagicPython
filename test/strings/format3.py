@@ -1,7 +1,7 @@
 '%i' % 42
 "%(language)s has %(number)03d quote types."
 b"%(language)s has %(number)03d quote types."
-r"%(language)s has %(number)03d quote types."
+R"%(language)s has %(number)03d quote types."
 
 
 
@@ -25,7 +25,7 @@ b             : source.python, storage.type.string.python, string.quoted.double.
 %(number)03d  : constant.character.format.python, source.python, string.quoted.double.python
  quote types. : source.python, string.quoted.double.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.double.python
-r             : source.python, storage.type.string.python, string.quoted.double.raw.python
+R             : source.python, storage.type.string.python, string.quoted.double.raw.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.double.raw.python
 %(language)s  : constant.character.format.python, source.python, string.quoted.double.raw.python
  has          : source.python, string.quoted.double.raw.python

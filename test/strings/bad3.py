@@ -5,10 +5,10 @@ def foo(a=1): pass # doesn't break!
 
 
 
-r             : source.python, storage.type.string.python, string.quoted.double.raw.python
-"             : punctuation.definition.string.begin.python, source.python, string.quoted.double.raw.python
-bad string    : source.python, string.quoted.double.raw.python
-              : invalid.illegal.newline.python, source.python, string.quoted.double.raw.python
+r             : source.python, storage.type.string.python, string.regexp.quoted.double.python
+"             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.double.python
+bad string    : source.python, string.regexp.quoted.double.python
+              : invalid.illegal.newline.python, source.python, string.regexp.quoted.double.python
 foo           : source.python
 \             : separator.continuation.line.python, source.python
 ' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005" : invalid.illegal.line.continuation.python, source.python

@@ -1,6 +1,6 @@
-replace = {'"' : r'\"',
-           "'" : r'\'',
-           '\\': r'\\'}
+replace = {'"' : R'\"',
+           "'" : R'\'',
+           '\\': R'\\'}
 
 
 replace       : source.python
@@ -11,7 +11,7 @@ replace       : source.python
 "             : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
  :            : source.python
-r             : source.python, storage.type.string.python, string.quoted.single.raw.python
+R             : source.python, storage.type.string.python, string.quoted.single.raw.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.python
 \"            : source.python, string.quoted.single.raw.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python
@@ -21,7 +21,7 @@ r             : source.python, storage.type.string.python, string.quoted.single.
 '             : source.python, string.quoted.double.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.double.python
  :            : source.python
-r             : source.python, storage.type.string.python, string.quoted.single.raw.python
+R             : source.python, storage.type.string.python, string.quoted.single.raw.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.python
 \'            : source.python, string.quoted.single.raw.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python
@@ -31,7 +31,7 @@ r             : source.python, storage.type.string.python, string.quoted.single.
 \\            : constant.character.python, source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 :             : source.python
-r             : source.python, storage.type.string.python, string.quoted.single.raw.python
+R             : source.python, storage.type.string.python, string.quoted.single.raw.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.python
 \\            : source.python, string.quoted.single.raw.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python

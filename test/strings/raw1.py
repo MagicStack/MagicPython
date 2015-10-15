@@ -1,4 +1,4 @@
-r"""
+R"""
 multiline "raw" string \
 
     \xf1 \u1234aaaa \U1234aaaa
@@ -8,7 +8,7 @@ multiline "raw" string \
 
 
 
-r             : source.python, storage.type.string.python, string.quoted.triple.raw.python
+R             : source.python, storage.type.string.python, string.quoted.triple.raw.python
 """           : punctuation.definition.string.begin.python, source.python, string.quoted.triple.raw.python
 multiline "raw" string \ : source.python, string.quoted.triple.raw.python
               : source.python, string.quoted.triple.raw.python

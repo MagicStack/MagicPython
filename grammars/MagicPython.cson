@@ -364,7 +364,6 @@ repository:
       "2":
         name: "storage.type.number.python"
   regexp:
-    name: "string.regexp.python"
     patterns: [
       {
         include: "#regexp-single-quoted-multi-line"
@@ -380,13 +379,17 @@ repository:
       }
     ]
   "regexp-single-quoted-single-line":
-    name: "string.quoted.single.raw.python"
-    begin: "(\\bR)(\\')"
+    name: "string.regexp.quoted.single.python"
+    begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\')"
     end: "(\\')|(?<!\\\\)(\\n)"
     beginCaptures:
-      "1":
-        name: "storage.type.string.python"
       "2":
+        name: "invalid.deprecated.prefix.python"
+      "3":
+        name: "storage.type.string.python"
+      "4":
+        name: "storage.type.string.python"
+      "5":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "1":
@@ -399,13 +402,17 @@ repository:
       }
     ]
   "regexp-double-quoted-single-line":
-    name: "string.quoted.double.raw.python"
-    begin: "(\\bR)(\\\")"
+    name: "string.regexp.quoted.double.python"
+    begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\\")"
     end: "(\\\")|(?<!\\\\)(\\n)"
     beginCaptures:
-      "1":
-        name: "storage.type.string.python"
       "2":
+        name: "invalid.deprecated.prefix.python"
+      "3":
+        name: "storage.type.string.python"
+      "4":
+        name: "storage.type.string.python"
+      "5":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "1":
@@ -418,13 +425,17 @@ repository:
       }
     ]
   "regexp-single-quoted-multi-line":
-    name: "string.quoted.triple.raw.python"
-    begin: "(\\bR)(\\'\\'\\')"
+    name: "string.regexp.quoted.triple.python"
+    begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\'\\'\\')"
     end: "\\'\\'\\'"
     beginCaptures:
-      "1":
-        name: "storage.type.string.python"
       "2":
+        name: "invalid.deprecated.prefix.python"
+      "3":
+        name: "storage.type.string.python"
+      "4":
+        name: "storage.type.string.python"
+      "5":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "0":
@@ -435,13 +446,17 @@ repository:
       }
     ]
   "regexp-double-quoted-multi-line":
-    name: "string.quoted.triple.raw.python"
-    begin: "(\\bR)(\\\"\\\"\\\")"
+    name: "string.regexp.quoted.triple.python"
+    begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\\"\\\"\\\")"
     end: "\\\"\\\"\\\""
     beginCaptures:
-      "1":
-        name: "storage.type.string.python"
       "2":
+        name: "invalid.deprecated.prefix.python"
+      "3":
+        name: "storage.type.string.python"
+      "4":
+        name: "storage.type.string.python"
+      "5":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "0":
@@ -452,7 +467,6 @@ repository:
       }
     ]
   string:
-    name: "string.python"
     patterns: [
       {
         include: "#string-single-quoted-multi-line"
@@ -505,12 +519,14 @@ repository:
     ]
   "string-single-quoted-single-line":
     name: "string.quoted.single.python"
-    begin: "(\\b[uU])?(\\')"
+    begin: "(\\b[rR](?=[uU]))?([uU])?(\\')"
     end: "(\\')|(?<!\\\\)(\\n)"
     beginCaptures:
       "1":
-        name: "storage.type.string.python"
+        name: "invalid.illegal.prefix.python"
       "2":
+        name: "storage.type.string.python"
+      "3":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "1":
@@ -524,12 +540,14 @@ repository:
     ]
   "string-double-quoted-single-line":
     name: "string.quoted.double.python"
-    begin: "(\\b[uU])?(\\\")"
+    begin: "(\\b[rR](?=[uU]))?([uU])?(\\\")"
     end: "(\\\")|(?<!\\\\)(\\n)"
     beginCaptures:
       "1":
-        name: "storage.type.string.python"
+        name: "invalid.illegal.prefix.python"
       "2":
+        name: "storage.type.string.python"
+      "3":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "1":
@@ -543,12 +561,14 @@ repository:
     ]
   "string-single-quoted-multi-line":
     name: "string.quoted.triple.python"
-    begin: "(\\b[uU])?(\\'\\'\\')"
+    begin: "(\\b[rR](?=[uU]))?([uU])?(\\'\\'\\')"
     end: "\\'\\'\\'"
     beginCaptures:
       "1":
-        name: "storage.type.string.python"
+        name: "invalid.illegal.prefix.python"
       "2":
+        name: "storage.type.string.python"
+      "3":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "0":
@@ -560,12 +580,14 @@ repository:
     ]
   "string-double-quoted-multi-line":
     name: "string.quoted.triple.python"
-    begin: "(\\b[uU])?(\\\"\\\"\\\")"
+    begin: "(\\b[rR](?=[uU]))?([uU])?(\\\"\\\"\\\")"
     end: "\\\"\\\"\\\""
     beginCaptures:
       "1":
-        name: "storage.type.string.python"
+        name: "invalid.illegal.prefix.python"
       "2":
+        name: "storage.type.string.python"
+      "3":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "0":
@@ -658,12 +680,14 @@ repository:
     ]
   "string-raw-single-quoted-single-line":
     name: "string.quoted.single.raw.python"
-    begin: "(\\br)(\\')"
+    begin: "\\b(([uU]R)|(R))(\\')"
     end: "(\\')|(?<!\\\\)(\\n)"
     beginCaptures:
-      "1":
-        name: "storage.type.string.python"
       "2":
+        name: "invalid.deprecated.prefix.python"
+      "3":
+        name: "storage.type.string.python"
+      "4":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "1":
@@ -677,12 +701,14 @@ repository:
     ]
   "string-raw-double-quoted-single-line":
     name: "string.quoted.double.raw.python"
-    begin: "(\\br)(\\\")"
+    begin: "\\b(([uU]R)|(R))(\\\")"
     end: "(\\\")|(?<!\\\\)(\\n)"
     beginCaptures:
-      "1":
-        name: "storage.type.string.python"
       "2":
+        name: "invalid.deprecated.prefix.python"
+      "3":
+        name: "storage.type.string.python"
+      "4":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "1":
@@ -696,12 +722,14 @@ repository:
     ]
   "string-raw-single-quoted-multi-line":
     name: "string.quoted.triple.raw.python"
-    begin: "(\\br)(\\'\\'\\')"
+    begin: "\\b(([uU]R)|(R))(\\'\\'\\')"
     end: "\\'\\'\\'"
     beginCaptures:
-      "1":
-        name: "storage.type.string.python"
       "2":
+        name: "invalid.deprecated.prefix.python"
+      "3":
+        name: "storage.type.string.python"
+      "4":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "0":
@@ -713,12 +741,14 @@ repository:
     ]
   "string-raw-double-quoted-multi-line":
     name: "string.quoted.triple.raw.python"
-    begin: "(\\br)(\\\"\\\"\\\")"
+    begin: "\\b(([uU]R)|(R))(\\\"\\\"\\\")"
     end: "\\\"\\\"\\\""
     beginCaptures:
-      "1":
-        name: "storage.type.string.python"
       "2":
+        name: "invalid.deprecated.prefix.python"
+      "3":
+        name: "storage.type.string.python"
+      "4":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
       "0":
@@ -742,7 +772,7 @@ repository:
     ]
   "string-raw-bin-single-quoted-single-line":
     name: "string.quoted.single.raw.python"
-    begin: "(\\b(?:[rR][bB]|[bB][rR]))(\\')"
+    begin: "(\\b(?:R[bB]|[bB]R))(\\')"
     end: "(\\')|(?<!\\\\)(\\n)"
     beginCaptures:
       "1":
@@ -761,7 +791,7 @@ repository:
     ]
   "string-raw-bin-double-quoted-single-line":
     name: "string.quoted.double.raw.python"
-    begin: "(\\b(?:[rR][bB]|[bB][rR]))(\\\")"
+    begin: "(\\b(?:R[bB]|[bB]R))(\\\")"
     end: "(\\\")|(?<!\\\\)(\\n)"
     beginCaptures:
       "1":
@@ -780,7 +810,7 @@ repository:
     ]
   "string-raw-bin-single-quoted-multi-line":
     name: "string.quoted.triple.raw.python"
-    begin: "(\\b(?:[rR][bB]|[bB][rR]))(\\'\\'\\')"
+    begin: "(\\b(?:R[bB]|[bB]R))(\\'\\'\\')"
     end: "\\'\\'\\'"
     beginCaptures:
       "1":
@@ -797,7 +827,7 @@ repository:
     ]
   "string-raw-bin-double-quoted-multi-line":
     name: "string.quoted.triple.raw.python"
-    begin: "(\\b(?:[rR][bB]|[bB][rR]))(\\\"\\\"\\\")"
+    begin: "(\\b(?:R[bB]|[bB]R))(\\\"\\\"\\\")"
     end: "\\\"\\\"\\\""
     beginCaptures:
       "1":

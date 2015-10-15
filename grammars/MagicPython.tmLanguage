@@ -574,8 +574,6 @@
       </dict>
       <key>regexp</key>
       <dict>
-        <key>name</key>
-        <string>string.regexp.python</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -599,19 +597,29 @@
       <key>regexp-single-quoted-single-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.single.raw.python</string>
+        <string>string.regexp.quoted.single.python</string>
         <key>begin</key>
-        <string>(\bR)(\&apos;)</string>
+        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&apos;)</string>
         <key>end</key>
         <string>(\&apos;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
         <dict>
-          <key>1</key>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.deprecated.prefix.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>storage.type.string.python</string>
           </dict>
-          <key>2</key>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>5</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -641,19 +649,29 @@
       <key>regexp-double-quoted-single-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.double.raw.python</string>
+        <string>string.regexp.quoted.double.python</string>
         <key>begin</key>
-        <string>(\bR)(\&quot;)</string>
+        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&quot;)</string>
         <key>end</key>
         <string>(\&quot;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
         <dict>
-          <key>1</key>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.deprecated.prefix.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>storage.type.string.python</string>
           </dict>
-          <key>2</key>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>5</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -683,19 +701,29 @@
       <key>regexp-single-quoted-multi-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.triple.raw.python</string>
+        <string>string.regexp.quoted.triple.python</string>
         <key>begin</key>
-        <string>(\bR)(\&apos;\&apos;\&apos;)</string>
+        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
         <string>\&apos;\&apos;\&apos;</string>
         <key>beginCaptures</key>
         <dict>
-          <key>1</key>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.deprecated.prefix.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>storage.type.string.python</string>
           </dict>
-          <key>2</key>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>5</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -720,19 +748,29 @@
       <key>regexp-double-quoted-multi-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.triple.raw.python</string>
+        <string>string.regexp.quoted.triple.python</string>
         <key>begin</key>
-        <string>(\bR)(\&quot;\&quot;\&quot;)</string>
+        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&quot;\&quot;\&quot;)</string>
         <key>end</key>
         <string>\&quot;\&quot;\&quot;</string>
         <key>beginCaptures</key>
         <dict>
-          <key>1</key>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.deprecated.prefix.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>storage.type.string.python</string>
           </dict>
-          <key>2</key>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>5</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -756,8 +794,6 @@
       </dict>
       <key>string</key>
       <dict>
-        <key>name</key>
-        <string>string.python</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -831,7 +867,7 @@
         <key>name</key>
         <string>string.quoted.single.python</string>
         <key>begin</key>
-        <string>(\b[uU])?(\&apos;)</string>
+        <string>(\b[rR](?=[uU]))?([uU])?(\&apos;)</string>
         <key>end</key>
         <string>(\&apos;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
@@ -839,9 +875,14 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>storage.type.string.python</string>
+            <string>invalid.illegal.prefix.python</string>
           </dict>
           <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -873,7 +914,7 @@
         <key>name</key>
         <string>string.quoted.double.python</string>
         <key>begin</key>
-        <string>(\b[uU])?(\&quot;)</string>
+        <string>(\b[rR](?=[uU]))?([uU])?(\&quot;)</string>
         <key>end</key>
         <string>(\&quot;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
@@ -881,9 +922,14 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>storage.type.string.python</string>
+            <string>invalid.illegal.prefix.python</string>
           </dict>
           <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -915,7 +961,7 @@
         <key>name</key>
         <string>string.quoted.triple.python</string>
         <key>begin</key>
-        <string>(\b[uU])?(\&apos;\&apos;\&apos;)</string>
+        <string>(\b[rR](?=[uU]))?([uU])?(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
         <string>\&apos;\&apos;\&apos;</string>
         <key>beginCaptures</key>
@@ -923,9 +969,14 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>storage.type.string.python</string>
+            <string>invalid.illegal.prefix.python</string>
           </dict>
           <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -952,7 +1003,7 @@
         <key>name</key>
         <string>string.quoted.triple.python</string>
         <key>begin</key>
-        <string>(\b[uU])?(\&quot;\&quot;\&quot;)</string>
+        <string>(\b[rR](?=[uU]))?([uU])?(\&quot;\&quot;\&quot;)</string>
         <key>end</key>
         <string>\&quot;\&quot;\&quot;</string>
         <key>beginCaptures</key>
@@ -960,9 +1011,14 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>storage.type.string.python</string>
+            <string>invalid.illegal.prefix.python</string>
           </dict>
           <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.string.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -1161,17 +1217,22 @@
         <key>name</key>
         <string>string.quoted.single.raw.python</string>
         <key>begin</key>
-        <string>(\br)(\&apos;)</string>
+        <string>\b(([uU]R)|(R))(\&apos;)</string>
         <key>end</key>
         <string>(\&apos;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
         <dict>
-          <key>1</key>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.deprecated.prefix.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>storage.type.string.python</string>
           </dict>
-          <key>2</key>
+          <key>4</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -1203,17 +1264,22 @@
         <key>name</key>
         <string>string.quoted.double.raw.python</string>
         <key>begin</key>
-        <string>(\br)(\&quot;)</string>
+        <string>\b(([uU]R)|(R))(\&quot;)</string>
         <key>end</key>
         <string>(\&quot;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
         <dict>
-          <key>1</key>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.deprecated.prefix.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>storage.type.string.python</string>
           </dict>
-          <key>2</key>
+          <key>4</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -1245,17 +1311,22 @@
         <key>name</key>
         <string>string.quoted.triple.raw.python</string>
         <key>begin</key>
-        <string>(\br)(\&apos;\&apos;\&apos;)</string>
+        <string>\b(([uU]R)|(R))(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
         <string>\&apos;\&apos;\&apos;</string>
         <key>beginCaptures</key>
         <dict>
-          <key>1</key>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.deprecated.prefix.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>storage.type.string.python</string>
           </dict>
-          <key>2</key>
+          <key>4</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -1282,17 +1353,22 @@
         <key>name</key>
         <string>string.quoted.triple.raw.python</string>
         <key>begin</key>
-        <string>(\br)(\&quot;\&quot;\&quot;)</string>
+        <string>\b(([uU]R)|(R))(\&quot;\&quot;\&quot;)</string>
         <key>end</key>
         <string>\&quot;\&quot;\&quot;</string>
         <key>beginCaptures</key>
         <dict>
-          <key>1</key>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.deprecated.prefix.python</string>
+          </dict>
+          <key>3</key>
           <dict>
             <key>name</key>
             <string>storage.type.string.python</string>
           </dict>
-          <key>2</key>
+          <key>4</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.begin.python</string>
@@ -1337,7 +1413,7 @@
         <key>name</key>
         <string>string.quoted.single.raw.python</string>
         <key>begin</key>
-        <string>(\b(?:[rR][bB]|[bB][rR]))(\&apos;)</string>
+        <string>(\b(?:R[bB]|[bB]R))(\&apos;)</string>
         <key>end</key>
         <string>(\&apos;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
@@ -1379,7 +1455,7 @@
         <key>name</key>
         <string>string.quoted.double.raw.python</string>
         <key>begin</key>
-        <string>(\b(?:[rR][bB]|[bB][rR]))(\&quot;)</string>
+        <string>(\b(?:R[bB]|[bB]R))(\&quot;)</string>
         <key>end</key>
         <string>(\&quot;)|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
@@ -1421,7 +1497,7 @@
         <key>name</key>
         <string>string.quoted.triple.raw.python</string>
         <key>begin</key>
-        <string>(\b(?:[rR][bB]|[bB][rR]))(\&apos;\&apos;\&apos;)</string>
+        <string>(\b(?:R[bB]|[bB]R))(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
         <string>\&apos;\&apos;\&apos;</string>
         <key>beginCaptures</key>
@@ -1458,7 +1534,7 @@
         <key>name</key>
         <string>string.quoted.triple.raw.python</string>
         <key>begin</key>
-        <string>(\b(?:[rR][bB]|[bB][rR]))(\&quot;\&quot;\&quot;)</string>
+        <string>(\b(?:R[bB]|[bB]R))(\&quot;\&quot;\&quot;)</string>
         <key>end</key>
         <string>\&quot;\&quot;\&quot;</string>
         <key>beginCaptures</key>

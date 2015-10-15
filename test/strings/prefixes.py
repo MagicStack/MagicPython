@@ -12,6 +12,7 @@ BR'S T R'
 RB'S T R'
 
 Ur'S T R'
+UR'S T R'
 uB'S T R'
 Ru'S T R'
 bR'S T R'
@@ -30,18 +31,18 @@ b             : source.python, storage.type.string.python, string.quoted.single.
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 s t r         : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
-r             : source.python, storage.type.string.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.python
-s t r         : source.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python
-br            : source.python, storage.type.string.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.python
-s t r         : source.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python
-rb            : source.python, storage.type.string.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.python
-s t r         : source.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python
+r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
+s t r         : source.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
+br            : source.python, storage.type.string.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
+s t r         : source.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
+rb            : source.python, storage.type.string.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
+s t r         : source.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
               : source.python
 U             : source.python, storage.type.string.python, string.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
@@ -64,15 +65,20 @@ RB            : source.python, storage.type.string.python, string.quoted.single.
 S T R         : source.python, string.quoted.single.raw.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python
               : source.python
-Ur            : source.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-S T R         : source.python, string.quoted.single.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
+Ur            : invalid.deprecated.prefix.python, source.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
+S T R         : source.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
+UR            : invalid.deprecated.prefix.python, source.python, string.quoted.single.raw.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.python
+S T R         : source.python, string.quoted.single.raw.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python
 uB            : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 S T R         : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
-Ru            : source.python
+R             : invalid.illegal.prefix.python, source.python, string.quoted.single.python
+u             : source.python, storage.type.string.python, string.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 S T R         : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
