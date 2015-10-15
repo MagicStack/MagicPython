@@ -857,7 +857,10 @@ repository:
       (?x)
         ^\s*
         (@) \s* (?=[[:alpha:]_]\w*)
-    end: (\))(?:(?=\s*\#|$)|(.*$))|(?=\n|\#)
+    end: |
+        (?x)
+          ( \) ) (?: (?=\s*\#|$) | (.*$) )
+          | (?=\n|\#)
     beginCaptures:
       '1': {name: entity.name.function.decorator.python}
     endCaptures:
