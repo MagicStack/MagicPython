@@ -25,8 +25,11 @@ This is meant to be a drop-in replacement for the default Python package.
 In Atom, install the "MagicPython" package and disable the built-in "Python"
 package.
 
-In Sublime Text, install "MagicPython" via "Package Control" and disable the
-built-in "Python" package.
+In Sublime Text, install "MagicPython" via "Package Control".  To use
+"MagicPython" for all Python files, you can either disable the built-in
+"Python" package, or navigate
+*`View -> Syntax -> Open all with current extension as... -> MagicPython`*
+menu.
 
 Alternatively, the package can be installed manually in both editors:
 
