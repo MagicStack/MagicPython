@@ -1300,53 +1300,28 @@ repository:
       }
     ]
   decorator:
+    name: "meta.function.decorator.python"
+    begin: '''
+      (?x)
+        ^\\s*
+        (@) \\s* (?=[[:alpha:]_]\\w*)
+      
+    '''
+    end: "(\\))(?:(?=\\s*\\#|$)|(.*$))|(?=\\n|\\#)"
+    beginCaptures:
+      "1":
+        name: "entity.name.function.decorator.python"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.arguments.end.python"
+      "2":
+        name: "invalid.illegal.decorator.python"
     patterns: [
       {
-        name: "meta.function.decorator.python"
-        begin: '''
-          (?x)
-            ^\\s*
-            (@) \\s* (?=
-                      [[:alpha:]_]\\w* (?:\\s*\\.\\s*[[:alpha:]_]\\w*)* \\s*
-                        (?:$|\\#)
-                    )
-          
-        '''
-        end: "$|(?=\\#)"
-        beginCaptures:
-          "1":
-            name: "entity.name.function.decorator.python"
-        patterns: [
-          {
-            include: "#decorator-name"
-          }
-        ]
+        include: "#decorator-name"
       }
       {
-        name: "meta.function.decorator.python"
-        begin: '''
-          (?x)
-            ^\\s*
-            (@) \\s* (?=
-                      [[:alpha:]_]\\w* (?:\\s*\\.\\s*[[:alpha:]_]\\w*)* \\s* \\(
-                    )
-          
-        '''
-        end: "(\\))"
-        beginCaptures:
-          "1":
-            name: "entity.name.function.decorator.python"
-        endCaptures:
-          "1":
-            name: "punctuation.definition.arguments.end.python"
-        patterns: [
-          {
-            include: "#decorator-name"
-          }
-          {
-            include: "#function-arguments"
-          }
-        ]
+        include: "#function-arguments"
       }
     ]
   "decorator-name":
@@ -1364,6 +1339,9 @@ repository:
             ([[:alpha:]_]\\w*) | \\.
           
         '''
+      }
+      {
+        include: "#line-continuation"
       }
     ]
   "call-wrapper-inheritance":

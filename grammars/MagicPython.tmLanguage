@@ -2304,76 +2304,45 @@
       </dict>
       <key>decorator</key>
       <dict>
+        <key>name</key>
+        <string>meta.function.decorator.python</string>
+        <key>begin</key>
+        <string>(?x)
+  ^\s*
+  (@) \s* (?=[[:alpha:]_]\w*)
+</string>
+        <key>end</key>
+        <string>(\))(?:(?=\s*\#|$)|(.*$))|(?=\n|\#)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>entity.name.function.decorator.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.arguments.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.decorator.python</string>
+          </dict>
+        </dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>name</key>
-            <string>meta.function.decorator.python</string>
-            <key>begin</key>
-            <string>(?x)
-  ^\s*
-  (@) \s* (?=
-            [[:alpha:]_]\w* (?:\s*\.\s*[[:alpha:]_]\w*)* \s*
-              (?:$|\#)
-          )
-</string>
-            <key>end</key>
-            <string>$|(?=\#)</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>entity.name.function.decorator.python</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#decorator-name</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#decorator-name</string>
           </dict>
           <dict>
-            <key>name</key>
-            <string>meta.function.decorator.python</string>
-            <key>begin</key>
-            <string>(?x)
-  ^\s*
-  (@) \s* (?=
-            [[:alpha:]_]\w* (?:\s*\.\s*[[:alpha:]_]\w*)* \s* \(
-          )
-</string>
-            <key>end</key>
-            <string>(\))</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>entity.name.function.decorator.python</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.arguments.end.python</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#decorator-name</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#function-arguments</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#function-arguments</string>
           </dict>
         </array>
       </dict>
@@ -2396,6 +2365,10 @@
             <string>(?x)
   ([[:alpha:]_]\w*) | \.
 </string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#line-continuation</string>
           </dict>
         </array>
       </dict>
