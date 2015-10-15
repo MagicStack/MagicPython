@@ -2819,7 +2819,7 @@ indirectly through syntactic constructs
         <key>comment</key>
         <string>It&apos;s illegal to name class or function &quot;True&quot;</string>
         <key>name</key>
-        <string>invalid.illegal.name.python</string>
+        <string>keyword.invalid.illegal.name.python</string>
         <key>match</key>
         <string>\b(True|False|None)\b</string>
       </dict>
