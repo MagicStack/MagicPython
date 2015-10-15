@@ -15,6 +15,7 @@ Ur'S T R'
 UR'S T R'
 uB'S T R'
 Ru'S T R'
+RU'S T R'
 bR'S T R'
 Rb'S T R'
 
@@ -79,6 +80,11 @@ S T R         : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 R             : invalid.illegal.prefix.python, source.python, string.quoted.single.python
 u             : source.python, storage.type.string.python, string.quoted.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+S T R         : source.python, string.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
+R             : invalid.illegal.prefix.python, source.python, string.quoted.single.python
+U             : source.python, storage.type.string.python, string.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 S T R         : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
