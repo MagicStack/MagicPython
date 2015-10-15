@@ -16,5 +16,6 @@ repository:
       vars:
         prefix: ''
         marker: ''
+        nested: ''
 
 ...

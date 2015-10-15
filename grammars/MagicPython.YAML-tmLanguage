@@ -18,21 +18,25 @@ repository:
       vars:
         prefix: 'single-one-'
         marker: "|(?=\\')"
+        nested: ''
 
     - file: 'regexp.inc.yaml'
       vars:
         prefix: 'single-three-'
         marker: "|(?=\\'\\'\\')"
+        nested: "- include: '#comments'"
 
     - file: 'regexp.inc.yaml'
       vars:
         prefix: 'double-one-'
         marker: '|(?=")'
+        nested: ''
 
     - file: 'regexp.inc.yaml'
       vars:
         prefix: 'double-three-'
         marker: '|(?=""")'
+        nested: "- include: '#comments'"
 
   comments:
     name: comment.line.number-sign.python

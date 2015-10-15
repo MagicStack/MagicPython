@@ -2066,6 +2066,9 @@ repository:
         name: "constant.character.set.regexp"
         match: "[^\\n]"
       }
+      {
+        include: "#comments"
+      }
     ]
   "single-three-regexp-named-group":
     name: "meta.named.regexp"
@@ -2086,6 +2089,9 @@ repository:
     patterns: [
       {
         include: "#single-three-regexp-expression"
+      }
+      {
+        include: "#comments"
       }
     ]
   "single-three-regexp-comments":
@@ -2113,6 +2119,9 @@ repository:
       {
         include: "#single-three-regexp-expression"
       }
+      {
+        include: "#comments"
+      }
     ]
   "single-three-regexp-lookahead-negative":
     begin: "(\\()\\?!"
@@ -2128,6 +2137,9 @@ repository:
     patterns: [
       {
         include: "#single-three-regexp-expression"
+      }
+      {
+        include: "#comments"
       }
     ]
   "single-three-regexp-lookbehind":
@@ -2145,6 +2157,9 @@ repository:
       {
         include: "#single-three-regexp-expression"
       }
+      {
+        include: "#comments"
+      }
     ]
   "single-three-regexp-lookbehind-negative":
     begin: "(\\()\\?<!"
@@ -2160,6 +2175,9 @@ repository:
     patterns: [
       {
         include: "#single-three-regexp-expression"
+      }
+      {
+        include: "#comments"
       }
     ]
   "single-three-regexp-conditional":
@@ -2177,6 +2195,9 @@ repository:
       {
         include: "#single-three-regexp-expression"
       }
+      {
+        include: "#comments"
+      }
     ]
   "single-three-regexp-parentheses-non-capturing":
     begin: "\\(\\?:"
@@ -2191,6 +2212,9 @@ repository:
       {
         include: "#single-three-regexp-expression"
       }
+      {
+        include: "#comments"
+      }
     ]
   "single-three-regexp-parentheses":
     begin: "\\("
@@ -2204,6 +2228,9 @@ repository:
     patterns: [
       {
         include: "#single-three-regexp-expression"
+      }
+      {
+        include: "#comments"
       }
     ]
   "double-one-regexp-expression":
@@ -2474,6 +2501,9 @@ repository:
         name: "constant.character.set.regexp"
         match: "[^\\n]"
       }
+      {
+        include: "#comments"
+      }
     ]
   "double-three-regexp-named-group":
     name: "meta.named.regexp"
@@ -2494,6 +2524,9 @@ repository:
     patterns: [
       {
         include: "#double-three-regexp-expression"
+      }
+      {
+        include: "#comments"
       }
     ]
   "double-three-regexp-comments":
@@ -2521,6 +2554,9 @@ repository:
       {
         include: "#double-three-regexp-expression"
       }
+      {
+        include: "#comments"
+      }
     ]
   "double-three-regexp-lookahead-negative":
     begin: "(\\()\\?!"
@@ -2536,6 +2572,9 @@ repository:
     patterns: [
       {
         include: "#double-three-regexp-expression"
+      }
+      {
+        include: "#comments"
       }
     ]
   "double-three-regexp-lookbehind":
@@ -2553,6 +2592,9 @@ repository:
       {
         include: "#double-three-regexp-expression"
       }
+      {
+        include: "#comments"
+      }
     ]
   "double-three-regexp-lookbehind-negative":
     begin: "(\\()\\?<!"
@@ -2568,6 +2610,9 @@ repository:
     patterns: [
       {
         include: "#double-three-regexp-expression"
+      }
+      {
+        include: "#comments"
       }
     ]
   "double-three-regexp-conditional":
@@ -2585,6 +2630,9 @@ repository:
       {
         include: "#double-three-regexp-expression"
       }
+      {
+        include: "#comments"
+      }
     ]
   "double-three-regexp-parentheses-non-capturing":
     begin: "\\(\\?:"
@@ -2599,6 +2647,9 @@ repository:
       {
         include: "#double-three-regexp-expression"
       }
+      {
+        include: "#comments"
+      }
     ]
   "double-three-regexp-parentheses":
     begin: "\\("
@@ -2612,5 +2663,8 @@ repository:
     patterns: [
       {
         include: "#double-three-regexp-expression"
+      }
+      {
+        include: "#comments"
       }
     ]

@@ -3548,6 +3548,10 @@ indirectly through syntactic constructs
             <key>match</key>
             <string>[^\n]</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>single-three-regexp-named-group</key>
@@ -3586,6 +3590,10 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#single-three-regexp-expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
         </array>
       </dict>
@@ -3647,6 +3655,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#single-three-regexp-expression</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>single-three-regexp-lookahead-negative</key>
@@ -3681,6 +3693,10 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#single-three-regexp-expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
         </array>
       </dict>
@@ -3717,6 +3733,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#single-three-regexp-expression</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>single-three-regexp-lookbehind-negative</key>
@@ -3751,6 +3771,10 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#single-three-regexp-expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
         </array>
       </dict>
@@ -3787,6 +3811,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#single-three-regexp-expression</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>single-three-regexp-parentheses-non-capturing</key>
@@ -3817,6 +3845,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#single-three-regexp-expression</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>single-three-regexp-parentheses</key>
@@ -3846,6 +3878,10 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#single-three-regexp-expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
         </array>
       </dict>
@@ -4358,6 +4394,10 @@ indirectly through syntactic constructs
             <key>match</key>
             <string>[^\n]</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>double-three-regexp-named-group</key>
@@ -4396,6 +4436,10 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#double-three-regexp-expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
         </array>
       </dict>
@@ -4457,6 +4501,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#double-three-regexp-expression</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>double-three-regexp-lookahead-negative</key>
@@ -4491,6 +4539,10 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#double-three-regexp-expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
         </array>
       </dict>
@@ -4527,6 +4579,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#double-three-regexp-expression</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>double-three-regexp-lookbehind-negative</key>
@@ -4561,6 +4617,10 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#double-three-regexp-expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
         </array>
       </dict>
@@ -4597,6 +4657,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#double-three-regexp-expression</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>double-three-regexp-parentheses-non-capturing</key>
@@ -4627,6 +4691,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#double-three-regexp-expression</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
         </array>
       </dict>
       <key>double-three-regexp-parentheses</key>
@@ -4656,6 +4724,10 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#double-three-regexp-expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
         </array>
       </dict>
