@@ -741,7 +741,7 @@
         <array>
           <dict>
             <key>include</key>
-            <string>source.regexp.python</string>
+            <string>#regexp-multiline</string>
           </dict>
         </array>
       </dict>
@@ -788,7 +788,21 @@
         <array>
           <dict>
             <key>include</key>
+            <string>#regexp-multiline</string>
+          </dict>
+        </array>
+      </dict>
+      <key>regexp-multiline</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
             <string>source.regexp.python</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
           </dict>
         </array>
       </dict>

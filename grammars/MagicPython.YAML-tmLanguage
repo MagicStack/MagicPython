@@ -280,7 +280,7 @@ repository:
     endCaptures:
       '0': {name: punctuation.definition.string.end.python}
     patterns:
-      - include: 'source.regexp.python'
+      - include: '#regexp-multiline'
 
   regexp-double-quoted-multi-line:
     name: string.regexp.quoted.triple.python
@@ -294,7 +294,12 @@ repository:
     endCaptures:
       '0': {name: punctuation.definition.string.end.python}
     patterns:
+      - include: '#regexp-multiline'
+
+  regexp-multiline:
+    patterns:
       - include: 'source.regexp.python'
+      - include: '#comments'
 
   string:
     patterns:

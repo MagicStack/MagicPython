@@ -442,7 +442,7 @@ repository:
         name: "punctuation.definition.string.end.python"
     patterns: [
       {
-        include: "source.regexp.python"
+        include: "#regexp-multiline"
       }
     ]
   "regexp-double-quoted-multi-line":
@@ -463,7 +463,16 @@ repository:
         name: "punctuation.definition.string.end.python"
     patterns: [
       {
+        include: "#regexp-multiline"
+      }
+    ]
+  "regexp-multiline":
+    patterns: [
+      {
         include: "source.regexp.python"
+      }
+      {
+        include: "#comments"
       }
     ]
   string:

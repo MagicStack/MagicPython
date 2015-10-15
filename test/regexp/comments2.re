@@ -1,8 +1,8 @@
 (?x)
     foo     (?#
 comment 1
-            )
-    bar     (?#comment 2)
+            ) bar
+    baz     (?#comment 2)
 
 
 
@@ -12,7 +12,8 @@ comment 1
 comment 1     : comment.regexp, source.regexp.python
               : comment.regexp, source.regexp.python
 )             : comment.regexp, punctuation.comments.end.regexp, source.regexp.python
-    bar       : source.regexp.python
+ bar          : source.regexp.python
+    baz       : source.regexp.python
 (?#           : comment.regexp, punctuation.comments.begin.regexp, source.regexp.python
 comment 2     : comment.regexp, source.regexp.python
 )             : comment.regexp, punctuation.comments.end.regexp, source.regexp.python
