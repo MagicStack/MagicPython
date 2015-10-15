@@ -1,0 +1,40 @@
+r'('
+1
+
+r"(?="
+1
+
+r"""(?:
+"""
+1
+
+r'''[
+'''
+1
+
+
+
+r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
+(             : punctuation.parenthesis.begin.regexp support.other.parenthesis.regexp, source.python, string.regexp.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
+1             : constant.numeric.dec.python, source.python
+              : source.python
+r             : source.python, storage.type.string.python, string.regexp.quoted.double.python
+"             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.double.python
+(             : keyword.operator.lookahead.regexp, punctuation.parenthesis.lookahead.begin.regexp, source.python, string.regexp.quoted.double.python
+?=            : keyword.operator.lookahead.regexp, source.python, string.regexp.quoted.double.python
+"             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.double.python
+1             : constant.numeric.dec.python, source.python
+              : source.python
+r             : source.python, storage.type.string.python, string.regexp.quoted.triple.python
+"""           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python
+(?:           : punctuation.parenthesis.non-capturing.begin.regexp support.other.parenthesis.regexp, source.python, string.regexp.quoted.triple.python
+"""           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
+1             : constant.numeric.dec.python, source.python
+              : source.python
+r             : source.python, storage.type.string.python, string.regexp.quoted.triple.python
+'''           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python
+[             : constant.other.set.regexp punctuation.character.set.begin.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.triple.python
+'''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
+1             : constant.numeric.dec.python, source.python

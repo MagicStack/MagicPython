@@ -19,7 +19,7 @@ repository:
   ${prefix}regexp-character-set:
     name: meta.character.set.regexp
     begin: (\[)(\^)?(\])?
-    end: (\])
+    end: (\]${marker})
     beginCaptures:
       '1': {name: constant.other.set.regexp
                   punctuation.character.set.begin.regexp}
@@ -38,13 +38,13 @@ repository:
     begin: |
       (?x)
         (\()  (\?P <\w+(?:\s+[[:alnum:]]+)?>)
-    end: \)
+    end: (\)${marker})
     beginCaptures:
       '1': {name: punctuation.parenthesis.named.begin.regexp
                   support.other.parenthesis.regexp}
       '2': {name: entity.name.tag.named.group.regexp}
     endCaptures:
-      '0': {name: punctuation.parenthesis.named.end.regexp
+      '1': {name: punctuation.parenthesis.named.end.regexp
                   support.other.parenthesis.regexp}
     patterns:
       - include: '#${prefix}regexp-expression'
@@ -52,92 +52,92 @@ repository:
   ${prefix}regexp-comments:
     name: comment.regexp
     begin: \(\?#
-    end: \)
+    end: (\)${marker})
     beginCaptures:
       '0': {name: punctuation.comments.begin.regexp}
     endCaptures:
-      '0': {name: punctuation.comments.end.regexp}
+      '1': {name: punctuation.comments.end.regexp}
 
   ${prefix}regexp-lookahead:
     begin: '(\()\?='
-    end: \)
+    end: (\)${marker})
     beginCaptures:
       '0': {name: keyword.operator.lookahead.regexp}
       '1': {name: punctuation.parenthesis.lookahead.begin.regexp}
     endCaptures:
-      '0': {name: punctuation.parenthesis.lookahead.end.regexp
+      '1': {name: punctuation.parenthesis.lookahead.end.regexp
                   keyword.operator.lookahead.regexp}
     patterns:
       - include: '#${prefix}regexp-expression'
 
   ${prefix}regexp-lookahead-negative:
     begin: '(\()\?!'
-    end: \)
+    end: (\)${marker})
     beginCaptures:
       '0': {name: keyword.operator.lookahead.negative.regexp}
       '1': {name: punctuation.parenthesis.lookahead.begin.regexp}
     endCaptures:
-      '0': {name: punctuation.parenthesis.lookahead.end.regexp
+      '1': {name: punctuation.parenthesis.lookahead.end.regexp
                   keyword.operator.lookahead.negative.regexp}
     patterns:
       - include: '#${prefix}regexp-expression'
 
   ${prefix}regexp-lookbehind:
     begin: '(\()\?<='
-    end: \)
+    end: (\)${marker})
     beginCaptures:
       '0': {name: keyword.operator.lookbehind.regexp}
       '1': {name: punctuation.parenthesis.lookbehind.begin.regexp}
     endCaptures:
-      '0': {name: punctuation.parenthesis.lookbehind.end.regexp
+      '1': {name: punctuation.parenthesis.lookbehind.end.regexp
                   keyword.operator.lookbehind.regexp}
     patterns:
       - include: '#${prefix}regexp-expression'
 
   ${prefix}regexp-lookbehind-negative:
     begin: '(\()\?<!'
-    end: \)
+    end: (\)${marker})
     beginCaptures:
       '0': {name: keyword.operator.lookbehind.negative.regexp}
       '1': {name: punctuation.parenthesis.lookbehind.begin.regexp}
     endCaptures:
-      '0': {name: punctuation.parenthesis.lookbehind.end.regexp
+      '1': {name: punctuation.parenthesis.lookbehind.end.regexp
                   keyword.operator.lookbehind.negative.regexp}
     patterns:
       - include: '#${prefix}regexp-expression'
 
   ${prefix}regexp-conditional:
     begin: '(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)'
-    end: \)
+    end: (\)${marker})
     beginCaptures:
       '0': {name: keyword.operator.conditional.regexp}
       '1': {name: punctuation.parenthesis.conditional.begin.regexp}
     endCaptures:
-      '0': {name: punctuation.parenthesis.conditional.end.regexp
+      '1': {name: punctuation.parenthesis.conditional.end.regexp
                   keyword.operator.conditional.negative.regexp}
     patterns:
       - include: '#${prefix}regexp-expression'
 
   ${prefix}regexp-parentheses-non-capturing:
     begin: '\(\?:'
-    end: \)
+    end: (\)${marker})
     beginCaptures:
       '0': {name: punctuation.parenthesis.non-capturing.begin.regexp
                   support.other.parenthesis.regexp}
     endCaptures:
-      '0': {name: punctuation.parenthesis.non-capturing.end.regexp
+      '1': {name: punctuation.parenthesis.non-capturing.end.regexp
                   support.other.parenthesis.regexp}
     patterns:
       - include: '#${prefix}regexp-expression'
 
   ${prefix}regexp-parentheses:
     begin: \(
-    end: \)
+    end: (\)${marker})
     beginCaptures:
       '0': {name: punctuation.parenthesis.begin.regexp
                   support.other.parenthesis.regexp}
     endCaptures:
-      '0': {name: punctuation.parenthesis.end.regexp
+      '1': {name: punctuation.parenthesis.end.regexp
                   support.other.parenthesis.regexp}
     patterns:
       - include: '#${prefix}regexp-expression'

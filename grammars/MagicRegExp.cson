@@ -211,14 +211,14 @@ repository:
         (\\()  (\\?P <\\w+(?:\\s+[[:alnum:]]+)?>)
       
     '''
-    end: "\\)"
+    end: "(\\))"
     beginCaptures:
       "1":
         name: "punctuation.parenthesis.named.begin.regexp support.other.parenthesis.regexp"
       "2":
         name: "entity.name.tag.named.group.regexp"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp"
     patterns: [
       {
@@ -228,23 +228,23 @@ repository:
   "regexp-comments":
     name: "comment.regexp"
     begin: "\\(\\?#"
-    end: "\\)"
+    end: "(\\))"
     beginCaptures:
       "0":
         name: "punctuation.comments.begin.regexp"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.comments.end.regexp"
   "regexp-lookahead":
     begin: "(\\()\\?="
-    end: "\\)"
+    end: "(\\))"
     beginCaptures:
       "0":
         name: "keyword.operator.lookahead.regexp"
       "1":
         name: "punctuation.parenthesis.lookahead.begin.regexp"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp"
     patterns: [
       {
@@ -253,14 +253,14 @@ repository:
     ]
   "regexp-lookahead-negative":
     begin: "(\\()\\?!"
-    end: "\\)"
+    end: "(\\))"
     beginCaptures:
       "0":
         name: "keyword.operator.lookahead.negative.regexp"
       "1":
         name: "punctuation.parenthesis.lookahead.begin.regexp"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp"
     patterns: [
       {
@@ -269,14 +269,14 @@ repository:
     ]
   "regexp-lookbehind":
     begin: "(\\()\\?<="
-    end: "\\)"
+    end: "(\\))"
     beginCaptures:
       "0":
         name: "keyword.operator.lookbehind.regexp"
       "1":
         name: "punctuation.parenthesis.lookbehind.begin.regexp"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp"
     patterns: [
       {
@@ -285,14 +285,14 @@ repository:
     ]
   "regexp-lookbehind-negative":
     begin: "(\\()\\?<!"
-    end: "\\)"
+    end: "(\\))"
     beginCaptures:
       "0":
         name: "keyword.operator.lookbehind.negative.regexp"
       "1":
         name: "punctuation.parenthesis.lookbehind.begin.regexp"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp"
     patterns: [
       {
@@ -301,14 +301,14 @@ repository:
     ]
   "regexp-conditional":
     begin: "(\\()\\?\\((\\w+(?:\\s+[[:alnum:]]+)?|\\d+)\\)"
-    end: "\\)"
+    end: "(\\))"
     beginCaptures:
       "0":
         name: "keyword.operator.conditional.regexp"
       "1":
         name: "punctuation.parenthesis.conditional.begin.regexp"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp"
     patterns: [
       {
@@ -317,12 +317,12 @@ repository:
     ]
   "regexp-parentheses-non-capturing":
     begin: "\\(\\?:"
-    end: "\\)"
+    end: "(\\))"
     beginCaptures:
       "0":
         name: "punctuation.parenthesis.non-capturing.begin.regexp support.other.parenthesis.regexp"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp"
     patterns: [
       {
@@ -331,12 +331,12 @@ repository:
     ]
   "regexp-parentheses":
     begin: "\\("
-    end: "\\)"
+    end: "(\\))"
     beginCaptures:
       "0":
         name: "punctuation.parenthesis.begin.regexp support.other.parenthesis.regexp"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.parenthesis.end.regexp support.other.parenthesis.regexp"
     patterns: [
       {

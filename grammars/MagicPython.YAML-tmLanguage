@@ -11,6 +11,29 @@ patterns:
   - include: '#expression'
 
 repository:
+  $apply:
+    - file: 'regexp-common.inc.yaml'
+
+    - file: 'regexp.inc.yaml'
+      vars:
+        prefix: 'single-one-'
+        marker: "|(?=\\')"
+
+    - file: 'regexp.inc.yaml'
+      vars:
+        prefix: 'single-three-'
+        marker: "|(?=\\'\\'\\')"
+
+    - file: 'regexp.inc.yaml'
+      vars:
+        prefix: 'double-one-'
+        marker: '|(?=")'
+
+    - file: 'regexp.inc.yaml'
+      vars:
+        prefix: 'double-three-'
+        marker: '|(?=""")'
+
   comments:
     name: comment.line.number-sign.python
     match: (\#)\s*(BUG|FIXME|TODO|XXX|NB)?.*
@@ -251,7 +274,7 @@ repository:
       '1': {name: punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: 'source.regexp.python'
+      - include: '#single-one-regexp-expression'
 
   regexp-double-quoted-single-line:
     name: string.regexp.quoted.double.python
@@ -266,7 +289,7 @@ repository:
       '1': {name: punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: 'source.regexp.python'
+      - include: '#double-one-regexp-expression'
 
   regexp-single-quoted-multi-line:
     name: string.regexp.quoted.triple.python
@@ -280,7 +303,8 @@ repository:
     endCaptures:
       '0': {name: punctuation.definition.string.end.python}
     patterns:
-      - include: '#regexp-multiline'
+      - include: '#single-three-regexp-expression'
+      - include: '#comments'
 
   regexp-double-quoted-multi-line:
     name: string.regexp.quoted.triple.python
@@ -294,11 +318,7 @@ repository:
     endCaptures:
       '0': {name: punctuation.definition.string.end.python}
     patterns:
-      - include: '#regexp-multiline'
-
-  regexp-multiline:
-    patterns:
-      - include: 'source.regexp.python'
+      - include: '#double-three-regexp-expression'
       - include: '#comments'
 
   string:

@@ -337,7 +337,7 @@
   (\()  (\?P &lt;\w+(?:\s+[[:alnum:]]+)?&gt;)
 </string>
         <key>end</key>
-        <string>\)</string>
+        <string>(\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -353,7 +353,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp</string>
@@ -374,7 +374,7 @@
         <key>begin</key>
         <string>\(\?#</string>
         <key>end</key>
-        <string>\)</string>
+        <string>(\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -385,7 +385,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.comments.end.regexp</string>
@@ -397,7 +397,7 @@
         <key>begin</key>
         <string>(\()\?=</string>
         <key>end</key>
-        <string>\)</string>
+        <string>(\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -413,7 +413,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp</string>
@@ -432,7 +432,7 @@
         <key>begin</key>
         <string>(\()\?!</string>
         <key>end</key>
-        <string>\)</string>
+        <string>(\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -448,7 +448,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp</string>
@@ -467,7 +467,7 @@
         <key>begin</key>
         <string>(\()\?&lt;=</string>
         <key>end</key>
-        <string>\)</string>
+        <string>(\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -483,7 +483,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp</string>
@@ -502,7 +502,7 @@
         <key>begin</key>
         <string>(\()\?&lt;!</string>
         <key>end</key>
-        <string>\)</string>
+        <string>(\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -518,7 +518,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp</string>
@@ -537,7 +537,7 @@
         <key>begin</key>
         <string>(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)</string>
         <key>end</key>
-        <string>\)</string>
+        <string>(\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -553,7 +553,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp</string>
@@ -572,7 +572,7 @@
         <key>begin</key>
         <string>\(\?:</string>
         <key>end</key>
-        <string>\)</string>
+        <string>(\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -583,7 +583,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp</string>
@@ -602,7 +602,7 @@
         <key>begin</key>
         <string>\(</string>
         <key>end</key>
-        <string>\)</string>
+        <string>(\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -613,7 +613,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.end.regexp support.other.parenthesis.regexp</string>
