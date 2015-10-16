@@ -8,4 +8,5 @@ class         : source.python, storage.type.class.python
               : source.python
 None          : constant.language.python, source.python
 :             : source.python
+              : source.python
 pass          : keyword.control.flow.python, source.python

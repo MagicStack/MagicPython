@@ -25,7 +25,7 @@ patterns: [
 repository:
   comments:
     name: "comment.line.number-sign.python"
-    match: "(\\#)\\s*(BUG|FIXME|TODO|XXX|NB)?.*"
+    match: "(\\#)\\s*(BUG|FIXME|TODO|XXX|NB)?.*$"
     captures:
       "1":
         name: "punctuation.definition.comment.python"
@@ -47,6 +47,149 @@ repository:
       }
       {
         include: "#decorator"
+      }
+      {
+        include: "#docstring-block"
+      }
+      {
+        include: "#docstring-module"
+      }
+    ]
+  "docstring-block":
+    begin: "(?<=:)"
+    end: '''
+      (?x)
+        (?! \\s | \\# | [rR]?(\\'\\'\\'|\\"\\"\\") | $)
+        |
+        (?<=\\'\\'\\'|\\"\\"\\")
+      
+    '''
+    endCaptures:
+      "1":
+        name: "punctuation.definition.string.end.python"
+    patterns: [
+      {
+        include: "#comments"
+      }
+      {
+        include: "#docstring"
+      }
+    ]
+  "docstring-module":
+    begin: "^(?=[rR]?(\\'\\'\\'|\\\"\\\"\\\"))"
+    end: "(?<=\\'\\'\\'|\\\"\\\"\\\")"
+    patterns: [
+      {
+        include: "#docstring"
+      }
+    ]
+  docstring:
+    patterns: [
+      {
+        name: "string.quoted.docstring.python"
+        begin: "(\\'\\'\\')"
+        end: "(\\'\\'\\')"
+        beginCaptures:
+          "1":
+            name: "punctuation.definition.string.begin.python"
+        endCaptures:
+          "1":
+            name: "punctuation.definition.string.end.python"
+        patterns: [
+          {
+            include: "#docstring-guts-unicode"
+          }
+        ]
+      }
+      {
+        name: "string.quoted.docstring.raw.python"
+        begin: "([rR])(\\'\\'\\')"
+        end: "(\\'\\'\\')"
+        beginCaptures:
+          "1":
+            name: "storage.type.string.python"
+          "2":
+            name: "punctuation.definition.string.begin.python"
+        endCaptures:
+          "1":
+            name: "punctuation.definition.string.end.python"
+        patterns: [
+          {
+            include: "#docstring-guts-raw"
+          }
+        ]
+      }
+      {
+        name: "string.quoted.docstring.python"
+        begin: "(\\\"\\\"\\\")"
+        end: "(\\\"\\\"\\\")"
+        beginCaptures:
+          "1":
+            name: "punctuation.definition.string.begin.python"
+        endCaptures:
+          "1":
+            name: "punctuation.definition.string.end.python"
+        patterns: [
+          {
+            include: "#docstring-guts-unicode"
+          }
+        ]
+      }
+      {
+        name: "string.quoted.docstring.raw.python"
+        begin: "([rR])(\\\"\\\"\\\")"
+        end: "(\\\"\\\"\\\")"
+        beginCaptures:
+          "1":
+            name: "storage.type.string.python"
+          "2":
+            name: "punctuation.definition.string.begin.python"
+        endCaptures:
+          "1":
+            name: "punctuation.definition.string.end.python"
+        patterns: [
+          {
+            include: "#docstring-guts-raw"
+          }
+        ]
+      }
+    ]
+  "docstring-guts-unicode":
+    patterns: [
+      {
+        include: "#escape-sequence-unicode"
+      }
+      {
+        include: "#escape-sequence"
+      }
+      {
+        include: "#string-line-continuation"
+      }
+      {
+        include: "#docstring-guts-common"
+      }
+    ]
+  "docstring-guts-raw":
+    patterns: [
+      {
+        include: "#escape-sequence"
+      }
+      {
+        include: "#string-line-continuation"
+      }
+      {
+        include: "#docstring-guts-common"
+      }
+    ]
+  "docstring-guts-common":
+    begin: "(>>>|\\.\\.\\.)"
+    end: "$"
+    patterns: [
+      {
+        include: "#statement"
+      }
+      {
+        include: "#expression"
       }
     ]
   "statement-keyword":
