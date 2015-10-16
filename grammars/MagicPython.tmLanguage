@@ -229,7 +229,15 @@
         <key>name</key>
         <string>constant.other.caps.python</string>
         <key>match</key>
-        <string>\b[[:upper:]][[:upper:]\d]*(_\w*)?\b</string>
+        <string>(?x)
+  \b
+    (
+      [[:upper:]]
+      | _ [[:upper:]]
+    )
+    [[:upper:]\d]* (_\w*)?
+  \b
+</string>
       </dict>
       <key>curly-braces</key>
       <dict>

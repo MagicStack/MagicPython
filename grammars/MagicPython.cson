@@ -158,7 +158,17 @@ repository:
     ]
   "special-names":
     name: "constant.other.caps.python"
-    match: "\\b[[:upper:]][[:upper:]\\d]*(_\\w*)?\\b"
+    match: '''
+      (?x)
+        \\b
+          (
+            [[:upper:]]
+            | _ [[:upper:]]
+          )
+          [[:upper:]\\d]* (_\\w*)?
+        \\b
+      
+    '''
   "curly-braces":
     begin: "\\{"
     end: "\\}"
