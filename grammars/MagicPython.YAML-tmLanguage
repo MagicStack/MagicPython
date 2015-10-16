@@ -136,8 +136,7 @@ repository:
       (?x)
         \b
           (
-            [[:upper:]]
-            | _ [[:upper:]]
+            _* [[:upper:]]
           )
           [[:upper:]\d]* (_\w*)?
         \b
