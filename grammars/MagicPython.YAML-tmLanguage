@@ -43,24 +43,28 @@ repository:
         quote: single
         line: single
         marker: "\\'"
+        guard: "|((?<!\\\\)\\n)"
 
     - file: 'pystring.inc.yaml'
       vars:
         quote: single
         line: multi
         marker: "\\'\\'\\'"
+        guard: ""
 
     - file: 'pystring.inc.yaml'
       vars:
         quote: double
         line: single
         marker: '\"'
+        guard: "|((?<!\\\\)\\n)"
 
     - file: 'pystring.inc.yaml'
       vars:
         quote: double
         line: multi
         marker: '\"\"\"'
+        guard: ""
 
   comments:
     name: comment.line.number-sign.python
@@ -106,8 +110,8 @@ repository:
       - include: '#illegal-anno'
       - include: '#comments'
       - include: '#literal'
-      - include: '#string'
       - include: '#regexp'
+      - include: '#string'
       - include: '#lambda'
       - include: '#operator'
       - include: '#curly-braces'
@@ -427,20 +431,38 @@ repository:
           [diouxXeEfFgGcrsa%]
 
   string-brace-formatting:
-    name: constant.character.format.python
-    match: |
-      (?x)
-        (?:
-          {{ | }}
-          | (?:
-            {
-              [^!:\.\[\]]*? (\.[[:alpha:]_]\w*? | \[[^\]]+\])*?
-              (![rsa])?
-              (:\w? [<>=^]? [-+ ]? \#? \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]?)?
-            })
-        )
-    captures:
-      '2': {name: storage.type.format.python}
+    patterns:
+      - name: constant.character.format.python
+        match: |
+          (?x)
+            (?:
+              {{ | }}
+              | (?:
+                {
+                  [^!:\.\[\]'"]*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
+                  (![rsa])?
+                  ( : \w? [<>=^]? [-+ ]? \#?
+                    \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
+                })
+            )
+        captures:
+          '2': {name: storage.type.format.python}
+          '3': {name: support.other.format.python}
+      - name: constant.character.format.python
+        begin: |
+          (?x)
+              \{
+                [^!:\.\[\]'"]*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
+                (![rsa])?
+                (:)
+                  (?=[^'"}\n]*\})
+        end: \}
+        beginCaptures:
+          '2': {name: storage.type.format.python}
+          '3': {name: support.other.format.python}
+        patterns:
+          - match: |
+              (?x) \{ [^'"}\n]*? \} (?=.*?\})
 
   class-declaration:
     patterns:

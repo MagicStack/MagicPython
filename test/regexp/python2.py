@@ -15,3 +15,4 @@ x             : source.python
 )             : punctuation.parenthesis.end.python, source.python
         foo   : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
+              : invalid.illegal.newline.python, source.python, string.quoted.single.single.python

@@ -148,11 +148,11 @@
           </dict>
           <dict>
             <key>include</key>
-            <string>#string</string>
+            <string>#regexp</string>
           </dict>
           <dict>
             <key>include</key>
-            <string>#regexp</string>
+            <string>#string</string>
           </dict>
           <dict>
             <key>include</key>
@@ -991,28 +991,74 @@
       </dict>
       <key>string-brace-formatting</key>
       <dict>
-        <key>name</key>
-        <string>constant.character.format.python</string>
-        <key>match</key>
-        <string>(?x)
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>constant.character.format.python</string>
+            <key>match</key>
+            <string>(?x)
   (?:
     {{ | }}
     | (?:
       {
-        [^!:\.\[\]]*? (\.[[:alpha:]_]\w*? | \[[^\]]+\])*?
+        [^!:\.\[\]&apos;&quot;]*? (\.[[:alpha:]_]\w*? | \[[^\]&apos;&quot;]+\])*?
         (![rsa])?
-        (:\w? [&lt;&gt;=^]? [-+ ]? \#? \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]?)?
+        ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
+          \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
       })
   )
 </string>
-        <key>captures</key>
-        <dict>
-          <key>2</key>
+            <key>captures</key>
+            <dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.format.python</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>support.other.format.python</string>
+              </dict>
+            </dict>
+          </dict>
           <dict>
             <key>name</key>
-            <string>storage.type.format.python</string>
+            <string>constant.character.format.python</string>
+            <key>begin</key>
+            <string>(?x)
+    \{
+      [^!:\.\[\]&apos;&quot;]*? (\.[[:alpha:]_]\w*? | \[[^\]&apos;&quot;]+\])*?
+      (![rsa])?
+      (:)
+        (?=[^&apos;&quot;}\n]*\})
+</string>
+            <key>end</key>
+            <string>\}</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.format.python</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>support.other.format.python</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>match</key>
+                <string>(?x) \{ [^&apos;&quot;}\n]*? \} (?=.*?\})
+</string>
+              </dict>
+            </array>
           </dict>
-        </dict>
+        </array>
       </dict>
       <key>class-declaration</key>
       <dict>
@@ -4094,7 +4140,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\b(([uU]R)|(R))(\&apos;)</string>
         <key>end</key>
-        <string>\&apos;</string>
+        <string>(\&apos;)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>2</key>
@@ -4115,10 +4161,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4136,7 +4187,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b[bB])(\&apos;)</string>
         <key>end</key>
-        <string>\&apos;</string>
+        <string>(\&apos;)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4152,10 +4203,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4173,7 +4229,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b(?:R[bB]|[bB]R))(\&apos;)</string>
         <key>end</key>
-        <string>(\&apos;)|(?&lt;!\\)(\n)</string>
+        <string>(\&apos;)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4215,7 +4271,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b[rR](?=[uU]))?([uU])?(\&apos;)</string>
         <key>end</key>
-        <string>\&apos;</string>
+        <string>(\&apos;)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4236,10 +4292,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4257,7 +4318,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\b(([uU]R)|(R))(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
-        <string>\&apos;\&apos;\&apos;</string>
+        <string>(\&apos;\&apos;\&apos;)</string>
         <key>beginCaptures</key>
         <dict>
           <key>2</key>
@@ -4278,10 +4339,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4299,7 +4365,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b[bB])(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
-        <string>\&apos;\&apos;\&apos;</string>
+        <string>(\&apos;\&apos;\&apos;)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4315,10 +4381,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4336,7 +4407,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b(?:R[bB]|[bB]R))(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
-        <string>(\&apos;\&apos;\&apos;)|(?&lt;!\\)(\n)</string>
+        <string>(\&apos;\&apos;\&apos;)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4378,7 +4449,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b[rR](?=[uU]))?([uU])?(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
-        <string>\&apos;\&apos;\&apos;</string>
+        <string>(\&apos;\&apos;\&apos;)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4399,10 +4470,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4420,7 +4496,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\b(([uU]R)|(R))(\&quot;)</string>
         <key>end</key>
-        <string>\&quot;</string>
+        <string>(\&quot;)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>2</key>
@@ -4441,10 +4517,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4462,7 +4543,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b[bB])(\&quot;)</string>
         <key>end</key>
-        <string>\&quot;</string>
+        <string>(\&quot;)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4478,10 +4559,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4499,7 +4585,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b(?:R[bB]|[bB]R))(\&quot;)</string>
         <key>end</key>
-        <string>(\&quot;)|(?&lt;!\\)(\n)</string>
+        <string>(\&quot;)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4541,7 +4627,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b[rR](?=[uU]))?([uU])?(\&quot;)</string>
         <key>end</key>
-        <string>\&quot;</string>
+        <string>(\&quot;)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4562,10 +4648,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4583,7 +4674,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\b(([uU]R)|(R))(\&quot;\&quot;\&quot;)</string>
         <key>end</key>
-        <string>\&quot;\&quot;\&quot;</string>
+        <string>(\&quot;\&quot;\&quot;)</string>
         <key>beginCaptures</key>
         <dict>
           <key>2</key>
@@ -4604,10 +4695,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4625,7 +4721,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b[bB])(\&quot;\&quot;\&quot;)</string>
         <key>end</key>
-        <string>\&quot;\&quot;\&quot;</string>
+        <string>(\&quot;\&quot;\&quot;)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4641,10 +4737,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4662,7 +4763,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b(?:R[bB]|[bB]R))(\&quot;\&quot;\&quot;)</string>
         <key>end</key>
-        <string>(\&quot;\&quot;\&quot;)|(?&lt;!\\)(\n)</string>
+        <string>(\&quot;\&quot;\&quot;)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4704,7 +4805,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\b[rR](?=[uU]))?([uU])?(\&quot;\&quot;\&quot;)</string>
         <key>end</key>
-        <string>\&quot;\&quot;\&quot;</string>
+        <string>(\&quot;\&quot;\&quot;)</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4725,10 +4826,15 @@ indirectly through syntactic constructs
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>0</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>

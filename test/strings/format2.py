@@ -1,4 +1,4 @@
-"normal {{ normal }} normal {fo.__add__!s}".format(fo=1)
+"normal {{ normal }} normal {10!r} normal {fo.__add__!s}".format(fo=1)
 
 
 
@@ -7,6 +7,10 @@ normal        : source.python, string.quoted.double.single.python
 {{            : constant.character.format.python, source.python, string.quoted.double.single.python
  normal       : source.python, string.quoted.double.single.python
 }}            : constant.character.format.python, source.python, string.quoted.double.single.python
+ normal       : source.python, string.quoted.double.single.python
+{10           : constant.character.format.python, source.python, string.quoted.double.single.python
+!r            : constant.character.format.python, source.python, storage.type.format.python, string.quoted.double.single.python
+}             : constant.character.format.python, source.python, string.quoted.double.single.python
  normal       : source.python, string.quoted.double.single.python
 {fo.__add__   : constant.character.format.python, source.python, string.quoted.double.single.python
 !s            : constant.character.format.python, source.python, storage.type.format.python, string.quoted.double.single.python

@@ -99,10 +99,10 @@ repository:
         include: "#literal"
       }
       {
-        include: "#string"
+        include: "#regexp"
       }
       {
-        include: "#regexp"
+        include: "#string"
       }
       {
         include: "#lambda"
@@ -609,23 +609,56 @@ repository:
       
     '''
   "string-brace-formatting":
-    name: "constant.character.format.python"
-    match: '''
-      (?x)
-        (?:
-          {{ | }}
-          | (?:
-            {
-              [^!:\\.\\[\\]]*? (\\.[[:alpha:]_]\\w*? | \\[[^\\]]+\\])*?
-              (![rsa])?
-              (:\\w? [<>=^]? [-+ ]? \\#? \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]?)?
-            })
-        )
-      
-    '''
-    captures:
-      "2":
-        name: "storage.type.format.python"
+    patterns: [
+      {
+        name: "constant.character.format.python"
+        match: '''
+          (?x)
+            (?:
+              {{ | }}
+              | (?:
+                {
+                  [^!:\\.\\[\\]'"]*? (\\.[[:alpha:]_]\\w*? | \\[[^\\]'"]+\\])*?
+                  (![rsa])?
+                  ( : \\w? [<>=^]? [-+ ]? \\#?
+                    \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?
+                })
+            )
+          
+        '''
+        captures:
+          "2":
+            name: "storage.type.format.python"
+          "3":
+            name: "support.other.format.python"
+      }
+      {
+        name: "constant.character.format.python"
+        begin: '''
+          (?x)
+              \\{
+                [^!:\\.\\[\\]'"]*? (\\.[[:alpha:]_]\\w*? | \\[[^\\]'"]+\\])*?
+                (![rsa])?
+                (:)
+                  (?=[^'"}\\n]*\\})
+          
+        '''
+        end: "\\}"
+        beginCaptures:
+          "2":
+            name: "storage.type.format.python"
+          "3":
+            name: "support.other.format.python"
+        patterns: [
+          {
+            match: '''
+              (?x) \\{ [^'"}\\n]*? \\} (?=.*?\\})
+              
+            '''
+          }
+        ]
+      }
+    ]
   "class-declaration":
     patterns: [
       {
@@ -2399,7 +2432,7 @@ repository:
   "string-raw-single-quoted-single-line":
     name: "string.quoted.single.single.raw.python"
     begin: "\\b(([uU]R)|(R))(\\')"
-    end: "\\'"
+    end: "(\\')|((?<!\\\\)\\n)"
     beginCaptures:
       "2":
         name: "invalid.deprecated.prefix.python"
@@ -2408,8 +2441,10 @@ repository:
       "4":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-raw-guts"
@@ -2418,15 +2453,17 @@ repository:
   "string-bin-single-quoted-single-line":
     name: "string.quoted.single.single.binary.python"
     begin: "(\\b[bB])(\\')"
-    end: "\\'"
+    end: "(\\')|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
         name: "storage.type.string.python"
       "2":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-entity"
@@ -2435,7 +2472,7 @@ repository:
   "string-raw-bin-single-quoted-single-line":
     name: "string.quoted.single.single.raw.binary.python"
     begin: "(\\b(?:R[bB]|[bB]R))(\\')"
-    end: "(\\')|(?<!\\\\)(\\n)"
+    end: "(\\')|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
         name: "storage.type.string.python"
@@ -2454,7 +2491,7 @@ repository:
   "string-single-quoted-single-line":
     name: "string.quoted.single.single.python"
     begin: "(\\b[rR](?=[uU]))?([uU])?(\\')"
-    end: "\\'"
+    end: "(\\')|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
         name: "invalid.illegal.prefix.python"
@@ -2463,8 +2500,10 @@ repository:
       "3":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-unicode-guts"
@@ -2473,7 +2512,7 @@ repository:
   "string-raw-single-quoted-multi-line":
     name: "string.quoted.single.multi.raw.python"
     begin: "\\b(([uU]R)|(R))(\\'\\'\\')"
-    end: "\\'\\'\\'"
+    end: "(\\'\\'\\')"
     beginCaptures:
       "2":
         name: "invalid.deprecated.prefix.python"
@@ -2482,8 +2521,10 @@ repository:
       "4":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-raw-guts"
@@ -2492,15 +2533,17 @@ repository:
   "string-bin-single-quoted-multi-line":
     name: "string.quoted.single.multi.binary.python"
     begin: "(\\b[bB])(\\'\\'\\')"
-    end: "\\'\\'\\'"
+    end: "(\\'\\'\\')"
     beginCaptures:
       "1":
         name: "storage.type.string.python"
       "2":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-entity"
@@ -2509,7 +2552,7 @@ repository:
   "string-raw-bin-single-quoted-multi-line":
     name: "string.quoted.single.multi.raw.binary.python"
     begin: "(\\b(?:R[bB]|[bB]R))(\\'\\'\\')"
-    end: "(\\'\\'\\')|(?<!\\\\)(\\n)"
+    end: "(\\'\\'\\')"
     beginCaptures:
       "1":
         name: "storage.type.string.python"
@@ -2528,7 +2571,7 @@ repository:
   "string-single-quoted-multi-line":
     name: "string.quoted.single.multi.python"
     begin: "(\\b[rR](?=[uU]))?([uU])?(\\'\\'\\')"
-    end: "\\'\\'\\'"
+    end: "(\\'\\'\\')"
     beginCaptures:
       "1":
         name: "invalid.illegal.prefix.python"
@@ -2537,8 +2580,10 @@ repository:
       "3":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-unicode-guts"
@@ -2547,7 +2592,7 @@ repository:
   "string-raw-double-quoted-single-line":
     name: "string.quoted.double.single.raw.python"
     begin: "\\b(([uU]R)|(R))(\\\")"
-    end: "\\\""
+    end: "(\\\")|((?<!\\\\)\\n)"
     beginCaptures:
       "2":
         name: "invalid.deprecated.prefix.python"
@@ -2556,8 +2601,10 @@ repository:
       "4":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-raw-guts"
@@ -2566,15 +2613,17 @@ repository:
   "string-bin-double-quoted-single-line":
     name: "string.quoted.double.single.binary.python"
     begin: "(\\b[bB])(\\\")"
-    end: "\\\""
+    end: "(\\\")|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
         name: "storage.type.string.python"
       "2":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-entity"
@@ -2583,7 +2632,7 @@ repository:
   "string-raw-bin-double-quoted-single-line":
     name: "string.quoted.double.single.raw.binary.python"
     begin: "(\\b(?:R[bB]|[bB]R))(\\\")"
-    end: "(\\\")|(?<!\\\\)(\\n)"
+    end: "(\\\")|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
         name: "storage.type.string.python"
@@ -2602,7 +2651,7 @@ repository:
   "string-double-quoted-single-line":
     name: "string.quoted.double.single.python"
     begin: "(\\b[rR](?=[uU]))?([uU])?(\\\")"
-    end: "\\\""
+    end: "(\\\")|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
         name: "invalid.illegal.prefix.python"
@@ -2611,8 +2660,10 @@ repository:
       "3":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-unicode-guts"
@@ -2621,7 +2672,7 @@ repository:
   "string-raw-double-quoted-multi-line":
     name: "string.quoted.double.multi.raw.python"
     begin: "\\b(([uU]R)|(R))(\\\"\\\"\\\")"
-    end: "\\\"\\\"\\\""
+    end: "(\\\"\\\"\\\")"
     beginCaptures:
       "2":
         name: "invalid.deprecated.prefix.python"
@@ -2630,8 +2681,10 @@ repository:
       "4":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-raw-guts"
@@ -2640,15 +2693,17 @@ repository:
   "string-bin-double-quoted-multi-line":
     name: "string.quoted.double.multi.binary.python"
     begin: "(\\b[bB])(\\\"\\\"\\\")"
-    end: "\\\"\\\"\\\""
+    end: "(\\\"\\\"\\\")"
     beginCaptures:
       "1":
         name: "storage.type.string.python"
       "2":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-entity"
@@ -2657,7 +2712,7 @@ repository:
   "string-raw-bin-double-quoted-multi-line":
     name: "string.quoted.double.multi.raw.binary.python"
     begin: "(\\b(?:R[bB]|[bB]R))(\\\"\\\"\\\")"
-    end: "(\\\"\\\"\\\")|(?<!\\\\)(\\n)"
+    end: "(\\\"\\\"\\\")"
     beginCaptures:
       "1":
         name: "storage.type.string.python"
@@ -2676,7 +2731,7 @@ repository:
   "string-double-quoted-multi-line":
     name: "string.quoted.double.multi.python"
     begin: "(\\b[rR](?=[uU]))?([uU])?(\\\"\\\"\\\")"
-    end: "\\\"\\\"\\\""
+    end: "(\\\"\\\"\\\")"
     beginCaptures:
       "1":
         name: "invalid.illegal.prefix.python"
@@ -2685,8 +2740,10 @@ repository:
       "3":
         name: "punctuation.definition.string.begin.python"
     endCaptures:
-      "0":
+      "1":
         name: "punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#string-unicode-guts"
