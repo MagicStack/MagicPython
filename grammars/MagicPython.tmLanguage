@@ -167,6 +167,10 @@
                 <key>include</key>
                 <string>#docstring-guts-unicode</string>
               </dict>
+              <dict>
+                <key>include</key>
+                <string>#docstring-guts-common-single</string>
+              </dict>
             </array>
           </dict>
           <dict>
@@ -203,6 +207,10 @@
                 <key>include</key>
                 <string>#docstring-guts-raw</string>
               </dict>
+              <dict>
+                <key>include</key>
+                <string>#docstring-guts-common-single</string>
+              </dict>
             </array>
           </dict>
           <dict>
@@ -233,6 +241,10 @@
               <dict>
                 <key>include</key>
                 <string>#docstring-guts-unicode</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#docstring-guts-common-double</string>
               </dict>
             </array>
           </dict>
@@ -270,6 +282,10 @@
                 <key>include</key>
                 <string>#docstring-guts-raw</string>
               </dict>
+              <dict>
+                <key>include</key>
+                <string>#docstring-guts-common-double</string>
+              </dict>
             </array>
           </dict>
         </array>
@@ -290,10 +306,6 @@
             <key>include</key>
             <string>#string-line-continuation</string>
           </dict>
-          <dict>
-            <key>include</key>
-            <string>#docstring-guts-common</string>
-          </dict>
         </array>
       </dict>
       <key>docstring-guts-raw</key>
@@ -308,18 +320,32 @@
             <key>include</key>
             <string>#string-line-continuation</string>
           </dict>
-          <dict>
-            <key>include</key>
-            <string>#docstring-guts-common</string>
-          </dict>
         </array>
       </dict>
-      <key>docstring-guts-common</key>
+      <key>docstring-guts-common-single</key>
       <dict>
         <key>begin</key>
         <string>(&gt;&gt;&gt;|\.\.\.)</string>
         <key>end</key>
-        <string>$</string>
+        <string>($|(?=\&apos;\&apos;\&apos;))</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#statement</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>docstring-guts-common-double</key>
+      <dict>
+        <key>begin</key>
+        <string>(&gt;&gt;&gt;|\.\.\.)</string>
+        <key>end</key>
+        <string>($|(?=\&quot;\&quot;\&quot;))</string>
         <key>patterns</key>
         <array>
           <dict>

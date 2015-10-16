@@ -99,6 +99,9 @@ repository:
           {
             include: "#docstring-guts-unicode"
           }
+          {
+            include: "#docstring-guts-common-single"
+          }
         ]
       }
       {
@@ -117,6 +120,9 @@ repository:
           {
             include: "#docstring-guts-raw"
           }
+          {
+            include: "#docstring-guts-common-single"
+          }
         ]
       }
       {
@@ -132,6 +138,9 @@ repository:
         patterns: [
           {
             include: "#docstring-guts-unicode"
+          }
+          {
+            include: "#docstring-guts-common-double"
           }
         ]
       }
@@ -151,6 +160,9 @@ repository:
           {
             include: "#docstring-guts-raw"
           }
+          {
+            include: "#docstring-guts-common-double"
+          }
         ]
       }
     ]
@@ -165,9 +177,6 @@ repository:
       {
         include: "#string-line-continuation"
       }
-      {
-        include: "#docstring-guts-common"
-      }
     ]
   "docstring-guts-raw":
     patterns: [
@@ -177,13 +186,21 @@ repository:
       {
         include: "#string-line-continuation"
       }
+    ]
+  "docstring-guts-common-single":
+    begin: "(>>>|\\.\\.\\.)"
+    end: "($|(?=\\'\\'\\'))"
+    patterns: [
       {
-        include: "#docstring-guts-common"
+        include: "#statement"
+      }
+      {
+        include: "#expression"
       }
     ]
-  "docstring-guts-common":
+  "docstring-guts-common-double":
     begin: "(>>>|\\.\\.\\.)"
-    end: "$"
+    end: "($|(?=\\\"\\\"\\\"))"
     patterns: [
       {
         include: "#statement"

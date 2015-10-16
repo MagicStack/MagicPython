@@ -113,6 +113,7 @@ repository:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
           - include: '#docstring-guts-unicode'
+          - include: '#docstring-guts-common-single'
 
       - name: string.quoted.docstring.raw.python
         begin: ([rR])(\'\'\')
@@ -124,6 +125,7 @@ repository:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
           - include: '#docstring-guts-raw'
+          - include: '#docstring-guts-common-single'
 
       - name: string.quoted.docstring.python
         begin: (\"\"\")
@@ -134,6 +136,7 @@ repository:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
           - include: '#docstring-guts-unicode'
+          - include: '#docstring-guts-common-double'
 
       - name: string.quoted.docstring.raw.python
         begin: ([rR])(\"\"\")
@@ -145,23 +148,29 @@ repository:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
           - include: '#docstring-guts-raw'
+          - include: '#docstring-guts-common-double'
 
   docstring-guts-unicode:
     patterns:
       - include: '#escape-sequence-unicode'
       - include: '#escape-sequence'
       - include: '#string-line-continuation'
-      - include: '#docstring-guts-common'
 
   docstring-guts-raw:
     patterns:
       - include: '#escape-sequence'
       - include: '#string-line-continuation'
-      - include: '#docstring-guts-common'
 
-  docstring-guts-common:
+  docstring-guts-common-single:
     begin: (>>>|\.\.\.)
-    end: $
+    end: ($|(?=\'\'\'))
+    patterns:
+      - include: '#statement'
+      - include: '#expression'
+
+  docstring-guts-common-double:
+    begin: (>>>|\.\.\.)
+    end: ($|(?=\"\"\"))
     patterns:
       - include: '#statement'
       - include: '#expression'
