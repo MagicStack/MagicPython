@@ -1,4 +1,4 @@
-"""
+a = """
 multiline "unicode" string \
 
     \xf1 \u1234aaaa \U1234aaaa
@@ -8,6 +8,9 @@ multiline "unicode" string \
 
 
 
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 """           : punctuation.definition.string.begin.python, source.python, string.quoted.double.multi.python
 multiline "unicode" string  : source.python, string.quoted.double.multi.python
 \             : constant.language.python, source.python, string.quoted.double.multi.python

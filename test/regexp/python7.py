@@ -1,24 +1,30 @@
-r'('
+a = r'('
 1
 
-r"(?="
+a = r"(?="
 1
 
-r"""(?:
+a = r"""(?:
 """
 1
 
-r'''[
+a = r'''[
 '''
 1
 
 
 
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
 (             : punctuation.parenthesis.begin.regexp support.other.parenthesis.regexp, source.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
 1             : constant.numeric.dec.python, source.python
+              : source.python
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.double.python
 "             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.double.python
@@ -27,11 +33,17 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
 "             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.double.python
 1             : constant.numeric.dec.python, source.python
               : source.python
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.triple.python
 """           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python
 (?:           : punctuation.parenthesis.non-capturing.begin.regexp support.other.parenthesis.regexp, source.python, string.regexp.quoted.triple.python
 """           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
 1             : constant.numeric.dec.python, source.python
+              : source.python
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python

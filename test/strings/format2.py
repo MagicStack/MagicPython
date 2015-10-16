@@ -1,7 +1,10 @@
-"normal {{ normal }} normal {10!r} normal {fo.__add__!s}".format(fo=1)
+a = "normal {{ normal }} normal {10!r} normal {fo.__add__!s}".format(fo=1)
 
 
 
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.double.single.python
 normal        : source.python, string.quoted.double.single.python
 {{            : constant.character.format.python, source.python, string.quoted.double.single.python

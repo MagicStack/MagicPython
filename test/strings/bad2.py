@@ -1,4 +1,4 @@
-b"bad \\ string
+a = b"bad \\ string
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
 def foo(a=1): pass
@@ -6,6 +6,9 @@ def foo(a=1): pass
 
 
 
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 b             : source.python, storage.type.string.python, string.quoted.double.single.binary.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.double.single.binary.python
 bad           : source.python, string.quoted.double.single.binary.python

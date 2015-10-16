@@ -1,50 +1,65 @@
-r'''
+a = r'''
     (?x)
         foo
 '''
-br'''
+a = br'''
     (?x)
         foo
 '''
-rb'''
+a = rb'''
     (?x)
         foo
 '''
-Br'''
+a = Br'''
     (?x)
         foo
 '''
-rB'''
+a = rB'''
     (?x)
         foo
 '''
 
 
 
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python
               : source.python, string.regexp.quoted.triple.python
 (?x)          : source.python, storage.modifier.flag.regexp, string.regexp.quoted.triple.python
         foo   : source.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 br            : source.python, storage.type.string.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python
               : source.python, string.regexp.quoted.triple.python
 (?x)          : source.python, storage.modifier.flag.regexp, string.regexp.quoted.triple.python
         foo   : source.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 rb            : source.python, storage.type.string.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python
               : source.python, string.regexp.quoted.triple.python
 (?x)          : source.python, storage.modifier.flag.regexp, string.regexp.quoted.triple.python
         foo   : source.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 Br            : source.python, storage.type.string.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python
               : source.python, string.regexp.quoted.triple.python
 (?x)          : source.python, storage.modifier.flag.regexp, string.regexp.quoted.triple.python
         foo   : source.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 rB            : source.python, storage.type.string.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python
               : source.python, string.regexp.quoted.triple.python

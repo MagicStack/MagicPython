@@ -1,8 +1,11 @@
-"simple \\ string \
+a = "simple \\ string \
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
 
 
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.double.single.python
 simple        : source.python, string.quoted.double.single.python
 \\            : constant.character.python, source.python, string.quoted.double.single.python

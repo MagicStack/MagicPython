@@ -1,9 +1,12 @@
-"bad \\ string
+a = "bad \\ string
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 def foo(a=1): pass
 
 
 
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.double.single.python
 bad           : source.python, string.quoted.double.single.python
 \\            : constant.character.python, source.python, string.quoted.double.single.python

@@ -1,4 +1,4 @@
-b"""
+a = b"""
 multiline "binary" string \
 
     \xf1 \u1234aaaa \U1234aaaa
@@ -8,6 +8,9 @@ multiline "binary" string \
 
 
 
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 b             : source.python, storage.type.string.python, string.quoted.double.multi.binary.python
 """           : punctuation.definition.string.begin.python, source.python, string.quoted.double.multi.binary.python
 multiline "binary" string  : source.python, string.quoted.double.multi.binary.python

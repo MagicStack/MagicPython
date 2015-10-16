@@ -1,10 +1,13 @@
-r"bad string
+a = r"bad string
 foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
 def foo(a=1): pass # doesn't break!
 
 
 
+a             : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.double.python
 "             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.double.python
 bad string    : source.python, string.regexp.quoted.double.python
