@@ -258,13 +258,24 @@ repository:
 
   line-continuation:
     patterns:
-      - match: '(\\)\s*$'
-        captures:
-          '1': {name: separator.continuation.line.python}
       - match: '(\\)\s*(\S.*$\n?)'
         captures:
           '1': {name: separator.continuation.line.python}
           '2': {name: invalid.illegal.line.continuation.python}
+      - begin: '(\\)\s*$\n?'
+        # Line continuation matching ends on anything that is not a
+        # potential docstring. For docstring-like strings we explicitly
+        # match regexp and string.
+        end: |
+          (?x)
+            (?=^\s*$)
+            |
+            (?! [rR]? (\'\'\'|\"\"\") | $)
+        beginCaptures:
+          '1': {name: separator.continuation.line.python}
+        patterns:
+          - include: '#regexp'
+          - include: '#string'
 
   assignment-operator:
     name: keyword.operator.assignment.python

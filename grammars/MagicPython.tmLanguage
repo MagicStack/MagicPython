@@ -584,18 +584,6 @@
         <array>
           <dict>
             <key>match</key>
-            <string>(\\)\s*$</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>separator.continuation.line.python</string>
-              </dict>
-            </dict>
-          </dict>
-          <dict>
-            <key>match</key>
             <string>(\\)\s*(\S.*$\n?)</string>
             <key>captures</key>
             <dict>
@@ -610,6 +598,35 @@
                 <string>invalid.illegal.line.continuation.python</string>
               </dict>
             </dict>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>(\\)\s*$\n?</string>
+            <key>end</key>
+            <string>(?x)
+  (?=^\s*$)
+  |
+  (?! [rR]? (\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;) | $)
+</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>separator.continuation.line.python</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#regexp</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#string</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
