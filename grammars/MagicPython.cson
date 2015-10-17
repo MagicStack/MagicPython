@@ -23,21 +23,6 @@ patterns: [
   }
 ]
 repository:
-  comments:
-    name: "comment.line.number-sign.python"
-    begin: "(\\#)"
-    beginCaptures:
-      "1":
-        name: "punctuation.definition.comment.python"
-    end: "($)"
-    patterns: [
-      {
-        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
-        captures:
-          "1":
-            name: "keyword.comment.line.note.notation.python"
-      }
-    ]
   statement:
     patterns: [
       {
@@ -623,9 +608,6 @@ repository:
       {
         include: "#single-three-regexp-expression"
       }
-      {
-        include: "#comments"
-      }
     ]
   "regexp-double-quoted-multi-line":
     name: "string.regexp.quoted.triple.python"
@@ -646,9 +628,6 @@ repository:
     patterns: [
       {
         include: "#double-three-regexp-expression"
-      }
-      {
-        include: "#comments"
       }
     ]
   string:
@@ -1700,6 +1679,51 @@ repository:
         include: "#regexp-escape-catchall"
       }
     ]
+  comments:
+    name: "comment.line.number-sign.python"
+    begin: "(\\#)"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.comment.python"
+    end: "($)"
+    patterns: [
+      {
+        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
+        captures:
+          "1":
+            name: "keyword.comment.line.note.notation.python"
+      }
+    ]
+  "comments-string-single-three":
+    name: "comment.line.number-sign.python"
+    begin: "(\\#)"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.comment.python"
+    end: "($|(?='''))"
+    patterns: [
+      {
+        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
+        captures:
+          "1":
+            name: "keyword.comment.line.note.notation.python"
+      }
+    ]
+  "comments-string-double-three":
+    name: "comment.line.number-sign.python"
+    begin: "(\\#)"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.comment.python"
+    end: "($|(?=\"\"\"))"
+    patterns: [
+      {
+        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
+        captures:
+          "1":
+            name: "keyword.comment.line.note.notation.python"
+      }
+    ]
   "single-one-regexp-expression":
     patterns: [
       {
@@ -1956,6 +1980,9 @@ repository:
       {
         include: "#single-three-regexp-parentheses"
       }
+      {
+        include: "#comments-string-single-three"
+      }
     ]
   "single-three-regexp-character-set":
     patterns: [
@@ -2012,7 +2039,7 @@ repository:
         include: "#single-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-single-three"
       }
     ]
   "single-three-regexp-comments":
@@ -2041,7 +2068,7 @@ repository:
         include: "#single-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-single-three"
       }
     ]
   "single-three-regexp-lookahead-negative":
@@ -2060,7 +2087,7 @@ repository:
         include: "#single-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-single-three"
       }
     ]
   "single-three-regexp-lookbehind":
@@ -2079,7 +2106,7 @@ repository:
         include: "#single-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-single-three"
       }
     ]
   "single-three-regexp-lookbehind-negative":
@@ -2098,7 +2125,7 @@ repository:
         include: "#single-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-single-three"
       }
     ]
   "single-three-regexp-conditional":
@@ -2117,7 +2144,7 @@ repository:
         include: "#single-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-single-three"
       }
     ]
   "single-three-regexp-parentheses-non-capturing":
@@ -2134,7 +2161,7 @@ repository:
         include: "#single-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-single-three"
       }
     ]
   "single-three-regexp-parentheses":
@@ -2151,7 +2178,7 @@ repository:
         include: "#single-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-single-three"
       }
     ]
   "double-one-regexp-expression":
@@ -2410,6 +2437,9 @@ repository:
       {
         include: "#double-three-regexp-parentheses"
       }
+      {
+        include: "#comments-string-double-three"
+      }
     ]
   "double-three-regexp-character-set":
     patterns: [
@@ -2466,7 +2496,7 @@ repository:
         include: "#double-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-double-three"
       }
     ]
   "double-three-regexp-comments":
@@ -2495,7 +2525,7 @@ repository:
         include: "#double-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-double-three"
       }
     ]
   "double-three-regexp-lookahead-negative":
@@ -2514,7 +2544,7 @@ repository:
         include: "#double-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-double-three"
       }
     ]
   "double-three-regexp-lookbehind":
@@ -2533,7 +2563,7 @@ repository:
         include: "#double-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-double-three"
       }
     ]
   "double-three-regexp-lookbehind-negative":
@@ -2552,7 +2582,7 @@ repository:
         include: "#double-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-double-three"
       }
     ]
   "double-three-regexp-conditional":
@@ -2571,7 +2601,7 @@ repository:
         include: "#double-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-double-three"
       }
     ]
   "double-three-regexp-parentheses-non-capturing":
@@ -2588,7 +2618,7 @@ repository:
         include: "#double-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-double-three"
       }
     ]
   "double-three-regexp-parentheses":
@@ -2605,7 +2635,7 @@ repository:
         include: "#double-three-regexp-expression"
       }
       {
-        include: "#comments"
+        include: "#comments-string-double-three"
       }
     ]
   "string-raw-single-quoted-single-line":

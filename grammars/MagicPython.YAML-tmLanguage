@@ -14,6 +14,21 @@ repository:
   $apply:
     - file: 'regexp-common.inc.yaml'
 
+    - file: 'comment.inc.yaml'
+      vars:
+        suffix: ''
+        marker: ''
+
+    - file: 'comment.inc.yaml'
+      vars:
+        suffix: '-string-single-three'
+        marker: "|(?=''')"
+
+    - file: 'comment.inc.yaml'
+      vars:
+        suffix: '-string-double-three'
+        marker: '|(?=""")'
+
     - file: 'regexp.inc.yaml'
       vars:
         prefix: 'single-one-'
@@ -24,7 +39,7 @@ repository:
       vars:
         prefix: 'single-three-'
         marker: "|(?=\\'\\'\\')"
-        nested: "- include: '#comments'"
+        nested: "- include: '#comments-string-single-three'"
 
     - file: 'regexp.inc.yaml'
       vars:
@@ -36,7 +51,7 @@ repository:
       vars:
         prefix: 'double-three-'
         marker: '|(?=""")'
-        nested: "- include: '#comments'"
+        nested: "- include: '#comments-string-double-three'"
 
     - file: 'pystring.inc.yaml'
       vars:
@@ -65,17 +80,6 @@ repository:
         line: multi
         marker: '\"\"\"'
         guard: ""
-
-  comments:
-    name: comment.line.number-sign.python
-    begin: (\#)
-    beginCaptures:
-      '1': {name: punctuation.definition.comment.python}
-    end: ($)
-    patterns:
-      - match: (?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)
-        captures:
-          '1': {name: keyword.comment.line.note.notation.python}
 
   statement:
     patterns:
@@ -172,7 +176,6 @@ repository:
       - match: (?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)
         captures:
           '1': {name: keyword.string.quoted.docstring.note.python}
-
 
   statement-keyword:
     patterns:
@@ -450,7 +453,6 @@ repository:
       '0': {name: punctuation.definition.string.end.python}
     patterns:
       - include: '#single-three-regexp-expression'
-      - include: '#comments'
 
   regexp-double-quoted-multi-line:
     name: string.regexp.quoted.triple.python
@@ -465,7 +467,6 @@ repository:
       '0': {name: punctuation.definition.string.end.python}
     patterns:
       - include: '#double-three-regexp-expression'
-      - include: '#comments'
 
   string:
     patterns:

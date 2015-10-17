@@ -15,6 +15,7 @@ repository:
       - include: '#${prefix}regexp-conditional'
       - include: '#${prefix}regexp-parentheses-non-capturing'
       - include: '#${prefix}regexp-parentheses'
+      ${nested}
 
   ${prefix}regexp-character-set:
     patterns:

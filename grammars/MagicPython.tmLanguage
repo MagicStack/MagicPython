@@ -36,38 +36,6 @@
     </array>
     <key>repository</key>
     <dict>
-      <key>comments</key>
-      <dict>
-        <key>name</key>
-        <string>comment.line.number-sign.python</string>
-        <key>begin</key>
-        <string>(\#)</string>
-        <key>beginCaptures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.comment.python</string>
-          </dict>
-        </dict>
-        <key>end</key>
-        <string>($)</string>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>match</key>
-            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.comment.line.note.notation.python</string>
-              </dict>
-            </dict>
-          </dict>
-        </array>
-      </dict>
       <key>statement</key>
       <dict>
         <key>patterns</key>
@@ -1035,10 +1003,6 @@
             <key>include</key>
             <string>#single-three-regexp-expression</string>
           </dict>
-          <dict>
-            <key>include</key>
-            <string>#comments</string>
-          </dict>
         </array>
       </dict>
       <key>regexp-double-quoted-multi-line</key>
@@ -1085,10 +1049,6 @@
           <dict>
             <key>include</key>
             <string>#double-three-regexp-expression</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#comments</string>
           </dict>
         </array>
       </dict>
@@ -2697,6 +2657,102 @@ indirectly through syntactic constructs
           </dict>
         </array>
       </dict>
+      <key>comments</key>
+      <dict>
+        <key>name</key>
+        <string>comment.line.number-sign.python</string>
+        <key>begin</key>
+        <string>(\#)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.comment.python</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>($)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.comment.line.note.notation.python</string>
+              </dict>
+            </dict>
+          </dict>
+        </array>
+      </dict>
+      <key>comments-string-single-three</key>
+      <dict>
+        <key>name</key>
+        <string>comment.line.number-sign.python</string>
+        <key>begin</key>
+        <string>(\#)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.comment.python</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>($|(?=&apos;&apos;&apos;))</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.comment.line.note.notation.python</string>
+              </dict>
+            </dict>
+          </dict>
+        </array>
+      </dict>
+      <key>comments-string-double-three</key>
+      <dict>
+        <key>name</key>
+        <string>comment.line.number-sign.python</string>
+        <key>begin</key>
+        <string>(\#)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.comment.python</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>($|(?=&quot;&quot;&quot;))</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.comment.line.note.notation.python</string>
+              </dict>
+            </dict>
+          </dict>
+        </array>
+      </dict>
       <key>single-one-regexp-expression</key>
       <dict>
         <key>patterns</key>
@@ -3169,6 +3225,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#single-three-regexp-parentheses</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments-string-single-three</string>
+          </dict>
         </array>
       </dict>
       <key>single-three-regexp-character-set</key>
@@ -3269,7 +3329,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-single-three</string>
           </dict>
         </array>
       </dict>
@@ -3333,7 +3393,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-single-three</string>
           </dict>
         </array>
       </dict>
@@ -3372,7 +3432,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-single-three</string>
           </dict>
         </array>
       </dict>
@@ -3411,7 +3471,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-single-three</string>
           </dict>
         </array>
       </dict>
@@ -3450,7 +3510,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-single-three</string>
           </dict>
         </array>
       </dict>
@@ -3489,7 +3549,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-single-three</string>
           </dict>
         </array>
       </dict>
@@ -3523,7 +3583,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-single-three</string>
           </dict>
         </array>
       </dict>
@@ -3557,7 +3617,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-single-three</string>
           </dict>
         </array>
       </dict>
@@ -4033,6 +4093,10 @@ indirectly through syntactic constructs
             <key>include</key>
             <string>#double-three-regexp-parentheses</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#comments-string-double-three</string>
+          </dict>
         </array>
       </dict>
       <key>double-three-regexp-character-set</key>
@@ -4133,7 +4197,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-double-three</string>
           </dict>
         </array>
       </dict>
@@ -4197,7 +4261,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-double-three</string>
           </dict>
         </array>
       </dict>
@@ -4236,7 +4300,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-double-three</string>
           </dict>
         </array>
       </dict>
@@ -4275,7 +4339,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-double-three</string>
           </dict>
         </array>
       </dict>
@@ -4314,7 +4378,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-double-three</string>
           </dict>
         </array>
       </dict>
@@ -4353,7 +4417,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-double-three</string>
           </dict>
         </array>
       </dict>
@@ -4387,7 +4451,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-double-three</string>
           </dict>
         </array>
       </dict>
@@ -4421,7 +4485,7 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
-            <string>#comments</string>
+            <string>#comments-string-double-three</string>
           </dict>
         </array>
       </dict>
