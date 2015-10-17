@@ -76,9 +76,9 @@
         <string>(?&lt;=:)</string>
         <key>end</key>
         <string>(?x)
-  (?! \s | \# | [rR]?(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;) | $)
+  (?! \s | \# | [rR]?(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;) | $)
   |
-  (?&lt;=\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;)
+  (?&lt;=\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;)
 </string>
         <key>endCaptures</key>
         <dict>
@@ -103,9 +103,9 @@
       <key>docstring-module</key>
       <dict>
         <key>begin</key>
-        <string>^(?=[rR]?(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;))</string>
+        <string>^(?=[rR]?(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;))</string>
         <key>end</key>
-        <string>(?&lt;=\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;)</string>
+        <string>(?&lt;=\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;)</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -145,7 +145,11 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#docstring-guts-common</string>
+                <string>#docstring-prompt</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#docstring-codetags</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -189,7 +193,96 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#docstring-guts-common</string>
+                <string>#docstring-prompt</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#docstring-codetags</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.docstring.python</string>
+            <key>begin</key>
+            <string>(\&apos;|\&quot;)</string>
+            <key>end</key>
+            <string>(\1)|((?&lt;!\\)\n)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.begin.python</string>
+              </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.end.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.newline.python</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#docstring-codetags</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#docstring-guts-unicode</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.docstring.raw.python</string>
+            <key>begin</key>
+            <string>([rR])(\&apos;|\&quot;)</string>
+            <key>end</key>
+            <string>(\2)|((?&lt;!\\)\n)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.string.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.begin.python</string>
+              </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.end.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.newline.python</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#string-consume-escape</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#docstring-codetags</string>
               </dict>
             </array>
           </dict>
@@ -213,40 +306,36 @@
           </dict>
         </array>
       </dict>
-      <key>docstring-guts-common</key>
+      <key>docstring-prompt</key>
       <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>match</key>
-            <string>(?x)
+        <key>match</key>
+        <string>(?x)
   (?:
     (?:^|\G) \s* (?# &apos;\G&apos; is necessary for ST)
     ((?:&gt;&gt;&gt;|\.\.\.) \s)
   )
 </string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.control.flow.python</string>
-              </dict>
-            </dict>
-          </dict>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
           <dict>
-            <key>match</key>
-            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.string.quoted.docstring.note.python</string>
-              </dict>
-            </dict>
+            <key>name</key>
+            <string>keyword.control.flow.python</string>
           </dict>
-        </array>
+        </dict>
+      </dict>
+      <key>docstring-codetags</key>
+      <dict>
+        <key>match</key>
+        <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.string.quoted.docstring.note.python</string>
+          </dict>
+        </dict>
       </dict>
       <key>statement-keyword</key>
       <dict>
@@ -522,7 +611,7 @@
             <string>(?x)
   (?=^\s*$)
   |
-  (?! ([rR]? (\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;))
+  (?! ([rR]? (\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;))
       |
       (\G $)  (?# &apos;\G&apos; is necessary for ST)
   )

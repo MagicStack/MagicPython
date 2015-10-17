@@ -51,9 +51,9 @@ repository:
     begin: "(?<=:)"
     end: '''
       (?x)
-        (?! \\s | \\# | [rR]?(\\'\\'\\'|\\"\\"\\") | $)
+        (?! \\s | \\# | [rR]?(\\'\\'\\'|\\"\\"\\"|\\'|\\") | $)
         |
-        (?<=\\'\\'\\'|\\"\\"\\")
+        (?<=\\'\\'\\'|\\"\\"\\"|\\'|\\")
       
     '''
     endCaptures:
@@ -68,8 +68,8 @@ repository:
       }
     ]
   "docstring-module":
-    begin: "^(?=[rR]?(\\'\\'\\'|\\\"\\\"\\\"))"
-    end: "(?<=\\'\\'\\'|\\\"\\\"\\\")"
+    begin: "^(?=[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))"
+    end: "(?<=\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\")"
     patterns: [
       {
         include: "#docstring"
@@ -89,7 +89,10 @@ repository:
             name: "punctuation.definition.string.end.python"
         patterns: [
           {
-            include: "#docstring-guts-common"
+            include: "#docstring-prompt"
+          }
+          {
+            include: "#docstring-codetags"
           }
           {
             include: "#docstring-guts-unicode"
@@ -113,7 +116,54 @@ repository:
             include: "#string-consume-escape"
           }
           {
-            include: "#docstring-guts-common"
+            include: "#docstring-prompt"
+          }
+          {
+            include: "#docstring-codetags"
+          }
+        ]
+      }
+      {
+        name: "string.quoted.docstring.python"
+        begin: "(\\'|\\\")"
+        end: "(\\1)|((?<!\\\\)\\n)"
+        beginCaptures:
+          "1":
+            name: "punctuation.definition.string.begin.python"
+        endCaptures:
+          "1":
+            name: "punctuation.definition.string.end.python"
+          "2":
+            name: "invalid.illegal.newline.python"
+        patterns: [
+          {
+            include: "#docstring-codetags"
+          }
+          {
+            include: "#docstring-guts-unicode"
+          }
+        ]
+      }
+      {
+        name: "string.quoted.docstring.raw.python"
+        begin: "([rR])(\\'|\\\")"
+        end: "(\\2)|((?<!\\\\)\\n)"
+        beginCaptures:
+          "1":
+            name: "storage.type.string.python"
+          "2":
+            name: "punctuation.definition.string.begin.python"
+        endCaptures:
+          "1":
+            name: "punctuation.definition.string.end.python"
+          "2":
+            name: "invalid.illegal.newline.python"
+        patterns: [
+          {
+            include: "#string-consume-escape"
+          }
+          {
+            include: "#docstring-codetags"
           }
         ]
       }
@@ -130,28 +180,23 @@ repository:
         include: "#string-line-continuation"
       }
     ]
-  "docstring-guts-common":
-    patterns: [
-      {
-        match: '''
-          (?x)
-            (?:
-              (?:^|\\G) \\s* (?# '\\G' is necessary for ST)
-              ((?:>>>|\\.\\.\\.) \\s)
-            )
-          
-        '''
-        captures:
-          "1":
-            name: "keyword.control.flow.python"
-      }
-      {
-        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
-        captures:
-          "1":
-            name: "keyword.string.quoted.docstring.note.python"
-      }
-    ]
+  "docstring-prompt":
+    match: '''
+      (?x)
+        (?:
+          (?:^|\\G) \\s* (?# '\\G' is necessary for ST)
+          ((?:>>>|\\.\\.\\.) \\s)
+        )
+      
+    '''
+    captures:
+      "1":
+        name: "keyword.control.flow.python"
+  "docstring-codetags":
+    match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
+    captures:
+      "1":
+        name: "keyword.string.quoted.docstring.note.python"
   "statement-keyword":
     patterns: [
       {
@@ -329,7 +374,7 @@ repository:
           (?x)
             (?=^\\s*$)
             |
-            (?! ([rR]? (\\'\\'\\'|\\"\\"\\"))
+            (?! ([rR]? (\\'\\'\\'|\\"\\"\\"|\\'|\\"))
                 |
                 (\\G $)  (?# '\\G' is necessary for ST)
             )
