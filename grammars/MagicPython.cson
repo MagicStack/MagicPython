@@ -2583,7 +2583,7 @@ repository:
       }
     ]
   "string-raw-quoted-single-line":
-    name: "string.quoted.single.raw.python"
+    name: "string.quoted.raw.single.python"
     begin: "\\b(([uU]R)|(R))(\\'|\")"
     end: "(\\4)|((?<!\\\\)\\n)"
     beginCaptures:
@@ -2604,7 +2604,7 @@ repository:
       }
     ]
   "string-bin-quoted-single-line":
-    name: "string.quoted.single.binary.python"
+    name: "string.quoted.binary.single.python"
     begin: "(\\b[bB])(\\'|\")"
     end: "(\\2)|((?<!\\\\)\\n)"
     beginCaptures:
@@ -2623,7 +2623,7 @@ repository:
       }
     ]
   "string-raw-bin-quoted-single-line":
-    name: "string.quoted.single.raw.binary.python"
+    name: "string.quoted.raw.binary.single.python"
     begin: "(\\b(?:R[bB]|[bB]R))(\\'|\")"
     end: "(\\2)|((?<!\\\\)\\n)"
     beginCaptures:
@@ -2663,7 +2663,7 @@ repository:
       }
     ]
   "string-raw-quoted-multi-line":
-    name: "string.quoted.multi.raw.python"
+    name: "string.quoted.raw.multi.python"
     begin: "\\b(([uU]R)|(R))(\\'\\'\\'|\"\"\")"
     end: "(\\4)"
     beginCaptures:
@@ -2684,7 +2684,7 @@ repository:
       }
     ]
   "string-bin-quoted-multi-line":
-    name: "string.quoted.multi.binary.python"
+    name: "string.quoted.binary.multi.python"
     begin: "(\\b[bB])(\\'\\'\\'|\"\"\")"
     end: "(\\2)"
     beginCaptures:
@@ -2703,7 +2703,7 @@ repository:
       }
     ]
   "string-raw-bin-quoted-multi-line":
-    name: "string.quoted.multi.raw.binary.python"
+    name: "string.quoted.raw.binary.multi.python"
     begin: "(\\b(?:R[bB]|[bB]R))(\\'\\'\\'|\"\"\")"
     end: "(\\2)"
     beginCaptures:

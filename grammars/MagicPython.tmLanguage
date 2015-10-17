@@ -4398,7 +4398,7 @@ indirectly through syntactic constructs
       <key>string-raw-quoted-single-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.single.raw.python</string>
+        <string>string.quoted.raw.single.python</string>
         <key>begin</key>
         <string>\b(([uU]R)|(R))(\&apos;|&quot;)</string>
         <key>end</key>
@@ -4445,7 +4445,7 @@ indirectly through syntactic constructs
       <key>string-bin-quoted-single-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.single.binary.python</string>
+        <string>string.quoted.binary.single.python</string>
         <key>begin</key>
         <string>(\b[bB])(\&apos;|&quot;)</string>
         <key>end</key>
@@ -4487,7 +4487,7 @@ indirectly through syntactic constructs
       <key>string-raw-bin-quoted-single-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.single.raw.binary.python</string>
+        <string>string.quoted.raw.binary.single.python</string>
         <key>begin</key>
         <string>(\b(?:R[bB]|[bB]R))(\&apos;|&quot;)</string>
         <key>end</key>
@@ -4576,7 +4576,7 @@ indirectly through syntactic constructs
       <key>string-raw-quoted-multi-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.multi.raw.python</string>
+        <string>string.quoted.raw.multi.python</string>
         <key>begin</key>
         <string>\b(([uU]R)|(R))(\&apos;\&apos;\&apos;|&quot;&quot;&quot;)</string>
         <key>end</key>
@@ -4623,7 +4623,7 @@ indirectly through syntactic constructs
       <key>string-bin-quoted-multi-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.multi.binary.python</string>
+        <string>string.quoted.binary.multi.python</string>
         <key>begin</key>
         <string>(\b[bB])(\&apos;\&apos;\&apos;|&quot;&quot;&quot;)</string>
         <key>end</key>
@@ -4665,7 +4665,7 @@ indirectly through syntactic constructs
       <key>string-raw-bin-quoted-multi-line</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.multi.raw.binary.python</string>
+        <string>string.quoted.raw.binary.multi.python</string>
         <key>begin</key>
         <string>(\b(?:R[bB]|[bB]R))(\&apos;\&apos;\&apos;|&quot;&quot;&quot;)</string>
         <key>end</key>

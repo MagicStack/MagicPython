@@ -29,11 +29,11 @@ U             : source.python, storage.type.string.python, string.quoted.multi.p
 '''           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
 TEST          : source.python, string.quoted.multi.python
 '''           : punctuation.definition.string.end.python, source.python, string.quoted.multi.python
-b             : source.python, storage.type.string.python, string.quoted.multi.binary.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.binary.python
-TEST          : source.python, string.quoted.multi.binary.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.multi.binary.python
-B             : source.python, storage.type.string.python, string.quoted.multi.binary.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.binary.python
-TEST          : source.python, string.quoted.multi.binary.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.multi.binary.python
+b             : source.python, storage.type.string.python, string.quoted.binary.multi.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.binary.multi.python
+TEST          : source.python, string.quoted.binary.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.binary.multi.python
+B             : source.python, storage.type.string.python, string.quoted.binary.multi.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.binary.multi.python
+TEST          : source.python, string.quoted.binary.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.binary.multi.python

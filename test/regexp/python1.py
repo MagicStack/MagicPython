@@ -17,7 +17,7 @@ z             : constant.character.set.regexp, meta.character.set.regexp, source
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-R             : source.python, storage.type.string.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.python
-[a-z]         : source.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python
+R             : source.python, storage.type.string.python, string.quoted.raw.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.raw.single.python
+[a-z]         : source.python, string.quoted.raw.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.raw.single.python

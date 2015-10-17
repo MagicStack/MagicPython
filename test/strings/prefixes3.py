@@ -18,10 +18,10 @@ S T R         : source.python, string.regexp.quoted.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-UR            : invalid.deprecated.prefix.python, source.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.python
-S T R         : source.python, string.quoted.single.raw.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.python
+UR            : invalid.deprecated.prefix.python, source.python, string.quoted.raw.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.raw.single.python
+S T R         : source.python, string.quoted.raw.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.raw.single.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
  uB           : source.python
@@ -47,14 +47,14 @@ S T R         : source.python, string.quoted.single.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-bR            : source.python, storage.type.string.python, string.quoted.single.raw.binary.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.binary.python
-S T R         : source.python, string.quoted.single.raw.binary.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.binary.python
+bR            : source.python, storage.type.string.python, string.quoted.raw.binary.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.raw.binary.single.python
+S T R         : source.python, string.quoted.raw.binary.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.raw.binary.single.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-Rb            : source.python, storage.type.string.python, string.quoted.single.raw.binary.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.raw.binary.python
-S T R         : source.python, string.quoted.single.raw.binary.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.raw.binary.python
+Rb            : source.python, storage.type.string.python, string.quoted.raw.binary.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.raw.binary.single.python
+S T R         : source.python, string.quoted.raw.binary.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.raw.binary.single.python

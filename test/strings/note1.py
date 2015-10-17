@@ -20,7 +20,7 @@ XXX FIXME NB TODO : source.python, string.regexp.quoted.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-b             : source.python, storage.type.string.python, string.quoted.single.binary.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.binary.python
-XXX FIXME NB TODO : source.python, string.quoted.single.binary.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.binary.python
+b             : source.python, storage.type.string.python, string.quoted.binary.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.binary.single.python
+XXX FIXME NB TODO : source.python, string.quoted.binary.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.binary.single.python

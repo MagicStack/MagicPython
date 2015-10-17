@@ -93,10 +93,10 @@ foo           : entity.name.function.python, meta.function.python, source.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
-b             : source.python, storage.type.string.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.binary.python
-TEST          : source.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.end.python, source.python, string.quoted.multi.binary.python
+b             : source.python, storage.type.string.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.binary.multi.python
+TEST          : source.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.binary.multi.python
               : source.python
 def           : meta.function.python, source.python, storage.type.function.python
               : meta.function.python, source.python
@@ -105,7 +105,7 @@ foo           : entity.name.function.python, meta.function.python, source.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
-B             : source.python, storage.type.string.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.binary.python
-TEST          : source.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.end.python, source.python, string.quoted.multi.binary.python
+B             : source.python, storage.type.string.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.binary.multi.python
+TEST          : source.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.binary.multi.python

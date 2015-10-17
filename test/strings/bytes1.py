@@ -11,14 +11,14 @@ multiline "binary" string \
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-b             : source.python, storage.type.string.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.binary.python
-multiline "binary" string  : source.python, string.quoted.multi.binary.python
-\             : constant.language.python, source.python, string.quoted.multi.binary.python
-              : source.python, string.quoted.multi.binary.python
-              : source.python, string.quoted.multi.binary.python
-\xf1          : constant.character.python, source.python, string.quoted.multi.binary.python
- \u1234aaaa \U1234aaaa : source.python, string.quoted.multi.binary.python
-              : source.python, string.quoted.multi.binary.python
-    \N{BLACK SPADE SUIT} : source.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.end.python, source.python, string.quoted.multi.binary.python
+b             : source.python, storage.type.string.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.binary.multi.python
+multiline "binary" string  : source.python, string.quoted.binary.multi.python
+\             : constant.language.python, source.python, string.quoted.binary.multi.python
+              : source.python, string.quoted.binary.multi.python
+              : source.python, string.quoted.binary.multi.python
+\xf1          : constant.character.python, source.python, string.quoted.binary.multi.python
+ \u1234aaaa \U1234aaaa : source.python, string.quoted.binary.multi.python
+              : source.python, string.quoted.binary.multi.python
+    \N{BLACK SPADE SUIT} : source.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.binary.multi.python

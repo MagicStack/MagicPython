@@ -1,7 +1,7 @@
 ---
 repository:
   string-raw-quoted-${line}-line:
-    name: string.quoted.${line}.raw.python
+    name: string.quoted.raw.${line}.python
     begin: \b(([uU]R)|(R))(${marker})
     end: (\4)${guard}
     beginCaptures:
@@ -15,7 +15,7 @@ repository:
       - include: '#string-raw-guts'
 
   string-bin-quoted-${line}-line:
-    name: string.quoted.${line}.binary.python
+    name: string.quoted.binary.${line}.python
     begin: (\b[bB])(${marker})
     end: (\2)${guard}
     beginCaptures:
@@ -28,7 +28,7 @@ repository:
       - include: '#string-entity'
 
   string-raw-bin-quoted-${line}-line:
-    name: string.quoted.${line}.raw.binary.python
+    name: string.quoted.raw.binary.${line}.python
     begin: (\b(?:R[bB]|[bB]R))(${marker})
     end: (\2)${guard}
     beginCaptures:

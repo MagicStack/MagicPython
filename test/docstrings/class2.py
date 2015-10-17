@@ -76,17 +76,17 @@ class         : meta.class.python, source.python, storage.type.class.python
 Foo           : entity.name.type.class.python, meta.class.python, source.python
 :             : meta.class.python, punctuation.section.class.begin.python, source.python
               : source.python
-b             : source.python, storage.type.string.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.binary.python
-TEST          : source.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.end.python, source.python, string.quoted.multi.binary.python
+b             : source.python, storage.type.string.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.binary.multi.python
+TEST          : source.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.binary.multi.python
               : source.python
 class         : meta.class.python, source.python, storage.type.class.python
               : meta.class.python, source.python
 Foo           : entity.name.type.class.python, meta.class.python, source.python
 :             : meta.class.python, punctuation.section.class.begin.python, source.python
               : source.python
-B             : source.python, storage.type.string.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.binary.python
-TEST          : source.python, string.quoted.multi.binary.python
-"""           : punctuation.definition.string.end.python, source.python, string.quoted.multi.binary.python
+B             : source.python, storage.type.string.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.binary.multi.python
+TEST          : source.python, string.quoted.binary.multi.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.binary.multi.python
