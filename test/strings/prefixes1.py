@@ -10,23 +10,23 @@ a = rb's t r'
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
-s t r         : source.python, string.quoted.single.single.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+s t r         : source.python, string.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-u             : source.python, storage.type.string.python, string.quoted.single.single.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
-s t r         : source.python, string.quoted.single.single.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
+u             : source.python, storage.type.string.python, string.quoted.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+s t r         : source.python, string.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-b             : source.python, storage.type.string.python, string.quoted.single.single.binary.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.single.binary.python
-s t r         : source.python, string.quoted.single.single.binary.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.single.binary.python
+b             : source.python, storage.type.string.python, string.quoted.single.binary.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.binary.python
+s t r         : source.python, string.quoted.single.binary.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.single.binary.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python

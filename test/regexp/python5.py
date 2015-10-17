@@ -34,8 +34,8 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-R             : source.python, storage.type.string.python, string.quoted.single.multi.raw.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.single.multi.raw.python
-    (?x)        # not a : source.python, string.quoted.single.multi.raw.python
-        foo     # comment : source.python, string.quoted.single.multi.raw.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.single.multi.raw.python
+R             : source.python, storage.type.string.python, string.quoted.multi.raw.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.raw.python
+    (?x)        # not a : source.python, string.quoted.multi.raw.python
+        foo     # comment : source.python, string.quoted.multi.raw.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.multi.raw.python

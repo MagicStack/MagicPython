@@ -25,13 +25,13 @@ __all__       : source.python, support.variable.magic.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 [             : punctuation.definition.list.begin.python, source.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
-bar           : source.python, string.quoted.single.single.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+bar           : source.python, string.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 ,             : source.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
-baz           : source.python, string.quoted.single.single.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+baz           : source.python, string.quoted.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 ]             : punctuation.definition.list.end.python, source.python
 some          : source.python
 .             : source.python

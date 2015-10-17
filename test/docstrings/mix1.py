@@ -46,16 +46,16 @@ self          : meta.function.parameters.python, meta.function.python, source.py
               : meta.function.parameters.python, meta.function.python, source.python
 a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 :             : meta.function.parameters.python, meta.function.python, punctuation.separator.annotation.python, source.python
-'''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.multi.python
-TEST          : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.multi.python
-'''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.multi.python
+'''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
+TEST          : meta.function.parameters.python, meta.function.python, source.python, string.quoted.multi.python
+'''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.multi.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
                  : meta.function.python, source.python
 ->            : meta.function.python, punctuation.separator.annotation.result.python, source.python
               : meta.function.python, source.python
-'''           : meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.multi.python
-TEST          : meta.function.python, source.python, string.quoted.single.multi.python
-'''           : meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.multi.python
+'''           : meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
+TEST          : meta.function.python, source.python, string.quoted.multi.python
+'''           : meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.multi.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
@@ -81,23 +81,23 @@ self          : meta.function.parameters.python, meta.function.python, source.py
               : meta.function.parameters.python, meta.function.python, source.python
 a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 :             : meta.function.parameters.python, meta.function.python, punctuation.separator.annotation.python, source.python
-'''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.multi.python
-TEST          : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.multi.python
-'''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.multi.python
+'''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
+TEST          : meta.function.parameters.python, meta.function.python, source.python, string.quoted.multi.python
+'''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.multi.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
                  : meta.function.python, source.python
 ->            : meta.function.python, punctuation.separator.annotation.result.python, source.python
               : meta.function.python, source.python
-'''           : meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.multi.python
-TEST          : meta.function.python, source.python, string.quoted.single.multi.python
-'''           : meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.multi.python
+'''           : meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
+TEST          : meta.function.python, source.python, string.quoted.multi.python
+'''           : meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.multi.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
               : source.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.single.multi.python
-TEST          : source.python, string.quoted.single.multi.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.single.multi.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
+TEST          : source.python, string.quoted.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.multi.python
               : source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  not a docstring anymore : comment.line.number-sign.python, source.python

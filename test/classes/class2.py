@@ -20,13 +20,13 @@ Bar           : entity.other.inherited-class.python, meta.class.inheritance.pyth
 name          : entity.other.inherited-class.python, meta.class.inheritance.python, meta.class.python, source.python
 =             : keyword.operator.assignment.python, meta.class.inheritance.python, meta.class.python, source.python
 {             : meta.class.inheritance.python, meta.class.python, punctuation.definition.dict.begin.python, source.python
-'             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
-very          : meta.class.inheritance.python, meta.class.python, source.python, string.quoted.single.single.python
-'             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
+'             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+very          : meta.class.inheritance.python, meta.class.python, source.python, string.quoted.single.python
+'             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
 :             : meta.class.inheritance.python, meta.class.python, source.python
-'             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
-odd           : meta.class.inheritance.python, meta.class.python, source.python, string.quoted.single.single.python
-'             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.end.python, source.python, string.quoted.single.single.python
+'             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+odd           : meta.class.inheritance.python, meta.class.python, source.python, string.quoted.single.python
+'             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
 }             : meta.class.inheritance.python, meta.class.python, punctuation.definition.dict.end.python, source.python
 )             : meta.class.inheritance.python, meta.class.python, punctuation.definition.inheritance.end.python, source.python
 :             : meta.class.python, punctuation.section.class.begin.python, source.python

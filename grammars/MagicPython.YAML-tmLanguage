@@ -55,31 +55,16 @@ repository:
 
     - file: 'pystring.inc.yaml'
       vars:
-        quote: single
         line: single
-        marker: "\\'"
+        marker: "\\'|\""
         guard: "|((?<!\\\\)\\n)"
 
     - file: 'pystring.inc.yaml'
       vars:
-        quote: single
         line: multi
-        marker: "\\'\\'\\'"
+        marker: "\\'\\'\\'|\"\"\""
         guard: ""
 
-    - file: 'pystring.inc.yaml'
-      vars:
-        quote: double
-        line: single
-        marker: '\"'
-        guard: "|((?<!\\\\)\\n)"
-
-    - file: 'pystring.inc.yaml'
-      vars:
-        quote: double
-        line: multi
-        marker: '\"\"\"'
-        guard: ""
 
   statement:
     patterns:
@@ -449,22 +434,14 @@ repository:
 
   string:
     patterns:
-      - include: '#string-single-quoted-multi-line'
-      - include: '#string-double-quoted-multi-line'
-      - include: '#string-single-quoted-single-line'
-      - include: '#string-double-quoted-single-line'
-      - include: '#string-bin-single-quoted-multi-line'
-      - include: '#string-bin-double-quoted-multi-line'
-      - include: '#string-bin-single-quoted-single-line'
-      - include: '#string-bin-double-quoted-single-line'
-      - include: '#string-raw-single-quoted-multi-line'
-      - include: '#string-raw-double-quoted-multi-line'
-      - include: '#string-raw-single-quoted-single-line'
-      - include: '#string-raw-double-quoted-single-line'
-      - include: '#string-raw-bin-single-quoted-multi-line'
-      - include: '#string-raw-bin-double-quoted-multi-line'
-      - include: '#string-raw-bin-single-quoted-single-line'
-      - include: '#string-raw-bin-double-quoted-single-line'
+      - include: '#string-quoted-multi-line'
+      - include: '#string-quoted-single-line'
+      - include: '#string-bin-quoted-multi-line'
+      - include: '#string-bin-quoted-single-line'
+      - include: '#string-raw-quoted-multi-line'
+      - include: '#string-raw-quoted-single-line'
+      - include: '#string-raw-bin-quoted-multi-line'
+      - include: '#string-raw-bin-quoted-single-line'
 
   string-unicode-guts:
     patterns:

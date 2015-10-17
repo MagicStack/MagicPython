@@ -1,9 +1,9 @@
 ---
 repository:
-  string-raw-${quote}-quoted-${line}-line:
-    name: string.quoted.${quote}.${line}.raw.python
+  string-raw-quoted-${line}-line:
+    name: string.quoted.${line}.raw.python
     begin: \b(([uU]R)|(R))(${marker})
-    end: (${marker})${guard}
+    end: (\4)${guard}
     beginCaptures:
       '2': {name: invalid.deprecated.prefix.python}
       '3': {name: storage.type.string.python}
@@ -14,10 +14,10 @@ repository:
     patterns:
       - include: '#string-raw-guts'
 
-  string-bin-${quote}-quoted-${line}-line:
-    name: string.quoted.${quote}.${line}.binary.python
+  string-bin-quoted-${line}-line:
+    name: string.quoted.${line}.binary.python
     begin: (\b[bB])(${marker})
-    end: (${marker})${guard}
+    end: (\2)${guard}
     beginCaptures:
       '1': {name: storage.type.string.python}
       '2': {name: punctuation.definition.string.begin.python}
@@ -27,10 +27,10 @@ repository:
     patterns:
       - include: '#string-entity'
 
-  string-raw-bin-${quote}-quoted-${line}-line:
-    name: string.quoted.${quote}.${line}.raw.binary.python
+  string-raw-bin-quoted-${line}-line:
+    name: string.quoted.${line}.raw.binary.python
     begin: (\b(?:R[bB]|[bB]R))(${marker})
-    end: (${marker})${guard}
+    end: (\2)${guard}
     beginCaptures:
       '1': {name: storage.type.string.python}
       '2': {name: punctuation.definition.string.begin.python}
@@ -40,10 +40,10 @@ repository:
     patterns:
       - include: '#string-raw-bin-guts'
 
-  string-${quote}-quoted-${line}-line:
-    name: string.quoted.${quote}.${line}.python
+  string-quoted-${line}-line:
+    name: string.quoted.${line}.python
     begin: (\b[rR](?=[uU]))?([uU])?(${marker})
-    end: (${marker})${guard}
+    end: (\3)${guard}
     beginCaptures:
       '1': {name: invalid.illegal.prefix.python}
       '2': {name: storage.type.string.python}
