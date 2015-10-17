@@ -32,9 +32,9 @@ disable the built-in `Python` package (using
 
 Alternatively, the package can be installed manually in both editors:
 
-- copy the MagicPython package into the Sublime user packages directory
-- disable Python package
-- enjoy
+- copy the MagicPython package into the Sublime/Atom user packages directory;
+- disable Python package;
+- enjoy.
 
 
 ## Changes and Improvements
