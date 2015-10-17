@@ -110,6 +110,9 @@ repository:
             name: "punctuation.definition.string.end.python"
         patterns: [
           {
+            include: "#string-consume-escape"
+          }
+          {
             include: "#docstring-guts-common"
           }
         ]
@@ -656,10 +659,12 @@ repository:
         include: "#string-brace-formatting"
       }
     ]
+  "string-consume-escape":
+    match: "\\\\."
   "string-raw-guts":
     patterns: [
       {
-        match: "\\\\."
+        include: "#string-consume-escape"
       }
       {
         include: "#string-formatting"
@@ -671,7 +676,7 @@ repository:
   "string-raw-bin-guts":
     patterns: [
       {
-        match: "\\\\."
+        include: "#string-consume-escape"
       }
       {
         include: "#string-formatting"

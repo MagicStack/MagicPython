@@ -185,6 +185,10 @@
             <array>
               <dict>
                 <key>include</key>
+                <string>#string-consume-escape</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#docstring-guts-common</string>
               </dict>
             </array>
@@ -1069,13 +1073,18 @@
           </dict>
         </array>
       </dict>
+      <key>string-consume-escape</key>
+      <dict>
+        <key>match</key>
+        <string>\\.</string>
+      </dict>
       <key>string-raw-guts</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>match</key>
-            <string>\\.</string>
+            <key>include</key>
+            <string>#string-consume-escape</string>
           </dict>
           <dict>
             <key>include</key>
@@ -1092,8 +1101,8 @@
         <key>patterns</key>
         <array>
           <dict>
-            <key>match</key>
-            <string>\\.</string>
+            <key>include</key>
+            <string>#string-consume-escape</string>
           </dict>
           <dict>
             <key>include</key>

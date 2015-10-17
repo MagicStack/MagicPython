@@ -132,6 +132,7 @@ repository:
         endCaptures:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
+          - include: '#string-consume-escape'
           - include: '#docstring-guts-common'
 
   docstring-guts-unicode:
@@ -471,15 +472,18 @@ repository:
       - include: '#string-entity'
       - include: '#string-brace-formatting'
 
+  string-consume-escape:
+    match: \\.
+
   string-raw-guts:
     patterns:
-      - match: \\.
+      - include: '#string-consume-escape'
       - include: '#string-formatting'
       - include: '#string-brace-formatting'
 
   string-raw-bin-guts:
     patterns:
-      - match: \\.
+      - include: '#string-consume-escape'
       - include: '#string-formatting'
 
   string-entity:
