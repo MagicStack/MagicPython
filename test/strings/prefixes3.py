@@ -11,10 +11,10 @@ a = Rb'S T R'
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-Ur            : invalid.deprecated.prefix.python, source.python, string.regexp.quoted.single.python
-'             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
-S T R         : source.python, string.regexp.quoted.single.python
-'             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
+Ur            : invalid.deprecated.prefix.python, source.python, string.regexp.quoted.python
+'             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.python
+S T R         : source.python, string.regexp.quoted.python
+'             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python

@@ -509,7 +509,7 @@ repository:
       }
     ]
   "regexp-single-quoted-single-line":
-    name: "string.regexp.quoted.single.python"
+    name: "string.regexp.quoted.python"
     begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\')"
     end: "(\\')|(?<!\\\\)(\\n)"
     beginCaptures:
@@ -532,7 +532,7 @@ repository:
       }
     ]
   "regexp-double-quoted-single-line":
-    name: "string.regexp.quoted.double.python"
+    name: "string.regexp.quoted.python"
     begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\\")"
     end: "(\\\")|(?<!\\\\)(\\n)"
     beginCaptures:
