@@ -91,7 +91,7 @@ repository:
             include: "#docstring-prompt"
           }
           {
-            include: "#docstring-codetags"
+            include: "#codetags"
           }
           {
             include: "#docstring-guts-unicode"
@@ -118,7 +118,7 @@ repository:
             include: "#docstring-prompt"
           }
           {
-            include: "#docstring-codetags"
+            include: "#codetags"
           }
         ]
       }
@@ -136,7 +136,7 @@ repository:
             name: "invalid.illegal.newline.python"
         patterns: [
           {
-            include: "#docstring-codetags"
+            include: "#codetags"
           }
           {
             include: "#docstring-guts-unicode"
@@ -162,7 +162,7 @@ repository:
             include: "#string-consume-escape"
           }
           {
-            include: "#docstring-codetags"
+            include: "#codetags"
           }
         ]
       }
@@ -191,11 +191,11 @@ repository:
     captures:
       "1":
         name: "keyword.control.flow.python"
-  "docstring-codetags":
+  codetags:
     match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
     captures:
       "1":
-        name: "keyword.string.quoted.docstring.note.python"
+        name: "keyword.codetag.notation.python"
   "statement-keyword":
     patterns: [
       {
@@ -1676,10 +1676,7 @@ repository:
     end: "($)"
     patterns: [
       {
-        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
-        captures:
-          "1":
-            name: "keyword.comment.line.note.notation.python"
+        include: "#codetags"
       }
     ]
   "comments-string-single-three":
@@ -1691,10 +1688,7 @@ repository:
     end: "($|(?='''))"
     patterns: [
       {
-        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
-        captures:
-          "1":
-            name: "keyword.comment.line.note.notation.python"
+        include: "#codetags"
       }
     ]
   "comments-string-double-three":
@@ -1706,10 +1700,7 @@ repository:
     end: "($|(?=\"\"\"))"
     patterns: [
       {
-        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
-        captures:
-          "1":
-            name: "keyword.comment.line.note.notation.python"
+        include: "#codetags"
       }
     ]
   "single-one-regexp-expression":

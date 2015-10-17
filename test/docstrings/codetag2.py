@@ -7,7 +7,7 @@ def foo():
 
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
  foo bar      : source.python, string.quoted.docstring.python
-XXX           : keyword.string.quoted.docstring.note.python, source.python, string.quoted.docstring.python
+XXX           : keyword.codetag.notation.python, source.python, string.quoted.docstring.python
  baz          : source.python, string.quoted.docstring.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python
               : source.python
@@ -20,6 +20,6 @@ foo           : entity.name.function.python, meta.function.python, source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
  foo          : source.python, string.quoted.docstring.python
-FIXME         : keyword.string.quoted.docstring.note.python, source.python, string.quoted.docstring.python
+FIXME         : keyword.codetag.notation.python, source.python, string.quoted.docstring.python
  baz          : source.python, string.quoted.docstring.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python

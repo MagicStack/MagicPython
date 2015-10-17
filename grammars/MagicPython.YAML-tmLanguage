@@ -105,7 +105,7 @@ repository:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
           - include: '#docstring-prompt'
-          - include: '#docstring-codetags'
+          - include: '#codetags'
           - include: '#docstring-guts-unicode'
 
       - name: string.quoted.docstring.raw.multi.python
@@ -119,7 +119,7 @@ repository:
         patterns:
           - include: '#string-consume-escape'
           - include: '#docstring-prompt'
-          - include: '#docstring-codetags'
+          - include: '#codetags'
 
       - name: string.quoted.docstring.python
         begin: (\'|\")
@@ -130,7 +130,7 @@ repository:
           '1': {name: punctuation.definition.string.end.python}
           '2': {name: invalid.illegal.newline.python}
         patterns:
-          - include: '#docstring-codetags'
+          - include: '#codetags'
           - include: '#docstring-guts-unicode'
 
       - name: string.quoted.docstring.raw.python
@@ -144,7 +144,7 @@ repository:
           '2': {name: invalid.illegal.newline.python}
         patterns:
           - include: '#string-consume-escape'
-          - include: '#docstring-codetags'
+          - include: '#codetags'
 
   docstring-guts-unicode:
     patterns:
@@ -162,10 +162,10 @@ repository:
     captures:
       '1': {name: keyword.control.flow.python}
 
-  docstring-codetags:
+  codetags:
     match: (?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)
     captures:
-      '1': {name: keyword.string.quoted.docstring.note.python}
+      '1': {name: keyword.codetag.notation.python}
 
   statement-keyword:
     patterns:

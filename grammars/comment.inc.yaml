@@ -7,7 +7,5 @@ repository:
       '1': {name: punctuation.definition.comment.python}
     end: ($${marker})
     patterns:
-      - match: (?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)
-        captures:
-          '1': {name: keyword.comment.line.note.notation.python}
+      - include: '#codetags'
 ...

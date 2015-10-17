@@ -147,7 +147,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#docstring-codetags</string>
+                <string>#codetags</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -195,7 +195,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#docstring-codetags</string>
+                <string>#codetags</string>
               </dict>
             </array>
           </dict>
@@ -231,7 +231,7 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#docstring-codetags</string>
+                <string>#codetags</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -280,7 +280,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#docstring-codetags</string>
+                <string>#codetags</string>
               </dict>
             </array>
           </dict>
@@ -322,7 +322,7 @@
           </dict>
         </dict>
       </dict>
-      <key>docstring-codetags</key>
+      <key>codetags</key>
       <dict>
         <key>match</key>
         <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
@@ -331,7 +331,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>keyword.string.quoted.docstring.note.python</string>
+            <string>keyword.codetag.notation.python</string>
           </dict>
         </dict>
       </dict>
@@ -2669,16 +2669,8 @@ indirectly through syntactic constructs
         <key>patterns</key>
         <array>
           <dict>
-            <key>match</key>
-            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.comment.line.note.notation.python</string>
-              </dict>
-            </dict>
+            <key>include</key>
+            <string>#codetags</string>
           </dict>
         </array>
       </dict>
@@ -2701,16 +2693,8 @@ indirectly through syntactic constructs
         <key>patterns</key>
         <array>
           <dict>
-            <key>match</key>
-            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.comment.line.note.notation.python</string>
-              </dict>
-            </dict>
+            <key>include</key>
+            <string>#codetags</string>
           </dict>
         </array>
       </dict>
@@ -2733,16 +2717,8 @@ indirectly through syntactic constructs
         <key>patterns</key>
         <array>
           <dict>
-            <key>match</key>
-            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.comment.line.note.notation.python</string>
-              </dict>
-            </dict>
+            <key>include</key>
+            <string>#codetags</string>
           </dict>
         </array>
       </dict>
