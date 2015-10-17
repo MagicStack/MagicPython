@@ -112,8 +112,8 @@ repository:
         endCaptures:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
+          - include: '#docstring-guts-common'
           - include: '#docstring-guts-unicode'
-          - include: '#docstring-guts-common-single'
 
       - name: string.quoted.docstring.raw.python
         begin: ([rR])(\'\'\')
@@ -124,8 +124,8 @@ repository:
         endCaptures:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
+          - include: '#docstring-guts-common'
           - include: '#docstring-guts-raw'
-          - include: '#docstring-guts-common-single'
 
       - name: string.quoted.docstring.python
         begin: (\"\"\")
@@ -135,8 +135,8 @@ repository:
         endCaptures:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
+          - include: '#docstring-guts-common'
           - include: '#docstring-guts-unicode'
-          - include: '#docstring-guts-common-double'
 
       - name: string.quoted.docstring.raw.python
         begin: ([rR])(\"\"\")
@@ -147,8 +147,8 @@ repository:
         endCaptures:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
+          - include: '#docstring-guts-common'
           - include: '#docstring-guts-raw'
-          - include: '#docstring-guts-common-double'
 
   docstring-guts-unicode:
     patterns:
@@ -161,19 +161,15 @@ repository:
       - include: '#escape-sequence'
       - include: '#string-line-continuation'
 
-  docstring-guts-common-single:
-    begin: (>>>|\.\.\.)
-    end: ($|(?=\'\'\'))
-    patterns:
-      - include: '#statement'
-      - include: '#expression'
-
-  docstring-guts-common-double:
-    begin: (>>>|\.\.\.)
-    end: ($|(?=\"\"\"))
-    patterns:
-      - include: '#statement'
-      - include: '#expression'
+  docstring-guts-common:
+    match: |
+      (?x)
+        (?:
+          (?:^|\G) \s* (?# '\G' is necessary for ST)
+          ((?:>>>|\.\.\.) \s)
+        )
+    captures:
+      '1': {name: keyword.control.flow.python}
 
   statement-keyword:
     patterns:
@@ -281,7 +277,7 @@ repository:
             |
             (?! ([rR]? (\'\'\'|\"\"\"))
                 |
-                (\G $)
+                (\G $)  (?# '\G' is necessary for ST)
             )
         beginCaptures:
           '1': {name: separator.continuation.line.python}

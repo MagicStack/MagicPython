@@ -44,10 +44,7 @@ b             : source.python
  docstring    : comment.line.number-sign.python, source.python
 r             : source.python, storage.type.string.python, string.quoted.docstring.raw.python
 '''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.python
->>>           : source.python, string.quoted.docstring.raw.python
-              : source.python, string.quoted.docstring.raw.python
-print         : meta.function-call.python, source.python, string.quoted.docstring.raw.python, support.function.builtin.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python, string.quoted.docstring.raw.python
-)             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python, string.quoted.docstring.raw.python
+>>>           : keyword.control.flow.python, source.python, string.quoted.docstring.raw.python
+print()       : source.python, string.quoted.docstring.raw.python
 a[wer]        : source.python, string.quoted.docstring.raw.python
 '''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.python

@@ -97,10 +97,10 @@ repository:
             name: "punctuation.definition.string.end.python"
         patterns: [
           {
-            include: "#docstring-guts-unicode"
+            include: "#docstring-guts-common"
           }
           {
-            include: "#docstring-guts-common-single"
+            include: "#docstring-guts-unicode"
           }
         ]
       }
@@ -118,10 +118,10 @@ repository:
             name: "punctuation.definition.string.end.python"
         patterns: [
           {
-            include: "#docstring-guts-raw"
+            include: "#docstring-guts-common"
           }
           {
-            include: "#docstring-guts-common-single"
+            include: "#docstring-guts-raw"
           }
         ]
       }
@@ -137,10 +137,10 @@ repository:
             name: "punctuation.definition.string.end.python"
         patterns: [
           {
-            include: "#docstring-guts-unicode"
+            include: "#docstring-guts-common"
           }
           {
-            include: "#docstring-guts-common-double"
+            include: "#docstring-guts-unicode"
           }
         ]
       }
@@ -158,10 +158,10 @@ repository:
             name: "punctuation.definition.string.end.python"
         patterns: [
           {
-            include: "#docstring-guts-raw"
+            include: "#docstring-guts-common"
           }
           {
-            include: "#docstring-guts-common-double"
+            include: "#docstring-guts-raw"
           }
         ]
       }
@@ -187,28 +187,18 @@ repository:
         include: "#string-line-continuation"
       }
     ]
-  "docstring-guts-common-single":
-    begin: "(>>>|\\.\\.\\.)"
-    end: "($|(?=\\'\\'\\'))"
-    patterns: [
-      {
-        include: "#statement"
-      }
-      {
-        include: "#expression"
-      }
-    ]
-  "docstring-guts-common-double":
-    begin: "(>>>|\\.\\.\\.)"
-    end: "($|(?=\\\"\\\"\\\"))"
-    patterns: [
-      {
-        include: "#statement"
-      }
-      {
-        include: "#expression"
-      }
-    ]
+  "docstring-guts-common":
+    match: '''
+      (?x)
+        (?:
+          (?:^|\\G) \\s* (?# '\\G' is necessary for ST)
+          ((?:>>>|\\.\\.\\.) \\s)
+        )
+      
+    '''
+    captures:
+      "1":
+        name: "keyword.control.flow.python"
   "statement-keyword":
     patterns: [
       {
@@ -388,7 +378,7 @@ repository:
             |
             (?! ([rR]? (\\'\\'\\'|\\"\\"\\"))
                 |
-                (\\G $)
+                (\\G $)  (?# '\\G' is necessary for ST)
             )
           
         '''
