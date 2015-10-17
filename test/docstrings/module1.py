@@ -9,17 +9,17 @@ B'''TEST'''
 
 
 
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
-TEST          : source.python, string.quoted.docstring.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python
-r             : source.python, storage.type.string.python, string.quoted.docstring.raw.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.python
-TEST          : source.python, string.quoted.docstring.raw.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.python
-R             : source.python, storage.type.string.python, string.quoted.docstring.raw.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.python
-TEST          : source.python, string.quoted.docstring.raw.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
+TEST          : source.python, string.quoted.docstring.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
+r             : source.python, storage.type.string.python, string.quoted.docstring.raw.multi.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.multi.python
+TEST          : source.python, string.quoted.docstring.raw.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.multi.python
+R             : source.python, storage.type.string.python, string.quoted.docstring.raw.multi.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.multi.python
+TEST          : source.python, string.quoted.docstring.raw.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.multi.python
               : source.python
 u             : source.python, storage.type.string.python, string.quoted.multi.python
 '''           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.python

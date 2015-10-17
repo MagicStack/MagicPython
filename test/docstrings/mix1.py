@@ -19,9 +19,9 @@ class Foo:
 
 
 
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
-TEST          : source.python, string.quoted.docstring.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
+TEST          : source.python, string.quoted.docstring.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
               : source.python
 class         : meta.class.python, source.python, storage.type.class.python
               : meta.class.python, source.python
@@ -31,10 +31,10 @@ Foo           : entity.name.type.class.python, meta.class.python, source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  comment      : comment.line.number-sign.python, source.python
               : source.python
-R             : source.python, storage.type.string.python, string.quoted.docstring.raw.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.python
-TEST          : source.python, string.quoted.docstring.raw.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.python
+R             : source.python, storage.type.string.python, string.quoted.docstring.raw.multi.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.multi.python
+TEST          : source.python, string.quoted.docstring.raw.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.multi.python
               : source.python
               : meta.function.python, source.python
 def           : meta.function.python, source.python, storage.type.function.python
@@ -61,10 +61,10 @@ TEST          : meta.function.python, source.python, string.quoted.multi.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
 ok            : comment.line.number-sign.python, source.python
               : source.python
-r             : source.python, storage.type.string.python, string.quoted.docstring.raw.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.python
-TEST          : source.python, string.quoted.docstring.raw.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.python
+r             : source.python, storage.type.string.python, string.quoted.docstring.raw.multi.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.multi.python
+TEST          : source.python, string.quoted.docstring.raw.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.multi.python
               : source.python
 with          : keyword.control.flow.python, source.python
  bar:         : source.python

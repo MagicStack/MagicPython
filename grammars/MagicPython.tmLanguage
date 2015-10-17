@@ -120,7 +120,7 @@
         <array>
           <dict>
             <key>name</key>
-            <string>string.quoted.docstring.python</string>
+            <string>string.quoted.docstring.multi.python</string>
             <key>begin</key>
             <string>(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;)</string>
             <key>end</key>
@@ -155,7 +155,7 @@
           </dict>
           <dict>
             <key>name</key>
-            <string>string.quoted.docstring.raw.python</string>
+            <string>string.quoted.docstring.raw.multi.python</string>
             <key>begin</key>
             <string>([rR])(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;)</string>
             <key>end</key>

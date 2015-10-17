@@ -78,7 +78,7 @@ repository:
   docstring:
     patterns: [
       {
-        name: "string.quoted.docstring.python"
+        name: "string.quoted.docstring.multi.python"
         begin: "(\\'\\'\\'|\\\"\\\"\\\")"
         end: "(\\1)"
         beginCaptures:
@@ -97,7 +97,7 @@ repository:
         ]
       }
       {
-        name: "string.quoted.docstring.raw.python"
+        name: "string.quoted.docstring.raw.multi.python"
         begin: "([rR])(\\'\\'\\'|\\\"\\\"\\\")"
         end: "(\\2)"
         beginCaptures:

@@ -11,28 +11,28 @@ await
 
 
 
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
->>>           : keyword.control.flow.python, source.python, string.quoted.docstring.python
-print("""docstring""") : source.python, string.quoted.docstring.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
+>>>           : keyword.control.flow.python, source.python, string.quoted.docstring.multi.python
+print("""docstring""") : source.python, string.quoted.docstring.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
 async         : keyword.control.flow.python, source.python
-"""           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
->>>           : keyword.control.flow.python, source.python, string.quoted.docstring.python
-print('''docstring''') : source.python, string.quoted.docstring.python
-"""           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
+>>>           : keyword.control.flow.python, source.python, string.quoted.docstring.multi.python
+print('''docstring''') : source.python, string.quoted.docstring.multi.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
 await         : keyword.operator.python, source.python
-"""           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
-\n            : constant.character.python, source.python, string.quoted.docstring.python
->>> print('''docstring''') : source.python, string.quoted.docstring.python
-"""           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
+\n            : constant.character.python, source.python, string.quoted.docstring.multi.python
+>>> print('''docstring''') : source.python, string.quoted.docstring.multi.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
 await         : keyword.operator.python, source.python
-"""           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
-              : source.python, string.quoted.docstring.python
->>>           : keyword.control.flow.python, source.python, string.quoted.docstring.python
-print('''docstring''') : source.python, string.quoted.docstring.python
-"""           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
+              : source.python, string.quoted.docstring.multi.python
+>>>           : keyword.control.flow.python, source.python, string.quoted.docstring.multi.python
+print('''docstring''') : source.python, string.quoted.docstring.multi.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
 await         : keyword.operator.python, source.python
-"""           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
- 1  >>> print('''docstring''') : source.python, string.quoted.docstring.python
-"""           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
+ 1  >>> print('''docstring''') : source.python, string.quoted.docstring.multi.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
 await         : keyword.operator.python, source.python
