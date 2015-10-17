@@ -122,9 +122,9 @@
             <key>name</key>
             <string>string.quoted.docstring.python</string>
             <key>begin</key>
-            <string>(\&apos;\&apos;\&apos;)</string>
+            <string>(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;)</string>
             <key>end</key>
-            <string>(\&apos;\&apos;\&apos;)</string>
+            <string>(\1)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -157,80 +157,9 @@
             <key>name</key>
             <string>string.quoted.docstring.raw.python</string>
             <key>begin</key>
-            <string>([rR])(\&apos;\&apos;\&apos;)</string>
+            <string>([rR])(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;)</string>
             <key>end</key>
-            <string>(\&apos;\&apos;\&apos;)</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>storage.type.string.python</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.begin.python</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.end.python</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#docstring-guts-common</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>string.quoted.docstring.python</string>
-            <key>begin</key>
-            <string>(\&quot;\&quot;\&quot;)</string>
-            <key>end</key>
-            <string>(\&quot;\&quot;\&quot;)</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.begin.python</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.end.python</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#docstring-guts-common</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#docstring-guts-unicode</string>
-              </dict>
-            </array>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>string.quoted.docstring.raw.python</string>
-            <key>begin</key>
-            <string>([rR])(\&quot;\&quot;\&quot;)</string>
-            <key>end</key>
-            <string>(\&quot;\&quot;\&quot;)</string>
+            <string>(\2)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
