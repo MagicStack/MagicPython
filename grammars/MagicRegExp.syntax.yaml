@@ -9,8 +9,8 @@ patterns:
 
 repository:
   $apply:
-    - file: 'regexp-common.inc.yaml'
-    - file: 'regexp.inc.yaml'
+    - file: 'regexp-common.inc.syntax.yaml'
+    - file: 'regexp.inc.syntax.yaml'
       vars:
         prefix: ''
         marker: ''
