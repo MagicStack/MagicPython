@@ -8,12 +8,12 @@ anon          : source.python
               : source.python
 lambda        : meta.lambda-function.python, source.python, storage.type.function.lambda.python
               : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
-a             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.pyhton
+a             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.python
 =             : keyword.operator.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 123           : constant.numeric.dec.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 ,             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.separator.parameters.python, source.python
               : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
-c             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.pyhton
+c             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.python
 =             : keyword.operator.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 {             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.dict.begin.python, source.python
 '             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
@@ -26,7 +26,7 @@ c             : meta.function.lambda.parameters.python, meta.lambda-function.pyt
 \             : meta.function.lambda.parameters.python, meta.lambda-function.python, separator.continuation.line.python, source.python
               : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
                : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
-d             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.pyhton
+d             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.python
 =             : keyword.operator.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 toow          : meta.function-call.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 (             : meta.function-call.arguments.python, meta.function-call.python, meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.arguments.begin.python, source.python

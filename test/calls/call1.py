@@ -19,7 +19,7 @@ c             : meta.function-call.arguments.python, meta.function-call.python, 
 args          : meta.function-call.arguments.python, meta.function-call.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
-FOO           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.pyhton
+FOO           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 lambda        : meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.function.lambda.python
 :             : meta.function-call.arguments.python, meta.function-call.python, source.python

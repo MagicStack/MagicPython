@@ -20,7 +20,7 @@ def           : meta.function.python, source.python, storage.type.function.pytho
               : meta.function.python, source.python
 foo           : entity.name.function.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
-a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 =             : keyword.operator.python, meta.function.parameters.python, meta.function.python, source.python
 1             : constant.numeric.dec.python, meta.function.parameters.python, meta.function.python, source.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python

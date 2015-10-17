@@ -15,12 +15,12 @@ def           : meta.function.python, source.python, storage.type.function.pytho
               : meta.function.python, source.python
 some_func     : entity.name.function.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
-a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 :             : meta.function.parameters.python, meta.function.python, punctuation.separator.annotation.python, source.python
                   : meta.function.parameters.python, meta.function.python, source.python
 lambda        : meta.function.parameters.python, meta.function.python, meta.lambda-function.python, source.python, storage.type.function.lambda.python
               : meta.function.lambda.parameters.python, meta.function.parameters.python, meta.function.python, meta.lambda-function.python, source.python
-x             : meta.function.lambda.parameters.python, meta.function.parameters.python, meta.function.python, meta.lambda-function.python, source.python, variable.parameter.function.language.pyhton
+x             : meta.function.lambda.parameters.python, meta.function.parameters.python, meta.function.python, meta.lambda-function.python, source.python, variable.parameter.function.language.python
 =             : keyword.operator.python, meta.function.lambda.parameters.python, meta.function.parameters.python, meta.function.python, meta.lambda-function.python, source.python
 None          : constant.language.python, meta.function.lambda.parameters.python, meta.function.parameters.python, meta.function.python, meta.lambda-function.python, source.python
 :             : meta.function.parameters.python, meta.function.python, meta.lambda-function.python, punctuation.section.function.lambda.begin.python, source.python

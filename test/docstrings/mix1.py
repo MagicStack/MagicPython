@@ -41,10 +41,10 @@ def           : meta.function.python, source.python, storage.type.function.pytho
               : meta.function.python, source.python
 foo           : entity.name.function.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
-self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 ,             : meta.function.parameters.python, meta.function.python, punctuation.separator.parameters.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 :             : meta.function.parameters.python, meta.function.python, punctuation.separator.annotation.python, source.python
 '''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.multi.python
 TEST          : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.multi.python
@@ -76,10 +76,10 @@ def           : meta.function.python, source.python, storage.type.function.pytho
               : meta.function.python, source.python
 bar           : entity.name.function.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
-self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 ,             : meta.function.parameters.python, meta.function.python, punctuation.separator.parameters.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 :             : meta.function.parameters.python, meta.function.python, punctuation.separator.annotation.python, source.python
 '''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.multi.python
 TEST          : meta.function.parameters.python, meta.function.python, source.python, string.quoted.single.multi.python

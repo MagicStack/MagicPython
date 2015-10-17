@@ -12,10 +12,10 @@ def           : meta.function.python, source.python, storage.type.function.pytho
               : meta.function.python, source.python
 __init__      : meta.function.python, source.python, support.function.magic.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
-self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 ,             : meta.function.parameters.python, meta.function.python, punctuation.separator.parameters.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 :             : meta.function.parameters.python, meta.function.python, punctuation.separator.annotation.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.parenthesis.begin.python, source.python
 '             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
@@ -30,7 +30,7 @@ def           : meta.function.parameters.python, meta.function.python, source.py
 123           : constant.numeric.dec.python, meta.function.parameters.python, meta.function.python, source.python
 ,             : meta.function.parameters.python, meta.function.python, punctuation.separator.parameters.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-boo           : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+boo           : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 :             : meta.function.parameters.python, meta.function.python, punctuation.separator.annotation.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
 '             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
@@ -48,13 +48,13 @@ foo           : meta.function-call.python, meta.function.parameters.python, meta
 (             : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, punctuation.definition.arguments.begin.python, source.python
 n             : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python
 (             : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, punctuation.definition.arguments.begin.python, source.python
-m             : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function-call.pyhton
+m             : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python
 0             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python
 )             : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, punctuation.definition.arguments.end.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python
-baz           : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function-call.pyhton
+baz           : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python
                              : meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python
 13            : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, meta.function.parameters.python, meta.function.python, source.python

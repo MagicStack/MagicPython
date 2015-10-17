@@ -38,12 +38,12 @@ decorator     : entity.name.function.decorator.python, meta.function.decorator.p
 @             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 some_decorator : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 (             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.arguments.begin.python, source.python
-a             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, variable.parameter.function-call.pyhton
+a             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 2             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 ,             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function.decorator.python, source.python
-b             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, variable.parameter.function-call.pyhton
+b             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 {             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.dict.begin.python, source.python
 '             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.single.python
@@ -63,7 +63,7 @@ def           : meta.function.python, source.python, storage.type.function.pytho
               : meta.function.python, source.python
 decorated     : entity.name.function.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
-a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python

@@ -1474,7 +1474,7 @@
           </dict>
           <dict>
             <key>name</key>
-            <string>entity.other.inherited-class.pyhton</string>
+            <string>entity.other.inherited-class.python</string>
             <key>match</key>
             <string>[[:alnum:]_]+</string>
           </dict>
@@ -1557,7 +1557,7 @@
                   <key>1</key>
                   <dict>
                     <key>name</key>
-                    <string>variable.parameter.function.language.pyhton</string>
+                    <string>variable.parameter.function.language.python</string>
                   </dict>
                   <key>2</key>
                   <dict>
@@ -1615,7 +1615,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>variable.parameter.function.language.pyhton</string>
+            <string>variable.parameter.function.language.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -1758,7 +1758,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>variable.parameter.function.language.pyhton</string>
+                <string>variable.parameter.function.language.python</string>
               </dict>
               <key>2</key>
               <dict>
@@ -1795,7 +1795,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>variable.parameter.function.language.pyhton</string>
+            <string>variable.parameter.function.language.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -1833,7 +1833,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>variable.parameter.function.language.pyhton</string>
+            <string>variable.parameter.function.language.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -2113,7 +2113,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>entity.other.inherited-class.pyhton</string>
+                <string>entity.other.inherited-class.python</string>
               </dict>
             </dict>
           </dict>
@@ -2207,7 +2207,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>variable.parameter.function-call.pyhton</string>
+                <string>variable.parameter.function-call.python</string>
               </dict>
               <key>2</key>
               <dict>

@@ -914,7 +914,7 @@ repository:
         match: "\\bmetaclass\\b"
       }
       {
-        name: "entity.other.inherited-class.pyhton"
+        name: "entity.other.inherited-class.python"
         match: "[[:alnum:]_]+"
       }
     ]
@@ -961,7 +961,7 @@ repository:
             match: "([[:alpha:]_]\\w*)\\s*(?:(,)|(?=:|$))"
             captures:
               "1":
-                name: "variable.parameter.function.language.pyhton"
+                name: "variable.parameter.function.language.python"
               "2":
                 name: "punctuation.separator.parameters.python"
           }
@@ -999,7 +999,7 @@ repository:
     end: "(,)|(?=:|$)"
     beginCaptures:
       "1":
-        name: "variable.parameter.function.language.pyhton"
+        name: "variable.parameter.function.language.python"
       "2":
         name: "keyword.operator.python"
     endCaptures:
@@ -1082,7 +1082,7 @@ repository:
         match: "([[:alpha:]_]\\w*)\\s*(?:(,)|(?=\\)))"
         captures:
           "1":
-            name: "variable.parameter.function.language.pyhton"
+            name: "variable.parameter.function.language.python"
           "2":
             name: "punctuation.separator.parameters.python"
       }
@@ -1106,7 +1106,7 @@ repository:
     end: "(,)|(?=\\))"
     beginCaptures:
       "1":
-        name: "variable.parameter.function.language.pyhton"
+        name: "variable.parameter.function.language.python"
       "2":
         name: "keyword.operator.python"
     endCaptures:
@@ -1127,7 +1127,7 @@ repository:
     end: "(,)|(?=\\))"
     beginCaptures:
       "1":
-        name: "variable.parameter.function.language.pyhton"
+        name: "variable.parameter.function.language.python"
       "2":
         name: "punctuation.separator.annotation.python"
     endCaptures:
@@ -1306,7 +1306,7 @@ repository:
         '''
         captures:
           "1":
-            name: "entity.other.inherited-class.pyhton"
+            name: "entity.other.inherited-class.python"
       }
     ]
   "function-call":
@@ -1365,7 +1365,7 @@ repository:
         match: "\\b([[:alpha:]_]\\w*)\\s*(=)"
         captures:
           "1":
-            name: "variable.parameter.function-call.pyhton"
+            name: "variable.parameter.function-call.python"
           "2":
             name: "keyword.operator.assignment.python"
       }

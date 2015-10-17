@@ -38,7 +38,7 @@ print         : meta.function-call.python, source.python, support.function.built
 x             : meta.function-call.arguments.python, meta.function-call.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
-end           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.pyhton
+end           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 "             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.begin.python, source.python, string.quoted.double.single.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python, string.quoted.double.single.python
@@ -62,7 +62,7 @@ er            : meta.function-call.arguments.python, meta.function-call.python, 
 "             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.end.python, source.python, string.quoted.double.single.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
-file          : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.pyhton
+file          : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 sys.stderr    : meta.function-call.arguments.python, meta.function-call.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python

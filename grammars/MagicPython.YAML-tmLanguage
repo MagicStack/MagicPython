@@ -623,7 +623,7 @@ repository:
       - include: '#expression'
       - name: support.type.metaclass.python
         match: \bmetaclass\b
-      - name: entity.other.inherited-class.pyhton
+      - name: entity.other.inherited-class.python
         match: '[[:alnum:]_]+'
 
   lambda:
@@ -651,7 +651,7 @@ repository:
           - include: '#illegal-names'
           - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=:|$))
             captures:
-              '1': {name: variable.parameter.function.language.pyhton}
+              '1': {name: variable.parameter.function.language.python}
               '2': {name: punctuation.separator.parameters.python}
 
           - include: '#comments'
@@ -672,7 +672,7 @@ repository:
         ([[:alpha:]_]\w*) \s* (=)
     end: (,)|(?=:|$)
     beginCaptures:
-      '1': {name: variable.parameter.function.language.pyhton}
+      '1': {name: variable.parameter.function.language.python}
       '2': {name: keyword.operator.python}
     endCaptures:
       '1': {name: punctuation.separator.parameters.python}
@@ -726,7 +726,7 @@ repository:
       - include: '#illegal-names'
       - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=\)))
         captures:
-          '1': {name: variable.parameter.function.language.pyhton}
+          '1': {name: variable.parameter.function.language.python}
           '2': {name: punctuation.separator.parameters.python}
 
       - include: '#comments'
@@ -740,7 +740,7 @@ repository:
         ([[:alpha:]_]\w*) \s* (=)
     end: (,)|(?=\))
     beginCaptures:
-      '1': {name: variable.parameter.function.language.pyhton}
+      '1': {name: variable.parameter.function.language.python}
       '2': {name: keyword.operator.python}
     endCaptures:
       '1': {name: punctuation.separator.parameters.python}
@@ -754,7 +754,7 @@ repository:
         ([[:alpha:]_]\w*) \s* (:)
     end: (,)|(?=\))
     beginCaptures:
-      '1': {name: variable.parameter.function.language.pyhton}
+      '1': {name: variable.parameter.function.language.python}
       '2': {name: punctuation.separator.annotation.python}
     endCaptures:
       '1': {name: punctuation.separator.parameters.python}
@@ -863,7 +863,7 @@ repository:
           (?x)
             \b ([[:alpha:]_]\w*) \b
         captures:
-          '1': {name: entity.other.inherited-class.pyhton}
+          '1': {name: entity.other.inherited-class.python}
 
   function-call:
     name: meta.function-call.python
@@ -899,7 +899,7 @@ repository:
       - include: '#illegal-names'
       - match: '\b([[:alpha:]_]\w*)\s*(=)'
         captures:
-          '1': {name: variable.parameter.function-call.pyhton}
+          '1': {name: variable.parameter.function-call.python}
           '2': {name: keyword.operator.assignment.python}
 
       - name: keyword.operator.assignment.python

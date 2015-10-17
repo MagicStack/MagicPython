@@ -10,13 +10,13 @@ def           : meta.function.python, source.python, storage.type.function.pytho
               : meta.function.python, source.python
 myfunc        : entity.name.function.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
-self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 ,             : meta.function.parameters.python, meta.function.python, punctuation.separator.parameters.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
 #             : comment.line.number-sign.python, meta.function.parameters.python, meta.function.python, punctuation.definition.comment.python, source.python
  gotta have self : comment.line.number-sign.python, meta.function.parameters.python, meta.function.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-param1        : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+param1        : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 =             : keyword.operator.python, meta.function.parameters.python, meta.function.python, source.python
 "             : meta.function.parameters.python, meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.double.single.python
 value         : meta.function.parameters.python, meta.function.python, source.python, string.quoted.double.single.python
@@ -26,7 +26,7 @@ value         : meta.function.parameters.python, meta.function.python, source.py
 #             : comment.line.number-sign.python, meta.function.parameters.python, meta.function.python, punctuation.definition.comment.python, source.python
  values are cool : comment.line.number-sign.python, meta.function.parameters.python, meta.function.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-param2        : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+param2        : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 =             : keyword.operator.python, meta.function.parameters.python, meta.function.python, source.python
 True          : constant.language.python, meta.function.parameters.python, meta.function.python, source.python
 ,             : meta.function.parameters.python, meta.function.python, punctuation.separator.parameters.python, source.python
@@ -36,7 +36,7 @@ True          : constant.language.python, meta.function.parameters.python, meta.
               : meta.function.parameters.python, meta.function.python, source.python
 *             : meta.function.parameters.python, meta.function.python, source.python
 *             : meta.function.parameters.python, meta.function.python, source.python
-kwargs        : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.pyhton
+kwargs        : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
