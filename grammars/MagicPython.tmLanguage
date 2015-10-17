@@ -207,10 +207,6 @@
                 <key>include</key>
                 <string>#docstring-guts-common</string>
               </dict>
-              <dict>
-                <key>include</key>
-                <string>#docstring-guts-raw</string>
-              </dict>
             </array>
           </dict>
           <dict>
@@ -282,10 +278,6 @@
                 <key>include</key>
                 <string>#docstring-guts-common</string>
               </dict>
-              <dict>
-                <key>include</key>
-                <string>#docstring-guts-raw</string>
-              </dict>
             </array>
           </dict>
         </array>
@@ -298,20 +290,6 @@
             <key>include</key>
             <string>#escape-sequence-unicode</string>
           </dict>
-          <dict>
-            <key>include</key>
-            <string>#escape-sequence</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#string-line-continuation</string>
-          </dict>
-        </array>
-      </dict>
-      <key>docstring-guts-raw</key>
-      <dict>
-        <key>patterns</key>
-        <array>
           <dict>
             <key>include</key>
             <string>#escape-sequence</string>

@@ -125,7 +125,6 @@ repository:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
           - include: '#docstring-guts-common'
-          - include: '#docstring-guts-raw'
 
       - name: string.quoted.docstring.python
         begin: (\"\"\")
@@ -148,16 +147,10 @@ repository:
           '1': {name: punctuation.definition.string.end.python}
         patterns:
           - include: '#docstring-guts-common'
-          - include: '#docstring-guts-raw'
 
   docstring-guts-unicode:
     patterns:
       - include: '#escape-sequence-unicode'
-      - include: '#escape-sequence'
-      - include: '#string-line-continuation'
-
-  docstring-guts-raw:
-    patterns:
       - include: '#escape-sequence'
       - include: '#string-line-continuation'
 

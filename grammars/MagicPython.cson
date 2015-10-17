@@ -120,9 +120,6 @@ repository:
           {
             include: "#docstring-guts-common"
           }
-          {
-            include: "#docstring-guts-raw"
-          }
         ]
       }
       {
@@ -160,9 +157,6 @@ repository:
           {
             include: "#docstring-guts-common"
           }
-          {
-            include: "#docstring-guts-raw"
-          }
         ]
       }
     ]
@@ -171,15 +165,6 @@ repository:
       {
         include: "#escape-sequence-unicode"
       }
-      {
-        include: "#escape-sequence"
-      }
-      {
-        include: "#string-line-continuation"
-      }
-    ]
-  "docstring-guts-raw":
-    patterns: [
       {
         include: "#escape-sequence"
       }
