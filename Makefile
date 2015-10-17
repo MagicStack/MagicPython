@@ -5,8 +5,8 @@ all:
 
 test: release
 #	Run tests
-	./node_modules/.bin/syntaxdev test --tests test/**/*.py --syntax grammars/MagicPython.YAML-tmLanguage --add-syntax grammars/MagicRegExp.YAML-tmLanguage
-	./node_modules/.bin/syntaxdev test --tests test/**/*.re --syntax grammars/MagicRegExp.YAML-tmLanguage
+	./node_modules/.bin/syntaxdev test --tests test/**/*.py --syntax grammars/MagicPython.yaml
+	./node_modules/.bin/syntaxdev test --tests test/**/*.re --syntax grammars/MagicRegExp.yaml
 
 # 	Check if the version specified in "package.json" matches the latest git tag
 	@if [ \
@@ -17,8 +17,8 @@ test: release
 		then echo "Error: package.version != git.tag" && exit 1 ; fi
 
 release:
-	./node_modules/.bin/syntaxdev build-plist --in grammars/MagicPython.YAML-tmLanguage --out grammars/MagicPython.tmLanguage
-	./node_modules/.bin/syntaxdev build-plist --in grammars/MagicRegExp.YAML-tmLanguage --out grammars/MagicRegExp.tmLanguage
+	./node_modules/.bin/syntaxdev build-plist --in grammars/MagicPython.yaml --out grammars/MagicPython.tmLanguage
+	./node_modules/.bin/syntaxdev build-plist --in grammars/MagicRegExp.yaml --out grammars/MagicRegExp.tmLanguage
 
-	./node_modules/.bin/syntaxdev build-cson --in grammars/MagicPython.YAML-tmLanguage --out grammars/MagicPython.cson
-	./node_modules/.bin/syntaxdev build-cson --in grammars/MagicRegExp.YAML-tmLanguage --out grammars/MagicRegExp.cson
+	./node_modules/.bin/syntaxdev build-cson --in grammars/MagicPython.yaml --out grammars/MagicPython.cson
+	./node_modules/.bin/syntaxdev build-cson --in grammars/MagicRegExp.yaml --out grammars/MagicRegExp.cson

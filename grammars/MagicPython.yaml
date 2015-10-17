@@ -1,4 +1,3 @@
-# [PackageDev] target_format: plist, ext: tmLanguage
 ---
 name: MagicPython
 scopeName: source.python
