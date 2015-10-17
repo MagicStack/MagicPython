@@ -40,21 +40,33 @@
       <dict>
         <key>name</key>
         <string>comment.line.number-sign.python</string>
-        <key>match</key>
-        <string>(\#)\s*(BUG|FIXME|TODO|XXX|NB)?.*$</string>
-        <key>captures</key>
+        <key>begin</key>
+        <string>(\#)</string>
+        <key>beginCaptures</key>
         <dict>
           <key>1</key>
           <dict>
             <key>name</key>
             <string>punctuation.definition.comment.python</string>
           </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>comment.line.note.notation.python</string>
-          </dict>
         </dict>
+        <key>end</key>
+        <string>($)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?:\b(BUG|FIXME|TODO|XXX|NB)\b)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>comment.line.note.notation.python</string>
+              </dict>
+            </dict>
+          </dict>
+        </array>
       </dict>
       <key>statement</key>
       <dict>
@@ -302,21 +314,38 @@
       </dict>
       <key>docstring-guts-common</key>
       <dict>
-        <key>match</key>
-        <string>(?x)
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?x)
   (?:
     (?:^|\G) \s* (?# &apos;\G&apos; is necessary for ST)
     ((?:&gt;&gt;&gt;|\.\.\.) \s)
   )
 </string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.control.flow.python</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.flow.python</string>
+              </dict>
+            </dict>
           </dict>
-        </dict>
+          <dict>
+            <key>match</key>
+            <string>(?:\b(BUG|FIXME|TODO|XXX|NB)\b)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>string.quoted.docstring.note.python</string>
+              </dict>
+            </dict>
+          </dict>
+        </array>
       </dict>
       <key>statement-keyword</key>
       <dict>

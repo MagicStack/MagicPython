@@ -68,10 +68,14 @@ repository:
 
   comments:
     name: comment.line.number-sign.python
-    match: (\#)\s*(BUG|FIXME|TODO|XXX|NB)?.*$
-    captures:
+    begin: (\#)
+    beginCaptures:
       '1': {name: punctuation.definition.comment.python}
-      '2': {name: comment.line.note.notation.python}
+    end: ($)
+    patterns:
+      - match: (?:\b(BUG|FIXME|TODO|XXX|NB)\b)
+        captures:
+          '1': {name: comment.line.note.notation.python}
 
   statement:
     patterns:
@@ -155,14 +159,20 @@ repository:
       - include: '#string-line-continuation'
 
   docstring-guts-common:
-    match: |
-      (?x)
-        (?:
-          (?:^|\G) \s* (?# '\G' is necessary for ST)
-          ((?:>>>|\.\.\.) \s)
-        )
-    captures:
-      '1': {name: keyword.control.flow.python}
+    patterns:
+      - match: |
+          (?x)
+            (?:
+              (?:^|\G) \s* (?# '\G' is necessary for ST)
+              ((?:>>>|\.\.\.) \s)
+            )
+        captures:
+          '1': {name: keyword.control.flow.python}
+
+      - match: (?:\b(BUG|FIXME|TODO|XXX|NB)\b)
+        captures:
+          '1': {name: string.quoted.docstring.note.python}
+
 
   statement-keyword:
     patterns:
