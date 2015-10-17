@@ -21,8 +21,6 @@
     </array>
     <key>uuid</key>
     <string>742deb57-6e38-4192-bed6-410746efd85d</string>
-    <key>author</key>
-    <string>Victor Petrovykh victor@magic.io</string>
     <key>patterns</key>
     <array>
       <dict>
