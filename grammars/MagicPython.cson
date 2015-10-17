@@ -32,10 +32,10 @@ repository:
     end: "($)"
     patterns: [
       {
-        match: "(?:\\b(BUG|FIXME|TODO|XXX|NB)\\b)"
+        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
         captures:
           "1":
-            name: "comment.line.note.notation.python"
+            name: "keyword.comment.line.note.notation.python"
       }
     ]
   statement:
@@ -195,10 +195,10 @@ repository:
             name: "keyword.control.flow.python"
       }
       {
-        match: "(?:\\b(BUG|FIXME|TODO|XXX|NB)\\b)"
+        match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
         captures:
           "1":
-            name: "string.quoted.docstring.note.python"
+            name: "keyword.string.quoted.docstring.note.python"
       }
     ]
   "statement-keyword":

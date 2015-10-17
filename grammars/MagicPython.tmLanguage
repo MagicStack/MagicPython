@@ -56,13 +56,13 @@
         <array>
           <dict>
             <key>match</key>
-            <string>(?:\b(BUG|FIXME|TODO|XXX|NB)\b)</string>
+            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
             <key>captures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>comment.line.note.notation.python</string>
+                <string>keyword.comment.line.note.notation.python</string>
               </dict>
             </dict>
           </dict>
@@ -335,13 +335,13 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?:\b(BUG|FIXME|TODO|XXX|NB)\b)</string>
+            <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
             <key>captures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>string.quoted.docstring.note.python</string>
+                <string>keyword.string.quoted.docstring.note.python</string>
               </dict>
             </dict>
           </dict>

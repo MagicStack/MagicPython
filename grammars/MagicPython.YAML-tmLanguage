@@ -73,9 +73,9 @@ repository:
       '1': {name: punctuation.definition.comment.python}
     end: ($)
     patterns:
-      - match: (?:\b(BUG|FIXME|TODO|XXX|NB)\b)
+      - match: (?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)
         captures:
-          '1': {name: comment.line.note.notation.python}
+          '1': {name: keyword.comment.line.note.notation.python}
 
   statement:
     patterns:
@@ -169,9 +169,9 @@ repository:
         captures:
           '1': {name: keyword.control.flow.python}
 
-      - match: (?:\b(BUG|FIXME|TODO|XXX|NB)\b)
+      - match: (?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)
         captures:
-          '1': {name: string.quoted.docstring.note.python}
+          '1': {name: keyword.string.quoted.docstring.note.python}
 
 
   statement-keyword:
