@@ -1145,6 +1145,10 @@
             <key>include</key>
             <string>#string-entity</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-brace-formatting</string>
+          </dict>
         </array>
       </dict>
       <key>string-raw-guts</key>
@@ -1212,10 +1216,6 @@
         | N\{[\w\s]+?\}
      )
 </string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#string-brace-formatting</string>
           </dict>
         </array>
       </dict>

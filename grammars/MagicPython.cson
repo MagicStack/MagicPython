@@ -693,6 +693,9 @@ repository:
       {
         include: "#string-entity"
       }
+      {
+        include: "#string-brace-formatting"
+      }
     ]
   "string-raw-guts":
     patterns: [
@@ -740,9 +743,6 @@ repository:
                )
           
         '''
-      }
-      {
-        include: "#string-brace-formatting"
       }
     ]
   "escape-sequence":
