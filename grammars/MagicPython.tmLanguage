@@ -632,7 +632,10 @@
             <string>(?x)
   (?=^\s*$)
   |
-  (?! [rR]? (\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;) | $)
+  (?! ([rR]? (\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;))
+      |
+      (\G $)
+  )
 </string>
             <key>beginCaptures</key>
             <dict>

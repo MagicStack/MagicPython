@@ -4,7 +4,8 @@ r'''
 >>> print(42)
 a[wer]
 '''
-a = \
+
+b = \
 # docstring
 r'''
 >>> print()
@@ -33,7 +34,8 @@ e             : constant.character.set.regexp, meta.character.set.regexp, source
 r             : constant.character.set.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.triple.python
 ]             : constant.other.set.regexp punctuation.character.set.end.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
-a             : source.python
+              : source.python
+b             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 \             : separator.continuation.line.python, source.python
