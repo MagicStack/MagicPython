@@ -7,16 +7,6 @@ Python 3 (although Python 2 is well supported too). The syntax is compatible
 with [Sublime Text](http://www.sublimetext.com) and [Atom](http://atom.io).
 It is meant to be a drop-in replacement for the default Python package.
 
-The main motivation behind this package was the difficulty of using modern
-Python with other common syntax highlighters. They do a good job of the 90% of
-the language, but then fail on the nuances of some very useful, but often
-overlooked features. Function annotations tend to freak out the highlighters in
-various ways. Newly introduced keywords and magic methods are slow to be
-integrated. Another issue is string highlighting, where all raw strings are
-often assumed to be regular expressions or special markup used by `.format` is
-completely ignored. Bumping into all of these issues on daily basis eventually
-led to the creation of this package.
-
 
 ## Installation Instructions
 
@@ -43,6 +33,16 @@ Alternatively, the package can be installed manually in both editors:
 
 
 ## Changes and Improvements
+
+The main motivation behind this package was the difficulty of using modern
+Python with other common syntax highlighters. They do a good job of the 90% of
+the language, but then fail on the nuances of some very useful, but often
+overlooked features. Function annotations tend to freak out the highlighters in
+various ways. Newly introduced keywords and magic methods are slow to be
+integrated. Another issue is string highlighting, where all raw strings are
+often assumed to be regular expressions or special markup used by `.format` is
+completely ignored. Bumping into all of these issues on daily basis eventually
+led to the creation of this package.
 
 Overall, the central idea is that it should be easy to notice something odd or
 special about the code. Odd or special doesn't necessarily mean incorrect, but
