@@ -8,8 +8,6 @@ with [Sublime Text](http://www.sublimetext.com) and [Atom](http://atom.io).
 It is meant to be a drop-in replacement for the default Python package.
 
 
-## Screenshot
-
 ![](https://magicstack.github.io/MagicPython/example.png)
 
 
