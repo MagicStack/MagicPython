@@ -599,7 +599,7 @@ repository:
       }
     ]
   "regexp-single-quoted-multi-line":
-    name: "string.regexp.quoted.triple.python"
+    name: "string.regexp.quoted.multi.python"
     begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\'\\'\\')"
     end: "\\'\\'\\'"
     beginCaptures:
@@ -620,7 +620,7 @@ repository:
       }
     ]
   "regexp-double-quoted-multi-line":
-    name: "string.regexp.quoted.triple.python"
+    name: "string.regexp.quoted.multi.python"
     begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\\"\\\"\\\")"
     end: "\\\"\\\"\\\""
     beginCaptures:

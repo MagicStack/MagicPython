@@ -981,7 +981,7 @@
       <key>regexp-single-quoted-multi-line</key>
       <dict>
         <key>name</key>
-        <string>string.regexp.quoted.triple.python</string>
+        <string>string.regexp.quoted.multi.python</string>
         <key>begin</key>
         <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&apos;\&apos;\&apos;)</string>
         <key>end</key>
@@ -1028,7 +1028,7 @@
       <key>regexp-double-quoted-multi-line</key>
       <dict>
         <key>name</key>
-        <string>string.regexp.quoted.triple.python</string>
+        <string>string.regexp.quoted.multi.python</string>
         <key>begin</key>
         <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&quot;\&quot;\&quot;)</string>
         <key>end</key>

@@ -123,8 +123,8 @@ string.quoted.raw.binary.single.python
 string.quoted.raw.multi.python
 string.quoted.raw.single.python
 string.quoted.single.python
+string.regexp.quoted.multi.python
 string.regexp.quoted.python
-string.regexp.quoted.triple.python
 support.function.builtin.python
 support.function.magic.python
 support.other.escape.special.regexp
