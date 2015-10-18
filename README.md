@@ -8,6 +8,11 @@ with [Sublime Text](http://www.sublimetext.com) and [Atom](http://atom.io).
 It is meant to be a drop-in replacement for the default Python package.
 
 
+## Screenshot
+
+![](https://magicstack.github.io/MagicPython/example.png)
+
+
 ## Installation Instructions
 
 This is meant to be a drop-in replacement for the default Python package.
@@ -25,11 +30,6 @@ Alternatively, the package can be installed manually in both editors:
 - copy the MagicPython package into the Sublime/Atom user packages directory;
 - disable Python package;
 - enjoy.
-
-
-## Screenshot
-
-![](https://magicstack.github.io/MagicPython/example.png)
 
 
 ## Changes and Improvements
