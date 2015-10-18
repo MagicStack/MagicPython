@@ -37,6 +37,11 @@ Alternatively, the package can be installed manually in both editors:
 - enjoy.
 
 
+## Screenshot
+
+![](https://magicstack.github.io/MagicPython/example.png)
+
+
 ## Changes and Improvements
 
 Overall, the central idea is that it should be easy to notice something odd or
