@@ -1806,10 +1806,10 @@ repository:
     end: "(\\)|(?=\\'))"
     beginCaptures:
       "0":
-        name: "punctuation.comments.begin.regexp"
+        name: "punctuation.comment.begin.regexp"
     endCaptures:
       "1":
-        name: "punctuation.comments.end.regexp"
+        name: "punctuation.comment.end.regexp"
   "single-one-regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\)|(?=\\'))"
@@ -2027,10 +2027,10 @@ repository:
     end: "(\\)|(?=\\'\\'\\'))"
     beginCaptures:
       "0":
-        name: "punctuation.comments.begin.regexp"
+        name: "punctuation.comment.begin.regexp"
     endCaptures:
       "1":
-        name: "punctuation.comments.end.regexp"
+        name: "punctuation.comment.end.regexp"
   "single-three-regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\)|(?=\\'\\'\\'))"
@@ -2263,10 +2263,10 @@ repository:
     end: "(\\)|(?=\"))"
     beginCaptures:
       "0":
-        name: "punctuation.comments.begin.regexp"
+        name: "punctuation.comment.begin.regexp"
     endCaptures:
       "1":
-        name: "punctuation.comments.end.regexp"
+        name: "punctuation.comment.end.regexp"
   "double-one-regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\)|(?=\"))"
@@ -2484,10 +2484,10 @@ repository:
     end: "(\\)|(?=\"\"\"))"
     beginCaptures:
       "0":
-        name: "punctuation.comments.begin.regexp"
+        name: "punctuation.comment.begin.regexp"
     endCaptures:
       "1":
-        name: "punctuation.comments.end.regexp"
+        name: "punctuation.comment.end.regexp"
   "double-three-regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\)|(?=\"\"\"))"

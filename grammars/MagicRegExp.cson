@@ -241,10 +241,10 @@ repository:
     end: "(\\))"
     beginCaptures:
       "0":
-        name: "punctuation.comments.begin.regexp"
+        name: "punctuation.comment.begin.regexp"
     endCaptures:
       "1":
-        name: "punctuation.comments.end.regexp"
+        name: "punctuation.comment.end.regexp"
   "regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\))"

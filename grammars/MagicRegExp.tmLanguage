@@ -389,7 +389,7 @@
           <key>0</key>
           <dict>
             <key>name</key>
-            <string>punctuation.comments.begin.regexp</string>
+            <string>punctuation.comment.begin.regexp</string>
           </dict>
         </dict>
         <key>endCaptures</key>
@@ -397,7 +397,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.comments.end.regexp</string>
+            <string>punctuation.comment.end.regexp</string>
           </dict>
         </dict>
       </dict>

@@ -60,9 +60,9 @@ repository:
     begin: \(\?#
     end: (\)${marker})
     beginCaptures:
-      '0': {name: punctuation.comments.begin.regexp}
+      '0': {name: punctuation.comment.begin.regexp}
     endCaptures:
-      '1': {name: punctuation.comments.end.regexp}
+      '1': {name: punctuation.comment.end.regexp}
 
   ${prefix}regexp-lookahead:
     begin: '(\()\?='
