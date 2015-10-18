@@ -24,15 +24,15 @@ a             : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.triple.python
 >>> print     : source.python, string.regexp.quoted.triple.python
-(             : punctuation.parenthesis.begin.regexp support.other.parenthesis.regexp, source.python, string.regexp.quoted.triple.python
+(             : punctuation.parenthesis.begin.regexp, source.python, string.regexp.quoted.triple.python, support.other.parenthesis.regexp
 42            : source.python, string.regexp.quoted.triple.python
-)             : punctuation.parenthesis.end.regexp support.other.parenthesis.regexp, source.python, string.regexp.quoted.triple.python
+)             : punctuation.parenthesis.end.regexp, source.python, string.regexp.quoted.triple.python, support.other.parenthesis.regexp
 a             : source.python, string.regexp.quoted.triple.python
-[             : constant.other.set.regexp punctuation.character.set.begin.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.triple.python
+[             : constant.other.set.regexp, meta.character.set.regexp, punctuation.character.set.begin.regexp, source.python, string.regexp.quoted.triple.python
 w             : constant.character.set.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.triple.python
 e             : constant.character.set.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.triple.python
 r             : constant.character.set.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.triple.python
-]             : constant.other.set.regexp punctuation.character.set.end.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.triple.python
+]             : constant.other.set.regexp, meta.character.set.regexp, punctuation.character.set.end.regexp, source.python, string.regexp.quoted.triple.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.triple.python
               : source.python
 b             : source.python

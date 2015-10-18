@@ -2,7 +2,7 @@
 
 
 
-[             : constant.other.set.regexp punctuation.character.set.begin.regexp, meta.character.set.regexp, source.regexp.python
+[             : constant.other.set.regexp, meta.character.set.regexp, punctuation.character.set.begin.regexp, source.regexp.python
 s             : constant.character.set.regexp, meta.character.set.regexp, source.regexp.python
 t             : constant.character.set.regexp, meta.character.set.regexp, source.regexp.python
 a             : constant.character.set.regexp, meta.character.set.regexp, source.regexp.python
@@ -17,4 +17,4 @@ t             : constant.character.set.regexp, meta.character.set.regexp, source
 \r            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
 \t            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
 \v            : constant.character.escape.regexp, meta.character.set.regexp, source.regexp.python
-]             : constant.other.set.regexp punctuation.character.set.end.regexp, meta.character.set.regexp, source.regexp.python
+]             : constant.other.set.regexp, meta.character.set.regexp, punctuation.character.set.end.regexp, source.regexp.python
