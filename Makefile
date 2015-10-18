@@ -22,3 +22,5 @@ release:
 
 	./node_modules/.bin/syntaxdev build-cson --in grammars/MagicPython.syntax.yaml --out grammars/MagicPython.cson
 	./node_modules/.bin/syntaxdev build-cson --in grammars/MagicRegExp.syntax.yaml --out grammars/MagicRegExp.cson
+
+	./node_modules/.bin/syntaxdev scopes --syntax grammars/MagicPython.syntax.yaml > misc/scopes
