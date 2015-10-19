@@ -320,6 +320,11 @@
                 <key>name</key>
                 <string>constant.other.set.regexp punctuation.character.set.end.regexp</string>
               </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.newline.python</string>
+              </dict>
             </dict>
             <key>patterns</key>
             <array>
@@ -367,6 +372,11 @@
             <key>name</key>
             <string>punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -399,6 +409,11 @@
             <key>name</key>
             <string>punctuation.comment.end.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
       </dict>
       <key>regexp-lookahead</key>
@@ -426,6 +441,11 @@
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -462,6 +482,11 @@
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -496,6 +521,11 @@
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -532,6 +562,11 @@
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -567,6 +602,11 @@
             <key>name</key>
             <string>punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -597,6 +637,11 @@
             <key>name</key>
             <string>punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -626,6 +671,11 @@
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.end.regexp support.other.parenthesis.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>

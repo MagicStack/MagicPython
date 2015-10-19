@@ -32,24 +32,28 @@ repository:
         prefix: 'single-one-'
         marker: "|(?=\\')"
         nested: ''
+        guard: "|((?=(?<!\\\\)\\n))"
 
     - file: 'regexp.inc.syntax.yaml'
       vars:
         prefix: 'single-three-'
         marker: "|(?=\\'\\'\\')"
         nested: "- include: '#comments-string-single-three'"
+        guard: ""
 
     - file: 'regexp.inc.syntax.yaml'
       vars:
         prefix: 'double-one-'
         marker: '|(?=")'
         nested: ''
+        guard: "|((?=(?<!\\\\)\\n))"
 
     - file: 'regexp.inc.syntax.yaml'
       vars:
         prefix: 'double-three-'
         marker: '|(?=""")'
         nested: "- include: '#comments-string-double-three'"
+        guard: ""
 
     - file: 'pystring.inc.syntax.yaml'
       vars:

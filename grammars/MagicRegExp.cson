@@ -203,6 +203,8 @@ repository:
         endCaptures:
           "1":
             name: "constant.other.set.regexp punctuation.character.set.end.regexp"
+          "2":
+            name: "invalid.illegal.newline.python"
         patterns: [
           {
             include: "#regexp-charecter-set-escapes"
@@ -230,6 +232,8 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#regexp-expression"
@@ -245,6 +249,8 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.comment.end.regexp"
+      "2":
+        name: "invalid.illegal.newline.python"
   "regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\))"
@@ -256,6 +262,8 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#regexp-expression"
@@ -272,6 +280,8 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#regexp-expression"
@@ -288,6 +298,8 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#regexp-expression"
@@ -304,6 +316,8 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#regexp-expression"
@@ -320,6 +334,8 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#regexp-expression"
@@ -334,6 +350,8 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#regexp-expression"
@@ -348,6 +366,8 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.parenthesis.end.regexp support.other.parenthesis.regexp"
+      "2":
+        name: "invalid.illegal.newline.python"
     patterns: [
       {
         include: "#regexp-expression"

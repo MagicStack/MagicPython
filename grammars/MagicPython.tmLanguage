@@ -2831,7 +2831,7 @@ indirectly through syntactic constructs
             <key>begin</key>
             <string>(\[)(\^)?(\])?</string>
             <key>end</key>
-            <string>(\]|(?=\&apos;))</string>
+            <string>(\]|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -2856,6 +2856,11 @@ indirectly through syntactic constructs
               <dict>
                 <key>name</key>
                 <string>constant.other.set.regexp punctuation.character.set.end.regexp</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.newline.python</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -2883,7 +2888,7 @@ indirectly through syntactic constructs
   (\()  (\?P &lt;\w+(?:\s+[[:alnum:]]+)?&gt;)
 </string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))</string>
+        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -2904,6 +2909,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -2920,7 +2930,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?#</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))</string>
+        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -2936,6 +2946,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.comment.end.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
       </dict>
       <key>single-one-regexp-lookahead</key>
@@ -2943,7 +2958,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?=</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))</string>
+        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -2964,6 +2979,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -2978,7 +2998,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?!</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))</string>
+        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -2999,6 +3019,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3013,7 +3038,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;=</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))</string>
+        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3034,6 +3059,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3048,7 +3078,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;!</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))</string>
+        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3069,6 +3099,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3083,7 +3118,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))</string>
+        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3104,6 +3139,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3118,7 +3158,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?:</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))</string>
+        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3134,6 +3174,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3148,7 +3193,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))</string>
+        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3163,6 +3208,11 @@ indirectly through syntactic constructs
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.end.regexp support.other.parenthesis.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -3277,6 +3327,11 @@ indirectly through syntactic constructs
                 <key>name</key>
                 <string>constant.other.set.regexp punctuation.character.set.end.regexp</string>
               </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.newline.python</string>
+              </dict>
             </dict>
             <key>patterns</key>
             <array>
@@ -3324,6 +3379,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3360,6 +3420,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.comment.end.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
       </dict>
       <key>single-three-regexp-lookahead</key>
@@ -3387,6 +3452,11 @@ indirectly through syntactic constructs
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -3427,6 +3497,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3465,6 +3540,11 @@ indirectly through syntactic constructs
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -3505,6 +3585,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3544,6 +3629,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3578,6 +3668,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3611,6 +3706,11 @@ indirectly through syntactic constructs
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.end.regexp support.other.parenthesis.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -3699,7 +3799,7 @@ indirectly through syntactic constructs
             <key>begin</key>
             <string>(\[)(\^)?(\])?</string>
             <key>end</key>
-            <string>(\]|(?=&quot;))</string>
+            <string>(\]|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -3724,6 +3824,11 @@ indirectly through syntactic constructs
               <dict>
                 <key>name</key>
                 <string>constant.other.set.regexp punctuation.character.set.end.regexp</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.newline.python</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -3751,7 +3856,7 @@ indirectly through syntactic constructs
   (\()  (\?P &lt;\w+(?:\s+[[:alnum:]]+)?&gt;)
 </string>
         <key>end</key>
-        <string>(\)|(?=&quot;))</string>
+        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -3772,6 +3877,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3788,7 +3898,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?#</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))</string>
+        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3804,6 +3914,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.comment.end.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
       </dict>
       <key>double-one-regexp-lookahead</key>
@@ -3811,7 +3926,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?=</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))</string>
+        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3832,6 +3947,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3846,7 +3966,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?!</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))</string>
+        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3867,6 +3987,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3881,7 +4006,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;=</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))</string>
+        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3902,6 +4027,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3916,7 +4046,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;!</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))</string>
+        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3937,6 +4067,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3951,7 +4086,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))</string>
+        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3972,6 +4107,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -3986,7 +4126,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?:</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))</string>
+        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4002,6 +4142,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -4016,7 +4161,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))</string>
+        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4031,6 +4176,11 @@ indirectly through syntactic constructs
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.end.regexp support.other.parenthesis.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4145,6 +4295,11 @@ indirectly through syntactic constructs
                 <key>name</key>
                 <string>constant.other.set.regexp punctuation.character.set.end.regexp</string>
               </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.newline.python</string>
+              </dict>
             </dict>
             <key>patterns</key>
             <array>
@@ -4192,6 +4347,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -4228,6 +4388,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.comment.end.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
       </dict>
       <key>double-three-regexp-lookahead</key>
@@ -4255,6 +4420,11 @@ indirectly through syntactic constructs
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4295,6 +4465,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -4333,6 +4508,11 @@ indirectly through syntactic constructs
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -4373,6 +4553,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -4412,6 +4597,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -4446,6 +4636,11 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
         </dict>
         <key>patterns</key>
         <array>
@@ -4479,6 +4674,11 @@ indirectly through syntactic constructs
           <dict>
             <key>name</key>
             <string>punctuation.parenthesis.end.regexp support.other.parenthesis.regexp</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
         <key>patterns</key>
