@@ -1316,6 +1316,10 @@
       </dict>
       <key>from-import</key>
       <dict>
+        <key>comment</key>
+        <string>The main purpose of this rule is to consume &apos;...&apos;, so that
+it&apos;s not tokenized as ellipsis.
+</string>
         <key>match</key>
         <string>(?x)
   \s* (from) (\s*\.+\s*)

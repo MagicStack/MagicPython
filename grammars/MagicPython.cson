@@ -813,6 +813,11 @@ repository:
       }
     ]
   "from-import":
+    comment: '''
+      The main purpose of this rule is to consume '...', so that
+      it's not tokenized as ellipsis.
+      
+    '''
     match: '''
       (?x)
         \\s* (from) (\\s*\\.+\\s*)
