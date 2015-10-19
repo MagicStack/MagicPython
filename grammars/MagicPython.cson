@@ -407,7 +407,8 @@ repository:
     match: '''
       (?x)
           \\b(?<!\\.)(
-              and | or | not | in | is | for | if | else | yield | await
+              and | or | not | in | is | for | if | else | await
+              | (yield(\\s+from)?)
           )(?!\\s*:)\\b
       
           | != | == | >= | <= | << | >>

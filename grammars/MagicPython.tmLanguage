@@ -655,7 +655,8 @@
         <key>match</key>
         <string>(?x)
     \b(?&lt;!\.)(
-        and | or | not | in | is | for | if | else | yield | await
+        and | or | not | in | is | for | if | else | await
+        | (yield(\s+from)?)
     )(?!\s*:)\b
 
     | != | == | &gt;= | &lt;= | &lt;&lt; | &gt;&gt;
