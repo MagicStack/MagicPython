@@ -815,7 +815,7 @@ repository:
   "from-import":
     match: '''
       (?x)
-        ^\\s* (from) (\\s+\\.*\\s*)
+        \\s* (from) (\\s*\\.+\\s*)
       
     '''
     captures:

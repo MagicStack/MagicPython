@@ -570,7 +570,7 @@ repository:
   from-import:
     match: |
       (?x)
-        ^\s* (from) (\s+\.*\s*)
+        \s* (from) (\s*\.+\s*)
     captures:
       '1': {name: keyword.control.flow.python}
 

@@ -1318,7 +1318,7 @@
       <dict>
         <key>match</key>
         <string>(?x)
-  ^\s* (from) (\s+\.*\s*)
+  \s* (from) (\s*\.+\s*)
 </string>
         <key>captures</key>
         <dict>
