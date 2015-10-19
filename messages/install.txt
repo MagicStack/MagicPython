@@ -1,0 +1,20 @@
+MagicPython
+===========
+
+Thank you for installing MagicPython -- a syntax highlighter for
+cutting edge Python.
+
+You're almost there, please do the following steps to finish
+the installation:
+
+* Close all open Python files;
+
+* Disable the "Python" package:
+
+  - via Package Control by executing "Package Control: Disable Package";
+
+  - or manually, by adding "Python" to "ignored_packages", in your
+    `Preferences.sublime-settings` file.
+
+If you find any oddities in how your Python code is highlighted, please
+file a bug at https://github.com/MagicStack/MagicPython/issues.
