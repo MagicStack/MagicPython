@@ -86,6 +86,8 @@ repository:
         (?! \s | \# | [rR]?(\'\'\'|\"\"\"|\'|\") | $)
         |
         (?<=\'\'\'|\"\"\"|\'|\")
+        |
+        ^(?= \s* @)
     endCaptures:
       '1': {name: punctuation.definition.string.end.python}
     patterns:

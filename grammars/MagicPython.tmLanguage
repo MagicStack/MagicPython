@@ -81,6 +81,8 @@
   (?! \s | \# | [rR]?(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;) | $)
   |
   (?&lt;=\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;)
+  |
+  ^(?= \s* @)
 </string>
         <key>endCaptures</key>
         <dict>
