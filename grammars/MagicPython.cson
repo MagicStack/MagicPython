@@ -25,6 +25,9 @@ repository:
   statement:
     patterns: [
       {
+        include: "#from-import"
+      }
+      {
         include: "#class-declaration"
       }
       {
@@ -301,6 +304,9 @@ repository:
       }
       {
         include: "#illegal-names"
+      }
+      {
+        include: "#ellipsis"
       }
     ]
   "special-names":
@@ -806,6 +812,15 @@ repository:
         ]
       }
     ]
+  "from-import":
+    match: '''
+      (?x)
+        ^\\s* (from) (\\s+\\.*\\s*)
+      
+    '''
+    captures:
+      "1":
+        name: "keyword.control.flow.python"
   "class-declaration":
     patterns: [
       {
@@ -1513,6 +1528,9 @@ repository:
         include: "#special-names"
       }
     ]
+  ellipsis:
+    name: "constant.other.ellipsis.python"
+    match: "\\.\\.\\."
   backticks:
     name: "invalid.deprecated.backtick.python"
     begin: "\\`"

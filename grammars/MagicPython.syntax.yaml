@@ -66,6 +66,7 @@ repository:
 
   statement:
     patterns:
+      - include: '#from-import'
       - include: '#class-declaration'
       - include: '#function-declaration'
       - include: '#statement-keyword'
@@ -214,6 +215,7 @@ repository:
       - include: '#special-names'
       - include: '#illegal-operator'
       - include: '#illegal-names'
+      - include: '#ellipsis'
 
   special-names:
     name: constant.other.caps.python
@@ -564,6 +566,13 @@ repository:
         patterns:
           - match: |
               (?x) \{ [^'"}\n]*? \} (?=.*?\})
+
+  from-import:
+    match: |
+      (?x)
+        ^\s* (from) (\s+\.*\s*)
+    captures:
+      '1': {name: keyword.control.flow.python}
 
   class-declaration:
     patterns:
@@ -1024,6 +1033,10 @@ repository:
       - include: '#illegal-names'
       - include: '#illegal-object-name'
       - include: '#special-names'
+
+  ellipsis:
+    name: constant.other.ellipsis.python
+    match: \.\.\.
 
   backticks:
     name: invalid.deprecated.backtick.python

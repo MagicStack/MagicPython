@@ -13,6 +13,7 @@ constant.numeric.hex.python
 constant.numeric.oct.python
 constant.numeric.python
 constant.other.caps.python
+constant.other.ellipsis.python
 constant.other.set.regexp
 entity.name.function.decorator.python
 entity.name.function.python
