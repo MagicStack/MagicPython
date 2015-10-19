@@ -3,9 +3,13 @@
 # MagicPython
 
 This is a package with preferences and syntax highlighter for cutting edge
-Python 3 (although Python 2 is well supported too). The syntax is compatible
+Python 3, although Python 2 is well supported, too.  The syntax is compatible
 with [Sublime Text](http://www.sublimetext.com) and [Atom](http://atom.io).
 It is meant to be a drop-in replacement for the default Python package.
+
+MagicPython correctly highlights all Python 3.5 syntax features, including
+type annotations, string formatting and regular expressions.  It is built
+from scratch for robustness with an extensive test suite.
 
 
 ![](https://magicstack.github.io/MagicPython/example.png)
