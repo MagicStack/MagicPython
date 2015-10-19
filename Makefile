@@ -1,7 +1,6 @@
 .PHONY: all test release
 
-all:
-	npm install syntaxdev@0.0.9
+all: devenv release
 
 test: release
 #	Run tests
@@ -15,6 +14,9 @@ test: release
 		`git describe --tags --abbrev=0 | sed -e 's/v\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*/\1/'` \
 	] ; \
 		then echo "Error: package.version != git.tag" && exit 1 ; fi
+
+devenv:
+	npm install syntaxdev@0.0.9
 
 release:
 	./node_modules/.bin/syntaxdev build-plist --in grammars/MagicPython.syntax.yaml --out grammars/MagicPython.tmLanguage
