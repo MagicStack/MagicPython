@@ -984,7 +984,7 @@ repository:
           | isinstance | issubclass | iter | len | license | locals | map
           | max | memoryview | min | next | oct | open | ord | pow | print
           | quit | range | reload | repr | reversed | round
-          | setattr | sorted | sum | super | vars | zip
+          | setattr | sorted | sum | vars | zip
         )\b
   builtin-types:
     name: support.type.python
@@ -994,6 +994,11 @@ repository:
           bool | bytearray | bytes | classmethod | complex | dict
           | float | frozenset | int | list | object | property
           | set | slice | staticmethod | str | tuple | type
+
+          (?# Although 'super' is not a type, it's related to types,
+              and is special enough to be highlighted differently from
+              other built-ins)
+          | super
         )\b
 
   magic-function-names:

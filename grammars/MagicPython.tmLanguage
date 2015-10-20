@@ -2361,7 +2361,7 @@ it&apos;s not tokenized as ellipsis.
     | isinstance | issubclass | iter | len | license | locals | map
     | max | memoryview | min | next | oct | open | ord | pow | print
     | quit | range | reload | repr | reversed | round
-    | setattr | sorted | sum | super | vars | zip
+    | setattr | sorted | sum | vars | zip
   )\b
 </string>
       </dict>
@@ -2375,6 +2375,11 @@ it&apos;s not tokenized as ellipsis.
     bool | bytearray | bytes | classmethod | complex | dict
     | float | frozenset | int | list | object | property
     | set | slice | staticmethod | str | tuple | type
+
+    (?# Although &apos;super&apos; is not a type, it&apos;s related to types,
+        and is special enough to be highlighted differently from
+        other built-ins)
+    | super
   )\b
 </string>
       </dict>
