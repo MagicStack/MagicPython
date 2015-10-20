@@ -100,17 +100,7 @@ repository:
         ]
       }
       {
-        name: "comment.line.number-sign.python"
-        begin: "(\\#)"
-        end: "($)"
-        beginCaptures:
-          "1":
-            name: "punctuation.definition.comment.python"
-        patterns: [
-          {
-            include: "#codetags"
-          }
-        ]
+        include: "#comments-base"
       }
     ]
   "docstring-block":
@@ -1817,6 +1807,18 @@ repository:
       }
       {
         include: "#regexp-escape-catchall"
+      }
+    ]
+  "comments-base":
+    name: "comment.line.number-sign.python"
+    begin: "(\\#)"
+    beginCaptures:
+      "1":
+        name: "punctuation.definition.comment.python"
+    end: "($)"
+    patterns: [
+      {
+        include: "#codetags"
       }
     ]
   "comments-string-single-three":

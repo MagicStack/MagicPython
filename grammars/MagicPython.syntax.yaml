@@ -14,6 +14,11 @@ repository:
 
     - file: 'comment.inc.syntax.yaml'
       vars:
+        suffix: '-base'
+        marker: ""
+
+    - file: 'comment.inc.syntax.yaml'
+      vars:
         suffix: '-string-single-three'
         marker: "|(?=''')"
 
@@ -114,13 +119,7 @@ repository:
           - name: comment.typehint.variable.notation.python
             match: ([[:alpha:]_]\w*)
 
-      - name: comment.line.number-sign.python
-        begin: (\#)
-        end: ($)
-        beginCaptures:
-          '1': {name: punctuation.definition.comment.python}
-        patterns:
-          - include: '#codetags'
+      - include: '#comments-base'
 
   docstring-block:
     begin: (?<=:)

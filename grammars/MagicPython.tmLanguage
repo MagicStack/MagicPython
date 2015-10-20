@@ -136,27 +136,8 @@
             </array>
           </dict>
           <dict>
-            <key>name</key>
-            <string>comment.line.number-sign.python</string>
-            <key>begin</key>
-            <string>(\#)</string>
-            <key>end</key>
-            <string>($)</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.comment.python</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#codetags</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#comments-base</string>
           </dict>
         </array>
       </dict>
@@ -2862,6 +2843,30 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#regexp-escape-catchall</string>
+          </dict>
+        </array>
+      </dict>
+      <key>comments-base</key>
+      <dict>
+        <key>name</key>
+        <string>comment.line.number-sign.python</string>
+        <key>begin</key>
+        <string>(\#)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.comment.python</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>($)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#codetags</string>
           </dict>
         </array>
       </dict>
