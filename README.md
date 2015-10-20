@@ -13,7 +13,7 @@ from scratch for robustness with an extensive test suite.
 ![](https://magicstack.github.io/MagicPython/example.png)
 
 (Color scheme used in the screenshot is
-[Chromodymics](https://github.com/MagicStack/Chromodynamics-Theme))
+[Chromodynamics](https://github.com/MagicStack/Chromodynamics))
 
 
 ## Installation Instructions
