@@ -807,6 +807,7 @@ repository:
   item-name:
     patterns:
       - include: '#special-variables'
+      - include: '#builtin-functions'
       - include: '#special-names'
       - match: |
           (?x)

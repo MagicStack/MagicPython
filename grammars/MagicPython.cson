@@ -1196,6 +1196,9 @@ repository:
         include: "#special-variables"
       }
       {
+        include: "#builtin-functions"
+      }
+      {
         include: "#special-names"
       }
       {

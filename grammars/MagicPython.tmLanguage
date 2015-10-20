@@ -1952,6 +1952,10 @@ it&apos;s not tokenized as ellipsis.
           </dict>
           <dict>
             <key>include</key>
+            <string>#builtin-functions</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#special-names</string>
           </dict>
           <dict>
