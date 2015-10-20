@@ -1179,10 +1179,10 @@ repository:
             name: "punctuation.definition.arguments.end.python"
         patterns: [
           {
-            include: "#dict-name"
+            include: "#item-name"
           }
           {
-            include: "#dict-index"
+            include: "#item-index"
           }
           {
             include: "#expression"
@@ -1190,7 +1190,7 @@ repository:
         ]
       }
     ]
-  "dict-name":
+  "item-name":
     patterns: [
       {
         include: "#special-names"
@@ -1203,8 +1203,8 @@ repository:
         '''
       }
     ]
-  "dict-index":
-    name: "meta.function-call.arguments.python"
+  "item-index":
+    name: "meta.item-access.arguments.python"
     begin: "(\\[)"
     end: "(?=\\])"
     beginCaptures:

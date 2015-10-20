@@ -800,19 +800,19 @@ repository:
         endCaptures:
           '1': {name: punctuation.definition.arguments.end.python}
         patterns:
-          - include: '#dict-name'
-          - include: '#dict-index'
+          - include: '#item-name'
+          - include: '#item-index'
           - include: '#expression'
 
-  dict-name:
+  item-name:
     patterns:
       - include: '#special-names'
       - match: |
           (?x)
             \b ([[:alpha:]_]\w*) \b
 
-  dict-index:
-    name: meta.function-call.arguments.python
+  item-index:
+    name:  meta.item-access.arguments.python
     begin: (\[)
     end: (?=\])
     beginCaptures:

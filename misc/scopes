@@ -58,6 +58,7 @@ meta.function-call.python
 meta.function.decorator.python
 meta.function.parameters.python
 meta.function.python
+meta.item-access.arguments.python
 meta.item-access.python
 meta.lambda-function.python
 meta.named.regexp

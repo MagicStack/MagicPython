@@ -10,7 +10,7 @@ A             : constant.other.caps.python, meta.function-call.arguments.python,
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 c             : meta.function-call.arguments.python, meta.function-call.python, meta.item-access.python, source.python
-[             : meta.function-call.arguments.python, meta.function-call.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
+[             : meta.function-call.arguments.python, meta.function-call.python, meta.item-access.arguments.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
 1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, meta.item-access.arguments.python, meta.item-access.python, source.python
 ]             : meta.function-call.arguments.python, meta.function-call.python, meta.item-access.python, punctuation.definition.arguments.end.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python

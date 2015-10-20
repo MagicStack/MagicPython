@@ -1928,11 +1928,11 @@ it&apos;s not tokenized as ellipsis.
             <array>
               <dict>
                 <key>include</key>
-                <string>#dict-name</string>
+                <string>#item-name</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#dict-index</string>
+                <string>#item-index</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1942,7 +1942,7 @@ it&apos;s not tokenized as ellipsis.
           </dict>
         </array>
       </dict>
-      <key>dict-name</key>
+      <key>item-name</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -1958,10 +1958,10 @@ it&apos;s not tokenized as ellipsis.
           </dict>
         </array>
       </dict>
-      <key>dict-index</key>
+      <key>item-index</key>
       <dict>
         <key>name</key>
-        <string>meta.function-call.arguments.python</string>
+        <string>meta.item-access.arguments.python</string>
         <key>begin</key>
         <string>(\[)</string>
         <key>end</key>
