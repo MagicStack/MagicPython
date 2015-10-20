@@ -12,7 +12,7 @@ def           : meta.function.python, source.python, storage.type.function.pytho
               : meta.function.python, source.python
 __init__      : meta.function.python, source.python, support.function.magic.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
-self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
+self          : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python, variable.parameter.function.language.special.self.python
 ,             : meta.function.parameters.python, meta.function.python, punctuation.separator.parameters.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
 a             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python

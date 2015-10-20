@@ -483,6 +483,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#special-variables</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#ellipsis</string>
           </dict>
         </array>
@@ -1734,6 +1738,10 @@ it&apos;s not tokenized as ellipsis.
             <string>#illegal-names</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#parameter-special</string>
+          </dict>
+          <dict>
             <key>match</key>
             <string>([[:alpha:]_]\w*)\s*(?:(,)|(?=\)))</string>
             <key>captures</key>
@@ -1763,6 +1771,31 @@ it&apos;s not tokenized as ellipsis.
             <string>#annotated-parameter</string>
           </dict>
         </array>
+      </dict>
+      <key>parameter-special</key>
+      <dict>
+        <key>match</key>
+        <string>(?x)
+  (?: \b (self)|(cls) \b) \s*(?:(,)|(?=\)))
+</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>variable.parameter.function.language.python variable.parameter.function.language.special.self.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>variable.parameter.function.language.python variable.parameter.function.language.special.cls.python</string>
+          </dict>
+          <key>3</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.separator.parameters.python</string>
+          </dict>
+        </dict>
       </dict>
       <key>parameter-with-default</key>
       <dict>
@@ -2126,6 +2159,10 @@ it&apos;s not tokenized as ellipsis.
         <array>
           <dict>
             <key>include</key>
+            <string>#special-variables</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#function-name</string>
           </dict>
           <dict>
@@ -2405,6 +2442,28 @@ indirectly through syntactic constructs
     | yield
   )\b
 </string>
+      </dict>
+      <key>special-variables</key>
+      <dict>
+        <key>match</key>
+        <string>(?x)
+  \b (?&lt;!\.) (?:
+    (self) | (cls)
+  )\b
+</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>variable.language.special.self.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>variable.language.special.cls.python</string>
+          </dict>
+        </dict>
       </dict>
       <key>member-access</key>
       <dict>

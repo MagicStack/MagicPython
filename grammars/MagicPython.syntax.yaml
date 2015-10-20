@@ -221,6 +221,7 @@ repository:
       - include: '#special-names'
       - include: '#illegal-operator'
       - include: '#illegal-names'
+      - include: '#special-variables'
       - include: '#ellipsis'
 
   special-names:
@@ -728,6 +729,7 @@ repository:
       - match: \*
       - include: '#lambda-incomplete'
       - include: '#illegal-names'
+      - include: '#parameter-special'
       - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=\)))
         captures:
           '1': {name: variable.parameter.function.language.python}
@@ -736,6 +738,17 @@ repository:
       - include: '#comments'
       - include: '#parameter-with-default'
       - include: '#annotated-parameter'
+
+  parameter-special:
+    match: |
+      (?x)
+        (?: \b (self)|(cls) \b) \s*(?:(,)|(?=\)))
+    captures:
+      '1': {name: variable.parameter.function.language.python
+                  variable.parameter.function.language.special.self.python}
+      '2': {name: variable.parameter.function.language.python
+                  variable.parameter.function.language.special.cls.python}
+      '3': {name: punctuation.separator.parameters.python}
 
   parameter-with-default:
     begin: |
@@ -880,6 +893,7 @@ repository:
     endCaptures:
       '1': {name: punctuation.definition.arguments.end.python}
     patterns:
+      - include: '#special-variables'
       - include: '#function-name'
       - include: '#function-arguments'
 
@@ -1033,6 +1047,16 @@ repository:
           | nonlocal | not | or | pass | raise | return | try | while | with
           | yield
         )\b
+
+  special-variables:
+    match: |
+      (?x)
+        \b (?<!\.) (?:
+          (self) | (cls)
+        )\b
+    captures:
+      '1': {name: variable.language.special.self.python}
+      '2': {name: variable.language.special.cls.python}
 
   member-access:
     comment: this rule exists to highlight errors

@@ -308,6 +308,9 @@ repository:
         include: "#illegal-names"
       }
       {
+        include: "#special-variables"
+      }
+      {
         include: "#ellipsis"
       }
     ]
@@ -1069,6 +1072,9 @@ repository:
         include: "#illegal-names"
       }
       {
+        include: "#parameter-special"
+      }
+      {
         match: "([[:alpha:]_]\\w*)\\s*(?:(,)|(?=\\)))"
         captures:
           "1":
@@ -1086,6 +1092,19 @@ repository:
         include: "#annotated-parameter"
       }
     ]
+  "parameter-special":
+    match: '''
+      (?x)
+        (?: \\b (self)|(cls) \\b) \\s*(?:(,)|(?=\\)))
+      
+    '''
+    captures:
+      "1":
+        name: "variable.parameter.function.language.python variable.parameter.function.language.special.self.python"
+      "2":
+        name: "variable.parameter.function.language.python variable.parameter.function.language.special.cls.python"
+      "3":
+        name: "punctuation.separator.parameters.python"
   "parameter-with-default":
     begin: '''
       (?x)
@@ -1314,6 +1333,9 @@ repository:
         name: "punctuation.definition.arguments.end.python"
     patterns: [
       {
+        include: "#special-variables"
+      }
+      {
         include: "#function-name"
       }
       {
@@ -1520,6 +1542,19 @@ repository:
         )\\b
       
     '''
+  "special-variables":
+    match: '''
+      (?x)
+        \\b (?<!\\.) (?:
+          (self) | (cls)
+        )\\b
+      
+    '''
+    captures:
+      "1":
+        name: "variable.language.special.self.python"
+      "2":
+        name: "variable.language.special.cls.python"
   "member-access":
     comment: "this rule exists to highlight errors"
     begin: "\\.(?=\\s*\\w+\\s)"

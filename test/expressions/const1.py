@@ -29,7 +29,9 @@ _A            : constant.other.caps.python, source.python
 __A           : constant.other.caps.python, source.python
               : source.python
 ___A          : constant.other.caps.python, source.python
-QQQq QQQq123 self. : source.python
+QQQq QQQq123  : source.python
+self          : source.python, variable.language.special.self.python
+.             : source.python
 FOOO          : meta.function-call.python, source.python
 (             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
