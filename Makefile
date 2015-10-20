@@ -1,4 +1,4 @@
-.PHONY: all test release
+.PHONY: all test release devenv
 
 all: devenv release
 
