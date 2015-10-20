@@ -1,5 +1,9 @@
 comment.line.number-sign.python
 comment.regexp
+comment.typehint.ignore.notation.python
+comment.typehint.puctuation.notation.python
+comment.typehint.type.notation.python
+comment.typehint.variable.notation.python
 constant.character.escape.regexp
 constant.character.format.python
 constant.character.python
@@ -33,6 +37,7 @@ invalid.illegal.name.python
 invalid.illegal.newline.python
 invalid.illegal.prefix.python
 keyword.codetag.notation.python
+keyword.comment.typehint.notation.python
 keyword.control.flow.python
 keyword.invalid.illegal.name.python
 keyword.operator.assignment.python
@@ -60,6 +65,7 @@ meta.function.python
 meta.item-access.python
 meta.lambda-function.python
 meta.named.regexp
+meta.typehint.comment.python
 punctuation.character.set.begin.regexp
 punctuation.character.set.end.regexp
 punctuation.comment.begin.regexp

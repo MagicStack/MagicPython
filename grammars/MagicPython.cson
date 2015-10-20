@@ -49,6 +49,70 @@ repository:
         include: "#docstring-module"
       }
     ]
+  comments:
+    patterns: [
+      {
+        name: "comment.line.number-sign.python meta.typehint.comment.python"
+        begin: '''
+          (?x)
+            (?:
+              \\# \\s* (type:)
+              \\s*+ (?# we want `\\s*+` which is possessive quantifier since
+                       we do not actually want to backtrack when matching
+                       whitespace here)
+              (?! $ | \\#)
+            )
+          
+        '''
+        end: "(?:$|(?=\\#))"
+        beginCaptures:
+          "1":
+            name: "keyword.comment.typehint.notation.python"
+        patterns: [
+          {
+            name: "comment.typehint.ignore.notation.python"
+            match: '''
+              (?x)
+                \\G  ignore  \\s* ($|(?=\\#))
+              
+            '''
+          }
+          {
+            name: "comment.typehint.type.notation.python"
+            match: '''
+              (?x)
+                (?<!\\.)\\b(
+                  bool | bytes | float | int | object | str
+                  | List | Dict | Iterable | Sequence
+                  | Any | None
+                )\\b
+              
+            '''
+          }
+          {
+            name: "comment.typehint.puctuation.notation.python"
+            match: "([\\[\\]\\(\\),\\.\\=\\*]|(->))"
+          }
+          {
+            name: "comment.typehint.variable.notation.python"
+            match: "([[:alpha:]_]\\w*)"
+          }
+        ]
+      }
+      {
+        name: "comment.line.number-sign.python"
+        begin: "(\\#)"
+        end: "($)"
+        beginCaptures:
+          "1":
+            name: "punctuation.definition.comment.python"
+        patterns: [
+          {
+            include: "#codetags"
+          }
+        ]
+      }
+    ]
   "docstring-block":
     begin: "(?<=:)"
     end: '''
@@ -1753,18 +1817,6 @@ repository:
       }
       {
         include: "#regexp-escape-catchall"
-      }
-    ]
-  comments:
-    name: "comment.line.number-sign.python"
-    begin: "(\\#)"
-    beginCaptures:
-      "1":
-        name: "punctuation.definition.comment.python"
-    end: "($)"
-    patterns: [
-      {
-        include: "#codetags"
       }
     ]
   "comments-string-single-three":

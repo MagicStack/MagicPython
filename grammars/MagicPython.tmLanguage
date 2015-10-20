@@ -72,6 +72,94 @@
           </dict>
         </array>
       </dict>
+      <key>comments</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>comment.line.number-sign.python meta.typehint.comment.python</string>
+            <key>begin</key>
+            <string>(?x)
+  (?:
+    \# \s* (type:)
+    \s*+ (?# we want `\s*+` which is possessive quantifier since
+             we do not actually want to backtrack when matching
+             whitespace here)
+    (?! $ | \#)
+  )
+</string>
+            <key>end</key>
+            <string>(?:$|(?=\#))</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.comment.typehint.notation.python</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>name</key>
+                <string>comment.typehint.ignore.notation.python</string>
+                <key>match</key>
+                <string>(?x)
+  \G  ignore  \s* ($|(?=\#))
+</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>comment.typehint.type.notation.python</string>
+                <key>match</key>
+                <string>(?x)
+  (?&lt;!\.)\b(
+    bool | bytes | float | int | object | str
+    | List | Dict | Iterable | Sequence
+    | Any | None
+  )\b
+</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>comment.typehint.puctuation.notation.python</string>
+                <key>match</key>
+                <string>([\[\]\(\),\.\=\*]|(-&gt;))</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>comment.typehint.variable.notation.python</string>
+                <key>match</key>
+                <string>([[:alpha:]_]\w*)</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>comment.line.number-sign.python</string>
+            <key>begin</key>
+            <string>(\#)</string>
+            <key>end</key>
+            <string>($)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.comment.python</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#codetags</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
       <key>docstring-block</key>
       <dict>
         <key>begin</key>
@@ -2774,30 +2862,6 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#regexp-escape-catchall</string>
-          </dict>
-        </array>
-      </dict>
-      <key>comments</key>
-      <dict>
-        <key>name</key>
-        <string>comment.line.number-sign.python</string>
-        <key>begin</key>
-        <string>(\#)</string>
-        <key>beginCaptures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.comment.python</string>
-          </dict>
-        </dict>
-        <key>end</key>
-        <string>($)</string>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>include</key>
-            <string>#codetags</string>
           </dict>
         </array>
       </dict>
