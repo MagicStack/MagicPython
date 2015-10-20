@@ -900,7 +900,9 @@ repository:
   function-name:
     patterns:
       - include: '#builtin-possible-callables'
-      - match: |
+      - comment: Some color schemas support meta.function-call.generic scope
+        name: meta.function-call.generic.python
+        match: |
           (?x)
             \b ([[:alpha:]_]\w*) \b
 

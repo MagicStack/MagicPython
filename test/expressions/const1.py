@@ -32,7 +32,7 @@ ___A          : constant.other.caps.python, source.python
 QQQq QQQq123  : source.python
 self          : source.python, variable.language.special.self.python
 .             : source.python
-FOOO          : meta.function-call.python, source.python
+FOOO          : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
  _ _1 __1 _1A  __1A _a __a __ ___ ___a ___1 __aA ___Aa : source.python

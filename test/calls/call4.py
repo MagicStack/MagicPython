@@ -8,7 +8,7 @@ foo           : source.python
 .             : source.python
 1             : source.python
               : source.python
-foo           : meta.function-call.python, source.python
+foo           : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 bar           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python

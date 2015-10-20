@@ -2180,6 +2180,10 @@ it&apos;s not tokenized as ellipsis.
             <string>#builtin-possible-callables</string>
           </dict>
           <dict>
+            <key>comment</key>
+            <string>Some color schemas support meta.function-call.generic scope</string>
+            <key>name</key>
+            <string>meta.function-call.generic.python</string>
             <key>match</key>
             <string>(?x)
   \b ([[:alpha:]_]\w*) \b
