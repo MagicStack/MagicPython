@@ -205,3 +205,10 @@ If you intend to submit a pull request, please follow the following guidelines:
   effects
 - update unit tests and add new ones if needed, keeping the test cases short
   whenever possible
+
+## Color Theme
+
+If you want to write your own color theme for MagicPython you can find a list of
+all the scopes that we use in `misc/scopes`. The file is automatically
+generated based on the syntax grammar, so it is always up-to-date and
+exhaustive.
