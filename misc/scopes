@@ -142,6 +142,7 @@ support.type.python
 support.variable.magic.python
 variable.language.special.cls.python
 variable.language.special.self.python
+variable.legacy.builtin.python
 variable.parameter.function-call.python
 variable.parameter.function.language.python
 variable.parameter.function.language.special.cls.python

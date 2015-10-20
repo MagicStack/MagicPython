@@ -973,19 +973,29 @@ repository:
       )\b
 
   builtin-functions:
-    name: support.function.builtin.python
-    match: |
-      (?x)
-        (?<!\.)\b(
-          __import__ | abs | all | any | apply | ascii | bin | callable | chr
-          | compile | copyright | credits | delattr | dir | divmod
-          | enumerate | eval | exec | exit | filter | format | getattr
-          | globals | hasattr | hash | help | hex | id | input
-          | isinstance | issubclass | iter | len | license | locals | map
-          | max | memoryview | min | next | oct | open | ord | pow | print
-          | quit | range | reload | repr | reversed | round
-          | setattr | sorted | sum | vars | zip
-        )\b
+    patterns:
+      - name: support.function.builtin.python
+        match: |
+          (?x)
+            (?<!\.)\b(
+              __import__ | abs | all | any | apply | ascii | bin | callable
+              | chr | compile | copyright | credits | delattr | dir | divmod
+              | enumerate | eval | exec | exit | filter | format | getattr
+              | globals | hasattr | hash | help | hex | id | input
+              | isinstance | issubclass | iter | len | license | locals | map
+              | max | memoryview | min | next | oct | open | ord | pow | print
+              | quit | range | reload | repr | reversed | round
+              | setattr | sorted | sum | vars | zip
+            )\b
+
+      - name: variable.legacy.builtin.python
+        match: |
+          (?x)
+            (?<!\.)\b(
+              file | reduce | intern | raw_input | unicode | cmp | basestring
+              | execfile | long | xrange
+            )\b
+
   builtin-types:
     name: support.type.python
     match: |
