@@ -1904,6 +1904,11 @@ repository:
         name: "punctuation.comment.end.regexp"
       "2":
         name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#codetags"
+      }
+    ]
   "single-one-regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\)|(?=\\'))|((?=(?<!\\\\)\\n))"
@@ -2145,6 +2150,11 @@ repository:
         name: "punctuation.comment.end.regexp"
       "2":
         name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#codetags"
+      }
+    ]
   "single-three-regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\)|(?=\\'\\'\\'))"
@@ -2401,6 +2411,11 @@ repository:
         name: "punctuation.comment.end.regexp"
       "2":
         name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#codetags"
+      }
+    ]
   "double-one-regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\)|(?=\"))|((?=(?<!\\\\)\\n))"
@@ -2642,6 +2657,11 @@ repository:
         name: "punctuation.comment.end.regexp"
       "2":
         name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#codetags"
+      }
+    ]
   "double-three-regexp-lookahead":
     begin: "(\\()\\?="
     end: "(\\)|(?=\"\"\"))"

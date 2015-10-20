@@ -3044,6 +3044,13 @@ indirectly through syntactic constructs
             <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#codetags</string>
+          </dict>
+        </array>
       </dict>
       <key>single-one-regexp-lookahead</key>
       <dict>
@@ -3518,6 +3525,13 @@ indirectly through syntactic constructs
             <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#codetags</string>
+          </dict>
+        </array>
       </dict>
       <key>single-three-regexp-lookahead</key>
       <dict>
@@ -4012,6 +4026,13 @@ indirectly through syntactic constructs
             <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#codetags</string>
+          </dict>
+        </array>
       </dict>
       <key>double-one-regexp-lookahead</key>
       <dict>
@@ -4486,6 +4507,13 @@ indirectly through syntactic constructs
             <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#codetags</string>
+          </dict>
+        </array>
       </dict>
       <key>double-three-regexp-lookahead</key>
       <dict>

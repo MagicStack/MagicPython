@@ -66,6 +66,8 @@ repository:
     endCaptures:
       '1': {name: punctuation.comment.end.regexp}
       '2': {name: invalid.illegal.newline.python}
+    patterns:
+      - include: '#codetags'
 
   ${prefix}regexp-lookahead:
     begin: '(\()\?='

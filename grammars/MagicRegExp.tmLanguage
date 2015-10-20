@@ -415,6 +415,13 @@
             <string>invalid.illegal.newline.python</string>
           </dict>
         </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#codetags</string>
+          </dict>
+        </array>
       </dict>
       <key>regexp-lookahead</key>
       <dict>
