@@ -1948,6 +1948,10 @@ it&apos;s not tokenized as ellipsis.
         <array>
           <dict>
             <key>include</key>
+            <string>#special-variables</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#special-names</string>
           </dict>
           <dict>

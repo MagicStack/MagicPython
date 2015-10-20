@@ -6,6 +6,7 @@ class F:
         self()
         a.self = 1
         a.self.bar = 2
+        self[123]
 
 
 
@@ -66,3 +67,8 @@ bar           : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 2             : constant.numeric.dec.python, source.python
+              : source.python
+self          : meta.item-access.python, source.python, variable.language.special.self.python
+[             : meta.item-access.arguments.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
+123           : constant.numeric.dec.python, meta.item-access.arguments.python, meta.item-access.python, source.python
+]             : meta.item-access.python, punctuation.definition.arguments.end.python, source.python

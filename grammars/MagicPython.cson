@@ -1193,6 +1193,9 @@ repository:
   "item-name":
     patterns: [
       {
+        include: "#special-variables"
+      }
+      {
         include: "#special-names"
       }
       {

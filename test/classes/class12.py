@@ -8,6 +8,7 @@ class F:
         cls + 1
         a.cls = 1
         a.cls.__name__
+        cls[123]
 
 
 
@@ -73,3 +74,8 @@ cls           : source.python
         a.cls : source.python
 .             : source.python
 __name__      : source.python, support.variable.magic.python
+              : source.python
+cls           : meta.item-access.python, source.python, variable.language.special.cls.python
+[             : meta.item-access.arguments.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
+123           : constant.numeric.dec.python, meta.item-access.arguments.python, meta.item-access.python, source.python
+]             : meta.item-access.python, punctuation.definition.arguments.end.python, source.python
