@@ -40,7 +40,7 @@ as            : keyword.control.flow.python, source.python
 await         : keyword.operator.python, source.python
               : source.python
 func          : meta.function-call.generic.python, meta.function-call.python, source.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 a             : meta.function-call.arguments.python, meta.function-call.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python

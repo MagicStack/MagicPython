@@ -7,7 +7,7 @@ class         : meta.class.python, source.python, storage.type.class.python
 Foo           : entity.name.type.class.python, meta.class.python, source.python
 (             : meta.class.inheritance.python, meta.class.python, punctuation.definition.inheritance.begin.python, source.python
 Bar           : entity.other.inherited-class.python, meta.class.inheritance.python, meta.class.python, meta.function-call.python, source.python
-(             : meta.class.inheritance.python, meta.class.python, meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.class.inheritance.python, meta.class.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 q             : meta.class.inheritance.python, meta.class.python, meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.class.inheritance.python, meta.class.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 1             : constant.numeric.dec.python, meta.class.inheritance.python, meta.class.python, meta.function-call.arguments.python, meta.function-call.python, source.python

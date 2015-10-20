@@ -34,7 +34,7 @@ as            : keyword.control.flow.python, source.python
  ex:          : source.python
               : source.python
 print         : meta.function-call.python, source.python, support.function.builtin.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 ex            : meta.function-call.arguments.python, meta.function-call.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
 else          : keyword.control.flow.python, source.python

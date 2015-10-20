@@ -29,7 +29,7 @@ c             : meta.function.lambda.parameters.python, meta.lambda-function.pyt
 d             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.python
 =             : keyword.operator.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 toow          : meta.function-call.generic.python, meta.function-call.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
-(             : meta.function-call.arguments.python, meta.function-call.python, meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.arguments.begin.python, source.python
 24            : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 )             : meta.function-call.python, meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.arguments.end.python, source.python
 :             : meta.lambda-function.python, punctuation.section.function.lambda.begin.python, source.python

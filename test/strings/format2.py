@@ -21,7 +21,7 @@ normal        : source.python, string.quoted.single.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 .             : source.python
 format        : meta.function-call.generic.python, meta.function-call.python, source.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 fo            : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python

@@ -10,7 +10,7 @@ a             : source.python
               : source.python
 ...           : constant.other.ellipsis.python, source.python
 a             : meta.function-call.generic.python, meta.function-call.python, source.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 ...           : constant.other.ellipsis.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python

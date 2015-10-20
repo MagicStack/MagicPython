@@ -52,13 +52,11 @@ meta.character.set.regexp
 meta.class.inheritance.python
 meta.class.python
 meta.expression.python
-meta.function-call.arguments.python
 meta.function-call.generic.python
 meta.function-call.python
 meta.function.decorator.python
 meta.function.parameters.python
 meta.function.python
-meta.item-access.arguments.python
 meta.item-access.python
 meta.lambda-function.python
 meta.named.regexp

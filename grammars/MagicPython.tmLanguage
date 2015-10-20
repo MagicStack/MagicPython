@@ -1968,8 +1968,6 @@ it&apos;s not tokenized as ellipsis.
       </dict>
       <key>item-index</key>
       <dict>
-        <key>name</key>
-        <string>meta.item-access.arguments.python</string>
         <key>begin</key>
         <string>(\[)</string>
         <key>end</key>
@@ -2201,8 +2199,6 @@ it&apos;s not tokenized as ellipsis.
       </dict>
       <key>function-arguments</key>
       <dict>
-        <key>name</key>
-        <string>meta.function-call.arguments.python</string>
         <key>begin</key>
         <string>(\()</string>
         <key>end</key>
@@ -2215,6 +2211,8 @@ it&apos;s not tokenized as ellipsis.
             <string>punctuation.definition.arguments.begin.python</string>
           </dict>
         </dict>
+        <key>contentName</key>
+        <string>meta.function-call.arguments.python</string>
         <key>patterns</key>
         <array>
           <dict>

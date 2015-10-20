@@ -8,7 +8,7 @@ a             : source.python
 (             : punctuation.parenthesis.begin.python, source.python
 a,            : source.python
 b             : meta.function-call.generic.python, meta.function-call.python, source.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 a             : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
@@ -17,7 +17,7 @@ a             : meta.function-call.arguments.python, meta.function-call.python, 
 {             : punctuation.definition.dict.begin.python, source.python
 c:            : source.python
 d             : meta.function-call.generic.python, meta.function-call.python, source.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 b             : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
@@ -26,7 +26,7 @@ b             : meta.function-call.arguments.python, meta.function-call.python, 
 [             : punctuation.definition.list.begin.python, source.python
 a,            : source.python
 b             : meta.function-call.generic.python, meta.function-call.python, source.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 z             : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python

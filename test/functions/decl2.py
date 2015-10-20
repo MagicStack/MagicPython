@@ -15,7 +15,7 @@ lambda        : keyword.control.flow.python, meta.function.parameters.python, me
 ->            : meta.function.python, punctuation.separator.annotation.result.python, source.python
               : meta.function.python, source.python
 qqq           : meta.function.python, meta.item-access.python, source.python
-[             : meta.function.python, meta.item-access.arguments.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
+[             : meta.function.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
 None          : constant.language.python, meta.function.python, meta.item-access.arguments.python, meta.item-access.python, source.python
 ]             : meta.function.python, meta.item-access.python, punctuation.definition.arguments.end.python, source.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python

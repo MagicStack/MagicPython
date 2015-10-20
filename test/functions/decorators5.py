@@ -31,7 +31,7 @@ z             : entity.name.function.decorator.python, meta.function.decorator.p
               : meta.function.decorator.python, source.python
               : meta.function.decorator.python, source.python
 baz           : entity.name.function.decorator.python, meta.function.decorator.python, source.python
-(             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function.decorator.python, punctuation.definition.arguments.begin.python, source.python
 q             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python

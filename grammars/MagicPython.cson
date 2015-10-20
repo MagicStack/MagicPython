@@ -1210,7 +1210,6 @@ repository:
       }
     ]
   "item-index":
-    name: "meta.item-access.arguments.python"
     begin: "(\\[)"
     end: "(?=\\])"
     beginCaptures:
@@ -1364,12 +1363,12 @@ repository:
       }
     ]
   "function-arguments":
-    name: "meta.function-call.arguments.python"
     begin: "(\\()"
     end: "(?=\\))(?!\\)\\s*\\()"
     beginCaptures:
       "1":
         name: "punctuation.definition.arguments.begin.python"
+    contentName: "meta.function-call.arguments.python"
     patterns: [
       {
         name: "punctuation.separator.arguments.python"

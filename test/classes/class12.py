@@ -51,12 +51,12 @@ b             : source.python
  b            : source.python
               : source.python
 print         : meta.function-call.python, source.python, support.function.builtin.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 cls           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.language.special.cls.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
               : source.python
 cls           : meta.function-call.python, source.python, variable.language.special.cls.python
-(             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
               : source.python
 cls           : source.python, variable.language.special.cls.python
@@ -76,6 +76,6 @@ cls           : source.python
 __name__      : source.python, support.variable.magic.python
               : source.python
 cls           : meta.item-access.python, source.python, variable.language.special.cls.python
-[             : meta.item-access.arguments.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
+[             : meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
 123           : constant.numeric.dec.python, meta.item-access.arguments.python, meta.item-access.python, source.python
 ]             : meta.item-access.python, punctuation.definition.arguments.end.python, source.python
