@@ -12,7 +12,7 @@ from scratch for robustness with an extensive test suite.
 
 ![](https://magicstack.github.io/MagicPython/example.png)
 
-(Color theme used in the screenshot is
+(Color scheme used in the screenshot is
 [Chromodymics](https://github.com/MagicStack/Chromodynamics-Theme))
 
 
@@ -207,9 +207,9 @@ If you intend to submit a pull request, please follow the following guidelines:
 - update unit tests and add new ones if needed, keeping the test cases short
   whenever possible
 
-## Color Theme
+## Color Scheme
 
-If you want to write your own color theme for MagicPython you can find a list of
+If you want to write your own color scheme for MagicPython you can find a list of
 all the scopes that we use in [misc/scopes](misc/scopes). The file is
 automatically generated based on the syntax grammar, so it is always up-to-date
 and exhaustive.
