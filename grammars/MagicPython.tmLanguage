@@ -2474,7 +2474,7 @@ indirectly through syntactic constructs
 </string>
         <key>match</key>
         <string>(?x)
-  (\.)?\b(
+  \b(
     __(?:
       abs | add | aenter | aexit | aiter | and | anext | await
       | bool | call | ceil | cmp | coerce | complex | contains
@@ -2498,7 +2498,7 @@ indirectly through syntactic constructs
 </string>
         <key>captures</key>
         <dict>
-          <key>2</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>support.function.magic.python</string>

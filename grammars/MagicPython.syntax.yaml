@@ -1058,7 +1058,7 @@ repository:
       indirectly through syntactic constructs
     match: |
       (?x)
-        (\.)?\b(
+        \b(
           __(?:
             abs | add | aenter | aexit | aiter | and | anext | await
             | bool | call | ceil | cmp | coerce | complex | contains
@@ -1080,7 +1080,7 @@ repository:
           )__
         )\b
     captures:
-      '2': {name: support.function.magic.python}
+      '1': {name: support.function.magic.python}
 
   magic-variable-names:
     comment: magic variables which a class/module may have.

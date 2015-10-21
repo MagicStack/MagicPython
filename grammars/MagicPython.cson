@@ -1568,7 +1568,7 @@ repository:
     '''
     match: '''
       (?x)
-        (\\.)?\\b(
+        \\b(
           __(?:
             abs | add | aenter | aexit | aiter | and | anext | await
             | bool | call | ceil | cmp | coerce | complex | contains
@@ -1592,7 +1592,7 @@ repository:
       
     '''
     captures:
-      "2":
+      "1":
         name: "support.function.magic.python"
   "magic-variable-names":
     comment: "magic variables which a class/module may have."
