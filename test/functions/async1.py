@@ -17,8 +17,7 @@ foo           : entity.name.function.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
-              : source.python
-a             : source.python
+    a         : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python

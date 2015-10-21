@@ -12,7 +12,7 @@ class Foo:
 
     def bar(self, a:'''TEST''')
                 -> '''TEST''': pass
-        '''TEST''' # not a docstring anymore
+        '''TEST''' # additional docstring
         with bar:
             pass
 
@@ -95,12 +95,12 @@ TEST          : meta.function.python, source.python, string.quoted.multi.python
               : source.python
 pass          : keyword.control.flow.python, source.python
               : source.python
-'''           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
-TEST          : source.python, string.quoted.multi.python
-'''           : punctuation.definition.string.end.python, source.python, string.quoted.multi.python
+'''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
+TEST          : source.python, string.quoted.docstring.multi.python
+'''           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
               : source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
- not a docstring anymore : comment.line.number-sign.python, source.python
+ additional docstring : comment.line.number-sign.python, source.python
               : source.python
 with          : keyword.control.flow.python, source.python
  bar:         : source.python

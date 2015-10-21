@@ -64,11 +64,7 @@
           </dict>
           <dict>
             <key>include</key>
-            <string>#docstring-block</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#docstring-module</string>
+            <string>#docstring-statement</string>
           </dict>
         </array>
       </dict>
@@ -143,42 +139,10 @@
           </dict>
         </array>
       </dict>
-      <key>docstring-block</key>
+      <key>docstring-statement</key>
       <dict>
         <key>begin</key>
-        <string>(?&lt;=:)</string>
-        <key>end</key>
-        <string>(?x)
-  (?! \s | \# | [rR]?(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;) | $)
-  |
-  (?&lt;=\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;)
-  |
-  ^(?= \s* @)
-</string>
-        <key>endCaptures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.string.end.python</string>
-          </dict>
-        </dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>include</key>
-            <string>#comments</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#docstring</string>
-          </dict>
-        </array>
-      </dict>
-      <key>docstring-module</key>
-      <dict>
-        <key>begin</key>
-        <string>^(?=[rR]?(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;))</string>
+        <string>^(?=\s*[rR]?(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;))</string>
         <key>end</key>
         <string>(?&lt;=\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;)</string>
         <key>patterns</key>
@@ -694,7 +658,7 @@
             <string>(?x)
   (?=^\s*$)
   |
-  (?! ([rR]? (\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;))
+  (?! (\s* [rR]? (\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;))
       |
       (\G $)  (?# &apos;\G&apos; is necessary for ST)
   )

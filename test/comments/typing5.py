@@ -12,7 +12,6 @@ t1            : meta.function-call.arguments.python, meta.function-call.python, 
  TypeVar      : meta.function-call.arguments.python, meta.function-call.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
 :             : source.python
-              : source.python
 #             : comment.line.number-sign.python, meta.typehint.comment.python, source.python
 type:         : comment.line.number-sign.python, comment.typehint.directive.notation.python, meta.typehint.comment.python, source.python
               : comment.line.number-sign.python, meta.typehint.comment.python, source.python

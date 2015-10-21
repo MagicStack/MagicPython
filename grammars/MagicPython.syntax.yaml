@@ -76,8 +76,7 @@ repository:
       - include: '#statement-keyword'
       - include: '#assignment-operator'
       - include: '#decorator'
-      - include: '#docstring-block'
-      - include: '#docstring-module'
+      - include: '#docstring-statement'
 
   comments:
     patterns:
@@ -123,23 +122,8 @@ repository:
 
       - include: '#comments-base'
 
-  docstring-block:
-    begin: (?<=:)
-    end: |
-      (?x)
-        (?! \s | \# | [rR]?(\'\'\'|\"\"\"|\'|\") | $)
-        |
-        (?<=\'\'\'|\"\"\"|\'|\")
-        |
-        ^(?= \s* @)
-    endCaptures:
-      '1': {name: punctuation.definition.string.end.python}
-    patterns:
-      - include: '#comments'
-      - include: '#docstring'
-
-  docstring-module:
-    begin: ^(?=[rR]?(\'\'\'|\"\"\"|\'|\"))
+  docstring-statement:
+    begin: ^(?=\s*[rR]?(\'\'\'|\"\"\"|\'|\"))
     end: (?<=\'\'\'|\"\"\"|\'|\")
     patterns:
       - include: '#docstring'
@@ -323,7 +307,7 @@ repository:
           (?x)
             (?=^\s*$)
             |
-            (?! ([rR]? (\'\'\'|\"\"\"|\'|\"))
+            (?! (\s* [rR]? (\'\'\'|\"\"\"|\'|\"))
                 |
                 (\G $)  (?# '\G' is necessary for ST)
             )

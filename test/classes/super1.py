@@ -18,7 +18,7 @@ class         : meta.class.python, source.python, storage.type.class.python
               : meta.class.python, source.python
 Foo           : entity.name.type.class.python, meta.class.python, source.python
 :             : meta.class.python, punctuation.section.class.begin.python, source.python
-              : source.python
+              : meta.function.python, source.python
 def           : meta.function.python, source.python, storage.type.function.python
               : meta.function.python, source.python
 __init__      : meta.function.python, source.python, support.function.magic.python

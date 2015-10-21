@@ -54,8 +54,7 @@ return        : keyword.control.flow.python, source.python
               : source.python
 lambda        : meta.lambda-function.python, source.python, storage.type.function.lambda.python
 :             : meta.lambda-function.python, punctuation.section.function.lambda.begin.python, source.python
-              : source.python
-你好            : source.python
+ 你好           : source.python
               : meta.function.python, source.python
 def           : meta.function.python, source.python, storage.type.function.python
               : meta.function.python, source.python
