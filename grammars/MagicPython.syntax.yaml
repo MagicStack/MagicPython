@@ -207,7 +207,7 @@ repository:
       (?x)
         (?:
           (?:^|\G) \s* (?# '\G' is necessary for ST)
-          ((?:>>>|\.\.\.) \s)
+          ((?:>>>|\.\.\.) \s) (?=\s*\S)
         )
     captures:
       '1': {name: keyword.control.flow.python}

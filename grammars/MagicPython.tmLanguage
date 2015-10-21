@@ -387,7 +387,7 @@
         <string>(?x)
   (?:
     (?:^|\G) \s* (?# &apos;\G&apos; is necessary for ST)
-    ((?:&gt;&gt;&gt;|\.\.\.) \s)
+    ((?:&gt;&gt;&gt;|\.\.\.) \s) (?=\s*\S)
   )
 </string>
         <key>captures</key>
