@@ -23,13 +23,15 @@ def showcase():
             print('Result: {result!r}'.format(result=
                 await db.query(...)))
 
+    mapping = None     # type: Dict[int, Any] # PEP 484
+
     # a regular expression
-    get_regex = lambda: re.compile(
+    get_regex = lambda: re.compile(     # type: ignore
         r"""\A
             word
-            (?:                   # a comment
+            (?:                         # a comment
                (?P<fill>.)?
-               (?P<align>[<>=^])  (?# another comment)
+               (?P<align>[<>=^])        (?# another comment)
             )?
             another word\.\.\.
             (?:\.(?P<precision>0|(?!0)\d+))?
@@ -42,6 +44,4 @@ def showcase():
                   # complex numbers
                   .10e12 + 2j) @ mat
 
-    raw_string = R'''No escapes '\' in this \one'''
-
-    return NotImplemented
+    return R'''No escapes '\' in this \one'''
