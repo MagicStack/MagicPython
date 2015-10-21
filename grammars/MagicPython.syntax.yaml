@@ -58,13 +58,13 @@ repository:
     - file: 'pystring.inc.syntax.yaml'
       vars:
         line: single
-        marker: "\\'|\""
+        marker: (['"])
         guard: "|((?<!\\\\)\\n)"
 
     - file: 'pystring.inc.syntax.yaml'
       vars:
         line: multi
-        marker: "\\'\\'\\'|\"\"\""
+        marker: "'''|\"\"\""
         guard: ""
 
 
@@ -529,7 +529,7 @@ repository:
       - include: '#string-brace-formatting'
 
   string-consume-escape:
-    match: \\.
+    match: \\['"\n\\]
 
   string-raw-guts:
     patterns:
@@ -593,7 +593,7 @@ repository:
               {{ | }}
               | (?:
                 {
-                  [^!:\.\[\]'"]*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
+                  \w*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
                   (![rsa])?
                   ( : \w? [<>=^]? [-+ ]? \#?
                     \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
@@ -606,7 +606,7 @@ repository:
         begin: |
           (?x)
               \{
-                [^!:\.\[\]'"]*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
+                \w*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
                 (![rsa])?
                 (:)
                   (?=[^'"}\n]*\})

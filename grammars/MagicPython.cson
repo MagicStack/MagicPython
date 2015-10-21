@@ -748,7 +748,7 @@ repository:
       }
     ]
   "string-consume-escape":
-    match: "\\\\."
+    match: "\\\\['\"\\n\\\\]"
   "string-raw-guts":
     patterns: [
       {
@@ -832,7 +832,7 @@ repository:
               {{ | }}
               | (?:
                 {
-                  [^!:\\.\\[\\]'"]*? (\\.[[:alpha:]_]\\w*? | \\[[^\\]'"]+\\])*?
+                  \\w*? (\\.[[:alpha:]_]\\w*? | \\[[^\\]'"]+\\])*?
                   (![rsa])?
                   ( : \\w? [<>=^]? [-+ ]? \\#?
                     \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?
@@ -851,7 +851,7 @@ repository:
         begin: '''
           (?x)
               \\{
-                [^!:\\.\\[\\]'"]*? (\\.[[:alpha:]_]\\w*? | \\[[^\\]'"]+\\])*?
+                \\w*? (\\.[[:alpha:]_]\\w*? | \\[[^\\]'"]+\\])*?
                 (![rsa])?
                 (:)
                   (?=[^'"}\\n]*\\})
@@ -2863,7 +2863,7 @@ repository:
     ]
   "string-raw-quoted-single-line":
     name: "string.quoted.raw.single.python"
-    begin: "\\b(([uU]R)|(R))(\\'|\")"
+    begin: "\\b(([uU]R)|(R))((['\"]))"
     end: "(\\4)|((?<!\\\\)\\n)"
     beginCaptures:
       "2":
@@ -2879,12 +2879,15 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
+        include: "#string-single-bad-brace-formatting-raw"
+      }
+      {
         include: "#string-raw-guts"
       }
     ]
   "string-bin-quoted-single-line":
     name: "string.quoted.binary.single.python"
-    begin: "(\\b[bB])(\\'|\")"
+    begin: "(\\b[bB])((['\"]))"
     end: "(\\2)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
@@ -2903,7 +2906,7 @@ repository:
     ]
   "string-raw-bin-quoted-single-line":
     name: "string.quoted.raw.binary.single.python"
-    begin: "(\\b(?:R[bB]|[bB]R))(\\'|\")"
+    begin: "(\\b(?:R[bB]|[bB]R))((['\"]))"
     end: "(\\2)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
@@ -2922,7 +2925,7 @@ repository:
     ]
   "string-quoted-single-line":
     name: "string.quoted.single.python"
-    begin: "(\\b[rR](?=[uU]))?([uU])?(\\'|\")"
+    begin: "(\\b[rR](?=[uU]))?([uU])?((['\"]))"
     end: "(\\3)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
@@ -2938,12 +2941,59 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
+        include: "#string-single-bad-brace-formatting-unicode"
+      }
+      {
         include: "#string-unicode-guts"
+      }
+    ]
+  "string-single-bad-brace-formatting-unicode":
+    comment: "odd format or format-like syntax"
+    begin: '''
+      (?x)
+          (?!\\{\\{)
+          (?= \\{ (
+                    \\w*? (?!(['"])|((?<!\\\\)\\n)) [^!:\\.\\[}\\w]
+                 )
+              .*?(?!(['"])|((?<!\\\\)\\n))
+              \\}
+          )
+      
+    '''
+    end: "(?=(['\"])|((?<!\\\\)\\n))"
+    patterns: [
+      {
+        include: "#escape-sequence-unicode"
+      }
+      {
+        include: "#string-entity"
+      }
+    ]
+  "string-single-bad-brace-formatting-raw":
+    comment: "odd format or format-like syntax"
+    begin: '''
+      (?x)
+          (?!\\{\\{)
+          (?= \\{ (
+                    \\w*? (?!(['"])|((?<!\\\\)\\n)) [^!:\\.\\[}\\w]
+                 )
+              .*?(?!(['"])|((?<!\\\\)\\n))
+              \\}
+          )
+      
+    '''
+    end: "(?=(['\"])|((?<!\\\\)\\n))"
+    patterns: [
+      {
+        include: "#string-consume-escape"
+      }
+      {
+        include: "#string-formatting"
       }
     ]
   "string-raw-quoted-multi-line":
     name: "string.quoted.raw.multi.python"
-    begin: "\\b(([uU]R)|(R))(\\'\\'\\'|\"\"\")"
+    begin: "\\b(([uU]R)|(R))('''|\"\"\")"
     end: "(\\4)"
     beginCaptures:
       "2":
@@ -2959,12 +3009,15 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
+        include: "#string-multi-bad-brace-formatting-raw"
+      }
+      {
         include: "#string-raw-guts"
       }
     ]
   "string-bin-quoted-multi-line":
     name: "string.quoted.binary.multi.python"
-    begin: "(\\b[bB])(\\'\\'\\'|\"\"\")"
+    begin: "(\\b[bB])('''|\"\"\")"
     end: "(\\2)"
     beginCaptures:
       "1":
@@ -2983,7 +3036,7 @@ repository:
     ]
   "string-raw-bin-quoted-multi-line":
     name: "string.quoted.raw.binary.multi.python"
-    begin: "(\\b(?:R[bB]|[bB]R))(\\'\\'\\'|\"\"\")"
+    begin: "(\\b(?:R[bB]|[bB]R))('''|\"\"\")"
     end: "(\\2)"
     beginCaptures:
       "1":
@@ -3002,7 +3055,7 @@ repository:
     ]
   "string-quoted-multi-line":
     name: "string.quoted.multi.python"
-    begin: "(\\b[rR](?=[uU]))?([uU])?(\\'\\'\\'|\"\"\")"
+    begin: "(\\b[rR](?=[uU]))?([uU])?('''|\"\"\")"
     end: "(\\3)"
     beginCaptures:
       "1":
@@ -3018,6 +3071,53 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
+        include: "#string-multi-bad-brace-formatting-unicode"
+      }
+      {
         include: "#string-unicode-guts"
+      }
+    ]
+  "string-multi-bad-brace-formatting-unicode":
+    comment: "odd format or format-like syntax"
+    begin: '''
+      (?x)
+          (?!\\{\\{)
+          (?= \\{ (
+                    \\w*? (?!\'''|""") [^!:\\.\\[}\\w]
+                 )
+              .*?(?!\'''|""")
+              \\}
+          )
+      
+    '''
+    end: "(?='''|\"\"\")"
+    patterns: [
+      {
+        include: "#escape-sequence-unicode"
+      }
+      {
+        include: "#string-entity"
+      }
+    ]
+  "string-multi-bad-brace-formatting-raw":
+    comment: "odd format or format-like syntax"
+    begin: '''
+      (?x)
+          (?!\\{\\{)
+          (?= \\{ (
+                    \\w*? (?!\'''|""") [^!:\\.\\[}\\w]
+                 )
+              .*?(?!\'''|""")
+              \\}
+          )
+      
+    '''
+    end: "(?='''|\"\"\")"
+    patterns: [
+      {
+        include: "#string-consume-escape"
+      }
+      {
+        include: "#string-formatting"
       }
     ]

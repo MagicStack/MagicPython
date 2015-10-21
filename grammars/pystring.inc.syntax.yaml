@@ -12,6 +12,7 @@ repository:
       '1': {name: punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
+      - include: '#string-${line}-bad-brace-formatting-raw'
       - include: '#string-raw-guts'
 
   string-bin-quoted-${line}-line:
@@ -52,5 +53,38 @@ repository:
       '1': {name: punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
+      - include: '#string-${line}-bad-brace-formatting-unicode'
       - include: '#string-unicode-guts'
+
+  string-${line}-bad-brace-formatting-unicode:
+    comment: odd format or format-like syntax
+    begin: |
+      (?x)
+          (?!\{\{)
+          (?= \{ (
+                    \w*? (?!${marker}${guard}) [^!:\.\[}\w]
+                 )
+              .*?(?!${marker}${guard})
+              \}
+          )
+    end: (?=${marker}${guard})
+    patterns:
+      - include: '#escape-sequence-unicode'
+      - include: '#string-entity'
+
+  string-${line}-bad-brace-formatting-raw:
+    comment: odd format or format-like syntax
+    begin: |
+      (?x)
+          (?!\{\{)
+          (?= \{ (
+                    \w*? (?!${marker}${guard}) [^!:\.\[}\w]
+                 )
+              .*?(?!${marker}${guard})
+              \}
+          )
+    end: (?=${marker}${guard})
+    patterns:
+      - include: '#string-consume-escape'
+      - include: '#string-formatting'
 ...

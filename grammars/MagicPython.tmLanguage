@@ -1217,7 +1217,7 @@
       <key>string-consume-escape</key>
       <dict>
         <key>match</key>
-        <string>\\.</string>
+        <string>\\[&apos;&quot;\n\\]</string>
       </dict>
       <key>string-raw-guts</key>
       <dict>
@@ -1333,7 +1333,7 @@
     {{ | }}
     | (?:
       {
-        [^!:\.\[\]&apos;&quot;]*? (\.[[:alpha:]_]\w*? | \[[^\]&apos;&quot;]+\])*?
+        \w*? (\.[[:alpha:]_]\w*? | \[[^\]&apos;&quot;]+\])*?
         (![rsa])?
         ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
           \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
@@ -1360,7 +1360,7 @@
             <key>begin</key>
             <string>(?x)
     \{
-      [^!:\.\[\]&apos;&quot;]*? (\.[[:alpha:]_]\w*? | \[[^\]&apos;&quot;]+\])*?
+      \w*? (\.[[:alpha:]_]\w*? | \[[^\]&apos;&quot;]+\])*?
       (![rsa])?
       (:)
         (?=[^&apos;&quot;}\n]*\})
@@ -4889,7 +4889,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.raw.single.python</string>
         <key>begin</key>
-        <string>\b(([uU]R)|(R))(\&apos;|&quot;)</string>
+        <string>\b(([uU]R)|(R))(([&apos;&quot;]))</string>
         <key>end</key>
         <string>(\4)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
@@ -4927,6 +4927,10 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
+            <string>#string-single-bad-brace-formatting-raw</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#string-raw-guts</string>
           </dict>
         </array>
@@ -4936,7 +4940,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.binary.single.python</string>
         <key>begin</key>
-        <string>(\b[bB])(\&apos;|&quot;)</string>
+        <string>(\b[bB])(([&apos;&quot;]))</string>
         <key>end</key>
         <string>(\2)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
@@ -4978,7 +4982,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.raw.binary.single.python</string>
         <key>begin</key>
-        <string>(\b(?:R[bB]|[bB]R))(\&apos;|&quot;)</string>
+        <string>(\b(?:R[bB]|[bB]R))(([&apos;&quot;]))</string>
         <key>end</key>
         <string>(\2)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
@@ -5020,7 +5024,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.single.python</string>
         <key>begin</key>
-        <string>(\b[rR](?=[uU]))?([uU])?(\&apos;|&quot;)</string>
+        <string>(\b[rR](?=[uU]))?([uU])?(([&apos;&quot;]))</string>
         <key>end</key>
         <string>(\3)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
@@ -5058,7 +5062,67 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
+            <string>#string-single-bad-brace-formatting-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#string-unicode-guts</string>
+          </dict>
+        </array>
+      </dict>
+      <key>string-single-bad-brace-formatting-unicode</key>
+      <dict>
+        <key>comment</key>
+        <string>odd format or format-like syntax</string>
+        <key>begin</key>
+        <string>(?x)
+    (?!\{\{)
+    (?= \{ (
+              \w*? (?!([&apos;&quot;])|((?&lt;!\\)\n)) [^!:\.\[}\w]
+           )
+        .*?(?!([&apos;&quot;])|((?&lt;!\\)\n))
+        \}
+    )
+</string>
+        <key>end</key>
+        <string>(?=([&apos;&quot;])|((?&lt;!\\)\n))</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#escape-sequence-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-entity</string>
+          </dict>
+        </array>
+      </dict>
+      <key>string-single-bad-brace-formatting-raw</key>
+      <dict>
+        <key>comment</key>
+        <string>odd format or format-like syntax</string>
+        <key>begin</key>
+        <string>(?x)
+    (?!\{\{)
+    (?= \{ (
+              \w*? (?!([&apos;&quot;])|((?&lt;!\\)\n)) [^!:\.\[}\w]
+           )
+        .*?(?!([&apos;&quot;])|((?&lt;!\\)\n))
+        \}
+    )
+</string>
+        <key>end</key>
+        <string>(?=([&apos;&quot;])|((?&lt;!\\)\n))</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#string-consume-escape</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-formatting</string>
           </dict>
         </array>
       </dict>
@@ -5067,7 +5131,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.raw.multi.python</string>
         <key>begin</key>
-        <string>\b(([uU]R)|(R))(\&apos;\&apos;\&apos;|&quot;&quot;&quot;)</string>
+        <string>\b(([uU]R)|(R))(&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
         <key>end</key>
         <string>(\4)</string>
         <key>beginCaptures</key>
@@ -5105,6 +5169,10 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
+            <string>#string-multi-bad-brace-formatting-raw</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#string-raw-guts</string>
           </dict>
         </array>
@@ -5114,7 +5182,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.binary.multi.python</string>
         <key>begin</key>
-        <string>(\b[bB])(\&apos;\&apos;\&apos;|&quot;&quot;&quot;)</string>
+        <string>(\b[bB])(&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
         <key>end</key>
         <string>(\2)</string>
         <key>beginCaptures</key>
@@ -5156,7 +5224,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.raw.binary.multi.python</string>
         <key>begin</key>
-        <string>(\b(?:R[bB]|[bB]R))(\&apos;\&apos;\&apos;|&quot;&quot;&quot;)</string>
+        <string>(\b(?:R[bB]|[bB]R))(&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
         <key>end</key>
         <string>(\2)</string>
         <key>beginCaptures</key>
@@ -5198,7 +5266,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.multi.python</string>
         <key>begin</key>
-        <string>(\b[rR](?=[uU]))?([uU])?(\&apos;\&apos;\&apos;|&quot;&quot;&quot;)</string>
+        <string>(\b[rR](?=[uU]))?([uU])?(&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
         <key>end</key>
         <string>(\3)</string>
         <key>beginCaptures</key>
@@ -5236,7 +5304,67 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
+            <string>#string-multi-bad-brace-formatting-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#string-unicode-guts</string>
+          </dict>
+        </array>
+      </dict>
+      <key>string-multi-bad-brace-formatting-unicode</key>
+      <dict>
+        <key>comment</key>
+        <string>odd format or format-like syntax</string>
+        <key>begin</key>
+        <string>(?x)
+    (?!\{\{)
+    (?= \{ (
+              \w*? (?!&apos;&apos;&apos;|&quot;&quot;&quot;) [^!:\.\[}\w]
+           )
+        .*?(?!&apos;&apos;&apos;|&quot;&quot;&quot;)
+        \}
+    )
+</string>
+        <key>end</key>
+        <string>(?=&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#escape-sequence-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-entity</string>
+          </dict>
+        </array>
+      </dict>
+      <key>string-multi-bad-brace-formatting-raw</key>
+      <dict>
+        <key>comment</key>
+        <string>odd format or format-like syntax</string>
+        <key>begin</key>
+        <string>(?x)
+    (?!\{\{)
+    (?= \{ (
+              \w*? (?!&apos;&apos;&apos;|&quot;&quot;&quot;) [^!:\.\[}\w]
+           )
+        .*?(?!&apos;&apos;&apos;|&quot;&quot;&quot;)
+        \}
+    )
+</string>
+        <key>end</key>
+        <string>(?=&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#string-consume-escape</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-formatting</string>
           </dict>
         </array>
       </dict>

@@ -1,6 +1,6 @@
 # XXX we have to highlight '% o' here, as it is a valid python
 # format spec. Otherwise, it would be hard to spot an error in
-# te code below.
+# the code below.
 a = '12% of %s' % ('name',)
 
 
@@ -12,7 +12,7 @@ XXX           : comment.line.number-sign.python, keyword.codetag.notation.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  format spec. Otherwise, it would be hard to spot an error in : comment.line.number-sign.python, source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
- te code below. : comment.line.number-sign.python, source.python
+ the code below. : comment.line.number-sign.python, source.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python

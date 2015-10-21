@@ -1,6 +1,6 @@
 '''Module docstring
 
-    simple \\ string \
+    {{ %d simple \\ string \
     foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005
 
     multiline "unicode" string \
@@ -13,7 +13,7 @@
 '''           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
 Module docstring : source.python, string.quoted.docstring.multi.python
               : source.python, string.quoted.docstring.multi.python
-    simple    : source.python, string.quoted.docstring.multi.python
+    {{ %d simple  : source.python, string.quoted.docstring.multi.python
 \\            : constant.character.python, source.python, string.quoted.docstring.multi.python
  string       : source.python, string.quoted.docstring.multi.python
 \             : constant.language.python, source.python, string.quoted.docstring.multi.python
