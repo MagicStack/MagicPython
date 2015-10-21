@@ -106,7 +106,8 @@
                 <string>comment.typehint.ignore.notation.python</string>
                 <key>match</key>
                 <string>(?x)
-  \G  ignore  \s* ($|(?=\#))
+  \G ignore
+  (?= \s* (?: $ | \#))
 </string>
               </dict>
               <dict>

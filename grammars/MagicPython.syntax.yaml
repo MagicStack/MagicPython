@@ -102,7 +102,8 @@ repository:
           - name: comment.typehint.ignore.notation.python
             match: |
               (?x)
-                \G  ignore  \s* ($|(?=\#))
+                \G ignore
+                (?= \s* (?: $ | \#))
 
           - name: comment.typehint.type.notation.python
             match: |
