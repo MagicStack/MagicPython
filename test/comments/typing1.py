@@ -1,6 +1,7 @@
 # type: ignore  # test
 # type:  ignore
 # type:ignore
+#type:ignore
 # type: ignore 1
 # type: 1 ignore
 # type : ignore
@@ -19,6 +20,9 @@ ignore        : comment.line.number-sign.python, comment.typehint.ignore.notatio
 #             : comment.line.number-sign.python, meta.typehint.comment.python, source.python
 type:         : comment.line.number-sign.python, comment.typehint.directive.notation.python, meta.typehint.comment.python, source.python
               : comment.line.number-sign.python, meta.typehint.comment.python, source.python
+ignore        : comment.line.number-sign.python, comment.typehint.ignore.notation.python, meta.typehint.comment.python, source.python
+#             : comment.line.number-sign.python, meta.typehint.comment.python, source.python
+type:         : comment.line.number-sign.python, comment.typehint.directive.notation.python, meta.typehint.comment.python, source.python
 ignore        : comment.line.number-sign.python, comment.typehint.ignore.notation.python, meta.typehint.comment.python, source.python
 #             : comment.line.number-sign.python, meta.typehint.comment.python, source.python
 type:         : comment.line.number-sign.python, comment.typehint.directive.notation.python, meta.typehint.comment.python, source.python
