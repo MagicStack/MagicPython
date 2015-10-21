@@ -9,7 +9,7 @@ x             : source.python
 None          : constant.language.python, source.python
               : source.python
 #             : comment.line.number-sign.python, meta.typehint.comment.python, source.python
-type:         : comment.line.number-sign.python, keyword.comment.typehint.notation.python, meta.typehint.comment.python, source.python
+type:         : comment.line.number-sign.python, comment.typehint.directive.notation.python, meta.typehint.comment.python, source.python
               : comment.line.number-sign.python, meta.typehint.comment.python, source.python
 List          : comment.line.number-sign.python, comment.typehint.type.notation.python, meta.typehint.comment.python, source.python
 [             : comment.line.number-sign.python, comment.typehint.puctuation.notation.python, meta.typehint.comment.python, source.python
@@ -24,7 +24,7 @@ y             : source.python
 None          : constant.language.python, source.python
               : source.python
 #             : comment.line.number-sign.python, meta.typehint.comment.python, source.python
-type:         : comment.line.number-sign.python, keyword.comment.typehint.notation.python, meta.typehint.comment.python, source.python
+type:         : comment.line.number-sign.python, comment.typehint.directive.notation.python, meta.typehint.comment.python, source.python
               : comment.line.number-sign.python, meta.typehint.comment.python, source.python
 Dict          : comment.line.number-sign.python, comment.typehint.type.notation.python, meta.typehint.comment.python, source.python
 [             : comment.line.number-sign.python, comment.typehint.puctuation.notation.python, meta.typehint.comment.python, source.python

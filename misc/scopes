@@ -1,5 +1,6 @@
 comment.line.number-sign.python
 comment.regexp
+comment.typehint.directive.notation.python
 comment.typehint.ignore.notation.python
 comment.typehint.puctuation.notation.python
 comment.typehint.type.notation.python
@@ -37,7 +38,6 @@ invalid.illegal.name.python
 invalid.illegal.newline.python
 invalid.illegal.prefix.python
 keyword.codetag.notation.python
-keyword.comment.typehint.notation.python
 keyword.control.flow.python
 keyword.invalid.illegal.name.python
 keyword.operator.assignment.python

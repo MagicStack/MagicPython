@@ -96,7 +96,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.comment.typehint.notation.python</string>
+                <string>comment.typehint.directive.notation.python</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -116,7 +116,8 @@
                 <string>(?x)
   (?&lt;!\.)\b(
     bool | bytes | float | int | object | str
-    | List | Dict | Iterable | Sequence
+    | List | Dict | Iterable | Sequence | Set
+    | FrozenSet | Callable | Union | Tuple
     | Any | None
   )\b
 </string>
