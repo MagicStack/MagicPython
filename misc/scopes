@@ -121,9 +121,9 @@ storage.type.string.python
 string.quoted.binary.multi.python
 string.quoted.binary.single.python
 string.quoted.docstring.multi.python
-string.quoted.docstring.python
 string.quoted.docstring.raw.multi.python
-string.quoted.docstring.raw.python
+string.quoted.docstring.raw.single.python
+string.quoted.docstring.single.python
 string.quoted.multi.python
 string.quoted.raw.binary.multi.python
 string.quoted.raw.binary.single.python

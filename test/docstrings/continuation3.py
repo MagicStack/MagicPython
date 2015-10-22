@@ -36,7 +36,7 @@ b             : source.python
               : source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  docstring    : comment.line.number-sign.python, source.python
-r             : source.python, storage.type.string.python, string.quoted.docstring.raw.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.python
->>> print()a[wer] : source.python, string.quoted.docstring.raw.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.python
+r             : source.python, storage.type.string.python, string.quoted.docstring.raw.single.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.raw.single.python
+>>> print()a[wer] : source.python, string.quoted.docstring.raw.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.single.python

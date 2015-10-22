@@ -159,7 +159,7 @@ repository:
         ]
       }
       {
-        name: "string.quoted.docstring.python"
+        name: "string.quoted.docstring.single.python"
         begin: "(\\'|\\\")"
         end: "(\\1)|((?<!\\\\)\\n)"
         beginCaptures:
@@ -180,7 +180,7 @@ repository:
         ]
       }
       {
-        name: "string.quoted.docstring.raw.python"
+        name: "string.quoted.docstring.raw.single.python"
         begin: "([rR])(\\'|\\\")"
         end: "(\\2)|((?<!\\\\)\\n)"
         beginCaptures:

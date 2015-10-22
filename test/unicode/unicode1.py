@@ -17,11 +17,11 @@ class         : meta.class.python, source.python, storage.type.class.python
 )             : meta.class.inheritance.python, meta.class.python, punctuation.definition.inheritance.end.python, source.python
 :             : meta.class.python, punctuation.section.class.begin.python, source.python
               : source.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.python
-Œ             : source.python, string.quoted.docstring.python
-\n            : constant.character.python, source.python, string.quoted.docstring.python
-Ń             : source.python, string.quoted.docstring.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.python
+'             : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.single.python
+Œ             : source.python, string.quoted.docstring.single.python
+\n            : constant.character.python, source.python, string.quoted.docstring.single.python
+Ń             : source.python, string.quoted.docstring.single.python
+'             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.single.python
               : meta.function.decorator.python, source.python
 @             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 æaœ           : entity.name.function.decorator.python, meta.function.decorator.python, source.python

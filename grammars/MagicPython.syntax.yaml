@@ -155,7 +155,7 @@ repository:
           - include: '#docstring-prompt'
           - include: '#codetags'
 
-      - name: string.quoted.docstring.python
+      - name: string.quoted.docstring.single.python
         begin: (\'|\")
         end: (\1)|((?<!\\)\n)
         beginCaptures:
@@ -167,7 +167,7 @@ repository:
           - include: '#codetags'
           - include: '#docstring-guts-unicode'
 
-      - name: string.quoted.docstring.raw.python
+      - name: string.quoted.docstring.raw.single.python
         begin: ([rR])(\'|\")
         end: (\2)|((?<!\\)\n)
         beginCaptures:

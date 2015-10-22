@@ -242,7 +242,7 @@
           </dict>
           <dict>
             <key>name</key>
-            <string>string.quoted.docstring.python</string>
+            <string>string.quoted.docstring.single.python</string>
             <key>begin</key>
             <string>(\&apos;|\&quot;)</string>
             <key>end</key>
@@ -282,7 +282,7 @@
           </dict>
           <dict>
             <key>name</key>
-            <string>string.quoted.docstring.raw.python</string>
+            <string>string.quoted.docstring.raw.single.python</string>
             <key>begin</key>
             <string>([rR])(\&apos;|\&quot;)</string>
             <key>end</key>
