@@ -29,6 +29,11 @@ disable the built-in `Python` package (using
 `Package Control -> Disable Package`, or directly by adding `"Python"` to
 `"ignored_packages"` in the settings file).
 
+In **VSCode**, copy/clone `MagicPython` to `.vscode/extensions` under your
+user directory ([more details](https://code.visualstudio.com/updates)).
+Please note, that [VSCode](https://code.visualstudio.com/) support is
+experimental.
+
 Alternatively, the package can be installed manually in both editors:
 
 - copy the MagicPython package into the Sublime/Atom user packages directory;
