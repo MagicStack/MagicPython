@@ -3,7 +3,8 @@
   "version": "0.4.32",
   "engines": {
     "atom": "*",
-    "node": "*"
+    "node": "*",
+    "vscode": ">=0.9.0-pre.1"
   },
   "repository": {
     "type": "git",
@@ -13,5 +14,23 @@
     "url": "https://github.com/MagicStack/MagicPython/issues"
   },
   "description": "Syntax highlighter for cutting edge Python.",
-  "license": "MIT"
+  "license": "MIT",
+
+  "publisher": "MagicStack Inc.",
+  "contributes": {
+    "//": "This section is for VSCode",
+    "languages": [{
+      "id": "python",
+      "aliases": ["MagicPython", "python"],
+      "extensions": [
+        ".py",".py3",".rpy",".pyw",".cpy",
+        ".SConstruct",".Sconstruct",".sconstruct",".SConscript"
+      ]
+    }],
+    "grammars": [{
+      "language": "python",
+      "scopeName": "source.python",
+      "path": "./grammars/MagicPython.tmLanguage"
+    }]
+  }
 }
