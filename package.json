@@ -1,6 +1,6 @@
 {
   "name": "MagicPython",
-  "version": "0.4.32",
+  "version": "0.4.33",
   "engines": {
     "atom": "*",
     "node": "*",
@@ -15,22 +15,35 @@
   },
   "description": "Syntax highlighter for cutting edge Python.",
   "license": "MIT",
-
   "publisher": "MagicStack Inc.",
   "contributes": {
     "//": "This section is for VSCode",
-    "languages": [{
-      "id": "python",
-      "aliases": ["MagicPython", "python"],
-      "extensions": [
-        ".py",".py3",".rpy",".pyw",".cpy",
-        ".SConstruct",".Sconstruct",".sconstruct",".SConscript"
-      ]
-    }],
-    "grammars": [{
-      "language": "python",
-      "scopeName": "source.python",
-      "path": "./grammars/MagicPython.tmLanguage"
-    }]
+    "languages": [
+      {
+        "id": "python",
+        "aliases": [
+          "MagicPython",
+          "python"
+        ],
+        "extensions": [
+          ".py",
+          ".py3",
+          ".rpy",
+          ".pyw",
+          ".cpy",
+          ".SConstruct",
+          ".Sconstruct",
+          ".sconstruct",
+          ".SConscript"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "python",
+        "scopeName": "source.python",
+        "path": "./grammars/MagicPython.tmLanguage"
+      }
+    ]
   }
 }
