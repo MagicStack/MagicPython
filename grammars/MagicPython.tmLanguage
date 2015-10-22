@@ -927,7 +927,7 @@
       <key>regexp-single-quoted-single-line</key>
       <dict>
         <key>name</key>
-        <string>string.regexp.quoted.python</string>
+        <string>string.regexp.quoted.single.python</string>
         <key>begin</key>
         <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&apos;)</string>
         <key>end</key>
@@ -979,7 +979,7 @@
       <key>regexp-double-quoted-single-line</key>
       <dict>
         <key>name</key>
-        <string>string.regexp.quoted.python</string>
+        <string>string.regexp.quoted.single.python</string>
         <key>begin</key>
         <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&quot;)</string>
         <key>end</key>

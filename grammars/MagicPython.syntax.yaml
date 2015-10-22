@@ -438,7 +438,7 @@ repository:
       - include: '#regexp-double-quoted-single-line'
 
   regexp-single-quoted-single-line:
-    name: string.regexp.quoted.python
+    name: string.regexp.quoted.single.python
     begin: \b(([uU]r)|([bB]r)|(r[bB]?))(\')
     end: (\')|(?<!\\)(\n)
     beginCaptures:
@@ -453,7 +453,7 @@ repository:
       - include: '#single-one-regexp-expression'
 
   regexp-double-quoted-single-line:
-    name: string.regexp.quoted.python
+    name: string.regexp.quoted.single.python
     begin: \b(([uU]r)|([bB]r)|(r[bB]?))(\")
     end: (\")|(?<!\\)(\n)
     beginCaptures:
