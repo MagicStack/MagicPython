@@ -12,7 +12,7 @@ a             : source.python
 b             : source.python, storage.type.string.python, string.quoted.binary.single.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.binary.single.python
 bad           : source.python, string.quoted.binary.single.python
-\\            : constant.character.python, source.python, string.quoted.binary.single.python
+\\            : constant.character.escape.python, source.python, string.quoted.binary.single.python
  string       : source.python, string.quoted.binary.single.python
               : invalid.illegal.newline.python, source.python, string.quoted.binary.single.python
 foo           : source.python

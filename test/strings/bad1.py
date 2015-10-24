@@ -9,7 +9,7 @@ a             : source.python
               : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 bad           : source.python, string.quoted.single.python
-\\            : constant.character.python, source.python, string.quoted.single.python
+\\            : constant.character.escape.python, source.python, string.quoted.single.python
  string       : source.python, string.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.quoted.single.python
 foo           : source.python

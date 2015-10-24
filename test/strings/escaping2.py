@@ -29,7 +29,7 @@ R             : source.python, storage.type.string.python, string.quoted.raw.sin
 ,             : source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-\\            : constant.character.python, source.python, string.quoted.single.python
+\\            : constant.character.escape.python, source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 :             : source.python
 R             : source.python, storage.type.string.python, string.quoted.raw.single.python

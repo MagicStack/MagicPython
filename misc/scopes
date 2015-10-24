@@ -5,9 +5,9 @@ comment.typehint.ignore.notation.python
 comment.typehint.puctuation.notation.python
 comment.typehint.type.notation.python
 comment.typehint.variable.notation.python
+constant.character.escape.python
 constant.character.escape.regexp
 constant.character.format.placeholder.other.python
-constant.character.python
 constant.character.set.regexp
 constant.character.unicode.regexp
 constant.language.python

@@ -30,7 +30,7 @@ foo           : entity.name.function.python, meta.function.python, source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.single.python
 TE            : source.python, string.quoted.docstring.single.python
-\'            : constant.character.python, source.python, string.quoted.docstring.single.python
+\'            : constant.character.escape.python, source.python, string.quoted.docstring.single.python
 ST            : source.python, string.quoted.docstring.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.single.python
               : source.python

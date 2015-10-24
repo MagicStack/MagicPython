@@ -774,7 +774,7 @@ repository:
   "escape-sequence-unicode":
     patterns: [
       {
-        name: "constant.character.python"
+        name: "constant.character.escape.python"
         match: '''
           (?x)
             \\\\ (
@@ -787,7 +787,7 @@ repository:
       }
     ]
   "escape-sequence":
-    name: "constant.character.python"
+    name: "constant.character.escape.python"
     match: '''
       (?x)
         \\\\ (

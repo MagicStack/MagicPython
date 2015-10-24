@@ -17,7 +17,7 @@ multiline "binary" string  : source.python, string.quoted.binary.multi.python
 \             : constant.language.python, source.python, string.quoted.binary.multi.python
               : source.python, string.quoted.binary.multi.python
               : source.python, string.quoted.binary.multi.python
-\xf1          : constant.character.python, source.python, string.quoted.binary.multi.python
+\xf1          : constant.character.escape.python, source.python, string.quoted.binary.multi.python
  \u1234aaaa \U1234aaaa : source.python, string.quoted.binary.multi.python
               : source.python, string.quoted.binary.multi.python
     \N{BLACK SPADE SUIT} : source.python, string.quoted.binary.multi.python

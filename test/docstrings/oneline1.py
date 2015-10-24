@@ -22,7 +22,7 @@ print('''docstring''') : source.python, string.quoted.docstring.multi.python
 """           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
 await         : keyword.control.flow.python, source.python
 """           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
-\n            : constant.character.python, source.python, string.quoted.docstring.multi.python
+\n            : constant.character.escape.python, source.python, string.quoted.docstring.multi.python
 >>> print('''docstring''') : source.python, string.quoted.docstring.multi.python
 """           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
 await         : keyword.control.flow.python, source.python

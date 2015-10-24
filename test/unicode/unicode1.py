@@ -19,7 +19,7 @@ class         : meta.class.python, source.python, storage.type.class.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.single.python
 Œ             : source.python, string.quoted.docstring.single.python
-\n            : constant.character.python, source.python, string.quoted.docstring.single.python
+\n            : constant.character.escape.python, source.python, string.quoted.docstring.single.python
 Ń             : source.python, string.quoted.docstring.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.single.python
               : meta.function.decorator.python, source.python
