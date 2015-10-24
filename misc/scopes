@@ -56,6 +56,7 @@ keyword.operator.negation.regexp
 keyword.operator.python
 keyword.operator.quantifier.regexp
 keyword.operator.unpacking.arguments.python
+keyword.operator.unpacking.parameter.python
 meta.backreference.named.regexp
 meta.backreference.regexp
 meta.character.set.regexp

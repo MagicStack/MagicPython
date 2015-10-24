@@ -689,7 +689,8 @@ repository:
 
         contentName: meta.function.lambda.parameters.python
         patterns:
-          - match: \*
+          - name: keyword.operator.unpacking.parameter.python
+            match: (\*\*|\*)
           - include: '#lambda-incomplete'
           - include: '#illegal-names'
           - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=:|$))
@@ -764,7 +765,8 @@ repository:
       '1': {name: punctuation.definition.parameters.end.python}
 
     patterns:
-      - match: \*
+      - name: keyword.operator.unpacking.parameter.python
+        match: (\*\*|\*)
       - include: '#lambda-incomplete'
       - include: '#illegal-names'
       - include: '#parameter-special'

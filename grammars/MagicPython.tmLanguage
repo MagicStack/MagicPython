@@ -1590,8 +1590,10 @@ it&apos;s not tokenized as ellipsis.
             <key>patterns</key>
             <array>
               <dict>
+                <key>name</key>
+                <string>keyword.operator.unpacking.parameter.python</string>
                 <key>match</key>
-                <string>\*</string>
+                <string>(\*\*|\*)</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1791,8 +1793,10 @@ it&apos;s not tokenized as ellipsis.
         <key>patterns</key>
         <array>
           <dict>
+            <key>name</key>
+            <string>keyword.operator.unpacking.parameter.python</string>
             <key>match</key>
-            <string>\*</string>
+            <string>(\*\*|\*)</string>
           </dict>
           <dict>
             <key>include</key>

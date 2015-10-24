@@ -34,8 +34,7 @@ True          : constant.language.python, meta.function.parameters.python, meta.
 #             : comment.line.number-sign.python, meta.function.parameters.python, meta.function.python, punctuation.definition.comment.python, source.python
  or False, whatever : comment.line.number-sign.python, meta.function.parameters.python, meta.function.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-*             : meta.function.parameters.python, meta.function.python, source.python
-*             : meta.function.parameters.python, meta.function.python, source.python
+**            : keyword.operator.unpacking.parameter.python, meta.function.parameters.python, meta.function.python, source.python
 kwargs        : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
