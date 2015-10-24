@@ -291,6 +291,9 @@ repository:
         include: "#lambda"
       }
       {
+        include: "#illegal-operator"
+      }
+      {
         include: "#operator"
       }
       {
@@ -331,9 +334,6 @@ repository:
       }
       {
         include: "#special-names"
-      }
-      {
-        include: "#illegal-operator"
       }
       {
         include: "#illegal-names"
@@ -1677,11 +1677,15 @@ repository:
   "illegal-operator":
     patterns: [
       {
-        name: "invalid.illegal.character.python"
+        name: "invalid.illegal.operator.python"
+        match: "&&|\\|\\|"
+      }
+      {
+        name: "invalid.illegal.operator.python"
         match: "[?$]"
       }
       {
-        name: "invalid.illegal.character.python"
+        name: "invalid.illegal.operator.python"
         comment: "We don't want `!` to flash when we're typing `!=`"
         match: "!\\b"
       }

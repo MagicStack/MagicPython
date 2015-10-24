@@ -454,6 +454,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#illegal-operator</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#operator</string>
           </dict>
           <dict>
@@ -507,10 +511,6 @@
           <dict>
             <key>include</key>
             <string>#special-names</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#illegal-operator</string>
           </dict>
           <dict>
             <key>include</key>
@@ -2640,13 +2640,19 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>name</key>
-            <string>invalid.illegal.character.python</string>
+            <string>invalid.illegal.operator.python</string>
+            <key>match</key>
+            <string>&amp;&amp;|\|\|</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.operator.python</string>
             <key>match</key>
             <string>[?$]</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>invalid.illegal.character.python</string>
+            <string>invalid.illegal.operator.python</string>
             <key>comment</key>
             <string>We don&apos;t want `!` to flash when we&apos;re typing `!=`</string>
             <key>match</key>

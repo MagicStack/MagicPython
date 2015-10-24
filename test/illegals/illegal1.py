@@ -18,11 +18,11 @@ f             : entity.name.function.python, meta.function.python, source.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
-$             : invalid.illegal.character.python, source.python
-?             : invalid.illegal.character.python, source.python
+$             : invalid.illegal.operator.python, source.python
+?             : invalid.illegal.operator.python, source.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
-$             : invalid.illegal.character.python, source.python
+$             : invalid.illegal.operator.python, source.python
 (             : punctuation.parenthesis.begin.python, source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 .class        : source.python, string.quoted.single.python
@@ -40,8 +40,8 @@ baz           : meta.function-call.arguments.python, meta.function-call.python, 
 b             : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-!             : invalid.illegal.character.python, source.python
+!             : invalid.illegal.operator.python, source.python
 some_ruby     : source.python
-?             : invalid.illegal.character.python, source.python
+?             : invalid.illegal.operator.python, source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  hey ;)       : comment.line.number-sign.python, source.python

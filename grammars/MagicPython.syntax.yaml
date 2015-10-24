@@ -233,6 +233,7 @@ repository:
       - include: '#regexp'
       - include: '#string'
       - include: '#lambda'
+      - include: '#illegal-operator'
       - include: '#operator'
       - include: '#curly-braces'
       - include: '#item-access'
@@ -247,7 +248,6 @@ repository:
       - include: '#magic-variable-names'
       - include: '#member-access'
       - include: '#special-names'
-      - include: '#illegal-operator'
       - include: '#illegal-names'
       - include: '#special-variables'
       - include: '#ellipsis'
@@ -1149,9 +1149,11 @@ repository:
 
   illegal-operator:
     patterns:
-      - name: invalid.illegal.character.python
+      - name: invalid.illegal.operator.python
+        match: '&&|\|\|'
+      - name: invalid.illegal.operator.python
         match: '[?$]'
-      - name: invalid.illegal.character.python
+      - name: invalid.illegal.operator.python
         comment: We don't want `!` to flash when we're typing `!=`
         match: '!\b'
 

@@ -30,12 +30,12 @@ entity.other.inherited-class.python
 invalid.deprecated.backtick.python
 invalid.deprecated.prefix.python
 invalid.illegal.annotation.python
-invalid.illegal.character.python
 invalid.illegal.dec.python
 invalid.illegal.decorator.python
 invalid.illegal.line.continuation.python
 invalid.illegal.name.python
 invalid.illegal.newline.python
+invalid.illegal.operator.python
 invalid.illegal.prefix.python
 keyword.codetag.notation.python
 keyword.control.flow.python
