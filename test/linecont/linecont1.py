@@ -5,7 +5,7 @@ def foo(): pass
 
 1             : constant.numeric.dec.python, source.python
               : source.python
-+             : keyword.operator.python, source.python
++             : keyword.operator.arithmetic.python, source.python
               : source.python
 \             : separator.continuation.line.python, source.python
               : source.python

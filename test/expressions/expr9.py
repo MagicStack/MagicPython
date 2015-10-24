@@ -3,7 +3,7 @@ yield a
 
 
 
-yield  from   : keyword.operator.python, source.python
+yield  from   : keyword.control.flow.python, source.python
  a            : source.python
-yield         : keyword.operator.python, source.python
+yield         : keyword.control.flow.python, source.python
  a            : source.python

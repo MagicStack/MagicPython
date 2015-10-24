@@ -10,7 +10,7 @@ as            : keyword.control.flow.python, source.python
               : source.python
 async         : keyword.control.flow.python, source.python
               : source.python
-await         : keyword.operator.python, source.python
+await         : keyword.control.flow.python, source.python
               : source.python
 continue      : keyword.control.flow.python, source.python
               : source.python

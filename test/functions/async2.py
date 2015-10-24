@@ -6,7 +6,7 @@ async         : keyword.control.flow.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-await         : keyword.operator.python, source.python
+await         : keyword.control.flow.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python

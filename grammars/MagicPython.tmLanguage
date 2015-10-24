@@ -699,20 +699,50 @@
       </dict>
       <key>operator</key>
       <dict>
-        <key>name</key>
-        <string>keyword.operator.python</string>
         <key>match</key>
         <string>(?x)
-    \b(?&lt;!\.)(
-        and | or | not | in | is | for | if | else | await
-        | (yield(\s+from)?)
-    )(?!\s*:)\b
+    \b(?&lt;!\.)
+      (?:
+        (and | or | not | in | is)                         (?# 1)
+        |
+        (for | if | else | await | (?:yield(?:\s+from)?))  (?# 2)
+      )
+    (?!\s*:)\b
 
-    | != | == | &gt;= | &lt;= | &lt;&lt; | &gt;&gt;
-    | &amp;&amp; | \|\| | \*\* | //
-    | &gt; | &lt; | \+ | - | \* | % | \| | &amp; | \^
-    | ~ | / | @
+    | (&lt;&lt; | &gt;&gt; | &amp; | \| | \^ | ~)                          (?# 3)
+
+    | (\*\* | \* | \+ | - | % | // | / | @)                (?# 4)
+
+    | (!= | == | &gt;= | &lt;= | &lt; | &gt;)                          (?# 5)
 </string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.logical.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.flow.python</string>
+          </dict>
+          <key>3</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.bitwise.python</string>
+          </dict>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.arithmetic.python</string>
+          </dict>
+          <key>5</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.comparison.python</string>
+          </dict>
+        </dict>
       </dict>
       <key>literal</key>
       <dict>
@@ -2235,7 +2265,12 @@ it&apos;s not tokenized as ellipsis.
       <key>function-arguments</key>
       <dict>
         <key>begin</key>
-        <string>(\()</string>
+        <string>(?x)
+  (?:
+    (\()
+    (?:\s*(\*\*|\*))?
+  )
+</string>
         <key>end</key>
         <string>(?=\))(?!\)\s*\()</string>
         <key>beginCaptures</key>
@@ -2245,16 +2280,37 @@ it&apos;s not tokenized as ellipsis.
             <key>name</key>
             <string>punctuation.definition.arguments.begin.python</string>
           </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.unpacking.arguments.python</string>
+          </dict>
         </dict>
         <key>contentName</key>
         <string>meta.function-call.arguments.python</string>
         <key>patterns</key>
         <array>
           <dict>
-            <key>name</key>
-            <string>punctuation.separator.arguments.python</string>
             <key>match</key>
-            <string>,</string>
+            <string>(?x)
+  (?:
+    (,)
+    (?:\s*(\*\*|\*))?
+  )
+</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.separator.arguments.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.unpacking.arguments.python</string>
+              </dict>
+            </dict>
           </dict>
           <dict>
             <key>include</key>

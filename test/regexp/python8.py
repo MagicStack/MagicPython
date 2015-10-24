@@ -53,9 +53,9 @@ r             : meta.function-call.arguments.python, meta.function-call.python, 
 [             : constant.other.set.regexp, meta.character.set.regexp, meta.function-call.arguments.python, meta.function-call.python, meta.named.regexp, punctuation.character.set.begin.regexp, source.python, string.regexp.quoted.multi.python
 """           : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
-+             : keyword.operator.python, meta.function-call.arguments.python, meta.function-call.python, source.python
++             : keyword.operator.arithmetic.python, meta.function-call.arguments.python, meta.function-call.python, source.python
  _LegalKeyChars  : meta.function-call.arguments.python, meta.function-call.python, source.python
-+             : keyword.operator.python, meta.function-call.arguments.python, meta.function-call.python, source.python
++             : keyword.operator.arithmetic.python, meta.function-call.arguments.python, meta.function-call.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 r             : meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.string.python, string.regexp.quoted.multi.python
 """           : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.begin.python, source.python, string.regexp.quoted.multi.python
@@ -138,9 +138,9 @@ GMT           : meta.function-call.arguments.python, meta.function-call.python, 
 [             : constant.other.set.regexp, meta.character.set.regexp, meta.function-call.arguments.python, meta.function-call.python, meta.named.regexp, punctuation.character.set.begin.regexp, source.python, string.regexp.quoted.multi.python
 """           : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
-+             : keyword.operator.python, meta.function-call.arguments.python, meta.function-call.python, source.python
++             : keyword.operator.arithmetic.python, meta.function-call.arguments.python, meta.function-call.python, source.python
  _LegalValueChars  : meta.function-call.arguments.python, meta.function-call.python, source.python
-+             : keyword.operator.python, meta.function-call.arguments.python, meta.function-call.python, source.python
++             : keyword.operator.arithmetic.python, meta.function-call.arguments.python, meta.function-call.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 r             : meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.string.python, string.regexp.quoted.multi.python
 """           : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.begin.python, source.python, string.regexp.quoted.multi.python

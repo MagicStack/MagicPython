@@ -40,10 +40,14 @@ invalid.illegal.prefix.python
 keyword.codetag.notation.python
 keyword.control.flow.python
 keyword.invalid.illegal.name.python
+keyword.operator.arithmetic.python
 keyword.operator.assignment.python
+keyword.operator.bitwise.python
+keyword.operator.comparison.python
 keyword.operator.conditional.negative.regexp
 keyword.operator.conditional.regexp
 keyword.operator.disjunction.regexp
+keyword.operator.logical.python
 keyword.operator.lookahead.negative.regexp
 keyword.operator.lookahead.regexp
 keyword.operator.lookbehind.negative.regexp
@@ -51,6 +55,7 @@ keyword.operator.lookbehind.regexp
 keyword.operator.negation.regexp
 keyword.operator.python
 keyword.operator.quantifier.regexp
+keyword.operator.unpacking.arguments.python
 meta.backreference.named.regexp
 meta.backreference.regexp
 meta.character.set.regexp

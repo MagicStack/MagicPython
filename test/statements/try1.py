@@ -15,7 +15,7 @@ try           : keyword.control.flow.python, source.python
 :             : source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
-/             : keyword.operator.python, source.python
+/             : keyword.operator.arithmetic.python, source.python
 0             : constant.numeric.dec.python, source.python
 except        : keyword.control.flow.python, source.python
  AbcError     : source.python

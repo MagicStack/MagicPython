@@ -23,7 +23,7 @@ f             : source.python, string.quoted.single.python
 %s            : constant.character.format.python, source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
               : source.python
-%             : keyword.operator.python, source.python
+%             : keyword.operator.arithmetic.python, source.python
               : source.python
 (             : punctuation.parenthesis.begin.python, source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python

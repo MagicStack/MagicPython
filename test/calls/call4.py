@@ -23,7 +23,7 @@ foo           : source.python
 .             : source.python
 None          : keyword.invalid.illegal.name.python, source.python
               : source.python
-and           : keyword.operator.python, source.python
+and           : keyword.operator.logical.python, source.python
  foo.         : source.python
 None          : constant.language.python, source.python
 .             : source.python

@@ -54,7 +54,7 @@ q             : meta.function-call.arguments.python, meta.function.decorator.pyt
 }             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.dict.end.python, source.python
 ,             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function.decorator.python, source.python
-**            : keyword.operator.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
+**            : keyword.operator.unpacking.arguments.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 kwargs        : meta.function-call.arguments.python, meta.function.decorator.python, source.python
 )             : meta.function.decorator.python, punctuation.definition.arguments.end.python, source.python
 @             : entity.name.function.decorator.python, meta.function.decorator.python, source.python

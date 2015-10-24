@@ -20,19 +20,19 @@ async         : keyword.control.flow.python, source.python
 >>>           : keyword.control.flow.python, source.python, string.quoted.docstring.multi.python
 print('''docstring''') : source.python, string.quoted.docstring.multi.python
 """           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
-await         : keyword.operator.python, source.python
+await         : keyword.control.flow.python, source.python
 """           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
 \n            : constant.character.python, source.python, string.quoted.docstring.multi.python
 >>> print('''docstring''') : source.python, string.quoted.docstring.multi.python
 """           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
-await         : keyword.operator.python, source.python
+await         : keyword.control.flow.python, source.python
 """           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
               : source.python, string.quoted.docstring.multi.python
 >>>           : keyword.control.flow.python, source.python, string.quoted.docstring.multi.python
 print('''docstring''') : source.python, string.quoted.docstring.multi.python
 """           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
-await         : keyword.operator.python, source.python
+await         : keyword.control.flow.python, source.python
 """           : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.multi.python
  1  >>> print('''docstring''') : source.python, string.quoted.docstring.multi.python
 """           : punctuation.definition.string.end.python, source.python, string.quoted.docstring.multi.python
-await         : keyword.operator.python, source.python
+await         : keyword.control.flow.python, source.python

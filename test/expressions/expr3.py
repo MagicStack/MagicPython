@@ -4,7 +4,7 @@
 
 (             : punctuation.parenthesis.begin.python, source.python
 a,            : source.python
-*             : keyword.operator.python, source.python
+*             : keyword.operator.arithmetic.python, source.python
 rest, b       : source.python
 )             : punctuation.parenthesis.end.python, source.python
               : source.python

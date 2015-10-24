@@ -7,18 +7,18 @@ arr2          : source.python
               : source.python
 [             : punctuation.definition.list.begin.python, source.python
 i             : source.python
-for           : keyword.operator.python, source.python
+for           : keyword.control.flow.python, source.python
  i            : source.python
-in            : keyword.operator.python, source.python
+in            : keyword.operator.logical.python, source.python
               : source.python
 range         : meta.function-call.python, source.python, support.function.builtin.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 7             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
               : source.python
-if            : keyword.operator.python, source.python
+if            : keyword.control.flow.python, source.python
  i            : source.python
-!=            : keyword.operator.python, source.python
+!=            : keyword.operator.comparison.python, source.python
               : source.python
 3             : constant.numeric.dec.python, source.python
 ]             : punctuation.definition.list.end.python, source.python

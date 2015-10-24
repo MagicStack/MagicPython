@@ -18,7 +18,7 @@ is            : source.python, string.quoted.single.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 ,             : source.python
 2             : constant.numeric.dec.python, source.python
-*             : keyword.operator.python, source.python
+*             : keyword.operator.arithmetic.python, source.python
 2             : constant.numeric.dec.python, source.python
 print         : meta.function-call.python, source.python, support.function.builtin.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
@@ -28,7 +28,7 @@ is            : meta.function-call.arguments.python, meta.function-call.python, 
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 2             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-*             : keyword.operator.python, meta.function-call.arguments.python, meta.function-call.python, source.python
+*             : keyword.operator.arithmetic.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 2             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
 print         : source.python, support.function.builtin.python
@@ -50,7 +50,7 @@ print         : meta.function-call.python, source.python, support.function.built
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
 print         : source.python, support.function.builtin.python
               : source.python
->>            : keyword.operator.python, source.python
+>>            : keyword.operator.bitwise.python, source.python
 sys.stderr,   : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 er            : source.python, string.quoted.single.python

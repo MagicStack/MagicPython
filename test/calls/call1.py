@@ -15,7 +15,7 @@ c             : meta.function-call.arguments.python, meta.function-call.python, 
 ]             : meta.function-call.arguments.python, meta.function-call.python, meta.item-access.python, punctuation.definition.arguments.end.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
-*             : keyword.operator.python, meta.function-call.arguments.python, meta.function-call.python, source.python
+*             : keyword.operator.unpacking.arguments.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 args          : meta.function-call.arguments.python, meta.function-call.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
@@ -32,6 +32,6 @@ q             : meta.function-call.arguments.python, meta.function-call.python, 
 }             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.dict.end.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
-**            : keyword.operator.python, meta.function-call.arguments.python, meta.function-call.python, source.python
+**            : keyword.operator.unpacking.arguments.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 kwargs        : meta.function-call.arguments.python, meta.function-call.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python

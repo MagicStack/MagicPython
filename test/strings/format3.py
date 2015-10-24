@@ -12,7 +12,7 @@ a             : source.python
 %i            : constant.character.format.python, source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
               : source.python
-%             : keyword.operator.python, source.python
+%             : keyword.operator.arithmetic.python, source.python
               : source.python
 42            : constant.numeric.dec.python, source.python
 a             : source.python

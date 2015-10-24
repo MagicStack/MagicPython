@@ -26,7 +26,7 @@ async         : keyword.control.flow.python, source.python
               : source.python
 for           : keyword.control.flow.python, source.python
  a, b, c      : source.python
-in            : keyword.operator.python, source.python
+in            : keyword.operator.logical.python, source.python
  b:           : source.python
               : source.python
 async         : keyword.control.flow.python, source.python
@@ -36,7 +36,7 @@ with          : keyword.control.flow.python, source.python
 as            : keyword.control.flow.python, source.python
  d, c:        : source.python
               : source.python
-await         : keyword.operator.python, source.python
+await         : keyword.control.flow.python, source.python
               : source.python
 func          : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python

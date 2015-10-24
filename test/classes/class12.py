@@ -61,7 +61,7 @@ cls           : meta.function-call.python, source.python, variable.language.spec
               : source.python
 cls           : source.python, variable.language.special.cls.python
               : source.python
-+             : keyword.operator.python, source.python
++             : keyword.operator.arithmetic.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
         a     : source.python
