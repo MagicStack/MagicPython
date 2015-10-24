@@ -1304,7 +1304,7 @@
       <key>string-formatting</key>
       <dict>
         <key>name</key>
-        <string>constant.character.format.python</string>
+        <string>constant.character.format.placeholder.other.python</string>
         <key>match</key>
         <string>(?x)
   % (\([\w\s]*\))?
@@ -1320,7 +1320,7 @@
         <array>
           <dict>
             <key>name</key>
-            <string>constant.character.format.python</string>
+            <string>constant.character.format.placeholder.other.python</string>
             <key>match</key>
             <string>(?x)
   (?:
@@ -1350,7 +1350,7 @@
           </dict>
           <dict>
             <key>name</key>
-            <string>constant.character.format.python</string>
+            <string>constant.character.format.placeholder.other.python</string>
             <key>begin</key>
             <string>(?x)
     \{

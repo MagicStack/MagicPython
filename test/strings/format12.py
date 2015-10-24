@@ -9,8 +9,8 @@ R             : source.python, storage.type.string.python, string.quoted.raw.sin
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.raw.single.python
 $\frac        : source.python, string.quoted.raw.single.python
 {m_{j \       : source.python, string.quoted.raw.single.python
-%s            : constant.character.format.python, source.python, string.quoted.raw.single.python
+%s            : constant.character.format.placeholder.other.python, source.python, string.quoted.raw.single.python
 rightarrow i}(\mathrm{ : source.python, string.quoted.raw.single.python
-%s            : constant.character.format.python, source.python, string.quoted.raw.single.python
+%s            : constant.character.format.placeholder.other.python, source.python, string.quoted.raw.single.python
 good})}{\su%m{m_{j \rightarrow i}}}$ : source.python, string.quoted.raw.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.raw.single.python

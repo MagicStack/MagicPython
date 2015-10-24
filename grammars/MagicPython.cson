@@ -801,7 +801,7 @@ repository:
     name: "constant.language.python"
     match: "\\\\$"
   "string-formatting":
-    name: "constant.character.format.python"
+    name: "constant.character.format.placeholder.other.python"
     match: '''
       (?x)
         % (\\([\\w\\s]*\\))?
@@ -814,7 +814,7 @@ repository:
   "string-brace-formatting":
     patterns: [
       {
-        name: "constant.character.format.python"
+        name: "constant.character.format.placeholder.other.python"
         match: '''
           (?x)
             (?:
@@ -836,7 +836,7 @@ repository:
             name: "support.other.format.python"
       }
       {
-        name: "constant.character.format.python"
+        name: "constant.character.format.placeholder.other.python"
         begin: '''
           (?x)
               \\{

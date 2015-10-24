@@ -18,9 +18,9 @@ a             : source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 12            : source.python, string.quoted.single.python
-% o           : constant.character.format.python, source.python, string.quoted.single.python
+% o           : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
 f             : source.python, string.quoted.single.python
-%s            : constant.character.format.python, source.python, string.quoted.single.python
+%s            : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
               : source.python
 %             : keyword.operator.arithmetic.python, source.python

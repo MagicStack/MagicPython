@@ -569,7 +569,7 @@ repository:
     match: \\$
 
   string-formatting:
-    name: constant.character.format.python
+    name: constant.character.format.placeholder.other.python
     match: |
       (?x)
         % (\([\w\s]*\))?
@@ -580,7 +580,7 @@ repository:
 
   string-brace-formatting:
     patterns:
-      - name: constant.character.format.python
+      - name: constant.character.format.placeholder.other.python
         match: |
           (?x)
             (?:
@@ -596,7 +596,7 @@ repository:
         captures:
           '2': {name: storage.type.format.python}
           '3': {name: support.other.format.python}
-      - name: constant.character.format.python
+      - name: constant.character.format.placeholder.other.python
         begin: |
           (?x)
               \{

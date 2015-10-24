@@ -28,6 +28,6 @@ qqq{0:{widt   : source.python, string.quoted.single.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 h}            : source.python, string.quoted.single.python
-{base}        : constant.character.format.python, source.python, string.quoted.single.python
+{base}        : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
 }www          : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
