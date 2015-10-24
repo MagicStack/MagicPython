@@ -934,6 +934,10 @@ repository:
         name: "punctuation.definition.inheritance.end.python"
     patterns: [
       {
+        name: "keyword.operator.unpacking.arguments.python"
+        match: "(\\*\\*|\\*)"
+      }
+      {
         name: "punctuation.separator.inheritance.python"
         match: ","
       }
