@@ -870,7 +870,7 @@ repository:
     '''
     match: '''
       (?x)
-        \\s* (from) (\\s*\\.+\\s*)
+        \\s* \\b(from)\\b (\\s*\\.+\\s*)
       
     '''
     captures:

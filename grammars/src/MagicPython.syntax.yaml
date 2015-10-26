@@ -618,7 +618,7 @@ repository:
       it's not tokenized as ellipsis.
     match: |
       (?x)
-        \s* (from) (\s*\.+\s*)
+        \s* \b(from)\b (\s*\.+\s*)
     captures:
       '1': {name: keyword.control.flow.python}
 

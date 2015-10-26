@@ -1393,7 +1393,7 @@ it&apos;s not tokenized as ellipsis.
 </string>
         <key>match</key>
         <string>(?x)
-  \s* (from) (\s*\.+\s*)
+  \s* \b(from)\b (\s*\.+\s*)
 </string>
         <key>captures</key>
         <dict>
