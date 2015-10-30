@@ -1,4 +1,4 @@
-# Magic Python [![Build Status](https://travis-ci.org/MagicStack/MagicPython.svg?branch=master)](https://travis-ci.org/MagicStack/MagicPython) [https://atom.io/packages/magicpython](https://img.shields.io/apm/dm/magicpython.svg?label=Atom+Downloads)
+# Magic Python [![Build Status](https://travis-ci.org/MagicStack/MagicPython.svg?branch=master)](https://travis-ci.org/MagicStack/MagicPython) [![](https://img.shields.io/apm/dm/magicpython.svg?label=Atom)](https://atom.io/packages/magicpython) [![](https://img.shields.io/badge/Sublime%20Text-%3E1k-red.svg)](https://packagecontrol.io/packages/MagicPython)
 
 This is a package with preferences and syntax highlighter for cutting edge
 Python 3, although Python 2 is well supported, too.  The syntax is compatible
