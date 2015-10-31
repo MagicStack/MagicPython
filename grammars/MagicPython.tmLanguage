@@ -2562,7 +2562,7 @@ indirectly through syntactic constructs
   (\.)?\b(
     __(?:
       all | bases | class | debug | dict | doc | file | members
-      | metaclass | methods | module | mro | name | slots
+      | metaclass | methods | module | mro | name | qualname | slots
       | subclasses | version | weakref
     )__
   )\b

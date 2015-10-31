@@ -15,6 +15,7 @@ some.__slots__
 some.__subclasses__
 some.__version__
 some.__weakref__
+some.__qualname__
 some.__notspecial__
 
 
@@ -81,6 +82,9 @@ __version__   : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __weakref__   : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__qualname__  : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __notspecial__ : source.python
