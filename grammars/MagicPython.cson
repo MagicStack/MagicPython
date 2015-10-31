@@ -1627,9 +1627,9 @@ repository:
       (?x)
         (\\.)?\\b(
           __(?:
-            all | bases | class | debug | dict | doc | file | members
+            all | bases | class | code | debug | dict | doc | file | members
             | metaclass | methods | module | mro | name | qualname | slots
-            | subclasses | version | weakref
+            | subclasses | version | weakref | wrapped
           )__
         )\\b
       

@@ -16,6 +16,8 @@ some.__subclasses__
 some.__version__
 some.__weakref__
 some.__qualname__
+some.__code__
+some.__wrapped__
 some.__notspecial__
 
 
@@ -85,6 +87,12 @@ __weakref__   : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __qualname__  : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__code__      : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__wrapped__   : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __notspecial__ : source.python
