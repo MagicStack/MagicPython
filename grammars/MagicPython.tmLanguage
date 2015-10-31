@@ -2332,7 +2332,7 @@ it&apos;s not tokenized as ellipsis.
           </dict>
           <dict>
             <key>match</key>
-            <string>\b([[:alpha:]_]\w*)\s*(=)</string>
+            <string>\b([[:alpha:]_]\w*)\s*(=)(?!=)</string>
             <key>captures</key>
             <dict>
               <key>1</key>

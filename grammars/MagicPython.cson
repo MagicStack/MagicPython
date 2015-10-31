@@ -1452,7 +1452,7 @@ repository:
         include: "#illegal-names"
       }
       {
-        match: "\\b([[:alpha:]_]\\w*)\\s*(=)"
+        match: "\\b([[:alpha:]_]\\w*)\\s*(=)(?!=)"
         captures:
           "1":
             name: "variable.parameter.function-call.python"
