@@ -1515,7 +1515,7 @@ repository:
   "builtin-exceptions":
     name: "support.type.exception.python"
     match: '''
-      (?x) \\b(
+      (?x) (?<!\\.) \\b(
         (
           Arithmetic | Assertion | Attribute | Buffer | BlockingIO
           | BrokenPipe | ChildProcess
@@ -1546,7 +1546,7 @@ repository:
         name: "support.function.builtin.python"
         match: '''
           (?x)
-            (?<!\\.)\\b(
+            (?<!\\.) \\b(
               __import__ | abs | all | any | apply | ascii | bin | callable
               | chr | compile | copyright | credits | delattr | dir | divmod
               | enumerate | eval | exec | exit | filter | format | getattr
@@ -1563,7 +1563,7 @@ repository:
         name: "variable.legacy.builtin.python"
         match: '''
           (?x)
-            (?<!\\.)\\b(
+            (?<!\\.) \\b(
               file | reduce | intern | raw_input | unicode | cmp | basestring
               | execfile | long | xrange
             )\\b
@@ -1575,7 +1575,7 @@ repository:
     name: "support.type.python"
     match: '''
       (?x)
-        (?<!\\.)\\b(
+        (?<!\\.) \\b(
           bool | bytearray | bytes | classmethod | complex | dict
           | float | frozenset | int | list | object | property
           | set | slice | staticmethod | str | tuple | type

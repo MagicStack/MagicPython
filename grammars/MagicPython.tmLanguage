@@ -2437,7 +2437,7 @@ it&apos;s not tokenized as ellipsis.
         <key>name</key>
         <string>support.type.exception.python</string>
         <key>match</key>
-        <string>(?x) \b(
+        <string>(?x) (?&lt;!\.) \b(
   (
     Arithmetic | Assertion | Attribute | Buffer | BlockingIO
     | BrokenPipe | ChildProcess
@@ -2471,7 +2471,7 @@ it&apos;s not tokenized as ellipsis.
             <string>support.function.builtin.python</string>
             <key>match</key>
             <string>(?x)
-  (?&lt;!\.)\b(
+  (?&lt;!\.) \b(
     __import__ | abs | all | any | apply | ascii | bin | callable
     | chr | compile | copyright | credits | delattr | dir | divmod
     | enumerate | eval | exec | exit | filter | format | getattr
@@ -2488,7 +2488,7 @@ it&apos;s not tokenized as ellipsis.
             <string>variable.legacy.builtin.python</string>
             <key>match</key>
             <string>(?x)
-  (?&lt;!\.)\b(
+  (?&lt;!\.) \b(
     file | reduce | intern | raw_input | unicode | cmp | basestring
     | execfile | long | xrange
   )\b
@@ -2502,7 +2502,7 @@ it&apos;s not tokenized as ellipsis.
         <string>support.type.python</string>
         <key>match</key>
         <string>(?x)
-  (?&lt;!\.)\b(
+  (?&lt;!\.) \b(
     bool | bytearray | bytes | classmethod | complex | dict
     | float | frozenset | int | list | object | property
     | set | slice | staticmethod | str | tuple | type
