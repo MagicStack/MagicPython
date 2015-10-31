@@ -1706,7 +1706,7 @@ it&apos;s not tokenized as ellipsis.
         <key>begin</key>
         <string>(?x)
   \s*
-  (?:(async) \s+)? (def)\s+
+  (?:\b(async) \s+)? \b(def)\s+
     (?=
       [[:alpha:]_][[:word:]]* \s* \(
     )

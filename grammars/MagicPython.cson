@@ -1058,7 +1058,7 @@ repository:
     begin: '''
       (?x)
         \\s*
-        (?:(async) \\s+)? (def)\\s+
+        (?:\\b(async) \\s+)? \\b(def)\\s+
           (?=
             [[:alpha:]_][[:word:]]* \\s* \\(
           )
