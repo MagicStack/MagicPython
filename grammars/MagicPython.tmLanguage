@@ -2652,7 +2652,7 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>invalid.illegal.operator.python</string>
             <key>match</key>
-            <string>&amp;&amp;|\|\|</string>
+            <string>&amp;&amp;|\|\||--|\+\+</string>
           </dict>
           <dict>
             <key>name</key>
