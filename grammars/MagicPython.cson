@@ -45,6 +45,16 @@ repository:
       {
         include: "#docstring-statement"
       }
+      {
+        include: "#semicolon"
+      }
+    ]
+  semicolon:
+    patterns: [
+      {
+        name: "invalid.deprecated.semicolon.python"
+        match: "\\;$"
+      }
     ]
   comments:
     patterns: [

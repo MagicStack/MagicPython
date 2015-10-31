@@ -66,6 +66,22 @@
             <key>include</key>
             <string>#docstring-statement</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#semicolon</string>
+          </dict>
+        </array>
+      </dict>
+      <key>semicolon</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>invalid.deprecated.semicolon.python</string>
+            <key>match</key>
+            <string>\;$</string>
+          </dict>
         </array>
       </dict>
       <key>comments</key>
