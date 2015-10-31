@@ -2,6 +2,9 @@ __all__ = ['bar', 'baz']
 some.__bases__
 some.__class__
 assert __debug__
+__builtins__
+__builtins__.len
+print(__builtins__)
 some.__dict__
 some.__doc__
 some.__file__
@@ -50,6 +53,15 @@ __class__     : source.python, support.variable.magic.python
 assert        : keyword.control.flow.python, source.python
               : source.python
 __debug__     : source.python, support.variable.magic.python
+__builtins__  : source.python, support.variable.magic.python
+__builtins__  : source.python, support.variable.magic.python
+.             : source.python
+len           : source.python
+              : source.python
+print         : meta.function-call.python, source.python, support.function.builtin.python
+(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+__builtins__  : meta.function-call.arguments.python, meta.function-call.python, source.python, support.variable.magic.python
+)             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
 some          : source.python
 .             : source.python
 __dict__      : source.python, support.variable.magic.python

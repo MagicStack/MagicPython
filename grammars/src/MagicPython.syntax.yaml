@@ -1107,7 +1107,7 @@ repository:
       (?x)
         (\.)?\b(
           __(?:
-            all | bases | class | code | debug | defaults | dict
+            all | bases | builtins | class | code | debug | defaults | dict
             | doc | file | func | kwdefaults | members
             | metaclass | methods | module | mro | name
             | qualname | self | signature | slots | subclasses
