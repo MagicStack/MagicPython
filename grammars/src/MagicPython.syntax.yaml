@@ -1108,8 +1108,8 @@ repository:
         (\.)?\b(
           __(?:
             all | bases | class | code | debug | dict | doc | file | members
-            | metaclass | methods | module | mro | name | qualname | slots
-            | subclasses | version | weakref | wrapped
+            | metaclass | methods | module | mro | name | qualname | signature
+            | slots | subclasses | version | weakref | wrapped
           )__
         )\b
     captures:
