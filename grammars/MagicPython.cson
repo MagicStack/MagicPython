@@ -1627,9 +1627,11 @@ repository:
       (?x)
         (\\.)?\\b(
           __(?:
-            all | bases | class | code | debug | dict | doc | file | members
-            | metaclass | methods | module | mro | name | qualname | signature
-            | slots | subclasses | version | weakref | wrapped
+            all | bases | class | code | debug | defaults | dict
+            | doc | file | func | kwdefaults | members
+            | metaclass | methods | module | mro | name
+            | qualname | self | signature | slots | subclasses
+            | version | weakref | wrapped
           )__
         )\\b
       

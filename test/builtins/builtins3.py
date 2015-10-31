@@ -19,6 +19,10 @@ some.__qualname__
 some.__code__
 some.__wrapped__
 some.__signature__
+some.__defaults__
+some.__func__
+some.__self__
+some.__kwdefaults__
 some.__notspecial__
 
 
@@ -97,6 +101,18 @@ __wrapped__   : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __signature__ : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__defaults__  : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__func__      : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__self__      : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__kwdefaults__ : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __notspecial__ : source.python
