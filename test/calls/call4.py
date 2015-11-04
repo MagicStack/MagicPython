@@ -21,7 +21,7 @@ sam           : meta.function-call.arguments.python, meta.function-call.python, 
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
 foo           : source.python
 .             : source.python
-None          : keyword.invalid.illegal.name.python, source.python
+None          : keyword.illegal.name.python, source.python
               : source.python
 and           : keyword.operator.logical.python, source.python
  foo.         : source.python

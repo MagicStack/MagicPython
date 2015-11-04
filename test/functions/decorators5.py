@@ -23,7 +23,7 @@ b             : entity.name.function.decorator.python, meta.function.decorator.p
               : meta.function.decorator.python, source.python
 c             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
-None          : keyword.invalid.illegal.name.python, meta.function.decorator.python, source.python
+None          : keyword.illegal.name.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 z             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
               : meta.function.decorator.python, source.python

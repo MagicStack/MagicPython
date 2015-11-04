@@ -40,7 +40,7 @@ invalid.illegal.operator.python
 invalid.illegal.prefix.python
 keyword.codetag.notation.python
 keyword.control.flow.python
-keyword.invalid.illegal.name.python
+keyword.illegal.name.python
 keyword.operator.arithmetic.python
 keyword.operator.assignment.python
 keyword.operator.bitwise.python

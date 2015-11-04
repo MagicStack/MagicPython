@@ -1171,7 +1171,7 @@ repository:
 
   illegal-object-name:
     comment: It's illegal to name class or function "True"
-    name: keyword.invalid.illegal.name.python
+    name: keyword.illegal.name.python
     match: \b(True|False|None)\b
 
   illegal-anno:
