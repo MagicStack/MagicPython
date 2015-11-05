@@ -432,10 +432,8 @@
           </dict>
         </array>
       </dict>
-      <key>expression</key>
+      <key>expression-base</key>
       <dict>
-        <key>name</key>
-        <string>meta.expression.python</string>
         <key>comment</key>
         <string>All valid Python expressions</string>
         <key>patterns</key>
@@ -494,10 +492,6 @@
           </dict>
           <dict>
             <key>include</key>
-            <string>#line-continuation</string>
-          </dict>
-          <dict>
-            <key>include</key>
             <string>#function-call</string>
           </dict>
           <dict>
@@ -514,15 +508,7 @@
           </dict>
           <dict>
             <key>include</key>
-            <string>#magic-function-names</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#magic-variable-names</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#member-access</string>
+            <string>#magic-names</string>
           </dict>
           <dict>
             <key>include</key>
@@ -538,7 +524,75 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#line-continuation</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#ellipsis</string>
+          </dict>
+        </array>
+      </dict>
+      <key>expression</key>
+      <dict>
+        <key>comment</key>
+        <string>All valid Python expressions</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#expression-base</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#member-access</string>
+          </dict>
+        </array>
+      </dict>
+      <key>member-access</key>
+      <dict>
+        <key>begin</key>
+        <string>\.\s*(?!\.)</string>
+        <key>end</key>
+        <string>(?&lt;=\S)(?=\W)|$</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#function-call</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#member-access-base</string>
+          </dict>
+        </array>
+      </dict>
+      <key>member-access-base</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#magic-names</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#illegal-names</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#illegal-object-name</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#special-names</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#line-continuation</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#item-access</string>
           </dict>
         </array>
       </dict>
@@ -1534,11 +1588,7 @@ it&apos;s not tokenized as ellipsis.
           </dict>
           <dict>
             <key>include</key>
-            <string>#call-wrapper-inheritance</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#expression</string>
+            <string>#expression-class</string>
           </dict>
           <dict>
             <key>name</key>
@@ -1547,10 +1597,63 @@ it&apos;s not tokenized as ellipsis.
             <string>\bmetaclass\b</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#inheritance-identifier</string>
+          </dict>
+        </array>
+      </dict>
+      <key>inheritance-identifier</key>
+      <dict>
+        <key>match</key>
+        <string>(?x)
+  \b ([[:alpha:]_]\w*) \b
+</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
             <key>name</key>
             <string>entity.other.inherited-class.python</string>
-            <key>match</key>
-            <string>[[:alnum:]_]+</string>
+          </dict>
+        </dict>
+      </dict>
+      <key>expression-class</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#call-wrapper-inheritance</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression-base</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#member-access-class</string>
+          </dict>
+        </array>
+      </dict>
+      <key>member-access-class</key>
+      <dict>
+        <key>begin</key>
+        <string>\.\s*(?!\.)</string>
+        <key>end</key>
+        <string>(?&lt;=\S)(?=\W)|$</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#call-wrapper-inheritance</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#member-access-base</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#inheritance-identifier</string>
           </dict>
         </array>
       </dict>
@@ -1827,6 +1930,10 @@ it&apos;s not tokenized as ellipsis.
           <dict>
             <key>include</key>
             <string>#illegal-names</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#illegal-object-name</string>
           </dict>
           <dict>
             <key>include</key>
@@ -2214,21 +2321,11 @@ it&apos;s not tokenized as ellipsis.
           </dict>
           <dict>
             <key>include</key>
-            <string>#builtin-callables</string>
+            <string>#builtin-possible-callables</string>
           </dict>
           <dict>
-            <key>match</key>
-            <string>(?x)
-  \b ([[:alpha:]_]\w*) \b
-</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>entity.other.inherited-class.python</string>
-              </dict>
-            </dict>
+            <key>include</key>
+            <string>#inheritance-identifier</string>
           </dict>
         </array>
       </dict>
@@ -2402,6 +2499,10 @@ it&apos;s not tokenized as ellipsis.
           </dict>
           <dict>
             <key>include</key>
+            <string>#illegal-object-name</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#builtin-exceptions</string>
           </dict>
           <dict>
@@ -2424,11 +2525,7 @@ it&apos;s not tokenized as ellipsis.
           </dict>
           <dict>
             <key>include</key>
-            <string>#magic-function-names</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#magic-variable-names</string>
+            <string>#magic-names</string>
           </dict>
         </array>
       </dict>
@@ -2559,7 +2656,7 @@ indirectly through syntactic constructs
         <string>magic variables which a class/module may have.</string>
         <key>match</key>
         <string>(?x)
-  (\.)?\b(
+  \b(
     __(?:
       all | bases | builtins | class | code | debug | defaults | dict
       | doc | file | func | kwdefaults | members
@@ -2571,12 +2668,26 @@ indirectly through syntactic constructs
 </string>
         <key>captures</key>
         <dict>
-          <key>2</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>support.variable.magic.python</string>
           </dict>
         </dict>
+      </dict>
+      <key>magic-names</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#magic-function-names</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#magic-variable-names</string>
+          </dict>
+        </array>
       </dict>
       <key>illegal-names</key>
       <dict>
@@ -2614,30 +2725,6 @@ indirectly through syntactic constructs
             <string>variable.language.special.cls.python</string>
           </dict>
         </dict>
-      </dict>
-      <key>member-access</key>
-      <dict>
-        <key>comment</key>
-        <string>this rule exists to highlight errors</string>
-        <key>begin</key>
-        <string>\.(?=\s*\w+\s)</string>
-        <key>end</key>
-        <string>\s</string>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>include</key>
-            <string>#illegal-names</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#illegal-object-name</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#special-names</string>
-          </dict>
-        </array>
       </dict>
       <key>ellipsis</key>
       <dict>

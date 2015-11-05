@@ -57,7 +57,6 @@ __builtins__  : source.python, support.variable.magic.python
 __builtins__  : source.python, support.variable.magic.python
 .             : source.python
 len           : source.python
-              : source.python
 print         : meta.function-call.python, source.python, support.function.builtin.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 __builtins__  : meta.function-call.arguments.python, meta.function-call.python, source.python, support.variable.magic.python
@@ -128,4 +127,3 @@ __kwdefaults__ : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __notspecial__ : source.python
-              : source.python

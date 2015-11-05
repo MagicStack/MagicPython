@@ -60,7 +60,9 @@ self          : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
-        a.self : source.python
+        a     : source.python
+.             : source.python
+self          : source.python
 .             : source.python
 bar           : source.python
               : source.python

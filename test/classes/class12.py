@@ -71,7 +71,9 @@ cls           : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
-        a.cls : source.python
+        a     : source.python
+.             : source.python
+cls           : source.python
 .             : source.python
 __name__      : source.python, support.variable.magic.python
               : source.python

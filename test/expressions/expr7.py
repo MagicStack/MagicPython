@@ -15,4 +15,3 @@ False         : keyword.illegal.name.python, source.python
  d            : source.python
 .             : source.python
 None          : keyword.illegal.name.python, source.python
-              : source.python

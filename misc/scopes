@@ -63,7 +63,6 @@ meta.backreference.regexp
 meta.character.set.regexp
 meta.class.inheritance.python
 meta.class.python
-meta.expression.python
 meta.function-call.generic.python
 meta.function-call.python
 meta.function.decorator.python

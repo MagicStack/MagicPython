@@ -14,8 +14,7 @@ PROTOCOL_v2   : constant.other.caps.python, source.python
 QQQ           : constant.other.caps.python, source.python
 .             : source.python
 bar           : source.python
-              : source.python
-baz           : source.python
+ baz          : source.python
 .             : source.python
 AA_a          : constant.other.caps.python, source.python
               : source.python

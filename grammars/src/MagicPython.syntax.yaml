@@ -228,8 +228,7 @@ repository:
       - name: storage.type.class.python
         match: \b(?<!\.)(class)\b
 
-  expression:
-    name: meta.expression.python
+  expression-base:
     comment: All valid Python expressions
     patterns:
       - include: '#backticks'
@@ -245,18 +244,38 @@ repository:
       - include: '#item-access'
       - include: '#list'
       - include: '#round-braces'
-      - include: '#line-continuation'
       - include: '#function-call'
       - include: '#builtin-functions'
       - include: '#builtin-types'
       - include: '#builtin-exceptions'
-      - include: '#magic-function-names'
-      - include: '#magic-variable-names'
-      - include: '#member-access'
+      - include: '#magic-names'
       - include: '#special-names'
       - include: '#illegal-names'
       - include: '#special-variables'
+      - include: '#line-continuation'
       - include: '#ellipsis'
+
+  expression:
+    comment: All valid Python expressions
+    patterns:
+      - include: '#expression-base'
+      - include: '#member-access'
+
+  member-access:
+    begin: \.\s*(?!\.)
+    end: (?<=\S)(?=\W)|$
+    patterns:
+      - include: '#function-call'
+      - include: '#member-access-base'
+
+  member-access-base:
+    patterns:
+      - include: '#magic-names'
+      - include: '#illegal-names'
+      - include: '#illegal-object-name'
+      - include: '#special-names'
+      - include: '#line-continuation'
+      - include: '#item-access'
 
   special-names:
     name: constant.other.caps.python
@@ -670,12 +689,31 @@ repository:
         match: ','
       - name: keyword.operator.assignment.python
         match: \=
-      - include: '#call-wrapper-inheritance'
-      - include: '#expression'
+      - include: '#expression-class'
       - name: support.type.metaclass.python
         match: \bmetaclass\b
-      - name: entity.other.inherited-class.python
-        match: '[[:alnum:]_]+'
+      - include: '#inheritance-identifier'
+
+  inheritance-identifier:
+    match: |
+      (?x)
+        \b ([[:alpha:]_]\w*) \b
+    captures:
+      '1': {name: entity.other.inherited-class.python}
+
+  expression-class:
+    patterns:
+      - include: '#call-wrapper-inheritance'
+      - include: '#expression-base'
+      - include: '#member-access-class'
+
+  member-access-class:
+    begin: \.\s*(?!\.)
+    end: (?<=\S)(?=\W)|$
+    patterns:
+      - include: '#call-wrapper-inheritance'
+      - include: '#member-access-base'
+      - include: '#inheritance-identifier'
 
   lambda:
     patterns:
@@ -777,6 +815,7 @@ repository:
         match: (\*\*|\*)
       - include: '#lambda-incomplete'
       - include: '#illegal-names'
+      - include: '#illegal-object-name'
       - include: '#parameter-special'
       - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=\)))
         captures:
@@ -924,12 +963,8 @@ repository:
   inheritance-name:
     patterns:
       - include: '#lambda-incomplete'
-      - include: '#builtin-callables'
-      - match: |
-          (?x)
-            \b ([[:alpha:]_]\w*) \b
-        captures:
-          '1': {name: entity.other.inherited-class.python}
+      - include: '#builtin-possible-callables'
+      - include: '#inheritance-identifier'
 
   function-call:
     name: meta.function-call.python
@@ -995,6 +1030,7 @@ repository:
   builtin-callables:
     patterns:
       - include: '#illegal-names'
+      - include: '#illegal-object-name'
       - include: '#builtin-exceptions'
       - include: '#builtin-functions'
       - include: '#builtin-types'
@@ -1002,8 +1038,7 @@ repository:
   builtin-possible-callables:
     patterns:
       - include: '#builtin-callables'
-      - include: '#magic-function-names'
-      - include: '#magic-variable-names'
+      - include: '#magic-names'
 
   builtin-exceptions:
     name: support.type.exception.python
@@ -1105,7 +1140,7 @@ repository:
     comment: magic variables which a class/module may have.
     match: |
       (?x)
-        (\.)?\b(
+        \b(
           __(?:
             all | bases | builtins | class | code | debug | defaults | dict
             | doc | file | func | kwdefaults | members
@@ -1115,7 +1150,12 @@ repository:
           )__
         )\b
     captures:
-      '2': {name: support.variable.magic.python}
+      '1': {name: support.variable.magic.python}
+
+  magic-names:
+    patterns:
+      - include: '#magic-function-names'
+      - include: '#magic-variable-names'
 
   illegal-names:
     name: keyword.control.flow.python
@@ -1138,15 +1178,6 @@ repository:
     captures:
       '1': {name: variable.language.special.self.python}
       '2': {name: variable.language.special.cls.python}
-
-  member-access:
-    comment: this rule exists to highlight errors
-    begin: \.(?=\s*\w+\s)
-    end: \s
-    patterns:
-      - include: '#illegal-names'
-      - include: '#illegal-object-name'
-      - include: '#special-names'
 
   ellipsis:
     name: constant.other.ellipsis.python
