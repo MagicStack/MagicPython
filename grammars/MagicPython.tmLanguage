@@ -5068,7 +5068,11 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
-            <string>#string-single-bad-brace-formatting-raw</string>
+            <string>#string-single-bad-brace1-formatting-raw</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-single-bad-brace2-formatting-raw</string>
           </dict>
           <dict>
             <key>include</key>
@@ -5203,7 +5207,11 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
-            <string>#string-single-bad-brace-formatting-unicode</string>
+            <string>#string-single-bad-brace1-formatting-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-single-bad-brace2-formatting-unicode</string>
           </dict>
           <dict>
             <key>include</key>
@@ -5211,7 +5219,57 @@ indirectly through syntactic constructs
           </dict>
         </array>
       </dict>
-      <key>string-single-bad-brace-formatting-unicode</key>
+      <key>string-single-bad-brace1-formatting-unicode</key>
+      <dict>
+        <key>comment</key>
+        <string>template using {% ... %}</string>
+        <key>begin</key>
+        <string>(?x)
+    (?= \{%
+          ( .*? (?!([&apos;&quot;])|((?&lt;!\\)\n)) )
+        %\}
+    )
+</string>
+        <key>end</key>
+        <string>(?=([&apos;&quot;])|((?&lt;!\\)\n))</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#escape-sequence-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-sequence</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-line-continuation</string>
+          </dict>
+        </array>
+      </dict>
+      <key>string-single-bad-brace1-formatting-raw</key>
+      <dict>
+        <key>comment</key>
+        <string>template using {% ... %}</string>
+        <key>begin</key>
+        <string>(?x)
+    (?= \{%
+          ( .*? (?!([&apos;&quot;])|((?&lt;!\\)\n)) )
+        %\}
+    )
+</string>
+        <key>end</key>
+        <string>(?=([&apos;&quot;])|((?&lt;!\\)\n))</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#string-consume-escape</string>
+          </dict>
+        </array>
+      </dict>
+      <key>string-single-bad-brace2-formatting-unicode</key>
       <dict>
         <key>comment</key>
         <string>odd format or format-like syntax</string>
@@ -5239,7 +5297,7 @@ indirectly through syntactic constructs
           </dict>
         </array>
       </dict>
-      <key>string-single-bad-brace-formatting-raw</key>
+      <key>string-single-bad-brace2-formatting-raw</key>
       <dict>
         <key>comment</key>
         <string>odd format or format-like syntax</string>
@@ -5310,7 +5368,11 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
-            <string>#string-multi-bad-brace-formatting-raw</string>
+            <string>#string-multi-bad-brace1-formatting-raw</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-multi-bad-brace2-formatting-raw</string>
           </dict>
           <dict>
             <key>include</key>
@@ -5445,7 +5507,11 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
-            <string>#string-multi-bad-brace-formatting-unicode</string>
+            <string>#string-multi-bad-brace1-formatting-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-multi-bad-brace2-formatting-unicode</string>
           </dict>
           <dict>
             <key>include</key>
@@ -5453,7 +5519,57 @@ indirectly through syntactic constructs
           </dict>
         </array>
       </dict>
-      <key>string-multi-bad-brace-formatting-unicode</key>
+      <key>string-multi-bad-brace1-formatting-unicode</key>
+      <dict>
+        <key>comment</key>
+        <string>template using {% ... %}</string>
+        <key>begin</key>
+        <string>(?x)
+    (?= \{%
+          ( .*? (?!&apos;&apos;&apos;|&quot;&quot;&quot;) )
+        %\}
+    )
+</string>
+        <key>end</key>
+        <string>(?=&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#escape-sequence-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-sequence</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-line-continuation</string>
+          </dict>
+        </array>
+      </dict>
+      <key>string-multi-bad-brace1-formatting-raw</key>
+      <dict>
+        <key>comment</key>
+        <string>template using {% ... %}</string>
+        <key>begin</key>
+        <string>(?x)
+    (?= \{%
+          ( .*? (?!&apos;&apos;&apos;|&quot;&quot;&quot;) )
+        %\}
+    )
+</string>
+        <key>end</key>
+        <string>(?=&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#string-consume-escape</string>
+          </dict>
+        </array>
+      </dict>
+      <key>string-multi-bad-brace2-formatting-unicode</key>
       <dict>
         <key>comment</key>
         <string>odd format or format-like syntax</string>
@@ -5481,7 +5597,7 @@ indirectly through syntactic constructs
           </dict>
         </array>
       </dict>
-      <key>string-multi-bad-brace-formatting-raw</key>
+      <key>string-multi-bad-brace2-formatting-raw</key>
       <dict>
         <key>comment</key>
         <string>odd format or format-like syntax</string>

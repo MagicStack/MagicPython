@@ -2966,7 +2966,10 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
-        include: "#string-single-bad-brace-formatting-raw"
+        include: "#string-single-bad-brace1-formatting-raw"
+      }
+      {
+        include: "#string-single-bad-brace2-formatting-raw"
       }
       {
         include: "#string-raw-guts"
@@ -3028,13 +3031,54 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
-        include: "#string-single-bad-brace-formatting-unicode"
+        include: "#string-single-bad-brace1-formatting-unicode"
+      }
+      {
+        include: "#string-single-bad-brace2-formatting-unicode"
       }
       {
         include: "#string-unicode-guts"
       }
     ]
-  "string-single-bad-brace-formatting-unicode":
+  "string-single-bad-brace1-formatting-unicode":
+    comment: "template using {% ... %}"
+    begin: '''
+      (?x)
+          (?= \\{%
+                ( .*? (?!(['"])|((?<!\\\\)\\n)) )
+              %\\}
+          )
+      
+    '''
+    end: "(?=(['\"])|((?<!\\\\)\\n))"
+    patterns: [
+      {
+        include: "#escape-sequence-unicode"
+      }
+      {
+        include: "#escape-sequence"
+      }
+      {
+        include: "#string-line-continuation"
+      }
+    ]
+  "string-single-bad-brace1-formatting-raw":
+    comment: "template using {% ... %}"
+    begin: '''
+      (?x)
+          (?= \\{%
+                ( .*? (?!(['"])|((?<!\\\\)\\n)) )
+              %\\}
+          )
+      
+    '''
+    end: "(?=(['\"])|((?<!\\\\)\\n))"
+    patterns: [
+      {
+        include: "#string-consume-escape"
+      }
+    ]
+  "string-single-bad-brace2-formatting-unicode":
     comment: "odd format or format-like syntax"
     begin: '''
       (?x)
@@ -3056,7 +3100,7 @@ repository:
         include: "#string-entity"
       }
     ]
-  "string-single-bad-brace-formatting-raw":
+  "string-single-bad-brace2-formatting-raw":
     comment: "odd format or format-like syntax"
     begin: '''
       (?x)
@@ -3096,7 +3140,10 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
-        include: "#string-multi-bad-brace-formatting-raw"
+        include: "#string-multi-bad-brace1-formatting-raw"
+      }
+      {
+        include: "#string-multi-bad-brace2-formatting-raw"
       }
       {
         include: "#string-raw-guts"
@@ -3158,13 +3205,54 @@ repository:
         name: "invalid.illegal.newline.python"
     patterns: [
       {
-        include: "#string-multi-bad-brace-formatting-unicode"
+        include: "#string-multi-bad-brace1-formatting-unicode"
+      }
+      {
+        include: "#string-multi-bad-brace2-formatting-unicode"
       }
       {
         include: "#string-unicode-guts"
       }
     ]
-  "string-multi-bad-brace-formatting-unicode":
+  "string-multi-bad-brace1-formatting-unicode":
+    comment: "template using {% ... %}"
+    begin: '''
+      (?x)
+          (?= \\{%
+                ( .*? (?!\'''|""") )
+              %\\}
+          )
+      
+    '''
+    end: "(?='''|\"\"\")"
+    patterns: [
+      {
+        include: "#escape-sequence-unicode"
+      }
+      {
+        include: "#escape-sequence"
+      }
+      {
+        include: "#string-line-continuation"
+      }
+    ]
+  "string-multi-bad-brace1-formatting-raw":
+    comment: "template using {% ... %}"
+    begin: '''
+      (?x)
+          (?= \\{%
+                ( .*? (?!\'''|""") )
+              %\\}
+          )
+      
+    '''
+    end: "(?='''|\"\"\")"
+    patterns: [
+      {
+        include: "#string-consume-escape"
+      }
+    ]
+  "string-multi-bad-brace2-formatting-unicode":
     comment: "odd format or format-like syntax"
     begin: '''
       (?x)
@@ -3186,7 +3274,7 @@ repository:
         include: "#string-entity"
       }
     ]
-  "string-multi-bad-brace-formatting-raw":
+  "string-multi-bad-brace2-formatting-raw":
     comment: "odd format or format-like syntax"
     begin: '''
       (?x)

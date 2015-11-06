@@ -12,7 +12,8 @@ repository:
       '1': {name: punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#string-${line}-bad-brace-formatting-raw'
+      - include: '#string-${line}-bad-brace1-formatting-raw'
+      - include: '#string-${line}-bad-brace2-formatting-raw'
       - include: '#string-raw-guts'
 
   string-bin-quoted-${line}-line:
@@ -53,10 +54,37 @@ repository:
       '1': {name: punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#string-${line}-bad-brace-formatting-unicode'
+      - include: '#string-${line}-bad-brace1-formatting-unicode'
+      - include: '#string-${line}-bad-brace2-formatting-unicode'
       - include: '#string-unicode-guts'
 
-  string-${line}-bad-brace-formatting-unicode:
+  string-${line}-bad-brace1-formatting-unicode:
+    comment: template using {% ... %}
+    begin: |
+      (?x)
+          (?= \{%
+                ( .*? (?!${marker}${guard}) )
+              %\}
+          )
+    end: (?=${marker}${guard})
+    patterns:
+      - include: '#escape-sequence-unicode'
+      - include: '#escape-sequence'
+      - include: '#string-line-continuation'
+
+  string-${line}-bad-brace1-formatting-raw:
+    comment: template using {% ... %}
+    begin: |
+      (?x)
+          (?= \{%
+                ( .*? (?!${marker}${guard}) )
+              %\}
+          )
+    end: (?=${marker}${guard})
+    patterns:
+      - include: '#string-consume-escape'
+
+  string-${line}-bad-brace2-formatting-unicode:
     comment: odd format or format-like syntax
     begin: |
       (?x)
@@ -72,7 +100,7 @@ repository:
       - include: '#escape-sequence-unicode'
       - include: '#string-entity'
 
-  string-${line}-bad-brace-formatting-raw:
+  string-${line}-bad-brace2-formatting-raw:
     comment: odd format or format-like syntax
     begin: |
       (?x)
