@@ -19,6 +19,8 @@
       <string>sconstruct</string>
       <string>SConscript</string>
     </array>
+    <key>first_line_match</key>
+    <string>^#!/.*\bpython\d?\b</string>
     <key>uuid</key>
     <string>742deb57-6e38-4192-bed6-410746efd85d</string>
     <key>patterns</key>

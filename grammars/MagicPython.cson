@@ -12,6 +12,7 @@ fileTypes: [
   "sconstruct"
   "SConscript"
 ]
+first_line_match: "^#!/.*\\bpython\\d?\\b"
 uuid: "742deb57-6e38-4192-bed6-410746efd85d"
 patterns: [
   {
