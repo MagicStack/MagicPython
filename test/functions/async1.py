@@ -17,7 +17,9 @@ foo           : entity.name.function.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
-    a         : source.python
+              : source.python
+a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
@@ -25,16 +27,30 @@ foo           : entity.name.function.python, meta.function.python, source.python
 async         : keyword.control.flow.python, source.python
               : source.python
 for           : keyword.control.flow.python, source.python
- a, b, c      : source.python
+              : source.python
+a             : source.python
+,             : source.python
+b             : source.python
+,             : source.python
+c             : source.python
+              : source.python
 in            : keyword.operator.logical.python, source.python
- b:           : source.python
+              : source.python
+b             : source.python
+:             : source.python
               : source.python
 async         : keyword.control.flow.python, source.python
               : source.python
 with          : keyword.control.flow.python, source.python
- b            : source.python
+              : source.python
+b             : source.python
+              : source.python
 as            : keyword.control.flow.python, source.python
- d, c:        : source.python
+              : source.python
+d             : source.python
+,             : source.python
+c             : source.python
+:             : source.python
               : source.python
 await         : keyword.control.flow.python, source.python
               : source.python

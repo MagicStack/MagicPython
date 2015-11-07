@@ -5,6 +5,7 @@ replace = {'"' : R'\"',
 
 
 replace       : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 {             : punctuation.definition.dict.begin.python, source.python

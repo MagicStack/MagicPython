@@ -10,4 +10,5 @@ a             : source.python
 a             : source.python
 =             : keyword.operator.assignment.python, source.python
 1             : constant.numeric.dec.python, source.python
-; b           : source.python
+;             : source.python
+b             : source.python

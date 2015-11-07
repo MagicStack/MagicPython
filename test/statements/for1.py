@@ -6,9 +6,17 @@ else:
 
 
 for           : keyword.control.flow.python, source.python
- a, b, c      : source.python
+              : source.python
+a             : source.python
+,             : source.python
+b             : source.python
+,             : source.python
+c             : source.python
+              : source.python
 in            : keyword.operator.logical.python, source.python
- b:           : source.python
+              : source.python
+b             : source.python
+:             : source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
 else          : keyword.control.flow.python, source.python

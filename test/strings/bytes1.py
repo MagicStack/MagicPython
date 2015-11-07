@@ -9,6 +9,7 @@ multiline "binary" string \
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 b             : source.python, storage.type.string.python, string.quoted.binary.multi.python

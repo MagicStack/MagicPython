@@ -22,6 +22,7 @@ a = rB'''
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.multi.python
@@ -31,6 +32,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
         foo   : source.python, string.regexp.quoted.multi.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 br            : source.python, storage.type.string.python, string.regexp.quoted.multi.python
@@ -40,6 +42,7 @@ br            : source.python, storage.type.string.python, string.regexp.quoted.
         foo   : source.python, string.regexp.quoted.multi.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 rb            : source.python, storage.type.string.python, string.regexp.quoted.multi.python
@@ -49,6 +52,7 @@ rb            : source.python, storage.type.string.python, string.regexp.quoted.
         foo   : source.python, string.regexp.quoted.multi.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 Br            : source.python, storage.type.string.python, string.regexp.quoted.multi.python
@@ -58,6 +62,7 @@ Br            : source.python, storage.type.string.python, string.regexp.quoted.
         foo   : source.python, string.regexp.quoted.multi.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 rB            : source.python, storage.type.string.python, string.regexp.quoted.multi.python

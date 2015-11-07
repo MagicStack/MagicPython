@@ -11,6 +11,7 @@ a = R'''
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -18,6 +19,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
 foo#not a comment : source.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.multi.python
@@ -32,6 +34,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
  comment      : comment.line.number-sign.python, source.python, string.regexp.quoted.multi.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 R             : source.python, storage.type.string.python, string.quoted.raw.multi.python

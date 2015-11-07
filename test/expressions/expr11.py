@@ -3,6 +3,7 @@ a = self.some_list[1:2]
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 self          : source.python, variable.language.special.self.python

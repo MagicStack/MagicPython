@@ -6,6 +6,7 @@ a = R"%(language)s has %(number)03d quote types."
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
@@ -16,6 +17,7 @@ a             : source.python
               : source.python
 42            : constant.numeric.dec.python, source.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
@@ -25,6 +27,7 @@ a             : source.python
  quote types. : source.python, string.quoted.single.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 b             : source.python, storage.type.string.python, string.quoted.binary.single.python
@@ -35,6 +38,7 @@ b             : source.python, storage.type.string.python, string.quoted.binary.
  quote types. : source.python, string.quoted.binary.single.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.binary.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 R             : source.python, storage.type.string.python, string.quoted.raw.single.python

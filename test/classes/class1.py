@@ -3,7 +3,9 @@ class Foo -> None: pass
 
 
 class         : source.python, storage.type.class.python
- Foo          : source.python
+              : source.python
+Foo           : source.python
+              : source.python
 ->            : invalid.illegal.annotation.python, source.python
               : source.python
 None          : constant.language.python, source.python

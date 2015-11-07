@@ -3,6 +3,7 @@ a = r'''foo[abc] # comment'''
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.multi.python

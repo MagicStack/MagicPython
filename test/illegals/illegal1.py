@@ -38,6 +38,7 @@ baz           : meta.function-call.arguments.python, meta.function-call.python, 
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  we recover just fine : comment.line.number-sign.python, source.python
 b             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 !             : invalid.illegal.operator.python, source.python

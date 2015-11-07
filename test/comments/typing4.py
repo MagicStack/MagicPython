@@ -4,6 +4,7 @@ y = None # type: Dict[int, Any] # int
 
 
 x             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 None          : constant.language.python, source.python
@@ -19,6 +20,7 @@ str           : comment.line.number-sign.python, comment.typehint.type.notation.
 a             : comment.line.number-sign.python, comment.typehint.variable.notation.python, meta.typehint.comment.python, source.python
 ]             : comment.line.number-sign.python, comment.typehint.puctuation.notation.python, meta.typehint.comment.python, source.python
 y             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 None          : constant.language.python, source.python

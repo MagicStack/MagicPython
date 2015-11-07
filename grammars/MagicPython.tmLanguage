@@ -550,6 +550,12 @@
             <key>include</key>
             <string>#member-access</string>
           </dict>
+          <dict>
+            <key>comment</key>
+            <string>Tokenize identifiers to help linters</string>
+            <key>match</key>
+            <string>(?x) \b ([[:alpha:]_]\w*) \b</string>
+          </dict>
         </array>
       </dict>
       <key>member-access</key>

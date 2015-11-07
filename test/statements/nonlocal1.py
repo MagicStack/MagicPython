@@ -3,4 +3,9 @@ nonlocal a, b, c
 
 
 nonlocal      : source.python, storage.modifier.declaration.python
- a, b, c      : source.python
+              : source.python
+a             : source.python
+,             : source.python
+b             : source.python
+,             : source.python
+c             : source.python

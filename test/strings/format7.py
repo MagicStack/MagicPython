@@ -14,6 +14,7 @@ XXX           : comment.line.number-sign.python, keyword.codetag.notation.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  the code below. : comment.line.number-sign.python, source.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python

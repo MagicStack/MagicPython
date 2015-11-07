@@ -11,6 +11,7 @@ r'>>> print()a[wer]'
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  not a docstring : comment.line.number-sign.python, source.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 \             : separator.continuation.line.python, source.python
@@ -30,6 +31,7 @@ r             : constant.character.set.regexp, meta.character.set.regexp, source
 '             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
               : source.python
 b             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 \             : separator.continuation.line.python, source.python

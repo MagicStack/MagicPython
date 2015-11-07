@@ -3,6 +3,7 @@ a = "normal {{ normal }} normal {10!r} normal {fo.__add__!s}".format(fo=1)
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python

@@ -5,6 +5,7 @@ a = "{0[ ]:Xd>+10d}" #invalid
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
@@ -13,6 +14,7 @@ a             : source.python
 }             : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
@@ -22,6 +24,7 @@ a             : source.python
 }             : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python

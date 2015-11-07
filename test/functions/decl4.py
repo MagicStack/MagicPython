@@ -26,16 +26,25 @@ None          : constant.language.python, meta.function.lambda.parameters.python
 :             : meta.function.parameters.python, meta.function.python, meta.lambda-function.python, punctuation.section.function.lambda.begin.python, source.python
                      : meta.function.parameters.python, meta.function.python, source.python
 {             : meta.function.parameters.python, meta.function.python, punctuation.definition.dict.begin.python, source.python
-key: val      : meta.function.parameters.python, meta.function.python, source.python
+key           : meta.function.parameters.python, meta.function.python, source.python
+:             : meta.function.parameters.python, meta.function.python, source.python
+val           : meta.function.parameters.python, meta.function.python, source.python
                          : meta.function.parameters.python, meta.function.python, source.python
 for           : keyword.control.flow.python, meta.function.parameters.python, meta.function.python, source.python
- key, val     : meta.function.parameters.python, meta.function.python, source.python
+              : meta.function.parameters.python, meta.function.python, source.python
+key           : meta.function.parameters.python, meta.function.python, source.python
+,             : meta.function.parameters.python, meta.function.python, source.python
+val           : meta.function.parameters.python, meta.function.python, source.python
+              : meta.function.parameters.python, meta.function.python, source.python
 in            : keyword.operator.logical.python, meta.function.parameters.python, meta.function.python, source.python
                              : meta.function.parameters.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.parenthesis.begin.python, source.python
 x             : meta.function.parameters.python, meta.function.python, source.python
+              : meta.function.parameters.python, meta.function.python, source.python
 if            : keyword.control.flow.python, meta.function.parameters.python, meta.function.python, source.python
- x            : meta.function.parameters.python, meta.function.python, source.python
+              : meta.function.parameters.python, meta.function.python, source.python
+x             : meta.function.parameters.python, meta.function.python, source.python
+              : meta.function.parameters.python, meta.function.python, source.python
 is            : keyword.operator.logical.python, meta.function.parameters.python, meta.function.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
 not           : keyword.operator.logical.python, meta.function.parameters.python, meta.function.python, source.python

@@ -9,6 +9,7 @@ multiline "raw" string \
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 R             : source.python, storage.type.string.python, string.quoted.raw.multi.python

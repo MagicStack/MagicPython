@@ -17,7 +17,9 @@
               : source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  not a docstring : comment.line.number-sign.python, source.python
-    a         : source.python
+              : source.python
+a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 \             : separator.continuation.line.python, source.python
@@ -38,7 +40,9 @@ r             : constant.character.set.regexp, meta.character.set.regexp, source
               : source.python, string.regexp.quoted.multi.python
 '''           : punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
               : source.python
-    b         : source.python
+              : source.python
+b             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 \             : separator.continuation.line.python, source.python

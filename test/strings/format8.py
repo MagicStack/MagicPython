@@ -3,6 +3,7 @@ a = R'$\frac{m_{j \rightarrow i}(\mathrm{good})}{\sum{m_{j \rightarrow i}}}$'
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 R             : source.python, storage.type.string.python, string.quoted.raw.single.python

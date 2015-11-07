@@ -5,6 +5,7 @@ def foo(): pass
 
 
 anon          : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 lambda        : meta.lambda-function.python, source.python, storage.type.function.lambda.python
@@ -12,7 +13,8 @@ lambda        : meta.lambda-function.python, source.python, storage.type.functio
 a             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.python
 ,             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.separator.parameters.python, source.python
               : meta.lambda-function.python, source.python
-              d : source.python
+               : source.python
+d             : source.python
 =             : keyword.operator.assignment.python, source.python
 1             : constant.numeric.dec.python, source.python
 :             : source.python

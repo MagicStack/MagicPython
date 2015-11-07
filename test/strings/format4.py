@@ -5,6 +5,7 @@ a = 'qqq{0:{fill}{align}16}www'
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
@@ -16,6 +17,7 @@ qqq           : source.python, string.quoted.single.python
 www           : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python

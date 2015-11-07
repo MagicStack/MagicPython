@@ -15,6 +15,7 @@ a = r'''[
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -24,6 +25,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
 1             : constant.numeric.dec.python, source.python
               : source.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -34,6 +36,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
 1             : constant.numeric.dec.python, source.python
               : source.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.multi.python
@@ -43,6 +46,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
 1             : constant.numeric.dec.python, source.python
               : source.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.multi.python

@@ -25,9 +25,11 @@ CookiePattern = re.compile(r"""
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  And now something fun! : comment.line.number-sign.python, source.python
               : source.python
-CookiePattern  : source.python
+CookiePattern : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
- re           : source.python
+              : source.python
+re            : source.python
 .             : source.python
 compile       : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
@@ -55,7 +57,9 @@ r             : meta.function-call.arguments.python, meta.function-call.python, 
 """           : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 +             : keyword.operator.arithmetic.python, meta.function-call.arguments.python, meta.function-call.python, source.python
- _LegalKeyChars  : meta.function-call.arguments.python, meta.function-call.python, source.python
+              : meta.function-call.arguments.python, meta.function-call.python, source.python
+_LegalKeyChars : meta.function-call.arguments.python, meta.function-call.python, source.python
+              : meta.function-call.arguments.python, meta.function-call.python, source.python
 +             : keyword.operator.arithmetic.python, meta.function-call.arguments.python, meta.function-call.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 r             : meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.string.python, string.regexp.quoted.multi.python
@@ -140,7 +144,9 @@ GMT           : meta.function-call.arguments.python, meta.function-call.python, 
 """           : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 +             : keyword.operator.arithmetic.python, meta.function-call.arguments.python, meta.function-call.python, source.python
- _LegalValueChars  : meta.function-call.arguments.python, meta.function-call.python, source.python
+              : meta.function-call.arguments.python, meta.function-call.python, source.python
+_LegalValueChars : meta.function-call.arguments.python, meta.function-call.python, source.python
+              : meta.function-call.arguments.python, meta.function-call.python, source.python
 +             : keyword.operator.arithmetic.python, meta.function-call.arguments.python, meta.function-call.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 r             : meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.string.python, string.regexp.quoted.multi.python
@@ -179,7 +185,8 @@ $             : meta.function-call.arguments.python, meta.function-call.python, 
               : meta.function-call.arguments.python, meta.function-call.python, source.python, string.regexp.quoted.multi.python
 """           : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.end.python, source.python, string.regexp.quoted.multi.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
- re           : meta.function-call.arguments.python, meta.function-call.python, source.python
+              : meta.function-call.arguments.python, meta.function-call.python, source.python
+re            : meta.function-call.arguments.python, meta.function-call.python, source.python
 .             : meta.function-call.arguments.python, meta.function-call.python, source.python
 ASCII         : constant.other.caps.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python

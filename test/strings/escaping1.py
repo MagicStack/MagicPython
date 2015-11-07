@@ -4,6 +4,7 @@ foo \' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005"
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python

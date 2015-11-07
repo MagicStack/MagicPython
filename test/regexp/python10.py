@@ -13,6 +13,7 @@ return some
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -23,6 +24,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
  for          : source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -33,6 +35,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
  for          : source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -46,6 +49,7 @@ o             : constant.character.set.regexp, meta.character.set.regexp, source
 r             : constant.character.set.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -59,6 +63,7 @@ o             : constant.character.set.regexp, meta.character.set.regexp, source
 r             : constant.character.set.regexp, meta.character.set.regexp, source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -69,6 +74,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
  for          : source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -79,6 +85,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
  for          : source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -89,6 +96,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
  for          : meta.named.regexp, source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -99,6 +107,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
  for          : meta.named.regexp, source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -110,6 +119,7 @@ a             : source.python, string.regexp.quoted.single.python
  for          : source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -121,4 +131,5 @@ a             : source.python, string.regexp.quoted.single.python
  for          : source.python, string.regexp.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.regexp.quoted.single.python
 return        : keyword.control.flow.python, source.python
- some         : source.python
+              : source.python
+some          : source.python

@@ -6,6 +6,7 @@ a = r'
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
@@ -16,6 +17,7 @@ r             : source.python, storage.type.string.python, string.regexp.quoted.
 ?             : invalid.illegal.operator.python, source.python
 x             : source.python
 )             : punctuation.parenthesis.end.python, source.python
-        foo   : source.python
+              : source.python
+foo           : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.docstring.single.python
               : invalid.illegal.newline.python, source.python, string.quoted.docstring.single.python

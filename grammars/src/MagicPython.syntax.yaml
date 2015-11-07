@@ -262,6 +262,8 @@ repository:
     patterns:
       - include: '#expression-base'
       - include: '#member-access'
+      - comment: Tokenize identifiers to help linters
+        match: (?x) \b ([[:alpha:]_]\w*) \b
 
   member-access:
     begin: \.\s*(?!\.)

@@ -7,6 +7,7 @@ a = RB'S T R'
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 U             : source.python, storage.type.string.python, string.quoted.single.python
@@ -14,6 +15,7 @@ U             : source.python, storage.type.string.python, string.quoted.single.
 S T R         : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 B             : source.python, storage.type.string.python, string.quoted.binary.single.python
@@ -21,6 +23,7 @@ B             : source.python, storage.type.string.python, string.quoted.binary.
 S T R         : source.python, string.quoted.binary.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.binary.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 R             : source.python, storage.type.string.python, string.quoted.raw.single.python
@@ -28,6 +31,7 @@ R             : source.python, storage.type.string.python, string.quoted.raw.sin
 S T R         : source.python, string.quoted.raw.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.raw.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 BR            : source.python, storage.type.string.python, string.quoted.raw.binary.single.python
@@ -35,6 +39,7 @@ BR            : source.python, storage.type.string.python, string.quoted.raw.bin
 S T R         : source.python, string.quoted.raw.binary.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.raw.binary.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 RB            : source.python, storage.type.string.python, string.quoted.raw.binary.single.python

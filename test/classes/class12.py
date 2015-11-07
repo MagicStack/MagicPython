@@ -41,14 +41,16 @@ cls           : source.python, variable.language.special.cls.python
 a             : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
- a            : source.python
+              : source.python
+a             : source.python
               : source.python
 cls           : source.python, variable.language.special.cls.python
 .             : source.python
 b             : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
- b            : source.python
+              : source.python
+b             : source.python
               : source.python
 print         : meta.function-call.python, source.python, support.function.builtin.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
@@ -64,14 +66,16 @@ cls           : source.python, variable.language.special.cls.python
 +             : keyword.operator.arithmetic.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
-        a     : source.python
+              : source.python
+a             : source.python
 .             : source.python
 cls           : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
-        a     : source.python
+              : source.python
+a             : source.python
 .             : source.python
 cls           : source.python
 .             : source.python

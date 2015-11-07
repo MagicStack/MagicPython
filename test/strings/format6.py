@@ -6,18 +6,21 @@ a = 'qqq{0:{widt' + 'h}{base}}www'
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 qqqwww        : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
  {            : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python

@@ -3,6 +3,7 @@ anon = lambda lambda: 42
 
 
 anon          : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 lambda        : meta.lambda-function.python, source.python, storage.type.function.lambda.python

@@ -66,7 +66,9 @@ TEST          : source.python, string.quoted.docstring.raw.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.raw.single.python
               : source.python
 with          : keyword.control.flow.python, source.python
- bar:         : source.python
+              : source.python
+bar           : source.python
+:             : source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
               : source.python
@@ -102,6 +104,8 @@ TEST          : source.python, string.quoted.docstring.single.python
  additional docstring : comment.line.number-sign.python, source.python
               : source.python
 with          : keyword.control.flow.python, source.python
- bar:         : source.python
+              : source.python
+bar           : source.python
+:             : source.python
               : source.python
 pass          : keyword.control.flow.python, source.python

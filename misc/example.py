@@ -38,7 +38,7 @@ def showcase():
         \Z""",
         re.VERBOSE | re.DOTALL)
 
-    # NOTE Numbers with leading zeroes are invalid in Python3,
+    # NOTE Numbers with leading zeros are invalid in Python 3,
     # use 0o...
     answer = func(0xdeadbeef + 0b0010001 + 0123 + 0o123 +
                   # complex numbers

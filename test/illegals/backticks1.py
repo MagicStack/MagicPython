@@ -3,6 +3,7 @@ a = `(1, `2`)`
 
 
 a             : source.python
+              : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 `             : invalid.deprecated.backtick.python, source.python
