@@ -1,5 +1,5 @@
 Error
-file reduce intern raw_input unicode cmp basestring execfile long xrange
+file reduce intern raw_input unicode cmp basestring execfile long xrange apply
 
 
 
@@ -23,3 +23,5 @@ execfile      : source.python, variable.legacy.builtin.python
 long          : source.python, variable.legacy.builtin.python
               : source.python
 xrange        : source.python, variable.legacy.builtin.python
+              : source.python
+apply         : source.python

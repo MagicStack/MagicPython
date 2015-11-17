@@ -2579,7 +2579,7 @@ it&apos;s not tokenized as ellipsis.
             <key>match</key>
             <string>(?x)
   (?&lt;!\.) \b(
-    __import__ | abs | all | any | apply | ascii | bin | callable
+    __import__ | abs | all | any | ascii | bin | callable
     | chr | compile | copyright | credits | delattr | dir | divmod
     | enumerate | eval | exec | exit | filter | format | getattr
     | globals | hasattr | hash | help | hex | id | input
