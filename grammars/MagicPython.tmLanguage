@@ -162,9 +162,9 @@
       <key>docstring-statement</key>
       <dict>
         <key>begin</key>
-        <string>^(?=\s*[rR]?(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;))</string>
+        <string>^(?=\s*[rR]?(\'\'\'|\"\"\"|\'|\"))</string>
         <key>end</key>
-        <string>(?&lt;=\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;)</string>
+        <string>(?&lt;=\'\'\'|\"\"\"|\'|\")</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -181,7 +181,7 @@
             <key>name</key>
             <string>string.quoted.docstring.multi.python</string>
             <key>begin</key>
-            <string>(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;)</string>
+            <string>(\'\'\'|\"\"\")</string>
             <key>end</key>
             <string>(\1)</string>
             <key>beginCaptures</key>
@@ -220,7 +220,7 @@
             <key>name</key>
             <string>string.quoted.docstring.raw.multi.python</string>
             <key>begin</key>
-            <string>([rR])(\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;)</string>
+            <string>([rR])(\'\'\'|\"\"\")</string>
             <key>end</key>
             <string>(\2)</string>
             <key>beginCaptures</key>
@@ -264,7 +264,7 @@
             <key>name</key>
             <string>string.quoted.docstring.single.python</string>
             <key>begin</key>
-            <string>(\&apos;|\&quot;)</string>
+            <string>(\'|\")</string>
             <key>end</key>
             <string>(\1)|((?&lt;!\\)\n)</string>
             <key>beginCaptures</key>
@@ -304,7 +304,7 @@
             <key>name</key>
             <string>string.quoted.docstring.raw.single.python</string>
             <key>begin</key>
-            <string>([rR])(\&apos;|\&quot;)</string>
+            <string>([rR])(\'|\")</string>
             <key>end</key>
             <string>(\2)|((?&lt;!\\)\n)</string>
             <key>beginCaptures</key>
@@ -370,7 +370,7 @@
         <key>match</key>
         <string>(?x)
   (?:
-    (?:^|\G) \s* (?# &apos;\G&apos; is necessary for ST)
+    (?:^|\G) \s* (?# '\G' is necessary for ST)
     ((?:&gt;&gt;&gt;|\.\.\.) \s) (?=\s*\S)
   )
 </string>
@@ -738,9 +738,9 @@
             <string>(?x)
   (?=^\s*$)
   |
-  (?! (\s* [rR]? (\&apos;\&apos;\&apos;|\&quot;\&quot;\&quot;|\&apos;|\&quot;))
+  (?! (\s* [rR]? (\'\'\'|\"\"\"|\'|\"))
       |
-      (\G $)  (?# &apos;\G&apos; is necessary for ST)
+      (\G $)  (?# '\G' is necessary for ST)
   )
 </string>
             <key>beginCaptures</key>
@@ -1039,9 +1039,9 @@
         <key>name</key>
         <string>string.regexp.quoted.single.python</string>
         <key>begin</key>
-        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&apos;)</string>
+        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\')</string>
         <key>end</key>
-        <string>(\&apos;)|(?&lt;!\\)(\n)</string>
+        <string>(\')|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>2</key>
@@ -1091,9 +1091,9 @@
         <key>name</key>
         <string>string.regexp.quoted.single.python</string>
         <key>begin</key>
-        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&quot;)</string>
+        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\")</string>
         <key>end</key>
-        <string>(\&quot;)|(?&lt;!\\)(\n)</string>
+        <string>(\")|(?&lt;!\\)(\n)</string>
         <key>beginCaptures</key>
         <dict>
           <key>2</key>
@@ -1143,9 +1143,9 @@
         <key>name</key>
         <string>string.regexp.quoted.multi.python</string>
         <key>begin</key>
-        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&apos;\&apos;\&apos;)</string>
+        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\'\'\')</string>
         <key>end</key>
-        <string>\&apos;\&apos;\&apos;</string>
+        <string>\'\'\'</string>
         <key>beginCaptures</key>
         <dict>
           <key>2</key>
@@ -1190,9 +1190,9 @@
         <key>name</key>
         <string>string.regexp.quoted.multi.python</string>
         <key>begin</key>
-        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\&quot;\&quot;\&quot;)</string>
+        <string>\b(([uU]r)|([bB]r)|(r[bB]?))(\"\"\")</string>
         <key>end</key>
-        <string>\&quot;\&quot;\&quot;</string>
+        <string>\"\"\"</string>
         <key>beginCaptures</key>
         <dict>
           <key>2</key>
@@ -1291,7 +1291,7 @@
       <key>string-consume-escape</key>
       <dict>
         <key>match</key>
-        <string>\\[&apos;&quot;\n\\]</string>
+        <string>\\['"\n\\]</string>
       </dict>
       <key>string-raw-guts</key>
       <dict>
@@ -1370,7 +1370,7 @@
   \\ (
         x[0-9A-Fa-f]{2}
         | [0-7]{1,3}
-        | [\\&quot;&apos;abfnrtv]
+        | [\\"'abfnrtv]
      )
 </string>
       </dict>
@@ -1407,7 +1407,7 @@
     {{ | }}
     | (?:
       {
-        \w*? (\.[[:alpha:]_]\w*? | \[[^\]&apos;&quot;]+\])*?
+        \w*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
         (![rsa])?
         ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
           \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
@@ -1434,10 +1434,10 @@
             <key>begin</key>
             <string>(?x)
     \{
-      \w*? (\.[[:alpha:]_]\w*? | \[[^\]&apos;&quot;]+\])*?
+      \w*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
       (![rsa])?
       (:)
-        (?=[^&apos;&quot;}\n]*\})
+        (?=[^'"}\n]*\})
 </string>
             <key>end</key>
             <string>\}</string>
@@ -1458,7 +1458,7 @@
             <array>
               <dict>
                 <key>match</key>
-                <string>(?x) \{ [^&apos;&quot;}\n]*? \} (?=.*?\})
+                <string>(?x) \{ [^'"}\n]*? \} (?=.*?\})
 </string>
               </dict>
             </array>
@@ -1468,8 +1468,8 @@
       <key>from-import</key>
       <dict>
         <key>comment</key>
-        <string>The main purpose of this rule is to consume &apos;...&apos;, so that
-it&apos;s not tokenized as ellipsis.
+        <string>The main purpose of this rule is to consume '...', so that
+it's not tokenized as ellipsis.
 </string>
         <key>match</key>
         <string>(?x)
@@ -2614,7 +2614,7 @@ it&apos;s not tokenized as ellipsis.
     | float | frozenset | int | list | object | property
     | set | slice | staticmethod | str | tuple | type
 
-    (?# Although &apos;super&apos; is not a type, it&apos;s related to types,
+    (?# Although 'super' is not a type, it's related to types,
         and is special enough to be highlighted differently from
         other built-ins)
     | super
@@ -2779,7 +2779,7 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>invalid.illegal.operator.python</string>
             <key>comment</key>
-            <string>We don&apos;t want `!` to flash when we&apos;re typing `!=`</string>
+            <string>We don't want `!` to flash when we're typing `!=`</string>
             <key>match</key>
             <string>!\b</string>
           </dict>
@@ -2788,7 +2788,7 @@ indirectly through syntactic constructs
       <key>illegal-object-name</key>
       <dict>
         <key>comment</key>
-        <string>It&apos;s illegal to name class or function &quot;True&quot;</string>
+        <string>It's illegal to name class or function "True"</string>
         <key>name</key>
         <string>keyword.illegal.name.python</string>
         <key>match</key>
@@ -3038,7 +3038,7 @@ indirectly through syntactic constructs
           </dict>
         </dict>
         <key>end</key>
-        <string>($|(?=&apos;&apos;&apos;))</string>
+        <string>($|(?='''))</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -3062,7 +3062,7 @@ indirectly through syntactic constructs
           </dict>
         </dict>
         <key>end</key>
-        <string>($|(?=&quot;&quot;&quot;))</string>
+        <string>($|(?="""))</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -3145,7 +3145,7 @@ indirectly through syntactic constructs
             <key>begin</key>
             <string>(\[)(\^)?(\])?</string>
             <key>end</key>
-            <string>(\]|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+            <string>(\]|(?=\'))|((?=(?&lt;!\\)\n))</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -3202,7 +3202,7 @@ indirectly through syntactic constructs
   (\()  (\?P &lt;\w+(?:\s+[[:alnum:]]+)?&gt;)
 </string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?=\'))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -3244,7 +3244,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?#</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?=\'))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3279,7 +3279,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?=</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?=\'))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3319,7 +3319,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?!</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?=\'))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3359,7 +3359,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;=</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?=\'))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3399,7 +3399,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;!</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?=\'))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3439,7 +3439,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?=\'))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3479,7 +3479,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?:</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?=\'))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3514,7 +3514,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?=\'))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3622,7 +3622,7 @@ indirectly through syntactic constructs
             <key>begin</key>
             <string>(\[)(\^)?(\])?</string>
             <key>end</key>
-            <string>(\]|(?=\&apos;\&apos;\&apos;))</string>
+            <string>(\]|(?=\'\'\'))</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -3679,7 +3679,7 @@ indirectly through syntactic constructs
   (\()  (\?P &lt;\w+(?:\s+[[:alnum:]]+)?&gt;)
 </string>
         <key>end</key>
-        <string>(\)|(?=\&apos;\&apos;\&apos;))</string>
+        <string>(\)|(?=\'\'\'))</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -3725,7 +3725,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?#</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;\&apos;\&apos;))</string>
+        <string>(\)|(?=\'\'\'))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3760,7 +3760,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?=</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;\&apos;\&apos;))</string>
+        <string>(\)|(?=\'\'\'))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3804,7 +3804,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?!</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;\&apos;\&apos;))</string>
+        <string>(\)|(?=\'\'\'))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3848,7 +3848,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;=</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;\&apos;\&apos;))</string>
+        <string>(\)|(?=\'\'\'))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3892,7 +3892,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;!</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;\&apos;\&apos;))</string>
+        <string>(\)|(?=\'\'\'))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3936,7 +3936,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;\&apos;\&apos;))</string>
+        <string>(\)|(?=\'\'\'))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3980,7 +3980,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?:</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;\&apos;\&apos;))</string>
+        <string>(\)|(?=\'\'\'))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4019,7 +4019,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(</string>
         <key>end</key>
-        <string>(\)|(?=\&apos;\&apos;\&apos;))</string>
+        <string>(\)|(?=\'\'\'))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4127,7 +4127,7 @@ indirectly through syntactic constructs
             <key>begin</key>
             <string>(\[)(\^)?(\])?</string>
             <key>end</key>
-            <string>(\]|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+            <string>(\]|(?="))|((?=(?&lt;!\\)\n))</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -4184,7 +4184,7 @@ indirectly through syntactic constructs
   (\()  (\?P &lt;\w+(?:\s+[[:alnum:]]+)?&gt;)
 </string>
         <key>end</key>
-        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?="))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4226,7 +4226,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?#</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?="))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4261,7 +4261,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?=</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?="))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4301,7 +4301,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?!</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?="))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4341,7 +4341,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;=</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?="))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4381,7 +4381,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;!</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?="))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4421,7 +4421,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?="))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4461,7 +4461,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?:</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?="))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4496,7 +4496,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(</string>
         <key>end</key>
-        <string>(\)|(?=&quot;))|((?=(?&lt;!\\)\n))</string>
+        <string>(\)|(?="))|((?=(?&lt;!\\)\n))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4604,7 +4604,7 @@ indirectly through syntactic constructs
             <key>begin</key>
             <string>(\[)(\^)?(\])?</string>
             <key>end</key>
-            <string>(\]|(?=&quot;&quot;&quot;))</string>
+            <string>(\]|(?="""))</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -4661,7 +4661,7 @@ indirectly through syntactic constructs
   (\()  (\?P &lt;\w+(?:\s+[[:alnum:]]+)?&gt;)
 </string>
         <key>end</key>
-        <string>(\)|(?=&quot;&quot;&quot;))</string>
+        <string>(\)|(?="""))</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -4707,7 +4707,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?#</string>
         <key>end</key>
-        <string>(\)|(?=&quot;&quot;&quot;))</string>
+        <string>(\)|(?="""))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4742,7 +4742,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?=</string>
         <key>end</key>
-        <string>(\)|(?=&quot;&quot;&quot;))</string>
+        <string>(\)|(?="""))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4786,7 +4786,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?!</string>
         <key>end</key>
-        <string>(\)|(?=&quot;&quot;&quot;))</string>
+        <string>(\)|(?="""))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4830,7 +4830,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;=</string>
         <key>end</key>
-        <string>(\)|(?=&quot;&quot;&quot;))</string>
+        <string>(\)|(?="""))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4874,7 +4874,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?&lt;!</string>
         <key>end</key>
-        <string>(\)|(?=&quot;&quot;&quot;))</string>
+        <string>(\)|(?="""))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4918,7 +4918,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)</string>
         <key>end</key>
-        <string>(\)|(?=&quot;&quot;&quot;))</string>
+        <string>(\)|(?="""))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -4962,7 +4962,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(\?:</string>
         <key>end</key>
-        <string>(\)|(?=&quot;&quot;&quot;))</string>
+        <string>(\)|(?="""))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -5001,7 +5001,7 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>\(</string>
         <key>end</key>
-        <string>(\)|(?=&quot;&quot;&quot;))</string>
+        <string>(\)|(?="""))</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -5040,7 +5040,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.raw.single.python</string>
         <key>begin</key>
-        <string>\b(([uU]R)|(R))(([&apos;&quot;]))</string>
+        <string>\b(([uU]R)|(R))((['"]))</string>
         <key>end</key>
         <string>(\4)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
@@ -5095,7 +5095,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.binary.single.python</string>
         <key>begin</key>
-        <string>(\b[bB])(([&apos;&quot;]))</string>
+        <string>(\b[bB])((['"]))</string>
         <key>end</key>
         <string>(\2)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
@@ -5137,7 +5137,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.raw.binary.single.python</string>
         <key>begin</key>
-        <string>(\b(?:R[bB]|[bB]R))(([&apos;&quot;]))</string>
+        <string>(\b(?:R[bB]|[bB]R))((['"]))</string>
         <key>end</key>
         <string>(\2)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
@@ -5179,7 +5179,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.single.python</string>
         <key>begin</key>
-        <string>(\b[rR](?=[uU]))?([uU])?(([&apos;&quot;]))</string>
+        <string>(\b[rR](?=[uU]))?([uU])?((['"]))</string>
         <key>end</key>
         <string>(\3)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
@@ -5236,12 +5236,12 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(?x)
     (?= \{%
-          ( .*? (?!([&apos;&quot;])|((?&lt;!\\)\n)) )
+          ( .*? (?!(['"])|((?&lt;!\\)\n)) )
         %\}
     )
 </string>
         <key>end</key>
-        <string>(?=([&apos;&quot;])|((?&lt;!\\)\n))</string>
+        <string>(?=(['"])|((?&lt;!\\)\n))</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -5265,12 +5265,12 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(?x)
     (?= \{%
-          ( .*? (?!([&apos;&quot;])|((?&lt;!\\)\n)) )
+          ( .*? (?!(['"])|((?&lt;!\\)\n)) )
         %\}
     )
 </string>
         <key>end</key>
-        <string>(?=([&apos;&quot;])|((?&lt;!\\)\n))</string>
+        <string>(?=(['"])|((?&lt;!\\)\n))</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -5287,14 +5287,14 @@ indirectly through syntactic constructs
         <string>(?x)
     (?!\{\{)
     (?= \{ (
-              \w*? (?!([&apos;&quot;])|((?&lt;!\\)\n)) [^!:\.\[}\w]
+              \w*? (?!(['"])|((?&lt;!\\)\n)) [^!:\.\[}\w]
            )
-        .*?(?!([&apos;&quot;])|((?&lt;!\\)\n))
+        .*?(?!(['"])|((?&lt;!\\)\n))
         \}
     )
 </string>
         <key>end</key>
-        <string>(?=([&apos;&quot;])|((?&lt;!\\)\n))</string>
+        <string>(?=(['"])|((?&lt;!\\)\n))</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -5315,14 +5315,14 @@ indirectly through syntactic constructs
         <string>(?x)
     (?!\{\{)
     (?= \{ (
-              \w*? (?!([&apos;&quot;])|((?&lt;!\\)\n)) [^!:\.\[}\w]
+              \w*? (?!(['"])|((?&lt;!\\)\n)) [^!:\.\[}\w]
            )
-        .*?(?!([&apos;&quot;])|((?&lt;!\\)\n))
+        .*?(?!(['"])|((?&lt;!\\)\n))
         \}
     )
 </string>
         <key>end</key>
-        <string>(?=([&apos;&quot;])|((?&lt;!\\)\n))</string>
+        <string>(?=(['"])|((?&lt;!\\)\n))</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -5340,7 +5340,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.raw.multi.python</string>
         <key>begin</key>
-        <string>\b(([uU]R)|(R))(&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <string>\b(([uU]R)|(R))('''|""")</string>
         <key>end</key>
         <string>(\4)</string>
         <key>beginCaptures</key>
@@ -5395,7 +5395,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.binary.multi.python</string>
         <key>begin</key>
-        <string>(\b[bB])(&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <string>(\b[bB])('''|""")</string>
         <key>end</key>
         <string>(\2)</string>
         <key>beginCaptures</key>
@@ -5437,7 +5437,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.raw.binary.multi.python</string>
         <key>begin</key>
-        <string>(\b(?:R[bB]|[bB]R))(&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <string>(\b(?:R[bB]|[bB]R))('''|""")</string>
         <key>end</key>
         <string>(\2)</string>
         <key>beginCaptures</key>
@@ -5479,7 +5479,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.multi.python</string>
         <key>begin</key>
-        <string>(\b[rR](?=[uU]))?([uU])?(&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <string>(\b[rR](?=[uU]))?([uU])?('''|""")</string>
         <key>end</key>
         <string>(\3)</string>
         <key>beginCaptures</key>
@@ -5536,12 +5536,12 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(?x)
     (?= \{%
-          ( .*? (?!&apos;&apos;&apos;|&quot;&quot;&quot;) )
+          ( .*? (?!'''|""") )
         %\}
     )
 </string>
         <key>end</key>
-        <string>(?=&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <string>(?='''|""")</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -5565,12 +5565,12 @@ indirectly through syntactic constructs
         <key>begin</key>
         <string>(?x)
     (?= \{%
-          ( .*? (?!&apos;&apos;&apos;|&quot;&quot;&quot;) )
+          ( .*? (?!'''|""") )
         %\}
     )
 </string>
         <key>end</key>
-        <string>(?=&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <string>(?='''|""")</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -5587,14 +5587,14 @@ indirectly through syntactic constructs
         <string>(?x)
     (?!\{\{)
     (?= \{ (
-              \w*? (?!&apos;&apos;&apos;|&quot;&quot;&quot;) [^!:\.\[}\w]
+              \w*? (?!'''|""") [^!:\.\[}\w]
            )
-        .*?(?!&apos;&apos;&apos;|&quot;&quot;&quot;)
+        .*?(?!'''|""")
         \}
     )
 </string>
         <key>end</key>
-        <string>(?=&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <string>(?='''|""")</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -5615,14 +5615,14 @@ indirectly through syntactic constructs
         <string>(?x)
     (?!\{\{)
     (?= \{ (
-              \w*? (?!&apos;&apos;&apos;|&quot;&quot;&quot;) [^!:\.\[}\w]
+              \w*? (?!'''|""") [^!:\.\[}\w]
            )
-        .*?(?!&apos;&apos;&apos;|&quot;&quot;&quot;)
+        .*?(?!'''|""")
         \}
     )
 </string>
         <key>end</key>
-        <string>(?=&apos;&apos;&apos;|&quot;&quot;&quot;)</string>
+        <string>(?='''|""")</string>
         <key>patterns</key>
         <array>
           <dict>
