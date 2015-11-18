@@ -1,6 +1,6 @@
 {
   "name": "MagicPython",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "engines": {
     "atom": "*",
     "node": "*",
@@ -16,8 +16,15 @@
   "description": "Syntax highlighter for cutting edge Python.",
   "license": "MIT",
   "publisher": "magicstack",
-  "categories": ["Languages"],
-  "keywords": ["python", "highlighter", "syntax", "python3"],
+  "categories": [
+    "Languages"
+  ],
+  "keywords": [
+    "python",
+    "highlighter",
+    "syntax",
+    "python3"
+  ],
   "contributes": {
     "//": "This section is for VSCode",
     "languages": [
