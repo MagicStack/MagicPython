@@ -28,7 +28,7 @@
   "icon": "icon.svg",
   "galleryBanner": {
     "color": "#2c2c2c",
-    "theme": "light"
+    "theme": "dark"
   },
   "contributes": {
     "//": "This section is for VSCode",
