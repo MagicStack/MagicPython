@@ -25,6 +25,11 @@
     "syntax",
     "python3"
   ],
+  "icon": "icon.svg",
+  "galleryBanner": {
+    "color": "#2c2c2c",
+    "theme": "light"
+  },
   "contributes": {
     "//": "This section is for VSCode",
     "languages": [
