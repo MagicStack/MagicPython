@@ -15,7 +15,7 @@
   },
   "description": "Syntax highlighter for cutting edge Python.",
   "license": "MIT",
-  "publisher": "MagicStack Inc.",
+  "publisher": "magicstack",
   "contributes": {
     "//": "This section is for VSCode",
     "languages": [
