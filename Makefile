@@ -1,4 +1,4 @@
-.PHONY: all test release devenv
+.PHONY: all test release devenv publish
 
 all: devenv release
 
@@ -26,3 +26,7 @@ release:
 	./node_modules/.bin/syntaxdev build-cson --in grammars/src/MagicRegExp.syntax.yaml --out grammars/MagicRegExp.cson
 
 	./node_modules/.bin/syntaxdev scopes --syntax grammars/src/MagicPython.syntax.yaml > misc/scopes
+
+publish: test
+	apm publish patch
+	vsce publish
