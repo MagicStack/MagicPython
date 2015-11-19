@@ -267,7 +267,15 @@ repository:
 
   member-access:
     begin: \.\s*(?!\.)
-    end: (?<=\S)(?=\W)|$
+    end: |
+      (?x)
+        # stop when you've just read non-whitespace followed by non-word
+        # i.e. when finished reading an identifier or function call
+        (?<=\S)(?=\W) |
+        # stop when seeing the start of something that's not a word,
+        # i.e. when seeing a non-identifier
+        (^|(?<=\s))(?=[^\\\w\s]) |
+        $
     patterns:
       - include: '#function-call'
       - include: '#member-access-base'

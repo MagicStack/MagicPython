@@ -563,7 +563,15 @@
         <key>begin</key>
         <string>\.\s*(?!\.)</string>
         <key>end</key>
-        <string>(?&lt;=\S)(?=\W)|$</string>
+        <string>(?x)
+  # stop when you've just read non-whitespace followed by non-word
+  # i.e. when finished reading an identifier or function call
+  (?&lt;=\S)(?=\W) |
+  # stop when seeing the start of something that's not a word,
+  # i.e. when seeing a non-identifier
+  (^|(?&lt;=\s))(?=[^\\\w\s]) |
+  $
+</string>
         <key>patterns</key>
         <array>
           <dict>
