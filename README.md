@@ -2,7 +2,8 @@
 
 This is a package with preferences and syntax highlighter for cutting edge
 Python 3, although Python 2 is well supported, too.  The syntax is compatible
-with [Sublime Text](http://www.sublimetext.com) and [Atom](http://atom.io).
+with [Sublime Text](http://www.sublimetext.com), [Atom](http://atom.io) and
+[Visual Studio Code](http://code.visualstudio.com).
 It is meant to be a drop-in replacement for the default Python package.
 
 MagicPython correctly highlights all Python 3.5 syntax features, including
@@ -29,16 +30,15 @@ disable the built-in `Python` package (using
 `Package Control -> Disable Package`, or directly by adding `"Python"` to
 `"ignored_packages"` in the settings file).
 
-In **VSCode**, copy/clone `MagicPython` to `.vscode/extensions` under your
-user directory ([more details](https://code.visualstudio.com/updates)).
-Please note, that [VSCode](https://code.visualstudio.com/) support is
-experimental.
+In **VSCode**, starting with version 0.10.1, install `MagicPython` with
+`Install Extension` command.
 
-Alternatively, the package can be installed manually in both editors:
+Alternatively, the package can be installed manually in all editors:
 
-- copy the MagicPython package into the Sublime/Atom user packages directory;
-- disable Python package;
-- enjoy.
+* copy the MagicPython package into the Sublime/Atom/VSCode user packages
+  directory;
+* disable Python package;
+* enjoy.
 
 
 ## Changes and Improvements
