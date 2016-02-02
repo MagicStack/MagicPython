@@ -89,7 +89,7 @@ repository:
   comments:
     patterns:
       - name: comment.line.number-sign.python
-              meta.typehint.comment.python
+        contentName: meta.typehint.comment.python
 
         begin: |
           (?x)
@@ -103,6 +103,7 @@ repository:
 
         end: (?:$|(?=\#))
         beginCaptures:
+          '0': {name: meta.typehint.comment.python}
           '1': {name: comment.typehint.directive.notation.python}
 
         patterns:
@@ -841,13 +842,12 @@ repository:
   parameter-special:
     match: |
       (?x)
-        (?: \b (self)|(cls) \b) \s*(?:(,)|(?=\)))
+        \b ((self)|(cls)) \b \s*(?:(,)|(?=\)))
     captures:
-      '1': {name: variable.parameter.function.language.python
-                  variable.parameter.function.language.special.self.python}
-      '2': {name: variable.parameter.function.language.python
-                  variable.parameter.function.language.special.cls.python}
-      '3': {name: punctuation.separator.parameters.python}
+      '1': {name: variable.parameter.function.language.python}
+      '2': {name: variable.parameter.function.language.special.self.python}
+      '3': {name: variable.parameter.function.language.special.cls.python}
+      '4': {name: punctuation.separator.parameters.python}
 
   parameter-with-default:
     begin: |

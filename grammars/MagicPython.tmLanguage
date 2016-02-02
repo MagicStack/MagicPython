@@ -94,7 +94,9 @@
         <array>
           <dict>
             <key>name</key>
-            <string>comment.line.number-sign.python meta.typehint.comment.python</string>
+            <string>comment.line.number-sign.python</string>
+            <key>contentName</key>
+            <string>meta.typehint.comment.python</string>
             <key>begin</key>
             <string>(?x)
   (?:
@@ -109,6 +111,11 @@
             <string>(?:$|(?=\#))</string>
             <key>beginCaptures</key>
             <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>meta.typehint.comment.python</string>
+              </dict>
               <key>1</key>
               <dict>
                 <key>name</key>
@@ -1992,21 +1999,26 @@ it's not tokenized as ellipsis.
       <dict>
         <key>match</key>
         <string>(?x)
-  (?: \b (self)|(cls) \b) \s*(?:(,)|(?=\)))
+  \b ((self)|(cls)) \b \s*(?:(,)|(?=\)))
 </string>
         <key>captures</key>
         <dict>
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>variable.parameter.function.language.python variable.parameter.function.language.special.self.python</string>
+            <string>variable.parameter.function.language.python</string>
           </dict>
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>variable.parameter.function.language.python variable.parameter.function.language.special.cls.python</string>
+            <string>variable.parameter.function.language.special.self.python</string>
           </dict>
           <key>3</key>
+          <dict>
+            <key>name</key>
+            <string>variable.parameter.function.language.special.cls.python</string>
+          </dict>
+          <key>4</key>
           <dict>
             <key>name</key>
             <string>punctuation.separator.parameters.python</string>
