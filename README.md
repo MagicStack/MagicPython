@@ -1,4 +1,4 @@
-# Magic Python [![Build Status](https://travis-ci.org/MagicStack/MagicPython.svg?branch=master)](https://travis-ci.org/MagicStack/MagicPython) [![](https://img.shields.io/apm/dm/magicpython.svg?label=Atom)](https://atom.io/packages/magicpython) [![](https://img.shields.io/badge/Sublime%20Text-%3E2k-red.svg)](https://packagecontrol.io/packages/MagicPython)
+# Magic Python [![Build Status](https://travis-ci.org/MagicStack/MagicPython.svg?branch=master)](https://travis-ci.org/MagicStack/MagicPython) [![apm](https://img.shields.io/apm/dm/magicpython.svg?label=Atom)](https://atom.io/packages/magicpython) [![Package Control](https://img.shields.io/packagecontrol/dt/MagicPython.svg?label=Sublime%20Text)](https://packagecontrol.io/packages/MagicPython) [![](https://img.shields.io/badge/Visual%20Studio%20Code-%3E6k-red.svg)](https://marketplace.visualstudio.com/items?itemName=magicstack.MagicPython)
 
 This is a package with preferences and syntax highlighter for cutting edge
 Python 3, although Python 2 is well supported, too.  The syntax is compatible
@@ -9,6 +9,10 @@ It is meant to be a drop-in replacement for the default Python package.
 MagicPython correctly highlights all Python 3.5 syntax features, including
 type annotations, string formatting and regular expressions.  It is built
 from scratch for robustness with an extensive test suite.
+
+We are proud to say that MagicPython has been included into the
+[github/linguist](https://github.com/github/linguist), a library used
+by GitHub.com to process languages.
 
 
 ![](https://magicstack.github.io/MagicPython/example.png)
@@ -215,7 +219,7 @@ If you intend to submit a pull request, please follow the following guidelines:
 
 ## Color Scheme
 
-If you want to write your own color scheme for MagicPython you can find a list of
-all the scopes that we use in [misc/scopes](misc/scopes). The file is
-automatically generated based on the syntax grammar, so it is always up-to-date
-and exhaustive.
+If you want to write your own color scheme for MagicPython you can
+find a list of all the scopes that we use in
+[misc/scopes](misc/scopes). The file is automatically generated based
+on the syntax grammar, so it is always up-to-date and exhaustive.
