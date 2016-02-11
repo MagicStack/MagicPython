@@ -27,7 +27,7 @@ repository:
   statement:
     patterns: [
       {
-        include: "#from-import"
+        include: "#import"
       }
       {
         include: "#class-declaration"
@@ -259,7 +259,7 @@ repository:
           (?x)
             \\b(?<!\\.)(
               as | async | continue | del | assert | break | finally | for
-              | from | elif | else | if | import | except | pass | raise
+              | from | elif | else | if | except | pass | raise
               | return | try | while | with
             )\\b
           
@@ -926,20 +926,29 @@ repository:
         ]
       }
     ]
-  "from-import":
+  import:
     comment: '''
-      The main purpose of this rule is to consume '...', so that
-      it's not tokenized as ellipsis.
+      Import statements
       
     '''
-    match: '''
-      (?x)
-        \\s* \\b(from)\\b (\\s*\\.+\\s*)
-      
-    '''
-    captures:
-      "1":
-        name: "keyword.control.flow.python"
+    patterns: [
+      {
+        match: '''
+          (?x)
+            \\s* \\b(from)\\b (\\s*\\.+\\s*) (import)?
+          
+        '''
+        captures:
+          "1":
+            name: "keyword.control.import.python"
+          "3":
+            name: "keyword.control.import.python"
+      }
+      {
+        name: "keyword.control.import.python"
+        match: "\\b(?<!\\.)import\\b"
+      }
+    ]
   "class-declaration":
     patterns: [
       {

@@ -31,7 +31,7 @@ else          : keyword.control.flow.python, source.python
               : source.python
 if            : keyword.control.flow.python, source.python
               : source.python
-import        : keyword.control.flow.python, source.python
+import        : keyword.control.import.python, source.python
               : source.python
 except        : keyword.control.flow.python, source.python
               : source.python
