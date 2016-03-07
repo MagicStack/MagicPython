@@ -148,7 +148,7 @@
               </dict>
               <dict>
                 <key>name</key>
-                <string>comment.typehint.puctuation.notation.python</string>
+                <string>comment.typehint.punctuation.notation.python</string>
                 <key>match</key>
                 <string>([\[\]\(\),\.\=\*]|(-&gt;))</string>
               </dict>

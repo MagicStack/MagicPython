@@ -104,7 +104,7 @@ repository:
             '''
           }
           {
-            name: "comment.typehint.puctuation.notation.python"
+            name: "comment.typehint.punctuation.notation.python"
             match: "([\\[\\]\\(\\),\\.\\=\\*]|(->))"
           }
           {

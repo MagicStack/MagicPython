@@ -2,7 +2,7 @@ comment.line.number-sign.python
 comment.regexp
 comment.typehint.directive.notation.python
 comment.typehint.ignore.notation.python
-comment.typehint.puctuation.notation.python
+comment.typehint.punctuation.notation.python
 comment.typehint.type.notation.python
 comment.typehint.variable.notation.python
 constant.character.escape.python
