@@ -131,13 +131,13 @@ readability. MagicPython follows a convention that a lower-case `r` prefix means
 a regexp string, but an upper-case `R` prefix means just a raw string with no
 special regexp semantics. This convention holds true for all of the legal
 combinations of prefixes. As always the syntax is biased towards Python 3, thus
-it will mark Pyhton-2-only prefixes (i.e. variations of `ur`) as deprecated.
+it will mark Python-2-only prefixes (i.e. variations of `ur`) as deprecated.
 
 String formatting is often only supported for '%-style formatting', however, the
 recommended and more readable syntax used by `.format` is ignored. The benefits
 of using simple and readable `{key}` replacement fields are hindered by the fact
 that in a complex or long string expression it may not be easily apparent what
-parameters will actually be needed by `.format`. This is why MagicPyhton
+parameters will actually be needed by `.format`. This is why MagicPython
 highlights both kinds of string formatting syntax within the appropriate string
 types (bytes don't have a `.format` method in Python 3, so they don't get the
 special highlighting for it, raw and unicode strings do). Additionally, the
