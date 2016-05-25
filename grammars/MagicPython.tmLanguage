@@ -789,7 +789,7 @@
      &lt;&lt;= | &gt;&gt;= | //= | \*\*=
     | \+= | -= | /= | @=
     | \*= | %= | ~= | \^= | &amp;= | \|=
-    | =
+    | =(?!=)
 </string>
       </dict>
       <key>operator</key>
@@ -1624,7 +1624,7 @@
             <key>name</key>
             <string>keyword.operator.assignment.python</string>
             <key>match</key>
-            <string>\=</string>
+            <string>=(?!=)</string>
           </dict>
           <dict>
             <key>include</key>
@@ -2118,7 +2118,7 @@
             <key>name</key>
             <string>keyword.operator.assignment.python</string>
             <key>match</key>
-            <string>\=</string>
+            <string>=(?!=)</string>
           </dict>
         </array>
       </dict>
@@ -2509,7 +2509,7 @@
             <key>name</key>
             <string>keyword.operator.assignment.python</string>
             <key>match</key>
-            <string>\=</string>
+            <string>=(?!=)</string>
           </dict>
           <dict>
             <key>include</key>

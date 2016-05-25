@@ -505,7 +505,7 @@ repository:
            <<= | >>= | //= | \\*\\*=
           | \\+= | -= | /= | @=
           | \\*= | %= | ~= | \\^= | &= | \\|=
-          | =
+          | =(?!=)
       
     '''
   operator:
@@ -1016,7 +1016,7 @@ repository:
       }
       {
         name: "keyword.operator.assignment.python"
-        match: "\\="
+        match: "=(?!=)"
       }
       {
         include: "#expression-class"
@@ -1308,7 +1308,7 @@ repository:
       }
       {
         name: "keyword.operator.assignment.python"
-        match: "\\="
+        match: "=(?!=)"
       }
     ]
   "return-annotation":
@@ -1563,7 +1563,7 @@ repository:
       }
       {
         name: "keyword.operator.assignment.python"
-        match: "\\="
+        match: "=(?!=)"
       }
       {
         include: "#expression"
