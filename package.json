@@ -45,6 +45,7 @@
           ".rpy",
           ".pyw",
           ".cpy",
+          ".pyi",
           ".SConstruct",
           ".Sconstruct",
           ".sconstruct",
