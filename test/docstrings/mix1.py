@@ -4,14 +4,12 @@ class Foo:
     # comment
     R'''TEST'''
 
-    def foo(self, a:'''TEST''')
-                -> '''TEST''': #ok
+    def foo(self, a:'''TEST''') -> '''TEST''': #ok
         r'''TEST'''
         with bar:
             pass
 
-    def bar(self, a:'''TEST''')
-                -> '''TEST''': pass
+    def bar(self, a:'''TEST''') -> '''TEST''': pass
         '''TEST''' # additional docstring
         with bar:
             pass
@@ -50,7 +48,7 @@ a             : meta.function.parameters.python, meta.function.python, source.py
 TEST          : meta.function.parameters.python, meta.function.python, source.python, string.quoted.multi.python
 '''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.multi.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
-                 : meta.function.python, source.python
+              : meta.function.python, source.python
 ->            : meta.function.python, punctuation.separator.annotation.result.python, source.python
               : meta.function.python, source.python
 '''           : meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
@@ -87,7 +85,7 @@ a             : meta.function.parameters.python, meta.function.python, source.py
 TEST          : meta.function.parameters.python, meta.function.python, source.python, string.quoted.multi.python
 '''           : meta.function.parameters.python, meta.function.python, punctuation.definition.string.end.python, source.python, string.quoted.multi.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
-                 : meta.function.python, source.python
+              : meta.function.python, source.python
 ->            : meta.function.python, punctuation.separator.annotation.result.python, source.python
               : meta.function.python, source.python
 '''           : meta.function.python, punctuation.definition.string.begin.python, source.python, string.quoted.multi.python

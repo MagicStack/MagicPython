@@ -1871,7 +1871,7 @@
     )
 </string>
         <key>end</key>
-        <string>(:)</string>
+        <string>(:|(?=[#'"\n]))</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
@@ -1981,7 +1981,10 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>([[:alpha:]_]\w*)\s*(?:(,)|(?=\)))</string>
+            <string>(?x)
+  ([[:alpha:]_]\w*)
+    \s* (?: (,) | (?=[)#\n=]))
+</string>
             <key>captures</key>
             <dict>
               <key>1</key>
@@ -2002,7 +2005,7 @@
           </dict>
           <dict>
             <key>include</key>
-            <string>#parameter-with-default</string>
+            <string>#loose-default</string>
           </dict>
           <dict>
             <key>include</key>
@@ -2040,23 +2043,15 @@
           </dict>
         </dict>
       </dict>
-      <key>parameter-with-default</key>
+      <key>loose-default</key>
       <dict>
         <key>begin</key>
-        <string>(?x)
-  \b
-  ([[:alpha:]_]\w*) \s* (=)
-</string>
+        <string>(=)</string>
         <key>end</key>
         <string>(,)|(?=\))</string>
         <key>beginCaptures</key>
         <dict>
           <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>variable.parameter.function.language.python</string>
-          </dict>
-          <key>2</key>
           <dict>
             <key>name</key>
             <string>keyword.operator.python</string>

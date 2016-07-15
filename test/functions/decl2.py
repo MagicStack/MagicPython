@@ -9,7 +9,7 @@ result_annot  : entity.name.function.python, meta.function.python, source.python
 lambda        : meta.function.parameters.python, meta.function.python, source.python, storage.type.function.lambda.python
 ,             : meta.function.parameters.python, meta.function.python, source.python
 lambda        : keyword.control.flow.python, meta.function.parameters.python, meta.function.python, source.python
-=             : meta.function.parameters.python, meta.function.python, source.python
+=             : keyword.operator.python, meta.function.parameters.python, meta.function.python, source.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
               : meta.function.python, source.python
 ->            : meta.function.python, punctuation.separator.annotation.result.python, source.python

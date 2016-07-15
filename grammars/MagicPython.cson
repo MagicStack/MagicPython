@@ -1168,7 +1168,7 @@ repository:
           )
       
     '''
-    end: "(:)"
+    end: "(:|(?=[#'\"\\n]))"
     beginCaptures:
       "1":
         name: "storage.type.function.async.python"
@@ -1233,7 +1233,12 @@ repository:
         include: "#parameter-special"
       }
       {
-        match: "([[:alpha:]_]\\w*)\\s*(?:(,)|(?=\\)))"
+        match: '''
+          (?x)
+            ([[:alpha:]_]\\w*)
+              \\s* (?: (,) | (?=[)#\\n=]))
+          
+        '''
         captures:
           "1":
             name: "variable.parameter.function.language.python"
@@ -1244,7 +1249,7 @@ repository:
         include: "#comments"
       }
       {
-        include: "#parameter-with-default"
+        include: "#loose-default"
       }
       {
         include: "#annotated-parameter"
@@ -1265,18 +1270,11 @@ repository:
         name: "variable.parameter.function.language.special.cls.python"
       "4":
         name: "punctuation.separator.parameters.python"
-  "parameter-with-default":
-    begin: '''
-      (?x)
-        \\b
-        ([[:alpha:]_]\\w*) \\s* (=)
-      
-    '''
+  "loose-default":
+    begin: "(=)"
     end: "(,)|(?=\\))"
     beginCaptures:
       "1":
-        name: "variable.parameter.function.language.python"
-      "2":
         name: "keyword.operator.python"
     endCaptures:
       "1":
