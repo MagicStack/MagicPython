@@ -11,6 +11,8 @@ fileTypes: [
   "Sconstruct"
   "sconstruct"
   "SConscript"
+  "gyp"
+  "gypi"
 ]
 first_line_match: "^#!/.*\\bpython[\\d\\.]*\\b"
 firstLineMatch: "^#!/.*\\bpython[\\d\\.]*\\b"

@@ -18,6 +18,8 @@
       <string>Sconstruct</string>
       <string>sconstruct</string>
       <string>SConscript</string>
+      <string>gyp</string>
+      <string>gypi</string>
     </array>
     <key>first_line_match</key>
     <string>^#!/.*\bpython[\d\.]*\b</string>
