@@ -1185,6 +1185,9 @@ repository:
         include: "#parameters"
       }
       {
+        include: "#line-continuation"
+      }
+      {
         include: "#return-annotation"
       }
     ]

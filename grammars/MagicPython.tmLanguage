@@ -18,8 +18,6 @@
       <string>Sconstruct</string>
       <string>sconstruct</string>
       <string>SConscript</string>
-      <string>gyp</string>
-      <string>gypi</string>
     </array>
     <key>first_line_match</key>
     <string>^#!/.*\bpython[\d\.]*\b</string>
@@ -1904,6 +1902,10 @@
           <dict>
             <key>include</key>
             <string>#parameters</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#line-continuation</string>
           </dict>
           <dict>
             <key>include</key>

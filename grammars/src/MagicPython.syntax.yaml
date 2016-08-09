@@ -806,6 +806,7 @@ repository:
     patterns:
       - include: '#function-def-name'
       - include: '#parameters'
+      - include: '#line-continuation'
       - include: '#return-annotation'
 
   function-def-name:
