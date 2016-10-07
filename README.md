@@ -151,6 +151,13 @@ Most numbers are just regular decimal constants, but any time that octal,
 binary, hexadecimal or complex numbers are used it's worth noting that they are
 of a special type. Highlighting of Python 2 'L' integers is also supported.
 
+Underscores in numeric literals are also supported (PEP 515, introduced in
+Python 3.6):
+
+```python
+100_000_000_000         0b_1110_0101        0x_FF_12_A0_99
+```
+
 
 ### Python 3.5 features
 

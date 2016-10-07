@@ -40,7 +40,8 @@ def showcase():
 
     # NOTE Numbers with leading zeros are invalid in Python 3,
     # use 0o...
-    answer = func(0xdeadbeef + 0b0010001 + 0123 + 0o123 +
+    answer = func(0xdeadbeef + 0b00100001 + 0123 + 0o123 +
+                  1_005_123 + # PEP 515
                   # complex numbers
                   .10e12 + 2j) @ mat
 
