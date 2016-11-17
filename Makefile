@@ -16,7 +16,7 @@ test: release
 		then echo "Error: package.version != git.tag" && exit 1 ; fi
 
 devenv:
-	npm install syntaxdev@0.0.10
+	npm install syntaxdev@0.0.11
 
 release:
 	./node_modules/.bin/syntaxdev build-plist --in grammars/src/MagicPython.syntax.yaml --out grammars/MagicPython.tmLanguage
