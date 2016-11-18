@@ -1291,6 +1291,14 @@
             <key>include</key>
             <string>#string-raw-bin-quoted-single-line</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-quoted-multi-line</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-quoted-single-line</string>
+          </dict>
         </array>
       </dict>
       <key>string-unicode-guts</key>
@@ -1363,6 +1371,30 @@
           <dict>
             <key>include</key>
             <string>#string-formatting</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-guts</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#escape-sequence-unicode</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#escape-sequence</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string-line-continuation</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>constant.character.escape.python</string>
+            <key>match</key>
+            <string>(\\[{}])</string>
           </dict>
         </array>
       </dict>
@@ -5674,6 +5706,234 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#string-formatting</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-quoted-single-line</key>
+      <dict>
+        <key>begin</key>
+        <string>(\b[fF])((['"]))</string>
+        <key>end</key>
+        <string>(\2)|((?&lt;!\\)\n)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.single.python storage.type.string.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.single.python punctuation.definition.string.begin.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.single.python punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#fstring-guts</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-single-brace</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.single.python</string>
+            <key>match</key>
+            <string>(?x)
+  (.*?)
+    (
+      (?# .* and .*? in multi-line match need special handling of
+        newlines otherwise SublimeText and Atom will match slightly
+        differently.
+
+        The guard for newlines has to be separate from the
+        lookahead because of special $ matching rule.)
+      ($\n?)
+      |
+      (?=[\\\{]|(['"])|((?&lt;!\\)\n))
+    )
+</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-single-brace</key>
+      <dict>
+        <key>comment</key>
+        <string>value interpolation using { ... }</string>
+        <key>begin</key>
+        <string>(\{)</string>
+        <key>end</key>
+        <string>(?x)
+  (![rsa])?
+    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
+      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
+  (\})
+</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>constant.character.format.placeholder.other.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.format.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+          </dict>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>constant.character.format.placeholder.other.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#fstring-terminator</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-quoted-multi-line</key>
+      <dict>
+        <key>begin</key>
+        <string>(\b[fF])('''|""")</string>
+        <key>end</key>
+        <string>(\2)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.multi.python storage.type.string.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.multi.python punctuation.definition.string.begin.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.multi.python punctuation.definition.string.end.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.newline.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#fstring-guts</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-multi-brace</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>string.quoted.multi.python</string>
+            <key>match</key>
+            <string>(?x)
+  (.*?)
+    (
+      (?# .* and .*? in multi-line match need special handling of
+        newlines otherwise SublimeText and Atom will match slightly
+        differently.
+
+        The guard for newlines has to be separate from the
+        lookahead because of special $ matching rule.)
+      ($\n?)
+      |
+      (?=[\\\{]|'''|""")
+    )
+</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-multi-brace</key>
+      <dict>
+        <key>comment</key>
+        <string>value interpolation using { ... }</string>
+        <key>begin</key>
+        <string>(\{)</string>
+        <key>end</key>
+        <string>(?x)
+  (![rsa])?
+    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
+      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
+  (\})
+</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>constant.character.format.placeholder.other.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.format.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+          </dict>
+          <key>4</key>
+          <dict>
+            <key>name</key>
+            <string>constant.character.format.placeholder.other.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#fstring-terminator</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
           </dict>
         </array>
       </dict>

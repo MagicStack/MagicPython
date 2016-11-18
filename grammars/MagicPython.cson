@@ -795,6 +795,12 @@ repository:
       {
         include: "#string-raw-bin-quoted-single-line"
       }
+      {
+        include: "#fstring-quoted-multi-line"
+      }
+      {
+        include: "#fstring-quoted-single-line"
+      }
     ]
   "string-unicode-guts":
     patterns: [
@@ -841,6 +847,22 @@ repository:
       }
       {
         include: "#string-formatting"
+      }
+    ]
+  "fstring-guts":
+    patterns: [
+      {
+        include: "#escape-sequence-unicode"
+      }
+      {
+        include: "#escape-sequence"
+      }
+      {
+        include: "#string-line-continuation"
+      }
+      {
+        name: "constant.character.escape.python"
+        match: "(\\\\[{}])"
       }
     ]
   "escape-sequence-unicode":
@@ -3333,5 +3355,143 @@ repository:
       }
       {
         include: "#string-formatting"
+      }
+    ]
+  "fstring-quoted-single-line":
+    begin: "(\\b[fF])((['\"]))"
+    end: "(\\2)|((?<!\\\\)\\n)"
+    beginCaptures:
+      "1":
+        name: "string.quoted.single.python storage.type.string.python"
+      "2":
+        name: "string.quoted.single.python punctuation.definition.string.begin.python"
+    endCaptures:
+      "1":
+        name: "string.quoted.single.python punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#fstring-guts"
+      }
+      {
+        include: "#fstring-single-brace"
+      }
+      {
+        name: "string.quoted.single.python"
+        match: '''
+          (?x)
+            (.*?)
+              (
+                (?# .* and .*? in multi-line match need special handling of
+                  newlines otherwise SublimeText and Atom will match slightly
+                  differently.
+          
+                  The guard for newlines has to be separate from the
+                  lookahead because of special $ matching rule.)
+                ($\\n?)
+                |
+                (?=[\\\\\\{]|(['"])|((?<!\\\\)\\n))
+              )
+          
+        '''
+      }
+    ]
+  "fstring-single-brace":
+    comment: "value interpolation using { ... }"
+    begin: "(\\{)"
+    end: '''
+      (?x)
+        (![rsa])?
+          ( : \\w? [<>=^]? [-+ ]? \\#?
+            \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?
+        (\\})
+      
+    '''
+    beginCaptures:
+      "1":
+        name: "constant.character.format.placeholder.other.python"
+    endCaptures:
+      "1":
+        name: "storage.type.format.python"
+      "2":
+        name: "support.other.format.python"
+      "4":
+        name: "constant.character.format.placeholder.other.python"
+    patterns: [
+      {
+        include: "#fstring-terminator"
+      }
+      {
+        include: "#expression"
+      }
+    ]
+  "fstring-quoted-multi-line":
+    begin: "(\\b[fF])('''|\"\"\")"
+    end: "(\\2)"
+    beginCaptures:
+      "1":
+        name: "string.quoted.multi.python storage.type.string.python"
+      "2":
+        name: "string.quoted.multi.python punctuation.definition.string.begin.python"
+    endCaptures:
+      "1":
+        name: "string.quoted.multi.python punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#fstring-guts"
+      }
+      {
+        include: "#fstring-multi-brace"
+      }
+      {
+        name: "string.quoted.multi.python"
+        match: '''
+          (?x)
+            (.*?)
+              (
+                (?# .* and .*? in multi-line match need special handling of
+                  newlines otherwise SublimeText and Atom will match slightly
+                  differently.
+          
+                  The guard for newlines has to be separate from the
+                  lookahead because of special $ matching rule.)
+                ($\\n?)
+                |
+                (?=[\\\\\\{]|\'''|""")
+              )
+          
+        '''
+      }
+    ]
+  "fstring-multi-brace":
+    comment: "value interpolation using { ... }"
+    begin: "(\\{)"
+    end: '''
+      (?x)
+        (![rsa])?
+          ( : \\w? [<>=^]? [-+ ]? \\#?
+            \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?
+        (\\})
+      
+    '''
+    beginCaptures:
+      "1":
+        name: "constant.character.format.placeholder.other.python"
+    endCaptures:
+      "1":
+        name: "storage.type.format.python"
+      "2":
+        name: "support.other.format.python"
+      "4":
+        name: "constant.character.format.placeholder.other.python"
+    patterns: [
+      {
+        include: "#fstring-terminator"
+      }
+      {
+        include: "#expression"
       }
     ]

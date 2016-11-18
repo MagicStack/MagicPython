@@ -20,8 +20,8 @@ def showcase():
         await logger.log('working\x12with %r', aio_db)
 
         async with db.transaction():
-            print('Result: {result!r}'.format(result=
-                await db.query(...)))
+            result = await db.query(...)
+            print(f'Result: {result!r}')
 
     mapping = None     # type: Dict[int, Any] # PEP 484
 

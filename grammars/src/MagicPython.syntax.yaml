@@ -71,6 +71,18 @@ repository:
         marker: "'''|\"\"\""
         guard: ""
 
+    - file: 'pyfstring.inc.syntax.yaml'
+      vars:
+        line: single
+        marker: (['"])
+        guard: "|((?<!\\\\)\\n)"
+
+    - file: 'pyfstring.inc.syntax.yaml'
+      vars:
+        line: multi
+        marker: "'''|\"\"\""
+        guard: ""
+
 
   statement:
     patterns:
@@ -561,6 +573,8 @@ repository:
       - include: '#string-raw-quoted-single-line'
       - include: '#string-raw-bin-quoted-multi-line'
       - include: '#string-raw-bin-quoted-single-line'
+      - include: '#fstring-quoted-multi-line'
+      - include: '#fstring-quoted-single-line'
 
   string-unicode-guts:
     patterns:
@@ -587,6 +601,14 @@ repository:
       - include: '#escape-sequence'
       - include: '#string-line-continuation'
       - include: '#string-formatting'
+
+  fstring-guts:
+    patterns:
+      - include: '#escape-sequence-unicode'
+      - include: '#escape-sequence'
+      - include: '#string-line-continuation'
+      - name: constant.character.escape.python
+        match: (\\[{}])
 
   escape-sequence-unicode:
     patterns:

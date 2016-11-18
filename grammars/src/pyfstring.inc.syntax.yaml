@@ -1,0 +1,52 @@
+---
+repository:
+  fstring-quoted-${line}-line:
+    begin: (\b[fF])(${marker})
+    end: (\2)${guard}
+    beginCaptures:
+      '1': {name: string.quoted.${line}.python
+                  storage.type.string.python}
+      '2': {name: string.quoted.${line}.python
+                  punctuation.definition.string.begin.python}
+    endCaptures:
+      '1': {name: string.quoted.${line}.python
+                  punctuation.definition.string.end.python}
+      '2': {name: invalid.illegal.newline.python}
+    patterns:
+      - include: '#fstring-guts'
+      - include: '#fstring-${line}-brace'
+      - name: string.quoted.${line}.python
+        match: |
+          (?x)
+            (.*?)
+              (
+                (?# .* and .*? in multi-line match need special handling of
+                  newlines otherwise SublimeText and Atom will match slightly
+                  differently.
+
+                  The guard for newlines has to be separate from the
+                  lookahead because of special $ matching rule.)
+                ($\n?)
+                |
+                (?=[\\\{]|${marker}${guard})
+              )
+
+  fstring-${line}-brace:
+    comment: value interpolation using { ... }
+    begin: (\{)
+    end: |
+      (?x)
+        (![rsa])?
+          ( : \w? [<>=^]? [-+ ]? \#?
+            \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
+        (\})
+    beginCaptures:
+      '1': {name: constant.character.format.placeholder.other.python}
+    endCaptures:
+      '1': {name: storage.type.format.python}
+      '2': {name: support.other.format.python}
+      '4': {name: constant.character.format.placeholder.other.python}
+    patterns:
+      - include: '#fstring-terminator'
+      - include: '#expression'
+...
