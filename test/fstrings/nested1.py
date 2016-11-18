@@ -52,7 +52,7 @@ def           : keyword.control.flow.python, meta.function-call.arguments.python
 aaa           : meta.function-call.arguments.python, meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.arguments.end.python, source.python
-:             : meta.function-call.arguments.python, meta.function-call.python, source.python
+:             : meta.function-call.arguments.python, meta.function-call.python, source.python, support.other.format.python
 pass          : keyword.control.flow.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 }             : constant.character.format.placeholder.other.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 111           : meta.function-call.arguments.python, meta.function-call.python, source.python, string.quoted.single.python

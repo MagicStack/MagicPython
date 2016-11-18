@@ -39,16 +39,11 @@ repository:
     begin: (\{)
     end: |
       (?x)
-        (![rsa])?
-          ( : \w? [<>=^]? [-+ ]? \#?
-            \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
         (\})
     beginCaptures:
       '1': {name: constant.character.format.placeholder.other.python}
     endCaptures:
-      '1': {name: storage.type.format.python}
-      '2': {name: support.other.format.python}
-      '4': {name: constant.character.format.placeholder.other.python}
+      '1': {name: constant.character.format.placeholder.other.python}
     patterns:
       - include: '#fstring-terminator'
       - include: '#expression'

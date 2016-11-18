@@ -612,6 +612,26 @@ repository:
       - name: invalid.illegal.brace.python
         match: (}(?!}))
 
+  fstring-terminator:
+    patterns:
+      - match: |
+          (?x)
+            (![rsa])
+              ( : \w? [<>=^]? [-+ ]? \#?
+                \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
+        captures:
+          '1': {name: storage.type.format.python}
+          '2': {name: support.other.format.python}
+
+      - match: |
+          (?x)
+            (![rsa])?
+              ( : \w? [<>=^]? [-+ ]? \#?
+                \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )
+        captures:
+          '1': {name: storage.type.format.python}
+          '2': {name: support.other.format.python}
+
   escape-sequence-unicode:
     patterns:
       - name: constant.character.escape.python

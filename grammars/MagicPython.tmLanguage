@@ -1404,6 +1404,54 @@
           </dict>
         </array>
       </dict>
+      <key>fstring-terminator</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?x)
+  (![rsa])
+    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
+      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
+</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.format.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>support.other.format.python</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?x)
+  (![rsa])?
+    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
+      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )
+</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.format.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>support.other.format.python</string>
+              </dict>
+            </dict>
+          </dict>
+        </array>
+      </dict>
       <key>escape-sequence-unicode</key>
       <dict>
         <key>patterns</key>
@@ -5789,9 +5837,6 @@ indirectly through syntactic constructs
         <string>(\{)</string>
         <key>end</key>
         <string>(?x)
-  (![rsa])?
-    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
-      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
   (\})
 </string>
         <key>beginCaptures</key>
@@ -5805,16 +5850,6 @@ indirectly through syntactic constructs
         <key>endCaptures</key>
         <dict>
           <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>storage.type.format.python</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>support.other.format.python</string>
-          </dict>
-          <key>4</key>
           <dict>
             <key>name</key>
             <string>constant.character.format.placeholder.other.python</string>
@@ -5906,9 +5941,6 @@ indirectly through syntactic constructs
         <string>(\{)</string>
         <key>end</key>
         <string>(?x)
-  (![rsa])?
-    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
-      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
   (\})
 </string>
         <key>beginCaptures</key>
@@ -5922,16 +5954,6 @@ indirectly through syntactic constructs
         <key>endCaptures</key>
         <dict>
           <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>storage.type.format.python</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>support.other.format.python</string>
-          </dict>
-          <key>4</key>
           <dict>
             <key>name</key>
             <string>constant.character.format.placeholder.other.python</string>

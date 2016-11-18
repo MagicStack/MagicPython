@@ -869,6 +869,37 @@ repository:
         match: "(}(?!}))"
       }
     ]
+  "fstring-terminator":
+    patterns: [
+      {
+        match: '''
+          (?x)
+            (![rsa])
+              ( : \\w? [<>=^]? [-+ ]? \\#?
+                \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?
+          
+        '''
+        captures:
+          "1":
+            name: "storage.type.format.python"
+          "2":
+            name: "support.other.format.python"
+      }
+      {
+        match: '''
+          (?x)
+            (![rsa])?
+              ( : \\w? [<>=^]? [-+ ]? \\#?
+                \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )
+          
+        '''
+        captures:
+          "1":
+            name: "storage.type.format.python"
+          "2":
+            name: "support.other.format.python"
+      }
+    ]
   "escape-sequence-unicode":
     patterns: [
       {
@@ -3409,9 +3440,6 @@ repository:
     begin: "(\\{)"
     end: '''
       (?x)
-        (![rsa])?
-          ( : \\w? [<>=^]? [-+ ]? \\#?
-            \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?
         (\\})
       
     '''
@@ -3420,10 +3448,6 @@ repository:
         name: "constant.character.format.placeholder.other.python"
     endCaptures:
       "1":
-        name: "storage.type.format.python"
-      "2":
-        name: "support.other.format.python"
-      "4":
         name: "constant.character.format.placeholder.other.python"
     patterns: [
       {
@@ -3481,9 +3505,6 @@ repository:
     begin: "(\\{)"
     end: '''
       (?x)
-        (![rsa])?
-          ( : \\w? [<>=^]? [-+ ]? \\#?
-            \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )?
         (\\})
       
     '''
@@ -3492,10 +3513,6 @@ repository:
         name: "constant.character.format.placeholder.other.python"
     endCaptures:
       "1":
-        name: "storage.type.format.python"
-      "2":
-        name: "support.other.format.python"
-      "4":
         name: "constant.character.format.placeholder.other.python"
     patterns: [
       {
