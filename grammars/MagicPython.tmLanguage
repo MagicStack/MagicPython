@@ -1394,7 +1394,13 @@
             <key>name</key>
             <string>constant.character.escape.python</string>
             <key>match</key>
-            <string>(\\[{}])</string>
+            <string>({{|}})</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>invalid.illegal.brace.python</string>
+            <key>match</key>
+            <string>(}(?!}))</string>
           </dict>
         </array>
       </dict>
@@ -5756,7 +5762,7 @@ indirectly through syntactic constructs
             <string>string.quoted.single.python</string>
             <key>match</key>
             <string>(?x)
-  (.*?)
+  (.+?)
     (
       (?# .* and .*? in multi-line match need special handling of
         newlines otherwise SublimeText and Atom will match slightly
@@ -5766,8 +5772,11 @@ indirectly through syntactic constructs
         lookahead because of special $ matching rule.)
       ($\n?)
       |
-      (?=[\\\{]|(['"])|((?&lt;!\\)\n))
+      (?=[\\\}\{]|(['"])|((?&lt;!\\)\n))
     )
+  (?# due to how multiline regexps are matched we need a special case
+    for matching a newline character)
+  | \n
 </string>
           </dict>
         </array>
@@ -5870,7 +5879,7 @@ indirectly through syntactic constructs
             <string>string.quoted.multi.python</string>
             <key>match</key>
             <string>(?x)
-  (.*?)
+  (.+?)
     (
       (?# .* and .*? in multi-line match need special handling of
         newlines otherwise SublimeText and Atom will match slightly
@@ -5880,8 +5889,11 @@ indirectly through syntactic constructs
         lookahead because of special $ matching rule.)
       ($\n?)
       |
-      (?=[\\\{]|'''|""")
+      (?=[\\\}\{]|'''|""")
     )
+  (?# due to how multiline regexps are matched we need a special case
+    for matching a newline character)
+  | \n
 </string>
           </dict>
         </array>

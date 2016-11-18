@@ -608,7 +608,9 @@ repository:
       - include: '#escape-sequence'
       - include: '#string-line-continuation'
       - name: constant.character.escape.python
-        match: (\\[{}])
+        match: ({{|}})
+      - name: invalid.illegal.brace.python
+        match: (}(?!}))
 
   escape-sequence-unicode:
     patterns:

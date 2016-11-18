@@ -31,6 +31,7 @@ invalid.deprecated.backtick.python
 invalid.deprecated.prefix.python
 invalid.deprecated.semicolon.python
 invalid.illegal.annotation.python
+invalid.illegal.brace.python
 invalid.illegal.dec.python
 invalid.illegal.decorator.python
 invalid.illegal.line.continuation.python

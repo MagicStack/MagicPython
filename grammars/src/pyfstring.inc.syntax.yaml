@@ -18,7 +18,7 @@ repository:
       - name: string.quoted.${line}.python
         match: |
           (?x)
-            (.*?)
+            (.+?)
               (
                 (?# .* and .*? in multi-line match need special handling of
                   newlines otherwise SublimeText and Atom will match slightly
@@ -28,8 +28,11 @@ repository:
                   lookahead because of special $ matching rule.)
                 ($\n?)
                 |
-                (?=[\\\{]|${marker}${guard})
+                (?=[\\\}\{]|${marker}${guard})
               )
+            (?# due to how multiline regexps are matched we need a special case
+              for matching a newline character)
+            | \n
 
   fstring-${line}-brace:
     comment: value interpolation using { ... }
