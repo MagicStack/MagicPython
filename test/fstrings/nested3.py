@@ -1,4 +1,5 @@
-f"result: {value:{60}.{16!s:2}{'qwerty'[2]}}"
+f"result: {value:{60}.{16!s:2}{'qwerty'
+[2]}}"
 
 
 
@@ -22,9 +23,10 @@ value         : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 qwerty        : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
+              : invalid.illegal.newline.python, source.python
 [             : punctuation.definition.list.begin.python, source.python
 2             : constant.numeric.dec.python, source.python
 ]             : punctuation.definition.list.end.python, source.python
-}             : constant.character.format.placeholder.other.python, source.python
-}             : constant.character.format.placeholder.other.python, source.python
-"             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
+}}            : source.python
+"             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+              : invalid.illegal.newline.python, source.python, string.quoted.single.python

@@ -14,6 +14,7 @@ repository:
       '2': {name: invalid.illegal.newline.python}
     patterns:
       - include: '#fstring-guts'
+      - include: '#fstring-illegal-${line}-brace'
       - include: '#fstring-${line}-brace'
       - name: string.quoted.${line}.python
         match: |
@@ -39,12 +40,54 @@ repository:
     begin: (\{)
     end: |
       (?x)
-        (\})
+        (\})${fguard}
     beginCaptures:
       '1': {name: constant.character.format.placeholder.other.python}
     endCaptures:
       '1': {name: constant.character.format.placeholder.other.python}
     patterns:
-      - include: '#fstring-terminator'
-      - include: '#expression'
+      - include: '#fstring-terminator-${line}'
+      - include: '#f-expression'
+
+  fstring-terminator-${line}:
+    patterns:
+      - name: storage.type.format.python
+        match: (![rsa])(?=})
+      - match: |
+          (?x)
+            (![rsa])?
+              ( : \w? [<>=^]? [-+ ]? \#?
+                \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )(?=})
+        captures:
+          '1': {name: storage.type.format.python}
+          '2': {name: support.other.format.python}
+
+      - include: '#fstring-terminator-${line}-tail'
+
+  fstring-terminator-${line}-tail:
+    begin: (![rsa])?(:)(?=.*?{)
+    end: (?=})${fguard}
+    beginCaptures:
+      '1': {name: storage.type.format.python}
+      '2': {name: support.other.format.python}
+
+    patterns:
+      - include: '#fstring-illegal-${line}-brace'
+      - include: '#fstring-${line}-brace'
+      - name: support.other.format.python
+        match: ([bcdeEfFgGnosxX%])(?=})
+      - name: support.other.format.python
+        match: (\.\d+)
+      - name: support.other.format.python
+        match: (,)
+      - name: support.other.format.python
+        match: (\d+)
+      - name: support.other.format.python
+        match: (\#)
+      - name: support.other.format.python
+        match: ([-+ ])
+      - name: support.other.format.python
+        match: ([<>=^])
+      - name: support.other.format.python
+        match: (\w)
 ...

@@ -445,10 +445,10 @@
           </dict>
         </array>
       </dict>
-      <key>expression-base</key>
+      <key>expression-bare</key>
       <dict>
         <key>comment</key>
-        <string>All valid Python expressions</string>
+        <string>valid Python expressions w/o comments and line continuation</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -458,10 +458,6 @@
           <dict>
             <key>include</key>
             <string>#illegal-anno</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#comments</string>
           </dict>
           <dict>
             <key>include</key>
@@ -537,11 +533,31 @@
           </dict>
           <dict>
             <key>include</key>
-            <string>#line-continuation</string>
+            <string>#ellipsis</string>
           </dict>
           <dict>
             <key>include</key>
-            <string>#ellipsis</string>
+            <string>#line-continuation</string>
+          </dict>
+        </array>
+      </dict>
+      <key>expression-base</key>
+      <dict>
+        <key>comment</key>
+        <string>valid Python expressions with comments and line continuation</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#comments</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression-bare</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#line-continuation</string>
           </dict>
         </array>
       </dict>
@@ -1404,51 +1420,61 @@
           </dict>
         </array>
       </dict>
-      <key>fstring-terminator</key>
+      <key>fstring-illegal-single-brace</key>
       <dict>
+        <key>comment</key>
+        <string>it is illegal to have a multiline brace inside a single-line string</string>
+        <key>begin</key>
+        <string>(\{)(?=[^\n}]*$\n?)</string>
+        <key>end</key>
+        <string>(\})|(?=\n)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>constant.character.format.placeholder.other.python</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>constant.character.format.placeholder.other.python</string>
+          </dict>
+        </dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>match</key>
-            <string>(?x)
-  (![rsa])
-    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
-      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
-</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>storage.type.format.python</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>support.other.format.python</string>
-              </dict>
-            </dict>
+            <key>include</key>
+            <string>#fstring-terminator-single</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#f-expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>f-expression</key>
+      <dict>
+        <key>comment</key>
+        <string>All valid Python expressions, except comments and line cont</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#expression-bare</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#member-access</string>
+          </dict>
+          <dict>
+            <key>comment</key>
+            <string>Tokenize identifiers to help linters</string>
             <key>match</key>
-            <string>(?x)
-  (![rsa])?
-    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
-      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )
-</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>storage.type.format.python</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>support.other.format.python</string>
-              </dict>
-            </dict>
+            <string>(?x) \b ([[:alpha:]_]\w*) \b</string>
           </dict>
         </array>
       </dict>
@@ -5803,6 +5829,10 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>include</key>
+            <string>#fstring-illegal-single-brace</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#fstring-single-brace</string>
           </dict>
           <dict>
@@ -5837,7 +5867,7 @@ indirectly through syntactic constructs
         <string>(\{)</string>
         <key>end</key>
         <string>(?x)
-  (\})
+  (\})|(?=\n)
 </string>
         <key>beginCaptures</key>
         <dict>
@@ -5859,11 +5889,127 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
-            <string>#fstring-terminator</string>
+            <string>#fstring-terminator-single</string>
           </dict>
           <dict>
             <key>include</key>
-            <string>#expression</string>
+            <string>#f-expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-terminator-single</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>storage.type.format.python</string>
+            <key>match</key>
+            <string>(![rsa])(?=})</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?x)
+  (![rsa])?
+    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
+      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )(?=})
+</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.format.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>support.other.format.python</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-terminator-single-tail</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-terminator-single-tail</key>
+      <dict>
+        <key>begin</key>
+        <string>(![rsa])?(:)(?=.*?{)</string>
+        <key>end</key>
+        <string>(?=})|(?=\n)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.format.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#fstring-illegal-single-brace</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-single-brace</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>([bcdeEfFgGnosxX%])(?=})</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(\.\d+)</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(,)</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(\d+)</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(\#)</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>([-+ ])</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>([&lt;&gt;=^])</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(\w)</string>
           </dict>
         </array>
       </dict>
@@ -5904,6 +6050,10 @@ indirectly through syntactic constructs
           <dict>
             <key>include</key>
             <string>#fstring-guts</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-illegal-multi-brace</string>
           </dict>
           <dict>
             <key>include</key>
@@ -5963,11 +6113,127 @@ indirectly through syntactic constructs
         <array>
           <dict>
             <key>include</key>
-            <string>#fstring-terminator</string>
+            <string>#fstring-terminator-multi</string>
           </dict>
           <dict>
             <key>include</key>
-            <string>#expression</string>
+            <string>#f-expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-terminator-multi</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>storage.type.format.python</string>
+            <key>match</key>
+            <string>(![rsa])(?=})</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?x)
+  (![rsa])?
+    ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
+      \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )(?=})
+</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.format.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>support.other.format.python</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-terminator-multi-tail</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-terminator-multi-tail</key>
+      <dict>
+        <key>begin</key>
+        <string>(![rsa])?(:)(?=.*?{)</string>
+        <key>end</key>
+        <string>(?=})</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.format.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#fstring-illegal-multi-brace</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-multi-brace</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>([bcdeEfFgGnosxX%])(?=})</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(\.\d+)</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(,)</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(\d+)</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(\#)</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>([-+ ])</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>([&lt;&gt;=^])</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.other.format.python</string>
+            <key>match</key>
+            <string>(\w)</string>
           </dict>
         </array>
       </dict>

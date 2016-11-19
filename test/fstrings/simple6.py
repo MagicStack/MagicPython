@@ -21,7 +21,7 @@ def           : keyword.control.flow.python, source.python
 aaa           : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
-:             : source.python, support.other.format.python
+:             : source.python
 pass          : keyword.control.flow.python, source.python
 }             : constant.character.format.placeholder.other.python, source.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python

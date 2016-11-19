@@ -45,7 +45,8 @@ f             : source.python, storage.type.string.python, string.quoted.single.
 [             : punctuation.definition.list.begin.python, source.python
               : source.python
 ]             : punctuation.definition.list.end.python, source.python
-:Xd           : source.python, support.other.format.python
+:             : source.python
+Xd            : source.python
 >             : keyword.operator.comparison.python, source.python
 +             : keyword.operator.arithmetic.python, source.python
 10d           : invalid.illegal.name.python, source.python

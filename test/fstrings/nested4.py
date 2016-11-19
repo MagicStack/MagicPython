@@ -1,11 +1,13 @@
-f"result: {value:{60}.{16!s:2}{'qwerty'[2]}}"
+f"""result: {value:{60}.{16!s:2}{'qwerty'
+[2]}}"""
+def foo(): pass
 
 
 
 
-f             : source.python, storage.type.string.python, string.quoted.single.python
-"             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-result:       : source.python, string.quoted.single.python
+f             : source.python, storage.type.string.python, string.quoted.multi.python
+"""           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
+result:       : source.python, string.quoted.multi.python
 {             : constant.character.format.placeholder.other.python, source.python
 value         : source.python
 :             : source.python, support.other.format.python
@@ -27,4 +29,12 @@ qwerty        : source.python, string.quoted.single.python
 ]             : punctuation.definition.list.end.python, source.python
 }             : constant.character.format.placeholder.other.python, source.python
 }             : constant.character.format.placeholder.other.python, source.python
-"             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
+"""           : punctuation.definition.string.end.python, source.python, string.quoted.multi.python
+def           : meta.function.python, source.python, storage.type.function.python
+              : meta.function.python, source.python
+foo           : entity.name.function.python, meta.function.python, source.python
+(             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.begin.python, source.python
+)             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
+:             : meta.function.python, punctuation.section.function.begin.python, source.python
+              : source.python
+pass          : keyword.control.flow.python, source.python

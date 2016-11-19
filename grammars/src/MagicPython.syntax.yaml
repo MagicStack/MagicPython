@@ -75,12 +75,14 @@ repository:
       vars:
         line: single
         marker: (['"])
+        fguard: "|(?=\\n)"
         guard: "|((?<!\\\\)\\n)"
 
     - file: 'pyfstring.inc.syntax.yaml'
       vars:
         line: multi
         marker: "'''|\"\"\""
+        fguard: ""
         guard: ""
 
 
@@ -245,12 +247,11 @@ repository:
       - name: storage.type.class.python
         match: \b(?<!\.)(class)\b
 
-  expression-base:
-    comment: All valid Python expressions
+  expression-bare:
+    comment: valid Python expressions w/o comments and line continuation
     patterns:
       - include: '#backticks'
       - include: '#illegal-anno'
-      - include: '#comments'
       - include: '#literal'
       - include: '#regexp'
       - include: '#string'
@@ -269,8 +270,15 @@ repository:
       - include: '#special-names'
       - include: '#illegal-names'
       - include: '#special-variables'
-      - include: '#line-continuation'
       - include: '#ellipsis'
+      - include: '#line-continuation'
+
+  expression-base:
+    comment: valid Python expressions with comments and line continuation
+    patterns:
+      - include: '#comments'
+      - include: '#expression-bare'
+      - include: '#line-continuation'
 
   expression:
     comment: All valid Python expressions
@@ -612,25 +620,26 @@ repository:
       - name: invalid.illegal.brace.python
         match: (}(?!}))
 
-  fstring-terminator:
+  fstring-illegal-single-brace:
+    comment: it is illegal to have a multiline brace inside a single-line
+             string
+    begin: (\{)(?=[^\n}]*$\n?)
+    end: (\})|(?=\n)
+    beginCaptures:
+      '1': {name: constant.character.format.placeholder.other.python}
+    endCaptures:
+      '2': {name: constant.character.format.placeholder.other.python}
     patterns:
-      - match: |
-          (?x)
-            (![rsa])
-              ( : \w? [<>=^]? [-+ ]? \#?
-                \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )?
-        captures:
-          '1': {name: storage.type.format.python}
-          '2': {name: support.other.format.python}
+      - include: '#fstring-terminator-single'
+      - include: '#f-expression'
 
-      - match: |
-          (?x)
-            (![rsa])?
-              ( : \w? [<>=^]? [-+ ]? \#?
-                \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )
-        captures:
-          '1': {name: storage.type.format.python}
-          '2': {name: support.other.format.python}
+  f-expression:
+    comment: All valid Python expressions, except comments and line cont
+    patterns:
+      - include: '#expression-bare'
+      - include: '#member-access'
+      - comment: Tokenize identifiers to help linters
+        match: (?x) \b ([[:alpha:]_]\w*) \b
 
   escape-sequence-unicode:
     patterns:
@@ -642,7 +651,6 @@ repository:
                   | U[0-9A-Fa-f]{8}
                   | N\{[\w\s]+?\}
                )
-
 
   escape-sequence:
     name: constant.character.escape.python
