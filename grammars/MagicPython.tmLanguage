@@ -1407,6 +1407,14 @@
             <string>#string-line-continuation</string>
           </dict>
           <dict>
+            <key>comment</key>
+            <string>empty braces are illegal</string>
+            <key>name</key>
+            <string>invalid.illegal.brace.python</string>
+            <key>match</key>
+            <string>({\s*?})</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>constant.character.escape.python</string>
             <key>match</key>

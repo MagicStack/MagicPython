@@ -871,6 +871,11 @@ repository:
         include: "#string-line-continuation"
       }
       {
+        comment: "empty braces are illegal"
+        name: "invalid.illegal.brace.python"
+        match: "({\\s*?})"
+      }
+      {
         name: "constant.character.escape.python"
         match: "({{|}})"
       }

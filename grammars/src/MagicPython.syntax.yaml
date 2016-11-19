@@ -615,10 +615,15 @@ repository:
       - include: '#escape-sequence-unicode'
       - include: '#escape-sequence'
       - include: '#string-line-continuation'
+      - comment: empty braces are illegal
+        name: invalid.illegal.brace.python
+        match: ({\s*?})
       - name: constant.character.escape.python
         match: ({{|}})
       - name: invalid.illegal.brace.python
         match: (}(?!}))
+
+
 
   fstring-illegal-single-brace:
     comment: it is illegal to have a multiline brace inside a single-line
