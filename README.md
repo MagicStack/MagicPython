@@ -144,6 +144,11 @@ special highlighting for it, raw and unicode strings do). Additionally, the
 highlighter also validates that the formatting is following the correct syntax.
 It can help noticing an error in complex formatting expressions early.
 
+Python 3.6 f-strings are supported in both the raw and regular
+flavors. The support for them is somewhat more powerful than what can
+be done in regular strings with `.format`, because the f-string spec
+allows to highlight them with less ambiguity.
+
 
 ### Numeric literals
 

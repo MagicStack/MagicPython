@@ -516,7 +516,7 @@ repository:
 
   regexp-single-quoted-single-line:
     name: string.regexp.quoted.single.python
-    begin: \b(([uU]r)|([bB]r)|(r[bB]?))(\')
+    begin: \b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\')
     end: (\')|(?<!\\)(\n)
     beginCaptures:
       '2': {name: invalid.deprecated.prefix.python}
@@ -531,7 +531,7 @@ repository:
 
   regexp-double-quoted-single-line:
     name: string.regexp.quoted.single.python
-    begin: \b(([uU]r)|([bB]r)|(r[bB]?))(\")
+    begin: \b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\")
     end: (\")|(?<!\\)(\n)
     beginCaptures:
       '2': {name: invalid.deprecated.prefix.python}
@@ -546,7 +546,7 @@ repository:
 
   regexp-single-quoted-multi-line:
     name: string.regexp.quoted.multi.python
-    begin: \b(([uU]r)|([bB]r)|(r[bB]?))(\'\'\')
+    begin: \b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\'\'\')
     end: \'\'\'
     beginCaptures:
       '2': {name: invalid.deprecated.prefix.python}
@@ -560,7 +560,7 @@ repository:
 
   regexp-double-quoted-multi-line:
     name: string.regexp.quoted.multi.python
-    begin: \b(([uU]r)|([bB]r)|(r[bB]?))(\"\"\")
+    begin: \b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\"\"\")
     end: \"\"\"
     beginCaptures:
       '2': {name: invalid.deprecated.prefix.python}
@@ -582,8 +582,12 @@ repository:
       - include: '#string-raw-quoted-single-line'
       - include: '#string-raw-bin-quoted-multi-line'
       - include: '#string-raw-bin-quoted-single-line'
-      - include: '#fstring-quoted-multi-line'
-      - include: '#fstring-quoted-single-line'
+      - include: '#fstring-fnorm-quoted-multi-line'
+      - include: '#fstring-fnorm-quoted-single-line'
+      - include: '#fstring-normf-quoted-multi-line'
+      - include: '#fstring-normf-quoted-single-line'
+      - include: '#fstring-raw-quoted-multi-line'
+      - include: '#fstring-raw-quoted-single-line'
 
   string-unicode-guts:
     patterns:
@@ -616,15 +620,12 @@ repository:
       - include: '#escape-sequence-unicode'
       - include: '#escape-sequence'
       - include: '#string-line-continuation'
-      - comment: empty braces are illegal
-        name: invalid.illegal.brace.python
-        match: ({\s*?})
-      - name: constant.character.escape.python
-        match: ({{|}})
-      - name: invalid.illegal.brace.python
-        match: (}(?!}))
+      - include: '#fstring-formatting'
 
-
+  fstring-raw-guts:
+    patterns:
+      - include: '#string-consume-escape'
+      - include: '#fstring-formatting'
 
   fstring-illegal-single-brace:
     comment: it is illegal to have a multiline brace inside a single-line
@@ -715,6 +716,16 @@ repository:
         patterns:
           - match: |
               (?x) \{ [^'"}\n]*? \} (?=.*?\})
+
+  fstring-formatting:
+    patterns:
+      - comment: empty braces are illegal
+        name: invalid.illegal.brace.python
+        match: ({\s*?})
+      - name: constant.character.escape.python
+        match: ({{|}})
+      - name: invalid.illegal.brace.python
+        match: (}(?!}))
 
   import:
     comment: |

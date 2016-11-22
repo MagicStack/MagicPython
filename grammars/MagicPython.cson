@@ -694,7 +694,7 @@ repository:
     ]
   "regexp-single-quoted-single-line":
     name: "string.regexp.quoted.single.python"
-    begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\')"
+    begin: "\\b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\\')"
     end: "(\\')|(?<!\\\\)(\\n)"
     beginCaptures:
       "2":
@@ -717,7 +717,7 @@ repository:
     ]
   "regexp-double-quoted-single-line":
     name: "string.regexp.quoted.single.python"
-    begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\\")"
+    begin: "\\b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\\\")"
     end: "(\\\")|(?<!\\\\)(\\n)"
     beginCaptures:
       "2":
@@ -740,7 +740,7 @@ repository:
     ]
   "regexp-single-quoted-multi-line":
     name: "string.regexp.quoted.multi.python"
-    begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\'\\'\\')"
+    begin: "\\b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\\'\\'\\')"
     end: "\\'\\'\\'"
     beginCaptures:
       "2":
@@ -761,7 +761,7 @@ repository:
     ]
   "regexp-double-quoted-multi-line":
     name: "string.regexp.quoted.multi.python"
-    begin: "\\b(([uU]r)|([bB]r)|(r[bB]?))(\\\"\\\"\\\")"
+    begin: "\\b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\\\"\\\"\\\")"
     end: "\\\"\\\"\\\""
     beginCaptures:
       "2":
@@ -807,10 +807,22 @@ repository:
         include: "#string-raw-bin-quoted-single-line"
       }
       {
-        include: "#fstring-quoted-multi-line"
+        include: "#fstring-fnorm-quoted-multi-line"
       }
       {
-        include: "#fstring-quoted-single-line"
+        include: "#fstring-fnorm-quoted-single-line"
+      }
+      {
+        include: "#fstring-normf-quoted-multi-line"
+      }
+      {
+        include: "#fstring-normf-quoted-single-line"
+      }
+      {
+        include: "#fstring-raw-quoted-multi-line"
+      }
+      {
+        include: "#fstring-raw-quoted-single-line"
       }
     ]
   "string-unicode-guts":
@@ -872,17 +884,16 @@ repository:
         include: "#string-line-continuation"
       }
       {
-        comment: "empty braces are illegal"
-        name: "invalid.illegal.brace.python"
-        match: "({\\s*?})"
+        include: "#fstring-formatting"
+      }
+    ]
+  "fstring-raw-guts":
+    patterns: [
+      {
+        include: "#string-consume-escape"
       }
       {
-        name: "constant.character.escape.python"
-        match: "({{|}})"
-      }
-      {
-        name: "invalid.illegal.brace.python"
-        match: "(}(?!}))"
+        include: "#fstring-formatting"
       }
     ]
   "fstring-illegal-single-brace":
@@ -1006,6 +1017,22 @@ repository:
             '''
           }
         ]
+      }
+    ]
+  "fstring-formatting":
+    patterns: [
+      {
+        comment: "empty braces are illegal"
+        name: "invalid.illegal.brace.python"
+        match: "({\\s*?})"
+      }
+      {
+        name: "constant.character.escape.python"
+        match: "({{|}})"
+      }
+      {
+        name: "invalid.illegal.brace.python"
+        match: "(}(?!}))"
       }
     ]
   import:
@@ -1907,6 +1934,9 @@ repository:
         match: "\\|"
       }
       {
+        include: "#regexp-escape-sequence"
+      }
+      {
         name: "keyword.operator.quantifier.regexp"
         match: '''
           (?x)
@@ -1915,9 +1945,6 @@ repository:
             )\\}
           
         '''
-      }
-      {
-        include: "#regexp-escape-sequence"
       }
     ]
   "regexp-backreference-number":
@@ -3409,13 +3436,15 @@ repository:
         include: "#string-formatting"
       }
     ]
-  "fstring-quoted-single-line":
-    begin: "(\\b[fF])((['\"]))"
-    end: "(\\2)|((?<!\\\\)\\n)"
+  "fstring-fnorm-quoted-single-line":
+    begin: "(\\b[fF])([bBuU])?((['\"]))"
+    end: "(\\3)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
         name: "string.quoted.single.python storage.type.string.python"
       "2":
+        name: "invalid.illegal.prefix.python"
+      "3":
         name: "string.quoted.single.python punctuation.definition.string.begin.python"
     endCaptures:
       "1":
@@ -3433,28 +3462,107 @@ repository:
         include: "#fstring-single-brace"
       }
       {
-        name: "string.quoted.single.python"
-        match: '''
-          (?x)
-            (.+?)
-              (
-                (?# .* and .*? in multi-line match need special handling of
-                  newlines otherwise SublimeText and Atom will match slightly
-                  differently.
-          
-                  The guard for newlines has to be separate from the
-                  lookahead because of special $ matching rule.)
-                ($\\n?)
-                |
-                (?=[\\\\\\}\\{]|(['"])|((?<!\\\\)\\n))
-              )
-            (?# due to how multiline regexps are matched we need a special case
-              for matching a newline character)
-            | \\n
-          
-        '''
+        include: "#fstring-single-core"
       }
     ]
+  "fstring-normf-quoted-single-line":
+    begin: "(\\b[bBuU])([fF])((['\"]))"
+    end: "(\\3)|((?<!\\\\)\\n)"
+    beginCaptures:
+      "1":
+        name: "invalid.illegal.prefix.python"
+      "2":
+        name: "string.quoted.single.python storage.type.string.python"
+      "3":
+        name: "string.quoted.single.python punctuation.definition.string.begin.python"
+    endCaptures:
+      "1":
+        name: "string.quoted.single.python punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#fstring-guts"
+      }
+      {
+        include: "#fstring-illegal-single-brace"
+      }
+      {
+        include: "#fstring-single-brace"
+      }
+      {
+        include: "#fstring-single-core"
+      }
+    ]
+  "fstring-raw-quoted-single-line":
+    begin: "(\\b(?:[R][fF]|[fF][R]))((['\"]))"
+    end: "(\\2)|((?<!\\\\)\\n)"
+    beginCaptures:
+      "1":
+        name: "string.quoted.raw.single.python storage.type.string.python"
+      "2":
+        name: "string.quoted.raw.single.python punctuation.definition.string.begin.python"
+    endCaptures:
+      "1":
+        name: "string.quoted.raw.single.python punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#fstring-raw-guts"
+      }
+      {
+        include: "#fstring-illegal-single-brace"
+      }
+      {
+        include: "#fstring-single-brace"
+      }
+      {
+        include: "#fstring-raw-single-core"
+      }
+    ]
+  "fstring-single-core":
+    name: "string.quoted.single.python"
+    match: '''
+      (?x)
+        (.+?)
+          (
+            (?# .* and .*? in multi-line match need special handling of
+              newlines otherwise SublimeText and Atom will match slightly
+              differently.
+      
+              The guard for newlines has to be separate from the
+              lookahead because of special $ matching rule.)
+            ($\\n?)
+            |
+            (?=[\\\\\\}\\{]|(['"])|((?<!\\\\)\\n))
+          )
+        (?# due to how multiline regexps are matched we need a special case
+          for matching a newline character)
+        | \\n
+      
+    '''
+  "fstring-raw-single-core":
+    name: "string.quoted.raw.single.python"
+    match: '''
+      (?x)
+        (.+?)
+          (
+            (?# .* and .*? in multi-line match need special handling of
+              newlines otherwise SublimeText and Atom will match slightly
+              differently.
+      
+              The guard for newlines has to be separate from the
+              lookahead because of special $ matching rule.)
+            ($\\n?)
+            |
+            (?=[\\\\\\}\\{]|(['"])|((?<!\\\\)\\n))
+          )
+        (?# due to how multiline regexps are matched we need a special case
+          for matching a newline character)
+        | \\n
+      
+    '''
   "fstring-single-brace":
     comment: "value interpolation using { ... }"
     begin: "(\\{)"
@@ -3549,13 +3657,15 @@ repository:
         match: "(\\w)"
       }
     ]
-  "fstring-quoted-multi-line":
-    begin: "(\\b[fF])('''|\"\"\")"
-    end: "(\\2)"
+  "fstring-fnorm-quoted-multi-line":
+    begin: "(\\b[fF])([bBuU])?('''|\"\"\")"
+    end: "(\\3)"
     beginCaptures:
       "1":
         name: "string.quoted.multi.python storage.type.string.python"
       "2":
+        name: "invalid.illegal.prefix.python"
+      "3":
         name: "string.quoted.multi.python punctuation.definition.string.begin.python"
     endCaptures:
       "1":
@@ -3573,28 +3683,107 @@ repository:
         include: "#fstring-multi-brace"
       }
       {
-        name: "string.quoted.multi.python"
-        match: '''
-          (?x)
-            (.+?)
-              (
-                (?# .* and .*? in multi-line match need special handling of
-                  newlines otherwise SublimeText and Atom will match slightly
-                  differently.
-          
-                  The guard for newlines has to be separate from the
-                  lookahead because of special $ matching rule.)
-                ($\\n?)
-                |
-                (?=[\\\\\\}\\{]|\'''|""")
-              )
-            (?# due to how multiline regexps are matched we need a special case
-              for matching a newline character)
-            | \\n
-          
-        '''
+        include: "#fstring-multi-core"
       }
     ]
+  "fstring-normf-quoted-multi-line":
+    begin: "(\\b[bBuU])([fF])('''|\"\"\")"
+    end: "(\\3)"
+    beginCaptures:
+      "1":
+        name: "invalid.illegal.prefix.python"
+      "2":
+        name: "string.quoted.multi.python storage.type.string.python"
+      "3":
+        name: "string.quoted.multi.python punctuation.definition.string.begin.python"
+    endCaptures:
+      "1":
+        name: "string.quoted.multi.python punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#fstring-guts"
+      }
+      {
+        include: "#fstring-illegal-multi-brace"
+      }
+      {
+        include: "#fstring-multi-brace"
+      }
+      {
+        include: "#fstring-multi-core"
+      }
+    ]
+  "fstring-raw-quoted-multi-line":
+    begin: "(\\b(?:[R][fF]|[fF][R]))('''|\"\"\")"
+    end: "(\\2)"
+    beginCaptures:
+      "1":
+        name: "string.quoted.raw.multi.python storage.type.string.python"
+      "2":
+        name: "string.quoted.raw.multi.python punctuation.definition.string.begin.python"
+    endCaptures:
+      "1":
+        name: "string.quoted.raw.multi.python punctuation.definition.string.end.python"
+      "2":
+        name: "invalid.illegal.newline.python"
+    patterns: [
+      {
+        include: "#fstring-raw-guts"
+      }
+      {
+        include: "#fstring-illegal-multi-brace"
+      }
+      {
+        include: "#fstring-multi-brace"
+      }
+      {
+        include: "#fstring-raw-multi-core"
+      }
+    ]
+  "fstring-multi-core":
+    name: "string.quoted.multi.python"
+    match: '''
+      (?x)
+        (.+?)
+          (
+            (?# .* and .*? in multi-line match need special handling of
+              newlines otherwise SublimeText and Atom will match slightly
+              differently.
+      
+              The guard for newlines has to be separate from the
+              lookahead because of special $ matching rule.)
+            ($\\n?)
+            |
+            (?=[\\\\\\}\\{]|\'''|""")
+          )
+        (?# due to how multiline regexps are matched we need a special case
+          for matching a newline character)
+        | \\n
+      
+    '''
+  "fstring-raw-multi-core":
+    name: "string.quoted.raw.multi.python"
+    match: '''
+      (?x)
+        (.+?)
+          (
+            (?# .* and .*? in multi-line match need special handling of
+              newlines otherwise SublimeText and Atom will match slightly
+              differently.
+      
+              The guard for newlines has to be separate from the
+              lookahead because of special $ matching rule.)
+            ($\\n?)
+            |
+            (?=[\\\\\\}\\{]|\'''|""")
+          )
+        (?# due to how multiline regexps are matched we need a special case
+          for matching a newline character)
+        | \\n
+      
+    '''
   "fstring-multi-brace":
     comment: "value interpolation using { ... }"
     begin: "(\\{)"

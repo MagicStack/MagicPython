@@ -57,6 +57,10 @@
             <string>\|</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#regexp-escape-sequence</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>keyword.operator.quantifier.regexp</string>
             <key>match</key>
@@ -65,10 +69,6 @@
     \d+ | \d+,(\d+)? | ,\d+
   )\}
 </string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#regexp-escape-sequence</string>
           </dict>
         </array>
       </dict>

@@ -12,13 +12,13 @@ repository:
         match: '[+*?]\??'
       - name: keyword.operator.disjunction.regexp
         match: \|
+      - include: '#regexp-escape-sequence'
       - name: keyword.operator.quantifier.regexp
         match: |
           (?x)
             \{(
               \d+ | \d+,(\d+)? | ,\d+
             )\}
-      - include: '#regexp-escape-sequence'
 
   regexp-backreference-number:
     name: meta.backreference.regexp

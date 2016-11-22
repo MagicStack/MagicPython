@@ -34,6 +34,9 @@ repository:
         match: "\\|"
       }
       {
+        include: "#regexp-escape-sequence"
+      }
+      {
         name: "keyword.operator.quantifier.regexp"
         match: '''
           (?x)
@@ -42,9 +45,6 @@ repository:
             )\\}
           
         '''
-      }
-      {
-        include: "#regexp-escape-sequence"
       }
     ]
   "regexp-backreference-number":

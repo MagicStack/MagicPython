@@ -1,12 +1,13 @@
 ---
 repository:
-  fstring-quoted-${line}-line:
-    begin: (\b[fF])(${marker})
-    end: (\2)${guard}
+  fstring-fnorm-quoted-${line}-line:
+    begin: (\b[fF])([bBuU])?(${marker})
+    end: (\3)${guard}
     beginCaptures:
       '1': {name: string.quoted.${line}.python
                   storage.type.string.python}
-      '2': {name: string.quoted.${line}.python
+      '2': {name: invalid.illegal.prefix.python}
+      '3': {name: string.quoted.${line}.python
                   punctuation.definition.string.begin.python}
     endCaptures:
       '1': {name: string.quoted.${line}.python
@@ -16,24 +17,84 @@ repository:
       - include: '#fstring-guts'
       - include: '#fstring-illegal-${line}-brace'
       - include: '#fstring-${line}-brace'
-      - name: string.quoted.${line}.python
-        match: |
-          (?x)
-            (.+?)
-              (
-                (?# .* and .*? in multi-line match need special handling of
-                  newlines otherwise SublimeText and Atom will match slightly
-                  differently.
+      - include: '#fstring-${line}-core'
 
-                  The guard for newlines has to be separate from the
-                  lookahead because of special $ matching rule.)
-                ($\n?)
-                |
-                (?=[\\\}\{]|${marker}${guard})
-              )
-            (?# due to how multiline regexps are matched we need a special case
-              for matching a newline character)
-            | \n
+  fstring-normf-quoted-${line}-line:
+    begin: (\b[bBuU])([fF])(${marker})
+    end: (\3)${guard}
+    beginCaptures:
+      '1': {name: invalid.illegal.prefix.python}
+      '2': {name: string.quoted.${line}.python
+                  storage.type.string.python}
+      '3': {name: string.quoted.${line}.python
+                  punctuation.definition.string.begin.python}
+    endCaptures:
+      '1': {name: string.quoted.${line}.python
+                  punctuation.definition.string.end.python}
+      '2': {name: invalid.illegal.newline.python}
+    patterns:
+      - include: '#fstring-guts'
+      - include: '#fstring-illegal-${line}-brace'
+      - include: '#fstring-${line}-brace'
+      - include: '#fstring-${line}-core'
+
+  fstring-raw-quoted-${line}-line:
+    begin: (\b(?:[R][fF]|[fF][R]))(${marker})
+    end: (\2)${guard}
+    beginCaptures:
+      '1': {name: string.quoted.raw.${line}.python
+                  storage.type.string.python}
+      '2': {name: string.quoted.raw.${line}.python
+                  punctuation.definition.string.begin.python}
+    endCaptures:
+      '1': {name: string.quoted.raw.${line}.python
+                  punctuation.definition.string.end.python}
+      '2': {name: invalid.illegal.newline.python}
+    patterns:
+      - include: '#fstring-raw-guts'
+      - include: '#fstring-illegal-${line}-brace'
+      - include: '#fstring-${line}-brace'
+      - include: '#fstring-raw-${line}-core'
+
+  fstring-${line}-core:
+    name: string.quoted.${line}.python
+    match: |
+      (?x)
+        (.+?)
+          (
+            (?# .* and .*? in multi-line match need special handling of
+              newlines otherwise SublimeText and Atom will match slightly
+              differently.
+
+              The guard for newlines has to be separate from the
+              lookahead because of special $ matching rule.)
+            ($\n?)
+            |
+            (?=[\\\}\{]|${marker}${guard})
+          )
+        (?# due to how multiline regexps are matched we need a special case
+          for matching a newline character)
+        | \n
+
+  fstring-raw-${line}-core:
+    name: string.quoted.raw.${line}.python
+    match: |
+      (?x)
+        (.+?)
+          (
+            (?# .* and .*? in multi-line match need special handling of
+              newlines otherwise SublimeText and Atom will match slightly
+              differently.
+
+              The guard for newlines has to be separate from the
+              lookahead because of special $ matching rule.)
+            ($\n?)
+            |
+            (?=[\\\}\{]|${marker}${guard})
+          )
+        (?# due to how multiline regexps are matched we need a special case
+          for matching a newline character)
+        | \n
 
   fstring-${line}-brace:
     comment: value interpolation using { ... }
