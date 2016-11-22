@@ -1,8 +1,9 @@
 ---
 name: MagicPython
 scopeName: source.python
-fileTypes: [py, py3, rpy, pyw, cpy, SConstruct,
-            Sconstruct, sconstruct, SConscript,
+# NOTE: remember to update package.json with VSCode file types.
+fileTypes: [py, py3, rpy, pyw, cpy, pyi,
+            SConstruct, Sconstruct, sconstruct, SConscript,
             gyp, gypi]
 first_line_match: ^#!/.*\bpython[\d\.]*\b
 firstLineMatch: ^#!/.*\bpython[\d\.]*\b

@@ -31,7 +31,10 @@
     "theme": "dark"
   },
   "contributes": {
-    "//": "This section is for VSCode",
+    "//": [
+      "This section is for VSCode.",
+      "NOTE: remember to update grammar/src/MagicPython.syntax.yaml, too."
+    ],
     "languages": [
       {
         "id": "python",
@@ -49,7 +52,9 @@
           ".SConstruct",
           ".Sconstruct",
           ".sconstruct",
-          ".SConscript"
+          ".SConscript",
+          ".gyp",
+          ".gypi"
         ]
       }
     ],
