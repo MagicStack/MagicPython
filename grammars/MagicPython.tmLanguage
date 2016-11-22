@@ -14,6 +14,7 @@
       <string>rpy</string>
       <string>pyw</string>
       <string>cpy</string>
+      <string>pyi</string>
       <string>SConstruct</string>
       <string>Sconstruct</string>
       <string>sconstruct</string>
