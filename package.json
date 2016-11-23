@@ -1,6 +1,6 @@
 {
   "name": "MagicPython",
-  "version": "0.5.17",
+  "version": "0.6.0",
   "engines": {
     "atom": "*",
     "node": "*",
