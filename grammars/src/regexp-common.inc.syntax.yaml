@@ -2,6 +2,18 @@
 repository:
   regexp-base-expression:
     patterns:
+      - include: '#regexp-quantifier'
+      - include: '#regexp-base-common'
+
+  fregexp-base-expression:
+    patterns:
+      - include: '#fregexp-quantifier'
+      - include: '#fstring-formatting-braces'
+      - match: \{.*?\}
+      - include: '#regexp-base-common'
+
+  regexp-base-common:
+    patterns:
       - name: support.other.match.any.regexp
         match: \.
       - name: support.other.match.begin.regexp
@@ -13,12 +25,22 @@ repository:
       - name: keyword.operator.disjunction.regexp
         match: \|
       - include: '#regexp-escape-sequence'
-      - name: keyword.operator.quantifier.regexp
-        match: |
-          (?x)
-            \{(
-              \d+ | \d+,(\d+)? | ,\d+
-            )\}
+
+  regexp-quantifier:
+    name: keyword.operator.quantifier.regexp
+    match: |
+      (?x)
+        \{(
+          \d+ | \d+,(\d+)? | ,\d+
+        )\}
+
+  fregexp-quantifier:
+    name: keyword.operator.quantifier.regexp
+    match: |
+      (?x)
+        \{\{(
+          \d+ | \d+,(\d+)? | ,\d+
+        )\}\}
 
   regexp-backreference-number:
     name: meta.backreference.regexp

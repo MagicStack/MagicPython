@@ -35,6 +35,7 @@ repository:
     - file: 'regexp.inc.syntax.yaml'
       vars:
         prefix: 'single-one-'
+        basename: 'regexp'
         marker: "|(?=\\')"
         nested: ''
         guard: "|((?=(?<!\\\\)\\n))"
@@ -42,6 +43,7 @@ repository:
     - file: 'regexp.inc.syntax.yaml'
       vars:
         prefix: 'single-three-'
+        basename: 'regexp'
         marker: "|(?=\\'\\'\\')"
         nested: "- include: '#comments-string-single-three'"
         guard: ""
@@ -49,6 +51,7 @@ repository:
     - file: 'regexp.inc.syntax.yaml'
       vars:
         prefix: 'double-one-'
+        basename: 'regexp'
         marker: '|(?=")'
         nested: ''
         guard: "|((?=(?<!\\\\)\\n))"
@@ -56,9 +59,122 @@ repository:
     - file: 'regexp.inc.syntax.yaml'
       vars:
         prefix: 'double-three-'
+        basename: 'regexp'
         marker: '|(?=""")'
         nested: "- include: '#comments-string-double-three'"
         guard: ""
+
+    - file: 'regexp.wrapper.syntax.yaml'
+      vars:
+        scopename: string.regexp.quoted.single.python
+        prefix: 'single-one-'
+        basename: 'regexp'
+        nested: ''
+        modifier: '[bB]'
+        bquote: "(\\')"
+        equote: "(\\')|(?<!\\\\)(\\n)"
+
+    - file: 'regexp.wrapper.syntax.yaml'
+      vars:
+        scopename: string.regexp.quoted.multi.python
+        prefix: 'single-three-'
+        basename: 'regexp'
+        nested: "- include: '#comments-string-single-three'"
+        modifier: '[bB]'
+        bquote: "(\\'\\'\\')"
+        equote: "(\\'\\'\\')"
+
+    - file: 'regexp.wrapper.syntax.yaml'
+      vars:
+        scopename: string.regexp.quoted.single.python
+        prefix: 'double-one-'
+        basename: 'regexp'
+        nested: ''
+        modifier: '[bB]'
+        bquote: '(")'
+        equote: '(")|(?<!\\)(\n)'
+
+    - file: 'regexp.wrapper.syntax.yaml'
+      vars:
+        scopename: string.regexp.quoted.multi.python
+        prefix: 'double-three-'
+        basename: 'regexp'
+        nested: "- include: '#comments-string-double-three'"
+        modifier: '[bB]'
+        bquote: '(""")'
+        equote: '(""")'
+
+    - file: 'regexp.inc.syntax.yaml'
+      vars:
+        prefix: 'single-one-'
+        basename: 'fregexp'
+        marker: "|(?=\\')"
+        nested: ''
+        guard: "|((?=(?<!\\\\)\\n))"
+
+    - file: 'regexp.inc.syntax.yaml'
+      vars:
+        prefix: 'single-three-'
+        basename: 'fregexp'
+        marker: "|(?=\\'\\'\\')"
+        nested: "- include: '#comments-string-single-three'"
+        guard: ""
+
+    - file: 'regexp.inc.syntax.yaml'
+      vars:
+        prefix: 'double-one-'
+        basename: 'fregexp'
+        marker: '|(?=")'
+        nested: ''
+        guard: "|((?=(?<!\\\\)\\n))"
+
+    - file: 'regexp.inc.syntax.yaml'
+      vars:
+        prefix: 'double-three-'
+        basename: 'fregexp'
+        marker: '|(?=""")'
+        nested: "- include: '#comments-string-double-three'"
+        guard: ""
+
+    - file: 'regexp.wrapper.syntax.yaml'
+      vars:
+        scopename: string.regexp.quoted.single.python
+        prefix: 'single-one-'
+        basename: 'fregexp'
+        nested: ''
+        modifier: '[fF]'
+        bquote: "(\\')"
+        equote: "(\\')|(?<!\\\\)(\\n)"
+
+    - file: 'regexp.wrapper.syntax.yaml'
+      vars:
+        scopename: string.regexp.quoted.multi.python
+        prefix: 'single-three-'
+        basename: 'fregexp'
+        nested: "- include: '#comments-string-single-three'"
+        modifier: '[fF]'
+        bquote: "(\\'\\'\\')"
+        equote: "(\\'\\'\\')"
+
+    - file: 'regexp.wrapper.syntax.yaml'
+      vars:
+        scopename: string.regexp.quoted.single.python
+        prefix: 'double-one-'
+        basename: 'fregexp'
+        nested: ''
+        modifier: '[fF]'
+        bquote: '(")'
+        equote: '(")|(?<!\\)(\n)'
+
+    - file: 'regexp.wrapper.syntax.yaml'
+      vars:
+        scopename: string.regexp.quoted.multi.python
+        prefix: 'double-three-'
+        basename: 'fregexp'
+        nested: "- include: '#comments-string-double-three'"
+        modifier: '[fF]'
+        bquote: '(""")'
+        equote: '(""")'
 
     - file: 'pystring.inc.syntax.yaml'
       vars:
@@ -509,68 +625,14 @@ repository:
 
   regexp:
     patterns:
-      - include: '#regexp-single-quoted-multi-line'
-      - include: '#regexp-double-quoted-multi-line'
-      - include: '#regexp-single-quoted-single-line'
-      - include: '#regexp-double-quoted-single-line'
-
-  regexp-single-quoted-single-line:
-    name: string.regexp.quoted.single.python
-    begin: \b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\')
-    end: (\')|(?<!\\)(\n)
-    beginCaptures:
-      '2': {name: invalid.deprecated.prefix.python}
-      '3': {name: storage.type.string.python}
-      '4': {name: storage.type.string.python}
-      '5': {name: punctuation.definition.string.begin.python}
-    endCaptures:
-      '1': {name: punctuation.definition.string.end.python}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#single-one-regexp-expression'
-
-  regexp-double-quoted-single-line:
-    name: string.regexp.quoted.single.python
-    begin: \b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\")
-    end: (\")|(?<!\\)(\n)
-    beginCaptures:
-      '2': {name: invalid.deprecated.prefix.python}
-      '3': {name: storage.type.string.python}
-      '4': {name: storage.type.string.python}
-      '5': {name: punctuation.definition.string.begin.python}
-    endCaptures:
-      '1': {name: punctuation.definition.string.end.python}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#double-one-regexp-expression'
-
-  regexp-single-quoted-multi-line:
-    name: string.regexp.quoted.multi.python
-    begin: \b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\'\'\')
-    end: \'\'\'
-    beginCaptures:
-      '2': {name: invalid.deprecated.prefix.python}
-      '3': {name: storage.type.string.python}
-      '4': {name: storage.type.string.python}
-      '5': {name: punctuation.definition.string.begin.python}
-    endCaptures:
-      '0': {name: punctuation.definition.string.end.python}
-    patterns:
-      - include: '#single-three-regexp-expression'
-
-  regexp-double-quoted-multi-line:
-    name: string.regexp.quoted.multi.python
-    begin: \b(([uU]r)|([bBfF]r)|(r[bBfF]?))(\"\"\")
-    end: \"\"\"
-    beginCaptures:
-      '2': {name: invalid.deprecated.prefix.python}
-      '3': {name: storage.type.string.python}
-      '4': {name: storage.type.string.python}
-      '5': {name: punctuation.definition.string.begin.python}
-    endCaptures:
-      '0': {name: punctuation.definition.string.end.python}
-    patterns:
-      - include: '#double-three-regexp-expression'
+      - include: '#regexp-single-three-line'
+      - include: '#regexp-double-three-line'
+      - include: '#regexp-single-one-line'
+      - include: '#regexp-double-one-line'
+      - include: '#fregexp-single-three-line'
+      - include: '#fregexp-double-three-line'
+      - include: '#fregexp-single-one-line'
+      - include: '#fregexp-double-one-line'
 
   string:
     patterns:
@@ -719,13 +781,20 @@ repository:
 
   fstring-formatting:
     patterns:
+      - include: '#fstring-formatting-braces'
+      - include: '#fstring-formatting-singe-brace'
+
+  fstring-formatting-braces:
+    patterns:
       - comment: empty braces are illegal
         name: invalid.illegal.brace.python
         match: ({\s*?})
       - name: constant.character.escape.python
         match: ({{|}})
-      - name: invalid.illegal.brace.python
-        match: (}(?!}))
+
+  fstring-formatting-singe-brace:
+    name: invalid.illegal.brace.python
+    match: (}(?!}))
 
   import:
     comment: |

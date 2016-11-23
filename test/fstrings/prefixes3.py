@@ -8,11 +8,13 @@ FR'some {obj}'
 
 fr            : source.python, storage.type.string.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
-some {obj}    : source.python, string.regexp.quoted.single.python
+some          : source.python, string.regexp.quoted.single.python
+{obj}         : source.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
 Fr            : source.python, storage.type.string.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
-some {obj}    : source.python, string.regexp.quoted.single.python
+some          : source.python, string.regexp.quoted.single.python
+{obj}         : source.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
 fR            : source.python, storage.type.string.python, string.quoted.raw.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.raw.single.python

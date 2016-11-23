@@ -1,20 +1,20 @@
 ---
 repository:
-  ${prefix}regexp-expression:
+  ${prefix}${basename}-expression:
     patterns:
-      - include: '#regexp-base-expression'
+      - include: '#${basename}-base-expression'
       - include: '#${prefix}regexp-character-set'
       - include: '#${prefix}regexp-comments'
       - include: '#regexp-flags'
       - include: '#${prefix}regexp-named-group'
       - include: '#regexp-backreference'
-      - include: '#${prefix}regexp-lookahead'
-      - include: '#${prefix}regexp-lookahead-negative'
-      - include: '#${prefix}regexp-lookbehind'
-      - include: '#${prefix}regexp-lookbehind-negative'
-      - include: '#${prefix}regexp-conditional'
-      - include: '#${prefix}regexp-parentheses-non-capturing'
-      - include: '#${prefix}regexp-parentheses'
+      - include: '#${prefix}${basename}-lookahead'
+      - include: '#${prefix}${basename}-lookahead-negative'
+      - include: '#${prefix}${basename}-lookbehind'
+      - include: '#${prefix}${basename}-lookbehind-negative'
+      - include: '#${prefix}${basename}-conditional'
+      - include: '#${prefix}${basename}-parentheses-non-capturing'
+      - include: '#${prefix}${basename}-parentheses'
       ${nested}
 
   ${prefix}regexp-character-set:
@@ -39,7 +39,7 @@ repository:
           - name: constant.character.set.regexp
             match: '[^\n]'
 
-  ${prefix}regexp-named-group:
+  ${prefix}${basename}-named-group:
     name: meta.named.regexp
     begin: |
       (?x)
@@ -54,7 +54,7 @@ repository:
                   support.other.parenthesis.regexp}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#${prefix}regexp-expression'
+      - include: '#${prefix}${basename}-expression'
       ${nested}
 
   ${prefix}regexp-comments:
@@ -69,7 +69,7 @@ repository:
     patterns:
       - include: '#codetags'
 
-  ${prefix}regexp-lookahead:
+  ${prefix}${basename}-lookahead:
     begin: '(\()\?='
     end: (\)${marker})${guard}
     beginCaptures:
@@ -80,10 +80,10 @@ repository:
                   keyword.operator.lookahead.regexp}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#${prefix}regexp-expression'
+      - include: '#${prefix}${basename}-expression'
       ${nested}
 
-  ${prefix}regexp-lookahead-negative:
+  ${prefix}${basename}-lookahead-negative:
     begin: '(\()\?!'
     end: (\)${marker})${guard}
     beginCaptures:
@@ -94,10 +94,10 @@ repository:
                   keyword.operator.lookahead.negative.regexp}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#${prefix}regexp-expression'
+      - include: '#${prefix}${basename}-expression'
       ${nested}
 
-  ${prefix}regexp-lookbehind:
+  ${prefix}${basename}-lookbehind:
     begin: '(\()\?<='
     end: (\)${marker})${guard}
     beginCaptures:
@@ -108,10 +108,10 @@ repository:
                   keyword.operator.lookbehind.regexp}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#${prefix}regexp-expression'
+      - include: '#${prefix}${basename}-expression'
       ${nested}
 
-  ${prefix}regexp-lookbehind-negative:
+  ${prefix}${basename}-lookbehind-negative:
     begin: '(\()\?<!'
     end: (\)${marker})${guard}
     beginCaptures:
@@ -122,10 +122,10 @@ repository:
                   keyword.operator.lookbehind.negative.regexp}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#${prefix}regexp-expression'
+      - include: '#${prefix}${basename}-expression'
       ${nested}
 
-  ${prefix}regexp-conditional:
+  ${prefix}${basename}-conditional:
     begin: '(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)'
     end: (\)${marker})${guard}
     beginCaptures:
@@ -136,10 +136,10 @@ repository:
                   keyword.operator.conditional.negative.regexp}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#${prefix}regexp-expression'
+      - include: '#${prefix}${basename}-expression'
       ${nested}
 
-  ${prefix}regexp-parentheses-non-capturing:
+  ${prefix}${basename}-parentheses-non-capturing:
     begin: '\(\?:'
     end: (\)${marker})${guard}
     beginCaptures:
@@ -150,10 +150,10 @@ repository:
                   support.other.parenthesis.regexp}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#${prefix}regexp-expression'
+      - include: '#${prefix}${basename}-expression'
       ${nested}
 
-  ${prefix}regexp-parentheses:
+  ${prefix}${basename}-parentheses:
     begin: \(
     end: (\)${marker})${guard}
     beginCaptures:
@@ -164,7 +164,7 @@ repository:
                   support.other.parenthesis.regexp}
       '2': {name: invalid.illegal.newline.python}
     patterns:
-      - include: '#${prefix}regexp-expression'
+      - include: '#${prefix}${basename}-expression'
       ${nested}
 
 ...

@@ -24,11 +24,13 @@ obj           : source.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 rf            : source.python, storage.type.string.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
-some {obj}    : source.python, string.regexp.quoted.single.python
+some          : source.python, string.regexp.quoted.single.python
+{obj}         : source.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
 rF            : source.python, storage.type.string.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
-some {obj}    : source.python, string.regexp.quoted.single.python
+some          : source.python, string.regexp.quoted.single.python
+{obj}         : source.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
 Rf            : source.python, storage.type.string.python, string.quoted.raw.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.raw.single.python

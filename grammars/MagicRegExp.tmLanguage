@@ -27,6 +27,42 @@
         <key>patterns</key>
         <array>
           <dict>
+            <key>include</key>
+            <string>#regexp-quantifier</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#regexp-base-common</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fregexp-base-expression</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#fregexp-quantifier</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#fstring-formatting-braces</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\{.*?\}</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#regexp-base-common</string>
+          </dict>
+        </array>
+      </dict>
+      <key>regexp-base-common</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
             <key>name</key>
             <string>support.other.match.any.regexp</string>
             <key>match</key>
@@ -60,17 +96,29 @@
             <key>include</key>
             <string>#regexp-escape-sequence</string>
           </dict>
-          <dict>
-            <key>name</key>
-            <string>keyword.operator.quantifier.regexp</string>
-            <key>match</key>
-            <string>(?x)
+        </array>
+      </dict>
+      <key>regexp-quantifier</key>
+      <dict>
+        <key>name</key>
+        <string>keyword.operator.quantifier.regexp</string>
+        <key>match</key>
+        <string>(?x)
   \{(
     \d+ | \d+,(\d+)? | ,\d+
   )\}
 </string>
-          </dict>
-        </array>
+      </dict>
+      <key>fregexp-quantifier</key>
+      <dict>
+        <key>name</key>
+        <string>keyword.operator.quantifier.regexp</string>
+        <key>match</key>
+        <string>(?x)
+  \{\{(
+    \d+ | \d+,(\d+)? | ,\d+
+  )\}\}
+</string>
       </dict>
       <key>regexp-backreference-number</key>
       <dict>

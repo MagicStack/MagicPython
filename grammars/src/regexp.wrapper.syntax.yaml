@@ -1,0 +1,17 @@
+---
+repository:
+  ${basename}-${prefix}line:
+    name: ${scopename}
+    begin: \b(([uU]r)|(${modifier}r)|(r${modifier}?))${bquote}
+    end: ${equote}
+    beginCaptures:
+      '2': {name: invalid.deprecated.prefix.python}
+      '3': {name: storage.type.string.python}
+      '4': {name: storage.type.string.python}
+      '5': {name: punctuation.definition.string.begin.python}
+    endCaptures:
+      '1': {name: punctuation.definition.string.end.python}
+      '2': {name: invalid.illegal.newline.python}
+    patterns:
+      - include: '#${prefix}${basename}-expression'
+...

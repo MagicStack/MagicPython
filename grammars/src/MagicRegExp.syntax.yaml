@@ -13,6 +13,7 @@ repository:
     - file: 'regexp.inc.syntax.yaml'
       vars:
         prefix: ''
+        basename: regexp
         marker: ''
         nested: ''
         guard: ''
