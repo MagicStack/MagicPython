@@ -6,8 +6,8 @@ with [Sublime Text](http://www.sublimetext.com), [Atom](http://atom.io) and
 [Visual Studio Code](http://code.visualstudio.com).
 It is meant to be a drop-in replacement for the default Python package.
 
-MagicPython correctly highlights all Python 3.5 syntax features, including
-type annotations, string formatting and regular expressions.  It is built
+MagicPython correctly highlights all Python 3.5 and 3.6 syntax features, 
+including type annotations, f-strings and regular expressions.  It is built
 from scratch for robustness with an extensive test suite.
 
 We are proud to say that MagicPython has been included into the
