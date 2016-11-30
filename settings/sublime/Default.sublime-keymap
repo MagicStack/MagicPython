@@ -33,7 +33,7 @@
     },
     // Replace a '{|}' with '{{|' when typing within fstring
     { "keys": ["{"], "command": "run_macro_file",
-    "args": {"name": "Packages/MagicPython/settings/sublime/fstring_brace.sublime-macro"},
+    "args": {"file": "Packages/MagicPython/settings/sublime/fstring_brace.sublime-macro"},
     "context":
         [
             { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
