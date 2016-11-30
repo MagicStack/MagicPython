@@ -31,9 +31,8 @@
             { "key": "selector", "operator": "equal", "operand": "string.quoted", "match_all": true }
         ]
     },
-    // Replace a '{|}' with '{{|' when typing within fstring
-    { "keys": ["{"], "command": "run_macro_file",
-    "args": {"file": "Packages/MagicPython/settings/sublime/fstring_brace.sublime-macro"},
+    // Replace a '{|}' with '{{|' when typing within f-string
+    { "keys": ["{"], "command": "fstringbrace",
     "context":
         [
             { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
