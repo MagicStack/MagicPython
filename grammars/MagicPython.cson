@@ -1439,7 +1439,9 @@ repository:
     '''
     end: '''
       (?x)
-        ( \\) ) (?: (?=\\s*\\#|$) | (.*$) )
+        ( \\) )
+          # trailing whitespace and comments are legal
+          (?: (.*?) (?=\\s*(?:\\#|$)) )
         | (?=\\n|\\#)
       
     '''

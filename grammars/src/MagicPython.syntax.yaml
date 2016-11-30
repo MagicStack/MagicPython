@@ -1081,7 +1081,9 @@ repository:
         (@) \s* (?=[[:alpha:]_]\w*)
     end: |
         (?x)
-          ( \) ) (?: (?=\s*\#|$) | (.*$) )
+          ( \) )
+            # trailing whitespace and comments are legal
+            (?: (.*?) (?=\s*(?:\#|$)) )
           | (?=\n|\#)
     beginCaptures:
       '1': {name: entity.name.function.decorator.python}

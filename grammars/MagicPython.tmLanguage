@@ -2261,7 +2261,9 @@
 </string>
         <key>end</key>
         <string>(?x)
-  ( \) ) (?: (?=\s*\#|$) | (.*$) )
+  ( \) )
+    # trailing whitespace and comments are legal
+    (?: (.*?) (?=\s*(?:\#|$)) )
   | (?=\n|\#)
 </string>
         <key>beginCaptures</key>
