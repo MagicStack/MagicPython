@@ -4,24 +4,24 @@ def foo(): pass
 
 
 
-f             : source.python, storage.type.string.python, string.quoted.single.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-prefix        : source.python, string.quoted.single.python
-{             : constant.character.format.placeholder.other.python, source.python
-10            : constant.numeric.dec.python, source.python
- #            : source.python
-comment       : source.python
-,             : source.python
-making        : source.python
-              : source.python
-the           : source.python
-              : source.python
-string        : source.python
-              : source.python
-technically   : source.python
-              : source.python
-illegal       : source.python
-              : invalid.illegal.newline.python, source.python
+f             : meta.fstring.python, source.python, storage.type.string.python, string.quoted.single.python
+'             : meta.fstring.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
+prefix        : meta.fstring.python, source.python, string.quoted.single.python
+{             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
+10            : constant.numeric.dec.python, meta.fstring.python, source.python
+ #            : meta.fstring.python, source.python
+comment       : meta.fstring.python, source.python
+,             : meta.fstring.python, source.python
+making        : meta.fstring.python, source.python
+              : meta.fstring.python, source.python
+the           : meta.fstring.python, source.python
+              : meta.fstring.python, source.python
+string        : meta.fstring.python, source.python
+              : meta.fstring.python, source.python
+technically   : meta.fstring.python, source.python
+              : meta.fstring.python, source.python
+illegal       : meta.fstring.python, source.python
+              : invalid.illegal.newline.python, meta.fstring.python, source.python
 def           : meta.function.python, source.python, storage.type.function.python
               : meta.function.python, source.python
 foo           : entity.name.function.python, meta.function.python, source.python

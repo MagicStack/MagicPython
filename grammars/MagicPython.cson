@@ -828,7 +828,7 @@ repository:
       "1":
         name: "constant.character.format.placeholder.other.python"
     endCaptures:
-      "2":
+      "1":
         name: "constant.character.format.placeholder.other.python"
     patterns: [
       {
@@ -956,8 +956,14 @@ repository:
     patterns: [
       {
         comment: "empty braces are illegal"
-        name: "invalid.illegal.brace.python"
-        match: "({\\s*?})"
+        match: "({)(\\s*?)(})"
+        captures:
+          "1":
+            name: "constant.character.format.placeholder.other.python"
+          "2":
+            name: "invalid.illegal.brace.python"
+          "3":
+            name: "constant.character.format.placeholder.other.python"
       }
       {
         name: "constant.character.escape.python"
@@ -4387,6 +4393,7 @@ repository:
       }
     ]
   "fstring-fnorm-quoted-single-line":
+    name: "meta.fstring.python"
     begin: "(\\b[fF])([bBuU])?((['\"]))"
     end: "(\\3)|((?<!\\\\)\\n)"
     beginCaptures:
@@ -4416,6 +4423,7 @@ repository:
       }
     ]
   "fstring-normf-quoted-single-line":
+    name: "meta.fstring.python"
     begin: "(\\b[bBuU])([fF])((['\"]))"
     end: "(\\3)|((?<!\\\\)\\n)"
     beginCaptures:
@@ -4445,6 +4453,7 @@ repository:
       }
     ]
   "fstring-raw-quoted-single-line":
+    name: "meta.fstring.python"
     begin: "(\\b(?:[R][fF]|[fF][R]))((['\"]))"
     end: "(\\2)|((?<!\\\\)\\n)"
     beginCaptures:
@@ -4608,6 +4617,7 @@ repository:
       }
     ]
   "fstring-fnorm-quoted-multi-line":
+    name: "meta.fstring.python"
     begin: "(\\b[fF])([bBuU])?('''|\"\"\")"
     end: "(\\3)"
     beginCaptures:
@@ -4637,6 +4647,7 @@ repository:
       }
     ]
   "fstring-normf-quoted-multi-line":
+    name: "meta.fstring.python"
     begin: "(\\b[bBuU])([fF])('''|\"\"\")"
     end: "(\\3)"
     beginCaptures:
@@ -4666,6 +4677,7 @@ repository:
       }
     ]
   "fstring-raw-quoted-multi-line":
+    name: "meta.fstring.python"
     begin: "(\\b(?:[R][fF]|[fF][R]))('''|\"\"\")"
     end: "(\\2)"
     beginCaptures:

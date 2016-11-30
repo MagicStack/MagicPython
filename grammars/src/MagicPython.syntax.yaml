@@ -697,7 +697,7 @@ repository:
     beginCaptures:
       '1': {name: constant.character.format.placeholder.other.python}
     endCaptures:
-      '2': {name: constant.character.format.placeholder.other.python}
+      '1': {name: constant.character.format.placeholder.other.python}
     patterns:
       - include: '#fstring-terminator-single'
       - include: '#f-expression'
@@ -787,8 +787,11 @@ repository:
   fstring-formatting-braces:
     patterns:
       - comment: empty braces are illegal
-        name: invalid.illegal.brace.python
-        match: ({\s*?})
+        match: ({)(\s*?)(})
+        captures:
+          '1': {name: constant.character.format.placeholder.other.python}
+          '2': {name: invalid.illegal.brace.python}
+          '3': {name: constant.character.format.placeholder.other.python}
       - name: constant.character.escape.python
         match: ({{|}})
 

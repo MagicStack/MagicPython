@@ -16,17 +16,17 @@ Fr            : source.python, storage.type.string.python, string.regexp.quoted.
 some          : source.python, string.regexp.quoted.single.python
 {obj}         : source.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.regexp.quoted.single.python
-fR            : source.python, storage.type.string.python, string.quoted.raw.single.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.raw.single.python
-some          : source.python, string.quoted.raw.single.python
-{             : constant.character.format.placeholder.other.python, source.python
-obj           : source.python
-}             : constant.character.format.placeholder.other.python, source.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.raw.single.python
-FR            : source.python, storage.type.string.python, string.quoted.raw.single.python
-'             : punctuation.definition.string.begin.python, source.python, string.quoted.raw.single.python
-some          : source.python, string.quoted.raw.single.python
-{             : constant.character.format.placeholder.other.python, source.python
-obj           : source.python
-}             : constant.character.format.placeholder.other.python, source.python
-'             : punctuation.definition.string.end.python, source.python, string.quoted.raw.single.python
+fR            : meta.fstring.python, source.python, storage.type.string.python, string.quoted.raw.single.python
+'             : meta.fstring.python, punctuation.definition.string.begin.python, source.python, string.quoted.raw.single.python
+some          : meta.fstring.python, source.python, string.quoted.raw.single.python
+{             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
+obj           : meta.fstring.python, source.python
+}             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
+'             : meta.fstring.python, punctuation.definition.string.end.python, source.python, string.quoted.raw.single.python
+FR            : meta.fstring.python, source.python, storage.type.string.python, string.quoted.raw.single.python
+'             : meta.fstring.python, punctuation.definition.string.begin.python, source.python, string.quoted.raw.single.python
+some          : meta.fstring.python, source.python, string.quoted.raw.single.python
+{             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
+obj           : meta.fstring.python, source.python
+}             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
+'             : meta.fstring.python, punctuation.definition.string.end.python, source.python, string.quoted.raw.single.python

@@ -1,6 +1,7 @@
 ---
 repository:
   fstring-fnorm-quoted-${line}-line:
+    name: meta.fstring.python
     begin: (\b[fF])([bBuU])?(${marker})
     end: (\3)${guard}
     beginCaptures:
@@ -20,6 +21,7 @@ repository:
       - include: '#fstring-${line}-core'
 
   fstring-normf-quoted-${line}-line:
+    name: meta.fstring.python
     begin: (\b[bBuU])([fF])(${marker})
     end: (\3)${guard}
     beginCaptures:
@@ -39,6 +41,7 @@ repository:
       - include: '#fstring-${line}-core'
 
   fstring-raw-quoted-${line}-line:
+    name: meta.fstring.python
     begin: (\b(?:[R][fF]|[fF][R]))(${marker})
     end: (\2)${guard}
     beginCaptures:

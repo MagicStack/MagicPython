@@ -1279,7 +1279,7 @@
         </dict>
         <key>endCaptures</key>
         <dict>
-          <key>2</key>
+          <key>1</key>
           <dict>
             <key>name</key>
             <string>constant.character.format.placeholder.other.python</string>
@@ -1462,10 +1462,26 @@
           <dict>
             <key>comment</key>
             <string>empty braces are illegal</string>
-            <key>name</key>
-            <string>invalid.illegal.brace.python</string>
             <key>match</key>
-            <string>({\s*?})</string>
+            <string>({)(\s*?)(})</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>constant.character.format.placeholder.other.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.brace.python</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>constant.character.format.placeholder.other.python</string>
+              </dict>
+            </dict>
           </dict>
           <dict>
             <key>name</key>
@@ -7697,6 +7713,8 @@ indirectly through syntactic constructs
       </dict>
       <key>fstring-fnorm-quoted-single-line</key>
       <dict>
+        <key>name</key>
+        <string>meta.fstring.python</string>
         <key>begin</key>
         <string>(\b[fF])([bBuU])?((['"]))</string>
         <key>end</key>
@@ -7754,6 +7772,8 @@ indirectly through syntactic constructs
       </dict>
       <key>fstring-normf-quoted-single-line</key>
       <dict>
+        <key>name</key>
+        <string>meta.fstring.python</string>
         <key>begin</key>
         <string>(\b[bBuU])([fF])((['"]))</string>
         <key>end</key>
@@ -7811,6 +7831,8 @@ indirectly through syntactic constructs
       </dict>
       <key>fstring-raw-quoted-single-line</key>
       <dict>
+        <key>name</key>
+        <string>meta.fstring.python</string>
         <key>begin</key>
         <string>(\b(?:[R][fF]|[fF][R]))((['"]))</string>
         <key>end</key>
@@ -8063,6 +8085,8 @@ indirectly through syntactic constructs
       </dict>
       <key>fstring-fnorm-quoted-multi-line</key>
       <dict>
+        <key>name</key>
+        <string>meta.fstring.python</string>
         <key>begin</key>
         <string>(\b[fF])([bBuU])?('''|""")</string>
         <key>end</key>
@@ -8120,6 +8144,8 @@ indirectly through syntactic constructs
       </dict>
       <key>fstring-normf-quoted-multi-line</key>
       <dict>
+        <key>name</key>
+        <string>meta.fstring.python</string>
         <key>begin</key>
         <string>(\b[bBuU])([fF])('''|""")</string>
         <key>end</key>
@@ -8177,6 +8203,8 @@ indirectly through syntactic constructs
       </dict>
       <key>fstring-raw-quoted-multi-line</key>
       <dict>
+        <key>name</key>
+        <string>meta.fstring.python</string>
         <key>begin</key>
         <string>(\b(?:[R][fF]|[fF][R]))('''|""")</string>
         <key>end</key>
