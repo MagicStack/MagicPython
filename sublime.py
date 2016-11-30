@@ -7,7 +7,6 @@ in an f-string:
 """
 
 
-import sublime
 import sublime_plugin
 
 
