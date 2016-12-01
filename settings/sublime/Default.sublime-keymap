@@ -42,5 +42,5 @@
             { "key": "selector", "operator": "equal", "operand": "meta.fstring.python", "match_all": true },
             { "key": "selector", "operator": "equal", "operand": "constant.character.format.placeholder.other", "match_all": true }
         ]
-    },
+    }
 ]
