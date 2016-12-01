@@ -7,6 +7,9 @@ in an f-string:
 """
 
 
+# Used by `settings/sublime/Default.sublime-keymap`.
+
+
 import sublime_plugin
 
 
