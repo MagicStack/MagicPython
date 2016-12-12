@@ -139,6 +139,7 @@ repository:
     - file: 'regexp.wrapper.syntax.yaml'
       vars:
         scopename: string.regexp.quoted.single.python
+                   string.interpolated.python
         prefix: 'single-one-'
         basename: 'fregexp'
         nested: ''
@@ -149,6 +150,7 @@ repository:
     - file: 'regexp.wrapper.syntax.yaml'
       vars:
         scopename: string.regexp.quoted.multi.python
+                   string.interpolated.python
         prefix: 'single-three-'
         basename: 'fregexp'
         nested: "- include: '#comments-string-single-three'"
@@ -159,6 +161,7 @@ repository:
     - file: 'regexp.wrapper.syntax.yaml'
       vars:
         scopename: string.regexp.quoted.single.python
+                   string.interpolated.python
         prefix: 'double-one-'
         basename: 'fregexp'
         nested: ''
@@ -169,6 +172,7 @@ repository:
     - file: 'regexp.wrapper.syntax.yaml'
       vars:
         scopename: string.regexp.quoted.multi.python
+                   string.interpolated.python
         prefix: 'double-three-'
         basename: 'fregexp'
         nested: "- include: '#comments-string-double-three'"

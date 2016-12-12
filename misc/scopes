@@ -127,6 +127,7 @@ storage.type.function.python
 storage.type.imaginary.number.python
 storage.type.number.python
 storage.type.string.python
+string.interpolated.python
 string.quoted.binary.multi.python
 string.quoted.binary.single.python
 string.quoted.docstring.multi.python

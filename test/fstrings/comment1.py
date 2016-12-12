@@ -4,9 +4,9 @@ def foo(): pass
 
 
 
-f             : meta.fstring.python, source.python, storage.type.string.python, string.quoted.single.python
-'             : meta.fstring.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-prefix        : meta.fstring.python, source.python, string.quoted.single.python
+f             : meta.fstring.python, source.python, storage.type.string.python, string.interpolated.python, string.quoted.single.python
+'             : meta.fstring.python, punctuation.definition.string.begin.python, source.python, string.interpolated.python, string.quoted.single.python
+prefix        : meta.fstring.python, source.python, string.interpolated.python, string.quoted.single.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 10            : constant.numeric.dec.python, meta.fstring.python, source.python
  #            : meta.fstring.python, source.python

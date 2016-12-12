@@ -6908,7 +6908,7 @@ indirectly through syntactic constructs
       <key>fregexp-single-one-line</key>
       <dict>
         <key>name</key>
-        <string>string.regexp.quoted.single.python</string>
+        <string>string.regexp.quoted.single.python string.interpolated.python</string>
         <key>begin</key>
         <string>\b(([uU]r)|([fF]r)|(r[fF]?))(\')</string>
         <key>end</key>
@@ -6960,7 +6960,7 @@ indirectly through syntactic constructs
       <key>fregexp-single-three-line</key>
       <dict>
         <key>name</key>
-        <string>string.regexp.quoted.multi.python</string>
+        <string>string.regexp.quoted.multi.python string.interpolated.python</string>
         <key>begin</key>
         <string>\b(([uU]r)|([fF]r)|(r[fF]?))(\'\'\')</string>
         <key>end</key>
@@ -7012,7 +7012,7 @@ indirectly through syntactic constructs
       <key>fregexp-double-one-line</key>
       <dict>
         <key>name</key>
-        <string>string.regexp.quoted.single.python</string>
+        <string>string.regexp.quoted.single.python string.interpolated.python</string>
         <key>begin</key>
         <string>\b(([uU]r)|([fF]r)|(r[fF]?))(")</string>
         <key>end</key>
@@ -7064,7 +7064,7 @@ indirectly through syntactic constructs
       <key>fregexp-double-three-line</key>
       <dict>
         <key>name</key>
-        <string>string.regexp.quoted.multi.python</string>
+        <string>string.regexp.quoted.multi.python string.interpolated.python</string>
         <key>begin</key>
         <string>\b(([uU]r)|([fF]r)|(r[fF]?))(""")</string>
         <key>end</key>
@@ -7726,7 +7726,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.single.python storage.type.string.python</string>
+            <string>string.quoted.single.python string.interpolated.python storage.type.string.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -7736,7 +7736,7 @@ indirectly through syntactic constructs
           <key>3</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.single.python punctuation.definition.string.begin.python</string>
+            <string>string.quoted.single.python string.interpolated.python punctuation.definition.string.begin.python</string>
           </dict>
         </dict>
         <key>endCaptures</key>
@@ -7744,7 +7744,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.single.python punctuation.definition.string.end.python</string>
+            <string>string.quoted.single.python string.interpolated.python punctuation.definition.string.end.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -7790,7 +7790,7 @@ indirectly through syntactic constructs
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.single.python storage.type.string.python</string>
+            <string>string.quoted.single.python string.interpolated.python storage.type.string.python</string>
           </dict>
           <key>3</key>
           <dict>
@@ -7803,7 +7803,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.single.python punctuation.definition.string.end.python</string>
+            <string>string.quoted.single.python string.interpolated.python punctuation.definition.string.end.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -7844,7 +7844,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.raw.single.python storage.type.string.python</string>
+            <string>string.quoted.raw.single.python string.interpolated.python storage.type.string.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -7857,7 +7857,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.raw.single.python punctuation.definition.string.end.python</string>
+            <string>string.quoted.raw.single.python string.interpolated.python punctuation.definition.string.end.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -7888,7 +7888,7 @@ indirectly through syntactic constructs
       <key>fstring-single-core</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.single.python</string>
+        <string>string.quoted.single.python string.interpolated.python</string>
         <key>match</key>
         <string>(?x)
   (.+?)
@@ -7911,7 +7911,7 @@ indirectly through syntactic constructs
       <key>fstring-raw-single-core</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.raw.single.python</string>
+        <string>string.quoted.raw.single.python string.interpolated.python</string>
         <key>match</key>
         <string>(?x)
   (.+?)
@@ -8098,7 +8098,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.multi.python storage.type.string.python</string>
+            <string>string.quoted.multi.python string.interpolated.python storage.type.string.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -8108,7 +8108,7 @@ indirectly through syntactic constructs
           <key>3</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.multi.python punctuation.definition.string.begin.python</string>
+            <string>string.quoted.multi.python string.interpolated.python punctuation.definition.string.begin.python</string>
           </dict>
         </dict>
         <key>endCaptures</key>
@@ -8116,7 +8116,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.multi.python punctuation.definition.string.end.python</string>
+            <string>string.quoted.multi.python string.interpolated.python punctuation.definition.string.end.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -8162,7 +8162,7 @@ indirectly through syntactic constructs
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.multi.python storage.type.string.python</string>
+            <string>string.quoted.multi.python string.interpolated.python storage.type.string.python</string>
           </dict>
           <key>3</key>
           <dict>
@@ -8175,7 +8175,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.multi.python punctuation.definition.string.end.python</string>
+            <string>string.quoted.multi.python string.interpolated.python punctuation.definition.string.end.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -8216,7 +8216,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.raw.multi.python storage.type.string.python</string>
+            <string>string.quoted.raw.multi.python string.interpolated.python storage.type.string.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -8229,7 +8229,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.raw.multi.python punctuation.definition.string.end.python</string>
+            <string>string.quoted.raw.multi.python string.interpolated.python punctuation.definition.string.end.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -8260,7 +8260,7 @@ indirectly through syntactic constructs
       <key>fstring-multi-core</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.multi.python</string>
+        <string>string.quoted.multi.python string.interpolated.python</string>
         <key>match</key>
         <string>(?x)
   (.+?)
@@ -8283,7 +8283,7 @@ indirectly through syntactic constructs
       <key>fstring-raw-multi-core</key>
       <dict>
         <key>name</key>
-        <string>string.quoted.raw.multi.python</string>
+        <string>string.quoted.raw.multi.python string.interpolated.python</string>
         <key>match</key>
         <string>(?x)
   (.+?)

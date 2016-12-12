@@ -6,12 +6,15 @@ repository:
     end: (\3)${guard}
     beginCaptures:
       '1': {name: string.quoted.${line}.python
+                  string.interpolated.python
                   storage.type.string.python}
       '2': {name: invalid.illegal.prefix.python}
       '3': {name: string.quoted.${line}.python
+                  string.interpolated.python
                   punctuation.definition.string.begin.python}
     endCaptures:
       '1': {name: string.quoted.${line}.python
+                  string.interpolated.python
                   punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
@@ -27,11 +30,13 @@ repository:
     beginCaptures:
       '1': {name: invalid.illegal.prefix.python}
       '2': {name: string.quoted.${line}.python
+                  string.interpolated.python
                   storage.type.string.python}
       '3': {name: string.quoted.${line}.python
                   punctuation.definition.string.begin.python}
     endCaptures:
       '1': {name: string.quoted.${line}.python
+                  string.interpolated.python
                   punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
@@ -46,11 +51,13 @@ repository:
     end: (\2)${guard}
     beginCaptures:
       '1': {name: string.quoted.raw.${line}.python
+                  string.interpolated.python
                   storage.type.string.python}
       '2': {name: string.quoted.raw.${line}.python
                   punctuation.definition.string.begin.python}
     endCaptures:
       '1': {name: string.quoted.raw.${line}.python
+                  string.interpolated.python
                   punctuation.definition.string.end.python}
       '2': {name: invalid.illegal.newline.python}
     patterns:
@@ -60,7 +67,7 @@ repository:
       - include: '#fstring-raw-${line}-core'
 
   fstring-${line}-core:
-    name: string.quoted.${line}.python
+    name: string.quoted.${line}.python string.interpolated.python
     match: |
       (?x)
         (.+?)
@@ -80,7 +87,7 @@ repository:
         | \n
 
   fstring-raw-${line}-core:
-    name: string.quoted.raw.${line}.python
+    name: string.quoted.raw.${line}.python string.interpolated.python
     match: |
       (?x)
         (.+?)

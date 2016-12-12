@@ -3,9 +3,9 @@ f"result: {value:{60}.{16!s:2}{'qwerty'[2]}}"
 
 
 
-f             : meta.fstring.python, source.python, storage.type.string.python, string.quoted.single.python
-"             : meta.fstring.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
-result:       : meta.fstring.python, source.python, string.quoted.single.python
+f             : meta.fstring.python, source.python, storage.type.string.python, string.interpolated.python, string.quoted.single.python
+"             : meta.fstring.python, punctuation.definition.string.begin.python, source.python, string.interpolated.python, string.quoted.single.python
+result:       : meta.fstring.python, source.python, string.interpolated.python, string.quoted.single.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 value         : meta.fstring.python, source.python
 :             : meta.fstring.python, source.python, support.other.format.python
@@ -27,4 +27,4 @@ qwerty        : meta.fstring.python, source.python, string.quoted.single.python
 ]             : meta.fstring.python, punctuation.definition.list.end.python, source.python
 }             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 }             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
-"             : meta.fstring.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
+"             : meta.fstring.python, punctuation.definition.string.end.python, source.python, string.interpolated.python, string.quoted.single.python

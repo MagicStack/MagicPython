@@ -3955,7 +3955,7 @@ repository:
       }
     ]
   "fregexp-single-one-line":
-    name: "string.regexp.quoted.single.python"
+    name: "string.regexp.quoted.single.python string.interpolated.python"
     begin: "\\b(([uU]r)|([fF]r)|(r[fF]?))(\\')"
     end: "(\\')|(?<!\\\\)(\\n)"
     beginCaptures:
@@ -3978,7 +3978,7 @@ repository:
       }
     ]
   "fregexp-single-three-line":
-    name: "string.regexp.quoted.multi.python"
+    name: "string.regexp.quoted.multi.python string.interpolated.python"
     begin: "\\b(([uU]r)|([fF]r)|(r[fF]?))(\\'\\'\\')"
     end: "(\\'\\'\\')"
     beginCaptures:
@@ -4001,7 +4001,7 @@ repository:
       }
     ]
   "fregexp-double-one-line":
-    name: "string.regexp.quoted.single.python"
+    name: "string.regexp.quoted.single.python string.interpolated.python"
     begin: "\\b(([uU]r)|([fF]r)|(r[fF]?))(\")"
     end: "(\")|(?<!\\\\)(\\n)"
     beginCaptures:
@@ -4024,7 +4024,7 @@ repository:
       }
     ]
   "fregexp-double-three-line":
-    name: "string.regexp.quoted.multi.python"
+    name: "string.regexp.quoted.multi.python string.interpolated.python"
     begin: "\\b(([uU]r)|([fF]r)|(r[fF]?))(\"\"\")"
     end: "(\"\"\")"
     beginCaptures:
@@ -4400,14 +4400,14 @@ repository:
     end: "(\\3)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
-        name: "string.quoted.single.python storage.type.string.python"
+        name: "string.quoted.single.python string.interpolated.python storage.type.string.python"
       "2":
         name: "invalid.illegal.prefix.python"
       "3":
-        name: "string.quoted.single.python punctuation.definition.string.begin.python"
+        name: "string.quoted.single.python string.interpolated.python punctuation.definition.string.begin.python"
     endCaptures:
       "1":
-        name: "string.quoted.single.python punctuation.definition.string.end.python"
+        name: "string.quoted.single.python string.interpolated.python punctuation.definition.string.end.python"
       "2":
         name: "invalid.illegal.newline.python"
     patterns: [
@@ -4432,12 +4432,12 @@ repository:
       "1":
         name: "invalid.illegal.prefix.python"
       "2":
-        name: "string.quoted.single.python storage.type.string.python"
+        name: "string.quoted.single.python string.interpolated.python storage.type.string.python"
       "3":
         name: "string.quoted.single.python punctuation.definition.string.begin.python"
     endCaptures:
       "1":
-        name: "string.quoted.single.python punctuation.definition.string.end.python"
+        name: "string.quoted.single.python string.interpolated.python punctuation.definition.string.end.python"
       "2":
         name: "invalid.illegal.newline.python"
     patterns: [
@@ -4460,12 +4460,12 @@ repository:
     end: "(\\2)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
-        name: "string.quoted.raw.single.python storage.type.string.python"
+        name: "string.quoted.raw.single.python string.interpolated.python storage.type.string.python"
       "2":
         name: "string.quoted.raw.single.python punctuation.definition.string.begin.python"
     endCaptures:
       "1":
-        name: "string.quoted.raw.single.python punctuation.definition.string.end.python"
+        name: "string.quoted.raw.single.python string.interpolated.python punctuation.definition.string.end.python"
       "2":
         name: "invalid.illegal.newline.python"
     patterns: [
@@ -4483,7 +4483,7 @@ repository:
       }
     ]
   "fstring-single-core":
-    name: "string.quoted.single.python"
+    name: "string.quoted.single.python string.interpolated.python"
     match: '''
       (?x)
         (.+?)
@@ -4504,7 +4504,7 @@ repository:
       
     '''
   "fstring-raw-single-core":
-    name: "string.quoted.raw.single.python"
+    name: "string.quoted.raw.single.python string.interpolated.python"
     match: '''
       (?x)
         (.+?)
@@ -4624,14 +4624,14 @@ repository:
     end: "(\\3)"
     beginCaptures:
       "1":
-        name: "string.quoted.multi.python storage.type.string.python"
+        name: "string.quoted.multi.python string.interpolated.python storage.type.string.python"
       "2":
         name: "invalid.illegal.prefix.python"
       "3":
-        name: "string.quoted.multi.python punctuation.definition.string.begin.python"
+        name: "string.quoted.multi.python string.interpolated.python punctuation.definition.string.begin.python"
     endCaptures:
       "1":
-        name: "string.quoted.multi.python punctuation.definition.string.end.python"
+        name: "string.quoted.multi.python string.interpolated.python punctuation.definition.string.end.python"
       "2":
         name: "invalid.illegal.newline.python"
     patterns: [
@@ -4656,12 +4656,12 @@ repository:
       "1":
         name: "invalid.illegal.prefix.python"
       "2":
-        name: "string.quoted.multi.python storage.type.string.python"
+        name: "string.quoted.multi.python string.interpolated.python storage.type.string.python"
       "3":
         name: "string.quoted.multi.python punctuation.definition.string.begin.python"
     endCaptures:
       "1":
-        name: "string.quoted.multi.python punctuation.definition.string.end.python"
+        name: "string.quoted.multi.python string.interpolated.python punctuation.definition.string.end.python"
       "2":
         name: "invalid.illegal.newline.python"
     patterns: [
@@ -4684,12 +4684,12 @@ repository:
     end: "(\\2)"
     beginCaptures:
       "1":
-        name: "string.quoted.raw.multi.python storage.type.string.python"
+        name: "string.quoted.raw.multi.python string.interpolated.python storage.type.string.python"
       "2":
         name: "string.quoted.raw.multi.python punctuation.definition.string.begin.python"
     endCaptures:
       "1":
-        name: "string.quoted.raw.multi.python punctuation.definition.string.end.python"
+        name: "string.quoted.raw.multi.python string.interpolated.python punctuation.definition.string.end.python"
       "2":
         name: "invalid.illegal.newline.python"
     patterns: [
@@ -4707,7 +4707,7 @@ repository:
       }
     ]
   "fstring-multi-core":
-    name: "string.quoted.multi.python"
+    name: "string.quoted.multi.python string.interpolated.python"
     match: '''
       (?x)
         (.+?)
@@ -4728,7 +4728,7 @@ repository:
       
     '''
   "fstring-raw-multi-core":
-    name: "string.quoted.raw.multi.python"
+    name: "string.quoted.raw.multi.python string.interpolated.python"
     match: '''
       (?x)
         (.+?)
