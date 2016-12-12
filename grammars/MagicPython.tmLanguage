@@ -1780,7 +1780,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#lambda-incomplete</string>
+                <string>#lambda-nested-incomplete</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1832,6 +1832,13 @@
         </array>
       </dict>
       <key>lambda-incomplete</key>
+      <dict>
+        <key>name</key>
+        <string>storage.type.function.lambda.python</string>
+        <key>match</key>
+        <string>\blambda(?=\s*[,)])</string>
+      </dict>
+      <key>lambda-nested-incomplete</key>
       <dict>
         <key>name</key>
         <string>storage.type.function.lambda.python</string>

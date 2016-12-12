@@ -906,7 +906,7 @@ repository:
         patterns:
           - name: keyword.operator.unpacking.parameter.python
             match: (\*\*|\*)
-          - include: '#lambda-incomplete'
+          - include: '#lambda-nested-incomplete'
           - include: '#illegal-names'
           - match: ([[:alpha:]_]\w*)\s*(?:(,)|(?=:|$))
             captures:
@@ -921,6 +921,10 @@ repository:
           - include: '#illegal-operator'
 
   lambda-incomplete:
+    name: storage.type.function.lambda.python
+    match: \blambda(?=\s*[,)])
+
+  lambda-nested-incomplete:
     name: storage.type.function.lambda.python
     match: \blambda(?=\s*[:,)])
 

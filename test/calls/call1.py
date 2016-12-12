@@ -22,8 +22,8 @@ args          : meta.function-call.arguments.python, meta.function-call.python, 
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 FOO           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-lambda        : meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.function.lambda.python
-:             : meta.function-call.arguments.python, meta.function-call.python, source.python
+lambda        : meta.function-call.arguments.python, meta.function-call.python, meta.lambda-function.python, source.python, storage.type.function.lambda.python
+:             : meta.function-call.arguments.python, meta.function-call.python, meta.lambda-function.python, punctuation.section.function.lambda.begin.python, source.python
 {             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.dict.begin.python, source.python
 '             : meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 q             : meta.function-call.arguments.python, meta.function-call.python, source.python, string.quoted.single.python

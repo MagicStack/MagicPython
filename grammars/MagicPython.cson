@@ -1146,7 +1146,7 @@ repository:
             match: "(\\*\\*|\\*)"
           }
           {
-            include: "#lambda-incomplete"
+            include: "#lambda-nested-incomplete"
           }
           {
             include: "#illegal-names"
@@ -1181,6 +1181,9 @@ repository:
       }
     ]
   "lambda-incomplete":
+    name: "storage.type.function.lambda.python"
+    match: "\\blambda(?=\\s*[,)])"
+  "lambda-nested-incomplete":
     name: "storage.type.function.lambda.python"
     match: "\\blambda(?=\\s*[:,)])"
   "lambda-parameter-with-default":
