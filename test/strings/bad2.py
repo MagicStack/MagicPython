@@ -18,7 +18,7 @@ bad           : source.python, string.quoted.binary.single.python
               : invalid.illegal.newline.python, source.python, string.quoted.binary.single.python
 foo           : source.python
               : source.python
-\             : separator.continuation.line.python, source.python
+\             : punctuation.separator.continuation.line.python, source.python
 ' \" \a \b \c \f \n \r \t \v \5 \55 \555 \05 \005" : invalid.illegal.line.continuation.python, source.python
               : source.python
 def           : meta.function.python, source.python, storage.type.function.python

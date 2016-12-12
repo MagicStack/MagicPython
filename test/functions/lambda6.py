@@ -24,7 +24,7 @@ c             : meta.function.lambda.parameters.python, meta.lambda-function.pyt
 }             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.dict.end.python, source.python
 ,             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.separator.parameters.python, source.python
               : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
-\             : meta.function.lambda.parameters.python, meta.lambda-function.python, separator.continuation.line.python, source.python
+\             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.separator.continuation.line.python, source.python
               : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
                : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 d             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, variable.parameter.function.language.python

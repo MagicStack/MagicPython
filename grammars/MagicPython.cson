@@ -482,7 +482,7 @@ repository:
         match: "(\\\\)\\s*(\\S.*$\\n?)"
         captures:
           "1":
-            name: "separator.continuation.line.python"
+            name: "punctuation.separator.continuation.line.python"
           "2":
             name: "invalid.illegal.line.continuation.python"
       }
@@ -500,7 +500,7 @@ repository:
         '''
         beginCaptures:
           "1":
-            name: "separator.continuation.line.python"
+            name: "punctuation.separator.continuation.line.python"
         patterns: [
           {
             include: "#regexp"

@@ -756,7 +756,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>separator.continuation.line.python</string>
+                <string>punctuation.separator.continuation.line.python</string>
               </dict>
               <key>2</key>
               <dict>
@@ -782,7 +782,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>separator.continuation.line.python</string>
+                <string>punctuation.separator.continuation.line.python</string>
               </dict>
             </dict>
             <key>patterns</key>

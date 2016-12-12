@@ -14,7 +14,7 @@ a             : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-\             : separator.continuation.line.python, source.python
+\             : punctuation.separator.continuation.line.python, source.python
               : source.python
 r             : source.python, storage.type.string.python, string.regexp.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.regexp.quoted.single.python
@@ -34,7 +34,7 @@ b             : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
-\             : separator.continuation.line.python, source.python
+\             : punctuation.separator.continuation.line.python, source.python
               : source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  docstring    : comment.line.number-sign.python, source.python

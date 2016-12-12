@@ -114,9 +114,9 @@ punctuation.section.function.lambda.begin.python
 punctuation.separator.annotation.python
 punctuation.separator.annotation.result.python
 punctuation.separator.arguments.python
+punctuation.separator.continuation.line.python
 punctuation.separator.inheritance.python
 punctuation.separator.parameters.python
-separator.continuation.line.python
 storage.modifier.declaration.python
 storage.modifier.flag.regexp
 storage.type.class.python

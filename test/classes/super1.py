@@ -53,7 +53,7 @@ super         : meta.function-call.python, source.python, support.type.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
 .             : source.python
-\             : separator.continuation.line.python, source.python
+\             : punctuation.separator.continuation.line.python, source.python
               : source.python
 __init__      : meta.function-call.python, source.python, support.function.magic.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python

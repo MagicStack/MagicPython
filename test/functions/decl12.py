@@ -10,7 +10,7 @@ get_streaks   : entity.name.function.python, meta.function.python, source.python
 s             : meta.function.parameters.python, meta.function.python, source.python, variable.parameter.function.language.python
 )             : meta.function.parameters.python, meta.function.python, punctuation.definition.parameters.end.python, source.python
               : meta.function.python, source.python
-\             : meta.function.python, separator.continuation.line.python, source.python
+\             : meta.function.python, punctuation.separator.continuation.line.python, source.python
               : meta.function.python, source.python
               : meta.function.python, source.python
 ->            : meta.function.python, punctuation.separator.annotation.result.python, source.python

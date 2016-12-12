@@ -478,7 +478,7 @@ repository:
     patterns:
       - match: '(\\)\s*(\S.*$\n?)'
         captures:
-          '1': {name: separator.continuation.line.python}
+          '1': {name: punctuation.separator.continuation.line.python}
           '2': {name: invalid.illegal.line.continuation.python}
       - begin: '(\\)\s*$\n?'
         # Line continuation matching ends on anything that is not a
@@ -493,7 +493,7 @@ repository:
                 (\G $)  (?# '\G' is necessary for ST)
             )
         beginCaptures:
-          '1': {name: separator.continuation.line.python}
+          '1': {name: punctuation.separator.continuation.line.python}
         patterns:
           - include: '#regexp'
           - include: '#string'

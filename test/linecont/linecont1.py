@@ -7,7 +7,7 @@ def foo(): pass
               : source.python
 +             : keyword.operator.arithmetic.python, source.python
               : source.python
-\             : separator.continuation.line.python, source.python
+\             : punctuation.separator.continuation.line.python, source.python
               : source.python
 sdgfsdf       : invalid.illegal.line.continuation.python, source.python
 def           : meta.function.python, source.python, storage.type.function.python
