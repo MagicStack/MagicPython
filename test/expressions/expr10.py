@@ -27,7 +27,8 @@ a             : source.python
 (             : punctuation.parenthesis.begin.python, source.python
 ...           : constant.other.ellipsis.python, source.python
 )             : punctuation.parenthesis.end.python, source.python
-,             : source.python
+,             : punctuation.separator.element.python, source.python
+              : source.python
 ...           : constant.other.ellipsis.python, source.python
 )             : punctuation.parenthesis.end.python, source.python
 ...           : constant.other.ellipsis.python, source.python

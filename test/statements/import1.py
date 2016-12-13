@@ -14,7 +14,8 @@ bar           : source.python
 as            : keyword.control.flow.python, source.python
               : source.python
 spam          : source.python
-,             : source.python
+,             : punctuation.separator.element.python, source.python
+              : source.python
 baz           : source.python
 import        : keyword.control.import.python, source.python
               : source.python
@@ -23,5 +24,6 @@ time          : source.python
 as            : keyword.control.flow.python, source.python
               : source.python
 ham           : source.python
-,             : source.python
+,             : punctuation.separator.element.python, source.python
+              : source.python
 datetime      : source.python

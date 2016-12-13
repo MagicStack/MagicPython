@@ -878,6 +878,12 @@
             <key>match</key>
             <string>:</string>
           </dict>
+          <dict>
+            <key>name</key>
+            <string>punctuation.separator.element.python</string>
+            <key>match</key>
+            <string>,</string>
+          </dict>
         </array>
       </dict>
       <key>literal</key>

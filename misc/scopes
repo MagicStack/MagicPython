@@ -117,6 +117,7 @@ punctuation.separator.arguments.python
 punctuation.separator.block.begin.python
 punctuation.separator.continuation.line.python
 punctuation.separator.dict.python
+punctuation.separator.element.python
 punctuation.separator.inheritance.python
 punctuation.separator.parameters.python
 punctuation.separator.slice.python

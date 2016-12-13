@@ -11,7 +11,8 @@ prefix        : meta.fstring.python, source.python, string.interpolated.python, 
 10            : constant.numeric.dec.python, meta.fstring.python, source.python
  #            : meta.fstring.python, source.python
 comment       : meta.fstring.python, source.python
-,             : meta.fstring.python, source.python
+,             : meta.fstring.python, punctuation.separator.element.python, source.python
+              : meta.fstring.python, source.python
 making        : meta.fstring.python, source.python
               : meta.fstring.python, source.python
 the           : meta.fstring.python, source.python

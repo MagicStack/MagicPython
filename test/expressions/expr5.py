@@ -10,7 +10,8 @@ a             : source.python
               : source.python
 (             : punctuation.parenthesis.begin.python, source.python
 from          : keyword.control.flow.python, source.python
-,             : source.python
+,             : punctuation.separator.element.python, source.python
+              : source.python
 a             : source.python
 )             : punctuation.parenthesis.end.python, source.python
 b             : source.python
@@ -19,7 +20,8 @@ b             : source.python
               : source.python
 [             : punctuation.definition.list.begin.python, source.python
 from          : keyword.control.flow.python, source.python
-,             : source.python
+,             : punctuation.separator.element.python, source.python
+              : source.python
 b             : source.python
 ]             : punctuation.definition.list.end.python, source.python
 c             : source.python

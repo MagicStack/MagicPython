@@ -10,7 +10,8 @@ a             : source.python
 as            : keyword.control.flow.python, source.python
               : source.python
 b             : source.python
-,             : source.python
+,             : punctuation.separator.element.python, source.python
+              : source.python
 c             : source.python
               : source.python
 as            : keyword.control.flow.python, source.python

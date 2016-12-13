@@ -563,6 +563,10 @@ repository:
         name: "punctuation.separator.block.begin.python"
         match: ":"
       }
+      {
+        name: "punctuation.separator.element.python"
+        match: ","
+      }
     ]
   literal:
     patterns: [

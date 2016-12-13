@@ -30,5 +30,5 @@ f             : source.python, string.quoted.single.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 name          : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
-,             : source.python
+,             : punctuation.separator.element.python, source.python
 )             : punctuation.parenthesis.end.python, source.python

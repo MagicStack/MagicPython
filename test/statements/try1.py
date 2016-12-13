@@ -31,7 +31,8 @@ except        : keyword.control.flow.python, source.python
               : source.python
 (             : punctuation.parenthesis.begin.python, source.python
 ZeroDivisionError : source.python, support.type.exception.python
-,             : source.python
+,             : punctuation.separator.element.python, source.python
+              : source.python
 GhiError      : source.python
 )             : punctuation.parenthesis.end.python, source.python
               : source.python
