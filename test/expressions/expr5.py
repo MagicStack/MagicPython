@@ -28,10 +28,12 @@ c             : source.python
               : source.python
 {             : punctuation.definition.dict.begin.python, source.python
 from          : keyword.control.flow.python, source.python
-:             : source.python
+:             : punctuation.separator.dict.python, source.python
+              : source.python
 {             : punctuation.definition.dict.begin.python, source.python
 import        : keyword.control.flow.python, source.python
-:             : source.python
+:             : punctuation.separator.dict.python, source.python
+              : source.python
 a             : source.python
 }             : punctuation.definition.dict.end.python, source.python
 }             : punctuation.definition.dict.end.python, source.python

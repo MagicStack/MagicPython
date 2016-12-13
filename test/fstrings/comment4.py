@@ -20,7 +20,7 @@ f             : meta.fstring.python, meta.function-call.arguments.python, meta.f
               : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 {             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.dict.begin.python, source.python
 4             : constant.numeric.dec.python, meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-:             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
+:             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.dict.python, source.python
 5             : constant.numeric.dec.python, meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 }             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.dict.end.python, source.python
               : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python

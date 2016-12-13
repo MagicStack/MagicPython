@@ -16,11 +16,11 @@ c             : source.python
 in            : keyword.operator.logical.python, source.python
               : source.python
 b             : source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
 else          : keyword.control.flow.python, source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
 /             : keyword.operator.arithmetic.python, source.python

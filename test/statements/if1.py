@@ -20,7 +20,7 @@ else          : keyword.control.flow.python, source.python
               : source.python
 c             : source.python
 )             : punctuation.parenthesis.end.python, source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
 elif          : keyword.control.flow.python, source.python
@@ -34,10 +34,10 @@ c             : source.python
 and           : keyword.operator.logical.python, source.python
               : source.python
 d             : source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 2             : constant.numeric.dec.python, source.python
 else          : keyword.control.flow.python, source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 3             : constant.numeric.dec.python, source.python

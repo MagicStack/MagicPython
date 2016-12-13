@@ -19,7 +19,7 @@ c             : meta.function.lambda.parameters.python, meta.lambda-function.pyt
 '             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 key           : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python, string.quoted.single.python
 '             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
-:             : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
+:             : meta.function.lambda.parameters.python, meta.lambda-function.python, punctuation.separator.dict.python, source.python
               : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
                                   : meta.function.lambda.parameters.python, meta.lambda-function.python, source.python
 555           : constant.numeric.dec.python, meta.function.lambda.parameters.python, meta.lambda-function.python, source.python

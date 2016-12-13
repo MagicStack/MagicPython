@@ -16,6 +16,6 @@ c             : source.python
 as            : keyword.control.flow.python, source.python
               : source.python
 d             : source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python

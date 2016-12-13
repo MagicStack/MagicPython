@@ -17,7 +17,8 @@ a             : meta.function.lambda.parameters.python, meta.lambda-function.pyt
 d             : source.python
 =             : keyword.operator.assignment.python, source.python
 1             : constant.numeric.dec.python, source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
+              : source.python
 None          : constant.language.python, source.python
 def           : meta.function.python, source.python, storage.type.function.python
               : meta.function.python, source.python

@@ -37,7 +37,7 @@ c             : source.python
 in            : keyword.operator.logical.python, source.python
               : source.python
 b             : source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 async         : keyword.control.flow.python, source.python
               : source.python
@@ -50,7 +50,7 @@ as            : keyword.control.flow.python, source.python
 d             : source.python
 ,             : source.python
 c             : source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 await         : keyword.control.flow.python, source.python
               : source.python

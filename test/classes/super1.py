@@ -87,7 +87,7 @@ bar           : meta.function-call.arguments.python, meta.function-call.python, 
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
               : source.python
 if            : keyword.control.flow.python, source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 __init__      : meta.function-call.python, source.python, support.function.magic.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python

@@ -13,6 +13,6 @@ foo           : entity.name.function.python, meta.function.python, source.python
 ->            : invalid.illegal.annotation.python, source.python
               : source.python
 notOK         : source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python

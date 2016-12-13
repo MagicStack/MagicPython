@@ -27,7 +27,8 @@ None          : constant.language.python, meta.function.lambda.parameters.python
                      : meta.function.parameters.python, meta.function.python, source.python
 {             : meta.function.parameters.python, meta.function.python, punctuation.definition.dict.begin.python, source.python
 key           : meta.function.parameters.python, meta.function.python, source.python
-:             : meta.function.parameters.python, meta.function.python, source.python
+:             : meta.function.parameters.python, meta.function.python, punctuation.separator.dict.python, source.python
+              : meta.function.parameters.python, meta.function.python, source.python
 val           : meta.function.parameters.python, meta.function.python, source.python
                          : meta.function.parameters.python, meta.function.python, source.python
 for           : keyword.control.flow.python, meta.function.parameters.python, meta.function.python, source.python

@@ -6,6 +6,6 @@ while 1:
 while         : keyword.control.flow.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python

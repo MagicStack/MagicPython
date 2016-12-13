@@ -21,7 +21,8 @@ def           : keyword.control.flow.python, meta.fstring.python, source.python
 aaa           : meta.fstring.python, meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.fstring.python, meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.fstring.python, meta.function-call.python, punctuation.definition.arguments.end.python, source.python
-:             : meta.fstring.python, source.python
+:             : meta.fstring.python, punctuation.separator.block.begin.python, source.python
+              : meta.fstring.python, source.python
 pass          : keyword.control.flow.python, meta.fstring.python, source.python
 }             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 '             : meta.fstring.python, punctuation.definition.string.end.python, source.python, string.interpolated.python, string.quoted.single.python

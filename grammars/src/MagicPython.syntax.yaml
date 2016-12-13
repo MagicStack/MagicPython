@@ -392,6 +392,7 @@ repository:
       - include: '#illegal-names'
       - include: '#special-variables'
       - include: '#ellipsis'
+      - include: '#punctuation'
       - include: '#line-continuation'
 
   expression-base:
@@ -452,6 +453,8 @@ repository:
     endCaptures:
       '0': {name: punctuation.definition.dict.end.python}
     patterns:
+      - name: punctuation.separator.dict.python
+        match: ":"
       - include: '#expression'
 
   list:
@@ -530,6 +533,11 @@ repository:
       '3': {name: keyword.operator.bitwise.python}
       '4': {name: keyword.operator.arithmetic.python}
       '5': {name: keyword.operator.comparison.python}
+
+  punctuation:
+    patterns:
+      - name: punctuation.separator.block.begin.python
+        match: ":"
 
   literal:
     patterns:
@@ -1079,6 +1087,8 @@ repository:
       '1': {name: punctuation.definition.arguments.begin.python}
     contentName: meta.item-access.arguments.python
     patterns:
+      - name: punctuation.separator.slice.python
+        match: ":"
       - include: '#expression'
 
   decorator:

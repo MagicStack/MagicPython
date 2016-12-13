@@ -66,7 +66,7 @@ TEST          : source.python, string.quoted.docstring.raw.single.python
 with          : keyword.control.flow.python, source.python
               : source.python
 bar           : source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
               : source.python
@@ -104,6 +104,6 @@ TEST          : source.python, string.quoted.docstring.single.python
 with          : keyword.control.flow.python, source.python
               : source.python
 bar           : source.python
-:             : source.python
+:             : punctuation.separator.block.begin.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python

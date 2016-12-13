@@ -49,7 +49,8 @@ b             : meta.function-call.arguments.python, meta.function.decorator.pyt
 '             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 q             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, string.quoted.single.python
 '             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.string.end.python, source.python, string.quoted.single.python
-:             : meta.function-call.arguments.python, meta.function.decorator.python, source.python
+:             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.separator.dict.python, source.python
+              : meta.function-call.arguments.python, meta.function.decorator.python, source.python
 42            : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 }             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.definition.dict.end.python, source.python
 ,             : meta.function-call.arguments.python, meta.function.decorator.python, punctuation.separator.arguments.python, source.python
