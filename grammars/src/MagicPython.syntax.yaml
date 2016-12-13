@@ -897,7 +897,7 @@ repository:
       - match: ((?<=\.)lambda|lambda(?=\s*[\.=]))
         captures:
           '1': {name: keyword.control.flow.python}
-      - match: \b(lambda)\s*?([,\n]|$)
+      - match: \b(lambda)\s*?(?=[,\n]|$)
         captures:
           '1': {name: storage.type.function.lambda.python}
       - name: meta.lambda-function.python

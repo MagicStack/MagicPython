@@ -1755,7 +1755,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\b(lambda)\s*?([,\n]|$)</string>
+            <string>\b(lambda)\s*?(?=[,\n]|$)</string>
             <key>captures</key>
             <dict>
               <key>1</key>
