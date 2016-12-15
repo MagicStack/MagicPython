@@ -29,4 +29,5 @@ release:
 
 publish: test
 	apm publish patch
+	rm -rf ./node_modules/syntaxdev
 	vsce publish
