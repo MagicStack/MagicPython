@@ -4,6 +4,7 @@ class Üa(Êa):
     def ŌÏŒĘ(self, Ú=1):
         print('превед 你好')
         return Ù
+    ÜBER = 1
     你好 = lambda: 你好
     def 你好(): pass
 
@@ -48,7 +49,13 @@ print         : meta.function-call.python, source.python, support.function.built
               : source.python
 return        : keyword.control.flow.python, source.python
               : source.python
-Ù             : constant.other.caps.python, source.python
+Ù             : source.python
+              : source.python
+ÜBER          : constant.other.caps.python, source.python
+              : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
+1             : constant.numeric.dec.python, source.python
               : source.python
 你好            : source.python
               : source.python

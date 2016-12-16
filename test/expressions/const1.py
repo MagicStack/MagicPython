@@ -1,4 +1,4 @@
-QQQQ QQQQ_123 QQQQ123 PROTOCOL_v2 QQQ.bar baz.AA_a _AAA foo._AAA _A __A ___A
+QQQQ QQQQ_123 QQQQ123 PROTOCOL_v2 QQQ.bar baz.AA_a _AAA foo._AAA
 QQQq QQQq123 self.FOOO() _ _1 __1 _1A  __1A _a __a __ ___ ___a ___1 __aA ___Aa
 
 
@@ -24,12 +24,6 @@ _AAA          : constant.other.caps.python, source.python
 foo           : source.python
 .             : source.python
 _AAA          : constant.other.caps.python, source.python
-              : source.python
-_A            : constant.other.caps.python, source.python
-              : source.python
-__A           : constant.other.caps.python, source.python
-              : source.python
-___A          : constant.other.caps.python, source.python
 QQQq          : source.python
               : source.python
 QQQq123       : source.python
