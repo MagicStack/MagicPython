@@ -41,6 +41,13 @@
     </array>
     <key>repository</key>
     <dict>
+      <key>impossible</key>
+      <dict>
+        <key>comment</key>
+        <string>This is a special rule that should be used where no match is desired. It is not a good idea to match something like '1{0}' because in some cases that can result in infinite loops in token generation. So the rule instead matches and impossible expression to allow a mathc to fail and move to the next token.</string>
+        <key>match</key>
+        <string>$.^</string>
+      </dict>
       <key>statement</key>
       <dict>
         <key>patterns</key>
@@ -1322,6 +1329,16 @@
           <dict>
             <key>include</key>
             <string>#f-expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-illegal-multi-brace</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#impossible</string>
           </dict>
         </array>
       </dict>
