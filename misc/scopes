@@ -114,7 +114,7 @@ punctuation.section.function.lambda.begin.python
 punctuation.separator.annotation.python
 punctuation.separator.annotation.result.python
 punctuation.separator.arguments.python
-punctuation.separator.block.begin.python
+punctuation.separator.colon.python
 punctuation.separator.continuation.line.python
 punctuation.separator.dict.python
 punctuation.separator.element.python

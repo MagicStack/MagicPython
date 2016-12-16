@@ -536,7 +536,7 @@ repository:
 
   punctuation:
     patterns:
-      - name: punctuation.separator.block.begin.python
+      - name: punctuation.separator.colon.python
         match: ":"
       - name: punctuation.separator.element.python
         match: ","

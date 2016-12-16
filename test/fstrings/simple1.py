@@ -45,7 +45,7 @@ f             : meta.fstring.python, source.python, storage.type.string.python, 
 [             : meta.fstring.python, punctuation.definition.list.begin.python, source.python
               : meta.fstring.python, source.python
 ]             : meta.fstring.python, punctuation.definition.list.end.python, source.python
-:             : meta.fstring.python, punctuation.separator.block.begin.python, source.python
+:             : meta.fstring.python, punctuation.separator.colon.python, source.python
 Xd            : meta.fstring.python, source.python
 >             : keyword.operator.comparison.python, meta.fstring.python, source.python
 +             : keyword.operator.arithmetic.python, meta.fstring.python, source.python
