@@ -4,7 +4,7 @@ scopeName: source.python
 # NOTE: remember to update package.json with VSCode file types.
 fileTypes: [py, py3, rpy, pyw, cpy, pyi,
             SConstruct, Sconstruct, sconstruct, SConscript,
-            gyp, gypi]
+            gyp, gypi, wsgi]
 first_line_match: ^#!/.*\bpython[\d\.]*\b
 firstLineMatch: ^#!/.*\bpython[\d\.]*\b
 uuid: 742deb57-6e38-4192-bed6-410746efd85d

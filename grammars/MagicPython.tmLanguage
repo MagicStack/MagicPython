@@ -21,6 +21,7 @@
       <string>SConscript</string>
       <string>gyp</string>
       <string>gypi</string>
+      <string>wsgi</string>
     </array>
     <key>first_line_match</key>
     <string>^#!/.*\bpython[\d\.]*\b</string>

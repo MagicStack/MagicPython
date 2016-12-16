@@ -54,7 +54,8 @@
           ".sconstruct",
           ".SConscript",
           ".gyp",
-          ".gypi"
+          ".gypi",
+          ".wsgi"
         ]
       }
     ],
