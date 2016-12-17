@@ -2760,7 +2760,7 @@ indirectly through syntactic constructs
       | rmul | ror | round | rpow | rrshift | rshift | rsub
       | rtruediv | rxor | set | setattr | setitem | setslice
       | setstate | sizeof | str | sub | subclasscheck | truediv
-      | trunc | unicode | xor
+      | trunc | unicode | xor | matmul | rmatmul | imatmul
     )__
   )\b
 </string>

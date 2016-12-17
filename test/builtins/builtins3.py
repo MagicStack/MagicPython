@@ -26,6 +26,9 @@ some.__defaults__
 some.__func__
 some.__self__
 some.__kwdefaults__
+some.__matmul__
+some.__imatmul__
+some.__rmatmul__
 some.__notspecial__
 
 
@@ -125,6 +128,15 @@ __self__      : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __kwdefaults__ : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__matmul__    : source.python, support.function.magic.python
+some          : source.python
+.             : source.python
+__imatmul__   : source.python, support.function.magic.python
+some          : source.python
+.             : source.python
+__rmatmul__   : source.python, support.function.magic.python
 some          : source.python
 .             : source.python
 __notspecial__ : source.python
