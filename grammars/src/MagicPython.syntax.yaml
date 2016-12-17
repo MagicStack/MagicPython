@@ -1254,7 +1254,7 @@ repository:
           | Key | Lookup | Memory | Name | NotImplemented | OS | Overflow
           | Reference | Runtime | Recursion | Syntax | System
           | Tab | Type | UnboundLocal | Unicode(Encode|Decode|Translate)?
-          | Value | Windows | ZeroDivision
+          | Value | Windows | ZeroDivision | ModuleNotFound
         ) Error
       |
         ((Pending)?Deprecation | Runtime | Syntax | User | Future | Import

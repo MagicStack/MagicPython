@@ -1,5 +1,6 @@
 AttributeError ConnectionAbortedError
 PendingDeprecationWarning
+ModuleNotFoundError
 SystemExit
 NotImplemented True None False Ellipsis
 Warning
@@ -12,6 +13,7 @@ AttributeError : source.python, support.type.exception.python
               : source.python
 ConnectionAbortedError : source.python, support.type.exception.python
 PendingDeprecationWarning : source.python, support.type.exception.python
+ModuleNotFoundError : source.python, support.type.exception.python
 SystemExit    : source.python, support.type.exception.python
 NotImplemented : constant.language.python, source.python
               : source.python
