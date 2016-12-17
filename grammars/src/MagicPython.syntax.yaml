@@ -1330,7 +1330,7 @@ repository:
             | rtruediv | rxor | set | setattr | setitem | setslice
             | setstate | sizeof | str | sub | subclasscheck | truediv
             | trunc | unicode | xor | matmul | rmatmul | imatmul
-            | init_subclass | set_name | fspath | bytes
+            | init_subclass | set_name | fspath | bytes | prepare
           )__
         )\b
     captures:
@@ -1347,6 +1347,7 @@ repository:
             | metaclass | methods | module | mro | name
             | qualname | self | signature | slots | subclasses
             | version | weakref | wrapped | annotations | classcell
+            | spec | path | package
           )__
         )\b
     captures:

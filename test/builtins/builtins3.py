@@ -35,6 +35,10 @@ some.__set_name__
 some.__fspath__
 some.__classcell__
 some.__bytes__
+some.__spec__
+some.__path__
+some.__prepare__
+some.__package__
 some.__notspecial__
 
 
@@ -161,6 +165,18 @@ __classcell__ : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __bytes__     : source.python, support.function.magic.python
+some          : source.python
+.             : source.python
+__spec__      : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__path__      : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__prepare__   : source.python, support.function.magic.python
+some          : source.python
+.             : source.python
+__package__   : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __notspecial__ : source.python
