@@ -29,6 +29,12 @@ some.__kwdefaults__
 some.__matmul__
 some.__imatmul__
 some.__rmatmul__
+some.__annotations__
+some.__init_subclass__
+some.__set_name__
+some.__fspath__
+some.__classcell__
+some.__bytes__
 some.__notspecial__
 
 
@@ -137,6 +143,24 @@ __imatmul__   : source.python, support.function.magic.python
 some          : source.python
 .             : source.python
 __rmatmul__   : source.python, support.function.magic.python
+some          : source.python
+.             : source.python
+__annotations__ : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__init_subclass__ : source.python, support.function.magic.python
+some          : source.python
+.             : source.python
+__set_name__  : source.python, support.function.magic.python
+some          : source.python
+.             : source.python
+__fspath__    : source.python, support.function.magic.python
+some          : source.python
+.             : source.python
+__classcell__ : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__bytes__     : source.python, support.function.magic.python
 some          : source.python
 .             : source.python
 __notspecial__ : source.python

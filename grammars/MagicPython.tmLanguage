@@ -2761,6 +2761,7 @@ indirectly through syntactic constructs
       | rtruediv | rxor | set | setattr | setitem | setslice
       | setstate | sizeof | str | sub | subclasscheck | truediv
       | trunc | unicode | xor | matmul | rmatmul | imatmul
+      | init_subclass | set_name | fspath | bytes
     )__
   )\b
 </string>
@@ -2785,7 +2786,7 @@ indirectly through syntactic constructs
       | doc | file | func | kwdefaults | members
       | metaclass | methods | module | mro | name
       | qualname | self | signature | slots | subclasses
-      | version | weakref | wrapped
+      | version | weakref | wrapped | annotations | classcell
     )__
   )\b
 </string>
