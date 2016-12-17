@@ -2787,7 +2787,7 @@ indirectly through syntactic constructs
       | metaclass | methods | module | mro | name
       | qualname | self | signature | slots | subclasses
       | version | weakref | wrapped | annotations | classcell
-      | spec | path | package
+      | spec | path | package | future
     )__
   )\b
 </string>
