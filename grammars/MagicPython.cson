@@ -1105,14 +1105,28 @@ repository:
       }
     ]
   "inheritance-identifier":
-    match: '''
-      (?x)
-        \\b ([[:alpha:]_]\\w*) \\b
-      
-    '''
-    captures:
-      "1":
-        name: "entity.other.inherited-class.python"
+    patterns: [
+      {
+        match: '''
+          (?x)
+            \\b ([[:alpha:]_]\\w*) \\b (?=\\s*=)
+          
+        '''
+        captures:
+          "1":
+            name: "entity.other.inherited-class.python variable.parameter.class.python"
+      }
+      {
+        match: '''
+          (?x)
+            \\b ([[:alpha:]_]\\w*) \\b
+          
+        '''
+        captures:
+          "1":
+            name: "entity.other.inherited-class.python"
+      }
+    ]
   "expression-class":
     patterns: [
       {

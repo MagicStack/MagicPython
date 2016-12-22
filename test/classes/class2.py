@@ -1,4 +1,5 @@
 @dec
+# Bar.name=... is not legal, but the test is for highlighter not breaking badly
 class Spam(Foo.Bar, Bar.name={'very': 'odd'}):
     pass
 
@@ -6,6 +7,8 @@ class Spam(Foo.Bar, Bar.name={'very': 'odd'}):
 
 @             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 dec           : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+#             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
+ Bar.name=... is not legal, but the test is for highlighter not breaking badly : comment.line.number-sign.python, source.python
 class         : meta.class.python, source.python, storage.type.class.python
               : meta.class.python, source.python
 Spam          : entity.name.type.class.python, meta.class.python, source.python
@@ -17,7 +20,7 @@ Bar           : entity.other.inherited-class.python, meta.class.inheritance.pyth
               : meta.class.inheritance.python, meta.class.python, source.python
 Bar           : entity.other.inherited-class.python, meta.class.inheritance.python, meta.class.python, source.python
 .             : meta.class.inheritance.python, meta.class.python, source.python
-name          : entity.other.inherited-class.python, meta.class.inheritance.python, meta.class.python, source.python
+name          : entity.other.inherited-class.python, meta.class.inheritance.python, meta.class.python, source.python, variable.parameter.class.python
 =             : keyword.operator.assignment.python, meta.class.inheritance.python, meta.class.python, source.python
 {             : meta.class.inheritance.python, meta.class.python, punctuation.definition.dict.begin.python, source.python
 '             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python

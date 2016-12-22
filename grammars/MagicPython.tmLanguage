@@ -1708,18 +1708,37 @@
       </dict>
       <key>inheritance-identifier</key>
       <dict>
-        <key>match</key>
-        <string>(?x)
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?x)
+  \b ([[:alpha:]_]\w*) \b (?=\s*=)
+</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>entity.other.inherited-class.python variable.parameter.class.python</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?x)
   \b ([[:alpha:]_]\w*) \b
 </string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>entity.other.inherited-class.python</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>entity.other.inherited-class.python</string>
+              </dict>
+            </dict>
           </dict>
-        </dict>
+        </array>
       </dict>
       <key>expression-class</key>
       <dict>
