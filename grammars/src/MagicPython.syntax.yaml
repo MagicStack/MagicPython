@@ -881,30 +881,30 @@ repository:
         match: ','
       - name: keyword.operator.assignment.python
         match: =(?!=)
-      - include: '#expression-class'
       - name: support.type.metaclass.python
         match: \bmetaclass\b
-      - include: '#inheritance-identifier'
-
-  inheritance-identifier:
-    patterns:
-      - match: |
-          (?x)
-            \b ([[:alpha:]_]\w*) \b (?=\s*=)
-        captures:
-          '1': {name: entity.other.inherited-class.python
-                      variable.parameter.class.python}
-      - match: |
-          (?x)
-            \b ([[:alpha:]_]\w*) \b
-        captures:
-          '1': {name: entity.other.inherited-class.python}
-
-  expression-class:
-    patterns:
+      - include: '#illegal-names'
+      - include: '#class-kwarg'
       - include: '#call-wrapper-inheritance'
       - include: '#expression-base'
       - include: '#member-access-class'
+      - include: '#inheritance-identifier'
+
+  class-kwarg:
+    match: |
+      (?x)
+        \b ([[:alpha:]_]\w*) \s*(=)(?!=)
+    captures:
+      '1': {name: entity.other.inherited-class.python
+                  variable.parameter.class.python}
+      '2': {name: keyword.operator.assignment.python}
+
+  inheritance-identifier:
+    match: |
+      (?x)
+        \b ([[:alpha:]_]\w*) \b
+    captures:
+      '1': {name: entity.other.inherited-class.python}
 
   member-access-class:
     begin: \.\s*(?!\.)
@@ -1152,7 +1152,7 @@ repository:
           '1': {name: invalid.illegal.decorator.python}
 
   call-wrapper-inheritance:
-    comment: same as a funciton call, but in inheritance context
+    comment: same as a function call, but in inheritance context
     name: meta.function-call.python
     begin: |
       (?x)

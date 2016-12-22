@@ -20,7 +20,7 @@ Bar           : entity.other.inherited-class.python, meta.class.inheritance.pyth
               : meta.class.inheritance.python, meta.class.python, source.python
 Bar           : entity.other.inherited-class.python, meta.class.inheritance.python, meta.class.python, source.python
 .             : meta.class.inheritance.python, meta.class.python, source.python
-name          : entity.other.inherited-class.python, meta.class.inheritance.python, meta.class.python, source.python, variable.parameter.class.python
+name          : entity.other.inherited-class.python, meta.class.inheritance.python, meta.class.python, source.python
 =             : keyword.operator.assignment.python, meta.class.inheritance.python, meta.class.python, source.python
 {             : meta.class.inheritance.python, meta.class.python, punctuation.definition.dict.begin.python, source.python
 '             : meta.class.inheritance.python, meta.class.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python

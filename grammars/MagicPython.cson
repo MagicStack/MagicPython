@@ -1094,41 +1094,15 @@ repository:
         match: "=(?!=)"
       }
       {
-        include: "#expression-class"
-      }
-      {
         name: "support.type.metaclass.python"
         match: "\\bmetaclass\\b"
       }
       {
-        include: "#inheritance-identifier"
-      }
-    ]
-  "inheritance-identifier":
-    patterns: [
-      {
-        match: '''
-          (?x)
-            \\b ([[:alpha:]_]\\w*) \\b (?=\\s*=)
-          
-        '''
-        captures:
-          "1":
-            name: "entity.other.inherited-class.python variable.parameter.class.python"
+        include: "#illegal-names"
       }
       {
-        match: '''
-          (?x)
-            \\b ([[:alpha:]_]\\w*) \\b
-          
-        '''
-        captures:
-          "1":
-            name: "entity.other.inherited-class.python"
+        include: "#class-kwarg"
       }
-    ]
-  "expression-class":
-    patterns: [
       {
         include: "#call-wrapper-inheritance"
       }
@@ -1138,7 +1112,30 @@ repository:
       {
         include: "#member-access-class"
       }
+      {
+        include: "#inheritance-identifier"
+      }
     ]
+  "class-kwarg":
+    match: '''
+      (?x)
+        \\b ([[:alpha:]_]\\w*) \\s*(=)(?!=)
+      
+    '''
+    captures:
+      "1":
+        name: "entity.other.inherited-class.python variable.parameter.class.python"
+      "2":
+        name: "keyword.operator.assignment.python"
+  "inheritance-identifier":
+    match: '''
+      (?x)
+        \\b ([[:alpha:]_]\\w*) \\b
+      
+    '''
+    captures:
+      "1":
+        name: "entity.other.inherited-class.python"
   "member-access-class":
     begin: "\\.\\s*(?!\\.)"
     end: "(?<=\\S)(?=\\W)|$"
@@ -1542,7 +1539,7 @@ repository:
       }
     ]
   "call-wrapper-inheritance":
-    comment: "same as a funciton call, but in inheritance context"
+    comment: "same as a function call, but in inheritance context"
     name: "meta.function-call.python"
     begin: '''
       (?x)
