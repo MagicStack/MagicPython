@@ -4448,7 +4448,7 @@ repository:
     end: "(\\3)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
-        name: "string.quoted.single.python string.interpolated.python storage.type.string.python"
+        name: "storage.type.string.python string.quoted.single.python string.interpolated.python"
       "2":
         name: "invalid.illegal.prefix.python"
       "3":
@@ -4480,7 +4480,7 @@ repository:
       "1":
         name: "invalid.illegal.prefix.python"
       "2":
-        name: "string.quoted.single.python string.interpolated.python storage.type.string.python"
+        name: "storage.type.string.python string.quoted.single.python string.interpolated.python"
       "3":
         name: "string.quoted.single.python punctuation.definition.string.begin.python"
     endCaptures:
@@ -4508,7 +4508,7 @@ repository:
     end: "(\\2)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
-        name: "string.quoted.raw.single.python string.interpolated.python storage.type.string.python"
+        name: "storage.type.string.python string.quoted.raw.single.python string.interpolated.python"
       "2":
         name: "string.quoted.raw.single.python punctuation.definition.string.begin.python"
     endCaptures:
@@ -4672,7 +4672,7 @@ repository:
     end: "(\\3)"
     beginCaptures:
       "1":
-        name: "string.quoted.multi.python string.interpolated.python storage.type.string.python"
+        name: "storage.type.string.python string.quoted.multi.python string.interpolated.python"
       "2":
         name: "invalid.illegal.prefix.python"
       "3":
@@ -4704,7 +4704,7 @@ repository:
       "1":
         name: "invalid.illegal.prefix.python"
       "2":
-        name: "string.quoted.multi.python string.interpolated.python storage.type.string.python"
+        name: "storage.type.string.python string.quoted.multi.python string.interpolated.python"
       "3":
         name: "string.quoted.multi.python punctuation.definition.string.begin.python"
     endCaptures:
@@ -4732,7 +4732,7 @@ repository:
     end: "(\\2)"
     beginCaptures:
       "1":
-        name: "string.quoted.raw.multi.python string.interpolated.python storage.type.string.python"
+        name: "storage.type.string.python string.quoted.raw.multi.python string.interpolated.python"
       "2":
         name: "string.quoted.raw.multi.python punctuation.definition.string.begin.python"
     endCaptures:

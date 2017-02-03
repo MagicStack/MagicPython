@@ -7805,7 +7805,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.single.python string.interpolated.python storage.type.string.python</string>
+            <string>storage.type.string.python string.quoted.single.python string.interpolated.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -7869,7 +7869,7 @@ indirectly through syntactic constructs
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.single.python string.interpolated.python storage.type.string.python</string>
+            <string>storage.type.string.python string.quoted.single.python string.interpolated.python</string>
           </dict>
           <key>3</key>
           <dict>
@@ -7923,7 +7923,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.raw.single.python string.interpolated.python storage.type.string.python</string>
+            <string>storage.type.string.python string.quoted.raw.single.python string.interpolated.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -8177,7 +8177,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.multi.python string.interpolated.python storage.type.string.python</string>
+            <string>storage.type.string.python string.quoted.multi.python string.interpolated.python</string>
           </dict>
           <key>2</key>
           <dict>
@@ -8241,7 +8241,7 @@ indirectly through syntactic constructs
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.multi.python string.interpolated.python storage.type.string.python</string>
+            <string>storage.type.string.python string.quoted.multi.python string.interpolated.python</string>
           </dict>
           <key>3</key>
           <dict>
@@ -8295,7 +8295,7 @@ indirectly through syntactic constructs
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>string.quoted.raw.multi.python string.interpolated.python storage.type.string.python</string>
+            <string>storage.type.string.python string.quoted.raw.multi.python string.interpolated.python</string>
           </dict>
           <key>2</key>
           <dict>

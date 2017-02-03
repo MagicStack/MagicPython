@@ -5,9 +5,9 @@ repository:
     begin: (\b[fF])([bBuU])?(${marker})
     end: (\3)${guard}
     beginCaptures:
-      '1': {name: string.quoted.${line}.python
-                  string.interpolated.python
-                  storage.type.string.python}
+      '1': {name: storage.type.string.python
+                  string.quoted.${line}.python
+                  string.interpolated.python}
       '2': {name: invalid.illegal.prefix.python}
       '3': {name: string.quoted.${line}.python
                   string.interpolated.python
@@ -29,9 +29,9 @@ repository:
     end: (\3)${guard}
     beginCaptures:
       '1': {name: invalid.illegal.prefix.python}
-      '2': {name: string.quoted.${line}.python
-                  string.interpolated.python
-                  storage.type.string.python}
+      '2': {name: storage.type.string.python
+                  string.quoted.${line}.python
+                  string.interpolated.python}
       '3': {name: string.quoted.${line}.python
                   punctuation.definition.string.begin.python}
     endCaptures:
@@ -50,9 +50,9 @@ repository:
     begin: (\b(?:[R][fF]|[fF][R]))(${marker})
     end: (\2)${guard}
     beginCaptures:
-      '1': {name: string.quoted.raw.${line}.python
-                  string.interpolated.python
-                  storage.type.string.python}
+      '1': {name: storage.type.string.python
+                  string.quoted.raw.${line}.python
+                  string.interpolated.python}
       '2': {name: string.quoted.raw.${line}.python
                   punctuation.definition.string.begin.python}
     endCaptures:
