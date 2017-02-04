@@ -229,6 +229,19 @@ If you intend to submit a pull request, please follow the following guidelines:
 - update unit tests and add new ones if needed, keeping the test cases short
   whenever possible
 
+### Multiple scopes
+
+It is sometimes necessary to assign multiple scopes to the same
+matched group. It is *very important* to keep in mind that the order
+of these scopes is apparently treated as significant by the engines
+processing the grammar specs. However, it is equally important to know
+that different specification formats seem to have different order of
+importance (most important first vs. last). Since we try to create
+grammar that can be compiled into several different formats, we must
+chose one convention and then translate it when necessary during
+compilation step. Our convention is therefore that *most important
+scope goes first*.
+
 ## Color Scheme
 
 If you want to write your own color scheme for MagicPython you can
