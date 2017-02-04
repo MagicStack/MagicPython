@@ -5,6 +5,11 @@ repository:
     begin: (\b[fF])([bBuU])?(${marker})
     end: (\3)${guard}
     beginCaptures:
+      # "storage.type.string.python" class should be the first one,
+      # because Atom, VSCode and GitHub don't understand scopes
+      # separated by whitespace, and simply use the first one
+      # of them.  Highlighting 'f' as 'storage.type' is more
+      # important for us than having other scopes.
       '1': {name: storage.type.string.python
                   string.quoted.${line}.python
                   string.interpolated.python}
