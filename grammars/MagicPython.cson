@@ -1124,7 +1124,7 @@ repository:
     '''
     captures:
       "1":
-        name: "entity.other.inherited-class.python variable.parameter.class.python"
+        name: "variable.parameter.class.python entity.other.inherited-class.python"
       "2":
         name: "keyword.operator.assignment.python"
   "inheritance-identifier":

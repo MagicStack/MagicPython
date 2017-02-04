@@ -895,8 +895,11 @@ repository:
       (?x)
         \b ([[:alpha:]_]\w*) \s*(=)(?!=)
     captures:
-      '1': {name: entity.other.inherited-class.python
-                  variable.parameter.class.python}
+      # "variable.parameter.class.python" scope is more important
+      # and hence we specify it first to highlight class parameters
+      # as kwargs in Atom/VSCode/GH.
+      '1': {name: variable.parameter.class.python
+                  entity.other.inherited-class.python}
       '2': {name: keyword.operator.assignment.python}
 
   inheritance-identifier:

@@ -1733,7 +1733,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>entity.other.inherited-class.python variable.parameter.class.python</string>
+            <string>variable.parameter.class.python entity.other.inherited-class.python</string>
           </dict>
           <key>2</key>
           <dict>
