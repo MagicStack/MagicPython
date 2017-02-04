@@ -148,7 +148,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.backreference.named.begin.regexp support.other.parenthesis.regexp</string>
+            <string>support.other.parenthesis.regexp punctuation.parenthesis.backreference.named.begin.regexp</string>
           </dict>
           <key>2</key>
           <dict>
@@ -158,7 +158,7 @@
           <key>3</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.backreference.named.end.regexp support.other.parenthesis.regexp</string>
+            <string>support.other.parenthesis.regexp punctuation.parenthesis.backreference.named.end.regexp</string>
           </dict>
         </dict>
       </dict>
@@ -348,7 +348,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>constant.other.set.regexp punctuation.character.set.begin.regexp</string>
+                <string>punctuation.character.set.begin.regexp constant.other.set.regexp</string>
               </dict>
               <key>2</key>
               <dict>
@@ -366,7 +366,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>constant.other.set.regexp punctuation.character.set.end.regexp</string>
+                <string>punctuation.character.set.end.regexp constant.other.set.regexp</string>
               </dict>
               <key>2</key>
               <dict>
@@ -405,7 +405,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.named.begin.regexp support.other.parenthesis.regexp</string>
+            <string>support.other.parenthesis.regexp punctuation.parenthesis.named.begin.regexp</string>
           </dict>
           <key>2</key>
           <dict>
@@ -418,7 +418,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.named.end.regexp support.other.parenthesis.regexp</string>
+            <string>support.other.parenthesis.regexp punctuation.parenthesis.named.end.regexp</string>
           </dict>
           <key>2</key>
           <dict>
@@ -495,7 +495,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.regexp</string>
+            <string>keyword.operator.lookahead.regexp punctuation.parenthesis.lookahead.end.regexp</string>
           </dict>
           <key>2</key>
           <dict>
@@ -535,7 +535,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.lookahead.end.regexp keyword.operator.lookahead.negative.regexp</string>
+            <string>keyword.operator.lookahead.negative.regexp punctuation.parenthesis.lookahead.end.regexp</string>
           </dict>
           <key>2</key>
           <dict>
@@ -575,7 +575,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.regexp</string>
+            <string>keyword.operator.lookbehind.regexp punctuation.parenthesis.lookbehind.end.regexp</string>
           </dict>
           <key>2</key>
           <dict>
@@ -615,7 +615,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.lookbehind.end.regexp keyword.operator.lookbehind.negative.regexp</string>
+            <string>keyword.operator.lookbehind.negative.regexp punctuation.parenthesis.lookbehind.end.regexp</string>
           </dict>
           <key>2</key>
           <dict>
@@ -655,7 +655,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.conditional.end.regexp keyword.operator.conditional.negative.regexp</string>
+            <string>keyword.operator.conditional.negative.regexp punctuation.parenthesis.conditional.end.regexp</string>
           </dict>
           <key>2</key>
           <dict>
@@ -682,7 +682,7 @@
           <key>0</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.non-capturing.begin.regexp support.other.parenthesis.regexp</string>
+            <string>support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.begin.regexp</string>
           </dict>
         </dict>
         <key>endCaptures</key>
@@ -690,7 +690,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.non-capturing.end.regexp support.other.parenthesis.regexp</string>
+            <string>support.other.parenthesis.regexp punctuation.parenthesis.non-capturing.end.regexp</string>
           </dict>
           <key>2</key>
           <dict>
@@ -717,7 +717,7 @@
           <key>0</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.begin.regexp support.other.parenthesis.regexp</string>
+            <string>support.other.parenthesis.regexp punctuation.parenthesis.begin.regexp</string>
           </dict>
         </dict>
         <key>endCaptures</key>
@@ -725,7 +725,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>punctuation.parenthesis.end.regexp support.other.parenthesis.regexp</string>
+            <string>support.other.parenthesis.regexp punctuation.parenthesis.end.regexp</string>
           </dict>
           <key>2</key>
           <dict>
