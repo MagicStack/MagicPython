@@ -15,6 +15,9 @@ fileTypes: [
   "gyp"
   "gypi"
   "wsgi"
+  "kv"
+  "Snakefile"
+  "tac"
 ]
 first_line_match: "^#![ \\t]*/.*\\bpython[\\d\\.]*\\b"
 firstLineMatch: "^#![ \\t]*/.*\\bpython[\\d\\.]*\\b"

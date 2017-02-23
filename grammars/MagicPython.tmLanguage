@@ -22,6 +22,9 @@
       <string>gyp</string>
       <string>gypi</string>
       <string>wsgi</string>
+      <string>kv</string>
+      <string>Snakefile</string>
+      <string>tac</string>
     </array>
     <key>first_line_match</key>
     <string>^#![ \t]*/.*\bpython[\d\.]*\b</string>
