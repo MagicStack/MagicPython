@@ -1,8 +1,8 @@
-.PHONY: all test release devenv publish
+.PHONY: all ci-test test release devenv publish
 
 all: devenv release
 
-test: release
+ci-test: release
 #	Run tests
 	./node_modules/.bin/syntaxdev test --tests test/**/*.py --syntax grammars/src/MagicPython.syntax.yaml
 	./node_modules/.bin/syntaxdev test --tests test/**/*.re --syntax grammars/src/MagicRegExp.syntax.yaml
@@ -15,8 +15,11 @@ test: release
 	] ; \
 		then echo "Error: package.version != git.tag" && exit 1 ; fi
 
+test: ci-test
+	atom -t .
+
 devenv:
-	npm install syntaxdev@0.0.13
+	npm install syntaxdev@0.0.15
 
 release:
 	./node_modules/.bin/syntaxdev build-plist --in grammars/src/MagicPython.syntax.yaml --out grammars/MagicPython.tmLanguage
@@ -26,6 +29,9 @@ release:
 	./node_modules/.bin/syntaxdev build-cson --in grammars/src/MagicRegExp.syntax.yaml --out grammars/MagicRegExp.cson
 
 	./node_modules/.bin/syntaxdev scopes --syntax grammars/src/MagicPython.syntax.yaml > misc/scopes
+
+	./node_modules/.bin/syntaxdev atom-spec --package-name MagicPython --tests test/**/*.py --syntax grammars/src/MagicPython.syntax.yaml --out test/atom-spec/python-spec.js
+	./node_modules/.bin/syntaxdev atom-spec --package-name MagicPython --tests test/**/*.re --syntax grammars/src/MagicRegExp.syntax.yaml --out test/atom-spec/python-re-spec.js
 
 publish: test
 	apm publish patch
