@@ -5025,6 +5025,39 @@ describe("Grammar Tests", function() {
       expect(tokens[1][12].scopes).toEqual(["source.python"]);
     });
 
+  it("test/expressions/const3.py", 
+    function() {
+      tokens = grammar.tokenizeLines("T61STRING = 20\nT61_STRING\nT_STRING\n_T_S_T_R_I_N_G_\nA_CLASS\n\n# not enough upper-case letters in the beginning\n_T_s_TRING\nA_Class")
+      expect(tokens[0][0].value).toBe("T61STRING");
+      expect(tokens[0][0].scopes).toEqual(["source.python","constant.other.caps.python"]);
+      expect(tokens[0][1].value).toBe(" ");
+      expect(tokens[0][1].scopes).toEqual(["source.python"]);
+      expect(tokens[0][2].value).toBe("=");
+      expect(tokens[0][2].scopes).toEqual(["source.python","keyword.operator.assignment.python"]);
+      expect(tokens[0][3].value).toBe(" ");
+      expect(tokens[0][3].scopes).toEqual(["source.python"]);
+      expect(tokens[0][4].value).toBe("20");
+      expect(tokens[0][4].scopes).toEqual(["source.python","constant.numeric.dec.python"]);
+      expect(tokens[1][0].value).toBe("T61_STRING");
+      expect(tokens[1][0].scopes).toEqual(["source.python","constant.other.caps.python"]);
+      expect(tokens[2][0].value).toBe("T_STRING");
+      expect(tokens[2][0].scopes).toEqual(["source.python","constant.other.caps.python"]);
+      expect(tokens[3][0].value).toBe("_T_S_T_R_I_N_G_");
+      expect(tokens[3][0].scopes).toEqual(["source.python","constant.other.caps.python"]);
+      expect(tokens[4][0].value).toBe("A_CLASS");
+      expect(tokens[4][0].scopes).toEqual(["source.python","constant.other.caps.python"]);
+      expect(tokens[5][0].value).toBe("");
+      expect(tokens[5][0].scopes).toEqual(["source.python"]);
+      expect(tokens[6][0].value).toBe("#");
+      expect(tokens[6][0].scopes).toEqual(["source.python","comment.line.number-sign.python","punctuation.definition.comment.python"]);
+      expect(tokens[6][1].value).toBe(" not enough upper-case letters in the beginning");
+      expect(tokens[6][1].scopes).toEqual(["source.python","comment.line.number-sign.python"]);
+      expect(tokens[7][0].value).toBe("_T_s_TRING");
+      expect(tokens[7][0].scopes).toEqual(["source.python"]);
+      expect(tokens[8][0].value).toBe("A_Class");
+      expect(tokens[8][0].scopes).toEqual(["source.python"]);
+    });
+
   it("test/expressions/expr1.py", 
     function() {
       tokens = grammar.tokenizeLines("~a + b @ c ^ d // e % f & e and not g or h")

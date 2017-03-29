@@ -662,8 +662,13 @@
         <key>match</key>
         <string>(?x)
   \b
+    # we want to see "enough", meaning 2 or more upper-case
+    # letters in the beginning of the constant
+    #
+    # for more details refer to:
+    #   https://github.com/MagicStack/MagicPython/issues/42
     (
-      _* [[:upper:]]{2}
+      _* [[:upper:]] [_\d]* [[:upper:]]
     )
     [[:upper:]\d]* (_\w*)?
   \b
