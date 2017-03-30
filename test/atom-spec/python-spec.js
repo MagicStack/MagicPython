@@ -6151,9 +6151,9 @@ describe("Grammar Tests", function() {
       expect(tokens[0][7].value).toBe("10");
       expect(tokens[0][7].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","constant.numeric.dec.python"]);
       expect(tokens[0][8].value).toBe(":");
-      expect(tokens[0][8].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][8].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][9].value).toBe("#");
-      expect(tokens[0][9].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][9].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][10].value).toBe("{");
       expect(tokens[0][10].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][11].value).toBe("3");
@@ -6185,7 +6185,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][24].value).toBe("}");
       expect(tokens[0][24].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][25].value).toBe("x");
-      expect(tokens[0][25].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][25].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][26].value).toBe("}");
       expect(tokens[0][26].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][27].value).toBe("'");
@@ -6419,7 +6419,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][4].value).toBe("value");
       expect(tokens[0][4].scopes).toEqual(["source.python","meta.fstring.python"]);
       expect(tokens[0][5].value).toBe(":");
-      expect(tokens[0][5].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][5].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][6].value).toBe("{");
       expect(tokens[0][6].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][7].value).toBe("60");
@@ -6435,7 +6435,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][12].value).toBe("!s");
       expect(tokens[0][12].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][13].value).toBe(":2");
-      expect(tokens[0][13].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][13].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][14].value).toBe("}");
       expect(tokens[0][14].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][15].value).toBe("{");
@@ -6474,7 +6474,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][4].value).toBe("value");
       expect(tokens[0][4].scopes).toEqual(["source.python","meta.fstring.python"]);
       expect(tokens[0][5].value).toBe(":");
-      expect(tokens[0][5].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][5].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][6].value).toBe("{");
       expect(tokens[0][6].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][7].value).toBe("60");
@@ -6490,7 +6490,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][12].value).toBe("!s");
       expect(tokens[0][12].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][13].value).toBe(":2");
-      expect(tokens[0][13].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][13].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][14].value).toBe("}");
       expect(tokens[0][14].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][15].value).toBe("{");
@@ -6531,7 +6531,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][4].value).toBe("value");
       expect(tokens[0][4].scopes).toEqual(["source.python","meta.fstring.python"]);
       expect(tokens[0][5].value).toBe(":");
-      expect(tokens[0][5].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][5].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][6].value).toBe("{");
       expect(tokens[0][6].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][7].value).toBe("60");
@@ -6547,7 +6547,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][12].value).toBe("!s");
       expect(tokens[0][12].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][13].value).toBe(":2");
-      expect(tokens[0][13].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][13].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][14].value).toBe("}");
       expect(tokens[0][14].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][15].value).toBe("{");
@@ -7119,7 +7119,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][10].value).toBe("]");
       expect(tokens[0][10].scopes).toEqual(["source.python","meta.fstring.python","punctuation.definition.list.end.python"]);
       expect(tokens[0][11].value).toBe(":X>+10d");
-      expect(tokens[0][11].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][11].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][12].value).toBe("}");
       expect(tokens[0][12].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][13].value).toBe("\"");
@@ -7149,7 +7149,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][11].value).toBe("!s");
       expect(tokens[1][11].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[1][12].value).toBe(":X>+10d");
-      expect(tokens[1][12].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[1][12].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[1][13].value).toBe("}");
       expect(tokens[1][13].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[1][14].value).toBe("\"");
@@ -7295,7 +7295,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][18].value).toBe("!r");
       expect(tokens[0][18].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][19].value).toBe(":f");
-      expect(tokens[0][19].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][19].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][20].value).toBe("}");
       expect(tokens[0][20].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][21].value).toBe(" times");
@@ -7346,7 +7346,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][18].value).toBe("!r");
       expect(tokens[0][18].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][19].value).toBe(":f");
-      expect(tokens[0][19].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[0][19].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[0][20].value).toBe("}");
       expect(tokens[0][20].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][21].value).toBe(" times");
@@ -7399,7 +7399,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][12].value).toBe("!r");
       expect(tokens[1][12].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[1][13].value).toBe(":f");
-      expect(tokens[1][13].scopes).toEqual(["source.python","meta.fstring.python","support.other.format.python"]);
+      expect(tokens[1][13].scopes).toEqual(["source.python","meta.fstring.python","storage.type.format.python"]);
       expect(tokens[1][14].value).toBe("}");
       expect(tokens[1][14].scopes).toEqual(["source.python","meta.fstring.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[1][15].value).toBe(" times");
@@ -12867,7 +12867,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][5].value).toBe("{0[ ]");
       expect(tokens[0][5].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][6].value).toBe(":X>+10d");
-      expect(tokens[0][6].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","support.other.format.python"]);
+      expect(tokens[0][6].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","storage.type.format.python"]);
       expect(tokens[0][7].value).toBe("}");
       expect(tokens[0][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][8].value).toBe("\"");
@@ -12887,7 +12887,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][6].value).toBe("!s");
       expect(tokens[1][6].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","storage.type.format.python"]);
       expect(tokens[1][7].value).toBe(":X>+10d");
-      expect(tokens[1][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","support.other.format.python"]);
+      expect(tokens[1][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","storage.type.format.python"]);
       expect(tokens[1][8].value).toBe("}");
       expect(tokens[1][8].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[1][9].value).toBe("\"");
@@ -12905,7 +12905,7 @@ describe("Grammar Tests", function() {
       expect(tokens[2][5].value).toBe("{0[ ]");
       expect(tokens[2][5].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[2][6].value).toBe(":");
-      expect(tokens[2][6].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","support.other.format.python"]);
+      expect(tokens[2][6].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","storage.type.format.python"]);
       expect(tokens[2][7].value).toBe("Xd>+10d");
       expect(tokens[2][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[2][8].value).toBe("}");
@@ -13276,7 +13276,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][6].value).toBe("{");
       expect(tokens[0][6].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][7].value).toBe(":");
-      expect(tokens[0][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","support.other.format.python"]);
+      expect(tokens[0][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","storage.type.format.python"]);
       expect(tokens[0][8].value).toBe("%Y-%m-%d %H:%M:%S");
       expect(tokens[0][8].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][9].value).toBe("}");
@@ -13300,7 +13300,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][6].value).toBe("{0");
       expect(tokens[1][6].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[1][7].value).toBe(":");
-      expect(tokens[1][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","support.other.format.python"]);
+      expect(tokens[1][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","storage.type.format.python"]);
       expect(tokens[1][8].value).toBe("{fill}");
       expect(tokens[1][8].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[1][9].value).toBe("{align}");
@@ -13333,7 +13333,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][6].value).toBe("{0");
       expect(tokens[0][6].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][7].value).toBe(":");
-      expect(tokens[0][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","support.other.format.python"]);
+      expect(tokens[0][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","storage.type.format.python"]);
       expect(tokens[0][8].value).toBe("{width}");
       expect(tokens[0][8].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[0][9].value).toBe("{base}");
@@ -13359,7 +13359,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][6].value).toBe("{0");
       expect(tokens[1][6].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[1][7].value).toBe(":");
-      expect(tokens[1][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","support.other.format.python"]);
+      expect(tokens[1][7].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python","storage.type.format.python"]);
       expect(tokens[1][8].value).toBe("$20");
       expect(tokens[1][8].scopes).toEqual(["source.python","string.quoted.single.python","constant.character.format.placeholder.other.python"]);
       expect(tokens[1][9].value).toBe("}");

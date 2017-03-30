@@ -135,8 +135,16 @@ repository:
               ( : \w? [<>=^]? [-+ ]? \#?
                 \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )(?=})
         captures:
+          # We use this awkward scope name instead of perhaps more
+          # elegant "support.other.format.python" because it appears
+          # that by default it gives a better visual result in various
+          # systems (e.g. GitHub). This is due to the fact that
+          # "storage.type..." is more likely to have special
+          # highlighting in any given color scheme than
+          # "support.other..."
+          #
           '1': {name: storage.type.format.python}
-          '2': {name: support.other.format.python}
+          '2': {name: storage.type.format.python}
 
       - include: '#fstring-terminator-${line}-tail'
 
@@ -145,25 +153,25 @@ repository:
     end: (?=})${fguard}
     beginCaptures:
       '1': {name: storage.type.format.python}
-      '2': {name: support.other.format.python}
+      '2': {name: storage.type.format.python}
 
     patterns:
       - include: '#fstring-illegal-${line}-brace'
       - include: '#fstring-${line}-brace'
-      - name: support.other.format.python
+      - name: storage.type.format.python
         match: ([bcdeEfFgGnosxX%])(?=})
-      - name: support.other.format.python
+      - name: storage.type.format.python
         match: (\.\d+)
-      - name: support.other.format.python
+      - name: storage.type.format.python
         match: (,)
-      - name: support.other.format.python
+      - name: storage.type.format.python
         match: (\d+)
-      - name: support.other.format.python
+      - name: storage.type.format.python
         match: (\#)
-      - name: support.other.format.python
+      - name: storage.type.format.python
         match: ([-+ ])
-      - name: support.other.format.python
+      - name: storage.type.format.python
         match: ([<>=^])
-      - name: support.other.format.python
+      - name: storage.type.format.python
         match: (\w)
 ...

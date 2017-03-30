@@ -10,7 +10,7 @@ f             : meta.fstring.python, source.python, storage.type.string.python, 
 result:       : meta.fstring.python, source.python, string.interpolated.python, string.quoted.multi.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 value         : meta.fstring.python, source.python
-:             : meta.fstring.python, source.python, support.other.format.python
+:             : meta.fstring.python, source.python, storage.type.format.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 60            : constant.numeric.dec.python, meta.fstring.python, source.python
 }             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
@@ -18,7 +18,7 @@ value         : meta.fstring.python, source.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 16            : constant.numeric.dec.python, meta.fstring.python, source.python
 !s            : meta.fstring.python, source.python, storage.type.format.python
-:2            : meta.fstring.python, source.python, support.other.format.python
+:2            : meta.fstring.python, source.python, storage.type.format.python
 }             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 '             : meta.fstring.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python

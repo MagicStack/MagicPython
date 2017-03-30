@@ -149,7 +149,6 @@ string.regexp.quoted.single.python
 support.function.builtin.python
 support.function.magic.python
 support.other.escape.special.regexp
-support.other.format.python
 support.other.match.any.regexp
 support.other.match.begin.regexp
 support.other.match.end.regexp

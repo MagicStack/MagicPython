@@ -11,8 +11,8 @@ f             : meta.fstring.python, meta.function-call.arguments.python, meta.f
 '             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.begin.python, source.python, string.interpolated.python, string.quoted.single.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 10            : constant.numeric.dec.python, meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-:             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python, support.other.format.python
-#             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python, support.other.format.python
+:             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.format.python
+#             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.format.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 3             : constant.numeric.dec.python, meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
               : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
@@ -28,7 +28,7 @@ and           : keyword.operator.logical.python, meta.fstring.python, meta.funct
               : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 width         : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 }             : constant.character.format.placeholder.other.python, meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-x             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python, support.other.format.python
+x             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.format.python
 }             : constant.character.format.placeholder.other.python, meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 '             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, punctuation.definition.string.end.python, source.python, string.interpolated.python, string.quoted.single.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python

@@ -793,8 +793,16 @@ repository:
                 })
             )
         captures:
+          # We use this awkward scope name instead of perhaps more
+          # elegant "support.other.format.python" because it appears
+          # that by default it gives a better visual result in various
+          # systems (e.g. GitHub). This is due to the fact that
+          # "storage.type..." is more likely to have special
+          # highlighting in any given color scheme than
+          # "support.other..."
+          #
           '2': {name: storage.type.format.python}
-          '3': {name: support.other.format.python}
+          '3': {name: storage.type.format.python}
       - name: constant.character.format.placeholder.other.python
         begin: |
           (?x)
@@ -806,7 +814,7 @@ repository:
         end: \}
         beginCaptures:
           '2': {name: storage.type.format.python}
-          '3': {name: support.other.format.python}
+          '3': {name: storage.type.format.python}
         patterns:
           - match: |
               (?x) \{ [^'"}\n]*? \} (?=.*?\})

@@ -1454,7 +1454,7 @@
               <key>3</key>
               <dict>
                 <key>name</key>
-                <string>support.other.format.python</string>
+                <string>storage.type.format.python</string>
               </dict>
             </dict>
           </dict>
@@ -1481,7 +1481,7 @@
               <key>3</key>
               <dict>
                 <key>name</key>
-                <string>support.other.format.python</string>
+                <string>storage.type.format.python</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -8083,7 +8083,7 @@ indirectly through syntactic constructs
               <key>2</key>
               <dict>
                 <key>name</key>
-                <string>support.other.format.python</string>
+                <string>storage.type.format.python</string>
               </dict>
             </dict>
           </dict>
@@ -8109,7 +8109,7 @@ indirectly through syntactic constructs
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -8124,49 +8124,49 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>([bcdeEfFgGnosxX%])(?=})</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(\.\d+)</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(,)</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(\d+)</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(\#)</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>([-+ ])</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>([&lt;&gt;=^])</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(\w)</string>
           </dict>
@@ -8455,7 +8455,7 @@ indirectly through syntactic constructs
               <key>2</key>
               <dict>
                 <key>name</key>
-                <string>support.other.format.python</string>
+                <string>storage.type.format.python</string>
               </dict>
             </dict>
           </dict>
@@ -8481,7 +8481,7 @@ indirectly through syntactic constructs
           <key>2</key>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
           </dict>
         </dict>
         <key>patterns</key>
@@ -8496,49 +8496,49 @@ indirectly through syntactic constructs
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>([bcdeEfFgGnosxX%])(?=})</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(\.\d+)</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(,)</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(\d+)</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(\#)</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>([-+ ])</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>([&lt;&gt;=^])</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>support.other.format.python</string>
+            <string>storage.type.format.python</string>
             <key>match</key>
             <string>(\w)</string>
           </dict>
