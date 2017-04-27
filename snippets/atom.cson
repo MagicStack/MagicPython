@@ -31,12 +31,6 @@
 # suitability for any purpose.
 
 '.source.python':
-  '#!/usr/bin/env python':
-    'prefix': 'env'
-    'body': '#!/usr/bin/env python\n'
-  '# coding=utf-8':
-    'prefix': 'enc'
-    'body': '# coding=utf-8\n'
   'Assert Equal':
     'prefix': 'ase'
     'body': 'self.assertEqual(${1:expected}, ${2:actual}${3:, \'${4:message}\'})$0'
@@ -134,3 +128,21 @@
   'self':
     'prefix': '.'
     'body': 'self.'
+  '#!/usr/bin/env python':
+    'prefix': 'env'
+    'body': '#!/usr/bin/env python\n'
+  '#!/usr/bin/env python3':
+    'prefix': 'env3'
+    'body': '#!/usr/bin/env python3\n'
+  '#!/usr/bin/env python2':
+    'prefix': 'env2'
+    'body': '#!/usr/bin/env python2\n'
+  '#!/usr/bin/env python3 default':
+    'prefix': '#!'
+    'body': '#!/usr/bin/env python3\n'
+  '# coding=utf-8':
+    'prefix': 'enc'
+    'body': '# coding=utf-8\n'
+  'future imports':
+    'prefix': 'fut'
+    'body': 'from __future__ import absolute_import\nfrom __future__ import division\nfrom __future__ import print_function\nfrom __future__ import unicode_literals'
