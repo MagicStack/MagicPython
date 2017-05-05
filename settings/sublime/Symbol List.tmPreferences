@@ -15,7 +15,7 @@
         # transform into 'class Classname' form
         s/(class)\s+([[:alpha:]_]\w*)\s*.*/$1 $2/g;
 
-        # transform into '[async] funciton_name(args,...)' form
+        # transform into '[async] funciton_name(args,...)' long form
         s/(?x)
             def \s+
                 ([[:alpha:]_]\w*) \s* \(
@@ -24,6 +24,13 @@
 
         # remove extra whitespace in arg list (except leading)
         s/(\S)\s{2,}/$1 /g;
+
+        # transform into short form
+        s/(?x)
+            (class\s|async\s)? (\w+\()
+                (.{80})(.+)
+            (\))$
+            /$1$2$3\.\.\.$5/g;
 		</string>
 	</dict>
 	<key>uuid</key>
