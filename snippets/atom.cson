@@ -34,9 +34,18 @@
   '#!/usr/bin/env python':
     'prefix': 'env'
     'body': '#!/usr/bin/env python\n'
+  '#!/usr/bin/env python3':
+    'prefix': 'env3'
+    'body': '#!/usr/bin/env python3\n'
   '# coding=utf-8':
     'prefix': 'enc'
-    'body': '# coding=utf-8\n'
+    'body': '# -*- coding: utf-8 -*-\n'
+  'Import':
+    'prefix': 'im'
+    'body': 'import ${1:package/module}'
+  'From/Import':
+    'prefix': 'fim'
+    'body': 'from ${1:package/module} import ${2:names}'
   'Assert Equal':
     'prefix': 'ase'
     'body': 'self.assertEqual(${1:expected}, ${2:actual}${3:, \'${4:message}\'})$0'
@@ -97,6 +106,9 @@
   'while':
     'prefix': 'while'
     'body': 'while ${1:condition}:\n\t${2:pass}'
+  'with statement':
+    'prefix': 'with'
+    'body': 'with ${1:expression} as ${2:target}:\n\t${3:pass}'
   'Try/Except/Else/Finally':
     'prefix': 'tryef'
     'body': 'try:\n\t${1:pass}\nexcept${2: ${3:Exception} as ${4:e}}:\n\t${5:raise}\nelse:\n\t${6:pass}\nfinally:\n\t${7:pass}'
@@ -118,12 +130,21 @@
   'Dictionary Comprehension':
     'prefix': 'dc'
     'body': '{${1:key}: ${2:value} for ${3:key}, ${4:value} in ${5:variable}}'
+  'Set Comprehension':
+    'prefix': 'sc'
+    'body': '{${1:value} for ${2:value} in ${3:variable}}'
   'PDB set trace':
     'prefix': 'pdb'
     'body': 'import pdb; pdb.set_trace()\n'
   'iPDB set trace':
     'prefix': 'ipdb'
     'body': 'import ipdb; ipdb.set_trace()\n'
+  'rPDB set trace':
+    'prefix': 'rpdb'
+    'body': 'import rpdb2; rpdb2.start_embedded_debugger(\'${1:debug_password}\')$0'
+  'PuDB set trace':
+    'prefix': 'pudb'
+    'body': 'import pudb; pudb.set_trace()'
   '__magic__':
     'prefix': '__'
     'body': '__${1:init}__'
