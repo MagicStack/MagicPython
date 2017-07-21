@@ -25,7 +25,7 @@
     "syntax",
     "python3"
   ],
-  "icon": "icon.svg",
+  "icon": "icon.png",
   "galleryBanner": {
     "color": "#2c2c2c",
     "theme": "dark"
