@@ -39,6 +39,7 @@ some.__spec__
 some.__path__
 some.__prepare__
 some.__package__
+some.__traceback__
 some.__notspecial__
 
 
@@ -177,6 +178,9 @@ __prepare__   : source.python, support.function.magic.python
 some          : source.python
 .             : source.python
 __package__   : source.python, support.variable.magic.python
+some          : source.python
+.             : source.python
+__traceback__ : source.python, support.variable.magic.python
 some          : source.python
 .             : source.python
 __notspecial__ : source.python

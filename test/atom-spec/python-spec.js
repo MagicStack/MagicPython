@@ -130,7 +130,7 @@ describe("Grammar Tests", function() {
 
   it("test/builtins/builtins3.py", 
     function() {
-      tokens = grammar.tokenizeLines("__all__ = ['bar', 'baz']\nsome.__bases__\nsome.__class__\nassert __debug__\n__builtins__\n__builtins__.len\nprint(__builtins__)\nsome.__dict__\nsome.__doc__\nsome.__file__\nsome.__members__\nsome.__metaclass__\nsome.__methods__\nsome.__module__\nsome.__mro__\nsome.__name__\nsome.__slots__\nsome.__subclasses__\nsome.__version__\nsome.__weakref__\nsome.__qualname__\nsome.__code__\nsome.__wrapped__\nsome.__signature__\nsome.__defaults__\nsome.__func__\nsome.__self__\nsome.__kwdefaults__\nsome.__matmul__\nsome.__imatmul__\nsome.__rmatmul__\nsome.__annotations__\nsome.__init_subclass__\nsome.__set_name__\nsome.__fspath__\nsome.__classcell__\nsome.__bytes__\nsome.__spec__\nsome.__path__\nsome.__prepare__\nsome.__package__\nsome.__notspecial__")
+      tokens = grammar.tokenizeLines("__all__ = ['bar', 'baz']\nsome.__bases__\nsome.__class__\nassert __debug__\n__builtins__\n__builtins__.len\nprint(__builtins__)\nsome.__dict__\nsome.__doc__\nsome.__file__\nsome.__members__\nsome.__metaclass__\nsome.__methods__\nsome.__module__\nsome.__mro__\nsome.__name__\nsome.__slots__\nsome.__subclasses__\nsome.__version__\nsome.__weakref__\nsome.__qualname__\nsome.__code__\nsome.__wrapped__\nsome.__signature__\nsome.__defaults__\nsome.__func__\nsome.__self__\nsome.__kwdefaults__\nsome.__matmul__\nsome.__imatmul__\nsome.__rmatmul__\nsome.__annotations__\nsome.__init_subclass__\nsome.__set_name__\nsome.__fspath__\nsome.__classcell__\nsome.__bytes__\nsome.__spec__\nsome.__path__\nsome.__prepare__\nsome.__package__\nsome.__traceback__\nsome.__notspecial__")
       expect(tokens[0][0].value).toBe("__all__");
       expect(tokens[0][0].scopes).toEqual(["source.python","support.variable.magic.python"]);
       expect(tokens[0][1].value).toBe(" ");
@@ -401,8 +401,14 @@ describe("Grammar Tests", function() {
       expect(tokens[41][0].scopes).toEqual(["source.python"]);
       expect(tokens[41][1].value).toBe(".");
       expect(tokens[41][1].scopes).toEqual(["source.python"]);
-      expect(tokens[41][2].value).toBe("__notspecial__");
-      expect(tokens[41][2].scopes).toEqual(["source.python"]);
+      expect(tokens[41][2].value).toBe("__traceback__");
+      expect(tokens[41][2].scopes).toEqual(["source.python","support.variable.magic.python"]);
+      expect(tokens[42][0].value).toBe("some");
+      expect(tokens[42][0].scopes).toEqual(["source.python"]);
+      expect(tokens[42][1].value).toBe(".");
+      expect(tokens[42][1].scopes).toEqual(["source.python"]);
+      expect(tokens[42][2].value).toBe("__notspecial__");
+      expect(tokens[42][2].scopes).toEqual(["source.python"]);
     });
 
   it("test/builtins/builtins4.py", 
