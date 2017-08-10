@@ -35,6 +35,24 @@ repository:
         include: "#regexp-base-common"
       }
     ]
+  "fstring-formatting-braces":
+    patterns: [
+      {
+        comment: "empty braces are illegal"
+        match: "({)(\\s*?)(})"
+        captures:
+          "1":
+            name: "constant.character.format.placeholder.other.python"
+          "2":
+            name: "invalid.illegal.brace.python"
+          "3":
+            name: "constant.character.format.placeholder.other.python"
+      }
+      {
+        name: "constant.character.escape.python"
+        match: "({{|}})"
+      }
+    ]
   "regexp-base-common":
     patterns: [
       {
@@ -170,6 +188,11 @@ repository:
         include: "#regexp-escape-catchall"
       }
     ]
+  codetags:
+    match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
+    captures:
+      "1":
+        name: "keyword.codetag.notation.python"
   "regexp-expression":
     patterns: [
       {
