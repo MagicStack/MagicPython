@@ -3,23 +3,25 @@
 This is a package with preferences and syntax highlighter for cutting edge
 Python 3, although Python 2 is well supported, too.  The syntax is compatible
 with [Sublime Text](http://www.sublimetext.com), [Atom](http://atom.io) and
-[Visual Studio Code](http://code.visualstudio.com).
-It is meant to be a drop-in replacement for the default Python package.
+[Visual Studio Code](http://code.visualstudio.com). It is meant to be a drop-in
+replacement for the default Python package.
 
-MagicPython correctly highlights all Python 3.5 and 3.6 syntax features, 
-including type annotations, f-strings and regular expressions.  It is built
-from scratch for robustness with an extensive test suite.
+We are proud to say that MagicPython is used by GitHub to highlight Python.
 
-We are proud to say that MagicPython has been included into the
-[github/linguist](https://github.com/github/linguist), a library used
-by GitHub.com to process languages.
+**Attention VSCode users**: MagicPython is used as the _default_
+Python highlighter in Visual Studio Code. Don't install it unless you
+want or need the cutting edge version of it. You will likely see no
+difference because you're already using MagicPython.
 
+MagicPython correctly highlights all Python 3 syntax features,
+including type annotations, f-strings and regular expressions. It is
+built from scratch for robustness with an extensive test suite.
 
-![](https://magicstack.github.io/MagicPython/example.png)
-
-Type hints in comments require support by the color scheme.  The one
+Type hints in comments require support by the color scheme. The one
 used in the screenshot is
 [Chromodynamics](https://github.com/MagicStack/Chromodynamics).
+
+![](https://magicstack.github.io/MagicPython/example.png)
 
 
 ## Installation Instructions
