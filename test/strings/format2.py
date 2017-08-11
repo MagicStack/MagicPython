@@ -20,7 +20,7 @@ normal        : source.python, string.quoted.single.python
 !s            : constant.character.format.placeholder.other.python, source.python, storage.type.format.python, string.quoted.single.python
 }             : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 format        : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 fo            : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python

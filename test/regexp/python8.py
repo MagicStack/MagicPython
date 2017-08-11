@@ -30,7 +30,7 @@ CookiePattern : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 re            : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 compile       : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 r             : meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.string.python, string.regexp.quoted.multi.python
@@ -187,7 +187,7 @@ $             : meta.function-call.arguments.python, meta.function-call.python, 
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
 re            : meta.function-call.arguments.python, meta.function-call.python, source.python
-.             : meta.function-call.arguments.python, meta.function-call.python, source.python
+.             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.period.python, source.python
 ASCII         : constant.other.caps.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
                   : source.python

@@ -28,7 +28,7 @@ $             : invalid.illegal.operator.python, source.python
 .class        : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 )             : punctuation.parenthesis.end.python, source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 fuuuu         : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 baz           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python

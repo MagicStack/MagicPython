@@ -60,127 +60,127 @@ baz           : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 ]             : punctuation.definition.list.end.python, source.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __bases__     : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __class__     : source.python, support.variable.magic.python
 assert        : keyword.control.flow.python, source.python
               : source.python
 __debug__     : source.python, support.variable.magic.python
 __builtins__  : source.python, support.variable.magic.python
 __builtins__  : source.python, support.variable.magic.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 len           : source.python
 print         : meta.function-call.python, source.python, support.function.builtin.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 __builtins__  : meta.function-call.arguments.python, meta.function-call.python, source.python, support.variable.magic.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __dict__      : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __doc__       : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __file__      : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __members__   : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __metaclass__ : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __methods__   : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __module__    : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __mro__       : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __name__      : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __slots__     : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __subclasses__ : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __version__   : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __weakref__   : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __qualname__  : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __code__      : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __wrapped__   : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __signature__ : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __defaults__  : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __func__      : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __self__      : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __kwdefaults__ : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __matmul__    : source.python, support.function.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __imatmul__   : source.python, support.function.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __rmatmul__   : source.python, support.function.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __annotations__ : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __init_subclass__ : source.python, support.function.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __set_name__  : source.python, support.function.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __fspath__    : source.python, support.function.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __classcell__ : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __bytes__     : source.python, support.function.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __spec__      : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __path__      : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __prepare__   : source.python, support.function.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __package__   : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __traceback__ : source.python, support.variable.magic.python
 some          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __notspecial__ : source.python

@@ -37,7 +37,7 @@ b             : meta.function.parameters.python, meta.function.python, source.py
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
 cls           : source.python, variable.language.special.cls.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 a             : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
@@ -45,7 +45,7 @@ a             : source.python
 a             : source.python
               : source.python
 cls           : source.python, variable.language.special.cls.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 b             : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
@@ -68,7 +68,7 @@ cls           : source.python, variable.language.special.cls.python
 1             : constant.numeric.dec.python, source.python
               : source.python
 a             : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 cls           : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
@@ -76,9 +76,9 @@ cls           : source.python
 1             : constant.numeric.dec.python, source.python
               : source.python
 a             : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 cls           : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __name__      : source.python, support.variable.magic.python
               : source.python
 cls           : meta.item-access.python, source.python, variable.language.special.cls.python

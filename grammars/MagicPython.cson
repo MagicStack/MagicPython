@@ -386,7 +386,7 @@ repository:
       }
     ]
   "member-access":
-    begin: "\\.\\s*(?!\\.)"
+    begin: "(\\.)\\s*(?!\\.)"
     end: '''
       (?x)
         # stop when you've just read non-whitespace followed by non-word
@@ -398,6 +398,9 @@ repository:
         $
       
     '''
+    beginCaptures:
+      "1":
+        name: "punctuation.separator.period.python"
     patterns: [
       {
         include: "#function-call"
@@ -995,12 +998,14 @@ repository:
       {
         match: '''
           (?x)
-            \\s* \\b(from)\\b (\\s*\\.+\\s*) (import)?
+            \\s* \\b(from)\\b \\s*(\\.+)\\s* (import)?
           
         '''
         captures:
           "1":
             name: "keyword.control.import.python"
+          "2":
+            name: "punctuation.separator.period.python"
           "3":
             name: "keyword.control.import.python"
       }
@@ -1122,8 +1127,11 @@ repository:
       "1":
         name: "entity.other.inherited-class.python"
   "member-access-class":
-    begin: "\\.\\s*(?!\\.)"
+    begin: "(\\.)\\s*(?!\\.)"
     end: "(?<=\\S)(?=\\W)|$"
+    beginCaptures:
+      "1":
+        name: "punctuation.separator.period.python"
     patterns: [
       {
         include: "#call-wrapper-inheritance"
