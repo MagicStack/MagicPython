@@ -22,7 +22,7 @@ normal        : meta.fstring.python, source.python, string.interpolated.python, 
  normal       : meta.fstring.python, source.python, string.interpolated.python, string.quoted.single.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 fo            : meta.fstring.python, source.python
-.             : meta.fstring.python, source.python
+.             : meta.fstring.python, punctuation.separator.period.python, source.python
 __add__       : meta.fstring.python, source.python, support.function.magic.python
 !s            : meta.fstring.python, source.python, storage.type.format.python
 }             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python

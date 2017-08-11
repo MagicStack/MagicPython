@@ -120,6 +120,7 @@ punctuation.separator.dict.python
 punctuation.separator.element.python
 punctuation.separator.inheritance.python
 punctuation.separator.parameters.python
+punctuation.separator.period.python
 punctuation.separator.slice.python
 storage.modifier.declaration.python
 storage.modifier.flag.regexp

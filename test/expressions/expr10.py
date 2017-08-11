@@ -32,5 +32,5 @@ a             : source.python
 ...           : constant.other.ellipsis.python, source.python
 )             : punctuation.parenthesis.end.python, source.python
 ...           : constant.other.ellipsis.python, source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 __class__     : source.python, support.variable.magic.python

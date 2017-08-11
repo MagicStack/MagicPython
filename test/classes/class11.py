@@ -32,7 +32,7 @@ b             : meta.function.parameters.python, meta.function.python, source.py
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
 self          : source.python, variable.language.special.self.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 a             : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
@@ -40,7 +40,7 @@ a             : source.python
 a             : source.python
               : source.python
 self          : source.python, variable.language.special.self.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 b             : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
@@ -57,7 +57,7 @@ self          : meta.function-call.python, source.python, variable.language.spec
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
               : source.python
 a             : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 self          : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
@@ -65,9 +65,9 @@ self          : source.python
 1             : constant.numeric.dec.python, source.python
               : source.python
 a             : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 self          : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 bar           : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python

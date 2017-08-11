@@ -12,24 +12,24 @@ QQQQ123       : constant.other.caps.python, source.python
 PROTOCOL_v2   : constant.other.caps.python, source.python
               : source.python
 QQQ           : constant.other.caps.python, source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 bar           : source.python
               : source.python
 baz           : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 AA_a          : constant.other.caps.python, source.python
               : source.python
 _AAA          : constant.other.caps.python, source.python
               : source.python
 foo           : source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 _AAA          : constant.other.caps.python, source.python
 QQQq          : source.python
               : source.python
 QQQq123       : source.python
               : source.python
 self          : source.python, variable.language.special.self.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 FOOO          : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python

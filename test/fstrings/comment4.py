@@ -4,7 +4,7 @@ self.assertEqual(f'{10:#{3 != {4:5} and width}x}', '       0xa')
 
 
 self          : source.python, variable.language.special.self.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 assertEqual   : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 f             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python, storage.type.string.python, string.interpolated.python, string.quoted.single.python
