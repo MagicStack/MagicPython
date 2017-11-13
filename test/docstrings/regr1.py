@@ -8,7 +8,7 @@
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
 :             : comment.line.number-sign.python, source.python
               : meta.function.decorator.python, source.python
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 asd           : entity.name.function.decorator.python, meta.function.decorator.python, source.python
               : meta.function.python, source.python
 def           : meta.function.python, source.python, storage.type.function.python

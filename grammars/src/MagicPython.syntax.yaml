@@ -1123,7 +1123,7 @@ repository:
     begin: |
       (?x)
         ^\s*
-        (@) \s* (?=[[:alpha:]_]\w*)
+        ((@)) \s* (?=[[:alpha:]_]\w*)
     end: |
         (?x)
           ( \) )
@@ -1132,6 +1132,7 @@ repository:
           | (?=\n|\#)
     beginCaptures:
       '1': {name: entity.name.function.decorator.python}
+      '2': {name: punctuation.definition.decorator.python}
     endCaptures:
       '1': {name: punctuation.definition.arguments.end.python}
       '2': {name: invalid.illegal.decorator.python}

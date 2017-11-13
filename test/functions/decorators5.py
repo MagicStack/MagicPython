@@ -7,7 +7,7 @@ def foo(): pass
 
 
 
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 a             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
               : meta.function.decorator.python, source.python
@@ -36,7 +36,7 @@ q             : meta.function-call.arguments.python, meta.function.decorator.pyt
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 )             : meta.function.decorator.python, punctuation.definition.arguments.end.python, source.python
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 foo           : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 ok            : entity.name.function.decorator.python, meta.function.decorator.python, source.python

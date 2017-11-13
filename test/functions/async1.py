@@ -7,7 +7,7 @@ async def foo():
 
 
 
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 foo           : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 async         : meta.function.python, source.python, storage.type.function.async.python
               : meta.function.python, source.python

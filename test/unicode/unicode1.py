@@ -24,7 +24,7 @@ class         : meta.class.python, source.python, storage.type.class.python
 Ń             : source.python, string.quoted.docstring.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.docstring.single.python
               : meta.function.decorator.python, source.python
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 æaœ           : entity.name.function.decorator.python, meta.function.decorator.python, source.python
               : meta.function.python, source.python
 def           : meta.function.python, source.python, storage.type.function.python

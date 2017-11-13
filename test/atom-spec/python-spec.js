@@ -1336,7 +1336,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][0].value).toBe("    ");
       expect(tokens[1][0].scopes).toEqual(["source.python","meta.function.decorator.python"]);
       expect(tokens[1][1].value).toBe("@");
-      expect(tokens[1][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[1][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[1][2].value).toBe("classmethod");
       expect(tokens[1][2].scopes).toEqual(["source.python","meta.function.decorator.python","support.type.python"]);
       expect(tokens[2][0].value).toBe("    ");
@@ -1655,7 +1655,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("@dec\n# Bar.name=... is not legal, but the test is for highlighter not breaking badly\nclass Spam(Foo.Bar, Bar.name={'very': 'odd'}):\n    pass")
       expect(tokens[0][0].value).toBe("@");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[0][1].value).toBe("dec");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[1][0].value).toBe("#");
@@ -4868,7 +4868,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][0].value).toBe("    ");
       expect(tokens[1][0].scopes).toEqual(["source.python","meta.function.decorator.python"]);
       expect(tokens[1][1].value).toBe("@");
-      expect(tokens[1][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[1][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[1][2].value).toBe("asd");
       expect(tokens[1][2].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[2][0].value).toBe("    ");
@@ -7674,7 +7674,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("@foo\nasync def foo():\n    a = 1\n    async for a, b, c in b:\n        async with b as d, c:\n            await func(a, b=1)")
       expect(tokens[0][0].value).toBe("@");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[0][1].value).toBe("foo");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[1][0].value).toBe("async");
@@ -8775,7 +8775,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("@some_decorator # with comment\n@some.class.decorator\n@some_decorator(1)\n@some.decorator   (1, 3)\n@some_decorator(a=2, b={'q': 42}, **kwargs)\n@classmethod\ndef decorated(a): pass")
       expect(tokens[0][0].value).toBe("@");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[0][1].value).toBe("some_decorator");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[0][2].value).toBe(" ");
@@ -8785,7 +8785,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][4].value).toBe(" with comment");
       expect(tokens[0][4].scopes).toEqual(["source.python","comment.line.number-sign.python"]);
       expect(tokens[1][0].value).toBe("@");
-      expect(tokens[1][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[1][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[1][1].value).toBe("some");
       expect(tokens[1][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[1][2].value).toBe(".");
@@ -8797,7 +8797,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][5].value).toBe("decorator");
       expect(tokens[1][5].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[2][0].value).toBe("@");
-      expect(tokens[2][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[2][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[2][1].value).toBe("some_decorator");
       expect(tokens[2][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[2][2].value).toBe("(");
@@ -8807,7 +8807,7 @@ describe("Grammar Tests", function() {
       expect(tokens[2][4].value).toBe(")");
       expect(tokens[2][4].scopes).toEqual(["source.python","meta.function.decorator.python","punctuation.definition.arguments.end.python"]);
       expect(tokens[3][0].value).toBe("@");
-      expect(tokens[3][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[3][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[3][1].value).toBe("some");
       expect(tokens[3][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[3][2].value).toBe(".");
@@ -8829,7 +8829,7 @@ describe("Grammar Tests", function() {
       expect(tokens[3][10].value).toBe(")");
       expect(tokens[3][10].scopes).toEqual(["source.python","meta.function.decorator.python","punctuation.definition.arguments.end.python"]);
       expect(tokens[4][0].value).toBe("@");
-      expect(tokens[4][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[4][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[4][1].value).toBe("some_decorator");
       expect(tokens[4][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[4][2].value).toBe("(");
@@ -8875,7 +8875,7 @@ describe("Grammar Tests", function() {
       expect(tokens[4][22].value).toBe(")");
       expect(tokens[4][22].scopes).toEqual(["source.python","meta.function.decorator.python","punctuation.definition.arguments.end.python"]);
       expect(tokens[5][0].value).toBe("@");
-      expect(tokens[5][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[5][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[5][1].value).toBe("classmethod");
       expect(tokens[5][1].scopes).toEqual(["source.python","meta.function.decorator.python","support.type.python"]);
       expect(tokens[6][0].value).toBe("def");
@@ -8902,7 +8902,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("@ f . bar . a . b\ndef foo(): pass")
       expect(tokens[0][0].value).toBe("@");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[0][1].value).toBe(" ");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function.decorator.python"]);
       expect(tokens[0][2].value).toBe("f");
@@ -8953,7 +8953,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("@ f . bar (baz = 1)\ndef foo(): pass")
       expect(tokens[0][0].value).toBe("@");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[0][1].value).toBe(" ");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function.decorator.python"]);
       expect(tokens[0][2].value).toBe("f");
@@ -9004,7 +9004,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("@a.b.c.None.z\ndef foo(): pass")
       expect(tokens[0][0].value).toBe("@");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[0][1].value).toBe("a");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[0][2].value).toBe(".");
@@ -9045,7 +9045,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("@a. \\\n  b  .  \\\n   c.None.z \\\n    baz(q=1)\n@foo.ok\ndef foo(): pass")
       expect(tokens[0][0].value).toBe("@");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[0][1].value).toBe("a");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[0][2].value).toBe(".");
@@ -9103,7 +9103,7 @@ describe("Grammar Tests", function() {
       expect(tokens[3][6].value).toBe(")");
       expect(tokens[3][6].scopes).toEqual(["source.python","meta.function.decorator.python","punctuation.definition.arguments.end.python"]);
       expect(tokens[4][0].value).toBe("@");
-      expect(tokens[4][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[4][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[4][1].value).toBe("foo");
       expect(tokens[4][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[4][2].value).toBe(".");
@@ -9132,7 +9132,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("@a.   b  .  \\\n   c.None.z(foo=BAR). \\\n       baz[1:2]\n@foo.class.bar[]\n@foo.ok '''\ndef foo(): pass")
       expect(tokens[0][0].value).toBe("@");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[0][1].value).toBe("a");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[0][2].value).toBe(".");
@@ -9190,7 +9190,7 @@ describe("Grammar Tests", function() {
       expect(tokens[2][6].value).toBe("]");
       expect(tokens[2][6].scopes).toEqual(["source.python","meta.item-access.python","punctuation.definition.arguments.end.python"]);
       expect(tokens[3][0].value).toBe("@");
-      expect(tokens[3][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[3][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[3][1].value).toBe("foo");
       expect(tokens[3][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[3][2].value).toBe(".");
@@ -9204,7 +9204,7 @@ describe("Grammar Tests", function() {
       expect(tokens[3][6].value).toBe("[]");
       expect(tokens[3][6].scopes).toEqual(["source.python","meta.function.decorator.python","invalid.illegal.decorator.python","invalid.illegal.decorator.python"]);
       expect(tokens[4][0].value).toBe("@");
-      expect(tokens[4][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[4][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[4][1].value).toBe("foo");
       expect(tokens[4][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[4][2].value).toBe(".");
@@ -9245,13 +9245,13 @@ describe("Grammar Tests", function() {
       expect(tokens[1][1].value).toBe(" DO NOT DELETE TRAILING WHITESTAPCE IN THIS FILE");
       expect(tokens[1][1].scopes).toEqual(["source.python","comment.line.number-sign.python"]);
       expect(tokens[2][0].value).toBe("@");
-      expect(tokens[2][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[2][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[2][1].value).toBe("foo");
       expect(tokens[2][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[2][2].value).toBe("    ");
       expect(tokens[2][2].scopes).toEqual(["source.python","meta.function.decorator.python"]);
       expect(tokens[3][0].value).toBe("@");
-      expect(tokens[3][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[3][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[3][1].value).toBe("foo");
       expect(tokens[3][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[3][2].value).toBe("(");
@@ -9261,13 +9261,13 @@ describe("Grammar Tests", function() {
       expect(tokens[3][4].value).toBe("    ");
       expect(tokens[3][4].scopes).toEqual(["source.python"]);
       expect(tokens[4][0].value).toBe("@");
-      expect(tokens[4][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[4][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[4][1].value).toBe("bar");
       expect(tokens[4][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[4][2].value).toBe("\t");
       expect(tokens[4][2].scopes).toEqual(["source.python","meta.function.decorator.python"]);
       expect(tokens[5][0].value).toBe("@");
-      expect(tokens[5][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[5][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[5][1].value).toBe("bar");
       expect(tokens[5][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[5][2].value).toBe("(");
@@ -9277,7 +9277,7 @@ describe("Grammar Tests", function() {
       expect(tokens[5][4].value).toBe("\t");
       expect(tokens[5][4].scopes).toEqual(["source.python"]);
       expect(tokens[6][0].value).toBe("@");
-      expect(tokens[6][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[6][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[6][1].value).toBe("bar");
       expect(tokens[6][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[6][2].value).toBe("(");
@@ -9293,7 +9293,7 @@ describe("Grammar Tests", function() {
       expect(tokens[6][7].value).toBe(" legal");
       expect(tokens[6][7].scopes).toEqual(["source.python","comment.line.number-sign.python"]);
       expect(tokens[7][0].value).toBe("@");
-      expect(tokens[7][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[7][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[7][1].value).toBe("bar");
       expect(tokens[7][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[7][2].value).toBe("(");
@@ -9326,7 +9326,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("@deco().abc  # SyntaxError: invalid syntax\ndef foo(): pass")
       expect(tokens[0][0].value).toBe("@");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[0][1].value).toBe("deco");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[0][2].value).toBe("(");
@@ -14128,7 +14128,7 @@ describe("Grammar Tests", function() {
       expect(tokens[2][0].value).toBe("    ");
       expect(tokens[2][0].scopes).toEqual(["source.python","meta.function.decorator.python"]);
       expect(tokens[2][1].value).toBe("@");
-      expect(tokens[2][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
+      expect(tokens[2][1].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python","punctuation.definition.decorator.python"]);
       expect(tokens[2][2].value).toBe("æaœ");
       expect(tokens[2][2].scopes).toEqual(["source.python","meta.function.decorator.python","entity.name.function.decorator.python"]);
       expect(tokens[3][0].value).toBe("    ");

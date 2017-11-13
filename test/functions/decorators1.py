@@ -8,23 +8,23 @@ def decorated(a): pass
 
 
 
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 some_decorator : entity.name.function.decorator.python, meta.function.decorator.python, source.python
               : meta.function.decorator.python, source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  with comment : comment.line.number-sign.python, source.python
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 some          : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 class         : keyword.control.flow.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 decorator     : entity.name.function.decorator.python, meta.function.decorator.python, source.python
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 some_decorator : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 (             : meta.function.decorator.python, punctuation.definition.arguments.begin.python, source.python
 1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 )             : meta.function.decorator.python, punctuation.definition.arguments.end.python, source.python
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 some          : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 decorator     : entity.name.function.decorator.python, meta.function.decorator.python, source.python
@@ -35,7 +35,7 @@ decorator     : entity.name.function.decorator.python, meta.function.decorator.p
               : meta.function-call.arguments.python, meta.function.decorator.python, source.python
 3             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 )             : meta.function.decorator.python, punctuation.definition.arguments.end.python, source.python
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 some_decorator : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 (             : meta.function.decorator.python, punctuation.definition.arguments.begin.python, source.python
 a             : meta.function-call.arguments.python, meta.function.decorator.python, source.python, variable.parameter.function-call.python
@@ -58,7 +58,7 @@ q             : meta.function-call.arguments.python, meta.function.decorator.pyt
 **            : keyword.operator.unpacking.arguments.python, meta.function-call.arguments.python, meta.function.decorator.python, source.python
 kwargs        : meta.function-call.arguments.python, meta.function.decorator.python, source.python
 )             : meta.function.decorator.python, punctuation.definition.arguments.end.python, source.python
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 classmethod   : meta.function.decorator.python, source.python, support.type.python
 def           : meta.function.python, source.python, storage.type.function.python
               : meta.function.python, source.python
