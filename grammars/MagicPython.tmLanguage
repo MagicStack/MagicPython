@@ -27,8 +27,6 @@
       <string>smk</string>
       <string>tac</string>
     </array>
-    <key>first_line_match</key>
-    <string>^#![ \t]*/.*\bpython[\d\.]*\b</string>
     <key>firstLineMatch</key>
     <string>^#![ \t]*/.*\bpython[\d\.]*\b</string>
     <key>uuid</key>

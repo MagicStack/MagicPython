@@ -20,7 +20,6 @@ fileTypes: [
   "smk"
   "tac"
 ]
-first_line_match: "^#![ \\t]*/.*\\bpython[\\d\\.]*\\b"
 firstLineMatch: "^#![ \\t]*/.*\\bpython[\\d\\.]*\\b"
 uuid: "742deb57-6e38-4192-bed6-410746efd85d"
 patterns: [
