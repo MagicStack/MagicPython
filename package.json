@@ -55,7 +55,9 @@
           ".SConscript",
           ".gyp",
           ".gypi",
-          ".wsgi"
+          ".wsgi",
+          ".Snakefile",
+          ".smk"
         ]
       }
     ],
