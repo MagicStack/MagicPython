@@ -129,7 +129,8 @@ repository:
     ]
   "docstring-statement":
     begin: "^(?=\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))"
-    end: "(?<=\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\")"
+    comment: "the string either terminates correctly or by the beginning of a new line (this is for single line docstrings that aren't terminated) AND it's not followed by another docstring"
+    end: "((?<=\\1)|^)(?!\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))"
     patterns: [
       {
         include: "#docstring"
@@ -186,7 +187,7 @@ repository:
       {
         name: "string.quoted.docstring.single.python"
         begin: "(\\'|\\\")"
-        end: "(\\1)|((?<!\\\\)\\n)"
+        end: "(\\1)|(\\n)"
         beginCaptures:
           "1":
             name: "punctuation.definition.string.begin.python"
@@ -207,7 +208,7 @@ repository:
       {
         name: "string.quoted.docstring.raw.single.python"
         begin: "([rR])(\\'|\\\")"
-        end: "(\\2)|((?<!\\\\)\\n)"
+        end: "(\\2)|(\\n)"
         beginCaptures:
           "1":
             name: "storage.type.string.python"
@@ -4177,7 +4178,7 @@ repository:
     ]
   "string-quoted-single-line":
     name: "string.quoted.single.python"
-    begin: "(\\b[rR](?=[uU]))?([uU])?((['\"]))"
+    begin: "(?:\\b([rR])(?=[uU]))?([uU])?((['\"]))"
     end: "(\\3)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
@@ -4351,7 +4352,7 @@ repository:
     ]
   "string-quoted-multi-line":
     name: "string.quoted.multi.python"
-    begin: "(\\b[rR](?=[uU]))?([uU])?('''|\"\"\")"
+    begin: "(?:\\b([rR])(?=[uU]))?([uU])?('''|\"\"\")"
     end: "(\\3)"
     beginCaptures:
       "1":

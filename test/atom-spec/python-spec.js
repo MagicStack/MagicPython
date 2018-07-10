@@ -2856,7 +2856,7 @@ describe("Grammar Tests", function() {
 
   it("test/docstrings/continuation2.py", 
     function() {
-      tokens = grammar.tokenizeLines("'\n'")
+      tokens = grammar.tokenizeLines("'\n'\n# comment")
       expect(tokens[0][0].value).toBe("'");
       expect(tokens[0][0].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.begin.python"]);
       expect(tokens[0][1].value).toBe("");
@@ -2865,6 +2865,10 @@ describe("Grammar Tests", function() {
       expect(tokens[1][0].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.begin.python"]);
       expect(tokens[1][1].value).toBe("");
       expect(tokens[1][1].scopes).toEqual(["source.python","string.quoted.docstring.single.python","invalid.illegal.newline.python"]);
+      expect(tokens[2][0].value).toBe("#");
+      expect(tokens[2][0].scopes).toEqual(["source.python","comment.line.number-sign.python","punctuation.definition.comment.python"]);
+      expect(tokens[2][1].value).toBe(" comment");
+      expect(tokens[2][1].scopes).toEqual(["source.python","comment.line.number-sign.python"]);
     });
 
   it("test/docstrings/continuation3.py", 
@@ -3033,6 +3037,73 @@ describe("Grammar Tests", function() {
       expect(tokens[12][0].scopes).toEqual(["source.python","string.quoted.docstring.raw.multi.python"]);
       expect(tokens[12][1].value).toBe("'''");
       expect(tokens[12][1].scopes).toEqual(["source.python","string.quoted.docstring.raw.multi.python","punctuation.definition.string.end.python"]);
+    });
+
+  it("test/docstrings/continuation5.py", 
+    function() {
+      tokens = grammar.tokenizeLines("'implicit ' \"concatenation\"\n\n'''implicit\n''' 'concatenation'\n\n'''implicit\n''' \"\"\"\nconcatenation\n\"\"\"\n\n'implicit' '''\nconcatenation\n'''")
+      expect(tokens[0][0].value).toBe("'");
+      expect(tokens[0][0].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[0][1].value).toBe("implicit ");
+      expect(tokens[0][1].scopes).toEqual(["source.python","string.quoted.docstring.single.python"]);
+      expect(tokens[0][2].value).toBe("'");
+      expect(tokens[0][2].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.end.python"]);
+      expect(tokens[0][3].value).toBe(" ");
+      expect(tokens[0][3].scopes).toEqual(["source.python"]);
+      expect(tokens[0][4].value).toBe("\"");
+      expect(tokens[0][4].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[0][5].value).toBe("concatenation");
+      expect(tokens[0][5].scopes).toEqual(["source.python","string.quoted.docstring.single.python"]);
+      expect(tokens[0][6].value).toBe("\"");
+      expect(tokens[0][6].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.end.python"]);
+      expect(tokens[1][0].value).toBe("");
+      expect(tokens[1][0].scopes).toEqual(["source.python"]);
+      expect(tokens[2][0].value).toBe("'''");
+      expect(tokens[2][0].scopes).toEqual(["source.python","string.quoted.docstring.multi.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[2][1].value).toBe("implicit");
+      expect(tokens[2][1].scopes).toEqual(["source.python","string.quoted.docstring.multi.python"]);
+      expect(tokens[3][0].value).toBe("'''");
+      expect(tokens[3][0].scopes).toEqual(["source.python","string.quoted.docstring.multi.python","punctuation.definition.string.end.python"]);
+      expect(tokens[3][1].value).toBe(" ");
+      expect(tokens[3][1].scopes).toEqual(["source.python"]);
+      expect(tokens[3][2].value).toBe("'");
+      expect(tokens[3][2].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[3][3].value).toBe("concatenation");
+      expect(tokens[3][3].scopes).toEqual(["source.python","string.quoted.docstring.single.python"]);
+      expect(tokens[3][4].value).toBe("'");
+      expect(tokens[3][4].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.end.python"]);
+      expect(tokens[4][0].value).toBe("");
+      expect(tokens[4][0].scopes).toEqual(["source.python"]);
+      expect(tokens[5][0].value).toBe("'''");
+      expect(tokens[5][0].scopes).toEqual(["source.python","string.quoted.docstring.multi.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[5][1].value).toBe("implicit");
+      expect(tokens[5][1].scopes).toEqual(["source.python","string.quoted.docstring.multi.python"]);
+      expect(tokens[6][0].value).toBe("'''");
+      expect(tokens[6][0].scopes).toEqual(["source.python","string.quoted.docstring.multi.python","punctuation.definition.string.end.python"]);
+      expect(tokens[6][1].value).toBe(" ");
+      expect(tokens[6][1].scopes).toEqual(["source.python"]);
+      expect(tokens[6][2].value).toBe("\"\"\"");
+      expect(tokens[6][2].scopes).toEqual(["source.python","string.quoted.docstring.multi.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[7][0].value).toBe("concatenation");
+      expect(tokens[7][0].scopes).toEqual(["source.python","string.quoted.docstring.multi.python"]);
+      expect(tokens[8][0].value).toBe("\"\"\"");
+      expect(tokens[8][0].scopes).toEqual(["source.python","string.quoted.docstring.multi.python","punctuation.definition.string.end.python"]);
+      expect(tokens[9][0].value).toBe("");
+      expect(tokens[9][0].scopes).toEqual(["source.python"]);
+      expect(tokens[10][0].value).toBe("'");
+      expect(tokens[10][0].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[10][1].value).toBe("implicit");
+      expect(tokens[10][1].scopes).toEqual(["source.python","string.quoted.docstring.single.python"]);
+      expect(tokens[10][2].value).toBe("'");
+      expect(tokens[10][2].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.end.python"]);
+      expect(tokens[10][3].value).toBe(" ");
+      expect(tokens[10][3].scopes).toEqual(["source.python"]);
+      expect(tokens[10][4].value).toBe("'''");
+      expect(tokens[10][4].scopes).toEqual(["source.python","string.quoted.docstring.multi.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[11][0].value).toBe("concatenation");
+      expect(tokens[11][0].scopes).toEqual(["source.python","string.quoted.docstring.multi.python"]);
+      expect(tokens[12][0].value).toBe("'''");
+      expect(tokens[12][0].scopes).toEqual(["source.python","string.quoted.docstring.multi.python","punctuation.definition.string.end.python"]);
     });
 
   it("test/docstrings/def1.py", 
@@ -6498,7 +6569,7 @@ describe("Grammar Tests", function() {
 
   it("test/fstrings/nested3.py", 
     function() {
-      tokens = grammar.tokenizeLines("f\"result: {value:{60}.{16!s:2}{'qwerty'\n[2]}}\"")
+      tokens = grammar.tokenizeLines("f\"result: {value:{60}.{16!s:2}{'qwerty'\n[2]}}\"\n# comment")
       expect(tokens[0][0].value).toBe("f");
       expect(tokens[0][0].scopes).toEqual(["source.python","meta.fstring.python","storage.type.string.python string.quoted.single.python string.interpolated.python"]);
       expect(tokens[0][1].value).toBe("\"");
@@ -6551,6 +6622,10 @@ describe("Grammar Tests", function() {
       expect(tokens[1][4].scopes).toEqual(["source.python","string.quoted.single.python","punctuation.definition.string.begin.python"]);
       expect(tokens[1][5].value).toBe("");
       expect(tokens[1][5].scopes).toEqual(["source.python","string.quoted.single.python","invalid.illegal.newline.python"]);
+      expect(tokens[2][0].value).toBe("#");
+      expect(tokens[2][0].scopes).toEqual(["source.python","comment.line.number-sign.python","punctuation.definition.comment.python"]);
+      expect(tokens[2][1].value).toBe(" comment");
+      expect(tokens[2][1].scopes).toEqual(["source.python","comment.line.number-sign.python"]);
     });
 
   it("test/fstrings/nested4.py", 
@@ -9790,7 +9865,7 @@ describe("Grammar Tests", function() {
 
   it("test/illegals/backticks3.py", 
     function() {
-      tokens = grammar.tokenizeLines("a = lambda `123`")
+      tokens = grammar.tokenizeLines("a = lambda `123`\n# comment")
       expect(tokens[0][0].value).toBe("a");
       expect(tokens[0][0].scopes).toEqual(["source.python"]);
       expect(tokens[0][1].value).toBe(" ");
@@ -9811,6 +9886,10 @@ describe("Grammar Tests", function() {
       expect(tokens[0][8].scopes).toEqual(["source.python","meta.lambda-function.python","meta.function.lambda.parameters.python","invalid.deprecated.backtick.python"]);
       expect(tokens[0][9].value).toBe("");
       expect(tokens[0][9].scopes).toEqual(["source.python","meta.lambda-function.python"]);
+      expect(tokens[1][0].value).toBe("#");
+      expect(tokens[1][0].scopes).toEqual(["source.python","comment.line.number-sign.python","punctuation.definition.comment.python"]);
+      expect(tokens[1][1].value).toBe(" comment");
+      expect(tokens[1][1].scopes).toEqual(["source.python","comment.line.number-sign.python"]);
     });
 
   it("test/illegals/illegal1.py", 
@@ -10951,7 +11030,7 @@ describe("Grammar Tests", function() {
 
   it("test/regexp/python2.py", 
     function() {
-      tokens = grammar.tokenizeLines("a = r'\n    (?x)\n        foo\n'")
+      tokens = grammar.tokenizeLines("a = r'\n    (?x)\n        foo\n'\n# comment")
       expect(tokens[0][0].value).toBe("a");
       expect(tokens[0][0].scopes).toEqual(["source.python"]);
       expect(tokens[0][1].value).toBe(" ");
@@ -10984,6 +11063,10 @@ describe("Grammar Tests", function() {
       expect(tokens[3][0].scopes).toEqual(["source.python","string.quoted.docstring.single.python","punctuation.definition.string.begin.python"]);
       expect(tokens[3][1].value).toBe("");
       expect(tokens[3][1].scopes).toEqual(["source.python","string.quoted.docstring.single.python","invalid.illegal.newline.python"]);
+      expect(tokens[4][0].value).toBe("#");
+      expect(tokens[4][0].scopes).toEqual(["source.python","comment.line.number-sign.python","punctuation.definition.comment.python"]);
+      expect(tokens[4][1].value).toBe(" comment");
+      expect(tokens[4][1].scopes).toEqual(["source.python","comment.line.number-sign.python"]);
     });
 
   it("test/regexp/python3.py", 

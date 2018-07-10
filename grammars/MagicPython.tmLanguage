@@ -184,8 +184,10 @@
       <dict>
         <key>begin</key>
         <string>^(?=\s*[rR]?(\'\'\'|\"\"\"|\'|\"))</string>
+        <key>comment</key>
+        <string>the string either terminates correctly or by the beginning of a new line (this is for single line docstrings that aren't terminated) AND it's not followed by another docstring</string>
         <key>end</key>
-        <string>(?&lt;=\'\'\'|\"\"\"|\'|\")</string>
+        <string>((?&lt;=\1)|^)(?!\s*[rR]?(\'\'\'|\"\"\"|\'|\"))</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -287,7 +289,7 @@
             <key>begin</key>
             <string>(\'|\")</string>
             <key>end</key>
-            <string>(\1)|((?&lt;!\\)\n)</string>
+            <string>(\1)|(\n)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -327,7 +329,7 @@
             <key>begin</key>
             <string>([rR])(\'|\")</string>
             <key>end</key>
-            <string>(\2)|((?&lt;!\\)\n)</string>
+            <string>(\2)|(\n)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -7365,7 +7367,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.single.python</string>
         <key>begin</key>
-        <string>(\b[rR](?=[uU]))?([uU])?((['"]))</string>
+        <string>(?:\b([rR])(?=[uU]))?([uU])?((['"]))</string>
         <key>end</key>
         <string>(\3)|((?&lt;!\\)\n)</string>
         <key>beginCaptures</key>
@@ -7665,7 +7667,7 @@ indirectly through syntactic constructs
         <key>name</key>
         <string>string.quoted.multi.python</string>
         <key>begin</key>
-        <string>(\b[rR](?=[uU]))?([uU])?('''|""")</string>
+        <string>(?:\b([rR])(?=[uU]))?([uU])?('''|""")</string>
         <key>end</key>
         <string>(\3)</string>
         <key>beginCaptures</key>
