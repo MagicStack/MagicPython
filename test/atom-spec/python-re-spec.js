@@ -56,23 +56,6 @@ describe("Grammar Tests", function() {
       expect(tokens[4][3].scopes).toEqual(["source.regexp.python","comment.regexp","punctuation.comment.end.regexp"]);
     });
 
-  it("test/regexp/comments3.re", 
-    function() {
-      tokens = grammar.tokenizeLines("foo(?#NOTE:comment)bar")
-      expect(tokens[0][0].value).toBe("foo");
-      expect(tokens[0][0].scopes).toEqual(["source.regexp.python"]);
-      expect(tokens[0][1].value).toBe("(?#");
-      expect(tokens[0][1].scopes).toEqual(["source.regexp.python","comment.regexp","punctuation.comment.begin.regexp"]);
-      expect(tokens[0][2].value).toBe("NOTE");
-      expect(tokens[0][2].scopes).toEqual(["source.regexp.python","comment.regexp","keyword.codetag.notation.python"]);
-      expect(tokens[0][3].value).toBe(":comment");
-      expect(tokens[0][3].scopes).toEqual(["source.regexp.python","comment.regexp"]);
-      expect(tokens[0][4].value).toBe(")");
-      expect(tokens[0][4].scopes).toEqual(["source.regexp.python","comment.regexp","punctuation.comment.end.regexp"]);
-      expect(tokens[0][5].value).toBe("bar");
-      expect(tokens[0][5].scopes).toEqual(["source.regexp.python"]);
-    });
-
   it("test/regexp/conditional1.re", 
     function() {
       tokens = grammar.tokenizeLines("(<)?(\\w+@\\w+(?:\\.\\w+)+)(?(1)>|$)")
