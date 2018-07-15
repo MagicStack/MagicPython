@@ -252,6 +252,11 @@ repository:
     captures:
       "1":
         name: "keyword.control.flow.python"
+  codetags:
+    match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
+    captures:
+      "1":
+        name: "keyword.codetag.notation.python"
   "statement-keyword":
     patterns: [
       {
@@ -981,6 +986,24 @@ repository:
       }
       {
         include: "#fstring-formatting-singe-brace"
+      }
+    ]
+  "fstring-formatting-braces":
+    patterns: [
+      {
+        comment: "empty braces are illegal"
+        match: "({)(\\s*?)(})"
+        captures:
+          "1":
+            name: "constant.character.format.placeholder.other.python"
+          "2":
+            name: "invalid.illegal.brace.python"
+          "3":
+            name: "constant.character.format.placeholder.other.python"
+      }
+      {
+        name: "constant.character.escape.python"
+        match: "({{|}})"
       }
     ]
   "fstring-formatting-singe-brace":
@@ -1908,24 +1931,6 @@ repository:
         include: "#regexp-base-common"
       }
     ]
-  "fstring-formatting-braces":
-    patterns: [
-      {
-        comment: "empty braces are illegal"
-        match: "({)(\\s*?)(})"
-        captures:
-          "1":
-            name: "constant.character.format.placeholder.other.python"
-          "2":
-            name: "invalid.illegal.brace.python"
-          "3":
-            name: "constant.character.format.placeholder.other.python"
-      }
-      {
-        name: "constant.character.escape.python"
-        match: "({{|}})"
-      }
-    ]
   "regexp-base-common":
     patterns: [
       {
@@ -2061,11 +2066,6 @@ repository:
         include: "#regexp-escape-catchall"
       }
     ]
-  codetags:
-    match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
-    captures:
-      "1":
-        name: "keyword.codetag.notation.python"
   "comments-base":
     name: "comment.line.number-sign.python"
     begin: "(\\#)"

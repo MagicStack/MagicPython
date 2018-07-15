@@ -404,6 +404,19 @@
           </dict>
         </dict>
       </dict>
+      <key>codetags</key>
+      <dict>
+        <key>match</key>
+        <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.codetag.notation.python</string>
+          </dict>
+        </dict>
+      </dict>
       <key>statement-keyword</key>
       <dict>
         <key>patterns</key>
@@ -1493,6 +1506,42 @@
           <dict>
             <key>include</key>
             <string>#fstring-formatting-singe-brace</string>
+          </dict>
+        </array>
+      </dict>
+      <key>fstring-formatting-braces</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>comment</key>
+            <string>empty braces are illegal</string>
+            <key>match</key>
+            <string>({)(\s*?)(})</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>constant.character.format.placeholder.other.python</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.brace.python</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>constant.character.format.placeholder.other.python</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>constant.character.escape.python</string>
+            <key>match</key>
+            <string>({{|}})</string>
           </dict>
         </array>
       </dict>
@@ -2929,42 +2978,6 @@ indirectly through syntactic constructs
           </dict>
         </array>
       </dict>
-      <key>fstring-formatting-braces</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>comment</key>
-            <string>empty braces are illegal</string>
-            <key>match</key>
-            <string>({)(\s*?)(})</string>
-            <key>captures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>constant.character.format.placeholder.other.python</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>invalid.illegal.brace.python</string>
-              </dict>
-              <key>3</key>
-              <dict>
-                <key>name</key>
-                <string>constant.character.format.placeholder.other.python</string>
-              </dict>
-            </dict>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>constant.character.escape.python</string>
-            <key>match</key>
-            <string>({{|}})</string>
-          </dict>
-        </array>
-      </dict>
       <key>regexp-base-common</key>
       <dict>
         <key>patterns</key>
@@ -3174,19 +3187,6 @@ indirectly through syntactic constructs
             <string>#regexp-escape-catchall</string>
           </dict>
         </array>
-      </dict>
-      <key>codetags</key>
-      <dict>
-        <key>match</key>
-        <string>(?:\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\b)</string>
-        <key>captures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.codetag.notation.python</string>
-          </dict>
-        </dict>
       </dict>
       <key>comments-base</key>
       <dict>
