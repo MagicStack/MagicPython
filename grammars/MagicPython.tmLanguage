@@ -2528,12 +2528,7 @@
       <key>function-arguments</key>
       <dict>
         <key>begin</key>
-        <string>(?x)
-  (?:
-    (\()
-    (?:\s*(\*\*|\*))?
-  )
-</string>
+        <string>(\()</string>
         <key>end</key>
         <string>(?=\))(?!\)\s*\()</string>
         <key>beginCaptures</key>
@@ -2543,32 +2538,25 @@
             <key>name</key>
             <string>punctuation.definition.arguments.begin.python</string>
           </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.operator.unpacking.arguments.python</string>
-          </dict>
         </dict>
         <key>contentName</key>
         <string>meta.function-call.arguments.python</string>
         <key>patterns</key>
         <array>
           <dict>
+            <key>name</key>
+            <string>punctuation.separator.arguments.python</string>
+            <key>match</key>
+            <string>(,)</string>
+          </dict>
+          <dict>
             <key>match</key>
             <string>(?x)
-  (?:
-    (,)
-    (?:\s*(\*\*|\*))?
-  )
+  (?:(?&lt;=[,(])|^) \s* (\*{1,2})
 </string>
             <key>captures</key>
             <dict>
               <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.separator.arguments.python</string>
-              </dict>
-              <key>2</key>
               <dict>
                 <key>name</key>
                 <string>keyword.operator.unpacking.arguments.python</string>

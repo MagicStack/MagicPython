@@ -589,6 +589,57 @@ describe("Grammar Tests", function() {
       expect(tokens[0][34].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.end.python"]);
     });
 
+  it("test/calls/call10.py", 
+    function() {
+      tokens = grammar.tokenizeLines("x = foo(True,\n        3 * 4,\n        *a,\n        **bar)")
+      expect(tokens[0][0].value).toBe("x");
+      expect(tokens[0][0].scopes).toEqual(["source.python"]);
+      expect(tokens[0][1].value).toBe(" ");
+      expect(tokens[0][1].scopes).toEqual(["source.python"]);
+      expect(tokens[0][2].value).toBe("=");
+      expect(tokens[0][2].scopes).toEqual(["source.python","keyword.operator.assignment.python"]);
+      expect(tokens[0][3].value).toBe(" ");
+      expect(tokens[0][3].scopes).toEqual(["source.python"]);
+      expect(tokens[0][4].value).toBe("foo");
+      expect(tokens[0][4].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.generic.python"]);
+      expect(tokens[0][5].value).toBe("(");
+      expect(tokens[0][5].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.begin.python"]);
+      expect(tokens[0][6].value).toBe("True");
+      expect(tokens[0][6].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","constant.language.python"]);
+      expect(tokens[0][7].value).toBe(",");
+      expect(tokens[0][7].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","punctuation.separator.arguments.python"]);
+      expect(tokens[1][0].value).toBe("        ");
+      expect(tokens[1][0].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
+      expect(tokens[1][1].value).toBe("3");
+      expect(tokens[1][1].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","constant.numeric.dec.python"]);
+      expect(tokens[1][2].value).toBe(" ");
+      expect(tokens[1][2].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
+      expect(tokens[1][3].value).toBe("*");
+      expect(tokens[1][3].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","keyword.operator.arithmetic.python"]);
+      expect(tokens[1][4].value).toBe(" ");
+      expect(tokens[1][4].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
+      expect(tokens[1][5].value).toBe("4");
+      expect(tokens[1][5].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","constant.numeric.dec.python"]);
+      expect(tokens[1][6].value).toBe(",");
+      expect(tokens[1][6].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","punctuation.separator.arguments.python"]);
+      expect(tokens[2][0].value).toBe("        ");
+      expect(tokens[2][0].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
+      expect(tokens[2][1].value).toBe("*");
+      expect(tokens[2][1].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","keyword.operator.unpacking.arguments.python"]);
+      expect(tokens[2][2].value).toBe("a");
+      expect(tokens[2][2].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
+      expect(tokens[2][3].value).toBe(",");
+      expect(tokens[2][3].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","punctuation.separator.arguments.python"]);
+      expect(tokens[3][0].value).toBe("        ");
+      expect(tokens[3][0].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
+      expect(tokens[3][1].value).toBe("**");
+      expect(tokens[3][1].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","keyword.operator.unpacking.arguments.python"]);
+      expect(tokens[3][2].value).toBe("bar");
+      expect(tokens[3][2].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
+      expect(tokens[3][3].value).toBe(")");
+      expect(tokens[3][3].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.end.python"]);
+    });
+
   it("test/calls/call2.py", 
     function() {
       tokens = grammar.tokenizeLines("foo(from=1)")
@@ -702,7 +753,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][1].value).toBe("(");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[0][2].value).toBe("*");
-      expect(tokens[0][2].scopes).toEqual(["source.python","meta.function-call.python","keyword.operator.unpacking.arguments.python"]);
+      expect(tokens[0][2].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","keyword.operator.unpacking.arguments.python"]);
       expect(tokens[0][3].value).toBe("a");
       expect(tokens[0][3].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
       expect(tokens[0][4].value).toBe(")");
@@ -712,7 +763,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][1].value).toBe("(");
       expect(tokens[1][1].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[1][2].value).toBe("**");
-      expect(tokens[1][2].scopes).toEqual(["source.python","meta.function-call.python","keyword.operator.unpacking.arguments.python"]);
+      expect(tokens[1][2].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","keyword.operator.unpacking.arguments.python"]);
       expect(tokens[1][3].value).toBe("a");
       expect(tokens[1][3].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
       expect(tokens[1][4].value).toBe(")");
@@ -727,9 +778,9 @@ describe("Grammar Tests", function() {
       expect(tokens[0][1].value).toBe("(");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[0][2].value).toBe("  ");
-      expect(tokens[0][2].scopes).toEqual(["source.python","meta.function-call.python"]);
+      expect(tokens[0][2].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
       expect(tokens[0][3].value).toBe("*");
-      expect(tokens[0][3].scopes).toEqual(["source.python","meta.function-call.python","keyword.operator.unpacking.arguments.python"]);
+      expect(tokens[0][3].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","keyword.operator.unpacking.arguments.python"]);
       expect(tokens[0][4].value).toBe("a");
       expect(tokens[0][4].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
       expect(tokens[0][5].value).toBe(" ");
@@ -751,9 +802,9 @@ describe("Grammar Tests", function() {
       expect(tokens[1][1].value).toBe("(");
       expect(tokens[1][1].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[1][2].value).toBe("  ");
-      expect(tokens[1][2].scopes).toEqual(["source.python","meta.function-call.python"]);
+      expect(tokens[1][2].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
       expect(tokens[1][3].value).toBe("**");
-      expect(tokens[1][3].scopes).toEqual(["source.python","meta.function-call.python","keyword.operator.unpacking.arguments.python"]);
+      expect(tokens[1][3].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","keyword.operator.unpacking.arguments.python"]);
       expect(tokens[1][4].value).toBe("a");
       expect(tokens[1][4].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
       expect(tokens[1][5].value).toBe(" ");
