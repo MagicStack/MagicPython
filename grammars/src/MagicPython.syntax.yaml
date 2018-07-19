@@ -769,21 +769,25 @@ repository:
     match: \\$
 
   string-formatting:
-    name: constant.character.format.placeholder.other.python
+    name: meta.format.percent.python
     match: |
       (?x)
-        % (\([\w\s]*\))?
-          [-+#0 ]*
-          (\d+|\*)? (\.(\d+|\*))?
-          ([hlL])?
-          [diouxXeEfFgGcrsa%]
+        (
+          % (\([\w\s]*\))?
+            [-+#0 ]*
+            (\d+|\*)? (\.(\d+|\*))?
+            ([hlL])?
+            [diouxXeEfFgGcrsa%]
+        )
+    captures:
+      '1': {name: constant.character.format.placeholder.other.python}
 
   string-brace-formatting:
     patterns:
-      - name: constant.character.format.placeholder.other.python
+      - name: meta.format.brace.python
         match: |
           (?x)
-            (?:
+            (
               {{ | }}
               | (?:
                 {
@@ -801,24 +805,33 @@ repository:
           # "storage.type..." is more likely to have special
           # highlighting in any given color scheme than
           # "support.other..."
-          #
-          '2': {name: storage.type.format.python}
+          '1': {name: constant.character.format.placeholder.other.python}
           '3': {name: storage.type.format.python}
-      - name: constant.character.format.placeholder.other.python
-        begin: |
+          '4': {name: storage.type.format.python}
+
+      # The reason for 2 separate rules is to establish which one
+      # should be matched with a higher priority. The rule below is
+      # more generic, so it should be matched only if the specific one
+      # didn't.
+      - name: meta.format.brace.python
+        match: |
           (?x)
-              \{
+            (
+              {
                 \w*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
                 (![rsa])?
                 (:)
-                  (?=[^'"}\n]*\})
-        end: \}
-        beginCaptures:
-          '2': {name: storage.type.format.python}
+                  (
+                    [^'"{}\n]+?
+                    |
+                    \{ [^'"}\n]*? \}
+                  )*
+              }
+            )
+        captures:
+          '1': {name: constant.character.format.placeholder.other.python}
           '3': {name: storage.type.format.python}
-        patterns:
-          - match: |
-              (?x) \{ [^'"}\n]*? \} (?=.*?\})
+          '4': {name: storage.type.format.python}
 
   fstring-formatting:
     patterns:

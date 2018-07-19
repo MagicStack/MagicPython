@@ -8,17 +8,17 @@ a             : source.python
               : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 normal        : source.python, string.quoted.single.python
-{{            : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
+{{            : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
  normal       : source.python, string.quoted.single.python
-}}            : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
+}}            : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
  normal       : source.python, string.quoted.single.python
-{10           : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
-!r            : constant.character.format.placeholder.other.python, source.python, storage.type.format.python, string.quoted.single.python
-}             : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
+{10           : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
+!r            : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, storage.type.format.python, string.quoted.single.python
+}             : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
  normal       : source.python, string.quoted.single.python
-{fo.__add__   : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
-!s            : constant.character.format.placeholder.other.python, source.python, storage.type.format.python, string.quoted.single.python
-}             : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
+{fo.__add__   : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
+!s            : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, storage.type.format.python, string.quoted.single.python
+}             : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 .             : punctuation.separator.period.python, source.python
 format        : meta.function-call.generic.python, meta.function-call.python, source.python

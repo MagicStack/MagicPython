@@ -11,15 +11,15 @@ a             : source.python
               : source.python
 '''           : punctuation.definition.string.begin.python, source.python, string.quoted.multi.python
 blah {foo-bar  : source.python, string.quoted.multi.python
-%d            : constant.character.format.placeholder.other.python, source.python, string.quoted.multi.python
+%d            : constant.character.format.placeholder.other.python, meta.format.percent.python, source.python, string.quoted.multi.python
        blah   : source.python, string.quoted.multi.python
 {foo-bar      : source.python, string.quoted.multi.python
-%d            : constant.character.format.placeholder.other.python, source.python, string.quoted.multi.python
+%d            : constant.character.format.placeholder.other.python, meta.format.percent.python, source.python, string.quoted.multi.python
 }             : source.python, string.quoted.multi.python
        blah {foo-bar  : source.python, string.quoted.multi.python
-%d            : constant.character.format.placeholder.other.python, source.python, string.quoted.multi.python
+%d            : constant.character.format.placeholder.other.python, meta.format.percent.python, source.python, string.quoted.multi.python
  //insane {}} : source.python, string.quoted.multi.python
        {}blah {foo-bar  : source.python, string.quoted.multi.python
-%d            : constant.character.format.placeholder.other.python, source.python, string.quoted.multi.python
+%d            : constant.character.format.placeholder.other.python, meta.format.percent.python, source.python, string.quoted.multi.python
  //insane {}} : source.python, string.quoted.multi.python
 '''           : punctuation.definition.string.end.python, source.python, string.quoted.multi.python

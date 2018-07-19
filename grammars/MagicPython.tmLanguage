@@ -1411,15 +1411,25 @@
       <key>string-formatting</key>
       <dict>
         <key>name</key>
-        <string>constant.character.format.placeholder.other.python</string>
+        <string>meta.format.percent.python</string>
         <key>match</key>
         <string>(?x)
-  % (\([\w\s]*\))?
-    [-+#0 ]*
-    (\d+|\*)? (\.(\d+|\*))?
-    ([hlL])?
-    [diouxXeEfFgGcrsa%]
+  (
+    % (\([\w\s]*\))?
+      [-+#0 ]*
+      (\d+|\*)? (\.(\d+|\*))?
+      ([hlL])?
+      [diouxXeEfFgGcrsa%]
+  )
 </string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>constant.character.format.placeholder.other.python</string>
+          </dict>
+        </dict>
       </dict>
       <key>string-brace-formatting</key>
       <dict>
@@ -1427,10 +1437,10 @@
         <array>
           <dict>
             <key>name</key>
-            <string>constant.character.format.placeholder.other.python</string>
+            <string>meta.format.brace.python</string>
             <key>match</key>
             <string>(?x)
-  (?:
+  (
     {{ | }}
     | (?:
       {
@@ -1443,12 +1453,17 @@
 </string>
             <key>captures</key>
             <dict>
-              <key>2</key>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>constant.character.format.placeholder.other.python</string>
+              </dict>
+              <key>3</key>
               <dict>
                 <key>name</key>
                 <string>storage.type.format.python</string>
               </dict>
-              <key>3</key>
+              <key>4</key>
               <dict>
                 <key>name</key>
                 <string>storage.type.format.python</string>
@@ -1457,38 +1472,40 @@
           </dict>
           <dict>
             <key>name</key>
-            <string>constant.character.format.placeholder.other.python</string>
-            <key>begin</key>
+            <string>meta.format.brace.python</string>
+            <key>match</key>
             <string>(?x)
-    \{
+  (
+    {
       \w*? (\.[[:alpha:]_]\w*? | \[[^\]'"]+\])*?
       (![rsa])?
       (:)
-        (?=[^'"}\n]*\})
+        (
+          [^'"{}\n]+?
+          |
+          \{ [^'"}\n]*? \}
+        )*
+    }
+  )
 </string>
-            <key>end</key>
-            <string>\}</string>
-            <key>beginCaptures</key>
+            <key>captures</key>
             <dict>
-              <key>2</key>
+              <key>1</key>
               <dict>
                 <key>name</key>
-                <string>storage.type.format.python</string>
+                <string>constant.character.format.placeholder.other.python</string>
               </dict>
               <key>3</key>
               <dict>
                 <key>name</key>
                 <string>storage.type.format.python</string>
               </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
+              <key>4</key>
               <dict>
-                <key>match</key>
-                <string>(?x) \{ [^'"}\n]*? \} (?=.*?\})
-</string>
+                <key>name</key>
+                <string>storage.type.format.python</string>
               </dict>
-            </array>
+            </dict>
           </dict>
         </array>
       </dict>
