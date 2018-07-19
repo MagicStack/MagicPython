@@ -33,7 +33,7 @@ from          : keyword.control.flow.python, source.python
 :             : punctuation.separator.dict.python, source.python
               : source.python
 {             : punctuation.definition.dict.begin.python, source.python
-import        : keyword.control.flow.python, source.python
+import        : keyword.control.import.python, source.python
 :             : punctuation.separator.dict.python, source.python
               : source.python
 a             : source.python

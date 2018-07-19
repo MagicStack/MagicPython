@@ -5825,7 +5825,7 @@ describe("Grammar Tests", function() {
       expect(tokens[2][8].value).toBe("{");
       expect(tokens[2][8].scopes).toEqual(["source.python","punctuation.definition.dict.begin.python"]);
       expect(tokens[2][9].value).toBe("import");
-      expect(tokens[2][9].scopes).toEqual(["source.python","keyword.control.flow.python"]);
+      expect(tokens[2][9].scopes).toEqual(["source.python","keyword.control.import.python"]);
       expect(tokens[2][10].value).toBe(":");
       expect(tokens[2][10].scopes).toEqual(["source.python","punctuation.separator.dict.python"]);
       expect(tokens[2][11].value).toBe(" ");
@@ -12370,7 +12370,7 @@ describe("Grammar Tests", function() {
       expect(tokens[3][1].value).toBe(".");
       expect(tokens[3][1].scopes).toEqual(["source.python","punctuation.separator.period.python"]);
       expect(tokens[3][2].value).toBe("import");
-      expect(tokens[3][2].scopes).toEqual(["source.python","keyword.control.flow.python"]);
+      expect(tokens[3][2].scopes).toEqual(["source.python","keyword.control.import.python"]);
       expect(tokens[4][0].value).toBe("");
       expect(tokens[4][0].scopes).toEqual(["source.python"]);
       expect(tokens[5][0].value).toBe("raise");
@@ -12428,6 +12428,41 @@ describe("Grammar Tests", function() {
       expect(tokens[0][5].scopes).toEqual(["source.python"]);
       expect(tokens[0][6].value).toBe("generator_stop");
       expect(tokens[0][6].scopes).toEqual(["source.python"]);
+    });
+
+  it("test/statements/import7.py", 
+    function() {
+      tokens = grammar.tokenizeLines("from .importing import *\nfrom importing import *")
+      expect(tokens[0][0].value).toBe("from");
+      expect(tokens[0][0].scopes).toEqual(["source.python","keyword.control.import.python"]);
+      expect(tokens[0][1].value).toBe(" ");
+      expect(tokens[0][1].scopes).toEqual(["source.python"]);
+      expect(tokens[0][2].value).toBe(".");
+      expect(tokens[0][2].scopes).toEqual(["source.python","punctuation.separator.period.python"]);
+      expect(tokens[0][3].value).toBe("importing");
+      expect(tokens[0][3].scopes).toEqual(["source.python"]);
+      expect(tokens[0][4].value).toBe(" ");
+      expect(tokens[0][4].scopes).toEqual(["source.python"]);
+      expect(tokens[0][5].value).toBe("import");
+      expect(tokens[0][5].scopes).toEqual(["source.python","keyword.control.import.python"]);
+      expect(tokens[0][6].value).toBe(" ");
+      expect(tokens[0][6].scopes).toEqual(["source.python"]);
+      expect(tokens[0][7].value).toBe("*");
+      expect(tokens[0][7].scopes).toEqual(["source.python","keyword.operator.arithmetic.python"]);
+      expect(tokens[1][0].value).toBe("from");
+      expect(tokens[1][0].scopes).toEqual(["source.python","keyword.control.flow.python"]);
+      expect(tokens[1][1].value).toBe(" ");
+      expect(tokens[1][1].scopes).toEqual(["source.python"]);
+      expect(tokens[1][2].value).toBe("importing");
+      expect(tokens[1][2].scopes).toEqual(["source.python"]);
+      expect(tokens[1][3].value).toBe(" ");
+      expect(tokens[1][3].scopes).toEqual(["source.python"]);
+      expect(tokens[1][4].value).toBe("import");
+      expect(tokens[1][4].scopes).toEqual(["source.python","keyword.control.import.python"]);
+      expect(tokens[1][5].value).toBe(" ");
+      expect(tokens[1][5].scopes).toEqual(["source.python"]);
+      expect(tokens[1][6].value).toBe("*");
+      expect(tokens[1][6].scopes).toEqual(["source.python","keyword.operator.arithmetic.python"]);
     });
 
   it("test/statements/nonlocal1.py", 

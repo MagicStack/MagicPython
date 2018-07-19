@@ -1540,7 +1540,7 @@
           <dict>
             <key>match</key>
             <string>(?x)
-  \s* \b(from)\b \s*(\.+)\s* (import)?
+  \s* \b(from) \s*(\.+)\s* (import\b)?
 </string>
             <key>captures</key>
             <dict>
@@ -2833,18 +2833,33 @@ indirectly through syntactic constructs
       </dict>
       <key>illegal-names</key>
       <dict>
-        <key>name</key>
-        <string>keyword.control.flow.python</string>
         <key>match</key>
         <string>(?x)
-  \b(
-    and | as | assert | async | await | break | class | continue | def
-    | del | elif | else | except | finally | for | from | global
-    | if | import | in | is | (?&lt;=\.)lambda | lambda(?=\s*[\.=])
-    | nonlocal | not | or | pass | raise | return | try | while | with
-    | yield
+  \b(?:
+    (
+      and | as | assert | async | await | break | class | continue | def
+      | del | elif | else | except | finally | for | from | global
+      | if | in | is | (?&lt;=\.)lambda | lambda(?=\s*[\.=])
+      | nonlocal | not | or | pass | raise | return | try | while | with
+      | yield
+    ) | (
+      import
+    )
   )\b
 </string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.flow.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.import.python</string>
+          </dict>
+        </dict>
       </dict>
       <key>special-variables</key>
       <dict>

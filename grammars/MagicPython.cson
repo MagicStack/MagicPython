@@ -1006,7 +1006,7 @@ repository:
       {
         match: '''
           (?x)
-            \\s* \\b(from)\\b \\s*(\\.+)\\s* (import)?
+            \\s* \\b(from) \\s*(\\.+)\\s* (import\\b)?
           
         '''
         captures:
@@ -1840,18 +1840,26 @@ repository:
       }
     ]
   "illegal-names":
-    name: "keyword.control.flow.python"
     match: '''
       (?x)
-        \\b(
-          and | as | assert | async | await | break | class | continue | def
-          | del | elif | else | except | finally | for | from | global
-          | if | import | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])
-          | nonlocal | not | or | pass | raise | return | try | while | with
-          | yield
+        \\b(?:
+          (
+            and | as | assert | async | await | break | class | continue | def
+            | del | elif | else | except | finally | for | from | global
+            | if | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])
+            | nonlocal | not | or | pass | raise | return | try | while | with
+            | yield
+          ) | (
+            import
+          )
         )\\b
       
     '''
+    captures:
+      "1":
+        name: "keyword.control.flow.python"
+      "2":
+        name: "keyword.control.import.python"
   "special-variables":
     match: '''
       (?x)

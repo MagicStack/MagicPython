@@ -25,7 +25,7 @@ a             : source.python
               : source.python
 foo           : source.python
 .             : punctuation.separator.period.python, source.python
-import        : keyword.control.flow.python, source.python
+import        : keyword.control.import.python, source.python
               : source.python
 raise         : keyword.control.flow.python, source.python
               : source.python
