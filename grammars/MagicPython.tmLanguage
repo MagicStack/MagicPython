@@ -1419,7 +1419,7 @@
       [-+#0 ]*
       (\d+|\*)? (\.(\d+|\*))?
       ([hlL])?
-      [diouxXeEfFgGcrsa%]
+      [diouxXeEfFgGcrsab%]
   )
 </string>
         <key>captures</key>

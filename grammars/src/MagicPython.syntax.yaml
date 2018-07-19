@@ -777,7 +777,7 @@ repository:
             [-+#0 ]*
             (\d+|\*)? (\.(\d+|\*))?
             ([hlL])?
-            [diouxXeEfFgGcrsa%]
+            [diouxXeEfFgGcrsab%]
         )
     captures:
       '1': {name: constant.character.format.placeholder.other.python}

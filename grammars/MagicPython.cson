@@ -925,7 +925,7 @@ repository:
             [-+#0 ]*
             (\\d+|\\*)? (\\.(\\d+|\\*))?
             ([hlL])?
-            [diouxXeEfFgGcrsa%]
+            [diouxXeEfFgGcrsab%]
         )
       
     '''
