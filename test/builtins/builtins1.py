@@ -5,7 +5,7 @@ SystemExit
 NotImplemented True None False Ellipsis
 Warning
 Exception BaseException
-sum oct abs type object print
+sum oct abs type object print exec
 
 
 
@@ -39,3 +39,5 @@ type          : source.python, support.type.python
 object        : source.python, support.type.python
               : source.python
 print         : source.python, support.function.builtin.python
+              : source.python
+exec          : source.python, support.function.builtin.python

@@ -2839,7 +2839,7 @@ indirectly through syntactic constructs
         <string>(?x)
   \b(
     and | as | assert | async | await | break | class | continue | def
-    | del | elif | else | except | exec | finally | for | from | global
+    | del | elif | else | except | finally | for | from | global
     | if | import | in | is | (?&lt;=\.)lambda | lambda(?=\s*[\.=])
     | nonlocal | not | or | pass | raise | return | try | while | with
     | yield

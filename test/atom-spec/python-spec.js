@@ -16,7 +16,7 @@ describe("Grammar Tests", function() {
 
   it("test/builtins/builtins1.py", 
     function() {
-      tokens = grammar.tokenizeLines("AttributeError ConnectionAbortedError\nPendingDeprecationWarning\nModuleNotFoundError\nSystemExit\nNotImplemented True None False Ellipsis\nWarning\nException BaseException\nsum oct abs type object print")
+      tokens = grammar.tokenizeLines("AttributeError ConnectionAbortedError\nPendingDeprecationWarning\nModuleNotFoundError\nSystemExit\nNotImplemented True None False Ellipsis\nWarning\nException BaseException\nsum oct abs type object print exec")
       expect(tokens[0][0].value).toBe("AttributeError");
       expect(tokens[0][0].scopes).toEqual(["source.python","support.type.exception.python"]);
       expect(tokens[0][1].value).toBe(" ");
@@ -77,6 +77,10 @@ describe("Grammar Tests", function() {
       expect(tokens[7][9].scopes).toEqual(["source.python"]);
       expect(tokens[7][10].value).toBe("print");
       expect(tokens[7][10].scopes).toEqual(["source.python","support.function.builtin.python"]);
+      expect(tokens[7][11].value).toBe(" ");
+      expect(tokens[7][11].scopes).toEqual(["source.python"]);
+      expect(tokens[7][12].value).toBe("exec");
+      expect(tokens[7][12].scopes).toEqual(["source.python","support.function.builtin.python"]);
     });
 
   it("test/builtins/builtins2.py", 
@@ -489,6 +493,25 @@ describe("Grammar Tests", function() {
       expect(tokens[5][0].scopes).toEqual(["source.python"]);
       expect(tokens[5][1].value).toBe("True");
       expect(tokens[5][1].scopes).toEqual(["source.python","keyword.illegal.name.python"]);
+    });
+
+  it("test/builtins/builtins6.py", 
+    function() {
+      tokens = grammar.tokenizeLines("exec()\nexec(code_obj)")
+      expect(tokens[0][0].value).toBe("exec");
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function-call.python","support.function.builtin.python"]);
+      expect(tokens[0][1].value).toBe("(");
+      expect(tokens[0][1].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.begin.python"]);
+      expect(tokens[0][2].value).toBe(")");
+      expect(tokens[0][2].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.end.python"]);
+      expect(tokens[1][0].value).toBe("exec");
+      expect(tokens[1][0].scopes).toEqual(["source.python","meta.function-call.python","support.function.builtin.python"]);
+      expect(tokens[1][1].value).toBe("(");
+      expect(tokens[1][1].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.begin.python"]);
+      expect(tokens[1][2].value).toBe("code_obj");
+      expect(tokens[1][2].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
+      expect(tokens[1][3].value).toBe(")");
+      expect(tokens[1][3].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.end.python"]);
     });
 
   it("test/calls/call1.py", 
@@ -13241,6 +13264,41 @@ describe("Grammar Tests", function() {
       expect(tokens[3][0].scopes).toEqual(["source.python","string.quoted.multi.python"]);
       expect(tokens[4][0].value).toBe("'''");
       expect(tokens[4][0].scopes).toEqual(["source.python","string.quoted.multi.python","punctuation.definition.string.end.python"]);
+    });
+
+  it("test/strings/format16.py", 
+    function() {
+      tokens = grammar.tokenizeLines("a = b'%b' % b'foo'")
+      expect(tokens[0][0].value).toBe("a");
+      expect(tokens[0][0].scopes).toEqual(["source.python"]);
+      expect(tokens[0][1].value).toBe(" ");
+      expect(tokens[0][1].scopes).toEqual(["source.python"]);
+      expect(tokens[0][2].value).toBe("=");
+      expect(tokens[0][2].scopes).toEqual(["source.python","keyword.operator.assignment.python"]);
+      expect(tokens[0][3].value).toBe(" ");
+      expect(tokens[0][3].scopes).toEqual(["source.python"]);
+      expect(tokens[0][4].value).toBe("b");
+      expect(tokens[0][4].scopes).toEqual(["source.python","string.quoted.binary.single.python","storage.type.string.python"]);
+      expect(tokens[0][5].value).toBe("'");
+      expect(tokens[0][5].scopes).toEqual(["source.python","string.quoted.binary.single.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[0][6].value).toBe("%b");
+      expect(tokens[0][6].scopes).toEqual(["source.python","string.quoted.binary.single.python","meta.format.percent.python","constant.character.format.placeholder.other.python"]);
+      expect(tokens[0][7].value).toBe("'");
+      expect(tokens[0][7].scopes).toEqual(["source.python","string.quoted.binary.single.python","punctuation.definition.string.end.python"]);
+      expect(tokens[0][8].value).toBe(" ");
+      expect(tokens[0][8].scopes).toEqual(["source.python"]);
+      expect(tokens[0][9].value).toBe("%");
+      expect(tokens[0][9].scopes).toEqual(["source.python","keyword.operator.arithmetic.python"]);
+      expect(tokens[0][10].value).toBe(" ");
+      expect(tokens[0][10].scopes).toEqual(["source.python"]);
+      expect(tokens[0][11].value).toBe("b");
+      expect(tokens[0][11].scopes).toEqual(["source.python","string.quoted.binary.single.python","storage.type.string.python"]);
+      expect(tokens[0][12].value).toBe("'");
+      expect(tokens[0][12].scopes).toEqual(["source.python","string.quoted.binary.single.python","punctuation.definition.string.begin.python"]);
+      expect(tokens[0][13].value).toBe("foo");
+      expect(tokens[0][13].scopes).toEqual(["source.python","string.quoted.binary.single.python"]);
+      expect(tokens[0][14].value).toBe("'");
+      expect(tokens[0][14].scopes).toEqual(["source.python","string.quoted.binary.single.python","punctuation.definition.string.end.python"]);
     });
 
   it("test/strings/format2.py", 
