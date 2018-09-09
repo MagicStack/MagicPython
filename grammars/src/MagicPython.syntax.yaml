@@ -1148,7 +1148,9 @@ repository:
       - name: entity.name.function.decorator.python
         match: |
           (?x)
-            ([[:alpha:]_]\w*) | \.
+            ([[:alpha:]_]\w*) | (\.)
+        captures:
+          '2': {name: punctuation.separator.period.python}
       - include: '#line-continuation'
       - name: invalid.illegal.decorator.python
         match: |

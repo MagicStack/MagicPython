@@ -2378,8 +2378,16 @@
             <string>entity.name.function.decorator.python</string>
             <key>match</key>
             <string>(?x)
-  ([[:alpha:]_]\w*) | \.
+  ([[:alpha:]_]\w*) | (\.)
 </string>
+            <key>captures</key>
+            <dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.separator.period.python</string>
+              </dict>
+            </dict>
           </dict>
           <dict>
             <key>include</key>

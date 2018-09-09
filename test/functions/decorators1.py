@@ -15,9 +15,9 @@ some_decorator : entity.name.function.decorator.python, meta.function.decorator.
  with comment : comment.line.number-sign.python, source.python
 @             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 some          : entity.name.function.decorator.python, meta.function.decorator.python, source.python
-.             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+.             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.separator.period.python, source.python
 class         : keyword.control.flow.python, meta.function.decorator.python, source.python
-.             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+.             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.separator.period.python, source.python
 decorator     : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 @             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 some_decorator : entity.name.function.decorator.python, meta.function.decorator.python, source.python
@@ -26,7 +26,7 @@ some_decorator : entity.name.function.decorator.python, meta.function.decorator.
 )             : meta.function.decorator.python, punctuation.definition.arguments.end.python, source.python
 @             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 some          : entity.name.function.decorator.python, meta.function.decorator.python, source.python
-.             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+.             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.separator.period.python, source.python
 decorator     : entity.name.function.decorator.python, meta.function.decorator.python, source.python
               : meta.function.decorator.python, source.python
 (             : meta.function.decorator.python, punctuation.definition.arguments.begin.python, source.python
