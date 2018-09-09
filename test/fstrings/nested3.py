@@ -1,6 +1,6 @@
 f"result: {value:{60}.{16!s:2}{'qwerty'
 [2]}}"
-
+# comment
 
 
 
@@ -30,3 +30,5 @@ qwerty        : meta.fstring.python, source.python, string.quoted.single.python
 }}            : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
               : invalid.illegal.newline.python, source.python, string.quoted.single.python
+#             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
+ comment      : comment.line.number-sign.python, source.python

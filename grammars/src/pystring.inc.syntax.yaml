@@ -44,7 +44,7 @@ repository:
 
   string-quoted-${line}-line:
     name: string.quoted.${line}.python
-    begin: (\b[rR](?=[uU]))?([uU])?(${marker})
+    begin: (?:\b([rR])(?=[uU]))?([uU])?(${marker})
     end: (\3)${guard}
     beginCaptures:
       '1': {name: invalid.illegal.prefix.python}

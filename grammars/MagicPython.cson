@@ -129,7 +129,8 @@ repository:
     ]
   "docstring-statement":
     begin: "^(?=\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))"
-    end: "(?<=\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\")"
+    comment: "the string either terminates correctly or by the beginning of a new line (this is for single line docstrings that aren't terminated) AND it's not followed by another docstring"
+    end: "((?<=\\1)|^)(?!\\s*[rR]?(\\'\\'\\'|\\\"\\\"\\\"|\\'|\\\"))"
     patterns: [
       {
         include: "#docstring"
@@ -186,7 +187,7 @@ repository:
       {
         name: "string.quoted.docstring.single.python"
         begin: "(\\'|\\\")"
-        end: "(\\1)|((?<!\\\\)\\n)"
+        end: "(\\1)|(\\n)"
         beginCaptures:
           "1":
             name: "punctuation.definition.string.begin.python"
@@ -207,7 +208,7 @@ repository:
       {
         name: "string.quoted.docstring.raw.single.python"
         begin: "([rR])(\\'|\\\")"
-        end: "(\\2)|((?<!\\\\)\\n)"
+        end: "(\\2)|(\\n)"
         beginCaptures:
           "1":
             name: "storage.type.string.python"
@@ -252,11 +253,6 @@ repository:
     captures:
       "1":
         name: "keyword.control.flow.python"
-  codetags:
-    match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
-    captures:
-      "1":
-        name: "keyword.codetag.notation.python"
   "statement-keyword":
     patterns: [
       {
@@ -391,7 +387,7 @@ repository:
       }
     ]
   "member-access":
-    begin: "\\.\\s*(?!\\.)"
+    begin: "(\\.)\\s*(?!\\.)"
     end: '''
       (?x)
         # stop when you've just read non-whitespace followed by non-word
@@ -403,6 +399,9 @@ repository:
         $
       
     '''
+    beginCaptures:
+      "1":
+        name: "punctuation.separator.period.python"
     patterns: [
       {
         include: "#function-call"
@@ -918,23 +917,28 @@ repository:
     name: "constant.language.python"
     match: "\\\\$"
   "string-formatting":
-    name: "constant.character.format.placeholder.other.python"
+    name: "meta.format.percent.python"
     match: '''
       (?x)
-        % (\\([\\w\\s]*\\))?
-          [-+#0 ]*
-          (\\d+|\\*)? (\\.(\\d+|\\*))?
-          ([hlL])?
-          [diouxXeEfFgGcrsa%]
+        (
+          % (\\([\\w\\s]*\\))?
+            [-+#0 ]*
+            (\\d+|\\*)? (\\.(\\d+|\\*))?
+            ([hlL])?
+            [diouxXeEfFgGcrsab%]
+        )
       
     '''
+    captures:
+      "1":
+        name: "constant.character.format.placeholder.other.python"
   "string-brace-formatting":
     patterns: [
       {
-        name: "constant.character.format.placeholder.other.python"
+        name: "meta.format.brace.python"
         match: '''
           (?x)
-            (?:
+            (
               {{ | }}
               | (?:
                 {
@@ -947,36 +951,38 @@ repository:
           
         '''
         captures:
-          "2":
-            name: "storage.type.format.python"
+          "1":
+            name: "constant.character.format.placeholder.other.python"
           "3":
+            name: "storage.type.format.python"
+          "4":
             name: "storage.type.format.python"
       }
       {
-        name: "constant.character.format.placeholder.other.python"
-        begin: '''
+        name: "meta.format.brace.python"
+        match: '''
           (?x)
-              \\{
+            (
+              {
                 \\w*? (\\.[[:alpha:]_]\\w*? | \\[[^\\]'"]+\\])*?
                 (![rsa])?
                 (:)
-                  (?=[^'"}\\n]*\\})
+                  (
+                    [^'"{}\\n]+?
+                    |
+                    \\{ [^'"}\\n]*? \\}
+                  )*
+              }
+            )
           
         '''
-        end: "\\}"
-        beginCaptures:
-          "2":
-            name: "storage.type.format.python"
+        captures:
+          "1":
+            name: "constant.character.format.placeholder.other.python"
           "3":
             name: "storage.type.format.python"
-        patterns: [
-          {
-            match: '''
-              (?x) \\{ [^'"}\\n]*? \\} (?=.*?\\})
-              
-            '''
-          }
-        ]
+          "4":
+            name: "storage.type.format.python"
       }
     ]
   "fstring-formatting":
@@ -986,24 +992,6 @@ repository:
       }
       {
         include: "#fstring-formatting-singe-brace"
-      }
-    ]
-  "fstring-formatting-braces":
-    patterns: [
-      {
-        comment: "empty braces are illegal"
-        match: "({)(\\s*?)(})"
-        captures:
-          "1":
-            name: "constant.character.format.placeholder.other.python"
-          "2":
-            name: "invalid.illegal.brace.python"
-          "3":
-            name: "constant.character.format.placeholder.other.python"
-      }
-      {
-        name: "constant.character.escape.python"
-        match: "({{|}})"
       }
     ]
   "fstring-formatting-singe-brace":
@@ -1018,12 +1006,14 @@ repository:
       {
         match: '''
           (?x)
-            \\s* \\b(from)\\b (\\s*\\.+\\s*) (import)?
+            \\s* \\b(from) \\s*(\\.+)\\s* (import\\b)?
           
         '''
         captures:
           "1":
             name: "keyword.control.import.python"
+          "2":
+            name: "punctuation.separator.period.python"
           "3":
             name: "keyword.control.import.python"
       }
@@ -1145,8 +1135,11 @@ repository:
       "1":
         name: "entity.other.inherited-class.python"
   "member-access-class":
-    begin: "\\.\\s*(?!\\.)"
+    begin: "(\\.)\\s*(?!\\.)"
     end: "(?<=\\S)(?=\\W)|$"
+    beginCaptures:
+      "1":
+        name: "punctuation.separator.period.python"
     patterns: [
       {
         include: "#call-wrapper-inheritance"
@@ -1620,35 +1613,25 @@ repository:
       }
     ]
   "function-arguments":
-    begin: '''
-      (?x)
-        (?:
-          (\\()
-          (?:\\s*(\\*\\*|\\*))?
-        )
-      
-    '''
+    begin: "(\\()"
     end: "(?=\\))(?!\\)\\s*\\()"
     beginCaptures:
       "1":
         name: "punctuation.definition.arguments.begin.python"
-      "2":
-        name: "keyword.operator.unpacking.arguments.python"
     contentName: "meta.function-call.arguments.python"
     patterns: [
       {
+        name: "punctuation.separator.arguments.python"
+        match: "(,)"
+      }
+      {
         match: '''
           (?x)
-            (?:
-              (,)
-              (?:\\s*(\\*\\*|\\*))?
-            )
+            (?:(?<=[,(])|^) \\s* (\\*{1,2})
           
         '''
         captures:
           "1":
-            name: "punctuation.separator.arguments.python"
-          "2":
             name: "keyword.operator.unpacking.arguments.python"
       }
       {
@@ -1847,18 +1830,26 @@ repository:
       }
     ]
   "illegal-names":
-    name: "keyword.control.flow.python"
     match: '''
       (?x)
-        \\b(
-          and | as | assert | async | await | break | class | continue | def
-          | del | elif | else | except | exec | finally | for | from | global
-          | if | import | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])
-          | nonlocal | not | or | pass | raise | return | try | while | with
-          | yield
+        \\b(?:
+          (
+            and | as | assert | async | await | break | class | continue | def
+            | del | elif | else | except | finally | for | from | global
+            | if | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])
+            | nonlocal | not | or | pass | raise | return | try | while | with
+            | yield
+          ) | (
+            import
+          )
         )\\b
       
     '''
+    captures:
+      "1":
+        name: "keyword.control.flow.python"
+      "2":
+        name: "keyword.control.import.python"
   "special-variables":
     match: '''
       (?x)
@@ -1929,6 +1920,24 @@ repository:
       }
       {
         include: "#regexp-base-common"
+      }
+    ]
+  "fstring-formatting-braces":
+    patterns: [
+      {
+        comment: "empty braces are illegal"
+        match: "({)(\\s*?)(})"
+        captures:
+          "1":
+            name: "constant.character.format.placeholder.other.python"
+          "2":
+            name: "invalid.illegal.brace.python"
+          "3":
+            name: "constant.character.format.placeholder.other.python"
+      }
+      {
+        name: "constant.character.escape.python"
+        match: "({{|}})"
       }
     ]
   "regexp-base-common":
@@ -2066,6 +2075,11 @@ repository:
         include: "#regexp-escape-catchall"
       }
     ]
+  codetags:
+    match: "(?:\\b(NOTE|XXX|HACK|FIXME|BUG|TODO)\\b)"
+    captures:
+      "1":
+        name: "keyword.codetag.notation.python"
   "comments-base":
     name: "comment.line.number-sign.python"
     begin: "(\\#)"
@@ -4169,7 +4183,7 @@ repository:
     ]
   "string-quoted-single-line":
     name: "string.quoted.single.python"
-    begin: "(\\b[rR](?=[uU]))?([uU])?((['\"]))"
+    begin: "(?:\\b([rR])(?=[uU]))?([uU])?((['\"]))"
     end: "(\\3)|((?<!\\\\)\\n)"
     beginCaptures:
       "1":
@@ -4343,7 +4357,7 @@ repository:
     ]
   "string-quoted-multi-line":
     name: "string.quoted.multi.python"
-    begin: "(\\b[rR](?=[uU]))?([uU])?('''|\"\"\")"
+    begin: "(?:\\b([rR])(?=[uU]))?([uU])?('''|\"\"\")"
     end: "(\\3)"
     beginCaptures:
       "1":

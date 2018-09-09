@@ -1,6 +1,6 @@
 {
   "name": "MagicPython",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "engines": {
     "atom": "*",
     "node": "*",
@@ -66,5 +66,9 @@
         "path": "./grammars/MagicPython.tmLanguage"
       }
     ]
+  },
+  "dependencies": {
+    "oniguruma": "^7.0.0",
+    "syntaxdev": "0.0.16"
   }
 }

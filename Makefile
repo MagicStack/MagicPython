@@ -16,7 +16,7 @@ ci-test: release
 		then echo "Error: package.version != git.tag" && exit 1 ; fi
 
 test: ci-test
-	atom -t .
+	atom -t test/atom-spec
 
 devenv:
 	npm install syntaxdev@0.0.16

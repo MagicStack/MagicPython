@@ -65,6 +65,8 @@ meta.backreference.regexp
 meta.character.set.regexp
 meta.class.inheritance.python
 meta.class.python
+meta.format.brace.python
+meta.format.percent.python
 meta.fstring.python
 meta.function-call.generic.python
 meta.function-call.python
@@ -120,6 +122,7 @@ punctuation.separator.dict.python
 punctuation.separator.element.python
 punctuation.separator.inheritance.python
 punctuation.separator.parameters.python
+punctuation.separator.period.python
 punctuation.separator.slice.python
 storage.modifier.declaration.python
 storage.modifier.flag.regexp

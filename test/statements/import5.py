@@ -11,21 +11,21 @@ def bar():
 
 
 from          : keyword.control.import.python, source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 foo           : source.python
               : source.python
 import        : keyword.control.import.python, source.python
               : source.python
 d             : source.python
 from          : keyword.control.import.python, source.python
-.             : source.python
+.             : punctuation.separator.period.python, source.python
 import        : keyword.control.import.python, source.python
               : source.python
 a             : source.python
               : source.python
 foo           : source.python
-.             : source.python
-import        : keyword.control.flow.python, source.python
+.             : punctuation.separator.period.python, source.python
+import        : keyword.control.import.python, source.python
               : source.python
 raise         : keyword.control.flow.python, source.python
               : source.python

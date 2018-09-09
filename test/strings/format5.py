@@ -11,11 +11,9 @@ a             : source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 qqq           : source.python, string.quoted.single.python
-{0            : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
-:             : constant.character.format.placeholder.other.python, source.python, storage.type.format.python, string.quoted.single.python
-{width}       : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
-{base}        : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
-}             : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
+{0            : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
+:             : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, storage.type.format.python, string.quoted.single.python
+{width}{base}} : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
 www           : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
@@ -24,10 +22,9 @@ a             : source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 qqq           : source.python, string.quoted.single.python
-{0            : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
-:             : constant.character.format.placeholder.other.python, source.python, storage.type.format.python, string.quoted.single.python
-$20           : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
-}             : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
+{0            : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
+:             : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, storage.type.format.python, string.quoted.single.python
+$20}          : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
 www           : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
 a             : source.python
@@ -36,6 +33,6 @@ a             : source.python
               : source.python
 '             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 qqq           : source.python, string.quoted.single.python
-{0}           : constant.character.format.placeholder.other.python, source.python, string.quoted.single.python
+{0}           : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
 www           : source.python, string.quoted.single.python
 '             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
