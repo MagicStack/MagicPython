@@ -35,7 +35,7 @@
     'autoIndentOnPaste': false
     'softTabs': true
     'tabLength': 4
-    'foldEndPattern': '^\\s*"""\\s*$'
+    'foldEndPattern': '^\\s*\\}|^\\s*\\]|^\\s*\\)'
     'commentStart': '# '
     'increaseIndentPattern': '^\\s*(class|((async\\s+)?(def|with|for))|elif|else|except|finally|if|try|while)\\b.*:\\s*$'
     'decreaseIndentPattern': '^\\s*(elif|else|except|finally)\\b.*:'
