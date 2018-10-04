@@ -67,7 +67,7 @@
       }
     ]
   },
-  "dependencies": {
+  "devDependencies": {
     "oniguruma": "^7.0.0",
     "syntaxdev": "0.0.16"
   }
