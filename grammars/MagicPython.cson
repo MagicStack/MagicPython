@@ -1479,7 +1479,7 @@ repository:
     begin: '''
       (?x)
         ^\\s*
-        (@) \\s* (?=[[:alpha:]_]\\w*)
+        ((@)) \\s* (?=[[:alpha:]_]\\w*)
       
     '''
     end: '''
@@ -1493,6 +1493,8 @@ repository:
     beginCaptures:
       "1":
         name: "entity.name.function.decorator.python"
+      "2":
+        name: "punctuation.definition.decorator.python"
     endCaptures:
       "1":
         name: "punctuation.definition.arguments.end.python"
@@ -1518,9 +1520,12 @@ repository:
         name: "entity.name.function.decorator.python"
         match: '''
           (?x)
-            ([[:alpha:]_]\\w*) | \\.
+            ([[:alpha:]_]\\w*) | (\\.)
           
         '''
+        captures:
+          "2":
+            name: "punctuation.separator.period.python"
       }
       {
         include: "#line-continuation"

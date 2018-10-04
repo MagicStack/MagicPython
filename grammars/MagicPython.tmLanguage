@@ -2331,7 +2331,7 @@
         <key>begin</key>
         <string>(?x)
   ^\s*
-  (@) \s* (?=[[:alpha:]_]\w*)
+  ((@)) \s* (?=[[:alpha:]_]\w*)
 </string>
         <key>end</key>
         <string>(?x)
@@ -2346,6 +2346,11 @@
           <dict>
             <key>name</key>
             <string>entity.name.function.decorator.python</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.decorator.python</string>
           </dict>
         </dict>
         <key>endCaptures</key>
@@ -2390,8 +2395,16 @@
             <string>entity.name.function.decorator.python</string>
             <key>match</key>
             <string>(?x)
-  ([[:alpha:]_]\w*) | \.
+  ([[:alpha:]_]\w*) | (\.)
 </string>
+            <key>captures</key>
+            <dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.separator.period.python</string>
+              </dict>
+            </dict>
           </dict>
           <dict>
             <key>include</key>

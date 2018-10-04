@@ -5,7 +5,7 @@ class Spam(Foo.Bar, Bar.name={'very': 'odd'}):
 
 
 
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 dec           : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 #             : comment.line.number-sign.python, punctuation.definition.comment.python, source.python
  Bar.name=... is not legal, but the test is for highlighter not breaking badly : comment.line.number-sign.python, source.python

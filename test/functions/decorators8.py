@@ -3,7 +3,7 @@ def foo(): pass
 
 
 
-@             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
+@             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 deco          : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 (             : meta.function.decorator.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function.decorator.python, punctuation.definition.arguments.end.python, source.python
