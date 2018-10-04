@@ -514,6 +514,17 @@ describe("Grammar Tests", function() {
       expect(tokens[1][3].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.end.python"]);
     });
 
+  it("test/builtins/builtins7.py", 
+    function() {
+      tokens = grammar.tokenizeLines("breakpoint()")
+      expect(tokens[0][0].value).toBe("breakpoint");
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.function-call.python","support.function.builtin.python"]);
+      expect(tokens[0][1].value).toBe("(");
+      expect(tokens[0][1].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.begin.python"]);
+      expect(tokens[0][2].value).toBe(")");
+      expect(tokens[0][2].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.end.python"]);
+    });
+
   it("test/calls/call1.py", 
     function() {
       tokens = grammar.tokenizeLines("some_call(A, b, c[1], *args, FOO=lambda:{'q': 42}, **kwargs)")
@@ -6175,6 +6186,31 @@ describe("Grammar Tests", function() {
       expect(tokens[0][4].scopes).toEqual(["source.python","support.variable.magic.python"]);
       expect(tokens[1][0].value).toBe("__author__");
       expect(tokens[1][0].scopes).toEqual(["source.python"]);
+    });
+
+  it("test/expressions/special2.py", 
+    function() {
+      tokens = grammar.tokenizeLines("__post_init__\ndef __class_getitem__(): pass\n__mro_entries__")
+      expect(tokens[0][0].value).toBe("__post_init__");
+      expect(tokens[0][0].scopes).toEqual(["source.python","support.variable.magic.python"]);
+      expect(tokens[1][0].value).toBe("def");
+      expect(tokens[1][0].scopes).toEqual(["source.python","meta.function.python","storage.type.function.python"]);
+      expect(tokens[1][1].value).toBe(" ");
+      expect(tokens[1][1].scopes).toEqual(["source.python","meta.function.python"]);
+      expect(tokens[1][2].value).toBe("__class_getitem__");
+      expect(tokens[1][2].scopes).toEqual(["source.python","meta.function.python","support.variable.magic.python"]);
+      expect(tokens[1][3].value).toBe("(");
+      expect(tokens[1][3].scopes).toEqual(["source.python","meta.function.python","meta.function.parameters.python","punctuation.definition.parameters.begin.python"]);
+      expect(tokens[1][4].value).toBe(")");
+      expect(tokens[1][4].scopes).toEqual(["source.python","meta.function.python","meta.function.parameters.python","punctuation.definition.parameters.end.python"]);
+      expect(tokens[1][5].value).toBe(":");
+      expect(tokens[1][5].scopes).toEqual(["source.python","meta.function.python","punctuation.section.function.begin.python"]);
+      expect(tokens[1][6].value).toBe(" ");
+      expect(tokens[1][6].scopes).toEqual(["source.python"]);
+      expect(tokens[1][7].value).toBe("pass");
+      expect(tokens[1][7].scopes).toEqual(["source.python","keyword.control.flow.python"]);
+      expect(tokens[2][0].value).toBe("__mro_entries__");
+      expect(tokens[2][0].scopes).toEqual(["source.python","support.variable.magic.python"]);
     });
 
   it("test/fstrings/comment1.py", 

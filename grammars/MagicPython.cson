@@ -1729,7 +1729,7 @@ repository:
         match: '''
           (?x)
             (?<!\\.) \\b(
-              __import__ | abs | all | any | ascii | bin | callable
+              __import__ | abs | all | any | ascii | bin | breakpoint | callable
               | chr | compile | copyright | credits | delattr | dir | divmod
               | enumerate | eval | exec | exit | filter | format | getattr
               | globals | hasattr | hash | help | hex | id | input
@@ -1810,10 +1810,10 @@ repository:
       (?x)
         \\b(
           __(?:
-            all | bases | builtins | class | code | debug | defaults | dict
-            | doc | file | func | kwdefaults | members
-            | metaclass | methods | module | mro | name
-            | qualname | self | signature | slots | subclasses
+            all | bases | builtins | class | class_getitem | code | debug
+            | defaults | dict | doc | file | func | kwdefaults | members
+            | metaclass | methods | module | mro | mro_entries | name
+            | qualname | post_init | self | signature | slots | subclasses
             | version | weakref | wrapped | annotations | classcell
             | spec | path | package | future | traceback
           )__
