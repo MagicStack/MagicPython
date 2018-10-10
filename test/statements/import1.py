@@ -12,7 +12,7 @@ import        : keyword.control.import.python, source.python
               : source.python
 bar           : source.python
               : source.python
-as            : keyword.control.flow.python, source.python
+as            : keyword.control.import.python, source.python
               : source.python
 spam          : source.python
 ,             : punctuation.separator.element.python, source.python
@@ -22,7 +22,7 @@ import        : keyword.control.import.python, source.python
               : source.python
 time          : source.python
               : source.python
-as            : keyword.control.flow.python, source.python
+as            : keyword.control.import.python, source.python
               : source.python
 ham           : source.python
 ,             : punctuation.separator.element.python, source.python

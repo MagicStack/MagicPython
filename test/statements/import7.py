@@ -11,7 +11,7 @@ importing     : source.python
 import        : keyword.control.import.python, source.python
               : source.python
 *             : keyword.operator.arithmetic.python, source.python
-from          : keyword.control.flow.python, source.python
+from          : keyword.control.import.python, source.python
               : source.python
 importing     : source.python
               : source.python
