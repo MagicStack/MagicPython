@@ -1351,7 +1351,7 @@
       <key>f-expression</key>
       <dict>
         <key>comment</key>
-        <string>All valid Python expressions, except comments and line cont</string>
+        <string>All valid Python expressions, except comments and line continuation</string>
         <key>patterns</key>
         <array>
           <dict>
