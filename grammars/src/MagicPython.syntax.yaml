@@ -736,7 +736,7 @@ repository:
       - include: '#impossible'
 
   f-expression:
-    comment: All valid Python expressions, except comments and line cont
+    comment: All valid Python expressions, except comments and line continuation
     patterns:
       - include: '#expression-bare'
       - include: '#member-access'
