@@ -261,10 +261,30 @@ repository:
       }
       {
         name: "keyword.control.flow.python"
+        comment: '''
+          if `as` is eventually followed by `:` or line continuation
+          it's probably control flow like:
+              with foo as bar, \\
+                   Foo as Bar:
+                try:
+                  do_stuff()
+                except Exception as e:
+                  pass
+          
+        '''
+        match: "\\b(?<!\\.)as\\b(?=.*[:\\\\])"
+      }
+      {
+        name: "keyword.control.import.python"
+        comment: "other legal use of `as` is in an import"
+        match: "\\b(?<!\\.)as\\b"
+      }
+      {
+        name: "keyword.control.flow.python"
         match: '''
           (?x)
             \\b(?<!\\.)(
-              as | async | continue | del | assert | break | finally | for
+              async | continue | del | assert | break | finally | for
               | from | elif | else | if | except | pass | raise
               | return | try | while | with
             )\\b
@@ -997,27 +1017,41 @@ repository:
     match: "(}(?!}))"
   import:
     comment: '''
-      Import statements
+      Import statements used to correctly mark `from`, `import`, and `as`
       
     '''
     patterns: [
       {
-        match: '''
-          (?x)
-            \\s* \\b(from) \\s*(\\.+)\\s* (import\\b)?
-          
-        '''
-        captures:
+        begin: "\\b(?<!\\.)(from)\\b(?=.+import)"
+        end: "$|(?=import)"
+        beginCaptures:
           "1":
             name: "keyword.control.import.python"
-          "2":
+        patterns: [
+          {
             name: "punctuation.separator.period.python"
-          "3":
-            name: "keyword.control.import.python"
+            match: "\\.+"
+          }
+          {
+            include: "#expression"
+          }
+        ]
       }
       {
-        name: "keyword.control.import.python"
-        match: "\\b(?<!\\.)import\\b"
+        begin: "\\b(?<!\\.)(import)\\b"
+        end: "$"
+        beginCaptures:
+          "1":
+            name: "keyword.control.import.python"
+        patterns: [
+          {
+            name: "keyword.control.import.python"
+            match: "\\b(?<!\\.)as\\b"
+          }
+          {
+            include: "#expression"
+          }
+        ]
       }
     ]
   "class-declaration":
@@ -1837,13 +1871,13 @@ repository:
       (?x)
         \\b(?:
           (
-            and | as | assert | async | await | break | class | continue | def
+            and | assert | async | await | break | class | continue | def
             | del | elif | else | except | finally | for | from | global
             | if | in | is | (?<=\\.)lambda | lambda(?=\\s*[\\.=])
             | nonlocal | not | or | pass | raise | return | try | while | with
             | yield
           ) | (
-            import
+            as | import
           )
         )\\b
       

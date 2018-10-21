@@ -6,7 +6,7 @@ nonlocal global class def
 
 
 
-as            : keyword.control.flow.python, source.python
+as            : keyword.control.import.python, source.python
               : source.python
 async         : keyword.control.flow.python, source.python
               : source.python
@@ -23,7 +23,7 @@ break         : keyword.control.flow.python, source.python
 finally       : keyword.control.flow.python, source.python
               : source.python
 for           : keyword.control.flow.python, source.python
-from          : keyword.control.flow.python, source.python
+from          : keyword.control.import.python, source.python
               : source.python
 elif          : keyword.control.flow.python, source.python
               : source.python

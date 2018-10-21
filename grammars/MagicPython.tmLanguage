@@ -419,10 +419,34 @@
           <dict>
             <key>name</key>
             <string>keyword.control.flow.python</string>
+            <key>comment</key>
+            <string>if `as` is eventually followed by `:` or line continuation
+it's probably control flow like:
+    with foo as bar, \
+         Foo as Bar:
+      try:
+        do_stuff()
+      except Exception as e:
+        pass
+</string>
+            <key>match</key>
+            <string>\b(?&lt;!\.)as\b(?=.*[:\\])</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.import.python</string>
+            <key>comment</key>
+            <string>other legal use of `as` is in an import</string>
+            <key>match</key>
+            <string>\b(?&lt;!\.)as\b</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.flow.python</string>
             <key>match</key>
             <string>(?x)
   \b(?&lt;!\.)(
-    as | async | continue | del | assert | break | finally | for
+    async | continue | del | assert | break | finally | for
     | from | elif | else | if | except | pass | raise
     | return | try | while | with
   )\b
@@ -1531,39 +1555,63 @@
       <key>import</key>
       <dict>
         <key>comment</key>
-        <string>Import statements
+        <string>Import statements used to correctly mark `from`, `import`, and `as`
 </string>
         <key>patterns</key>
         <array>
           <dict>
-            <key>match</key>
-            <string>(?x)
-  \s* \b(from) \s*(\.+)\s* (import\b)?
-</string>
-            <key>captures</key>
+            <key>begin</key>
+            <string>\b(?&lt;!\.)(from)\b(?=.+import)</string>
+            <key>end</key>
+            <string>$|(?=import)</string>
+            <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
                 <string>keyword.control.import.python</string>
               </dict>
-              <key>2</key>
+            </dict>
+            <key>patterns</key>
+            <array>
               <dict>
                 <key>name</key>
                 <string>punctuation.separator.period.python</string>
+                <key>match</key>
+                <string>\.+</string>
               </dict>
-              <key>3</key>
+              <dict>
+                <key>include</key>
+                <string>#expression</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>\b(?&lt;!\.)(import)\b</string>
+            <key>end</key>
+            <string>$</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
               <dict>
                 <key>name</key>
                 <string>keyword.control.import.python</string>
               </dict>
             </dict>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>keyword.control.import.python</string>
-            <key>match</key>
-            <string>\b(?&lt;!\.)import\b</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.import.python</string>
+                <key>match</key>
+                <string>\b(?&lt;!\.)as\b</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#expression</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
@@ -2836,13 +2884,13 @@ indirectly through syntactic constructs
         <string>(?x)
   \b(?:
     (
-      and | as | assert | async | await | break | class | continue | def
+      and | assert | async | await | break | class | continue | def
       | del | elif | else | except | finally | for | from | global
       | if | in | is | (?&lt;=\.)lambda | lambda(?=\s*[\.=])
       | nonlocal | not | or | pass | raise | return | try | while | with
       | yield
     ) | (
-      import
+      as | import
     )
   )\b
 </string>
