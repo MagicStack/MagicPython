@@ -1,118 +1,117 @@
 ---
-repository:
-  string-raw-quoted-${line}-line:
-    name: string.quoted.raw.${line}.python
-    begin: \b(([uU]R)|(R))(${marker})
-    end: (\4)${guard}
-    beginCaptures:
-      '2': {name: invalid.deprecated.prefix.python}
-      '3': {name: storage.type.string.python}
-      '4': {name: punctuation.definition.string.begin.python}
-    endCaptures:
-      '1': {name: punctuation.definition.string.end.python}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#string-${line}-bad-brace1-formatting-raw'
-      - include: '#string-${line}-bad-brace2-formatting-raw'
-      - include: '#string-raw-guts'
+string-raw-quoted-${line}-line:
+  name: string.quoted.raw.${line}.python
+  begin: \b(([uU]R)|(R))(${marker})
+  end: (\4)${guard}
+  beginCaptures:
+    '2': {name: invalid.deprecated.prefix.python}
+    '3': {name: storage.type.string.python}
+    '4': {name: punctuation.definition.string.begin.python}
+  endCaptures:
+    '1': {name: punctuation.definition.string.end.python}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#string-${line}-bad-brace1-formatting-raw'
+    - include: '#string-${line}-bad-brace2-formatting-raw'
+    - include: '#string-raw-guts'
 
-  string-bin-quoted-${line}-line:
-    name: string.quoted.binary.${line}.python
-    begin: (\b[bB])(${marker})
-    end: (\2)${guard}
-    beginCaptures:
-      '1': {name: storage.type.string.python}
-      '2': {name: punctuation.definition.string.begin.python}
-    endCaptures:
-      '1': {name: punctuation.definition.string.end.python}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#string-entity'
+string-bin-quoted-${line}-line:
+  name: string.quoted.binary.${line}.python
+  begin: (\b[bB])(${marker})
+  end: (\2)${guard}
+  beginCaptures:
+    '1': {name: storage.type.string.python}
+    '2': {name: punctuation.definition.string.begin.python}
+  endCaptures:
+    '1': {name: punctuation.definition.string.end.python}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#string-entity'
 
-  string-raw-bin-quoted-${line}-line:
-    name: string.quoted.raw.binary.${line}.python
-    begin: (\b(?:R[bB]|[bB]R))(${marker})
-    end: (\2)${guard}
-    beginCaptures:
-      '1': {name: storage.type.string.python}
-      '2': {name: punctuation.definition.string.begin.python}
-    endCaptures:
-      '1': {name: punctuation.definition.string.end.python}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#string-raw-bin-guts'
+string-raw-bin-quoted-${line}-line:
+  name: string.quoted.raw.binary.${line}.python
+  begin: (\b(?:R[bB]|[bB]R))(${marker})
+  end: (\2)${guard}
+  beginCaptures:
+    '1': {name: storage.type.string.python}
+    '2': {name: punctuation.definition.string.begin.python}
+  endCaptures:
+    '1': {name: punctuation.definition.string.end.python}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#string-raw-bin-guts'
 
-  string-quoted-${line}-line:
-    name: string.quoted.${line}.python
-    begin: (?:\b([rR])(?=[uU]))?([uU])?(${marker})
-    end: (\3)${guard}
-    beginCaptures:
-      '1': {name: invalid.illegal.prefix.python}
-      '2': {name: storage.type.string.python}
-      '3': {name: punctuation.definition.string.begin.python}
-    endCaptures:
-      '1': {name: punctuation.definition.string.end.python}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#string-${line}-bad-brace1-formatting-unicode'
-      - include: '#string-${line}-bad-brace2-formatting-unicode'
-      - include: '#string-unicode-guts'
+string-quoted-${line}-line:
+  name: string.quoted.${line}.python
+  begin: (?:\b([rR])(?=[uU]))?([uU])?(${marker})
+  end: (\3)${guard}
+  beginCaptures:
+    '1': {name: invalid.illegal.prefix.python}
+    '2': {name: storage.type.string.python}
+    '3': {name: punctuation.definition.string.begin.python}
+  endCaptures:
+    '1': {name: punctuation.definition.string.end.python}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#string-${line}-bad-brace1-formatting-unicode'
+    - include: '#string-${line}-bad-brace2-formatting-unicode'
+    - include: '#string-unicode-guts'
 
-  string-${line}-bad-brace1-formatting-unicode:
-    comment: template using {% ... %}
-    begin: |
-      (?x)
-          (?= \{%
-                ( .*? (?!${marker}${guard}) )
-              %\}
-          )
-    end: (?=${marker}${guard})
-    patterns:
-      - include: '#escape-sequence-unicode'
-      - include: '#escape-sequence'
-      - include: '#string-line-continuation'
+string-${line}-bad-brace1-formatting-unicode:
+  comment: template using {% ... %}
+  begin: |
+    (?x)
+        (?= \{%
+              ( .*? (?!${marker}${guard}) )
+            %\}
+        )
+  end: (?=${marker}${guard})
+  patterns:
+    - include: '#escape-sequence-unicode'
+    - include: '#escape-sequence'
+    - include: '#string-line-continuation'
 
-  string-${line}-bad-brace1-formatting-raw:
-    comment: template using {% ... %}
-    begin: |
-      (?x)
-          (?= \{%
-                ( .*? (?!${marker}${guard}) )
-              %\}
-          )
-    end: (?=${marker}${guard})
-    patterns:
-      - include: '#string-consume-escape'
+string-${line}-bad-brace1-formatting-raw:
+  comment: template using {% ... %}
+  begin: |
+    (?x)
+        (?= \{%
+              ( .*? (?!${marker}${guard}) )
+            %\}
+        )
+  end: (?=${marker}${guard})
+  patterns:
+    - include: '#string-consume-escape'
 
-  string-${line}-bad-brace2-formatting-unicode:
-    comment: odd format or format-like syntax
-    begin: |
-      (?x)
-          (?!\{\{)
-          (?= \{ (
-                    \w*? (?!${marker}${guard}) [^!:\.\[}\w]
-                 )
-              .*?(?!${marker}${guard})
-              \}
-          )
-    end: (?=${marker}${guard})
-    patterns:
-      - include: '#escape-sequence-unicode'
-      - include: '#string-entity'
+string-${line}-bad-brace2-formatting-unicode:
+  comment: odd format or format-like syntax
+  begin: |
+    (?x)
+        (?!\{\{)
+        (?= \{ (
+                  \w*? (?!${marker}${guard}) [^!:\.\[}\w]
+               )
+            .*?(?!${marker}${guard})
+            \}
+        )
+  end: (?=${marker}${guard})
+  patterns:
+    - include: '#escape-sequence-unicode'
+    - include: '#string-entity'
 
-  string-${line}-bad-brace2-formatting-raw:
-    comment: odd format or format-like syntax
-    begin: |
-      (?x)
-          (?!\{\{)
-          (?= \{ (
-                    \w*? (?!${marker}${guard}) [^!:\.\[}\w]
-                 )
-              .*?(?!${marker}${guard})
-              \}
-          )
-    end: (?=${marker}${guard})
-    patterns:
-      - include: '#string-consume-escape'
-      - include: '#string-formatting'
+string-${line}-bad-brace2-formatting-raw:
+  comment: odd format or format-like syntax
+  begin: |
+    (?x)
+        (?!\{\{)
+        (?= \{ (
+                  \w*? (?!${marker}${guard}) [^!:\.\[}\w]
+               )
+            .*?(?!${marker}${guard})
+            \}
+        )
+  end: (?=${marker}${guard})
+  patterns:
+    - include: '#string-consume-escape'
+    - include: '#string-formatting'
 ...

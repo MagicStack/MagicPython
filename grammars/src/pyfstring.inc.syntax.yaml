@@ -1,177 +1,176 @@
 ---
-repository:
-  fstring-fnorm-quoted-${line}-line:
-    name: meta.fstring.python
-    begin: (\b[fF])([bBuU])?(${marker})
-    end: (\3)${guard}
-    beginCaptures:
-      # "storage.type.string.python" class should be the first one,
-      # because Atom, VSCode and GitHub don't understand scopes
-      # separated by whitespace, and simply use the first one
-      # of them.  Highlighting 'f' as 'storage.type' is more
-      # important for us than having other scopes.
-      '1': {name: storage.type.string.python
-                  string.quoted.${line}.python
-                  string.interpolated.python}
-      '2': {name: invalid.illegal.prefix.python}
-      '3': {name: string.quoted.${line}.python
-                  string.interpolated.python
-                  punctuation.definition.string.begin.python}
-    endCaptures:
-      '1': {name: string.quoted.${line}.python
-                  string.interpolated.python
-                  punctuation.definition.string.end.python}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#fstring-guts'
-      - include: '#fstring-illegal-${line}-brace'
-      - include: '#fstring-${line}-brace'
-      - include: '#fstring-${line}-core'
+fstring-fnorm-quoted-${line}-line:
+  name: meta.fstring.python
+  begin: (\b[fF])([bBuU])?(${marker})
+  end: (\3)${guard}
+  beginCaptures:
+    # "storage.type.string.python" class should be the first one,
+    # because Atom, VSCode and GitHub don't understand scopes
+    # separated by whitespace, and simply use the first one
+    # of them.  Highlighting 'f' as 'storage.type' is more
+    # important for us than having other scopes.
+    '1': {name: storage.type.string.python
+                string.quoted.${line}.python
+                string.interpolated.python}
+    '2': {name: invalid.illegal.prefix.python}
+    '3': {name: string.quoted.${line}.python
+                string.interpolated.python
+                punctuation.definition.string.begin.python}
+  endCaptures:
+    '1': {name: string.quoted.${line}.python
+                string.interpolated.python
+                punctuation.definition.string.end.python}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#fstring-guts'
+    - include: '#fstring-illegal-${line}-brace'
+    - include: '#fstring-${line}-brace'
+    - include: '#fstring-${line}-core'
 
-  fstring-normf-quoted-${line}-line:
-    name: meta.fstring.python
-    begin: (\b[bBuU])([fF])(${marker})
-    end: (\3)${guard}
-    beginCaptures:
-      '1': {name: invalid.illegal.prefix.python}
-      '2': {name: storage.type.string.python
-                  string.quoted.${line}.python
-                  string.interpolated.python}
-      '3': {name: string.quoted.${line}.python
-                  punctuation.definition.string.begin.python}
-    endCaptures:
-      '1': {name: string.quoted.${line}.python
-                  string.interpolated.python
-                  punctuation.definition.string.end.python}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#fstring-guts'
-      - include: '#fstring-illegal-${line}-brace'
-      - include: '#fstring-${line}-brace'
-      - include: '#fstring-${line}-core'
+fstring-normf-quoted-${line}-line:
+  name: meta.fstring.python
+  begin: (\b[bBuU])([fF])(${marker})
+  end: (\3)${guard}
+  beginCaptures:
+    '1': {name: invalid.illegal.prefix.python}
+    '2': {name: storage.type.string.python
+                string.quoted.${line}.python
+                string.interpolated.python}
+    '3': {name: string.quoted.${line}.python
+                punctuation.definition.string.begin.python}
+  endCaptures:
+    '1': {name: string.quoted.${line}.python
+                string.interpolated.python
+                punctuation.definition.string.end.python}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#fstring-guts'
+    - include: '#fstring-illegal-${line}-brace'
+    - include: '#fstring-${line}-brace'
+    - include: '#fstring-${line}-core'
 
-  fstring-raw-quoted-${line}-line:
-    name: meta.fstring.python
-    begin: (\b(?:[R][fF]|[fF][R]))(${marker})
-    end: (\2)${guard}
-    beginCaptures:
-      '1': {name: storage.type.string.python
-                  string.quoted.raw.${line}.python
-                  string.interpolated.python}
-      '2': {name: string.quoted.raw.${line}.python
-                  punctuation.definition.string.begin.python}
-    endCaptures:
-      '1': {name: string.quoted.raw.${line}.python
-                  string.interpolated.python
-                  punctuation.definition.string.end.python}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#fstring-raw-guts'
-      - include: '#fstring-illegal-${line}-brace'
-      - include: '#fstring-${line}-brace'
-      - include: '#fstring-raw-${line}-core'
+fstring-raw-quoted-${line}-line:
+  name: meta.fstring.python
+  begin: (\b(?:[R][fF]|[fF][R]))(${marker})
+  end: (\2)${guard}
+  beginCaptures:
+    '1': {name: storage.type.string.python
+                string.quoted.raw.${line}.python
+                string.interpolated.python}
+    '2': {name: string.quoted.raw.${line}.python
+                punctuation.definition.string.begin.python}
+  endCaptures:
+    '1': {name: string.quoted.raw.${line}.python
+                string.interpolated.python
+                punctuation.definition.string.end.python}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#fstring-raw-guts'
+    - include: '#fstring-illegal-${line}-brace'
+    - include: '#fstring-${line}-brace'
+    - include: '#fstring-raw-${line}-core'
 
-  fstring-${line}-core:
-    name: string.quoted.${line}.python string.interpolated.python
-    match: |
-      (?x)
-        (.+?)
-          (
-            (?# .* and .*? in multi-line match need special handling of
-              newlines otherwise SublimeText and Atom will match slightly
-              differently.
+fstring-${line}-core:
+  name: string.quoted.${line}.python string.interpolated.python
+  match: |
+    (?x)
+      (.+?)
+        (
+          (?# .* and .*? in multi-line match need special handling of
+            newlines otherwise SublimeText and Atom will match slightly
+            differently.
 
-              The guard for newlines has to be separate from the
-              lookahead because of special $ matching rule.)
-            ($\n?)
-            |
-            (?=[\\\}\{]|${marker}${guard})
-          )
-        (?# due to how multiline regexps are matched we need a special case
-          for matching a newline character)
-        | \n
+            The guard for newlines has to be separate from the
+            lookahead because of special $ matching rule.)
+          ($\n?)
+          |
+          (?=[\\\}\{]|${marker}${guard})
+        )
+      (?# due to how multiline regexps are matched we need a special case
+        for matching a newline character)
+      | \n
 
-  fstring-raw-${line}-core:
-    name: string.quoted.raw.${line}.python string.interpolated.python
-    match: |
-      (?x)
-        (.+?)
-          (
-            (?# .* and .*? in multi-line match need special handling of
-              newlines otherwise SublimeText and Atom will match slightly
-              differently.
+fstring-raw-${line}-core:
+  name: string.quoted.raw.${line}.python string.interpolated.python
+  match: |
+    (?x)
+      (.+?)
+        (
+          (?# .* and .*? in multi-line match need special handling of
+            newlines otherwise SublimeText and Atom will match slightly
+            differently.
 
-              The guard for newlines has to be separate from the
-              lookahead because of special $ matching rule.)
-            ($\n?)
-            |
-            (?=[\\\}\{]|${marker}${guard})
-          )
-        (?# due to how multiline regexps are matched we need a special case
-          for matching a newline character)
-        | \n
+            The guard for newlines has to be separate from the
+            lookahead because of special $ matching rule.)
+          ($\n?)
+          |
+          (?=[\\\}\{]|${marker}${guard})
+        )
+      (?# due to how multiline regexps are matched we need a special case
+        for matching a newline character)
+      | \n
 
-  fstring-${line}-brace:
-    comment: value interpolation using { ... }
-    begin: (\{)
-    end: |
-      (?x)
-        (\})${fguard}
-    beginCaptures:
-      '1': {name: constant.character.format.placeholder.other.python}
-    endCaptures:
-      '1': {name: constant.character.format.placeholder.other.python}
-    patterns:
-      - include: '#fstring-terminator-${line}'
-      - include: '#f-expression'
+fstring-${line}-brace:
+  comment: value interpolation using { ... }
+  begin: (\{)
+  end: |
+    (?x)
+      (\})${fguard}
+  beginCaptures:
+    '1': {name: constant.character.format.placeholder.other.python}
+  endCaptures:
+    '1': {name: constant.character.format.placeholder.other.python}
+  patterns:
+    - include: '#fstring-terminator-${line}'
+    - include: '#f-expression'
 
-  fstring-terminator-${line}:
-    patterns:
-      - name: storage.type.format.python
-        match: (![rsa])(?=})
-      - match: |
-          (?x)
-            (![rsa])?
-              ( : \w? [<>=^]? [-+ ]? \#?
-                \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )(?=})
-        captures:
-          # We use this awkward scope name instead of perhaps more
-          # elegant "support.other.format.python" because it appears
-          # that by default it gives a better visual result in various
-          # systems (e.g. GitHub). This is due to the fact that
-          # "storage.type..." is more likely to have special
-          # highlighting in any given color scheme than
-          # "support.other..."
-          #
-          '1': {name: storage.type.format.python}
-          '2': {name: storage.type.format.python}
+fstring-terminator-${line}:
+  patterns:
+    - name: storage.type.format.python
+      match: (![rsa])(?=})
+    - match: |
+        (?x)
+          (![rsa])?
+            ( : \w? [<>=^]? [-+ ]? \#?
+              \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )(?=})
+      captures:
+        # We use this awkward scope name instead of perhaps more
+        # elegant "support.other.format.python" because it appears
+        # that by default it gives a better visual result in various
+        # systems (e.g. GitHub). This is due to the fact that
+        # "storage.type..." is more likely to have special
+        # highlighting in any given color scheme than
+        # "support.other..."
+        #
+        '1': {name: storage.type.format.python}
+        '2': {name: storage.type.format.python}
 
-      - include: '#fstring-terminator-${line}-tail'
+    - include: '#fstring-terminator-${line}-tail'
 
-  fstring-terminator-${line}-tail:
-    begin: (![rsa])?(:)(?=.*?{)
-    end: (?=})${fguard}
-    beginCaptures:
-      '1': {name: storage.type.format.python}
-      '2': {name: storage.type.format.python}
+fstring-terminator-${line}-tail:
+  begin: (![rsa])?(:)(?=.*?{)
+  end: (?=})${fguard}
+  beginCaptures:
+    '1': {name: storage.type.format.python}
+    '2': {name: storage.type.format.python}
 
-    patterns:
-      - include: '#fstring-illegal-${line}-brace'
-      - include: '#fstring-${line}-brace'
-      - name: storage.type.format.python
-        match: ([bcdeEfFgGnosxX%])(?=})
-      - name: storage.type.format.python
-        match: (\.\d+)
-      - name: storage.type.format.python
-        match: (,)
-      - name: storage.type.format.python
-        match: (\d+)
-      - name: storage.type.format.python
-        match: (\#)
-      - name: storage.type.format.python
-        match: ([-+ ])
-      - name: storage.type.format.python
-        match: ([<>=^])
-      - name: storage.type.format.python
-        match: (\w)
+  patterns:
+    - include: '#fstring-illegal-${line}-brace'
+    - include: '#fstring-${line}-brace'
+    - name: storage.type.format.python
+      match: ([bcdeEfFgGnosxX%])(?=})
+    - name: storage.type.format.python
+      match: (\.\d+)
+    - name: storage.type.format.python
+      match: (,)
+    - name: storage.type.format.python
+      match: (\d+)
+    - name: storage.type.format.python
+      match: (\#)
+    - name: storage.type.format.python
+      match: ([-+ ])
+    - name: storage.type.format.python
+      match: ([<>=^])
+    - name: storage.type.format.python
+      match: (\w)
 ...

@@ -1,170 +1,169 @@
 ---
-repository:
-  ${prefix}${basename}-expression:
-    patterns:
-      - include: '#${basename}-base-expression'
-      - include: '#${prefix}regexp-character-set'
-      - include: '#${prefix}regexp-comments'
-      - include: '#regexp-flags'
-      - include: '#${prefix}regexp-named-group'
-      - include: '#regexp-backreference'
-      - include: '#${prefix}${basename}-lookahead'
-      - include: '#${prefix}${basename}-lookahead-negative'
-      - include: '#${prefix}${basename}-lookbehind'
-      - include: '#${prefix}${basename}-lookbehind-negative'
-      - include: '#${prefix}${basename}-conditional'
-      - include: '#${prefix}${basename}-parentheses-non-capturing'
-      - include: '#${prefix}${basename}-parentheses'
-      ${nested}
+${prefix}${basename}-expression:
+  patterns:
+    - include: '#${basename}-base-expression'
+    - include: '#${prefix}regexp-character-set'
+    - include: '#${prefix}regexp-comments'
+    - include: '#regexp-flags'
+    - include: '#${prefix}regexp-named-group'
+    - include: '#regexp-backreference'
+    - include: '#${prefix}${basename}-lookahead'
+    - include: '#${prefix}${basename}-lookahead-negative'
+    - include: '#${prefix}${basename}-lookbehind'
+    - include: '#${prefix}${basename}-lookbehind-negative'
+    - include: '#${prefix}${basename}-conditional'
+    - include: '#${prefix}${basename}-parentheses-non-capturing'
+    - include: '#${prefix}${basename}-parentheses'
+    ${nested}
 
-  ${prefix}regexp-character-set:
-    patterns:
-      - match: |
-          (?x)
-            \[ \^? \] (?! .*?\])
-      - name: meta.character.set.regexp
-        begin: (\[)(\^)?(\])?
-        end: (\]${marker})${guard}
-        beginCaptures:
-          '1': {name: constant.other.set.regexp
-                      punctuation.character.set.begin.regexp}
-          '2': {name: keyword.operator.negation.regexp}
-          '3': {name: constant.character.set.regexp}
-        endCaptures:
-          '1': {name: constant.other.set.regexp
-                      punctuation.character.set.end.regexp}
-          '2': {name: invalid.illegal.newline.python}
-        patterns:
-          - include: '#regexp-charecter-set-escapes'
-          - name: constant.character.set.regexp
-            match: '[^\n]'
+${prefix}regexp-character-set:
+  patterns:
+    - match: |
+        (?x)
+          \[ \^? \] (?! .*?\])
+    - name: meta.character.set.regexp
+      begin: (\[)(\^)?(\])?
+      end: (\]${marker})${guard}
+      beginCaptures:
+        '1': {name: constant.other.set.regexp
+                    punctuation.character.set.begin.regexp}
+        '2': {name: keyword.operator.negation.regexp}
+        '3': {name: constant.character.set.regexp}
+      endCaptures:
+        '1': {name: constant.other.set.regexp
+                    punctuation.character.set.end.regexp}
+        '2': {name: invalid.illegal.newline.python}
+      patterns:
+        - include: '#regexp-charecter-set-escapes'
+        - name: constant.character.set.regexp
+          match: '[^\n]'
 
-  ${prefix}${basename}-named-group:
-    name: meta.named.regexp
-    begin: |
-      (?x)
-        (\()  (\?P <\w+(?:\s+[[:alnum:]]+)?>)
-    end: (\)${marker})${guard}
-    beginCaptures:
-      '1': {name: punctuation.parenthesis.named.begin.regexp
-                  support.other.parenthesis.regexp}
-      '2': {name: entity.name.tag.named.group.regexp}
-    endCaptures:
-      '1': {name: punctuation.parenthesis.named.end.regexp
-                  support.other.parenthesis.regexp}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#${prefix}${basename}-expression'
-      ${nested}
+${prefix}${basename}-named-group:
+  name: meta.named.regexp
+  begin: |
+    (?x)
+      (\()  (\?P <\w+(?:\s+[[:alnum:]]+)?>)
+  end: (\)${marker})${guard}
+  beginCaptures:
+    '1': {name: punctuation.parenthesis.named.begin.regexp
+                support.other.parenthesis.regexp}
+    '2': {name: entity.name.tag.named.group.regexp}
+  endCaptures:
+    '1': {name: punctuation.parenthesis.named.end.regexp
+                support.other.parenthesis.regexp}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#${prefix}${basename}-expression'
+    ${nested}
 
-  ${prefix}regexp-comments:
-    name: comment.regexp
-    begin: \(\?#
-    end: (\)${marker})${guard}
-    beginCaptures:
-      '0': {name: punctuation.comment.begin.regexp}
-    endCaptures:
-      '1': {name: punctuation.comment.end.regexp}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#codetags'
+${prefix}regexp-comments:
+  name: comment.regexp
+  begin: \(\?#
+  end: (\)${marker})${guard}
+  beginCaptures:
+    '0': {name: punctuation.comment.begin.regexp}
+  endCaptures:
+    '1': {name: punctuation.comment.end.regexp}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#codetags'
 
-  ${prefix}${basename}-lookahead:
-    begin: '(\()\?='
-    end: (\)${marker})${guard}
-    beginCaptures:
-      '0': {name: keyword.operator.lookahead.regexp}
-      '1': {name: punctuation.parenthesis.lookahead.begin.regexp}
-    endCaptures:
-      '1': {name: punctuation.parenthesis.lookahead.end.regexp
-                  keyword.operator.lookahead.regexp}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#${prefix}${basename}-expression'
-      ${nested}
+${prefix}${basename}-lookahead:
+  begin: '(\()\?='
+  end: (\)${marker})${guard}
+  beginCaptures:
+    '0': {name: keyword.operator.lookahead.regexp}
+    '1': {name: punctuation.parenthesis.lookahead.begin.regexp}
+  endCaptures:
+    '1': {name: punctuation.parenthesis.lookahead.end.regexp
+                keyword.operator.lookahead.regexp}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#${prefix}${basename}-expression'
+    ${nested}
 
-  ${prefix}${basename}-lookahead-negative:
-    begin: '(\()\?!'
-    end: (\)${marker})${guard}
-    beginCaptures:
-      '0': {name: keyword.operator.lookahead.negative.regexp}
-      '1': {name: punctuation.parenthesis.lookahead.begin.regexp}
-    endCaptures:
-      '1': {name: punctuation.parenthesis.lookahead.end.regexp
-                  keyword.operator.lookahead.negative.regexp}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#${prefix}${basename}-expression'
-      ${nested}
+${prefix}${basename}-lookahead-negative:
+  begin: '(\()\?!'
+  end: (\)${marker})${guard}
+  beginCaptures:
+    '0': {name: keyword.operator.lookahead.negative.regexp}
+    '1': {name: punctuation.parenthesis.lookahead.begin.regexp}
+  endCaptures:
+    '1': {name: punctuation.parenthesis.lookahead.end.regexp
+                keyword.operator.lookahead.negative.regexp}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#${prefix}${basename}-expression'
+    ${nested}
 
-  ${prefix}${basename}-lookbehind:
-    begin: '(\()\?<='
-    end: (\)${marker})${guard}
-    beginCaptures:
-      '0': {name: keyword.operator.lookbehind.regexp}
-      '1': {name: punctuation.parenthesis.lookbehind.begin.regexp}
-    endCaptures:
-      '1': {name: punctuation.parenthesis.lookbehind.end.regexp
-                  keyword.operator.lookbehind.regexp}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#${prefix}${basename}-expression'
-      ${nested}
+${prefix}${basename}-lookbehind:
+  begin: '(\()\?<='
+  end: (\)${marker})${guard}
+  beginCaptures:
+    '0': {name: keyword.operator.lookbehind.regexp}
+    '1': {name: punctuation.parenthesis.lookbehind.begin.regexp}
+  endCaptures:
+    '1': {name: punctuation.parenthesis.lookbehind.end.regexp
+                keyword.operator.lookbehind.regexp}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#${prefix}${basename}-expression'
+    ${nested}
 
-  ${prefix}${basename}-lookbehind-negative:
-    begin: '(\()\?<!'
-    end: (\)${marker})${guard}
-    beginCaptures:
-      '0': {name: keyword.operator.lookbehind.negative.regexp}
-      '1': {name: punctuation.parenthesis.lookbehind.begin.regexp}
-    endCaptures:
-      '1': {name: punctuation.parenthesis.lookbehind.end.regexp
-                  keyword.operator.lookbehind.negative.regexp}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#${prefix}${basename}-expression'
-      ${nested}
+${prefix}${basename}-lookbehind-negative:
+  begin: '(\()\?<!'
+  end: (\)${marker})${guard}
+  beginCaptures:
+    '0': {name: keyword.operator.lookbehind.negative.regexp}
+    '1': {name: punctuation.parenthesis.lookbehind.begin.regexp}
+  endCaptures:
+    '1': {name: punctuation.parenthesis.lookbehind.end.regexp
+                keyword.operator.lookbehind.negative.regexp}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#${prefix}${basename}-expression'
+    ${nested}
 
-  ${prefix}${basename}-conditional:
-    begin: '(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)'
-    end: (\)${marker})${guard}
-    beginCaptures:
-      '0': {name: keyword.operator.conditional.regexp}
-      '1': {name: punctuation.parenthesis.conditional.begin.regexp}
-    endCaptures:
-      '1': {name: punctuation.parenthesis.conditional.end.regexp
-                  keyword.operator.conditional.negative.regexp}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#${prefix}${basename}-expression'
-      ${nested}
+${prefix}${basename}-conditional:
+  begin: '(\()\?\((\w+(?:\s+[[:alnum:]]+)?|\d+)\)'
+  end: (\)${marker})${guard}
+  beginCaptures:
+    '0': {name: keyword.operator.conditional.regexp}
+    '1': {name: punctuation.parenthesis.conditional.begin.regexp}
+  endCaptures:
+    '1': {name: punctuation.parenthesis.conditional.end.regexp
+                keyword.operator.conditional.negative.regexp}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#${prefix}${basename}-expression'
+    ${nested}
 
-  ${prefix}${basename}-parentheses-non-capturing:
-    begin: '\(\?:'
-    end: (\)${marker})${guard}
-    beginCaptures:
-      '0': {name: punctuation.parenthesis.non-capturing.begin.regexp
-                  support.other.parenthesis.regexp}
-    endCaptures:
-      '1': {name: punctuation.parenthesis.non-capturing.end.regexp
-                  support.other.parenthesis.regexp}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#${prefix}${basename}-expression'
-      ${nested}
+${prefix}${basename}-parentheses-non-capturing:
+  begin: '\(\?:'
+  end: (\)${marker})${guard}
+  beginCaptures:
+    '0': {name: punctuation.parenthesis.non-capturing.begin.regexp
+                support.other.parenthesis.regexp}
+  endCaptures:
+    '1': {name: punctuation.parenthesis.non-capturing.end.regexp
+                support.other.parenthesis.regexp}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#${prefix}${basename}-expression'
+    ${nested}
 
-  ${prefix}${basename}-parentheses:
-    begin: \(
-    end: (\)${marker})${guard}
-    beginCaptures:
-      '0': {name: punctuation.parenthesis.begin.regexp
-                  support.other.parenthesis.regexp}
-    endCaptures:
-      '1': {name: punctuation.parenthesis.end.regexp
-                  support.other.parenthesis.regexp}
-      '2': {name: invalid.illegal.newline.python}
-    patterns:
-      - include: '#${prefix}${basename}-expression'
-      ${nested}
+${prefix}${basename}-parentheses:
+  begin: \(
+  end: (\)${marker})${guard}
+  beginCaptures:
+    '0': {name: punctuation.parenthesis.begin.regexp
+                support.other.parenthesis.regexp}
+  endCaptures:
+    '1': {name: punctuation.parenthesis.end.regexp
+                support.other.parenthesis.regexp}
+    '2': {name: invalid.illegal.newline.python}
+  patterns:
+    - include: '#${prefix}${basename}-expression'
+    ${nested}
 
 ...

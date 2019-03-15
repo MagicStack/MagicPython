@@ -1,11 +1,10 @@
 ---
-repository:
-  comments${suffix}:
-    name: comment.line.number-sign.python
-    begin: (\#)
-    beginCaptures:
-      '1': {name: punctuation.definition.comment.python}
-    end: ($${marker})
-    patterns:
-      - include: '#codetags'
+comments${suffix}:
+  name: comment.line.number-sign.python
+  begin: (\#)
+  beginCaptures:
+    '1': {name: punctuation.definition.comment.python}
+  end: ($${marker})
+  patterns:
+    - include: '#codetags'
 ...
