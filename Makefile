@@ -19,7 +19,7 @@ test: ci-test
 	atom -t test/atom-spec
 
 devenv:
-	npm install syntaxdev@0.0.16
+	npm install --dev
 
 release:
 	./node_modules/.bin/syntaxdev build-plist --in grammars/src/MagicPython.syntax.yaml --out grammars/MagicPython.tmLanguage
