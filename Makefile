@@ -15,6 +15,11 @@ ci-test: release
 	] ; \
 		then echo "Error: package.version != git.tag" && exit 1 ; fi
 
+update-test:
+#	Run tests and overwrite the output
+	./node_modules/.bin/syntaxdev test --tests test/**/*.py --syntax grammars/src/MagicPython.syntax.yaml --overwrite-tests
+	./node_modules/.bin/syntaxdev test --tests test/**/*.re --syntax grammars/src/MagicRegExp.syntax.yaml --overwrite-tests
+
 test: ci-test
 	atom -t test/atom-spec
 
