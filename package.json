@@ -69,7 +69,7 @@
   },
   "devDependencies": {
     "oniguruma": "^7.0.0",
-    "syntaxdev": "^0.1.0"
+    "syntaxdev": "^0.1.3"
   },
   "dependencies": {}
 }
