@@ -10,6 +10,7 @@ class F:
 
 
 
+
 class         : meta.class.python, source.python, storage.type.class.python
               : meta.class.python, source.python
 F             : entity.name.type.class.python, meta.class.python, source.python
@@ -32,16 +33,16 @@ b             : meta.function.parameters.python, meta.function.python, source.py
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
 self          : source.python, variable.language.special.self.python
-.             : punctuation.separator.period.python, source.python
-a             : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+a             : meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 a             : source.python
               : source.python
 self          : source.python, variable.language.special.self.python
-.             : punctuation.separator.period.python, source.python
-b             : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+b             : meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
@@ -57,18 +58,18 @@ self          : meta.function-call.python, source.python, variable.language.spec
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
               : source.python
 a             : source.python
-.             : punctuation.separator.period.python, source.python
-self          : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+self          : meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
               : source.python
 a             : source.python
-.             : punctuation.separator.period.python, source.python
-self          : source.python
-.             : punctuation.separator.period.python, source.python
-bar           : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+self          : meta.member.access.python, source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+bar           : meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python

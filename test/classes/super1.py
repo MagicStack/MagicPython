@@ -30,39 +30,39 @@ self          : meta.function.parameters.python, meta.function.python, source.py
 super         : meta.function-call.python, source.python, support.type.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
-.             : punctuation.separator.period.python, source.python
-__init__      : meta.function-call.python, source.python, support.function.magic.python
-(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
-foo           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
-=             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-)             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+__init__      : meta.function-call.python, meta.member.access.python, source.python, support.function.magic.python
+(             : meta.function-call.python, meta.member.access.python, punctuation.definition.arguments.begin.python, source.python
+foo           : meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python, variable.parameter.function-call.python
+=             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
+1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
+)             : meta.function-call.python, meta.member.access.python, punctuation.definition.arguments.end.python, source.python
               : source.python
 super         : meta.function-call.python, source.python, support.type.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
-.             : punctuation.separator.period.python, source.python
-              : source.python
-__init__      : meta.function-call.python, source.python, support.function.magic.python
-(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
-foo           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
-=             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-)             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+              : meta.member.access.python, source.python
+__init__      : meta.function-call.python, meta.member.access.python, source.python, support.function.magic.python
+(             : meta.function-call.python, meta.member.access.python, punctuation.definition.arguments.begin.python, source.python
+foo           : meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python, variable.parameter.function-call.python
+=             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
+1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
+)             : meta.function-call.python, meta.member.access.python, punctuation.definition.arguments.end.python, source.python
               : source.python
 super         : meta.function-call.python, source.python, support.type.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
-.             : punctuation.separator.period.python, source.python
-              : source.python
-\             : punctuation.separator.continuation.line.python, source.python
-              : source.python
-__init__      : meta.function-call.python, source.python, support.function.magic.python
-(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
-foo           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
-=             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-)             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+              : meta.member.access.python, source.python
+\             : meta.member.access.python, punctuation.separator.continuation.line.python, source.python
+              : meta.member.access.python, source.python
+__init__      : meta.function-call.python, meta.member.access.python, source.python, support.function.magic.python
+(             : meta.function-call.python, meta.member.access.python, punctuation.definition.arguments.begin.python, source.python
+foo           : meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python, variable.parameter.function-call.python
+=             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
+1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
+)             : meta.function-call.python, meta.member.access.python, punctuation.definition.arguments.end.python, source.python
               : source.python
 __init__      : meta.function-call.python, source.python, support.function.magic.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
@@ -73,13 +73,13 @@ foo           : meta.function-call.arguments.python, meta.function-call.python, 
               : source.python
               : source.python
 foo           : source.python
-.             : punctuation.separator.period.python, source.python
-__init__      : meta.function-call.python, source.python, support.function.magic.python
-(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
-bar           : meta.function-call.arguments.python, meta.function-call.python, source.python, variable.parameter.function-call.python
-=             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-)             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+__init__      : meta.function-call.python, meta.member.access.python, source.python, support.function.magic.python
+(             : meta.function-call.python, meta.member.access.python, punctuation.definition.arguments.begin.python, source.python
+bar           : meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python, variable.parameter.function-call.python
+=             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
+1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
+)             : meta.function-call.python, meta.member.access.python, punctuation.definition.arguments.end.python, source.python
               : source.python
 __init__      : meta.function-call.python, source.python, support.function.magic.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python

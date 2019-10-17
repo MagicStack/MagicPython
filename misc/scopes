@@ -75,6 +75,7 @@ meta.function.parameters.python
 meta.function.python
 meta.item-access.python
 meta.lambda-function.python
+meta.member.access.python
 meta.named.regexp
 meta.typehint.comment.python
 punctuation.character.set.begin.regexp

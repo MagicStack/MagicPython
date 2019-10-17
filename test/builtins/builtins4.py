@@ -7,21 +7,22 @@ some.Exception
 
 
 
+
 some          : source.python
-.             : punctuation.separator.period.python, source.python
-int           : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+int           : meta.member.access.python, source.python
 some          : source.python
-.             : punctuation.separator.period.python, source.python
-sum           : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+sum           : meta.member.access.python, source.python
 some          : source.python
-.             : punctuation.separator.period.python, source.python
-super         : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+super         : meta.member.access.python, source.python
 some          : source.python
-.             : punctuation.separator.period.python, source.python
-unicode       : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+unicode       : meta.member.access.python, source.python
 some          : source.python
-.             : punctuation.separator.period.python, source.python
-foo           : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+foo           : meta.member.access.python, source.python
 some          : source.python
-.             : punctuation.separator.period.python, source.python
-Exception     : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+Exception     : meta.member.access.python, source.python

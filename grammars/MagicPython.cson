@@ -407,6 +407,7 @@ repository:
       }
     ]
   "member-access":
+    name: "meta.member.access.python"
     begin: "(\\.)\\s*(?!\\.)"
     end: '''
       (?x)
@@ -1167,6 +1168,7 @@ repository:
       "1":
         name: "entity.other.inherited-class.python"
   "member-access-class":
+    name: "meta.member.access.python"
     begin: "(\\.)\\s*(?!\\.)"
     end: "(?<=\\S)(?=\\W)|$"
     beginCaptures:

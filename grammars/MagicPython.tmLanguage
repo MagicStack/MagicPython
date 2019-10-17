@@ -614,6 +614,8 @@ it's probably control flow like:
       </dict>
       <key>member-access</key>
       <dict>
+        <key>name</key>
+        <string>meta.member.access.python</string>
         <key>begin</key>
         <string>(\.)\s*(?!\.)</string>
         <key>end</key>
@@ -1796,6 +1798,8 @@ it's probably control flow like:
       </dict>
       <key>member-access-class</key>
       <dict>
+        <key>name</key>
+        <string>meta.member.access.python</string>
         <key>begin</key>
         <string>(\.)\s*(?!\.)</string>
         <key>end</key>

@@ -10,6 +10,7 @@ def bar():
 
 
 
+
 from          : keyword.control.import.python, source.python
 .             : punctuation.separator.period.python, source.python
 foo           : source.python
@@ -24,8 +25,8 @@ import        : keyword.control.import.python, source.python
 a             : source.python
               : source.python
 foo           : source.python
-.             : punctuation.separator.period.python, source.python
-import        : keyword.control.import.python, source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+import        : keyword.control.import.python, meta.member.access.python, source.python
               : source.python
 raise         : keyword.control.flow.python, source.python
               : source.python

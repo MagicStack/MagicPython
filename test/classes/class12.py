@@ -12,6 +12,7 @@ class F:
 
 
 
+
 class         : meta.class.python, source.python, storage.type.class.python
               : meta.class.python, source.python
 F             : entity.name.type.class.python, meta.class.python, source.python
@@ -37,16 +38,16 @@ b             : meta.function.parameters.python, meta.function.python, source.py
 :             : meta.function.python, punctuation.section.function.begin.python, source.python
               : source.python
 cls           : source.python, variable.language.special.cls.python
-.             : punctuation.separator.period.python, source.python
-a             : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+a             : meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 a             : source.python
               : source.python
 cls           : source.python, variable.language.special.cls.python
-.             : punctuation.separator.period.python, source.python
-b             : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+b             : meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
@@ -68,18 +69,18 @@ cls           : source.python, variable.language.special.cls.python
 1             : constant.numeric.dec.python, source.python
               : source.python
 a             : source.python
-.             : punctuation.separator.period.python, source.python
-cls           : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+cls           : meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
 1             : constant.numeric.dec.python, source.python
               : source.python
 a             : source.python
-.             : punctuation.separator.period.python, source.python
-cls           : source.python
-.             : punctuation.separator.period.python, source.python
-__name__      : source.python, support.variable.magic.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+cls           : meta.member.access.python, source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+__name__      : meta.member.access.python, source.python, support.variable.magic.python
               : source.python
 cls           : meta.item-access.python, source.python, variable.language.special.cls.python
 [             : meta.item-access.python, punctuation.definition.arguments.begin.python, source.python

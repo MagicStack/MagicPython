@@ -3,9 +3,10 @@ Exception.a
 
 
 
+
 a             : source.python
-.             : punctuation.separator.period.python, source.python
-Exception     : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+Exception     : meta.member.access.python, source.python
 Exception     : source.python, support.type.exception.python
-.             : punctuation.separator.period.python, source.python
-a             : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+a             : meta.member.access.python, source.python

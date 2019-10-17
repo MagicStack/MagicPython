@@ -30,6 +30,6 @@ AlignConsecutiveAssignments: true : source.python, string.quoted.single.python
  -- ./**/*.proto >  : source.python, string.quoted.single.python
 {OUTPUT}      : constant.character.format.placeholder.other.python, meta.format.brace.python, source.python, string.quoted.single.python
 "             : punctuation.definition.string.end.python, source.python, string.quoted.single.python
-.             : punctuation.separator.period.python, source.python
-format        : meta.function-call.generic.python, meta.function-call.python, source.python
-(             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+format        : meta.function-call.generic.python, meta.function-call.python, meta.member.access.python, source.python
+(             : meta.function-call.python, meta.member.access.python, punctuation.definition.arguments.begin.python, source.python

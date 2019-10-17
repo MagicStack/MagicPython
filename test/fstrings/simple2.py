@@ -2,6 +2,7 @@ a = f"normal {{ normal }} normal } {10!r} normal {fo.__add__!s}"
 
 
 
+
 a             : source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
@@ -22,8 +23,8 @@ normal        : meta.fstring.python, source.python, string.interpolated.python, 
  normal       : meta.fstring.python, source.python, string.interpolated.python, string.quoted.single.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 fo            : meta.fstring.python, source.python
-.             : meta.fstring.python, punctuation.separator.period.python, source.python
-__add__       : meta.fstring.python, source.python, support.function.magic.python
+.             : meta.fstring.python, meta.member.access.python, punctuation.separator.period.python, source.python
+__add__       : meta.fstring.python, meta.member.access.python, source.python, support.function.magic.python
 !s            : meta.fstring.python, source.python, storage.type.format.python
 }             : constant.character.format.placeholder.other.python, meta.fstring.python, source.python
 "             : meta.fstring.python, punctuation.definition.string.end.python, source.python, string.interpolated.python, string.quoted.single.python
