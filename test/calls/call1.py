@@ -2,6 +2,7 @@ some_call(A, b, c[1], *args, FOO=lambda:{'q': 42}, **kwargs)
 
 
 
+
 some_call     : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 A             : meta.function-call.arguments.python, meta.function-call.python, source.python
@@ -10,7 +11,7 @@ A             : meta.function-call.arguments.python, meta.function-call.python, 
 b             : meta.function-call.arguments.python, meta.function-call.python, source.python
 ,             : meta.function-call.arguments.python, meta.function-call.python, punctuation.separator.arguments.python, source.python
               : meta.function-call.arguments.python, meta.function-call.python, source.python
-c             : meta.function-call.arguments.python, meta.function-call.python, meta.item-access.python, source.python
+c             : meta.function-call.arguments.python, meta.function-call.python, meta.indexed-name.python, meta.item-access.python, source.python
 [             : meta.function-call.arguments.python, meta.function-call.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
 1             : constant.numeric.dec.python, meta.function-call.arguments.python, meta.function-call.python, meta.item-access.arguments.python, meta.item-access.python, source.python
 ]             : meta.function-call.arguments.python, meta.function-call.python, meta.item-access.python, punctuation.definition.arguments.end.python, source.python

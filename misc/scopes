@@ -60,6 +60,7 @@ keyword.operator.python
 keyword.operator.quantifier.regexp
 keyword.operator.unpacking.arguments.python
 keyword.operator.unpacking.parameter.python
+meta.attribute.python
 meta.backreference.named.regexp
 meta.backreference.regexp
 meta.character.set.regexp
@@ -73,6 +74,7 @@ meta.function-call.python
 meta.function.decorator.python
 meta.function.parameters.python
 meta.function.python
+meta.indexed-name.python
 meta.item-access.python
 meta.lambda-function.python
 meta.member.access.python

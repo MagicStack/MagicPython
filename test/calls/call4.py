@@ -29,4 +29,4 @@ foo           : source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
 None          : keyword.illegal.name.python, meta.member.access.python, source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-baz           : meta.member.access.python, source.python
+baz           : meta.attribute.python, meta.member.access.python, source.python

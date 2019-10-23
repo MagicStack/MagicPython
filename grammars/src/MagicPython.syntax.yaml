@@ -449,6 +449,7 @@ repository:
     patterns:
       - include: '#function-call'
       - include: '#member-access-base'
+      - include: '#member-access-attribute'
 
   member-access-base:
     patterns:
@@ -458,6 +459,13 @@ repository:
       - include: '#special-names'
       - include: '#line-continuation'
       - include: '#item-access'
+
+  member-access-attribute:
+    comment: Highlight attribute access in otherwise non-specialized cases.
+    name: meta.attribute.python
+    match: |
+      (?x)
+        \b ([[:alpha:]_]\w*) \b
 
   special-names:
     name: constant.other.caps.python
@@ -1142,7 +1150,8 @@ repository:
       - include: '#special-variables'
       - include: '#builtin-functions'
       - include: '#special-names'
-      - match: |
+      - name: meta.indexed-name.python
+        match: |
           (?x)
             \b ([[:alpha:]_]\w*) \b
 

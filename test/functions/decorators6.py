@@ -6,6 +6,8 @@
 def foo(): pass
 
 
+
+
 @             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.definition.decorator.python, source.python
 a             : entity.name.function.decorator.python, meta.function.decorator.python, source.python
 .             : entity.name.function.decorator.python, meta.function.decorator.python, punctuation.separator.period.python, source.python
@@ -29,7 +31,7 @@ BAR           : constant.other.caps.python, meta.function-call.arguments.python,
 )             : meta.function.decorator.python, punctuation.definition.arguments.end.python, source.python
 . \           : invalid.illegal.decorator.python, meta.function.decorator.python, source.python
               : source.python
-baz           : meta.item-access.python, source.python
+baz           : meta.indexed-name.python, meta.item-access.python, source.python
 [             : meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
 1             : constant.numeric.dec.python, meta.item-access.arguments.python, meta.item-access.python, source.python
 :             : meta.item-access.arguments.python, meta.item-access.python, punctuation.separator.slice.python, source.python

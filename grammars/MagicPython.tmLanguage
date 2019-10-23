@@ -647,6 +647,10 @@ it's probably control flow like:
             <key>include</key>
             <string>#member-access-base</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#member-access-attribute</string>
+          </dict>
         </array>
       </dict>
       <key>member-access-base</key>
@@ -678,6 +682,17 @@ it's probably control flow like:
             <string>#item-access</string>
           </dict>
         </array>
+      </dict>
+      <key>member-access-attribute</key>
+      <dict>
+        <key>comment</key>
+        <string>Highlight attribute access in otherwise non-specialized cases.</string>
+        <key>name</key>
+        <string>meta.attribute.python</string>
+        <key>match</key>
+        <string>(?x)
+  \b ([[:alpha:]_]\w*) \b
+</string>
       </dict>
       <key>special-names</key>
       <dict>
@@ -2340,6 +2355,8 @@ it's probably control flow like:
             <string>#special-names</string>
           </dict>
           <dict>
+            <key>name</key>
+            <string>meta.indexed-name.python</string>
             <key>match</key>
             <string>(?x)
   \b ([[:alpha:]_]\w*) \b

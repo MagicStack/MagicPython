@@ -8,7 +8,8 @@ multiline 'binary' string \
 
 
 
-a             : meta.item-access.python, source.python
+
+a             : meta.indexed-name.python, meta.item-access.python, source.python
 [             : meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
 1             : constant.numeric.dec.python, meta.item-access.arguments.python, meta.item-access.python, source.python
 ]             : meta.item-access.python, punctuation.definition.arguments.end.python, source.python

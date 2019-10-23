@@ -71,7 +71,7 @@ __debug__     : source.python, support.variable.magic.python
 __builtins__  : source.python, support.variable.magic.python
 __builtins__  : source.python, support.variable.magic.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-len           : meta.member.access.python, source.python
+len           : meta.attribute.python, meta.member.access.python, source.python
 print         : meta.function-call.python, source.python, support.function.builtin.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
 __builtins__  : meta.function-call.arguments.python, meta.function-call.python, source.python, support.variable.magic.python
@@ -183,4 +183,4 @@ some          : source.python
 __traceback__ : meta.member.access.python, source.python, support.variable.magic.python
 some          : source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-__notspecial__ : meta.member.access.python, source.python
+__notspecial__ : meta.attribute.python, meta.member.access.python, source.python

@@ -9,7 +9,7 @@ a             : source.python
               : source.python
 self          : source.python, variable.language.special.self.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-some_list     : meta.item-access.python, meta.member.access.python, source.python
+some_list     : meta.indexed-name.python, meta.item-access.python, meta.member.access.python, source.python
 [             : meta.item-access.python, meta.member.access.python, punctuation.definition.arguments.begin.python, source.python
 1             : constant.numeric.dec.python, meta.item-access.arguments.python, meta.item-access.python, meta.member.access.python, source.python
 :             : meta.item-access.arguments.python, meta.item-access.python, meta.member.access.python, punctuation.separator.slice.python, source.python

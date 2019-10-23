@@ -14,7 +14,7 @@ PROTOCOL_v2   : constant.other.caps.python, source.python
               : source.python
 QQQ           : constant.other.caps.python, source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-bar           : meta.member.access.python, source.python
+bar           : meta.attribute.python, meta.member.access.python, source.python
               : source.python
 baz           : source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python

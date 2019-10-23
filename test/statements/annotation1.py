@@ -3,6 +3,7 @@ some_list: List[int] = []  # variable with initial value
 
 
 
+
 some_number   : source.python
 :             : punctuation.separator.colon.python, source.python
               : source.python
@@ -13,7 +14,7 @@ int           : source.python, support.type.python
 some_list     : source.python
 :             : punctuation.separator.colon.python, source.python
               : source.python
-List          : meta.item-access.python, source.python
+List          : meta.indexed-name.python, meta.item-access.python, source.python
 [             : meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
 int           : meta.item-access.arguments.python, meta.item-access.python, source.python, support.type.python
 ]             : meta.item-access.python, punctuation.definition.arguments.end.python, source.python

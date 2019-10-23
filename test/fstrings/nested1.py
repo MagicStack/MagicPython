@@ -26,7 +26,7 @@ f             : meta.fstring.python, meta.function-call.arguments.python, meta.f
               : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python, string.interpolated.python, string.quoted.multi.python
 {             : constant.character.format.placeholder.other.python, meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
               : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, source.python
-bar           : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, meta.item-access.python, source.python
+bar           : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, meta.indexed-name.python, meta.item-access.python, source.python
 [             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, meta.item-access.python, punctuation.definition.arguments.begin.python, source.python
 "             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, meta.item-access.arguments.python, meta.item-access.python, punctuation.definition.string.begin.python, source.python, string.quoted.single.python
 q             : meta.fstring.python, meta.function-call.arguments.python, meta.function-call.python, meta.item-access.arguments.python, meta.item-access.python, source.python, string.quoted.single.python

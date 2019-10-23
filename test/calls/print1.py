@@ -57,7 +57,7 @@ print         : source.python, support.function.builtin.python
 >>            : keyword.operator.bitwise.python, source.python
 sys           : source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-stderr        : meta.member.access.python, source.python
+stderr        : meta.attribute.python, meta.member.access.python, source.python
 ,             : punctuation.separator.element.python, source.python
               : source.python
 "             : punctuation.definition.string.begin.python, source.python, string.quoted.single.python
@@ -74,7 +74,7 @@ file          : meta.function-call.arguments.python, meta.function-call.python, 
 =             : keyword.operator.assignment.python, meta.function-call.arguments.python, meta.function-call.python, source.python
 sys           : meta.function-call.arguments.python, meta.function-call.python, source.python
 .             : meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, punctuation.separator.period.python, source.python
-stderr        : meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
+stderr        : meta.attribute.python, meta.function-call.arguments.python, meta.function-call.python, meta.member.access.python, source.python
 )             : meta.function-call.python, punctuation.definition.arguments.end.python, source.python
 print         : meta.function-call.python, source.python, support.function.builtin.python
               : meta.function-call.python, source.python

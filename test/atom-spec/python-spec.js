@@ -188,7 +188,7 @@ describe("Grammar Tests", function() {
       expect(tokens[5][1].value).toBe(".");
       expect(tokens[5][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[5][2].value).toBe("len");
-      expect(tokens[5][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[5][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[6][0].value).toBe("print");
       expect(tokens[6][0].scopes).toEqual(["source.python","meta.function-call.python","support.function.builtin.python"]);
       expect(tokens[6][1].value).toBe("(");
@@ -412,7 +412,7 @@ describe("Grammar Tests", function() {
       expect(tokens[42][1].value).toBe(".");
       expect(tokens[42][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[42][2].value).toBe("__notspecial__");
-      expect(tokens[42][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[42][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
     });
 
   it("test/builtins/builtins4.py", 
@@ -423,37 +423,37 @@ describe("Grammar Tests", function() {
       expect(tokens[0][1].value).toBe(".");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[0][2].value).toBe("int");
-      expect(tokens[0][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[0][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[1][0].value).toBe("some");
       expect(tokens[1][0].scopes).toEqual(["source.python"]);
       expect(tokens[1][1].value).toBe(".");
       expect(tokens[1][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[1][2].value).toBe("sum");
-      expect(tokens[1][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[1][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[2][0].value).toBe("some");
       expect(tokens[2][0].scopes).toEqual(["source.python"]);
       expect(tokens[2][1].value).toBe(".");
       expect(tokens[2][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[2][2].value).toBe("super");
-      expect(tokens[2][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[2][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[3][0].value).toBe("some");
       expect(tokens[3][0].scopes).toEqual(["source.python"]);
       expect(tokens[3][1].value).toBe(".");
       expect(tokens[3][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[3][2].value).toBe("unicode");
-      expect(tokens[3][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[3][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[4][0].value).toBe("some");
       expect(tokens[4][0].scopes).toEqual(["source.python"]);
       expect(tokens[4][1].value).toBe(".");
       expect(tokens[4][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[4][2].value).toBe("foo");
-      expect(tokens[4][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[4][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[5][0].value).toBe("some");
       expect(tokens[5][0].scopes).toEqual(["source.python"]);
       expect(tokens[5][1].value).toBe(".");
       expect(tokens[5][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[5][2].value).toBe("Exception");
-      expect(tokens[5][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[5][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
     });
 
   it("test/builtins/builtins5.py", 
@@ -545,7 +545,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][7].value).toBe(" ");
       expect(tokens[0][7].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python"]);
       expect(tokens[0][8].value).toBe("c");
-      expect(tokens[0][8].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.item-access.python"]);
+      expect(tokens[0][8].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.item-access.python","meta.indexed-name.python"]);
       expect(tokens[0][9].value).toBe("[");
       expect(tokens[0][9].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.item-access.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[0][10].value).toBe("1");
@@ -753,7 +753,7 @@ describe("Grammar Tests", function() {
       expect(tokens[2][9].value).toBe(".");
       expect(tokens[2][9].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[2][10].value).toBe("baz");
-      expect(tokens[2][10].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[2][10].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
     });
 
   it("test/calls/call5.py", 
@@ -1111,7 +1111,7 @@ describe("Grammar Tests", function() {
       expect(tokens[6][4].value).toBe(".");
       expect(tokens[6][4].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[6][5].value).toBe("stderr");
-      expect(tokens[6][5].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[6][5].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[6][6].value).toBe(",");
       expect(tokens[6][6].scopes).toEqual(["source.python","punctuation.separator.element.python"]);
       expect(tokens[6][7].value).toBe(" ");
@@ -1145,7 +1145,7 @@ describe("Grammar Tests", function() {
       expect(tokens[7][10].value).toBe(".");
       expect(tokens[7][10].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[7][11].value).toBe("stderr");
-      expect(tokens[7][11].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.member.access.python"]);
+      expect(tokens[7][11].scopes).toEqual(["source.python","meta.function-call.python","meta.function-call.arguments.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[7][12].value).toBe(")");
       expect(tokens[7][12].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.end.python"]);
       expect(tokens[8][0].value).toBe("print");
@@ -1316,7 +1316,7 @@ describe("Grammar Tests", function() {
       expect(tokens[2][2].value).toBe(".");
       expect(tokens[2][2].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[2][3].value).toBe("a");
-      expect(tokens[2][3].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[2][3].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[2][4].value).toBe(" ");
       expect(tokens[2][4].scopes).toEqual(["source.python"]);
       expect(tokens[2][5].value).toBe("=");
@@ -1332,7 +1332,7 @@ describe("Grammar Tests", function() {
       expect(tokens[3][2].value).toBe(".");
       expect(tokens[3][2].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[3][3].value).toBe("b");
-      expect(tokens[3][3].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[3][3].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[3][4].value).toBe(" ");
       expect(tokens[3][4].scopes).toEqual(["source.python"]);
       expect(tokens[3][5].value).toBe("=");
@@ -1366,7 +1366,7 @@ describe("Grammar Tests", function() {
       expect(tokens[6][2].value).toBe(".");
       expect(tokens[6][2].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[6][3].value).toBe("self");
-      expect(tokens[6][3].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[6][3].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[6][4].value).toBe(" ");
       expect(tokens[6][4].scopes).toEqual(["source.python"]);
       expect(tokens[6][5].value).toBe("=");
@@ -1382,11 +1382,11 @@ describe("Grammar Tests", function() {
       expect(tokens[7][2].value).toBe(".");
       expect(tokens[7][2].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[7][3].value).toBe("self");
-      expect(tokens[7][3].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[7][3].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[7][4].value).toBe(".");
       expect(tokens[7][4].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[7][5].value).toBe("bar");
-      expect(tokens[7][5].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[7][5].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[7][6].value).toBe(" ");
       expect(tokens[7][6].scopes).toEqual(["source.python"]);
       expect(tokens[7][7].value).toBe("=");
@@ -1463,7 +1463,7 @@ describe("Grammar Tests", function() {
       expect(tokens[3][2].value).toBe(".");
       expect(tokens[3][2].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[3][3].value).toBe("a");
-      expect(tokens[3][3].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[3][3].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[3][4].value).toBe(" ");
       expect(tokens[3][4].scopes).toEqual(["source.python"]);
       expect(tokens[3][5].value).toBe("=");
@@ -1479,7 +1479,7 @@ describe("Grammar Tests", function() {
       expect(tokens[4][2].value).toBe(".");
       expect(tokens[4][2].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[4][3].value).toBe("b");
-      expect(tokens[4][3].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[4][3].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[4][4].value).toBe(" ");
       expect(tokens[4][4].scopes).toEqual(["source.python"]);
       expect(tokens[4][5].value).toBe("=");
@@ -1525,7 +1525,7 @@ describe("Grammar Tests", function() {
       expect(tokens[8][2].value).toBe(".");
       expect(tokens[8][2].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[8][3].value).toBe("cls");
-      expect(tokens[8][3].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[8][3].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[8][4].value).toBe(" ");
       expect(tokens[8][4].scopes).toEqual(["source.python"]);
       expect(tokens[8][5].value).toBe("=");
@@ -1541,7 +1541,7 @@ describe("Grammar Tests", function() {
       expect(tokens[9][2].value).toBe(".");
       expect(tokens[9][2].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[9][3].value).toBe("cls");
-      expect(tokens[9][3].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[9][3].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[9][4].value).toBe(".");
       expect(tokens[9][4].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[9][5].value).toBe("__name__");
@@ -5071,7 +5071,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][9].value).toBe(".");
       expect(tokens[0][9].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[0][10].value).toBe("bar");
-      expect(tokens[0][10].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[0][10].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[0][11].value).toBe(" ");
       expect(tokens[0][11].scopes).toEqual(["source.python"]);
       expect(tokens[0][12].value).toBe("baz");
@@ -5394,7 +5394,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][5].value).toBe(".");
       expect(tokens[0][5].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[0][6].value).toBe("some_list");
-      expect(tokens[0][6].scopes).toEqual(["source.python","meta.member.access.python","meta.item-access.python"]);
+      expect(tokens[0][6].scopes).toEqual(["source.python","meta.member.access.python","meta.item-access.python","meta.indexed-name.python"]);
       expect(tokens[0][7].value).toBe("[");
       expect(tokens[0][7].scopes).toEqual(["source.python","meta.member.access.python","meta.item-access.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[0][8].value).toBe("1");
@@ -5470,7 +5470,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][1].value).toBe(".");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[0][2].value).toBe("something");
-      expect(tokens[0][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[0][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
     });
 
   it("test/expressions/expr16.py", 
@@ -5541,13 +5541,13 @@ describe("Grammar Tests", function() {
       expect(tokens[0][1].value).toBe(".");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[0][2].value).toBe("Exception");
-      expect(tokens[0][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[0][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
       expect(tokens[1][0].value).toBe("Exception");
       expect(tokens[1][0].scopes).toEqual(["source.python","support.type.exception.python"]);
       expect(tokens[1][1].value).toBe(".");
       expect(tokens[1][1].scopes).toEqual(["source.python","meta.member.access.python","punctuation.separator.period.python"]);
       expect(tokens[1][2].value).toBe("a");
-      expect(tokens[1][2].scopes).toEqual(["source.python","meta.member.access.python"]);
+      expect(tokens[1][2].scopes).toEqual(["source.python","meta.member.access.python","meta.attribute.python"]);
     });
 
   it("test/expressions/expr19.py", 
@@ -6537,7 +6537,7 @@ describe("Grammar Tests", function() {
       expect(tokens[4][2].value).toBe(" ");
       expect(tokens[4][2].scopes).toEqual(["source.python","meta.fstring.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python"]);
       expect(tokens[4][3].value).toBe("bar");
-      expect(tokens[4][3].scopes).toEqual(["source.python","meta.fstring.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","meta.item-access.python"]);
+      expect(tokens[4][3].scopes).toEqual(["source.python","meta.fstring.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","meta.item-access.python","meta.indexed-name.python"]);
       expect(tokens[4][4].value).toBe("[");
       expect(tokens[4][4].scopes).toEqual(["source.python","meta.fstring.python","meta.function-call.python","meta.function-call.arguments.python","meta.fstring.python","meta.item-access.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[4][5].value).toBe("\"");
@@ -8458,7 +8458,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][11].value).toBe(" ");
       expect(tokens[0][11].scopes).toEqual(["source.python","meta.function.python"]);
       expect(tokens[0][12].value).toBe("qqq");
-      expect(tokens[0][12].scopes).toEqual(["source.python","meta.function.python","meta.item-access.python"]);
+      expect(tokens[0][12].scopes).toEqual(["source.python","meta.function.python","meta.item-access.python","meta.indexed-name.python"]);
       expect(tokens[0][13].value).toBe("[");
       expect(tokens[0][13].scopes).toEqual(["source.python","meta.function.python","meta.item-access.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[0][14].value).toBe("None");
@@ -9363,7 +9363,7 @@ describe("Grammar Tests", function() {
       expect(tokens[2][0].value).toBe("       ");
       expect(tokens[2][0].scopes).toEqual(["source.python"]);
       expect(tokens[2][1].value).toBe("baz");
-      expect(tokens[2][1].scopes).toEqual(["source.python","meta.item-access.python"]);
+      expect(tokens[2][1].scopes).toEqual(["source.python","meta.item-access.python","meta.indexed-name.python"]);
       expect(tokens[2][2].value).toBe("[");
       expect(tokens[2][2].scopes).toEqual(["source.python","meta.item-access.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[2][3].value).toBe("1");
@@ -12045,7 +12045,7 @@ describe("Grammar Tests", function() {
       expect(tokens[1][2].value).toBe(" ");
       expect(tokens[1][2].scopes).toEqual(["source.python"]);
       expect(tokens[1][3].value).toBe("List");
-      expect(tokens[1][3].scopes).toEqual(["source.python","meta.item-access.python"]);
+      expect(tokens[1][3].scopes).toEqual(["source.python","meta.item-access.python","meta.indexed-name.python"]);
       expect(tokens[1][4].value).toBe("[");
       expect(tokens[1][4].scopes).toEqual(["source.python","meta.item-access.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[1][5].value).toBe("int");
@@ -13321,7 +13321,7 @@ describe("Grammar Tests", function() {
     function() {
       tokens = grammar.tokenizeLines("a[1] = b'''\nmultiline 'binary' string \\\n\n    \\xf1 \\u1234aaaa \\U1234aaaa\n\n    \\N{BLACK SPADE SUIT}\n'''")
       expect(tokens[0][0].value).toBe("a");
-      expect(tokens[0][0].scopes).toEqual(["source.python","meta.item-access.python"]);
+      expect(tokens[0][0].scopes).toEqual(["source.python","meta.item-access.python","meta.indexed-name.python"]);
       expect(tokens[0][1].value).toBe("[");
       expect(tokens[0][1].scopes).toEqual(["source.python","meta.item-access.python","punctuation.definition.arguments.begin.python"]);
       expect(tokens[0][2].value).toBe("1");

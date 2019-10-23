@@ -431,6 +431,9 @@ repository:
       {
         include: "#member-access-base"
       }
+      {
+        include: "#member-access-attribute"
+      }
     ]
   "member-access-base":
     patterns: [
@@ -453,6 +456,14 @@ repository:
         include: "#item-access"
       }
     ]
+  "member-access-attribute":
+    comment: "Highlight attribute access in otherwise non-specialized cases."
+    name: "meta.attribute.python"
+    match: '''
+      (?x)
+        \\b ([[:alpha:]_]\\w*) \\b
+      
+    '''
   "special-names":
     name: "constant.other.caps.python"
     match: '''
@@ -1488,6 +1499,7 @@ repository:
         include: "#special-names"
       }
       {
+        name: "meta.indexed-name.python"
         match: '''
           (?x)
             \\b ([[:alpha:]_]\\w*) \\b

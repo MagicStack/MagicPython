@@ -39,7 +39,7 @@ b             : meta.function.parameters.python, meta.function.python, source.py
               : source.python
 cls           : source.python, variable.language.special.cls.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-a             : meta.member.access.python, source.python
+a             : meta.attribute.python, meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
@@ -47,7 +47,7 @@ a             : source.python
               : source.python
 cls           : source.python, variable.language.special.cls.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-b             : meta.member.access.python, source.python
+b             : meta.attribute.python, meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
@@ -70,7 +70,7 @@ cls           : source.python, variable.language.special.cls.python
               : source.python
 a             : source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-cls           : meta.member.access.python, source.python
+cls           : meta.attribute.python, meta.member.access.python, source.python
               : source.python
 =             : keyword.operator.assignment.python, source.python
               : source.python
@@ -78,7 +78,7 @@ cls           : meta.member.access.python, source.python
               : source.python
 a             : source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
-cls           : meta.member.access.python, source.python
+cls           : meta.attribute.python, meta.member.access.python, source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
 __name__      : meta.member.access.python, source.python, support.variable.magic.python
               : source.python
