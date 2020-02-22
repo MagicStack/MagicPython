@@ -1034,11 +1034,6 @@ it's probably control flow like:
             <key>name</key>
             <string>invalid.illegal.dec.python</string>
           </dict>
-          <key>3</key>
-          <dict>
-            <key>name</key>
-            <string>invalid.illegal.dec.python</string>
-          </dict>
         </dict>
       </dict>
       <key>number-hex</key>

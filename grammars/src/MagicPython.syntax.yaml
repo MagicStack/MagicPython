@@ -624,7 +624,6 @@ repository:
     captures:
       '1': {name: storage.type.imaginary.number.python}
       '2': {name: invalid.illegal.dec.python}
-      '3': {name: invalid.illegal.dec.python}
 
   number-hex:
     name: constant.numeric.hex.python
