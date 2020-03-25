@@ -58,7 +58,8 @@
           ".wsgi",
           ".kv",
           "Snakefile",
-          ".tac",
+          ".smk",
+          ".tac"
         ]
       }
     ],
