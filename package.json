@@ -55,7 +55,11 @@
           ".SConscript",
           ".gyp",
           ".gypi",
-          ".wsgi"
+          ".wsgi",
+          ".kv",
+          "Snakefile",
+          ".smk",
+          ".tac"
         ]
       }
     ],

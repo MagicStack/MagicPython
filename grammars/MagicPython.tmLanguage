@@ -24,6 +24,7 @@
       <string>wsgi</string>
       <string>kv</string>
       <string>Snakefile</string>
+      <string>smk</string>
       <string>tac</string>
     </array>
     <key>first_line_match</key>

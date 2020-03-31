@@ -17,6 +17,7 @@ fileTypes: [
   "wsgi"
   "kv"
   "Snakefile"
+  "smk"
   "tac"
 ]
 first_line_match: "^#![ \\t]*/.*\\bpython[\\d\\.]*\\b"
