@@ -36,7 +36,7 @@ b             : source.python
               : source.python
 c             : source.python
               : source.python
-in            : keyword.operator.logical.python, source.python
+in            : keyword.control.flow.python, source.python
               : source.python
 b             : source.python
 :             : punctuation.separator.colon.python, source.python

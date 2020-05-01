@@ -13,7 +13,7 @@ for           : keyword.control.flow.python, source.python
               : source.python
 i             : source.python
               : source.python
-in            : keyword.operator.logical.python, source.python
+in            : keyword.control.flow.python, source.python
               : source.python
 range         : meta.function-call.python, source.python, support.function.builtin.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python

@@ -5865,7 +5865,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][10].value).toBe(" ");
       expect(tokens[0][10].scopes).toEqual(["source.python"]);
       expect(tokens[0][11].value).toBe("in");
-      expect(tokens[0][11].scopes).toEqual(["source.python","keyword.operator.logical.python"]);
+      expect(tokens[0][11].scopes).toEqual(["source.python","keyword.control.flow.python"]);
       expect(tokens[0][12].value).toBe(" ");
       expect(tokens[0][12].scopes).toEqual(["source.python"]);
       expect(tokens[0][13].value).toBe("range");
@@ -6147,7 +6147,7 @@ describe("Grammar Tests", function() {
 
   it("test/expressions/keywords.py", 
     function() {
-      tokens = grammar.tokenizeLines("as async await continue del assert break finally for\nfrom elif else if import except pass raise\nreturn try while with\n\nnonlocal global class def")
+      tokens = grammar.tokenizeLines("as async await continue del assert break finally\nfrom elif else if import except pass raise\nreturn try while with\n\nnonlocal global class def\n\nfor")
       expect(tokens[0][0].value).toBe("as");
       expect(tokens[0][0].scopes).toEqual(["source.python","keyword.control.import.python"]);
       expect(tokens[0][1].value).toBe(" ");
@@ -6178,10 +6178,6 @@ describe("Grammar Tests", function() {
       expect(tokens[0][13].scopes).toEqual(["source.python"]);
       expect(tokens[0][14].value).toBe("finally");
       expect(tokens[0][14].scopes).toEqual(["source.python","keyword.control.flow.python"]);
-      expect(tokens[0][15].value).toBe(" ");
-      expect(tokens[0][15].scopes).toEqual(["source.python"]);
-      expect(tokens[0][16].value).toBe("for");
-      expect(tokens[0][16].scopes).toEqual(["source.python","keyword.control.flow.python"]);
       expect(tokens[1][0].value).toBe("from");
       expect(tokens[1][0].scopes).toEqual(["source.python","keyword.control.import.python"]);
       expect(tokens[1][1].value).toBe(" ");
@@ -6240,6 +6236,10 @@ describe("Grammar Tests", function() {
       expect(tokens[4][4].scopes).toEqual(["source.python","storage.type.class.python"]);
       expect(tokens[4][5].value).toBe(" def");
       expect(tokens[4][5].scopes).toEqual(["source.python","storage.type.function.python"]);
+      expect(tokens[5][0].value).toBe("");
+      expect(tokens[5][0].scopes).toEqual(["source.python"]);
+      expect(tokens[6][0].value).toBe("for");
+      expect(tokens[6][0].scopes).toEqual(["source.python","keyword.control.flow.python"]);
     });
 
   it("test/expressions/special1.py", 
@@ -7988,7 +7988,7 @@ describe("Grammar Tests", function() {
       expect(tokens[3][12].value).toBe(" ");
       expect(tokens[3][12].scopes).toEqual(["source.python"]);
       expect(tokens[3][13].value).toBe("in");
-      expect(tokens[3][13].scopes).toEqual(["source.python","keyword.operator.logical.python"]);
+      expect(tokens[3][13].scopes).toEqual(["source.python","keyword.control.flow.python"]);
       expect(tokens[3][14].value).toBe(" ");
       expect(tokens[3][14].scopes).toEqual(["source.python"]);
       expect(tokens[3][15].value).toBe("b");
@@ -8735,7 +8735,7 @@ describe("Grammar Tests", function() {
       expect(tokens[4][7].value).toBe(" ");
       expect(tokens[4][7].scopes).toEqual(["source.python","meta.function.python","meta.function.parameters.python"]);
       expect(tokens[4][8].value).toBe("in");
-      expect(tokens[4][8].scopes).toEqual(["source.python","meta.function.python","meta.function.parameters.python","keyword.operator.logical.python"]);
+      expect(tokens[4][8].scopes).toEqual(["source.python","meta.function.python","meta.function.parameters.python","keyword.control.flow.python"]);
       expect(tokens[5][0].value).toBe("                            ");
       expect(tokens[5][0].scopes).toEqual(["source.python","meta.function.python","meta.function.parameters.python"]);
       expect(tokens[5][1].value).toBe("(");
@@ -12165,7 +12165,7 @@ describe("Grammar Tests", function() {
       expect(tokens[0][9].value).toBe(" ");
       expect(tokens[0][9].scopes).toEqual(["source.python"]);
       expect(tokens[0][10].value).toBe("in");
-      expect(tokens[0][10].scopes).toEqual(["source.python","keyword.operator.logical.python"]);
+      expect(tokens[0][10].scopes).toEqual(["source.python","keyword.control.flow.python"]);
       expect(tokens[0][11].value).toBe(" ");
       expect(tokens[0][11].scopes).toEqual(["source.python"]);
       expect(tokens[0][12].value).toBe("b");
@@ -12188,6 +12188,69 @@ describe("Grammar Tests", function() {
       expect(tokens[3][2].scopes).toEqual(["source.python","keyword.operator.arithmetic.python"]);
       expect(tokens[3][3].value).toBe("0");
       expect(tokens[3][3].scopes).toEqual(["source.python","constant.numeric.dec.python"]);
+    });
+
+  it("test/statements/for2.py", 
+    function() {
+      tokens = grammar.tokenizeLines("for a, b, c in [2 in q, 2 in w]:\n    pass")
+      expect(tokens[0][0].value).toBe("for");
+      expect(tokens[0][0].scopes).toEqual(["source.python","keyword.control.flow.python"]);
+      expect(tokens[0][1].value).toBe(" ");
+      expect(tokens[0][1].scopes).toEqual(["source.python"]);
+      expect(tokens[0][2].value).toBe("a");
+      expect(tokens[0][2].scopes).toEqual(["source.python"]);
+      expect(tokens[0][3].value).toBe(",");
+      expect(tokens[0][3].scopes).toEqual(["source.python","punctuation.separator.element.python"]);
+      expect(tokens[0][4].value).toBe(" ");
+      expect(tokens[0][4].scopes).toEqual(["source.python"]);
+      expect(tokens[0][5].value).toBe("b");
+      expect(tokens[0][5].scopes).toEqual(["source.python"]);
+      expect(tokens[0][6].value).toBe(",");
+      expect(tokens[0][6].scopes).toEqual(["source.python","punctuation.separator.element.python"]);
+      expect(tokens[0][7].value).toBe(" ");
+      expect(tokens[0][7].scopes).toEqual(["source.python"]);
+      expect(tokens[0][8].value).toBe("c");
+      expect(tokens[0][8].scopes).toEqual(["source.python"]);
+      expect(tokens[0][9].value).toBe(" ");
+      expect(tokens[0][9].scopes).toEqual(["source.python"]);
+      expect(tokens[0][10].value).toBe("in");
+      expect(tokens[0][10].scopes).toEqual(["source.python","keyword.control.flow.python"]);
+      expect(tokens[0][11].value).toBe(" ");
+      expect(tokens[0][11].scopes).toEqual(["source.python"]);
+      expect(tokens[0][12].value).toBe("[");
+      expect(tokens[0][12].scopes).toEqual(["source.python","punctuation.definition.list.begin.python"]);
+      expect(tokens[0][13].value).toBe("2");
+      expect(tokens[0][13].scopes).toEqual(["source.python","constant.numeric.dec.python"]);
+      expect(tokens[0][14].value).toBe(" ");
+      expect(tokens[0][14].scopes).toEqual(["source.python"]);
+      expect(tokens[0][15].value).toBe("in");
+      expect(tokens[0][15].scopes).toEqual(["source.python","keyword.operator.logical.python"]);
+      expect(tokens[0][16].value).toBe(" ");
+      expect(tokens[0][16].scopes).toEqual(["source.python"]);
+      expect(tokens[0][17].value).toBe("q");
+      expect(tokens[0][17].scopes).toEqual(["source.python"]);
+      expect(tokens[0][18].value).toBe(",");
+      expect(tokens[0][18].scopes).toEqual(["source.python","punctuation.separator.element.python"]);
+      expect(tokens[0][19].value).toBe(" ");
+      expect(tokens[0][19].scopes).toEqual(["source.python"]);
+      expect(tokens[0][20].value).toBe("2");
+      expect(tokens[0][20].scopes).toEqual(["source.python","constant.numeric.dec.python"]);
+      expect(tokens[0][21].value).toBe(" ");
+      expect(tokens[0][21].scopes).toEqual(["source.python"]);
+      expect(tokens[0][22].value).toBe("in");
+      expect(tokens[0][22].scopes).toEqual(["source.python","keyword.operator.logical.python"]);
+      expect(tokens[0][23].value).toBe(" ");
+      expect(tokens[0][23].scopes).toEqual(["source.python"]);
+      expect(tokens[0][24].value).toBe("w");
+      expect(tokens[0][24].scopes).toEqual(["source.python"]);
+      expect(tokens[0][25].value).toBe("]");
+      expect(tokens[0][25].scopes).toEqual(["source.python","punctuation.definition.list.end.python"]);
+      expect(tokens[0][26].value).toBe(":");
+      expect(tokens[0][26].scopes).toEqual(["source.python","punctuation.separator.colon.python"]);
+      expect(tokens[1][0].value).toBe("    ");
+      expect(tokens[1][0].scopes).toEqual(["source.python"]);
+      expect(tokens[1][1].value).toBe("pass");
+      expect(tokens[1][1].scopes).toEqual(["source.python","keyword.control.flow.python"]);
     });
 
   it("test/statements/from1.py", 
@@ -13271,7 +13334,7 @@ describe("Grammar Tests", function() {
       expect(tokens[2][21].value).toBe(" ");
       expect(tokens[2][21].scopes).toEqual(["source.python"]);
       expect(tokens[2][22].value).toBe("in");
-      expect(tokens[2][22].scopes).toEqual(["source.python","keyword.operator.logical.python"]);
+      expect(tokens[2][22].scopes).toEqual(["source.python","keyword.control.flow.python"]);
       expect(tokens[2][23].value).toBe(" ");
       expect(tokens[2][23].scopes).toEqual(["source.python"]);
       expect(tokens[2][24].value).toBe("foo");

@@ -47,6 +47,9 @@ repository:
         include: "#function-declaration"
       }
       {
+        include: "#generator"
+      }
+      {
         include: "#statement-keyword"
       }
       {
@@ -327,6 +330,9 @@ repository:
       }
       {
         include: "#lambda"
+      }
+      {
+        include: "#generator"
       }
       {
         include: "#illegal-operator"
@@ -1313,6 +1319,25 @@ repository:
     endCaptures:
       "1":
         name: "punctuation.separator.parameters.python"
+    patterns: [
+      {
+        include: "#expression"
+      }
+    ]
+  generator:
+    comment: '''
+      Match "for ... in" construct used in generators and for loops to
+      correctly identify the "in" as a control flow keyword.
+      
+    '''
+    begin: "for"
+    beginCaptures:
+      "0":
+        name: "keyword.control.flow.python"
+    end: "in"
+    endCaptures:
+      "0":
+        name: "keyword.control.flow.python"
     patterns: [
       {
         include: "#expression"

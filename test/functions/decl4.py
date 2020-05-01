@@ -38,7 +38,7 @@ key           : meta.function.parameters.python, meta.function.python, source.py
               : meta.function.parameters.python, meta.function.python, source.python
 val           : meta.function.parameters.python, meta.function.python, source.python
               : meta.function.parameters.python, meta.function.python, source.python
-in            : keyword.operator.logical.python, meta.function.parameters.python, meta.function.python, source.python
+in            : keyword.control.flow.python, meta.function.parameters.python, meta.function.python, source.python
                              : meta.function.parameters.python, meta.function.python, source.python
 (             : meta.function.parameters.python, meta.function.python, punctuation.parenthesis.begin.python, source.python
 x             : meta.function.parameters.python, meta.function.python, source.python

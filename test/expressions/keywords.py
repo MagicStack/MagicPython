@@ -1,8 +1,10 @@
-as async await continue del assert break finally for
+as async await continue del assert break finally
 from elif else if import except pass raise
 return try while with
 
 nonlocal global class def
+
+for
 
 
 
@@ -21,8 +23,6 @@ assert        : keyword.control.flow.python, source.python
 break         : keyword.control.flow.python, source.python
               : source.python
 finally       : keyword.control.flow.python, source.python
-              : source.python
-for           : keyword.control.flow.python, source.python
 from          : keyword.control.import.python, source.python
               : source.python
 elif          : keyword.control.flow.python, source.python
@@ -52,3 +52,5 @@ global        : source.python, storage.modifier.declaration.python
               : source.python
 class         : source.python, storage.type.class.python
  def          : source.python, storage.type.function.python
+              : source.python
+for           : keyword.control.flow.python, source.python

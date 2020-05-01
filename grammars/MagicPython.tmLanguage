@@ -71,6 +71,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#generator</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#statement-keyword</string>
           </dict>
           <dict>
@@ -500,6 +504,10 @@ it's probably control flow like:
           <dict>
             <key>include</key>
             <string>#lambda</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#generator</string>
           </dict>
           <dict>
             <key>include</key>
@@ -2036,6 +2044,40 @@ E.g. "arr[idx](args)"
           <dict>
             <key>name</key>
             <string>punctuation.separator.parameters.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>generator</key>
+      <dict>
+        <key>comment</key>
+        <string>Match "for ... in" construct used in generators and for loops to
+correctly identify the "in" as a control flow keyword.
+</string>
+        <key>begin</key>
+        <string>for</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.flow.python</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>in</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.flow.python</string>
           </dict>
         </dict>
         <key>patterns</key>

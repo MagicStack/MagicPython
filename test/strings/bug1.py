@@ -35,7 +35,7 @@ k             : source.python
               : source.python
 v             : source.python
               : source.python
-in            : keyword.operator.logical.python, source.python
+in            : keyword.control.flow.python, source.python
               : source.python
 foo           : source.python
               : source.python
