@@ -344,6 +344,9 @@ repository:
         include: "#list"
       }
       {
+        include: "#odd-function-call"
+      }
+      {
         include: "#round-braces"
       }
       {
@@ -511,6 +514,28 @@ repository:
     patterns: [
       {
         include: "#expression"
+      }
+    ]
+  "odd-function-call":
+    comment: '''
+      A bit obscured function call where there may have been an
+      arbitrary number of other operations to get the function.
+      E.g. "arr[idx](args)"
+      
+    '''
+    begin: '''
+      (?x)
+        (?<= \\] | \\) ) \\s*
+        (?=\\()
+      
+    '''
+    end: "(\\))"
+    endCaptures:
+      "1":
+        name: "punctuation.definition.arguments.end.python"
+    patterns: [
+      {
+        include: "#function-arguments"
       }
     ]
   "round-braces":
@@ -1627,6 +1652,7 @@ repository:
     ]
   "function-call":
     name: "meta.function-call.python"
+    comment: "Regular function call of the type \"name(args)\""
     begin: '''
       (?x)
         \\b(?=

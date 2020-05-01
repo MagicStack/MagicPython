@@ -523,6 +523,10 @@ it's probably control flow like:
           </dict>
           <dict>
             <key>include</key>
+            <string>#odd-function-call</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#round-braces</string>
           </dict>
           <dict>
@@ -776,6 +780,36 @@ it's probably control flow like:
           <dict>
             <key>include</key>
             <string>#expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>odd-function-call</key>
+      <dict>
+        <key>comment</key>
+        <string>A bit obscured function call where there may have been an
+arbitrary number of other operations to get the function.
+E.g. "arr[idx](args)"
+</string>
+        <key>begin</key>
+        <string>(?x)
+  (?&lt;= \] | \) ) \s*
+  (?=\()
+</string>
+        <key>end</key>
+        <string>(\))</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.arguments.end.python</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#function-arguments</string>
           </dict>
         </array>
       </dict>
@@ -2554,6 +2588,8 @@ it's probably control flow like:
       <dict>
         <key>name</key>
         <string>meta.function-call.python</string>
+        <key>comment</key>
+        <string>Regular function call of the type "name(args)"</string>
         <key>begin</key>
         <string>(?x)
   \b(?=

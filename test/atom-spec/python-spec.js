@@ -651,6 +651,77 @@ describe("Grammar Tests", function() {
       expect(tokens[3][3].scopes).toEqual(["source.python","meta.function-call.python","punctuation.definition.arguments.end.python"]);
     });
 
+  it("test/calls/call11.py", 
+    function() {
+      tokens = grammar.tokenizeLines("id = Field[uuid.UUID] (\n    uuid.UUID,\n    inheritable=False,\n    simpledelta=False,\n    allow_ddl_set=True,\n)")
+      expect(tokens[0][0].value).toBe("id");
+      expect(tokens[0][0].scopes).toEqual(["source.python","support.function.builtin.python"]);
+      expect(tokens[0][1].value).toBe(" ");
+      expect(tokens[0][1].scopes).toEqual(["source.python"]);
+      expect(tokens[0][2].value).toBe("=");
+      expect(tokens[0][2].scopes).toEqual(["source.python","keyword.operator.assignment.python"]);
+      expect(tokens[0][3].value).toBe(" ");
+      expect(tokens[0][3].scopes).toEqual(["source.python"]);
+      expect(tokens[0][4].value).toBe("Field");
+      expect(tokens[0][4].scopes).toEqual(["source.python","meta.item-access.python","meta.indexed-name.python"]);
+      expect(tokens[0][5].value).toBe("[");
+      expect(tokens[0][5].scopes).toEqual(["source.python","meta.item-access.python","punctuation.definition.arguments.begin.python"]);
+      expect(tokens[0][6].value).toBe("uuid");
+      expect(tokens[0][6].scopes).toEqual(["source.python","meta.item-access.python","meta.item-access.arguments.python"]);
+      expect(tokens[0][7].value).toBe(".");
+      expect(tokens[0][7].scopes).toEqual(["source.python","meta.item-access.python","meta.item-access.arguments.python","meta.member.access.python","punctuation.separator.period.python"]);
+      expect(tokens[0][8].value).toBe("UUID");
+      expect(tokens[0][8].scopes).toEqual(["source.python","meta.item-access.python","meta.item-access.arguments.python","meta.member.access.python","constant.other.caps.python"]);
+      expect(tokens[0][9].value).toBe("]");
+      expect(tokens[0][9].scopes).toEqual(["source.python","meta.item-access.python","punctuation.definition.arguments.end.python"]);
+      expect(tokens[0][10].value).toBe(" ");
+      expect(tokens[0][10].scopes).toEqual(["source.python"]);
+      expect(tokens[0][11].value).toBe("(");
+      expect(tokens[0][11].scopes).toEqual(["source.python","punctuation.definition.arguments.begin.python"]);
+      expect(tokens[1][0].value).toBe("    ");
+      expect(tokens[1][0].scopes).toEqual(["source.python","meta.function-call.arguments.python"]);
+      expect(tokens[1][1].value).toBe("uuid");
+      expect(tokens[1][1].scopes).toEqual(["source.python","meta.function-call.arguments.python"]);
+      expect(tokens[1][2].value).toBe(".");
+      expect(tokens[1][2].scopes).toEqual(["source.python","meta.function-call.arguments.python","meta.member.access.python","punctuation.separator.period.python"]);
+      expect(tokens[1][3].value).toBe("UUID");
+      expect(tokens[1][3].scopes).toEqual(["source.python","meta.function-call.arguments.python","meta.member.access.python","constant.other.caps.python"]);
+      expect(tokens[1][4].value).toBe(",");
+      expect(tokens[1][4].scopes).toEqual(["source.python","meta.function-call.arguments.python","punctuation.separator.arguments.python"]);
+      expect(tokens[2][0].value).toBe("    ");
+      expect(tokens[2][0].scopes).toEqual(["source.python","meta.function-call.arguments.python"]);
+      expect(tokens[2][1].value).toBe("inheritable");
+      expect(tokens[2][1].scopes).toEqual(["source.python","meta.function-call.arguments.python","variable.parameter.function-call.python"]);
+      expect(tokens[2][2].value).toBe("=");
+      expect(tokens[2][2].scopes).toEqual(["source.python","meta.function-call.arguments.python","keyword.operator.assignment.python"]);
+      expect(tokens[2][3].value).toBe("False");
+      expect(tokens[2][3].scopes).toEqual(["source.python","meta.function-call.arguments.python","constant.language.python"]);
+      expect(tokens[2][4].value).toBe(",");
+      expect(tokens[2][4].scopes).toEqual(["source.python","meta.function-call.arguments.python","punctuation.separator.arguments.python"]);
+      expect(tokens[3][0].value).toBe("    ");
+      expect(tokens[3][0].scopes).toEqual(["source.python","meta.function-call.arguments.python"]);
+      expect(tokens[3][1].value).toBe("simpledelta");
+      expect(tokens[3][1].scopes).toEqual(["source.python","meta.function-call.arguments.python","variable.parameter.function-call.python"]);
+      expect(tokens[3][2].value).toBe("=");
+      expect(tokens[3][2].scopes).toEqual(["source.python","meta.function-call.arguments.python","keyword.operator.assignment.python"]);
+      expect(tokens[3][3].value).toBe("False");
+      expect(tokens[3][3].scopes).toEqual(["source.python","meta.function-call.arguments.python","constant.language.python"]);
+      expect(tokens[3][4].value).toBe(",");
+      expect(tokens[3][4].scopes).toEqual(["source.python","meta.function-call.arguments.python","punctuation.separator.arguments.python"]);
+      expect(tokens[4][0].value).toBe("    ");
+      expect(tokens[4][0].scopes).toEqual(["source.python","meta.function-call.arguments.python"]);
+      expect(tokens[4][1].value).toBe("allow_ddl_set");
+      expect(tokens[4][1].scopes).toEqual(["source.python","meta.function-call.arguments.python","variable.parameter.function-call.python"]);
+      expect(tokens[4][2].value).toBe("=");
+      expect(tokens[4][2].scopes).toEqual(["source.python","meta.function-call.arguments.python","keyword.operator.assignment.python"]);
+      expect(tokens[4][3].value).toBe("True");
+      expect(tokens[4][3].scopes).toEqual(["source.python","meta.function-call.arguments.python","constant.language.python"]);
+      expect(tokens[4][4].value).toBe(",");
+      expect(tokens[4][4].scopes).toEqual(["source.python","meta.function-call.arguments.python","punctuation.separator.arguments.python"]);
+      expect(tokens[5][0].value).toBe(")");
+      expect(tokens[5][0].scopes).toEqual(["source.python","punctuation.definition.arguments.end.python"]);
+    });
+
   it("test/calls/call2.py", 
     function() {
       tokens = grammar.tokenizeLines("foo(from=1)")
