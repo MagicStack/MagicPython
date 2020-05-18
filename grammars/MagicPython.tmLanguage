@@ -2061,7 +2061,7 @@ E.g. "arr[idx](args)"
 correctly identify the "in" as a control flow keyword.
 </string>
         <key>begin</key>
-        <string>for(?=\s)</string>
+        <string>\bfor\b</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -2071,7 +2071,7 @@ correctly identify the "in" as a control flow keyword.
           </dict>
         </dict>
         <key>end</key>
-        <string>in(?=\s)</string>
+        <string>\bin\b</string>
         <key>endCaptures</key>
         <dict>
           <key>0</key>
