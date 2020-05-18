@@ -1,9 +1,15 @@
-for a, b, c in [2 in q, 2 in w]:
+forvariable = None
+for a, b, c, invariable in [2 in q, 2 in w]:
     pass
 
 
 
 
+forvariable   : source.python
+              : source.python
+=             : keyword.operator.assignment.python, source.python
+              : source.python
+None          : constant.language.python, source.python
 for           : keyword.control.flow.python, source.python
               : source.python
 a             : source.python
@@ -13,6 +19,9 @@ b             : source.python
 ,             : punctuation.separator.element.python, source.python
               : source.python
 c             : source.python
+,             : punctuation.separator.element.python, source.python
+              : source.python
+invariable    : source.python
               : source.python
 in            : keyword.control.flow.python, source.python
               : source.python
