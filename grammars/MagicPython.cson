@@ -1330,11 +1330,11 @@ repository:
       correctly identify the "in" as a control flow keyword.
       
     '''
-    begin: "for"
+    begin: "for(?=\\s)"
     beginCaptures:
       "0":
         name: "keyword.control.flow.python"
-    end: "in"
+    end: "in(?=\\s)"
     endCaptures:
       "0":
         name: "keyword.control.flow.python"

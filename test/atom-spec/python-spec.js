@@ -12193,12 +12193,16 @@ describe("Grammar Tests", function() {
   it("test/statements/for2.py", 
     function() {
       tokens = grammar.tokenizeLines("forvariable = None\nfor a, b, c, invariable in [2 in q, 2 in w]:\n    pass")
-      expect(tokens[0][0].value).toBe("for");
-      expect(tokens[0][0].scopes).toEqual(["source.python","keyword.control.flow.python"]);
-      expect(tokens[0][1].value).toBe("variable = ");
+      expect(tokens[0][0].value).toBe("forvariable");
+      expect(tokens[0][0].scopes).toEqual(["source.python"]);
+      expect(tokens[0][1].value).toBe(" ");
       expect(tokens[0][1].scopes).toEqual(["source.python"]);
-      expect(tokens[0][2].value).toBe("None");
-      expect(tokens[0][2].scopes).toEqual(["source.python","constant.language.python"]);
+      expect(tokens[0][2].value).toBe("=");
+      expect(tokens[0][2].scopes).toEqual(["source.python","keyword.operator.assignment.python"]);
+      expect(tokens[0][3].value).toBe(" ");
+      expect(tokens[0][3].scopes).toEqual(["source.python"]);
+      expect(tokens[0][4].value).toBe("None");
+      expect(tokens[0][4].scopes).toEqual(["source.python","constant.language.python"]);
       expect(tokens[1][0].value).toBe("for");
       expect(tokens[1][0].scopes).toEqual(["source.python","keyword.control.flow.python"]);
       expect(tokens[1][1].value).toBe(" ");
@@ -12221,9 +12225,9 @@ describe("Grammar Tests", function() {
       expect(tokens[1][9].scopes).toEqual(["source.python","punctuation.separator.element.python"]);
       expect(tokens[1][10].value).toBe(" ");
       expect(tokens[1][10].scopes).toEqual(["source.python"]);
-      expect(tokens[1][11].value).toBe("in");
-      expect(tokens[1][11].scopes).toEqual(["source.python","keyword.control.flow.python"]);
-      expect(tokens[1][12].value).toBe("variable ");
+      expect(tokens[1][11].value).toBe("invariable");
+      expect(tokens[1][11].scopes).toEqual(["source.python"]);
+      expect(tokens[1][12].value).toBe(" ");
       expect(tokens[1][12].scopes).toEqual(["source.python"]);
       expect(tokens[1][13].value).toBe("in");
       expect(tokens[1][13].scopes).toEqual(["source.python","keyword.control.flow.python"]);
