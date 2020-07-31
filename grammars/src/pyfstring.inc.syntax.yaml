@@ -127,10 +127,12 @@ fstring-${line}-brace:
 fstring-terminator-${line}:
   patterns:
     - name: storage.type.format.python
-      match: (![rsa])(?=})
+      match: (=(![rsa])?)(?=})
+    - name: storage.type.format.python
+      match: (=?![rsa])(?=})
     - match: |
         (?x)
-          (![rsa])?
+          ( (?: =?) (?: ![rsa])? )
             ( : \w? [<>=^]? [-+ ]? \#?
               \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )(?=})
       captures:
@@ -148,7 +150,7 @@ fstring-terminator-${line}:
     - include: '#fstring-terminator-${line}-tail'
 
 fstring-terminator-${line}-tail:
-  begin: (![rsa])?(:)(?=.*?{)
+  begin: ((?:=?)(?:![rsa])?)(:)(?=.*?{)
   end: (?=})${fguard}
   beginCaptures:
     '1': {name: storage.type.format.python}

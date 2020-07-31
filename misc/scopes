@@ -56,6 +56,7 @@ keyword.operator.lookahead.regexp
 keyword.operator.lookbehind.negative.regexp
 keyword.operator.lookbehind.regexp
 keyword.operator.negation.regexp
+keyword.operator.positional.parameter.python
 keyword.operator.python
 keyword.operator.quantifier.regexp
 keyword.operator.unpacking.arguments.python

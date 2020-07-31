@@ -1,7 +1,7 @@
 import asyncio
 
 
-def showcase():
+def showcase(a, b, /, c, d, *, e, f):
     """Some code to showcase the syntax.
 
     Docstrings are recognized and have an additional scope.
@@ -21,7 +21,7 @@ def showcase():
 
         async with db.transaction():
             result = await db.query(...)
-            print(f'Result: {result!r}')
+            print(f'Result: {result!r} {a=} {b=!r}')
 
     mapping = None     # type: Dict[int, Any] # PEP 484
 
@@ -41,8 +41,14 @@ def showcase():
     # NOTE Numbers with leading zeros are invalid in Python 3,
     # use 0o...
     answer = func(0xdeadbeef + 0b00100001 + 0123 + 0o123 +
-                  1_005_123 + # PEP 515
+                  1_005_123 +  # PEP 515
                   # complex numbers
                   .10e12 + 2j) @ mat
+
+    # walrus operator
+    filtered_data = [y for x in data if (y := f(x)) is not None]
+
+    # position-only params
+    bar = lambda q, w, /, e, r: (q + w + e + r)
 
     return R'''No escapes '\' in this \one'''

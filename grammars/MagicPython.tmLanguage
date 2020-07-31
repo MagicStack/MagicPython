@@ -933,6 +933,8 @@ E.g. "arr[idx](args)"
     | (\*\* | \* | \+ | - | % | // | / | @)                (?# 4)
 
     | (!= | == | &gt;= | &lt;= | &lt; | &gt;)                          (?# 5)
+
+    | (:=)                                                 (?# 6)
 </string>
         <key>captures</key>
         <dict>
@@ -960,6 +962,11 @@ E.g. "arr[idx](args)"
           <dict>
             <key>name</key>
             <string>keyword.operator.comparison.python</string>
+          </dict>
+          <key>6</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.assignment.python</string>
           </dict>
         </dict>
       </dict>
@@ -1938,6 +1945,12 @@ E.g. "arr[idx](args)"
             <array>
               <dict>
                 <key>name</key>
+                <string>keyword.operator.positional.parameter.python</string>
+                <key>match</key>
+                <string>/</string>
+              </dict>
+              <dict>
+                <key>name</key>
                 <string>keyword.operator.unpacking.parameter.python</string>
                 <key>match</key>
                 <string>(\*\*|\*)</string>
@@ -2184,6 +2197,12 @@ correctly identify the "in" as a control flow keyword.
         </dict>
         <key>patterns</key>
         <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.positional.parameter.python</string>
+            <key>match</key>
+            <string>/</string>
+          </dict>
           <dict>
             <key>name</key>
             <string>keyword.operator.unpacking.parameter.python</string>
@@ -8259,12 +8278,18 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>storage.type.format.python</string>
             <key>match</key>
-            <string>(![rsa])(?=})</string>
+            <string>(=(![rsa])?)(?=})</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>storage.type.format.python</string>
+            <key>match</key>
+            <string>(=?![rsa])(?=})</string>
           </dict>
           <dict>
             <key>match</key>
             <string>(?x)
-  (![rsa])?
+  ( (?: =?) (?: ![rsa])? )
     ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
       \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )(?=})
 </string>
@@ -8291,7 +8316,7 @@ indirectly through syntactic constructs
       <key>fstring-terminator-single-tail</key>
       <dict>
         <key>begin</key>
-        <string>(![rsa])?(:)(?=.*?{)</string>
+        <string>((?:=?)(?:![rsa])?)(:)(?=.*?{)</string>
         <key>end</key>
         <string>(?=})|(?=\n)</string>
         <key>beginCaptures</key>
@@ -8631,12 +8656,18 @@ indirectly through syntactic constructs
             <key>name</key>
             <string>storage.type.format.python</string>
             <key>match</key>
-            <string>(![rsa])(?=})</string>
+            <string>(=(![rsa])?)(?=})</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>storage.type.format.python</string>
+            <key>match</key>
+            <string>(=?![rsa])(?=})</string>
           </dict>
           <dict>
             <key>match</key>
             <string>(?x)
-  (![rsa])?
+  ( (?: =?) (?: ![rsa])? )
     ( : \w? [&lt;&gt;=^]? [-+ ]? \#?
       \d* ,? (\.\d+)? [bcdeEfFgGnosxX%]? )(?=})
 </string>
@@ -8663,7 +8694,7 @@ indirectly through syntactic constructs
       <key>fstring-terminator-multi-tail</key>
       <dict>
         <key>begin</key>
-        <string>(![rsa])?(:)(?=.*?{)</string>
+        <string>((?:=?)(?:![rsa])?)(:)(?=.*?{)</string>
         <key>end</key>
         <string>(?=})</string>
         <key>beginCaptures</key>
