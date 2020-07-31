@@ -619,6 +619,8 @@ repository:
       
           | (!= | == | >= | <= | < | >)                          (?# 5)
       
+          | (:=)                                                 (?# 6)
+      
     '''
     captures:
       "1":
@@ -631,6 +633,8 @@ repository:
         name: "keyword.operator.arithmetic.python"
       "5":
         name: "keyword.operator.comparison.python"
+      "6":
+        name: "keyword.operator.assignment.python"
   punctuation:
     patterns: [
       {
@@ -1256,6 +1260,10 @@ repository:
         contentName: "meta.function.lambda.parameters.python"
         patterns: [
           {
+            name: "keyword.operator.positional.parameter.python"
+            match: "/"
+          }
+          {
             name: "keyword.operator.unpacking.parameter.python"
             match: "(\\*\\*|\\*)"
           }
@@ -1402,6 +1410,10 @@ repository:
       "1":
         name: "punctuation.definition.parameters.end.python"
     patterns: [
+      {
+        name: "keyword.operator.positional.parameter.python"
+        match: "/"
+      }
       {
         name: "keyword.operator.unpacking.parameter.python"
         match: "(\\*\\*|\\*)"
@@ -4720,12 +4732,16 @@ repository:
     patterns: [
       {
         name: "storage.type.format.python"
-        match: "(![rsa])(?=})"
+        match: "(=(![rsa])?)(?=})"
+      }
+      {
+        name: "storage.type.format.python"
+        match: "(=?![rsa])(?=})"
       }
       {
         match: '''
           (?x)
-            (![rsa])?
+            ( (?: =?) (?: ![rsa])? )
               ( : \\w? [<>=^]? [-+ ]? \\#?
                 \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )(?=})
           
@@ -4741,7 +4757,7 @@ repository:
       }
     ]
   "fstring-terminator-single-tail":
-    begin: "(![rsa])?(:)(?=.*?{)"
+    begin: "((?:=?)(?:![rsa])?)(:)(?=.*?{)"
     end: "(?=})|(?=\\n)"
     beginCaptures:
       "1":
@@ -4944,12 +4960,16 @@ repository:
     patterns: [
       {
         name: "storage.type.format.python"
-        match: "(![rsa])(?=})"
+        match: "(=(![rsa])?)(?=})"
+      }
+      {
+        name: "storage.type.format.python"
+        match: "(=?![rsa])(?=})"
       }
       {
         match: '''
           (?x)
-            (![rsa])?
+            ( (?: =?) (?: ![rsa])? )
               ( : \\w? [<>=^]? [-+ ]? \\#?
                 \\d* ,? (\\.\\d+)? [bcdeEfFgGnosxX%]? )(?=})
           
@@ -4965,7 +4985,7 @@ repository:
       }
     ]
   "fstring-terminator-multi-tail":
-    begin: "(![rsa])?(:)(?=.*?{)"
+    begin: "((?:=?)(?:![rsa])?)(:)(?=.*?{)"
     end: "(?=})"
     beginCaptures:
       "1":

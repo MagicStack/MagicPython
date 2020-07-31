@@ -582,12 +582,15 @@ repository:
 
           | (!= | == | >= | <= | < | >)                          (?# 5)
 
+          | (:=)                                                 (?# 6)
+
     captures:
       '1': {name: keyword.operator.logical.python}
       '2': {name: keyword.control.flow.python}
       '3': {name: keyword.operator.bitwise.python}
       '4': {name: keyword.operator.arithmetic.python}
       '5': {name: keyword.operator.comparison.python}
+      '6': {name: keyword.operator.assignment.python}
 
   punctuation:
     patterns:
@@ -1002,6 +1005,8 @@ repository:
 
         contentName: meta.function.lambda.parameters.python
         patterns:
+          - name: keyword.operator.positional.parameter.python
+            match: /
           - name: keyword.operator.unpacking.parameter.python
             match: (\*\*|\*)
           - include: '#lambda-nested-incomplete'
@@ -1096,6 +1101,8 @@ repository:
       '1': {name: punctuation.definition.parameters.end.python}
 
     patterns:
+      - name: keyword.operator.positional.parameter.python
+        match: /
       - name: keyword.operator.unpacking.parameter.python
         match: (\*\*|\*)
       - include: '#lambda-incomplete'
