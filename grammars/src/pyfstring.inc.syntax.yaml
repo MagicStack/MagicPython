@@ -51,7 +51,7 @@ fstring-normf-quoted-${line}-line:
 
 fstring-raw-quoted-${line}-line:
   name: meta.fstring.python
-  begin: (\b(?:[R][fF]|[fF][R]))(${marker})
+  begin: (\b(?:[rR][fF]|[fF][rR]))(${marker})
   end: (\2)${guard}
   beginCaptures:
     '1': {name: storage.type.string.python

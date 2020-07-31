@@ -22,6 +22,8 @@ def showcase(a, b, /, c, d, *, e, f):
         async with db.transaction():
             result = await db.query(...)
             print(f'Result: {result!r} {a=} {b=!r}')
+            print(Rf'data: {c=}')
+            print(rf'data: {c=}')
 
     mapping = None     # type: Dict[int, Any] # PEP 484
 
