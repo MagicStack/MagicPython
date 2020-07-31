@@ -103,82 +103,6 @@ repository:
         bquote: '(""")'
         equote: '(""")'
 
-    - file: 'regexp.inc.syntax.yaml'
-      vars:
-        prefix: 'single-one-'
-        basename: 'fregexp'
-        marker: "|(?=\\')"
-        nested: ''
-        guard: "|((?=(?<!\\\\)\\n))"
-
-    - file: 'regexp.inc.syntax.yaml'
-      vars:
-        prefix: 'single-three-'
-        basename: 'fregexp'
-        marker: "|(?=\\'\\'\\')"
-        nested: "- include: '#comments-string-single-three'"
-        guard: ""
-
-    - file: 'regexp.inc.syntax.yaml'
-      vars:
-        prefix: 'double-one-'
-        basename: 'fregexp'
-        marker: '|(?=")'
-        nested: ''
-        guard: "|((?=(?<!\\\\)\\n))"
-
-    - file: 'regexp.inc.syntax.yaml'
-      vars:
-        prefix: 'double-three-'
-        basename: 'fregexp'
-        marker: '|(?=""")'
-        nested: "- include: '#comments-string-double-three'"
-        guard: ""
-
-    - file: 'regexp.wrapper.syntax.yaml'
-      vars:
-        scopename: string.regexp.quoted.single.python
-                   string.interpolated.python
-        prefix: 'single-one-'
-        basename: 'fregexp'
-        nested: ''
-        modifier: '[fF]'
-        bquote: "(\\')"
-        equote: "(\\')|(?<!\\\\)(\\n)"
-
-    - file: 'regexp.wrapper.syntax.yaml'
-      vars:
-        scopename: string.regexp.quoted.multi.python
-                   string.interpolated.python
-        prefix: 'single-three-'
-        basename: 'fregexp'
-        nested: "- include: '#comments-string-single-three'"
-        modifier: '[fF]'
-        bquote: "(\\'\\'\\')"
-        equote: "(\\'\\'\\')"
-
-    - file: 'regexp.wrapper.syntax.yaml'
-      vars:
-        scopename: string.regexp.quoted.single.python
-                   string.interpolated.python
-        prefix: 'double-one-'
-        basename: 'fregexp'
-        nested: ''
-        modifier: '[fF]'
-        bquote: '(")'
-        equote: '(")|(?<!\\)(\n)'
-
-    - file: 'regexp.wrapper.syntax.yaml'
-      vars:
-        scopename: string.regexp.quoted.multi.python
-                   string.interpolated.python
-        prefix: 'double-three-'
-        basename: 'fregexp'
-        nested: "- include: '#comments-string-double-three'"
-        modifier: '[fF]'
-        bquote: '(""")'
-        equote: '(""")'
-
     - file: 'pystring.inc.syntax.yaml'
       vars:
         line: single
@@ -700,10 +624,6 @@ repository:
       - include: '#regexp-double-three-line'
       - include: '#regexp-single-one-line'
       - include: '#regexp-double-one-line'
-      - include: '#fregexp-single-three-line'
-      - include: '#fregexp-double-three-line'
-      - include: '#fregexp-single-one-line'
-      - include: '#fregexp-double-one-line'
 
   string:
     patterns:
