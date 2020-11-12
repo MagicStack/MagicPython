@@ -6,8 +6,6 @@ with [Sublime Text](http://www.sublimetext.com), [Atom](http://atom.io) and
 [Visual Studio Code](http://code.visualstudio.com). It is meant to be a drop-in
 replacement for the default Python package.
 
-We are proud to say that MagicPython is used by GitHub to highlight Python.
-
 **Attention VSCode users**: MagicPython is used as the _default_
 Python highlighter in Visual Studio Code. Don't install it unless you
 want or need the cutting edge version of it. You will likely see no
