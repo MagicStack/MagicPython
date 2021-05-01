@@ -295,6 +295,23 @@ repository:
         '''
       }
       {
+        name: "keyword.control.flow.python"
+        comment: '''
+          `match` and `case` are only soft keywords. Match if
+          followed by `:` or anything that allows for line continuation.
+          
+        '''
+        match: '''
+          (?x)
+            \\b(?<!\\.)(
+              match | case
+            )\\b(
+              (?=.*[:\\\\]) | (?=\\s*[\\(\\[\\{])
+            )
+          
+        '''
+      }
+      {
         name: "storage.modifier.declaration.python"
         match: '''
           (?x)

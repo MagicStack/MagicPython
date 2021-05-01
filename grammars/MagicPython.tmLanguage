@@ -457,6 +457,22 @@ it's probably control flow like:
           </dict>
           <dict>
             <key>name</key>
+            <string>keyword.control.flow.python</string>
+            <key>comment</key>
+            <string>`match` and `case` are only soft keywords. Match if
+followed by `:` or anything that allows for line continuation.
+</string>
+            <key>match</key>
+            <string>(?x)
+  \b(?&lt;!\.)(
+    match | case
+  )\b(
+    (?=.*[:\\]) | (?=\s*[\(\[\{])
+  )
+</string>
+          </dict>
+          <dict>
+            <key>name</key>
             <string>storage.modifier.declaration.python</string>
             <key>match</key>
             <string>(?x)
