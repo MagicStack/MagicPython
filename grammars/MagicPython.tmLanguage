@@ -464,9 +464,9 @@ followed by `:` or anything that allows for line continuation.
 </string>
             <key>match</key>
             <string>(?x)
-  \b(?&lt;!\.)(
+  (?:^\s*)\b(
     match | case
-  )\b(
+  )\b(?:
     (?=.*[:\\]) | (?=\s*[\(\[\{])
   )
 </string>

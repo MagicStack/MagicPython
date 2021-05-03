@@ -387,9 +387,9 @@ repository:
           followed by `:` or anything that allows for line continuation.
         match: |
           (?x)
-            \b(?<!\.)(
+            (?:^\s*)\b(
               match | case
-            )\b(
+            )\b(?:
               (?=.*[:\\]) | (?=\s*[\(\[\{])
             )
       - name: storage.modifier.declaration.python

@@ -28,15 +28,13 @@ match         : keyword.control.flow.python, source.python
               : source.python
 status        : source.python
 :             : punctuation.separator.colon.python, source.python
-              : source.python
-case          : keyword.control.flow.python, source.python
+    case      : keyword.control.flow.python, source.python
               : source.python
 100           : constant.numeric.dec.python, source.python
 :             : punctuation.separator.colon.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
-              : source.python
-case          : keyword.control.flow.python, source.python
+    case      : keyword.control.flow.python, source.python
               : source.python
 \             : punctuation.separator.continuation.line.python, source.python
               : source.python
@@ -45,8 +43,7 @@ case          : keyword.control.flow.python, source.python
 :             : punctuation.separator.colon.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
-              : source.python
-case          : keyword.control.flow.python, source.python
+    case      : keyword.control.flow.python, source.python
               : source.python
 (             : punctuation.parenthesis.begin.python, source.python
               : source.python
@@ -56,8 +53,7 @@ case          : keyword.control.flow.python, source.python
 :             : punctuation.separator.colon.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
-              : source.python
-case          : keyword.control.flow.python, source.python
+    case      : keyword.control.flow.python, source.python
               : source.python
 [             : punctuation.definition.list.begin.python, source.python
               : source.python
@@ -67,8 +63,7 @@ case          : keyword.control.flow.python, source.python
 :             : punctuation.separator.colon.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
-              : source.python
-case          : keyword.control.flow.python, source.python
+    case      : keyword.control.flow.python, source.python
               : source.python
 {             : punctuation.definition.dict.begin.python, source.python
               : source.python
@@ -83,8 +78,7 @@ case          : keyword.control.flow.python, source.python
 :             : punctuation.separator.colon.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
-              : source.python
-case          : keyword.control.flow.python, source.python
+    case      : keyword.control.flow.python, source.python
               : source.python
 Point         : meta.function-call.generic.python, meta.function-call.python, source.python
 (             : meta.function-call.python, punctuation.definition.arguments.begin.python, source.python
@@ -100,8 +94,7 @@ p             : source.python
 :             : punctuation.separator.colon.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
-              : source.python
-case          : keyword.control.flow.python, source.python
+    case      : keyword.control.flow.python, source.python
               : source.python
 600           : constant.numeric.dec.python, source.python
               : source.python
@@ -111,8 +104,7 @@ case          : keyword.control.flow.python, source.python
 :             : punctuation.separator.colon.python, source.python
               : source.python
 pass          : keyword.control.flow.python, source.python
-              : source.python
-case          : keyword.control.flow.python, source.python
+    case      : keyword.control.flow.python, source.python
               : source.python
 _             : source.python
 :             : punctuation.separator.colon.python, source.python
