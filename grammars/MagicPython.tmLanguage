@@ -855,7 +855,7 @@ E.g. "arr[idx](args)"
         <array>
           <dict>
             <key>match</key>
-            <string>(\\)\s*(\S.*$\n?)</string>
+            <string>(\\)\s*(\S.*$\&x6e;?)</string>
             <key>captures</key>
             <dict>
               <key>1</key>
@@ -872,7 +872,7 @@ E.g. "arr[idx](args)"
           </dict>
           <dict>
             <key>begin</key>
-            <string>(\\)\s*$\n?</string>
+            <string>(\\)\s*$\&x6e;?</string>
             <key>end</key>
             <string>(?x)
   (?=^\s*$)
@@ -1384,7 +1384,7 @@ E.g. "arr[idx](args)"
         <key>comment</key>
         <string>it is illegal to have a multiline brace inside a single-line string</string>
         <key>begin</key>
-        <string>(\{)(?=[^\n}]*$\n?)</string>
+        <string>(\{)(?=[^\n}]*$\&x6e;?)</string>
         <key>end</key>
         <string>(\})|(?=\n)</string>
         <key>beginCaptures</key>
@@ -8181,7 +8181,7 @@ indirectly through syntactic constructs
 
         The guard for newlines has to be separate from the
         lookahead because of special $ matching rule.)
-      ($\n?)
+      ($\&x6e;?)
       |
       (?=[\\\}\{]|(['"])|((?&lt;!\\)\n))
     )
@@ -8204,7 +8204,7 @@ indirectly through syntactic constructs
 
         The guard for newlines has to be separate from the
         lookahead because of special $ matching rule.)
-      ($\n?)
+      ($\&x6e;?)
       |
       (?=[\\\}\{]|(['"])|((?&lt;!\\)\n))
     )
@@ -8553,7 +8553,7 @@ indirectly through syntactic constructs
 
         The guard for newlines has to be separate from the
         lookahead because of special $ matching rule.)
-      ($\n?)
+      ($\&x6e;?)
       |
       (?=[\\\}\{]|'''|""")
     )
@@ -8576,7 +8576,7 @@ indirectly through syntactic constructs
 
         The guard for newlines has to be separate from the
         lookahead because of special $ matching rule.)
-      ($\n?)
+      ($\&x6e;?)
       |
       (?=[\\\}\{]|'''|""")
     )
