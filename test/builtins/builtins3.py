@@ -40,6 +40,9 @@ some.__path__
 some.__prepare__
 some.__package__
 some.__traceback__
+some.__closure__
+some.__globals__
+some.__match_args__
 some.__notspecial__
 
 
@@ -181,6 +184,15 @@ __package__   : meta.member.access.python, source.python, support.variable.magic
 some          : source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
 __traceback__ : meta.member.access.python, source.python, support.variable.magic.python
+some          : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+__closure__   : meta.member.access.python, source.python, support.variable.magic.python
+some          : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+__globals__   : meta.member.access.python, source.python, support.variable.magic.python
+some          : source.python
+.             : meta.member.access.python, punctuation.separator.period.python, source.python
+__match_args__ : meta.member.access.python, source.python, support.variable.magic.python
 some          : source.python
 .             : meta.member.access.python, punctuation.separator.period.python, source.python
 __notspecial__ : meta.attribute.python, meta.member.access.python, source.python
