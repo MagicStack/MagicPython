@@ -471,6 +471,22 @@ it's probably control flow like:
             <key>match</key>
             <string>\b(?&lt;!\.)(class)\b</string>
           </dict>
+          <dict>
+            <key>match</key>
+            <string>(?x)
+  ^\s*(
+    case | match
+  )(?=\s*([-+\w\d(\[{'":#]|$))\b
+</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.flow.python</string>
+              </dict>
+            </dict>
+          </dict>
         </array>
       </dict>
       <key>expression-bare</key>
@@ -2852,14 +2868,14 @@ correctly identify the "in" as a control flow keyword.
             <key>match</key>
             <string>(?x)
   (?&lt;!\.) \b(
-    __import__ | abs | all | any | ascii | bin | breakpoint | callable
-    | chr | compile | copyright | credits | delattr | dir | divmod
-    | enumerate | eval | exec | exit | filter | format | getattr
-    | globals | hasattr | hash | help | hex | id | input
-    | isinstance | issubclass | iter | len | license | locals | map
-    | max | memoryview | min | next | oct | open | ord | pow | print
-    | quit | range | reload | repr | reversed | round
-    | setattr | sorted | sum | vars | zip
+    __import__ | abs | aiter | all | any | anext | ascii | bin
+    | breakpoint | callable | chr | compile | copyright | credits
+    | delattr | dir | divmod | enumerate | eval | exec | exit
+    | filter | format | getattr | globals | hasattr | hash | help
+    | hex | id | input | isinstance | issubclass | iter | len
+    | license | locals | map | max | memoryview | min | next
+    | oct | open | ord | pow | print | quit | range | reload | repr
+    | reversed | round | setattr | sorted | sum | vars | zip
   )\b
 </string>
           </dict>
@@ -2904,24 +2920,29 @@ indirectly through syntactic constructs
         <string>(?x)
   \b(
     __(?:
-      abs | add | aenter | aexit | aiter | and | anext | await
-      | bool | call | ceil | cmp | coerce | complex | contains
-      | copy | deepcopy | del | delattr | delete | delitem
-      | delslice | dir | div | divmod | enter | eq | exit | float
-      | floor | floordiv | format | ge | get | getattr
-      | getattribute | getinitargs | getitem | getnewargs
-      | getslice | getstate | gt | hash | hex | iadd | iand | idiv
-      | ifloordiv | ilshift | imod | imul | index | init
-      | instancecheck | int | invert | ior | ipow | irshift | isub
-      | iter | itruediv | ixor | le | len | long | lshift | lt
-      | missing | mod | mul | ne | neg | new | next | nonzero | oct | or
-      | pos | pow | radd | rand | rdiv | rdivmod | reduce
-      | reduce_ex | repr | reversed | rfloordiv | rlshift | rmod
-      | rmul | ror | round | rpow | rrshift | rshift | rsub
-      | rtruediv | rxor | set | setattr | setitem | setslice
-      | setstate | sizeof | str | sub | subclasscheck | truediv
-      | trunc | unicode | xor | matmul | rmatmul | imatmul
-      | init_subclass | set_name | fspath | bytes | prepare
+      abs | add | aenter | aexit | aiter | and | anext
+      | await | bool | call | ceil | class_getitem
+      | cmp | coerce | complex | contains | copy
+      | deepcopy | del | delattr | delete | delitem
+      | delslice | dir | div | divmod | enter | eq
+      | exit | float | floor | floordiv | format | ge
+      | get | getattr | getattribute | getinitargs
+      | getitem | getnewargs | getslice | getstate | gt
+      | hash | hex | iadd | iand | idiv | ifloordiv |
+      | ilshift | imod | imul | index | init
+      | instancecheck | int | invert | ior | ipow
+      | irshift | isub | iter | itruediv | ixor | le
+      | len | long | lshift | lt | missing | mod | mul
+      | ne | neg | new | next | nonzero | oct | or | pos
+      | pow | radd | rand | rdiv | rdivmod | reduce
+      | reduce_ex | repr | reversed | rfloordiv |
+      | rlshift | rmod | rmul | ror | round | rpow
+      | rrshift | rshift | rsub | rtruediv | rxor | set
+      | setattr | setitem | set_name | setslice
+      | setstate | sizeof | str | sub | subclasscheck
+      | truediv | trunc | unicode | xor | matmul
+      | rmatmul | imatmul | init_subclass | set_name
+      | fspath | bytes | prepare | length_hint
     )__
   )\b
 </string>
@@ -2942,12 +2963,12 @@ indirectly through syntactic constructs
         <string>(?x)
   \b(
     __(?:
-      all | bases | builtins | class | class_getitem | code | debug
-      | defaults | dict | doc | file | func | kwdefaults | members
-      | metaclass | methods | module | mro | mro_entries | name
-      | qualname | post_init | self | signature | slots | subclasses
-      | version | weakref | wrapped | annotations | classcell
-      | spec | path | package | future | traceback
+      all | annotations | bases | builtins | class
+      | closure | code | debug | defaults | dict | doc | file | func
+      | globals | kwdefaults | match_args | members | metaclass | methods
+      | module | mro | mro_entries | name | qualname | post_init | self
+      | signature | slots | subclasses | version | weakref | wrapped
+      | classcell | spec | path | package | future | traceback
     )__
   )\b
 </string>
