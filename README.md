@@ -1,8 +1,8 @@
 # Magic Python [![Build Status](https://travis-ci.org/MagicStack/MagicPython.svg?branch=master)](https://travis-ci.org/MagicStack/MagicPython) [![apm](https://img.shields.io/apm/dm/magicpython.svg?label=Atom)](https://atom.io/packages/magicpython) [![Package Control](https://img.shields.io/packagecontrol/dt/MagicPython.svg?label=Sublime%20Text)](https://packagecontrol.io/packages/MagicPython) [![VSM](https://vsmarketplacebadge.apphb.com/installs-short/magicstack.MagicPython.svg?subject=Visual%20Studio%20Code)](https://marketplace.visualstudio.com/items?itemName=magicstack.MagicPython)
 
 This is a package with preferences and syntax highlighter for cutting edge
-Python 3, although Python 2 is well supported, too.  The syntax is compatible
-with [Sublime Text](http://www.sublimetext.com), [Atom](http://atom.io) and
+Python 3, although Python 2 is well-supported, too.  The syntax is compatible
+with [Sublime Text 2+](http://www.sublimetext.com), [Atom](http://atom.io) and
 [Visual Studio Code](http://code.visualstudio.com). It is meant to be a drop-in
 replacement for the default Python package.
 
@@ -10,6 +10,11 @@ replacement for the default Python package.
 Python highlighter in Visual Studio Code. Don't install it unless you
 want or need the cutting edge version of it. You will likely see no
 difference because you're already using MagicPython.
+
+**Attention Sublime Text 4 users**: The default Python package
+is well-maintained and more powerful than this syntax can ever be.
+It is recommended to use the Python support provided by default
+instead of MagicPython.
 
 MagicPython correctly highlights all Python 3 syntax features,
 including type annotations, f-strings and regular expressions. It is
