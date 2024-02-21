@@ -9,5 +9,5 @@ Thank you!
 * **Platform**:
 * **Color scheme**:
 * **MagicPython version**:
-* **A sreenshot**:
+* **A screenshot**:
 * **5-10 lines of surrounding code**:
